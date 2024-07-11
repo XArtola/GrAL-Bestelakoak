@@ -1,0 +1,6 @@
+Lynx-ek ematen dituen aukerak aztertzen jarraitu
+	- https://codingforseo.com/blog/extract-links-with-lynx/
+	- Adibideko komandoa sortu, linux terminaletik erabili ahal izateko
+	- dos2unix erabili script-a windows-etik erabilgarria izateko
+	- KONTUZ script-ean jarri behar da #!/bin/sh bestela EZ dabil
+	- Script errekurtsibo baten egitura montatu

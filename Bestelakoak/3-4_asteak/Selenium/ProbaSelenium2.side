@@ -1,0 +1,126 @@
+{
+  "id": "9f197c26-a550-4f45-89c4-de68c2b7d47b",
+  "version": "2.0",
+  "name": "Egela",
+  "url": "https://egela.ehu.eus",
+  "tests": [{
+    "id": "3535e121-6082-4c55-b746-a1aae9b0b06b",
+    "name": "egela1",
+    "commands": [{
+      "id": "c5638e08-670f-4b6d-b443-92f59559fb0b",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "21451415-1211-42f7-bdbd-ab0e00487b39",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1578x1031",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8968e5f0-6272-414a-b88d-b2ea9f5da617",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Métodos Formales de Desarrollo de Software",
+      "targets": [
+        ["linkText=Métodos Formales de Desarrollo de Software", "linkText"],
+        ["css=.first .ehu-visible", "css:finder"],
+        ["xpath=//a[contains(text(),'Métodos Formales de Desarrollo de Software')]", "xpath:link"],
+        ["xpath=//div[@id='frontpage-course-list']/div/div/div/h3/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://egela.ehu.eus/course/view.php?id=83487')]", "xpath:href"],
+        ["xpath=//h3/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Métodos Formales de Desarrollo de Software')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "135a6491-0e24-46b0-949e-93dbaf0cfc79",
+      "comment": "",
+      "command": "click",
+      "target": "css=#module-7532208 .instancename",
+      "targets": [
+        ["css=#module-7532208 .instancename", "css:finder"],
+        ["xpath=//li[@id='module-7532208']/div/div/div[2]/div/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/div[3]/ul/li/div/div/div[2]/div/a/span", "xpath:position"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win7603",
+      "windowTimeout": 2000
+    }, {
+      "id": "33664df0-f308-4a60-9e2f-2aeb12870653",
+      "comment": "",
+      "command": "storeWindowHandle",
+      "target": "root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "258df9e9-398a-42e4-92a2-cadc7eeef20e",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win7603}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cdd636c1-b4fd-4647-925b-eeb97d8f871d",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ee853c7-8b85-4b28-bdd5-51b9622c065a",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${root}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f96cc649-deb4-495a-8e76-fb48eea277fa",
+      "comment": "",
+      "command": "click",
+      "target": "css=#module-7532214 .instancename",
+      "targets": [
+        ["css=#module-7532214 .instancename", "css:finder"],
+        ["xpath=//li[@id='module-7532214']/div/div/div[2]/div/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/div[3]/ul/li[8]/div/div/div[2]/div/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "45ed7865-44c1-4c4f-91fe-e88d93f2e847",
+      "comment": "",
+      "command": "click",
+      "target": "css=#module-7532213 .instancename",
+      "targets": [
+        ["css=#module-7532213 .instancename", "css:finder"],
+        ["xpath=//li[@id='module-7532213']/div/div/div[2]/div/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/div[3]/ul/li[7]/div/div/div[2]/div/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ffcfe60-cda1-4e64-b957-6e516af736cb",
+      "comment": "",
+      "command": "click",
+      "target": "css=#module-7532187 .instancename",
+      "targets": [
+        ["css=#module-7532187 .instancename", "css:finder"],
+        ["xpath=//li[@id='module-7532187']/div/div/div[2]/div/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Berrien foroa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "72dedc5c-0eb8-4f74-8c5d-2d868d27a07e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["3535e121-6082-4c55-b746-a1aae9b0b06b"]
+  }],
+  "urls": ["https://egela.ehu.eus/"],
+  "plugins": []
+}

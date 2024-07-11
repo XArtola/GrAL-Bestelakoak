@@ -1,0 +1,10 @@
+Korreoak irakurri
+	- nvda nola erabili
+	- Cucumber bdd + Cypress
+	- lynx
+Ubuntu 20.04 LTS deskargatu
+Hasi Lynxs erabiltzen
+	- https://codingforseo.com/blog/extract-links-with-lynx/
+	
+
+	

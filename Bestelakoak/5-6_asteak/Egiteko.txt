@@ -1,0 +1,43 @@
++ Overleaf:
+	+ Gralaren memoriaren egiturarekin hasi
+		- 1.kap Sarrera 
+		- 2.kap Plangintza eta kudeaketa
+		- 3.kap Aurrekariak
+		- 4.kap Arkitektura edo diseinua
+		- 5.kap Inplementazioa
+		- 6.kap Frogak
+		- 7.kap Jarraipena eta kontrola
+		- 8.kap Ondorioak eta etorkizunera lana
+		- 9.kap Bibliografia .Bibtex formatuan ????
+		- Eranskinak
+
++ GPT4V(ision):
+	+ Probatu kotxearen irudia: ea vision den ala ez
+
++ Open interpreter: 
+	+ Instalatu
+
++ GPT4:
+	Grafoaren sorkuntza ea (automatikoki) egin daitekeen ikertu
+
++ Pruebas de usabilidad
+	https://www.hotjar.com/es/test-de-usabilidad/
+
+
+----------------------------------------------------------------------------------------------
+
+Dashboard:
+	+ Firelab-enaren egitura plagiatu		
+
+Pruebas instrumentalizadas
+
+Open interpreter: 
+	+ Probak: JSON historial testuinguru moduan
+
+----------------
+
+https://www.youtube.com/watch?v=-XegX_K6w-o
+
+
+
+

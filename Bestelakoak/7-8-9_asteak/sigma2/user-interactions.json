@@ -1,0 +1,275 @@
+{
+  "http://localhost:3000": [
+    {
+      "type": "a",
+      "text": "Next.js Learn Course",
+      "href": "https://nextjs.org/learn/"
+    },
+    {
+      "type": "a",
+      "text": "Log in",
+      "href": "http://localhost:3000/login"
+    }
+  ],
+  "http://localhost:3000/login": [
+    {
+      "type": "a",
+      "text": "Home",
+      "href": "http://localhost:3000/dashboard"
+    },
+    {
+      "type": "a",
+      "text": "Invoices",
+      "href": "http://localhost:3000/dashboard/invoices"
+    },
+    {
+      "type": "a",
+      "text": "Customers",
+      "href": "http://localhost:3000/dashboard/customers"
+    },
+    {
+      "type": "button",
+      "text": "Sign Out",
+      "href": ""
+    }
+  ],
+  "http://localhost:3000/dashboard": [
+    {
+      "type": "a",
+      "text": "Home",
+      "href": "http://localhost:3000/dashboard"
+    },
+    {
+      "type": "a",
+      "text": "Invoices",
+      "href": "http://localhost:3000/dashboard/invoices"
+    },
+    {
+      "type": "a",
+      "text": "Customers",
+      "href": "http://localhost:3000/dashboard/customers"
+    },
+    {
+      "type": "button",
+      "text": "Sign Out",
+      "href": ""
+    }
+  ],
+  "http://localhost:3000/dashboard/invoices": [
+    {
+      "type": "a",
+      "text": "Home",
+      "href": "http://localhost:3000/dashboard"
+    },
+    {
+      "type": "a",
+      "text": "Invoices",
+      "href": "http://localhost:3000/dashboard/invoices"
+    },
+    {
+      "type": "a",
+      "text": "Customers",
+      "href": "http://localhost:3000/dashboard/customers"
+    },
+    {
+      "type": "button",
+      "text": "Sign Out",
+      "href": ""
+    },
+    {
+      "type": "a",
+      "text": "Create Invoice",
+      "href": "http://localhost:3000/dashboard/invoices/create"
+    },
+    {
+      "type": "a",
+      "text": "",
+      "href": "http://localhost:3000/dashboard/invoices/d4467c12-5d70-4c50-8de6-647fa3c77688/edit"
+    },
+    {
+      "type": "button",
+      "text": "Delete",
+      "href": ""
+    },
+    {
+      "type": "a",
+      "text": "",
+      "href": "http://localhost:3000/dashboard/invoices/e1e85113-86fe-4623-b82d-fc0a3781a395/edit"
+    },
+    {
+      "type": "button",
+      "text": "Delete",
+      "href": ""
+    },
+    {
+      "type": "a",
+      "text": "",
+      "href": "http://localhost:3000/dashboard/invoices/57b7f28e-0381-45ac-8516-10bd2d1e1899/edit"
+    },
+    {
+      "type": "button",
+      "text": "Delete",
+      "href": ""
+    },
+    {
+      "type": "a",
+      "text": "",
+      "href": "http://localhost:3000/dashboard/invoices/19e6c146-ea66-4e3b-8417-5186ba52cf23/edit"
+    },
+    {
+      "type": "button",
+      "text": "Delete",
+      "href": ""
+    },
+    {
+      "type": "a",
+      "text": "",
+      "href": "http://localhost:3000/dashboard/invoices/c506c149-7fec-4c36-9e86-0b205896c28b/edit"
+    },
+    {
+      "type": "button",
+      "text": "Delete",
+      "href": ""
+    },
+    {
+      "type": "a",
+      "text": "",
+      "href": "http://localhost:3000/dashboard/invoices/a25bf22d-a63a-4b8d-9fce-d67e97edc759/edit"
+    },
+    {
+      "type": "button",
+      "text": "Delete",
+      "href": ""
+    },
+    {
+      "type": "a",
+      "text": "",
+      "href": "http://localhost:3000/dashboard/invoices/d4467c12-5d70-4c50-8de6-647fa3c77688/edit"
+    },
+    {
+      "type": "button",
+      "text": "Delete",
+      "href": ""
+    },
+    {
+      "type": "a",
+      "text": "",
+      "href": "http://localhost:3000/dashboard/invoices/e1e85113-86fe-4623-b82d-fc0a3781a395/edit"
+    },
+    {
+      "type": "button",
+      "text": "Delete",
+      "href": ""
+    },
+    {
+      "type": "a",
+      "text": "",
+      "href": "http://localhost:3000/dashboard/invoices/57b7f28e-0381-45ac-8516-10bd2d1e1899/edit"
+    },
+    {
+      "type": "button",
+      "text": "Delete",
+      "href": ""
+    },
+    {
+      "type": "a",
+      "text": "",
+      "href": "http://localhost:3000/dashboard/invoices/19e6c146-ea66-4e3b-8417-5186ba52cf23/edit"
+    },
+    {
+      "type": "button",
+      "text": "Delete",
+      "href": ""
+    },
+    {
+      "type": "a",
+      "text": "",
+      "href": "http://localhost:3000/dashboard/invoices/c506c149-7fec-4c36-9e86-0b205896c28b/edit"
+    },
+    {
+      "type": "button",
+      "text": "Delete",
+      "href": ""
+    },
+    {
+      "type": "a",
+      "text": "",
+      "href": "http://localhost:3000/dashboard/invoices/a25bf22d-a63a-4b8d-9fce-d67e97edc759/edit"
+    },
+    {
+      "type": "button",
+      "text": "Delete",
+      "href": ""
+    }
+  ],
+  "http://localhost:3000/dashboard/customers": [
+    {
+      "type": "a",
+      "text": "Home",
+      "href": "http://localhost:3000/dashboard"
+    },
+    {
+      "type": "a",
+      "text": "Invoices",
+      "href": "http://localhost:3000/dashboard/invoices"
+    },
+    {
+      "type": "a",
+      "text": "Customers",
+      "href": "http://localhost:3000/dashboard/customers"
+    },
+    {
+      "type": "button",
+      "text": "Sign Out",
+      "href": ""
+    }
+  ],
+  "http://localhost:3000/dashboard/invoices/create": [
+    {
+      "type": "a",
+      "text": "Home",
+      "href": "http://localhost:3000/dashboard"
+    },
+    {
+      "type": "a",
+      "text": "Invoices",
+      "href": "http://localhost:3000/dashboard/invoices"
+    },
+    {
+      "type": "a",
+      "text": "Customers",
+      "href": "http://localhost:3000/dashboard/customers"
+    },
+    {
+      "type": "button",
+      "text": "Sign Out",
+      "href": ""
+    },
+    {
+      "type": "a",
+      "text": "Invoices",
+      "href": "http://localhost:3000/dashboard/invoices"
+    },
+    {
+      "type": "a",
+      "text": "Create Invoice",
+      "href": "http://localhost:3000/dashboard/invoices/create"
+    },
+    {
+      "type": "a",
+      "text": "Cancel",
+      "href": "http://localhost:3000/dashboard/invoices"
+    },
+    {
+      "type": "button",
+      "text": "Create Invoice",
+      "href": ""
+    }
+  ],
+  "http://localhost:3000/dashboard/invoices/d4467c12-5d70-4c50-8de6-647fa3c77688/edit": [],
+  "http://localhost:3000/dashboard/invoices/e1e85113-86fe-4623-b82d-fc0a3781a395/edit": [],
+  "http://localhost:3000/dashboard/invoices/57b7f28e-0381-45ac-8516-10bd2d1e1899/edit": [],
+  "http://localhost:3000/dashboard/invoices/19e6c146-ea66-4e3b-8417-5186ba52cf23/edit": [],
+  "http://localhost:3000/dashboard/invoices/c506c149-7fec-4c36-9e86-0b205896c28b/edit": [],
+  "http://localhost:3000/dashboard/invoices/a25bf22d-a63a-4b8d-9fce-d67e97edc759/edit": []
+}

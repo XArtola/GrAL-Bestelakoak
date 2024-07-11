@@ -1,0 +1,85 @@
++ Sortu Github repo eta bi karpeta sortu:
+
+	- proiektua
+	- Bestelakoak
+juanmiguel-lopez
+
+- Interpreter JS-tik exekutatzeko nola egin begiratu
+
+-----------------------------------------------------------------------------------------
+
+- .lua formatua grafoentzat
+
+- crawl graph nola egiten duten
+
+- Sortu node proeiktua eta depuratzen joan helbide bat pasata elkarrekintza guztiak lortzeko
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+Dashboard:
+	+ Firelab-enaren egitura plagiatu
+
+
+-----------------------------------------------------------------------------------
+
+
+Google "automatically explore the web application to map out all possible user interactions"
+
+https://clarity.microsoft.com/
+https://www.codesee.io/learning-center/application-mapping
+https://www.appdynamics.com/product/how-it-works/auto-discovery-and-mapping
+https://www.dynatrace.com/platform/application-topology-discovery/smartscape/
+
+
+-------------------------------------------------------------------------------------------
+
+Marrazteko - Relationship graph
+https://d3js.org/
+https://observablehq.com/@nhogs/neo4j-driver-for-javascript
+https://observablehq.com/@d3/force-directed-graph/2?intent=fork
+
+https://observablehq.com/@educationstuff/relationship-graph
+https://observablehq.com/@d3/force-directed-graph/2?intent=fork
+
+https://js.cytoscape.org/#demos
+
+https://visjs.github.io/vis-network/examples/
+https://visjs.github.io/vis-network/examples/network/data/dotLanguage/dotEdgeStyles.html
+
+https://snyk.io/advisor/npm-package/relationship-graph
+https://snyk.io/advisor/npm-package/relationship-graph
+
+https://www.anychart.com/blog/2020/07/22/network-graph-javascript/
+
+https://github.com/anvaka/VivaGraphJS
++ http://yasiv.com/amazon/#/Search?q=graph%20drawing&category=Books&lang=US
+
++ https://github.com/anvaka/VivaGraphJS
++ https://github.com/eisman/neo4jd3
+
+https://blog.scitools.com/making-big-graphs-manageable-with-relationship-sub-graphs/
+
+
+https://code.tutsplus.com/best-free-javascript-graph-visualization-libraries--cms-41710a
+
+
+Crawling tools
+
+https://www.octoparse.com/pricing	Prueba gratis
+https://www.cyotek.com/cyotek-webcopy	Web-ak klonatzeko
+
+https://www.octoparse.com/blog/9-free-web-scrapers-that-you-cannot-miss		10 scrapper free
+https://portal.80legs.com							Txartela
+https://www.npmjs.com/package/@scrapeit-cloud/scrapeit-cloud-node-sdk
+
+----------------------------------------------------------------------
+
++ Graph tool
+https://medium.com/neo4j/how-to-use-sigmajs-to-display-your-graph-3eedd75275bb
+
+https://code.tutsplus.com/best-free-javascript-graph-visualization-libraries--cms-41710a
+

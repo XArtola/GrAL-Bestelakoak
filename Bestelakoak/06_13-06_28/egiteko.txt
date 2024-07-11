@@ -1,0 +1,37 @@
+Gemini 1.5 pro
+
+AiStudio
+
+Api key erabiltzeko VPN erabili
+
+Repototxt
+
+httrack erabili (command line) webgunea lokalean probatzeko
+
+0 ataza 
+- repo (bdd) --> gherkin bdd --> cucumber 
+
+Montatu localhost-ean kendu gherkin eta bdd-ren zatiak nik egiteko
+
+
+Driven gorde repoa nonbinary direnak kenduta eta pasa esteka
+
+
+1 ataza gherkin sortu (user story): pasatuz
+        - json 
+        - dokumentazioa
+        - repoa (hau beti besteak konbinatzen joan)
+
+        Erabiltzaileak zer egin dezakeen lortu 
+
+2 ataza Testak
+        - Gherkinak edukita nola testak sortu
+
+
+
+
+Montatuta eduki 2 prozesuak
+
+    pasatzeko pista moduan 0 shot
+                            1 shot  
+                            Few shot

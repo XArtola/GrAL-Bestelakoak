@@ -1,0 +1,9 @@
+Textu bidezko nabigatzaileak probatzen jarraitu
+    - w3m
+        + w3m -dump_source "https://www.google.com" | gunzip -f komando erabili dump egindakoa deskonprimitzeko, html + css lortzen du
+        + w3m -dump -o display_link_number=1 http://www.google.es  komandoarekin lortu daiteke textu zenbakitua + linken zerrenda  https://askubuntu.com/questions/805014/getting-text-and-links-from-a-web-page
+    - lynx
+        + lynx -dump https://www.google.com/intl/es/gmail/about/ Honekin ere linkak lortu daitezke
+        + lynx -number_fields -number_links -dump https://www.google.com/intl/es/gmail/about/ aukera ere badago
+    - ELinks
+        + besteen antzekoa baina honek zerrendatuta ematen ditu textu erreferentziak. elinks -dump https://www.google.com/intl/es/gmail/about/

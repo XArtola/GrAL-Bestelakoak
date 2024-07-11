@@ -1,0 +1,25 @@
+Lynx-en aparte beste textu nabigatzaileak
+Korreoko guztiekin probatu, Links, w3m
+Cucumber-en pausoak automatizatzen saiatu
+    Sortu nabigazio diagrama
+    Web gunea edukita pasa IA-ri pasa lortzeko gherkin bat (Honetarako erbili 5 prozeusak grid...)
+    Gero gherkin pasa eta hortik lortu kode zatiak
+    Deskargatutako repoak erabiltzen duen mongoa martxan jarri
+
+    Iturburu desberdinetatik aukeratzeko llm erabili
+
+    Martzan dagoen web gunetik abiatuta Zein gaitasun du user story identifikatzeko
+    Ze gaitasun du user story horiek formalizatzeko (gherkin lengoaian)
+
+    Aukera eman gherkin-ak editatzeko ikusteko zenbat user story falta diren 
+
+    Repoentzak irizpideak cucumber + gherkin +node
+        node + react
+        user storysk definituak dituenak edo gherkinak
+        cucumber probak dituzten repoak
+
+    Gemini api-a erabiltzen probatu, Ai studio
+
+    Langchain-en conversational memory
+    Tokenez pasako garenez, DB vectoialera pasa repo to txt eta baita nabigazio diagrama(milvus, chroma, pinecone) eta iturburuak
+    Embedding-ak nola egin dituen galdetu eta zein erabili duen

@@ -1,0 +1,212 @@
+[
+  {
+    "tagName": "a",
+    "textContent": "Más información",
+    "href": "https://policies.google.com/technologies/cookies?hl=es"
+  },
+  {
+    "tagName": "button",
+    "textContent": "Entendido",
+    "href": null
+  },
+  {
+    "tagName": "a",
+    "textContent": "Gmail",
+    "href": "https://www.google.com/intl/es/gmail/about/"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Para trabajar",
+    "href": "https://workspace.google.com/products/gmail/index.html?utm_source=gmailforwork&utm_medium=et&utm_campaign=nav&utm_content=forwork"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Inicia sesión",
+    "href": "https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser&ec=asw-gmail-globalnav-signin"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://accounts.google.com/signup/v2/createaccount?service=mail&continue=https://mail.google.com/mail/&flowName=GlifWebSignIn&flowEntry=SignUp&ec=asw-gmail-globalnav-create"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://workspace.google.com/business/signup/newbusiness?utm_source=gmailforwork&utm_medium=et&utm_campaign=nav&utm_content=createaccount&xsell=google_accounts&back=https%3A%2F%2Faccounts.google.com%2FSignUp%3Fec%3Dasw-gmail-globalnav-create2%26biz%3Dtrue&continue=https://mail.google.com/mail/&flowEntry=SignUp&flowName=GlifWebSignIn&service=mail&ec=asw-gmail-globalnav-create"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Obtén Gmail",
+    "href": "https://accounts.google.com/signup/v2/webcreateaccount?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=SignUp&ec=asw-gmail-globalnav-create"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://accounts.google.com/signup/v2/createaccount?service=mail&continue=https://mail.google.com/mail/&flowName=GlifWebSignIn&flowEntry=SignUp&ec=asw-gmail-hero-create"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://workspace.google.com/business/signup/newbusiness?utm_source=gmailforwork&utm_medium=et&utm_campaign=hero&utm_content=createaccount&xsell=google_accounts&back=https%3A%2F%2Faccounts.google.com%2FSignUp%3Fec%3Dasw-gmail-hero-create2%26biz%3Dtrue&continue=https://mail.google.com/mail/&flowEntry=SignUp&flowName=GlifWebSignIn&service=mail&ec=asw-gmail-hero-create"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://workspace.google.com/products/gmail/index.html?utm_source=gmailforwork&utm_medium=et&utm_campaign=hero&utm_content=forwork"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://accounts.google.com/signup/v2/createaccount?service=mail&continue=https://mail.google.com/mail/&flowName=GlifWebSignIn&flowEntry=SignUp&ec=asw-gmail-hero-create"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://workspace.google.com/business/signup/newbusiness?utm_source=gmailforwork&utm_medium=et&utm_campaign=hero&utm_content=createaccount&xsell=google_accounts&back=https%3A%2F%2Faccounts.google.com%2FSignUp%3Fec%3Dasw-gmail-hero-create2%26biz%3Dtrue&continue=https://mail.google.com/mail/&flowEntry=SignUp&flowName=GlifWebSignIn&service=mail&ec=asw-gmail-hero-create"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Para trabajar",
+    "href": "https://workspace.google.com/products/gmail/index.html?utm_source=gmailforwork&utm_medium=et&utm_campaign=hero&utm_content=forwork"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Nunca usamos tu contenido de Gmail con fines publicitarios\nGmail usa un sistema de cifrado líder en el sector con todos los mensajes que recibes y envías. Nunca usamos tu contenido de Gmail para personalizar anuncios.",
+    "href": "https://www.google.com/intl/es/gmail/about/#"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Gmail protege a más de mil millones de usuarios cada día\nGmail bloquea el 99,9 % del spam, del software malicioso y de los enlaces peligrosos para que no lleguen a tu bandeja de entrada.",
+    "href": "https://www.google.com/intl/es/gmail/about/#"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Las protecciones más avanzadas que hay disponibles contra la suplantación de identidad (phishing)\nCuando llega un correo sospechoso que podría ser legítimo, Gmail te avisa para que tengas el control.",
+    "href": "https://www.google.com/intl/es/gmail/about/#"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Las mejores formas de controlar los correos que envías\nCon el modo confidencial, puedes fijar fechas de vencimiento y pedir que los destinatarios verifiquen su identidad por mensaje de texto. También puedes quitar las opciones para reenviar, copiar, descargar e imprimir contenido.",
+    "href": "https://www.google.com/intl/es/gmail/about/#"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Mantente en contacto con tu equipo y organízate\nInicia una conversación de Chat, participa en una videollamada con Meet o colabora en un documento, todo desde Gmail.",
+    "href": "https://www.google.com/intl/es/gmail/about/#"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Mejora tu productividad\nEscribe correos electrónicos y mensajes más rápido con funciones como Redacción Inteligente para dedicar más tiempo a lo que te gusta.",
+    "href": "https://www.google.com/intl/es/gmail/about/#"
+  },
+  {
+    "tagName": "a",
+    "textContent": "No te olvides de responder correos\nLos recordatorios no molestan y sirven para que no se te pase nada.",
+    "href": "https://www.google.com/intl/es/gmail/about/#"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Exprésate con emojis\nLas reacciones con emojis son una forma rápida y divertida de responder a correos, y solo están disponibles en la aplicación Gmail.\nEsta función empezará a lanzarse en octubre del 2023.",
+    "href": "https://www.google.com/intl/es/gmail/about/#"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Encuentra tus correos más rápido\nSe muestra una interfaz de usuario de teléfono simplificada en la que aparece un correo dando la bienvenida al equipo a Helen. También aparece ampliada la barra de emojis para mostrar lo sencillo que es responder con un emoji.",
+    "href": "https://www.google.com/intl/es/gmail/about/#"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Pasa de una cuenta a otra\nConsulta todos tus correos de diferentes proveedores en una sola aplicación.",
+    "href": "https://www.google.com/intl/es/gmail/about/#"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://apps.apple.com/es/app/gmail-email-by-google/id422689480"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://play.google.com/store/apps/details?id=com.google.android.gm&hl=es_ES&gl=ES"
+  },
+  {
+    "tagName": "a",
+    "textContent": "empresarial",
+    "href": "https://workspace.google.com/solutions/business-email/"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Más información",
+    "href": "https://workspace.google.com/?utm_source=gmailforwork&utm_medium=et&utm_campaign=body&utm_content=learnmore"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://support.google.com/mail/?hl=es#topic=7065107"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://landing.google.com/advancedprotection/"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://workspace.google.com/?utm_source=gmailforwork&utm_medium=et&utm_campaign=body&utm_content=learnmore"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Centro de Ayuda",
+    "href": "https://support.google.com/mail/?hl=es#topic=7065107"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://accounts.google.com/signup/v2/createaccount?service=mail&continue=https://mail.google.com/mail/&flowName=GlifWebSignIn&flowEntry=SignUp&ec=asw-gmail-footer-create"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://workspace.google.com/business/signup/newbusiness?utm_source=gmailforwork&utm_medium=et&utm_campaign=footer&utm_content=createaccount&xsell=google_accounts&back=https%3A%2F%2Faccounts.google.com%2FSignUp%3Fec%3Dasw-gmail-footer-create2%26biz%3Dtrue&continue=https://mail.google.com/mail/&flowEntry=SignUp&flowName=GlifWebSignIn&service=mail&ec=asw-gmail-footer-create2"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Para trabajar",
+    "href": "https://workspace.google.com/products/gmail/index.html?utm_source=gmailforwork&utm_medium=et&utm_campaign=footer&utm_content=forwork"
+  },
+  {
+    "tagName": "a",
+    "textContent": "",
+    "href": "https://www.google.com/"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Privacidad",
+    "href": "https://policies.google.com/privacy"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Condiciones",
+    "href": "https://policies.google.com/terms"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Acerca de Google",
+    "href": "https://about.google/"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Productos de Google",
+    "href": "https://about.google/products/"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Nuestra política",
+    "href": "https://www.google.com/gmail/about/policy/"
+  },
+  {
+    "tagName": "a",
+    "textContent": "Ayuda",
+    "href": "https://support.google.com/mail/?hl=en#topic=7065107"
+  }
+]

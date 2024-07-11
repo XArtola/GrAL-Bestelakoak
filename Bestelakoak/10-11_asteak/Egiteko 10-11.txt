@@ -1,0 +1,7 @@
+- Memorian informazioa sartzen joan, Erreferentziak, zitak,...
+- Ze proiektu motekin erabil daitekeen ikertu. Nodekoak eta release desberdinekin, releasetan bertsio desberdinen artean zein hobekuntza 
+
+
+-------------------------------------------------------------------------------------------------
+
+- Konponduta vimGPT vimium master chromium karpetan kopiatuta.

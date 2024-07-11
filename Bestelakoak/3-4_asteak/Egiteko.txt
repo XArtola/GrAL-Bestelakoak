@@ -1,0 +1,92 @@
+Selenium
+https://www.selenium.dev/documentation/webdriver/
+
+
+	Bideo tutoriala: https://www.youtube.com/playlist?list=PLZMWkkQEwOPl0udc9Dap2NbEAkwkdOTV3
+		* Testing Selenium-ekin
+		* Chai liburutegia Assert erabili beharrean
+		* Mocha: 
+			- Testing egiteko: it blokeak, describe blokeak
+			- beforeEach, AfterEach
+			- Paralelizazioa eta deiak package.json-eko test-etik
+			- mochawesome proben laburpen html-a sortzeko
+			- Proben emaitza, laburpena eta bideoa ikusteko aukera lambdatest-en bidez https://www.lambdatest.com/ (Antzeko dashboard???). Min 21:21 https://www.youtube.com/watch?v=QQGD40PqR_8&list=PLZMWkkQEwOPl0udc9Dap2NbEAkwkdOTV3&index=10 
+	Selenium IDE:
+		* Instalatu eta extentsioa aktibatutakoan grabatzen hasi
+		* Klikatzen joan eta bukatutakoan gorde
+		* Exportatu daiteke JSON formatuan testa edo zuzenean JS + Mocha fitxategi batean
+
+	Bigarren bideo tutoriala: https://www.youtube.com/watch?v=QwymPtk4zWo
+		* Deskargako karpeta eta bestelako konfiguraketak webDriver-erako
+		* Profilak erabili webDriver-etik, extentsioak sartzeko adibidez
+		* Proxy-a nola ezarri
+	
+	Hirugarren bideo tutoriala: https://www.youtube.com/watch?v=NB8OceGZGjA
+		* Bright data, cloud testing
+	
+	Laugarren bideo tutoriala: https://www.youtube.com/watch?v=ZIsdD5zwoyA
+		* Itxoin alerta atera arte, eskubi klik,...
+		* Fitxateagiak igo
+		* it bloakeak if-ekin
+		* script-ak exekutatu
+		* screenshot
+	Bostagarren bideo tutoriala: https://www.youtube.com/watch?v=_HyhD9p2D2w&list=PLLi9hZ7Ces--QbPWeiBKRBzEOT2ta6Ffg
+		* Java-rekin...
+		* CSS selectors. child, ancestor, adjaacent siblings
+		* Xpath selectors
+		* Wait motak<. implicit, explicit, fluent
+		* Drag and drop
+		* if, while... IDE-eko testetan
+
+	Seigarren bideo tutoriala: https://www.youtube.com/playlist?list=PLA4JPGpQHctT__mDO9EHvOrWVW0Hkf5Mk
+		* Testen modularizazioa
+		* Faker.js Probako balio desberdinak sortzeko
+		* Jest Testeatzeko erabiltzen da. Paraleloan exekutatzea onartzen du
+
+Ui.Vision
+https://ui.vision/	
+
+		* Estentsio honekin automatizatu daitezke testak eta aukeraketak egin irudien bilaketa bidez
+
+Applitools
+https://applitools.com/tutorials/
+
+	- IA erabiltzen du testing pauso bakoitzaren aurretik eta ondoren screenshot-en arteko alkaetak ikusteko
+	- Bideo demoa: https://www.youtube.com/watch?v=Lm_JwMFBez4
+
+
+Youtube tutoriala - Puppeteer GPT
+https://www.youtube.com/watch?v=8aR8ImWVRxc&list=WL&index=7&t=397s
+
+
+
+Firebase
+https://firebase.google.com/docs/test-lab?hl=es-419
+
+	- iOS, Android plataformetako aplikazioak testatzeko plataforma
+	- RoboTest testing automatizatua
+	- Robo proba eginda
+
+
+vim GPT
+https://github.com/ishan0102/vimGPT
+	
+	* Ez dira etiketak azaltzen
+
+
+
+Irakurri
+PDF
+
+Eskatu Github Copilot
+
+-----------------------------------------------------------------------
+
+
+
+
+
+
+Vimium web browser
+https://vimium.github.io/
+

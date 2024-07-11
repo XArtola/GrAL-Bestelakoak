@@ -1,0 +1,8 @@
+Nextjs proiektu batean mongodb integratzeko:
+npm i mongodb 
+import { MongoClient } from "mongodb";
+
+https://www.mongodb.com/developer/languages/javascript/nextjs-with-mongodb/
+https://hevodata.com/learn/next-js-mongodb-connection/#3
+
+

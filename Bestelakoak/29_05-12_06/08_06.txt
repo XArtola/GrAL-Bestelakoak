@@ -1,0 +1,4 @@
+langchain + groq-ekin lanean jarraitu
+    - api key jartzeko varible entorno moduan: setx GROQ_API_KEY "apiKeyarenKaraktereak"
+    - ikusteko ea ondo sartu den: echo %OPENAI_API_KEY%
+    - Api key-a ez du variables de entornotik hartzen

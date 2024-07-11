@@ -1,0 +1,4 @@
+Interfazea integratzen hasi
+Mongodb integratu interfazean
+react + mongodb tutoriala
+https://www.mongodb.com/developer/languages/javascript/nextjs-with-mongodb/

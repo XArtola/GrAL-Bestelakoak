@@ -1,0 +1,4 @@
+Node proeiktu bat soru grafo jason-a sortuko duena Lynx erabiliz
+    + wsl-ren bertsioa aldatzeko wsl --set-version Ubuntu-22.04 2 komandoa erabili
+    + jsdom erabiltzen probatu ez ditu emaitza onak eman
+    + cheeriorekin saiakera egin

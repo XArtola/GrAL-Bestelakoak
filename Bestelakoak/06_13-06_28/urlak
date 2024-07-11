@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es">
+
+<head>
+<!-- inicio titulos -->
+<title>One Piece Pirateking &bull; Comunidad Española de One Piece</title>
+<!-- fin titulos -->
+
+<meta charset="utf-8" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="author" content="One Piece Pirateking" />
+<meta name="copyright" content="Copyright (c) by op-pirateking" />
+<meta name="keywords" content="One Piece, Onepiece, Pirate, King, Pirateking, Monkey D. Luffy, Roronoa Zoro, Nami, Usopp, Sanji, Chopper, Robin, Franky, Usopp, Buggy, Cocodrile, Kurohige, Shanks, Descargas, Downloads, Grand Line, Red Line, Marines, Fansubs, Akuma no Mi, Eiichiro Oda, Manga, Anime, Straw Hats, Wallpapers, Gifs, MP3, Foros, Noticias, Fan, FanArt, Musica, Comentarios, Anime, Manga, Doujinshi, RPG, Games" />
+<meta name="description" content="One Piece - PirateKing: Fansubs y Scanlations, el lugar de los auténticos piratas. Wallpapers, gifs, anime, manga, descargas, juegos y mucho más en inglés y castellano" />
+<meta name="robots" content="all" />
+<meta name="revisit-after" content="7 days" />
+<meta name="rating" content="general" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="alternate" type="application/atom+xml" title="One Piece Pirateking Feed" href="foro/feed.php?mode=news" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch.xml" title="Buscar en Pirateking" />
+<link rel="icon" href="favicon.ico" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="stylesheet" href="estilo.css" />
+<link rel="stylesheet" href="adaptable.css" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W9KEYR0RKL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W9KEYR0RKL');
+</script>
+</head>
+
+<body>
+<!-- inicio cuerpo -->
+<div id="principal">
+	<!-- inicio cabecera -->
+	<header id="cabecera" role="banner">
+    <h1 class="logo-cabecera"><a href="./"><img src="fondos/pirateking.png" alt="Pirateking" title="Pirateking" /></a></h1>
+		<!-- inicio ultimos mensajes -->
+   	<aside>
+<div id="ultimosmensajes-letrero"><h2>Últ<span>i</span>mos mensajes</h2></div>
+    <div id="ultimosmensajes-cuadro"></div>
+	<div id="ultimosmensajes">
+<ul>
+<li><a href="foro/viewtopic.php?t=32223">The Boys (Amazon)...</a> <span style="float:right;">(186 Respuestas)</span></li>
+<li><a href="foro/viewtopic.php?t=37667">Spoilers 1.117...</a> <span style="float:right;">(227 Respuestas)</span></li>
+<li><a href="foro/viewtopic.php?t=31396">ELDEN RING (PS5/PS4/XSX/XO/PC)...</a> <span style="float:right;">(759 Respuestas)</span></li>
+<li><a href="foro/viewtopic.php?t=31973">Jujutsu Kaisen...</a> <span style="float:right;">(531 Respuestas)</span></li>
+<li><a href="foro/viewtopic.php?t=31410">Chainsawman, el manga de la Ju...</a> <span style="float:right;">(449 Respuestas)</span></li>
+<li><a href="foro/viewtopic.php?t=33178">Teorías locas parte VI...</a> <span style="float:right;">(758 Respuestas)</span></li>
+<li><a href="foro/viewtopic.php?t=12338">RAW 499 "Sabaody Park"...</a> <span style="float:right;">(79 Respuestas)</span></li>
+<li><a href="foro/viewtopic.php?t=32435">El Señor de los Anillos, la s...</a> <span style="float:right;">(509 Respuestas)</span></li>
+</ul>
+	</div>
+	</aside>
+	<!-- fin ultimos mensajes -->
+	</header>
+	<div class="barraforo">
+		<ul class="barraforo-menu">
+			<li class="barraforo-boton icon-foro"><a href="foro/">Foro</a></li>
+			<li class="barraforo-boton icon-login"><a href="foro/ucp.php?mode=login">Login</a>
+				<div id="loginbox">		
+					<div class="formulario-login">
+					<form action="foro/ucp.php?mode=login" target="_top" method="post" enctype="application/x-www-form-urlencoded">
+					<label class="formulario-usuario" for="username">Usuario</label>
+					<input type="text" name="username" id="username" /><br />
+					<label class="formulario-password" for="password">Contraseña</label>
+	        		<input type="password" name="password" id="password" />
+					<input type="hidden" name="creation_time" value="1718207454" /><input type="hidden" name="form_token" value="9a309f78d627e576ec16a84c406d9972bf39573d" />
+					<button type="submit" class="boton-login" name="login">Login</button>
+					</form>
+					<span><a href="foro/ucp.php?mode=sendpassword">Recover password</a></span>
+					</div>				
+				</div>		
+			</li>
+			<li class="barraforo-boton icon-registro"><a href="foro/ucp.php?mode=register">Registrarse</a></li>
+		</ul>
+		<div class="barraforo-social">
+			<div class="barraforo-social-iconos">
+				<a class="boton-twitter" title="Twitter" href="https://www.twitter.com/PiratekingES"></a>
+				<a class="boton-rss" title="Feed RSS" href="foro/feed.php?mode=news"></a>
+				<a class="boton-facebook" title="Facebook" href="https://www.facebook.com/pages/PiratekingES/221708571290903"></a>
+			</div>
+		</div>
+		</div>
+		   
+	<!-- fin cabecera -->
+        <div id="publicidad">
+        <div class="ultimoanime"><img src="fondos/ultimoanime.png" alt="Último Anime" style="float:left;" /></div>
+        <div class="ultimomanga"><img src="fondos/ultimomanga.png" alt="Último Manga" style="float:right;" /></div>
+        <!-- inicio banner -->
+		<div id="23912-1"><a target="_blank" href="https://sered.net/?utm_source=pirateking&amp;utm_medium=banner&amp;utm_campaign=foro"><img src="https://sered.net/banner/banner-pirate-king-728x90.gif"/></a></div>
+		<!-- fin banner -->
+		</div>
+	<div id="menu" role="navigation">
+	<!-- inicio menú -->
+<a onClick="muestra_oculta('menu')" class="boton-mostrar"></a>
+
+			<nav>
+			<h2 class="menu-cabecera">General</h2>
+			<ul>
+			<li><a href="./">Índice</a></li>
+			<li><a href="esp_historia.html">Historia</a></li>
+			<li><a href="esp_tripulaciones.html">Personajes</a></li>
+			<li><a href="esp_frutos.html">Akuma no Mi</a></li>
+			<li><a href="esp_ataques.html">Guía Ataques</a></li>
+			<li><a href="esp_oda.html">Eiichiro Oda</a></li>
+			<li><a href="esp_pandaman.html">Pandaman</a></li>
+			<li><a href="esp_localizaciones.html">Localizaciones</a></li>
+			<li><a href="esp_timeline.html">Línea Temporal</a></li>
+			<li><a href="esp_marina.html">Jerarquía Marina</a></li>				
+			<li><a href="esp_enciclopedia.html">Enciclopedia</a></li>
+			<li><a href="esp_inspiracion.html">Inspiración</a></li>
+			</ul>
+			</nav>
+			
+			<nav>
+			<h2 class="menu-cabecera">Manga</h2>
+			<ul>
+			<li><a href="esp_manga.html">Guía Manga</a></li>
+			<li><a href="esp_logs.html">One Piece Logs</a></li>
+			<li><a href="esp_miniarc.html">Minihistorias</a></li>
+			<li><a href="esp_artbooks.html">Artbooks</a></li>
+			<li><a href="esp_novelas.html">Novelas</a></li>
+			<li><a href="esp_animecomic.html">Anime Comics</a></li>
+			<li><a href="esp_crossover.html">Crossovers</a></li>			
+			<li><a href="esp_especiales.html">Especiales</a></li>
+			<li><a href="esp_sbs.html">SBS</a></li>
+			</ul>
+			</nav>
+			
+			<nav>
+			<h2 class="menu-cabecera">An<span>i</span>me</h2>
+			<ul>
+			<li><a href="esp_anime.html">Guía Anime</a></li>
+			<li><a href="esp_peliculas.html">Películas</a></li>
+			<li><a href="esp_cortos.html">Cortos</a></li>
+			<li><a href="esp_promo.html">Promo OVA</a></li>			
+			<li><a href="esp_espTV.html">Especiales TV</a></li>
+			<li><a href="esp_seiyuus.html">Seiyuus</a></li>
+			<li><a href="esp_musica.html">Temas musicales</a></li>
+			</ul>
+			</nav>
+			
+			<nav>
+			<h2 class="menu-cabecera">Spo<span>i</span>lers</h2>
+			<ul>
+			<li><a href="esp_poneglyph.html">Poneglyph</a></li>
+			<li><a href="esp_sacerdotes.html">Los 4 sacerdotes</a></li>
+			<li><a href="esp_noland.html">Noland</a></li>
+			<li><a href="esp_davybackfight.html">Davy Back Fight</a></li>
+			<li><a href="esp_umiressha.html">Umi Ressha</a></li>
+			<li><a href="esp_cipherpol9.html">Cipher Pol 9</a></li>
+			<li><a href="esp_ohara.html">Ohara</a></li>
+			</ul>
+			</nav>
+
+			<nav>
+			<h2 class="menu-cabecera">Med<span>i</span>a</h2>
+			<ul>
+			<li><a href="esp_colorspreads.html">Colorspreads</a></li>
+			<li><a href="esp_wallpapers.html">Wallpapers</a></li>
+			<li><a href="esp_gifs.html">Gifs</a></li>
+			<li><a href="esp_avatares.html">Avatares</a></li>
+			<li><a href="esp_fansubs.html">Fansubs</a></li>
+			<li><a href="esp_scanlations.html">Scanlations</a></li>
+			<li><a href="esp_discografia.html">Discografía</a></li>
+			<li><a href="esp_videojuegos.html">Videojuegos</a></li>
+			<li><a href="esp_cardgame.html">Card Game</a></li>
+			<li><a href="esp_encuestas.html">Encuestas</a></li>
+			<li><a href="esp_busqueda.html">Buscar</a></li>			
+			</ul>
+			</nav>
+			
+			<nav>
+			<h2 class="menu-cabecera">Henta<span>i</span></h2>
+			<ul>
+			<li><a href="esp_doujinshi.html">Doujinshi</a></li>
+			<li><a href="esp_hgames.html">Hentai Games</a></li>
+			</ul>
+			</nav>
+
+			<nav>
+			<h2 class="menu-cabecera">Contactar</h2>
+			<ul>
+			<li><a href="foro/">Foro</a></li>
+			<li><a href="irc://irc.rizon.net/Pirateking/">IRC</a></li>
+			<li><a href="esp_mailus.html">E-mail</a></li>
+			<li><a href="esp_enlazanos.html">Enlazanos</a></li>
+			<li><a href="esp_staff.html">Staff</a></li>
+			</ul>
+			</nav>
+			
+			<div class="menu-adaptable">
+			<h2 class="menu-cabecera">Af<span>i</span>liados</h2>
+		<div class="banners">
+<a href="http://www.devilsfruitsite.com" target="_blank"><img src="afiliados/devilsfruit.gif" class="minib" alt="Devils Fruit" /></a>
+<br />
+<a href="http://vamosajugar.net/everyonepeace/" target="_blank"><img src="afiliados/everyonepeace.gif" class="minib" alt="Every-One Peace!" /></a>
+<br />
+<a href="http://www.jesulink.com/" target="_blank"><img src="afiliados/jesulink.gif" class="minib" alt="Jesulink" /></a>
+<br />
+<a href="http://www.onepiececrew.com" target="_blank"><img src="afiliados/onepiececrew.gif" class="minib" alt="One Piece Crew" /></a>
+<br />
+<a href="http://www.pieceproject.com/" target="_blank"><img src="afiliados/pieceproject.gif" class="minib" alt="piecePROJECT" /></a>
+<br />
+<a href="http://www.raftel.net/" target="_blank"><img src="afiliados/raftel.gif" class="minib" alt="Raftel" /></a>
+<br />
+<a href="http://www.shichibukai.net/" target="_blank"><img src="afiliados/shichi.gif" class="minib" alt="Shichibukai" /></a>
+<br />
+<a href="http://www.volonte-d.com/" target="_blank"><img src="afiliados/volonte.gif" class="minib" alt="Volonte du D" /></a>
+<br />
+<br />
+&bull; <a href="esp_afiliacion.html">Más afiliados</a> &bull;
+</div>
+
+			</div>
+						
+			<nav>
+			<h2 class="menu-cabecera">Id<span>i</span>oma</h2>
+			<ul>
+			<li><img src="fondos/en_lang.gif" alt="ingles" border="0" style="vertical-align:middle;" /> <a href="eng_home.html">Inglés</a></li>
+			<li><img src="fondos/es_lang.gif" alt="español" border="0" style="vertical-align:middle;" /> <a href="esp_home.html">Español</a></li>
+			</ul>
+			</nav>
+			
+			<nav class="menu-adaptable">
+			<h2 class="menu-cabecera">Stats</h2>
+			<ul>
+			<li>Online desde 25/11/04</li>
+		<li>Piratas a bordo: 45.270</li>
+		<li>Piratas online: 611</li></ul>
+</nav>
+<a onClick="muestra_oculta('menu')" class="boton-mostrar2"></a>
+	<!-- fin menú -->
+	</div>
+	<main role="main">
+	<a onClick="muestra_oculta('menu')" class="boton-menuadaptable"></a>
+	<script type="text/javascript">
+		function muestra_oculta(id){
+			if (document.getElementById){ 
+				var el = document.getElementById(id); 
+				el.style.display = (el.style.display == 'block') ? 'none' : 'block'; 
+			}
+		}
+	</script>
+ 
+	<!-- inicio contenido -->
+	<article>
+<header class="articulo-cabecera"><h1>Noticias</h1></header>
+	<section>
+		<div class="noticias-cabecera">Publicado por: <a href="foro/memberlist.php?mode=viewprofile&amp;u=4" target="_blank" class="noticias-enlace">Citan</a><br />
+		Fecha: <span class="noticias-fecha">09-06-2024</span><span class="noticias-hora">3:37 pm</span></div>
+		<div class="noticias">
+		<h2 class="noticias-titulo">Episodio 1.108 RAW</h2>
+		<div class="noticias-contenido">
+		¡Incomprensible! ¡La rebelión de los Seraphim!:<br/>
+<br/>
+Después de convertir a York en piedra, el S-Snake anda descontrolado y no responde a las órdenes de Lilith. Al mismo tiempo, el S-Bear y el S-Hawk han llegado hasta la entrada de la sala de control. Su objetivo parece ser eliminar al CP0, con lo que Lucci y Kaku se prestan a ayudar si les liberan. Shaka sospecha que alguno de los otros “Satellites” les ha debido dar la orden a los Seraphim y por eso le ignoran. Luffy y Zoro discuten la posibilidad de liberar al CP0, cuando son atacados por el S-Hawk, que muestra tener las habilidades de la Supa Supa no Mi.<br/>
+<br/>
+<div align="center"><img src="https://www.pirate-king.es/anuncios/epi1108.jpg" alt="Episodio 1.108 RAW" /></div>
+		</div>
+		</div>
+		<div class="noticias-pie">
+			<div class="noticias-comentario"><a href="foro/viewtopic.php?t=37663">Comentar (1)</a></div>
+			<div tabindex="0" class="onclick-menu-noticias">
+			<i class="minisharebutton" title="Share This"></i>
+	    		<div class="onclick-menu-content">
+	    			<input class="shareurl" value="https://www.pirate-king.es/foro/viewtopic.php?t=37663" />      
+					<div class="article-share-links">
+					<a href="https://twitter.com/share?url=https://www.pirate-king.es/foro/viewtopic.php?t=37663" class="article-share-twitter" title="Twitter"></a>
+    	    		<a href="https://plus.google.com/share?url=https://www.pirate-king.es/foro/viewtopic.php?t=37663" class="article-share-google" title="Google +"></a>
+	        		<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.pirate-king.es/foro/viewtopic.php?t=37663" class="article-share-facebook" title="Facebook"></a>
+    	    	</div>
+	    	</div>
+			</div>
+		</div>
+		</section>
+		<section>
+		<div class="noticias-cabecera">Publicado por: <a href="foro/memberlist.php?mode=viewprofile&amp;u=4" target="_blank" class="noticias-enlace">Citan</a><br />
+		Fecha: <span class="noticias-fecha">02-06-2024</span><span class="noticias-hora">4:02 pm</span></div>
+		<div class="noticias">
+		<h2 class="noticias-titulo">Capítulo 1.116 Manga Plus</h2>
+		<div class="noticias-contenido">
+		Conflicto:<br/>
+<br/>
+Mientras Vegapunk sigue hablando de que la guerra aún no ha acabado, Imu observa un cuadro de una mujer que se asemeja a Vivi. Vegapunk revela que en su búsqueda por la energía ilimitada creó la Mother Flame, pero una parte de esta fue robada y posteriormente usada como combustible para el “Arma Ancestral” utilizada en la destrucción del Reino de Lulusia. Este suceso es el que prueba su teoría de que el mundo se hunde y se disculpa ante todos por haber sido utilizado para ello. Vegapunk continúa diciendo que Joy Boy legó las tres “Armas Ancestrales” a las generaciones venideras, aunque no sabe sus motivaciones.  Explica que todavía quedan muchos misterios por aclarar, pero que hay un grupo que lo sabe todo, la antigua tripulación del Rey de los Piratas. Mientras tanto, York avisa al Gorousei de que ha llegado a la conclusión de que la señal está siendo enviada desde el Fabirio Phase, el “gigante de hierro” está protegiéndola. Vegapunk se pregunta por qué la tripulación del Rey de los Piratas no hizo nada, mientras vemos a Rayleigh borracho sobre la barra del bar pidiendo que no arruinen la “diversión” a los jóvenes.<br/>
+<br/>
+<div align="center"><img src="https://www.pirate-king.es/anuncios/cap1116.jpg" alt="Capítulo 1.116 Manga Plus" /></div><br/>
+<br/>
+Lee este capítulo en <a href="https://mangaplus.shueisha.co.jp/titles/200016" target="_blank">Manga Plus</a>.
+		</div>
+		</div>
+		<div class="noticias-pie">
+			<div class="noticias-comentario"><a href="foro/viewtopic.php?t=37652">Comentar (4)</a></div>
+			<div tabindex="0" class="onclick-menu-noticias">
+			<i class="minisharebutton" title="Share This"></i>
+	    		<div class="onclick-menu-content">
+	    			<input class="shareurl" value="https://www.pirate-king.es/foro/viewtopic.php?t=37652" />      
+					<div class="article-share-links">
+					<a href="https://twitter.com/share?url=https://www.pirate-king.es/foro/viewtopic.php?t=37652" class="article-share-twitter" title="Twitter"></a>
+    	    		<a href="https://plus.google.com/share?url=https://www.pirate-king.es/foro/viewtopic.php?t=37652" class="article-share-google" title="Google +"></a>
+	        		<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.pirate-king.es/foro/viewtopic.php?t=37652" class="article-share-facebook" title="Facebook"></a>
+    	    	</div>
+	    	</div>
+			</div>
+		</div>
+		</section>
+		<section>
+		<div class="noticias-cabecera">Publicado por: <a href="foro/memberlist.php?mode=viewprofile&amp;u=4" target="_blank" class="noticias-enlace">Citan</a><br />
+		Fecha: <span class="noticias-fecha">02-06-2024</span><span class="noticias-hora">4:02 pm</span></div>
+		<div class="noticias">
+		<h2 class="noticias-titulo">Episodio 1.107 RAW</h2>
+		<div class="noticias-contenido">
+		¡Un escalofrío! La mano maligna que se acerca al laboratorio:<br/>
+<br/>
+Bonney ve un recuerdo de su padre donde es golpeado por otros esclavos pidiéndole que regrese a Mary Geoise, hasta que es expulsada de su memoria. Pythagoras continúa inspeccionando una de las torres del Labo, cuando nota una presencia y repentinamente todo vuela por los aires. En la sala de control Shaka puede ver cómo una extraña sombra destruye la cámara. Mientras tanto, la banda de Sombrero de Paja continúa buscando a Vegapunk a lo largo del edificio. Las comunicaciones se cortan repentinamente y Shaka comprueba cómo otros monitores empiezan a caer. El grupo de Usopp y Franky llegan al lugar de la explosión, allí descubren que Pythagoras logró salvarse separando su cabeza. Pero antes de que les pueda explicar lo sucedido, el S-Snake aparece y convierte a York en piedra.<br/>
+<br/>
+<div align="center"><img src="https://www.pirate-king.es/anuncios/epi1107.jpg" alt="Episodio 1.107 RAW" /></div>
+		</div>
+		</div>
+		<div class="noticias-pie">
+			<div class="noticias-comentario"><a href="foro/viewtopic.php?t=37651">Comentar (1)</a></div>
+			<div tabindex="0" class="onclick-menu-noticias">
+			<i class="minisharebutton" title="Share This"></i>
+	    		<div class="onclick-menu-content">
+	    			<input class="shareurl" value="https://www.pirate-king.es/foro/viewtopic.php?t=37651" />      
+					<div class="article-share-links">
+					<a href="https://twitter.com/share?url=https://www.pirate-king.es/foro/viewtopic.php?t=37651" class="article-share-twitter" title="Twitter"></a>
+    	    		<a href="https://plus.google.com/share?url=https://www.pirate-king.es/foro/viewtopic.php?t=37651" class="article-share-google" title="Google +"></a>
+	        		<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.pirate-king.es/foro/viewtopic.php?t=37651" class="article-share-facebook" title="Facebook"></a>
+    	    	</div>
+	    	</div>
+			</div>
+		</div>
+		</section>
+		<section>
+		<div class="noticias-cabecera">Publicado por: <a href="foro/memberlist.php?mode=viewprofile&amp;u=3" target="_blank" class="noticias-enlace">H-Samba</a><br />
+		Fecha: <span class="noticias-fecha">26-05-2024</span><span class="noticias-hora">4:06 pm</span></div>
+		<div class="noticias">
+		<h2 class="noticias-titulo">Capítulo 1.115 Manga Plus</h2>
+		<div class="noticias-contenido">
+		Fragmentos continentales:<br/>
+<br/>
+Las reacciones a las palabras de Vegapunk continúan a lo largo del mundo. Vegapunk continúa explicando que el pasado hubo una gran guerra entre dos ideologías distintas en la que Joy Boy se enfrentó a lo que hoy sería el Gobierno Mundial. El antiguo reino estaba tan avanzado, que sus armas serían imposibles de replicar por la ciencia actual.  Mientras tanto, Edison contacta con Stussy para que huya, ya que el Gorousei ha sido capaz de sortear la barrera sin problema.  El Gorousei sigue neutralizando todos los Den Den Mushi de la isla, hasta que Nusjuro decide ir más allá y lanza un ataque que corta la isla flotante por la mitad, liberando a los Seraphim y agentes del gobierno que estaban retenidos en el sótano. Vegapunk sigue explicando que la batalla acabó con la derrota de Joy Boy, dejando un daño irreparable. El mundo solía tener continentes, pero el nivel del mar subió 200 metros dejándolos sumergidos. Vegapunk está convencido de que esa calamidad fue provocada por las Armas Ancestrales. Esas armas siguen existiendo y pueden volverse a usar, por lo que la guerra no ha finalizado.<br/>
+<br/>
+<div align="center"><img src="https://www.pirate-king.es/anuncios/cap1115.jpg" alt="Capítulo 1.115 Manga Plus" /></div><br/>
+<br/>
+Lee este capítulo en <a href="https://mangaplus.shueisha.co.jp/titles/200016" target="_blank">Manga Plus</a>.
+		</div>
+		</div>
+		<div class="noticias-pie">
+			<div class="noticias-comentario"><a href="foro/viewtopic.php?t=37640">Comentar (0)</a></div>
+			<div tabindex="0" class="onclick-menu-noticias">
+			<i class="minisharebutton" title="Share This"></i>
+	    		<div class="onclick-menu-content">
+	    			<input class="shareurl" value="https://www.pirate-king.es/foro/viewtopic.php?t=37640" />      
+					<div class="article-share-links">
+					<a href="https://twitter.com/share?url=https://www.pirate-king.es/foro/viewtopic.php?t=37640" class="article-share-twitter" title="Twitter"></a>
+    	    		<a href="https://plus.google.com/share?url=https://www.pirate-king.es/foro/viewtopic.php?t=37640" class="article-share-google" title="Google +"></a>
+	        		<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.pirate-king.es/foro/viewtopic.php?t=37640" class="article-share-facebook" title="Facebook"></a>
+    	    	</div>
+	    	</div>
+			</div>
+		</div>
+		</section>
+		<section>
+		<div class="noticias-cabecera">Publicado por: <a href="foro/memberlist.php?mode=viewprofile&amp;u=3" target="_blank" class="noticias-enlace">H-Samba</a><br />
+		Fecha: <span class="noticias-fecha">26-05-2024</span><span class="noticias-hora">4:06 pm</span></div>
+		<div class="noticias">
+		<h2 class="noticias-titulo">Episodio 1.106 RAW</h2>
+		<div class="noticias-contenido">
+		¡Un acontecimiento anormal! ¡A buscarlo! El Dr. Vegapunk:<br/>
+<br/>
+Los agentes del gobierno se enfrentan a un nuevo tipo de Pacifista equipado con el Bubble Shield, el último invento de Vegapunk. Sentoumaru está siendo tratado de sus heridas mientras la Marina trata de ponerse en contacto con él, sin saber que ya cambió de bando. Sentoumaru decide desplegar al resto de Pacifistas Mark III para que asistan en la huida de Vegapunk. Mientras tanto, Shaka utiliza los monitores para buscar a Vegapunk y Bonney, que siguen desaparecidos. Bonney se encuentra dentro de la memoria de su padre, ahí puede ver a Kuma de joven. Por su parte, Pythagoras inspecciona una de las torres del Labo. Mientras Luffy y Zoro se quedan atrás para vigilar a Lucci y Kaku, los demás deciden salir en busca de Vegapunk. Finalmente, Morgans se hace eco de los acontecimientos de Egghead, pretende publicar que Luffy ha secuestrado a Vegapunk, pero la Princesa Vivi se lo recrimina. Sin embargo, Morgans alude que en su trabajo lo importante es el entretenimiento.<br/>
+<br/>
+<div align="center"><img src="https://www.pirate-king.es/anuncios/epi1106.jpg" alt="Episodio 1.106 RAW" /></div>
+		</div>
+		</div>
+		<div class="noticias-pie">
+			<div class="noticias-comentario"><a href="foro/viewtopic.php?t=37639">Comentar (2)</a></div>
+			<div tabindex="0" class="onclick-menu-noticias">
+			<i class="minisharebutton" title="Share This"></i>
+	    		<div class="onclick-menu-content">
+	    			<input class="shareurl" value="https://www.pirate-king.es/foro/viewtopic.php?t=37639" />      
+					<div class="article-share-links">
+					<a href="https://twitter.com/share?url=https://www.pirate-king.es/foro/viewtopic.php?t=37639" class="article-share-twitter" title="Twitter"></a>
+    	    		<a href="https://plus.google.com/share?url=https://www.pirate-king.es/foro/viewtopic.php?t=37639" class="article-share-google" title="Google +"></a>
+	        		<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.pirate-king.es/foro/viewtopic.php?t=37639" class="article-share-facebook" title="Facebook"></a>
+    	    	</div>
+	    	</div>
+			</div>
+		</div>
+		</section>
+		<section>
+		<div class="noticias-cabecera">Publicado por: <a href="foro/memberlist.php?mode=viewprofile&amp;u=4" target="_blank" class="noticias-enlace">Citan</a><br />
+		Fecha: <span class="noticias-fecha">19-05-2024</span><span class="noticias-hora">3:04 pm</span></div>
+		<div class="noticias">
+		<h2 class="noticias-titulo">Episodio 1.105 RAW</h2>
+		<div class="noticias-contenido">
+		¡Una hermosa traición! La infiltrada, Stussy:<br/>
+<br/>
+Resulta que Stussy era el otro aliado con el que Vegapunk contaba. Sin embargo, los Seraphim todavía están descontrolados, Stussy no puede anular la orden de Lucci, pero Edison logra salir a tiempo y darles una orden superior en la jerarquía. La crisis ahora está controlada, pero Vegapunk anda desaparecido. Mientras tanto, Marco ha logrado regresar a Sphinx. Allí le cuentan que Weevil luchó contra la Marina para proteger el hogar de su padre, pero luego enviaron a Ryokugyuu y fue arrestado. Miss Buckin llora la pérdida de su hijo y reprocha a Marco que aún no crea en la paternidad de Shirohige, pero sabe que Vegapunk puede probarla. Por su parte, la flota de Kizaru sigue avanzando, en ella llevan como huésped a uno de los miembros del Gorousei.<br/>
+<br/>
+<div align="center"><img src="https://www.pirate-king.es/anuncios/epi1105.jpg" alt="Episodio 1.105 RAW" /></div>
+		</div>
+		</div>
+		<div class="noticias-pie">
+			<div class="noticias-comentario"><a href="foro/viewtopic.php?t=37630">Comentar (1)</a></div>
+			<div tabindex="0" class="onclick-menu-noticias">
+			<i class="minisharebutton" title="Share This"></i>
+	    		<div class="onclick-menu-content">
+	    			<input class="shareurl" value="https://www.pirate-king.es/foro/viewtopic.php?t=37630" />      
+					<div class="article-share-links">
+					<a href="https://twitter.com/share?url=https://www.pirate-king.es/foro/viewtopic.php?t=37630" class="article-share-twitter" title="Twitter"></a>
+    	    		<a href="https://plus.google.com/share?url=https://www.pirate-king.es/foro/viewtopic.php?t=37630" class="article-share-google" title="Google +"></a>
+	        		<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.pirate-king.es/foro/viewtopic.php?t=37630" class="article-share-facebook" title="Facebook"></a>
+    	    	</div>
+	    	</div>
+			</div>
+		</div>
+		</section>
+		<section>
+		<div class="noticias-cabecera">Publicado por: <a href="foro/memberlist.php?mode=viewprofile&amp;u=3" target="_blank" class="noticias-enlace">H-Samba</a><br />
+		Fecha: <span class="noticias-fecha">12-05-2024</span><span class="noticias-hora">4:11 pm</span></div>
+		<div class="noticias">
+		<h2 class="noticias-titulo">Capítulo 1.114 Manga Plus</h2>
+		<div class="noticias-contenido">
+		Las alas de Ícaro:<br/>
+<br/>
+La conclusión de Vegapunk causa todo tipo de reacciones, algunos ríen ante la disparatada idea de que el mundo vaya a un hundirse, mientras otros se hayan confusos. Pero en lo profundo de Impel Down, Doflamingo sugiere a Magellan de que deberían evacuar a un lugar más alto. El Gorousei se desespera por detener la transmisión como sea, Saturn se abre paso hasta el interior del laboratorio donde se encuentra el Mother Flame. Vegapunk continúa explicando que su pecado fue acercarse demasiado al Sol en un intento de encontrar una fuente de energía infinita. Pero para entender lo que va a pasar, primero hay que comprender lo sucedido en los cien años de vacío. Para ello estudió los Poneglyphs, cometiendo su otro pecado. En ese periodo existió una persona que luchaba de forma semejante al dios Nika de las fabulas de Elbaf. Se llamaba Joy Boy y fue el primer pirata.<br/>
+<br/>
+<div align="center"><img src="https://www.pirate-king.es/anuncios/cap1114.jpg" alt="Capítulo 1.114 Manga Plus" /></div><br/>
+<br/>
+Lee este capítulo en <a href="https://mangaplus.shueisha.co.jp/titles/200016" target="_blank">Manga Plus</a>.
+		</div>
+		</div>
+		<div class="noticias-pie">
+			<div class="noticias-comentario"><a href="foro/viewtopic.php?t=37624">Comentar (1)</a></div>
+			<div tabindex="0" class="onclick-menu-noticias">
+			<i class="minisharebutton" title="Share This"></i>
+	    		<div class="onclick-menu-content">
+	    			<input class="shareurl" value="https://www.pirate-king.es/foro/viewtopic.php?t=37624" />      
+					<div class="article-share-links">
+					<a href="https://twitter.com/share?url=https://www.pirate-king.es/foro/viewtopic.php?t=37624" class="article-share-twitter" title="Twitter"></a>
+    	    		<a href="https://plus.google.com/share?url=https://www.pirate-king.es/foro/viewtopic.php?t=37624" class="article-share-google" title="Google +"></a>
+	        		<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.pirate-king.es/foro/viewtopic.php?t=37624" class="article-share-facebook" title="Facebook"></a>
+    	    	</div>
+	    	</div>
+			</div>
+		</div>
+		</section>
+		</article>
+       
+	<!-- fin contenido -->
+	</main>
+	<footer id="pie" role="contentinfo">
+	<!-- inicio pie -->
+	
+	<!--
+	
+	<rdf:RDF xmlns="http://web.resource.org/cc/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<Work rdf:about="">
+	   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/3.0/es/" />
+	</Work>
+	
+	<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/3.0/es/">
+	   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+	   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+	   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+	   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+	   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+	   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+	   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+	</License>
+	
+	</rdf:RDF>
+	
+	-->
+		<div class="creditos">
+			2004-2024 op-pirateking Copyright &copy; diseñado por <a href="mailto:xenogearsifm@gmail.com">Xenogearsifm</a>.<br />
+			Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/">licencia de Creative Commons</a>.<br />
+			Todas las marcas comerciales &trade; son de sus respectivos dueños.<br />
+			One Piece Copyright &copy; Eiichiro Oda y Toei Animation.
+		</div>
+        <div class="believe">BELIEVE &hearts; IN YOU</div>
+	<!-- fin pie -->
+	</footer>
+</div>
+</body>
+</html>

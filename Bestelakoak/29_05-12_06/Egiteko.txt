@@ -1,0 +1,83 @@
+Probatzen joan 4 aukerak interactions-ak lortzeko testeatuko de aplikazioan
+
+- Grid screenshot: Kuadrikula egin eta honekin errazago izango da haukeratzea elkarrekintza. Where do i hit?
+
+        Bi puppeteer desberdin plugin desberdinekin elementuak lortzeko
+
+- Accesibility screen reader. HTML -> HTML screen reader
+    Web developer erakutsi Accesibility test-a
+
+    NVDA oso ondo identifikatzen ditu elementuak, baina hitzezkoa da,  APIa begiratu poyhton-etik arrankatzeko
+        https://www.youtube.com/watch?v=HAVs5GhwxtE  32:30
+
+    Vimium
+    surfingKeys
+    Key Jump Keyboard Navigation
+    
+- Selenium. Which Gui elements. Where do i work?
+
+    Script-a interactuable elements-en JSON sortzeko
+
+
+- LLM + Roboframework
+
+    Sortu virtual env berria
+    Test desberdinak interaction bakoitzarentzat? Dena exekuzio berean?
+
+
+
+    Backend noderekin montatuta, python exekutatzeko endpoint montatu pythonekin egindako programak exekutatzeko 
+
+    Interactive edo interaction elements
+
+
+    Alde batetik nabigazio diagrama atera egin daitekeen guztiarekin
+
+- ABDD (Selenium-ekin integratu?)
+	Cucumber lengoia zehatz batekion kodearen eskeletoa sortzen dizu. LLMari eskatu definitzeko lengoaian oinarrituako scritp-a kontextu bezala pasata
+	Google AI Studio Gemini erabiltzeko
+	User story task
+
+- VisionGPT
+
+groq: llama mistral eta Gemma
+Gemini
+ChatGPT4
+
+Egiteko hurrengo asteak
+
+28 12:00etan bilera
+
+Hurrengo astetarako lana
+
+	- Repoak bilatu testeaketa egiteko
+	- Aplikazioaren frontend 
+	- MongoDB json-ekin
+	- LLMari adibideak pasata askoz hobeto, existitzen den repo batetik
+	- Probatzen joan teknologia desberdinak (repo bat edo gehiagorekin, login eta register ... Bilatu cucumberekin eginda dauden testak dituztenak horrela adibideak izateko)
+	- Begiratu Geminiren APIa erabiltzeko
+	- Repo to txt
+	- Proba berdinak LLM desberdinekin
+
+Proiektuak hiru zati 
+	backend cucumber, repoen kudeaketa (deskargatu repoak...-), LLM-ekin hitz egin eta testen sorrera 5 osagai 
+	frontend firebase, pasa firebaseko guztia llm-ari eta kopiatu reverse engineering react osagaietara
+	mongodb docker
+
+Dena ubuntu 20.04 LTS
+NODE 20.13.0
+
+Nola Dockerizatu docker plugin visual studio coden, docker plugin, copillot chat, cucumber Jest
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>UI.Vision Shortcut Page</title>
+  </head>
+  <body>
+    <h3>Command line:</h3>
+    <a id="run" href="ui.vision.html?direct=1&savelog=log.txt&macro=ProbaGoogle.json">Click here</a>
+    <br>
+    <br>
+	<!-- To start another macro just edit this HTML file and change the macro name in the command line above^. -->
+	<!-- For more command line parameters see https://ui.vision/rpa/docs#cmd -->
+    <script>
+      window.location.href = document.getElementById("run").getAttribute("href");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+NVDA dll-a deskargatu
+	Servidor RPC-rena arazoa konpondu, NVDA instalatu behar zen
+	Dokumentazioa begiratu, script bat egiten saiatzeko
+	https://www.webbie.org.uk/nvda/
+	Insert + f7 lista
+	https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts#nvda-the_basics
+	Agian Script batekin informazioa lor daiteke

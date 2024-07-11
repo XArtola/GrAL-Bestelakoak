@@ -1,0 +1,226 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "name": "http://localhost:3000",
+            "screenshot": "screenshots/0.png"
+        },
+        {
+            "id": 2,
+            "name": "http://localhost:3000/login",
+            "screenshot": "screenshots/1.png"
+        },
+        {
+            "id": 3,
+            "name": "http://localhost:3000/dashboard",
+            "screenshot": "screenshots/2.png"
+        },
+        {
+            "id": 4,
+            "name": "http://localhost:3000/dashboard/invoices",
+            "screenshot": "screenshots/3.png"
+        },
+        {
+            "id": 5,
+            "name": "http://localhost:3000/dashboard/customers",
+            "screenshot": "screenshots/4.png"
+        },
+        {
+            "id": 6,
+            "name": "http://localhost:3000/dashboard/invoices/create",
+            "screenshot": "screenshots/5.png"
+        },
+        {
+            "id": 7,
+            "name": "http://localhost:3000/dashboard/invoices/d4467c12-5d70-4c50-8de6-647fa3c77688/edit",
+            "screenshot": "screenshots/6.png"
+        },
+        {
+            "id": 8,
+            "name": "http://localhost:3000/dashboard/invoices/e1e85113-86fe-4623-b82d-fc0a3781a395/edit",
+            "screenshot": "screenshots/7.png"
+        },
+        {
+            "id": 9,
+            "name": "http://localhost:3000/dashboard/invoices/57b7f28e-0381-45ac-8516-10bd2d1e1899/edit",
+            "screenshot": "screenshots/8.png"
+        },
+        {
+            "id": 10,
+            "name": "http://localhost:3000/dashboard/invoices/19e6c146-ea66-4e3b-8417-5186ba52cf23/edit",
+            "screenshot": "screenshots/9.png"
+        },
+        {
+            "id": 11,
+            "name": "http://localhost:3000/dashboard/invoices/c506c149-7fec-4c36-9e86-0b205896c28b/edit",
+            "screenshot": "screenshots/10.png"
+        },
+        {
+            "id": 12,
+            "name": "http://localhost:3000/dashboard/invoices/a25bf22d-a63a-4b8d-9fce-d67e97edc759/edit",
+            "screenshot": "screenshots/11.png"
+        }
+    ],
+    "links": [
+        {
+            "source": 1,
+            "target": 2,
+            "label": "a - Log in"
+        },
+        {
+            "source": 2,
+            "target": 3,
+            "label": "a - Home"
+        },
+        {
+            "source": 2,
+            "target": 4,
+            "label": "a - Invoices"
+        },
+        {
+            "source": 2,
+            "target": 5,
+            "label": "a - Customers"
+        },
+        {
+            "source": 3,
+            "target": 3,
+            "label": "a - Home"
+        },
+        {
+            "source": 3,
+            "target": 4,
+            "label": "a - Invoices"
+        },
+        {
+            "source": 3,
+            "target": 5,
+            "label": "a - Customers"
+        },
+        {
+            "source": 4,
+            "target": 3,
+            "label": "a - Home"
+        },
+        {
+            "source": 4,
+            "target": 4,
+            "label": "a - Invoices"
+        },
+        {
+            "source": 4,
+            "target": 5,
+            "label": "a - Customers"
+        },
+        {
+            "source": 4,
+            "target": 6,
+            "label": "a - Create Invoice"
+        },
+        {
+            "source": 4,
+            "target": 7,
+            "label": "a - "
+        },
+        {
+            "source": 4,
+            "target": 8,
+            "label": "a - "
+        },
+        {
+            "source": 4,
+            "target": 9,
+            "label": "a - "
+        },
+        {
+            "source": 4,
+            "target": 10,
+            "label": "a - "
+        },
+        {
+            "source": 4,
+            "target": 11,
+            "label": "a - "
+        },
+        {
+            "source": 4,
+            "target": 12,
+            "label": "a - "
+        },
+        {
+            "source": 4,
+            "target": 7,
+            "label": "a - "
+        },
+        {
+            "source": 4,
+            "target": 8,
+            "label": "a - "
+        },
+        {
+            "source": 4,
+            "target": 9,
+            "label": "a - "
+        },
+        {
+            "source": 4,
+            "target": 10,
+            "label": "a - "
+        },
+        {
+            "source": 4,
+            "target": 11,
+            "label": "a - "
+        },
+        {
+            "source": 4,
+            "target": 12,
+            "label": "a - "
+        },
+        {
+            "source": 5,
+            "target": 3,
+            "label": "a - Home"
+        },
+        {
+            "source": 5,
+            "target": 4,
+            "label": "a - Invoices"
+        },
+        {
+            "source": 5,
+            "target": 5,
+            "label": "a - Customers"
+        },
+        {
+            "source": 6,
+            "target": 3,
+            "label": "a - Home"
+        },
+        {
+            "source": 6,
+            "target": 4,
+            "label": "a - Invoices"
+        },
+        {
+            "source": 6,
+            "target": 5,
+            "label": "a - Customers"
+        },
+        {
+            "source": 6,
+            "target": 4,
+            "label": "a - Invoices"
+        },
+        {
+            "source": 6,
+            "target": 6,
+            "label": "a - Create Invoice"
+        },
+        {
+            "source": 6,
+            "target": 4,
+            "label": "a - Cancel"
+        }
+    ]
+}

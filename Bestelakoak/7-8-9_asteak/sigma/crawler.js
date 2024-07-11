@@ -1,0 +1,114 @@
+const puppeteer = require('puppeteer');
+const axios = require('axios'); // Not strictly necessary for this script, but included for completeness
+const fs = require('fs');
+const readline = require('readline');
+
+const baseUrl = 'http://localhost:3000'; // Replace with your starting URL
+const crawlDepth = 5; // Number of levels deep to crawl (adjust as needed)
+const userInteractions = {}; // Stores user interaction data across pages
+const visitedUrls = []; // Keeps track of visited URLs
+
+const username = 'user@nextmail.com'; // Replace with your username
+const password = '123456'; // Replace with your password
+
+let browser, page; // Declare browser and page globally
+let screenshotcnt = 0;
+
+async function crawlPage(url, depth = 1) {
+  if (depth > crawlDepth || visitedUrls.includes(url)) {
+    return; // Reached maximum crawl depth or already visited URL
+  }
+
+  visitedUrls.push(url); // Add the URL to the visited list
+
+  try {
+    // Ensure browser and page are initialized only once
+    if (!page) {
+      browser = await puppeteer.launch({ headless: true }); // Launch headless Chrome
+      page = await browser.newPage();
+    }
+
+    // Fetch the page content using Puppeteer
+    await page.goto(url);
+
+  
+
+
+    // Check if there is a login form on the page
+    const loginButton = url.includes("login") //? await page.$('button[aria-disabled="false"]:contains("Log in")') : null;
+    if (loginButton) {
+      // Fill in the login form
+      await page.type('input[name="email"]', username);
+      await page.type('input[name="password"]', password);
+      const loginButtonText = await page.$eval('button[aria-disabled="false"]', button => button.textContent.trim());
+      if (loginButtonText === "Log in") {
+        await page.click('button[aria-disabled="false"]');
+      }
+      await page.waitForNavigation();
+    }
+
+      // Take a screenshot of the page
+      //const screenshotPath = `screenshots/${encodeURIComponent(url)}.png`;
+      //const screenshotPath = `screenshots/${encodeURIComponent(url)}.png`;
+      const screenshotPath = `screenshots/`+ screenshotcnt+`.png`;
+      screenshotcnt = screenshotcnt + 1;
+      await page.screenshot({ path: screenshotPath });
+  
+    
+
+    // Analyze all page content to identify user interaction elements
+    const interactionElements = await page.$$eval('button, a', elements => {
+      return elements.map(element => ({
+        type: element.tagName.toLowerCase(),
+        text: element.textContent.trim(),
+        href: element.href || '', // Handle links and buttons
+      }));
+    });
+
+    var object = {
+      "screenshot": screenshotPath,
+      "elements": interactionElements
+    };
+
+    userInteractions[url] = object; //interactionElements;
+/*
+    // Add the screenshot path to the user interactions data
+    userInteractions[url].screenshot = screenshotPath;
+*/
+    // Follow links to crawl deeper (adjust selector as needed)
+    const links = await page.$$eval('a[href]', anchors => anchors.map(a => a.href));
+    for (const link of links) {
+      if (link.startsWith(baseUrl) && !visitedUrls.includes(link)) { // Avoid duplicates
+        await crawlPage(link, depth + 1); // Recursive call to crawl the linked page
+      }
+    }
+  } catch (error) {
+    console.error(`Error crawling ${url}:`, error);
+  }
+}
+
+(async () => {
+  const args = process.argv.slice(2);
+  const url = args[0];
+
+  if (!url) {
+    console.error('Please provide a URL as an execution parameter');
+    return;
+  }
+
+  await crawlPage(url);
+
+  // Save user interactions data to JSON file
+  fs.writeFile('user-interactions.json', JSON.stringify(userInteractions, null, 2), (err) => {
+    if (err) {
+      console.error('Error saving JSON data:', err);
+    } else {
+      console.log('User interactions saved to user-interactions.json');
+    }
+  });
+
+  // Close the browser after crawling is complete
+  if (browser) {
+    await browser.close();
+  }
+})();

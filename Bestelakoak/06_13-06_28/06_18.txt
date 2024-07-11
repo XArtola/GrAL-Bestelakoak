@@ -1,0 +1,32 @@
+- browsh
+    + Nola instalatu https://www.brow.sh/docs/installation/
+    + Firefox instalatu beharra dago snap install firefox eta honek wsl 2 bertsioarekin bakarrik funtzionatzen du
+    + Ubuntu makina birtualari teklatuare hizkuntza konfiguratu
+    + Terminaletik nabigatzeko aukera ematen du baina ez linkak lortzeko
+
+Haukeratu erabili behar diren textu nabigatzaileak
+
+    + lynx
+        - Linken zerrenda ateratzeko aukera
+        - Textua + linken zerrenda ateratzekoa
+        - Textua eta linka batera textu berean ateratzeko aukera
+    + links2
+        - links2 -html-numbered-links 1 -dump https://www.google.com
+        - Textarea, ... bezaako elementuak identifikatzen ditu
+    + w3m 
+        - dump egin daiteke modu errazean, baina lortutakoa deskonprimitu behar da
+    + elinks 
+        - Antzekoa zerrenda ateratzen du eskuragarri dauden link-ekin
+    + browsh
+        - terminaletik nabigatzeko aukera, baina ez beste gauza desberdin asko
+    + netrik
+        - Ez dago prest https protokoloarekin lan egiteko
+    + retawq
+        - Oso zaharra apt-n ere ez dago
+    
+
+Scrapper-en lehen saiakerak
+    + lynx
+        - Aukera interesgarriak: -number_links, -number_fields, listonly, list_inline,-hiddenlinks=[option]
+                    hidden links: options are merge, listonly, or ignore, dump, crawl
+        - http://www.kompx.com/en/lynx-browser-creating-sitemap.xml.htm Sitemap bat sortzeko kodea agian interesgarria izan daiteke

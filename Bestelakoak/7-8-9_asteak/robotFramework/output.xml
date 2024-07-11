@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.9 on win32)" generated="2024-05-04T16:26:57.212639" rpa="false" schemaversion="5">
+<suite id="s1" name="Spider" source="C:\Users\xabia\OneDrive\Documentos\4. Maila\TFG\Bestelakoak\7-8-9 asteak\robotFramework\spider.robot">
+<test id="s1-t1" name="Spider Test" line="13">
+<kw name="Open Browser">
+<msg time="2024-05-04T16:26:57.283600" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<status status="FAIL" start="2024-05-04T16:26:57.283600" elapsed="0.000000">No keyword with name 'Open Browser' found.</status>
+</kw>
+<kw name="Follow Links">
+<arg>${BASE_URL}</arg>
+<status status="NOT RUN" start="2024-05-04T16:26:57.283600" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser">
+<status status="NOT RUN" start="2024-05-04T16:26:57.283600" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-05-04T16:26:57.281919" elapsed="0.001681">No keyword with name 'Open Browser' found.</status>
+</test>
+<status status="FAIL" start="2024-05-04T16:26:57.212639" elapsed="0.070961"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Spider">Spider</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-05-04T16:26:57.228294" level="ERROR">Error in file 'C:\Users\xabia\OneDrive\Documentos\4. Maila\TFG\Bestelakoak\7-8-9 asteak\robotFramework\spider.robot' on line 2: Importing library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\xabia\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts\robot.exe
+  C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\python311.zip
+  C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\DLLs
+  C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib
+  C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0
+  C:\Users\xabia\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages
+  C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\site-packages</msg>
+</errors>
+</robot>

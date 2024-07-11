@@ -1,0 +1,2103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.9 on win32)" generated="2024-05-05T18:53:57.442138" rpa="false" schemaversion="5">
+<suite id="s1" name="Proba1" source="C:\Users\xabia\OneDrive\Documentos\4.Maila\TFG\Bestelakoak\14-15_asteak\robotframework\proba1.robot">
+<test id="s1-t1" name="Open Gmail and Capture Elements" line="10">
+<kw name="Capture Page Elements">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:53:57.608120" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/intl/es/gmail/about/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-05T18:53:57.608120" elapsed="2.481750"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://body</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.091014" elapsed="0.014349"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.125513" level="INFO">${content_section} = []</msg>
+<var>${content_section}</var>
+<arg>xpath=//div[@id='content']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.105363" elapsed="0.020397"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.142710" level="INFO">${interactuable_elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="7498bdf745be9803335f873efd28fb04", element="f.6711F3E0D71F643A3A93C4884521EDBA.d.646CF231D362023E03C9B6DEC69CF9DC.e.18")&gt;, &lt;selenium.webdriv...</msg>
+<var>${interactuable_elements}</var>
+<arg>xpath=.//button | .//a</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.125760" elapsed="0.016950"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.143710" level="INFO">Length is 42.</msg>
+<msg time="2024-05-05T18:54:00.143710" level="INFO">${element_count} = 42</msg>
+<var>${element_count}</var>
+<arg>${interactuable_elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.143710" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${element_count} &gt; 0">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.153969" level="INFO">${element_text} = Más información</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.144709" elapsed="0.009260"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.225873" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.153969" elapsed="0.071904"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.280692" level="INFO">${element_class} = glue-cookie-notification-bar__more</msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.225873" elapsed="0.054819"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.287692" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.280692" elapsed="0.007000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.288691" level="INFO">${element_dict} = {'id': ' text=Más información', 'class': 'glue-cookie-notification-bar__more', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.287692" elapsed="0.000999"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2024-05-05T18:54:00.144709" elapsed="0.143982"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.297180" level="INFO">${element_text} = Entendido</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.289692" elapsed="0.007488"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.302447" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.297180" elapsed="0.005267"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.307445" level="INFO">${element_class} = glue-cookie-notification-bar__accept</msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.302447" elapsed="0.004998"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.311454" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.307445" elapsed="0.004009"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.312456" level="INFO">${element_dict} = {'id': ' text=Entendido', 'class': 'glue-cookie-notification-bar__accept', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.311454" elapsed="0.001002"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2024-05-05T18:54:00.288691" elapsed="0.023765"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.318397" level="INFO">${element_text} = Gmail</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.312456" elapsed="0.005941"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.323198" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.318397" elapsed="0.004801"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.327476" level="INFO">${element_class} = link
+           header__logo
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.323198" elapsed="0.004278"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.331475" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.327476" elapsed="0.003999"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.332491" level="INFO">${element_dict} = {'id': ' text=Gmail', 'class': 'link\n           header__logo\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.332491" elapsed="0.000000"/>
+</kw>
+<var name="${index}">2</var>
+<status status="PASS" start="2024-05-05T18:54:00.312456" elapsed="0.020035"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.339398" level="INFO">${element_text} = Para trabajar</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.332491" elapsed="0.006907"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.339398" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.339398" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.339398" level="INFO">${element_class} = button
+           
+           
+           
+           
+            button--low
+           
+            button--mobile-after-hero-only
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.339398" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.358116" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.339398" elapsed="0.018718"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.358116" level="INFO">${element_dict} = {'id': ' text=Para trabajar', 'class': 'button\n           \n           \n           \n           \n            button--low\n           \n            button--mobile-after-hero-only\n           ', 'tag...</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.358116" elapsed="0.000000"/>
+</kw>
+<var name="${index}">3</var>
+<status status="PASS" start="2024-05-05T18:54:00.332491" elapsed="0.025625"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.364095" level="INFO">${element_text} = Inicia sesión</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.358116" elapsed="0.005979"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.368226" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.364095" elapsed="0.004131"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.373327" level="INFO">${element_class} = button
+           
+           
+           
+           
+            button--medium
+           
+            button--mobile-before-hero-only
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.368226" elapsed="0.005101"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.378463" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.373327" elapsed="0.005136"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.379482" level="INFO">${element_dict} = {'id': ' text=Inicia sesión', 'class': 'button\n           \n           \n           \n           \n            button--medium\n           \n            button--mobile-before-hero-only\n           ', ...</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.378463" elapsed="0.001019"/>
+</kw>
+<var name="${index}">4</var>
+<status status="PASS" start="2024-05-05T18:54:00.358116" elapsed="0.021366"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.385472" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.379482" elapsed="0.005990"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.390463" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.386484" elapsed="0.003979"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.395454" level="INFO">${element_class} = button
+           dropdown__options__option
+           
+           
+           
+            button--low
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.390463" elapsed="0.004991"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.399839" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.395454" elapsed="0.004385"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.399839" level="INFO">${element_dict} = {'id': ' text=', 'class': 'button\n           dropdown__options__option\n           \n           \n           \n            button--low\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.399839" elapsed="0.000000"/>
+</kw>
+<var name="${index}">5</var>
+<status status="PASS" start="2024-05-05T18:54:00.379482" elapsed="0.020357"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.406633" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.400818" elapsed="0.005815"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.410613" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.406633" elapsed="0.003980"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.415390" level="INFO">${element_class} = button
+           dropdown__options__option
+           
+           
+           
+            button--low
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.410613" elapsed="0.004777"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.418311" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.415390" elapsed="0.002921"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.418311" level="INFO">${element_dict} = {'id': ' text=', 'class': 'button\n           dropdown__options__option\n           \n           \n           \n            button--low\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.418311" elapsed="0.000000"/>
+</kw>
+<var name="${index}">6</var>
+<status status="PASS" start="2024-05-05T18:54:00.399839" elapsed="0.018472"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.418311" level="INFO">${element_text} = Obtén Gmail</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.418311" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.432465" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.418311" elapsed="0.014154"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.434851" level="INFO">${element_class} = button
+           
+           
+           
+           
+            button--mobile-after-hero-only
+           
+            button--mobile-tablet-only
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.432692" elapsed="0.002159"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.434851" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.434851" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.434851" level="INFO">${element_dict} = {'id': ' text=Obtén Gmail', 'class': 'button\n           \n           \n           \n           \n            button--mobile-after-hero-only\n           \n            button--mobile-tablet-only\n     ...</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.434851" elapsed="0.000000"/>
+</kw>
+<var name="${index}">7</var>
+<status status="PASS" start="2024-05-05T18:54:00.418311" elapsed="0.016540"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.434851" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.434851" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.450678" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.434851" elapsed="0.015827"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.450678" level="INFO">${element_class} = button
+           dropdown__options__option
+           
+           
+           
+            button--low
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.450678" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.450678" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.450678" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.450678" level="INFO">${element_dict} = {'id': ' text=', 'class': 'button\n           dropdown__options__option\n           \n           \n           \n            button--low\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.450678" elapsed="0.000000"/>
+</kw>
+<var name="${index}">8</var>
+<status status="PASS" start="2024-05-05T18:54:00.434851" elapsed="0.015827"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.450678" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.450678" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.466321" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.450678" elapsed="0.015643"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.474232" level="INFO">${element_class} = button
+           dropdown__options__option
+           
+           
+           
+            button--low
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.466321" elapsed="0.007911"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.480071" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.474232" elapsed="0.005839"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.480817" level="INFO">${element_dict} = {'id': ' text=', 'class': 'button\n           dropdown__options__option\n           \n           \n           \n            button--low\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.480396" elapsed="0.000421"/>
+</kw>
+<var name="${index}">9</var>
+<status status="PASS" start="2024-05-05T18:54:00.450678" elapsed="0.030139"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.480817" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.480817" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.480817" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.480817" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.494007" level="INFO">${element_class} = button
+           
+           
+           
+           
+            button--low
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.480817" elapsed="0.013190"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.502452" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.494007" elapsed="0.008445"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.502452" level="INFO">${element_dict} = {'id': ' text=', 'class': 'button\n           \n           \n           \n           \n            button--low\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.502452" elapsed="0.000000"/>
+</kw>
+<var name="${index}">10</var>
+<status status="PASS" start="2024-05-05T18:54:00.480817" elapsed="0.021635"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.509457" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.503460" elapsed="0.005997"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.513457" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.509457" elapsed="0.004000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.519163" level="INFO">${element_class} = button
+           dropdown__options__option
+           
+           
+           
+            button--low
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.513457" elapsed="0.005706"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.524968" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.519163" elapsed="0.005805"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.525989" level="INFO">${element_dict} = {'id': ' text=', 'class': 'button\n           dropdown__options__option\n           \n           \n           \n            button--low\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.524968" elapsed="0.001021"/>
+</kw>
+<var name="${index}">11</var>
+<status status="PASS" start="2024-05-05T18:54:00.502452" elapsed="0.023537"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.532584" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.525989" elapsed="0.006595"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.537829" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.532584" elapsed="0.005245"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.542558" level="INFO">${element_class} = button
+           dropdown__options__option
+           
+           
+           
+            button--low
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.537829" elapsed="0.004729"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.548639" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.543577" elapsed="0.005089"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.549327" level="INFO">${element_dict} = {'id': ' text=', 'class': 'button\n           dropdown__options__option\n           \n           \n           \n            button--low\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.548961" elapsed="0.000460"/>
+</kw>
+<var name="${index}">12</var>
+<status status="PASS" start="2024-05-05T18:54:00.525989" elapsed="0.023432"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.555337" level="INFO">${element_text} = Para trabajar</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.549421" elapsed="0.005916"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.559454" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.555337" elapsed="0.004117"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.565493" level="INFO">${element_class} = button
+           
+           
+           
+           
+            button--low
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.560452" elapsed="0.005041"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.571145" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.565637" elapsed="0.005508"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.571145" level="INFO">${element_dict} = {'id': ' text=Para trabajar', 'class': 'button\n           \n           \n           \n           \n            button--low\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.571145" elapsed="0.000000"/>
+</kw>
+<var name="${index}">13</var>
+<status status="PASS" start="2024-05-05T18:54:00.549421" elapsed="0.021724"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.578632" level="INFO">${element_text} = Nunca usamos tu contenido de Gmail con fines publicitarios
+Gmail usa un sistema de cifrado líder en el sector con todos los mensajes que recibes y envías. Nunca usamos tu contenido de Gmail para perso...</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.571145" elapsed="0.007487"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.583408" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.579652" elapsed="0.003756"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.589603" level="INFO">${element_class} = tabset__tab --active</msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.583408" elapsed="0.006195"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.595102" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.589603" elapsed="0.005499"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.595102" level="INFO">${element_dict} = {'id': ' text=Nunca usamos tu contenido de Gmail con fines publicitarios\nGmail usa un sistema de cifrado líder en el sector con todos los mensajes que recibes y envías. Nunca usamos tu contenido de G...</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.595102" elapsed="0.000000"/>
+</kw>
+<var name="${index}">14</var>
+<status status="PASS" start="2024-05-05T18:54:00.571145" elapsed="0.023957"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.602619" level="INFO">${element_text} = Gmail protege a más de mil millones de usuarios cada día
+Gmail bloquea el 99,9 % del spam, del software malicioso y de los enlaces peligrosos para que no lleguen a tu bandeja de entrada.</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.596116" elapsed="0.007064"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.607677" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.603180" elapsed="0.004497"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.611676" level="INFO">${element_class} = tabset__tab --inactive</msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.607677" elapsed="0.003999"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.615321" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.611676" elapsed="0.004667"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.616343" level="INFO">${element_dict} = {'id': ' text=Gmail protege a más de mil millones de usuarios cada día\nGmail bloquea el 99,9 % del spam, del software malicioso y de los enlaces peligrosos para que no lleguen a tu bandeja de entrada...</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.616343" elapsed="0.000000"/>
+</kw>
+<var name="${index}">15</var>
+<status status="PASS" start="2024-05-05T18:54:00.596116" elapsed="0.020227"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.623328" level="INFO">${element_text} = Las protecciones más avanzadas que hay disponibles contra la suplantación de identidad (phishing)
+Cuando llega un correo sospechoso que podría ser legítimo, Gmail te avisa para que tengas el control.</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.616343" elapsed="0.006985"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.628350" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.624357" elapsed="0.003993"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.632376" level="INFO">${element_class} = tabset__tab --inactive</msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.628350" elapsed="0.004026"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.636745" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.632376" elapsed="0.004776"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.637266" level="INFO">${element_dict} = {'id': ' text=Las protecciones más avanzadas que hay disponibles contra la suplantación de identidad (phishing)\nCuando llega un correo sospechoso que podría ser legítimo, Gmail te avisa para que teng...</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.637266" elapsed="0.000000"/>
+</kw>
+<var name="${index}">16</var>
+<status status="PASS" start="2024-05-05T18:54:00.616343" elapsed="0.020923"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.644292" level="INFO">${element_text} = Las mejores formas de controlar los correos que envías
+Con el modo confidencial, puedes fijar fechas de vencimiento y pedir que los destinatarios verifiquen su identidad por mensaje de texto. También ...</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.637266" elapsed="0.007026"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.648358" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.644292" elapsed="0.004066"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.652469" level="INFO">${element_class} = tabset__tab --inactive</msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.648358" elapsed="0.004111"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.656471" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.652469" elapsed="0.004002"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.656471" level="INFO">${element_dict} = {'id': ' text=Las mejores formas de controlar los correos que envías\nCon el modo confidencial, puedes fijar fechas de vencimiento y pedir que los destinatarios verifiquen su identidad por mensaje de ...</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.656471" elapsed="0.001019"/>
+</kw>
+<var name="${index}">17</var>
+<status status="PASS" start="2024-05-05T18:54:00.637266" elapsed="0.020224"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.664470" level="INFO">${element_text} = Mantente en contacto con tu equipo y organízate
+Inicia una conversación de Chat, participa en una videollamada con Meet o colabora en un documento, todo desde Gmail.</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.657490" elapsed="0.006980"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.669198" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.664470" elapsed="0.004728"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.674199" level="INFO">${element_class} = tabset__tab --active</msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.670198" elapsed="0.004001"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.678198" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.674199" elapsed="0.003999"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.678198" level="INFO">${element_dict} = {'id': ' text=Mantente en contacto con tu equipo y organízate\nInicia una conversación de Chat, participa en una videollamada con Meet o colabora en un documento, todo desde Gmail.', 'class': 'tabset_...</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.678198" elapsed="0.000000"/>
+</kw>
+<var name="${index}">18</var>
+<status status="PASS" start="2024-05-05T18:54:00.657490" elapsed="0.020708"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.684802" level="INFO">${element_text} = Mejora tu productividad
+Escribe correos electrónicos y mensajes más rápido con funciones como Redacción Inteligente para dedicar más tiempo a lo que te gusta.</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.678198" elapsed="0.006604"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.684802" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.684802" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.684802" level="INFO">${element_class} = tabset__tab --inactive</msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.684802" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.684802" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.684802" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.684802" level="INFO">${element_dict} = {'id': ' text=Mejora tu productividad\nEscribe correos electrónicos y mensajes más rápido con funciones como Redacción Inteligente para dedicar más tiempo a lo que te gusta.', 'class': 'tabset__tab --...</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.684802" elapsed="0.000000"/>
+</kw>
+<var name="${index}">19</var>
+<status status="PASS" start="2024-05-05T18:54:00.678198" elapsed="0.006604"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.700514" level="INFO">${element_text} = No te olvides de responder correos
+Los recordatorios no molestan y sirven para que no se te pase nada.</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.684802" elapsed="0.015712"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.700514" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.700514" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.713261" level="INFO">${element_class} = tabset__tab --inactive</msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.700514" elapsed="0.012747"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.719104" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.713261" elapsed="0.005843"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.719104" level="INFO">${element_dict} = {'id': ' text=No te olvides de responder correos\nLos recordatorios no molestan y sirven para que no se te pase nada.', 'class': 'tabset__tab --inactive', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.719104" elapsed="0.000000"/>
+</kw>
+<var name="${index}">20</var>
+<status status="PASS" start="2024-05-05T18:54:00.684802" elapsed="0.036392"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.746493" level="INFO">${element_text} = Exprésate con emojis
+Las reacciones con emojis son una forma rápida y divertida de responder a correos, y solo están disponibles en la aplicación Gmail.
+Esta función empezará a lanzarse en octubre del...</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.721194" elapsed="0.025792"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.756985" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.746986" elapsed="0.009999"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.761984" level="INFO">${element_class} = tabset__tab --active</msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.756985" elapsed="0.004999"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.767317" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.762503" elapsed="0.004814"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.767848" level="INFO">${element_dict} = {'id': ' text=Exprésate con emojis\nLas reacciones con emojis son una forma rápida y divertida de responder a correos, y solo están disponibles en la aplicación Gmail.\nEsta función empezará a lanzars...</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.767317" elapsed="0.000531"/>
+</kw>
+<var name="${index}">21</var>
+<status status="PASS" start="2024-05-05T18:54:00.721194" elapsed="0.046654"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.774445" level="INFO">${element_text} = Encuentra tus correos más rápido
+Se muestra una interfaz de usuario de teléfono simplificada en la que aparece un correo dando la bienvenida al equipo a Helen. También aparece ampliada la barra de emo...</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.768114" elapsed="0.006331"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.778530" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.775499" elapsed="0.003031"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.784078" level="INFO">${element_class} = tabset__tab --inactive</msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.778530" elapsed="0.005548"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.788822" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.784078" elapsed="0.004744"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.789389" level="INFO">${element_dict} = {'id': ' text=Encuentra tus correos más rápido\nSe muestra una interfaz de usuario de teléfono simplificada en la que aparece un correo dando la bienvenida al equipo a Helen. También aparece ampliada ...</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.788822" elapsed="0.000567"/>
+</kw>
+<var name="${index}">22</var>
+<status status="PASS" start="2024-05-05T18:54:00.767848" elapsed="0.021541"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.796026" level="INFO">${element_text} = Pasa de una cuenta a otra
+Consulta todos tus correos de diferentes proveedores en una sola aplicación.</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.789389" elapsed="0.006637"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.801142" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.796026" elapsed="0.005116"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.805641" level="INFO">${element_class} = tabset__tab --inactive</msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.801640" elapsed="0.004001"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.810141" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.806161" elapsed="0.003980"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.810645" level="INFO">${element_dict} = {'id': ' text=Pasa de una cuenta a otra\nConsulta todos tus correos de diferentes proveedores en una sola aplicación.', 'class': 'tabset__tab --inactive', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.810141" elapsed="0.000504"/>
+</kw>
+<var name="${index}">23</var>
+<status status="PASS" start="2024-05-05T18:54:00.789389" elapsed="0.021256"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.821596" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.811143" elapsed="0.010453"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.827118" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.822096" elapsed="0.005022"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.831597" level="INFO">${element_class} = button
+           
+           
+           
+           
+            button--badge
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.827118" elapsed="0.004479"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.833608" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.831597" elapsed="0.002011"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.833608" level="INFO">${element_dict} = {'id': ' text=', 'class': 'button\n           \n           \n           \n           \n            button--badge\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.833608" elapsed="0.000000"/>
+</kw>
+<var name="${index}">24</var>
+<status status="PASS" start="2024-05-05T18:54:00.810645" elapsed="0.022963"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.833608" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.833608" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.849816" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.833608" elapsed="0.016208"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.849816" level="INFO">${element_class} = button
+           
+           
+           
+           
+            button--badge
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.849816" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.849816" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.849816" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.849816" level="INFO">${element_dict} = {'id': ' text=', 'class': 'button\n           \n           \n           \n           \n            button--badge\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.849816" elapsed="0.000000"/>
+</kw>
+<var name="${index}">25</var>
+<status status="PASS" start="2024-05-05T18:54:00.833608" elapsed="0.016208"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.865452" level="INFO">${element_text} = empresarial</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.849816" elapsed="0.015636"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.865452" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.865452" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.865452" level="INFO">${element_class} = </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.865452" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.876231" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.865452" elapsed="0.010779"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.876231" level="INFO">${element_dict} = {'id': ' text=empresarial', 'class': '', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.876231" elapsed="0.000000"/>
+</kw>
+<var name="${index}">26</var>
+<status status="PASS" start="2024-05-05T18:54:00.849816" elapsed="0.026415"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.876231" level="INFO">${element_text} = Más información</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.876231" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.876231" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.876231" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.892073" level="INFO">${element_class} = button
+           
+           
+           
+           
+            button--low
+           
+            button--large-text
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.876231" elapsed="0.015842"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.892073" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.892073" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.892073" level="INFO">${element_dict} = {'id': ' text=Más información', 'class': 'button\n           \n           \n           \n           \n            button--low\n           \n            button--large-text\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.892073" elapsed="0.000000"/>
+</kw>
+<var name="${index}">27</var>
+<status status="PASS" start="2024-05-05T18:54:00.876231" elapsed="0.015842"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.892073" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.892073" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.907829" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.892073" elapsed="0.015756"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.907829" level="INFO">${element_class} = button
+           
+           
+           
+           
+            button--medium
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.907829" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.907829" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.907829" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.907829" level="INFO">${element_dict} = {'id': ' text=', 'class': 'button\n           \n           \n           \n           \n            button--medium\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.907829" elapsed="0.000000"/>
+</kw>
+<var name="${index}">28</var>
+<status status="PASS" start="2024-05-05T18:54:00.892073" elapsed="0.015756"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.925171" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.907829" elapsed="0.017342"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.925171" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.925171" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.939869" level="INFO">${element_class} = link
+           faq__grid__faqs__faq__cta
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.925171" elapsed="0.014698"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.946846" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.939869" elapsed="0.006977"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.946846" level="INFO">${element_dict} = {'id': ' text=', 'class': 'link\n           faq__grid__faqs__faq__cta\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.946846" elapsed="0.000000"/>
+</kw>
+<var name="${index}">29</var>
+<status status="PASS" start="2024-05-05T18:54:00.907829" elapsed="0.040092"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.951429" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.947921" elapsed="0.003508"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.951429" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.951429" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.968156" level="INFO">${element_class} = link
+           faq__grid__faqs__faq__cta
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.951429" elapsed="0.016727"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.969198" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.968156" elapsed="0.001042"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:00.969198" level="INFO">${element_dict} = {'id': ' text=', 'class': 'link\n           faq__grid__faqs__faq__cta\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.969198" elapsed="0.000000"/>
+</kw>
+<var name="${index}">30</var>
+<status status="PASS" start="2024-05-05T18:54:00.947921" elapsed="0.021277"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.969198" level="INFO">${element_text} = Centro de Ayuda</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.969198" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.991280" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.969198" elapsed="0.022082"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:00.996235" level="INFO">${element_class} = button
+           
+           
+           
+           
+            button--medium
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.991280" elapsed="0.004955"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.001480" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:00.996235" elapsed="0.005245"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:01.001480" level="INFO">${element_dict} = {'id': ' text=Centro de Ayuda', 'class': 'button\n           \n           \n           \n           \n            button--medium\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.001480" elapsed="0.000000"/>
+</kw>
+<var name="${index}">31</var>
+<status status="PASS" start="2024-05-05T18:54:00.969198" elapsed="0.032282"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.001480" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.001480" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.018148" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.001480" elapsed="0.016668"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.019633" level="INFO">${element_class} = button
+           dropdown__options__option
+           
+           
+           
+            button--low
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.018148" elapsed="0.001485"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.019633" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.019633" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:01.019633" level="INFO">${element_dict} = {'id': ' text=', 'class': 'button\n           dropdown__options__option\n           \n           \n           \n            button--low\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.019633" elapsed="0.000000"/>
+</kw>
+<var name="${index}">32</var>
+<status status="PASS" start="2024-05-05T18:54:01.001480" elapsed="0.018153"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.041862" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.019633" elapsed="0.022229"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.049863" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.041862" elapsed="0.008001"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.054765" level="INFO">${element_class} = button
+           dropdown__options__option
+           
+           
+           
+            button--low
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.049863" elapsed="0.004902"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.061765" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.055864" elapsed="0.005901"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:01.062785" level="INFO">${element_dict} = {'id': ' text=', 'class': 'button\n           dropdown__options__option\n           \n           \n           \n            button--low\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.061765" elapsed="0.001020"/>
+</kw>
+<var name="${index}">33</var>
+<status status="PASS" start="2024-05-05T18:54:01.019633" elapsed="0.043152"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.068118" level="INFO">${element_text} = Para trabajar</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.062785" elapsed="0.005333"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.068118" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.068118" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.068118" level="INFO">${element_class} = button
+           
+           
+           
+           
+            button--low
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.068118" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.068118" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.068118" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:01.068118" level="INFO">${element_dict} = {'id': ' text=Para trabajar', 'class': 'button\n           \n           \n           \n           \n            button--low\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.068118" elapsed="0.000000"/>
+</kw>
+<var name="${index}">34</var>
+<status status="PASS" start="2024-05-05T18:54:01.062785" elapsed="0.005333"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.083745" level="INFO">${element_text} = </msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.068118" elapsed="0.015627"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.083745" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.083745" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.083745" level="INFO">${element_class} = link
+           footer__logo
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.083745" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.099371" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.083745" elapsed="0.015626"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:01.099371" level="INFO">${element_dict} = {'id': ' text=', 'class': 'link\n           footer__logo\n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.099371" elapsed="0.000000"/>
+</kw>
+<var name="${index}">35</var>
+<status status="PASS" start="2024-05-05T18:54:01.068118" elapsed="0.031253"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.099371" level="INFO">${element_text} = Privacidad</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.099371" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.099371" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.099371" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.099371" level="INFO">${element_class} = link
+           
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.099371" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.115024" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.099371" elapsed="0.015653"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:01.115024" level="INFO">${element_dict} = {'id': ' text=Privacidad', 'class': 'link\n           \n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.115024" elapsed="0.000000"/>
+</kw>
+<var name="${index}">36</var>
+<status status="PASS" start="2024-05-05T18:54:01.099371" elapsed="0.015653"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.115024" level="INFO">${element_text} = Condiciones</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.115024" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.115024" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.115024" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.130620" level="INFO">${element_class} = link
+           
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.115024" elapsed="0.015596"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.134158" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.130620" elapsed="0.003538"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:01.134158" level="INFO">${element_dict} = {'id': ' text=Condiciones', 'class': 'link\n           \n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.134158" elapsed="0.000000"/>
+</kw>
+<var name="${index}">37</var>
+<status status="PASS" start="2024-05-05T18:54:01.115024" elapsed="0.019134"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.134158" level="INFO">${element_text} = Acerca de Google</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.134158" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.134158" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.134158" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.149879" level="INFO">${element_class} = link
+           
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.134158" elapsed="0.015721"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.149879" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.149879" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:01.149879" level="INFO">${element_dict} = {'id': ' text=Acerca de Google', 'class': 'link\n           \n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.149879" elapsed="0.000000"/>
+</kw>
+<var name="${index}">38</var>
+<status status="PASS" start="2024-05-05T18:54:01.134158" elapsed="0.015721"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.149879" level="INFO">${element_text} = Productos de Google</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.149879" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.165524" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.149879" elapsed="0.015645"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.165524" level="INFO">${element_class} = link
+           
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.165524" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.165524" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.165524" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:01.165524" level="INFO">${element_dict} = {'id': ' text=Productos de Google', 'class': 'link\n           \n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.165524" elapsed="0.000000"/>
+</kw>
+<var name="${index}">39</var>
+<status status="PASS" start="2024-05-05T18:54:01.149879" elapsed="0.015645"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.181150" level="INFO">${element_text} = Nuestra política</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.165524" elapsed="0.015626"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.181150" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.181150" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.181150" level="INFO">${element_class} = link
+           
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.181150" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.181150" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.181150" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:01.196773" level="INFO">${element_dict} = {'id': ' text=Nuestra política', 'class': 'link\n           \n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.181150" elapsed="0.015623"/>
+</kw>
+<var name="${index}">40</var>
+<status status="PASS" start="2024-05-05T18:54:01.165524" elapsed="0.031249"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.196773" level="INFO">${element_text} = Ayuda</msg>
+<var>${element_text}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.196773" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.196773" level="INFO">${element_id} = </msg>
+<var>${element_id}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.196773" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.196773" level="INFO">${element_class} = link
+           
+           </msg>
+<var>${element_class}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.196773" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-05-05T18:54:01.212400" level="INFO">${element_tag} = None</msg>
+<var>${element_tag}</var>
+<arg>${interactuable_elements}[${index}]</arg>
+<arg>tag_name</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.196773" elapsed="0.015627"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-05T18:54:01.212400" level="INFO">${element_dict} = {'id': ' text=Ayuda', 'class': 'link\n           \n           ', 'tag': None}</msg>
+<var>${element_dict}</var>
+<arg>id=${element_id} text=${element_text}</arg>
+<arg>class=${element_class}</arg>
+<arg>tag=${element_tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.212400" elapsed="0.000000"/>
+</kw>
+<var name="${index}">41</var>
+<status status="PASS" start="2024-05-05T18:54:01.196773" elapsed="0.015627"/>
+</iter>
+<var>${index}</var>
+<value>${element_count}</value>
+<status status="PASS" start="2024-05-05T18:54:00.143710" elapsed="1.068690"/>
+</for>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-05-05T18:54:01.212400" level="INFO">${interactuable_elements_json} = {"id": " text=Ayuda", "class": "link\n           \n           ", "tag": null}</msg>
+<var>${interactuable_elements_json}</var>
+<arg>json.dumps(${element_dict})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.212400" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-05T18:54:01.212400" level="INFO">${file_path} = interactuable_elements.json</msg>
+<var>${file_path}</var>
+<arg>interactuable_elements.json</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.212400" elapsed="0.000000"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2024-05-05T18:54:01.212400" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\xabia\OneDrive\Documentos\4.Maila\TFG\Bestelakoak\14-15_asteak\robotframework\interactuable_elements.json"&gt;C:\Users\xabia\OneDrive\Documentos\4.Maila\TFG\Bestelakoak\14-15_asteak\robotframework\interactuable_elements.json&lt;/a&gt;'.</msg>
+<arg>${file_path}</arg>
+<arg>${interactuable_elements_json}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.212400" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-05-05T18:54:00.143710" elapsed="1.068690"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>No interactive elements found on the page.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-05-05T18:54:01.212400" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-05T18:54:01.212400" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-05-05T18:54:00.143710" elapsed="1.068690"/>
+</if>
+<status status="PASS" start="2024-05-05T18:53:57.608120" elapsed="3.604280"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-05T18:54:01.212400" elapsed="2.111169"/>
+</kw>
+<status status="PASS" start="2024-05-05T18:53:57.608120" elapsed="5.715449"/>
+</test>
+<status status="PASS" start="2024-05-05T18:53:57.457763" elapsed="5.871825"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Proba1">Proba1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

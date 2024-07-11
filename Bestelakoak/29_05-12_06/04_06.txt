@@ -1,0 +1,7 @@
+Probatu ea nola dabilen scripta web desberdinekin
+localhost-ekin duen erantzuna ikertu
+json fitxategietan sortzen diren bikoizketak ez gertatzea lortu
+Cucumber
+    - tutoriala egin
+    - Test aldatu behar da package.json fitxategian proiektu berri bat probatu nahi den bakoitzean??
+    - Browser automation with Selenium https://cucumber.io/docs/guides/browser-automation/?lang=javascript

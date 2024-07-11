@@ -1,0 +1,5 @@
+- Langachain-i errepasoa, gero cucumberreko testak sortu ahal izateko
+export GROQ_API_KEY=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
+punycode deprecated mezua konpontzeko
+
+Aldatu Node bertsioa horretarako instalatu nvm eta exekutatu C:\Users\Admin\AppData\Roaming\nvm\nvm.exe

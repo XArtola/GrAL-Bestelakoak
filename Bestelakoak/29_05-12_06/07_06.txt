@@ -1,0 +1,4 @@
+Groq-eko APIaren script-a konpondu
+    - dotenv erabili sartzeko api key-a
+    - chatbot bat sortu https://js.langchain.com/v0.1/docs/integrations/chat/groq/
+    

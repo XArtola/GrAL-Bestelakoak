@@ -1,0 +1,3 @@
+Behin url bateko esteken informazioa lortuta, orain scripta moldatu web gune guztikoak lortzeko
+https://www.linuxquestions.org/questions/linux-newbie-8/extracting-links-recursively-from-url-and-saving-them-in-text-file-4175645212/
+Ideia: Bi text browser desberdin nahastu batek linkak lorteko besteak, button, textarea... identifikatzeko

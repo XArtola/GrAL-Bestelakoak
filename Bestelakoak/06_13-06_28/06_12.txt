@@ -1,0 +1,3 @@
+Links2 probatzen hasi
+    - Instalatu apt instalekin
+    - Save URL as erabiliz lortu web-gunearen HTML

@@ -1,0 +1,3 @@
+instalatzeko:
+
+npm i puppeteer

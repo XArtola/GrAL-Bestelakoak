@@ -1,0 +1,282 @@
+{
+    "nodes": [
+        {
+            "id": "http://localhost:3000",
+            "x": 73.97237928321773,
+            "y": 86.79517406496133,
+            "label": "http://localhost:3000",
+            "size": 10
+        },
+        {
+            "id": "http://localhost:3000/login",
+            "x": 10.785084634097664,
+            "y": 3.73488423098991,
+            "label": "http://localhost:3000/login",
+            "size": 10
+        },
+        {
+            "id": "http://localhost:3000/dashboard",
+            "x": 94.528399590767,
+            "y": 30.944642018230574,
+            "label": "http://localhost:3000/dashboard",
+            "size": 10
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices",
+            "x": 77.15089895209755,
+            "y": 49.321710549202955,
+            "label": "http://localhost:3000/dashboard/invoices",
+            "size": 10
+        },
+        {
+            "id": "http://localhost:3000/dashboard/customers",
+            "x": 48.00671046379348,
+            "y": 23.965826350633044,
+            "label": "http://localhost:3000/dashboard/customers",
+            "size": 10
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/create",
+            "x": 4.70506305358831,
+            "y": 64.95187986137792,
+            "label": "http://localhost:3000/dashboard/invoices/create",
+            "size": 10
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/d4467c12-5d70-4c50-8de6-647fa3c77688/edit",
+            "x": 0.9139496884002618,
+            "y": 49.950788720121686,
+            "label": "http://localhost:3000/dashboard/invoices/d4467c12-5d70-4c50-8de6-647fa3c77688/edit",
+            "size": 10
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/e1e85113-86fe-4623-b82d-fc0a3781a395/edit",
+            "x": 9.2639257313315,
+            "y": 32.399800168280365,
+            "label": "http://localhost:3000/dashboard/invoices/e1e85113-86fe-4623-b82d-fc0a3781a395/edit",
+            "size": 10
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/57b7f28e-0381-45ac-8516-10bd2d1e1899/edit",
+            "x": 97.27573079289968,
+            "y": 8.857092138322065,
+            "label": "http://localhost:3000/dashboard/invoices/57b7f28e-0381-45ac-8516-10bd2d1e1899/edit",
+            "size": 10
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/19e6c146-ea66-4e3b-8417-5186ba52cf23/edit",
+            "x": 41.96823261921796,
+            "y": 68.74338174953829,
+            "label": "http://localhost:3000/dashboard/invoices/19e6c146-ea66-4e3b-8417-5186ba52cf23/edit",
+            "size": 10
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/c506c149-7fec-4c36-9e86-0b205896c28b/edit",
+            "x": 73.3283817396982,
+            "y": 35.56433093193603,
+            "label": "http://localhost:3000/dashboard/invoices/c506c149-7fec-4c36-9e86-0b205896c28b/edit",
+            "size": 10
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/a25bf22d-a63a-4b8d-9fce-d67e97edc759/edit",
+            "x": 95.65398788193988,
+            "y": 10.508092734833973,
+            "label": "http://localhost:3000/dashboard/invoices/a25bf22d-a63a-4b8d-9fce-d67e97edc759/edit",
+            "size": 10
+        }
+    ],
+    "edges": [
+        {
+            "id": "http://localhost:3000/login",
+            "source": "http://localhost:3000",
+            "target": "http://localhost:3000/login",
+            "label": "a - Log in"
+        },
+        {
+            "id": "http://localhost:3000/dashboard",
+            "source": "http://localhost:3000/login",
+            "target": "http://localhost:3000/dashboard",
+            "label": "a - Home"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices",
+            "source": "http://localhost:3000/login",
+            "target": "http://localhost:3000/dashboard/invoices",
+            "label": "a - Invoices"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/customers",
+            "source": "http://localhost:3000/login",
+            "target": "http://localhost:3000/dashboard/customers",
+            "label": "a - Customers"
+        },
+        {
+            "id": "http://localhost:3000/dashboard",
+            "source": "http://localhost:3000/dashboard",
+            "target": "http://localhost:3000/dashboard",
+            "label": "a - Home"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices",
+            "source": "http://localhost:3000/dashboard",
+            "target": "http://localhost:3000/dashboard/invoices",
+            "label": "a - Invoices"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/customers",
+            "source": "http://localhost:3000/dashboard",
+            "target": "http://localhost:3000/dashboard/customers",
+            "label": "a - Customers"
+        },
+        {
+            "id": "http://localhost:3000/dashboard",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard",
+            "label": "a - Home"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/invoices",
+            "label": "a - Invoices"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/customers",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/customers",
+            "label": "a - Customers"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/create",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/invoices/create",
+            "label": "a - Create Invoice"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/d4467c12-5d70-4c50-8de6-647fa3c77688/edit",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/invoices/d4467c12-5d70-4c50-8de6-647fa3c77688/edit",
+            "label": "a - "
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/e1e85113-86fe-4623-b82d-fc0a3781a395/edit",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/invoices/e1e85113-86fe-4623-b82d-fc0a3781a395/edit",
+            "label": "a - "
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/57b7f28e-0381-45ac-8516-10bd2d1e1899/edit",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/invoices/57b7f28e-0381-45ac-8516-10bd2d1e1899/edit",
+            "label": "a - "
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/19e6c146-ea66-4e3b-8417-5186ba52cf23/edit",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/invoices/19e6c146-ea66-4e3b-8417-5186ba52cf23/edit",
+            "label": "a - "
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/c506c149-7fec-4c36-9e86-0b205896c28b/edit",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/invoices/c506c149-7fec-4c36-9e86-0b205896c28b/edit",
+            "label": "a - "
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/a25bf22d-a63a-4b8d-9fce-d67e97edc759/edit",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/invoices/a25bf22d-a63a-4b8d-9fce-d67e97edc759/edit",
+            "label": "a - "
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/d4467c12-5d70-4c50-8de6-647fa3c77688/edit",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/invoices/d4467c12-5d70-4c50-8de6-647fa3c77688/edit",
+            "label": "a - "
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/e1e85113-86fe-4623-b82d-fc0a3781a395/edit",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/invoices/e1e85113-86fe-4623-b82d-fc0a3781a395/edit",
+            "label": "a - "
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/57b7f28e-0381-45ac-8516-10bd2d1e1899/edit",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/invoices/57b7f28e-0381-45ac-8516-10bd2d1e1899/edit",
+            "label": "a - "
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/19e6c146-ea66-4e3b-8417-5186ba52cf23/edit",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/invoices/19e6c146-ea66-4e3b-8417-5186ba52cf23/edit",
+            "label": "a - "
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/c506c149-7fec-4c36-9e86-0b205896c28b/edit",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/invoices/c506c149-7fec-4c36-9e86-0b205896c28b/edit",
+            "label": "a - "
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/a25bf22d-a63a-4b8d-9fce-d67e97edc759/edit",
+            "source": "http://localhost:3000/dashboard/invoices",
+            "target": "http://localhost:3000/dashboard/invoices/a25bf22d-a63a-4b8d-9fce-d67e97edc759/edit",
+            "label": "a - "
+        },
+        {
+            "id": "http://localhost:3000/dashboard",
+            "source": "http://localhost:3000/dashboard/customers",
+            "target": "http://localhost:3000/dashboard",
+            "label": "a - Home"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices",
+            "source": "http://localhost:3000/dashboard/customers",
+            "target": "http://localhost:3000/dashboard/invoices",
+            "label": "a - Invoices"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/customers",
+            "source": "http://localhost:3000/dashboard/customers",
+            "target": "http://localhost:3000/dashboard/customers",
+            "label": "a - Customers"
+        },
+        {
+            "id": "http://localhost:3000/dashboard",
+            "source": "http://localhost:3000/dashboard/invoices/create",
+            "target": "http://localhost:3000/dashboard",
+            "label": "a - Home"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices",
+            "source": "http://localhost:3000/dashboard/invoices/create",
+            "target": "http://localhost:3000/dashboard/invoices",
+            "label": "a - Invoices"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/customers",
+            "source": "http://localhost:3000/dashboard/invoices/create",
+            "target": "http://localhost:3000/dashboard/customers",
+            "label": "a - Customers"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices",
+            "source": "http://localhost:3000/dashboard/invoices/create",
+            "target": "http://localhost:3000/dashboard/invoices",
+            "label": "a - Invoices"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices/create",
+            "source": "http://localhost:3000/dashboard/invoices/create",
+            "target": "http://localhost:3000/dashboard/invoices/create",
+            "label": "a - Create Invoice"
+        },
+        {
+            "id": "http://localhost:3000/dashboard/invoices",
+            "source": "http://localhost:3000/dashboard/invoices/create",
+            "target": "http://localhost:3000/dashboard/invoices",
+            "label": "a - Cancel"
+        }
+    ]
+}

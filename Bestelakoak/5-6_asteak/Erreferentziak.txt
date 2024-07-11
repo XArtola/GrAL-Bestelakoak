@@ -1,0 +1,151 @@
+OpenInterpreter
+
+https://github.com/KillianLucas/open-interpreter
+
+
+Erreferentziak (LLM + UI and/or automation):
+
+https://dl.acm.org/doi/pdf/10.1145/3586182.3615810
+
+https://arxiv.org/pdf/2308.15272.pdf
+
+https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10366647
+
+TFG antzekoa --> https://odr.chalmers.se/server/api/core/bitstreams/0c5b1270-ebba-4016-8fe2-caa0da19042a/content
+
+
+Errefentziak (ui testing + automation):
+
+https://dl.acm.org/doi/pdf/10.1145/2406367.2406402
+
+https://dl.acm.org/doi/pdf/10.1145/2381716.2381782
+
+https://dl.acm.org/doi/abs/10.1145/2628363.2628391
+
+https://www.sciencedirect.com/science/article/pii/S0950584922001070
+
+https://ieeexplore.ieee.org/abstract/document/10298535
+
+
+Bibtex formatuan (Zotero lokalean)
+
+
+---------------------------------------------------------------------------------------------------------
+
+Aukera desberdinak eman, firelab-en bezela, nabigatzaile desberdinak erabiltzeko
+
+---------------------------------------------------------------------------------------------------------
+
+Nola erabili ChatGPT4-Vision:
+
+gpt-4-vision-preview
+
+LangChain-etik erabiltzeko
+https://github.com/langchain-ai/langchain/blob/master/cookbook/openai_v1_cookbook.ipynb
+
+
+---------------------------------------------------------------------------------------------------------
+
+Proba azkarrak egiteko
+https://github.com/langchain-ai/langchain/blob/master/cookbook/openai_v1_cookbook.ipynb
+
+---------------------------------------------------------------------------------------------------------
+
+10-eko TFGa
+https://github.com/MrAsieru/GarraioMapaIrekia
+
+web aplikazio batean orokorrean 3 container
+daudela: frontend, backend, data. Zuen aplikazioa produkziorako
+prestatzeko dockerizatzen duzuenean, kontutan eduki.
+
+
+---------------------------------------------------------------------------------------------------------
+
+Netflix-en testeatzeko sistema
+https://www.infoq.com/news/2024/02/netflix-safetest-front-end-test/
+
+---------------------------------------------------------------------------------------------------------
+
+Mistral-en playground-a
+https://predibase.com/lora-land
+
+Adapter moduan magicoder erabili
+
+---------------------------------------------------------------------------------------------------------
+
+Biodeo batean oinarrituta Selenium-eko kodea sortu
+
+https://twitter.com/DynamicWebPaige/status/1760537379369304309
+
+---------------------------------------------------------------------------------------------------------
+
+
+Memoria jartzeko
+
+https://dl.acm.org/doi/abs/10.1145/3615335.3623035
+
+GrALaren memorian sartzeko, kasu honetan ChatGPTren erabilera interfazeen diseinu eta garapenean
+
+---------------------------------------------------------------------------------------------------------
+
+
+Ikastaro bat egiteko:
+
+https://github.com/microsoft/generative-ai-for-beginners
+
+---------------------------------------------------------------------------------------------------------
+
+Beste erreferentzi bat
+
+https://conf.researchr.org/details/icse-2024/icse-2024-research-track/180/Make-LLM-a-Testing-Expert-Bringing-Human-like-Interaction-to-Mobile-GUI-Testing-via-
+
+---------------------------------------------------------------------------------------------------------
+
+Beste AI bat:
+
+https://chat.mistral.ai/chat
+
+---------------------------------------------------------------------------------------------------------
+
+Bideo pasata ekatsekin AA-k konponketa ematen dio
+
+---------------------------------------------------------------------------------------------------------
+
+https://twitter.com/mckaywrigley/status/1762175776726663267
+
++ GUI-Based Software Testing: An Automated Approach Using GPT-4 and
+Selenium WebDriver:
+https://ieeexplore.ieee.org/abstract/document/10298721 (azken hau egin
+nahiko genukenaren antzekoa, baina gure kasuan feedback bisuala ere
+kontutan edukiko genuke)
+
++ Automating GUI-based Software Testing with GPT-3:
+https://ieeexplore.ieee.org/abstract/document/10132233
+
+Do We Still Need Human Assessors? Prompt-Based GPT-3 User Simulation in
+Conversational AI: https://dl.acm.org/doi/abs/10.1145/3586182.3615810
+
+Towards Generating UI Design Feedback with LLMs:
+https://dl.acm.org/doi/abs/10.1145/3586182.3615810
+
+
+A deep learning-based automated framework for functional User Interface
+testing:
+https://www.sciencedirect.com/science/article/pii/S0950584922001070
+(probetarako erabili dituzten kasuak eta ebaluaketa batez ere dira
+interesgarriak)
+
+
+(testuetarako sarbide edukitzeko EHUtik edo VPN bidez atzitu behar
+dituzu kasu batzuetan)
+
+
+Hurrengo bilerarako, usability (erabilgarritasuna) eta user interface
+testing kontzeptuei buruz hitzegingo dugu, zure lana gehiago zehazteko.
+Sarrera bezala honakoa ondo dago:
+https://www.hotjar.com/usability-testing/
+
+---------------------------------------------------------------------------------------------------------
+
+
+https://os-copilot.github.io/

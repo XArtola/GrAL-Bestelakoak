@@ -1,0 +1,8 @@
+Links2 komandoak emandako html-a praseatzeko script-a egin
+links2 automatizatzen saiatu
+    - bash script batekin
+    - python script batekin
+        + wsl-n instalatu pip eta pip-ekin instalatu pynput
+        + x server-ekin arazoa konpontzeko export DISPLAY=:0 erabili, honek ere ez duenez emaitza onik eman. pynput alde batera utzi eta keyboard erabili
+    - azknean komandoaren aukerekin lortu daiteke links2 -html-numbered-links 1 -dump "https://www.google.com" > output.html
+        + scripta egitean arazoak wsl-rekin  wsl -l -v erabilita wsls version 1 delako ematen duela arazoa dirudi

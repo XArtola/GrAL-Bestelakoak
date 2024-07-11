@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Comprueba si el comando links2 está instalado
+if ! command -v links2 &> /dev/null; then
+    echo "El comando links2 no está instalado. Por favor, instálalo antes de ejecutar este script."
+else
+    if [ -z "$1" ]; then
+        echo "No se ha introducido ningún argumento. Por favor, introduce un argumento válido."
+        exit 1
+    fi
+    # Ejecuta el comando links2
+    links2 "$1" <<EOF  
+esc
+intro
+down
+down
+down
+down
+down
+down
+down
+intro
+$1
+intro
+echo "timestamp.html" | links2 -g -stdin
+intro
+EOF
+fi

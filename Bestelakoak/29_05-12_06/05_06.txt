@@ -1,0 +1,11 @@
+Cucumber + Selenium
+    - https://www.browserstack.com/guide/automation-using-cucumber-selenium
+    - https://www.cleveritgroup.com/blog/comenzando-a-automatizar-usando-selenium-y-cucumber
+    - https://www.guru99.com/using-cucumber-selenium.html
+    - https://www.lambdatest.com/blog/cucumberjs-tutorial-selenium/
+
+Groq
+
+https://www.anthropic.com/ Tlf zenbakia eta jaiotze data?
+
+Frontend-a sortzeko v0 https://v0.dev/

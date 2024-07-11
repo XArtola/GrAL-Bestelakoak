@@ -1,0 +1,20 @@
+[
+    {
+        "Link": "Next.js Learn Course",
+        "Element": "Link",
+        "Result": {
+            "x": 104,
+            "y": 448
+        },
+        "URL": "http://localhost:3000"
+    },
+    {
+        "Link": "Log in",
+        "Element": "Link",
+        "Result": {
+            "x": 104,
+            "y": 748
+        },
+        "URL": "http://localhost:3000"
+    }
+]
