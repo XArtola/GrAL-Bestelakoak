@@ -1,0 +1,29 @@
+martxan jarri sistema: yarn dev
+testak exekutatu: npx cypress run -–spec ".\cypress-realworld-app\cypress\tests\ui"
+npx cypress run --spec ".\cypress\tests\ui\auth.spec.ts"
+npx cypress run --spec ".\cypress\tests\ui\auth.spec.ts" > results.txt
+
+-------------------------------------------------------------
+
+git clone https://github.com/cypress-io/cypress-realworld-app
+
+Delete it blocks erabiltzeko:
+node .\index.js "..\Hustuta\cypress-realworld-app"
+node .\deleteIt.js "..\Hustuta\cypress-realworld-app"
+
+Repoa martxan jartzeko:
+yarn
+
+------------------------------------------------------------
+
+Testak exekutatu ahal izateko partern aldatu edo test karpeta barruan egin aldaketak:
+
+cypress-realworld-app\cypress.config.ts
+
+-------------------------------------------------------------
+
+Test json bakoitzari bere izena jartzeko env varible erabilita:
+
+npx cypress run --env testResultFileName=my-custom-result.json --spec "C:\Users\xabia\OneDrive\Documentos\4.Maila\TFG-Bestelakoak\Bestelakoak\01_04_25-15_04_25\Hustuta\cypress-realworld-app\cypress\testsGeminiPro\ui\auth.spec.ts"
+npx cypress run --env ctrfReportOutput=my-custom-report.json
+npx cypress run --env ctrfReportOutput=resultsClaude3_5.json ".\cypress\tests\testsClaude3_5\ui"

@@ -39,7 +39,7 @@ Montatuta eduki 2 prozesuak
 ----------------------------------------------------------------
 
 Groq
-chatgpt 3,5 api key
+chatgpt 3.5 api key
 gemini 1.5 pro (vpn) google ai AiStudio
 Sonnet?
 

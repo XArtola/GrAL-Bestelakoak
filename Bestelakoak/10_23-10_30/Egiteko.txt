@@ -1,0 +1,6 @@
+Cursor.com antrophic erabiltzen du azpitik
+- Repototext doitu tamaina txikitzeko
+- Hartu cursor pasa hustutako kodea eta begiratu ea ze nolako emaitzak ematen dituen
+
+
+yarn.lock-ekoa kentzen probatu

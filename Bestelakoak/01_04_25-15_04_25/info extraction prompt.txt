@@ -1,0 +1,13 @@
+Extract the programmer introduced information for each file inside the tests folder.
+This information may be user/password, email some user created variables 
+with information or variables with {} format .
+Do not make up any information. Save all this information into a unique JSON file. 
+If theres no information in a file just save the file name.
+Save this file inside the tests folder
+
+For example the information that needs to be identified on auth.spec.ts file is:
+
+- firstName: "Bob"
+- lastName: "Ross"
+- username: "PainterJoy90"
+- password: "s3cret"

@@ -1,0 +1,107 @@
+import { User } from "../../../src/models";
+import { isMobile } from "../../support/utils";
+const apiGraphQL = `${Cypress.env("apiUrl")}/graphql`;
+describe("User Sign-up and Login", function () {
+    beforeEach(function () {
+        cy.task("db:seed");
+        cy.intercept("POST", "/users").as("signup");
+        cy.intercept("POST", apiGraphQL, (req) => {
+            const { body } = req;
+            if (body.hasOwnProperty("operationName") && body.operationName === "CreateBankAccount") {
+                req.alias = "gqlCreateBankAccountMutation";
+            }
+        });
+    });
+    it("should redirect unauthenticated user to signin page", () => {
+        cy.visit("/personal");
+        cy.location("pathname").should("equal", "/signin");
+        cy.visualSnapshot("Redirect to SignIn");
+    });
+
+    it("should redirect to the home page after login", () => {
+        const username = "johndoe";
+        const password = "s3cret";
+        cy.visit("/signin");
+        cy.getBySelLike("signin-username").type(username);
+        cy.getBySelLike("signin-password").type(password);
+        cy.getBySelLike("signin-submit").click();
+        cy.location("pathname").should("equal", "/");
+        cy.visualSnapshot("Home Page after Login");
+    });
+
+    it("should remember a user for 30 days after login", () => {
+        const username = "johndoe";
+        const password = "s3cret";
+        
+        cy.visit("/signin");
+        cy.getBySelLike("signin-username").type(username);
+        cy.getBySelLike("signin-password").type(password);
+        cy.getBySelLike("signin-remember-me").check();
+        cy.getBySelLike("signin-submit").click();
+        
+        cy.getCookie("connect.sid").should("exist");
+        cy.reload();
+        cy.location("pathname").should("equal", "/");
+        cy.visualSnapshot("Home Page after Reload");
+    });
+
+    it("should allow a visitor to sign-up, login, and logout", () => {
+        const firstName = "Test";
+        const lastName = "User";
+        const username = "testuser" + Math.random().toString().slice(2, 8);
+        const password = "s3cret";
+        
+        // Sign-up
+        cy.visit("/signup");
+        cy.getBySelLike("signup-first-name").type(firstName);
+        cy.getBySelLike("signup-last-name").type(lastName);
+        cy.getBySelLike("signup-username").type(username);
+        cy.getBySelLike("signup-password").type(password);
+        cy.getBySelLike("signup-confirmPassword").type(password);
+        cy.getBySelLike("signup-submit").click();
+        cy.wait("@signup");
+        
+        // Login
+        cy.getBySelLike("signin-username").type(username);
+        cy.getBySelLike("signin-password").type(password);
+        cy.getBySelLike("signin-submit").click();
+        cy.location("pathname").should("equal", "/");
+        
+        // Logout
+        cy.getBySelLike("sidenav-signout").click();
+        cy.location("pathname").should("equal", "/signin");
+        cy.visualSnapshot("Redirect to SignIn after Logout");
+    });
+
+    it("should display login errors", () => {
+        cy.visit("/signin");
+        cy.getBySelLike("signin-submit").click();
+        cy.getBySelLike("signin-error").should("be.visible");
+        cy.visualSnapshot("Login Error");
+    });
+
+    it("should display signup errors", () => {
+        cy.visit("/signup");
+        cy.getBySelLike("signup-submit").click();
+        cy.getBySelLike("signup-error").should("be.visible");
+        cy.visualSnapshot("Signup Error");
+    });
+
+    it("should error for an invalid user", () => {
+        cy.visit("/signin");
+        cy.getBySelLike("signin-username").type("nonexistentuser");
+        cy.getBySelLike("signin-password").type("invalidpassword");
+        cy.getBySelLike("signin-submit").click();
+        cy.getBySelLike("signin-error").should("be.visible");
+        cy.visualSnapshot("Invalid User Error");
+    });
+
+    it("should error for an invalid password for existing user", () => {
+        cy.visit("/signin");
+        cy.getBySelLike("signin-username").type("johndoe");
+        cy.getBySelLike("signin-password").type("invalidpassword");
+        cy.getBySelLike("signin-submit").click();
+        cy.getBySelLike("signin-error").should("be.visible");
+        cy.visualSnapshot("Invalid Password Error");
+    });
+});

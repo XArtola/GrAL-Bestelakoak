@@ -1,0 +1,4 @@
+Konpondu parseatzailea
+Pasa testuinguru bezela dena eta ez zati bat
+Argi utzi kontutan hartu behar duela kodea eta ezin duela ezer asmatu
+JSON formatuan pasa galderak eta erantzunak

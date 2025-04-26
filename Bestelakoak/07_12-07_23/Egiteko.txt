@@ -1,0 +1,98 @@
+Gemini 1.5 pro
+
+AiStudio
+
+Api key erabiltzeko VPN erabili
+
+AIzaSyDRyHYfVbRrWp5_g8hogbK_IODFQrmQQeU
+
+----------------------------------------------------------
+Repototxt
+------------------------------------------------------------
+httrack erabili (command line) webgunea lokalean probatzeko
+--------------------------------------------------------------
+
+EGIN BEHARREKO ATAZAK:
+
+-----------
+| 0 ataza |
+-----------
+- repo (bdd) --> gherkin bdd --> cucumber 
+
+Montatu localhost-ean kendu gherkin eta bdd-ren zatiak nik egiteko
+
+
+Driven gorde repoa nonbinary direnak kenduta eta pasa esteka
+
+
+-----------
+| 1 ataza |
+-----------
+    gherkin sortu (user story): pasatuz
+        - json 
+        - dokumentazioa
+        - repoa (hau beti besteak konbinatzen joan)
+
+        Erabiltzaileak zer egin dezakeen lortu 
+
+-----------
+| 2 ataza |
+-----------
+    Testak
+        - Gherkinak edukita nola testak sortu
+
+
+---------------------------------------------------------------
+
+Montatuta eduki 2 prozesuak
+
+    pasatzeko pista moduan
+                        - 0 shot
+                        - 1 shot  
+                        - Few shot
+
+----------------------------------------------------------------
+
+Groq
+chatgpt 3,5 api key
+gemini 1.5 pro (vpn) google ai AiStudio
+Sonnet?
+
+----------------------------------------------------------------
+
+EXCELL TAULA EGIN
+
+errenkadak aukerak (konbinaketak lortu), zutabeak llm-aukerak
+repo bakoitzeko orri bat
+
+-----------------------------------------------------------------
+Fork egin. Ezin da fork egin kontu beretik, beraz clonatu eta listo
+
+
+
+-----------------------------------------------------------------
+
+Korreoetatik lortutakoa:
+
+Irakurri/Ikusi:
+    Gherkin and Cucumber:
+
+    https://www.youtube.com/watch?v=d_-sM5Bvk94
+
+    Serenity test:
+
+    https://github.com/serenity-bdd/serenity-core
+
+Probetarako repoak:
+
+    Repo examples:
+
+    *** https://github.com/cucumber/cucumber-js-examples
+
+    *** https://github.com/yaronassa/cucumber-js-boilerplate
+
+    https://github.com/wxlam/simple-cucumber-puppeteer-example
+
+    https://github.com/JazzTeam/selenium-cucumber-js
+
+    https://github.com/qmetry/cucumber-javascript-example

@@ -1,0 +1,4883 @@
+Prompt: Analyze the cucumber-js-boilerplate-master folder to understand its structure, purpose, and functionality. Follow these steps to study the codebase:
+
+1. Read the README file to gain an overview of the project, its goals, and any setup instructions.
+
+2. Examine the folder structure to understand how the files and directories are organized.
+
+3. Identify the main entry point of the application (e.g., main.py, app.py, index.js) and start analyzing the code flow from there.
+
+4. Study the dependencies and libraries used in the project to understand the external tools and frameworks being utilized.
+
+5. Analyze the core functionality of the project by examining the key modules, classes, and functions.
+
+6. Look for any configuration files (e.g., config.py, .env) to understand how the project is configured and what settings are available.
+
+7. Investigate any tests or test directories to see how the project ensures code quality and handles different scenarios.
+
+8. Review any documentation or inline comments to gather insights into the codebase and its intended behavior.
+
+9. Identify any potential areas for improvement, optimization, or further exploration based on your analysis.
+
+10. Provide a summary of your findings, including the project's purpose, key features, and any notable observations or recommendations.
+
+Use the files and contents provided below to complete this analysis:
+
+README:
+# CucumberJS Boilerplate
+
+## General
+
+This project provides a boilerplate for large-scale cucumberJS projects, allowing you to hit the ground running, spending time on what matters - your organization's DSL and specs.
+
+- CI friendly
+- Module friendly
+- Composable configurations
+- Extensive cucumber hook support
+- Control the cucumber test flow
+- Cucumber / Infrastructure code separation
+- Debuggable infrastructure
+- Built in encrypted passwords/credentials management
+
+
+## Installation
+
+1. **Get the files** by one of these methods:
+
+- Clone the repository and reset its origin to your own repository
+- Download & extract the [zipped repo](https://github.com/yaronassa/cucumber-js-boilerplate/archive/master.zip).
+- Use [SAO](https://github.com/egoist/sao) to install from report via `sao yaronassa/cucumber-js-boilerplate` 
+
+2. **Install the dependencies**:
+
+- `npm install`
+
+OR
+
+- `yarn install`
+
+4. **You're good to go**. See The quick-start section below, or go through the more [in-depth guide](./documentation/guide.md)..
+
+
+## Features
+
+#### CI friendly
+
+The infrastructure provides many CI friendly features:
+
+- Cascading configuration files, allowing local machine / environment / custom overrides through files and parameters.
+- A single access point for easily running a project / integration build.
+- Ability to inject external build parameters into your cucumber features.
+- Ability to filter / reorder tests according to build parameters.
+- Flexible setup and teardown hooks, allowing post-run result manipulation. 
+
+#### Module friendly
+
+The entire infrastructure and its runner can be imported to your code and used as any other module.
+You can embed an entire cucumber project as a part of a greater whole.
+
+#### Composable configurations
+
+Customize the project's `masterConfig.ts` to your needs, then add as many more overriding configuration files as you want.
+Run the project with multiple `--configFile=someFile.ts` parameters to aggregate and override specific settings for every environment / build type / contingency.
+
+Want something more ad-hoc? No problem - run the project with multiple `--configParam a.b.c=Something` to override specific configuration paths.
+
+#### Extensive cucumber hook support
+
+In addition to the usual cucumber hooks, enjoy more fine-grained hooks:
+
+- beforeRun - To initialize your infrastructure before any scenario starts running
+- afterRun - To teardown any dependencies that need cucumber to finish runner in order to clean / post-process.
+- beforeStep, afterStep - Allows pre and post micro-actions to control how steps are executed
+
+#### Control the cucumber test flow
+
+Access the preloaded test-cases, and reorder, truncate or manipulate them to your liking.
+
+The infrastructure comes with a built in tag grouping mechanism: 
+
+- Scenarios tagged with `@setup`<sup>*</sup> will be executed first
+- Scenarios tagged with `@teardown`<sup>*</sup> will be executed last
+- Other scenarios will be executed between the above two
+
+<sup>*</sup> The actual tags are configurable
+
+#### Cucumber / Infrastructure code separation 
+
+Keep your cucumber world lean and simple - All cucumber support file, step definitions and hooks see simple code facades through a single access point.
+
+Your infrastructure is completely hidden from cucumber steps, allowing you to change your infrastructure's implementation without any impact on cucumber or the test flow.
+
+#### Debuggable infrastructure
+
+Run cucumber in-process, and debug your entire infrastructure from the comfort of your favorite IDE.
+
+#### Use steps that modify future steps
+
+Built in infrastructure for modifying future steps behavior according to the current step / configuration values.
+
+Customize your own behaviors by tracking a working real-world example for marking the next step as expected to fail with a specific error.
+
+#### Built in utils
+
+The project comes with some basic utils, allowing you to use scenario data context, parsed variables, integrated logs, and more.
+
+Or, throw all those to the bin, and write everything by yourself.
+
+#### Built in encrypted passwords/credentials management
+
+Encrypt your service passwords and credentials with a single command, and commit them with your code.
+Decrypt them with similar ease on deployment, and access them like any other infrastructure variable.
+
+## Quick start
+
+#### Demo run and examples
+
+It's probably best to see the infrastructure in action.
+
+Either run through the terminal with `npm start -- cucumber --tags=@demo`, or use `npm run demo` to the same effect.
+
+You'll see the infrastructure print out some configuration messages, and then run through with the demo features.
+When the run finishes, you'll have passed and failed scenarios, and console output, and a html result file in `./temp/<Date_Time>/results/index.html`.
+
+You can also take a look at the [example folder](/src/cucumber/features/examples), and the [test suite](./test/tests) to better understand the infrastructure features.
+
+#### Configuration
+
+The infrastructure comes with built-in support for multiple environments, configurations and configuration overrides.
+[`./config/master.ts`](./config/master.ts) represents the complete configuration tree for the run, reports and infrastructure capabilities.
+
+Specific parameters can be overridden by running with `--configFile=someFile.ts` (The files are expected to be in the `./config` folder) and `--configParam a.b.c.d=value` to override a specific configuration leaf.
+
+Any JSON path in the config file will override the parallel path in the master file, as well as any path in the configParam parameter.
+You can compose and re-compose as many overwriting files and parameters.
+
+#### New features and steps
+
+Writing more features is similar to any other cucumber project.
+Just go to the feature root directory at `src/cucumber/features`, and write new features, scenarios and matching step definitions.
+
+As you can see in existing steps, the cucumber world objects has `.facades` property, which leads to the `src/infrastructure/cucumberFacades` code structure.
+When adding new steps, implement them in new facade functions and objects as needed, and only access other infrastructure modules from within these facade functions.
+This will ensure proper code separation and encapsulation.
+
+**Please Note** - Facade functions MUST return a Promise as their result.
+
+#### New infrastructure modules
+
+As cucumber can only access the facade functions and code structures, other infrastructure modules only exists to "serve" these facades.
+You can write as many new infrastructure modules as you'd like. 
+
+It's best to follow the existing convention of creating them as a new instance, and attaching them to one of the existing infrastructure modules (or the root object).
+This will ensure every infrastructure module can reuse other modules public methods. 
+
+#### Using cucumber hooks
+
+All cucumber hooks are already connected to the infrastructure in [`src/infrastructure/testFlowManager/hooksManager.ts`](/src/infrastructure/testFlowManager/hooksManager.ts).
+Like the facade functions, it's best to leave these connector functions lean, and just add function calls to the `hookActions` array, as demonstrated in some of the functions.
+
+**Please Note** - Don't add your hook action directly to cucumber - instead, use the infrastructure's exiting methods and functions.
+
+**Please Note** - Hook action functions MUST return a Promise as their result.
+
+#### Using encrypted passwords
+
+Usually the automation infrastructure needs to access repositories, services and accounts, not all of which have access-keys similar methods of authorization.
+This raises the problem of passwords/credentials management. Should they be committed with the infrastructure code - exposed? Or managed separately, connected to the code via environment variables?
+Each method has its pros and cons.
+
+This boilerplate offers another option - encrypt your passwords with the organization's access-keys, commit them with the code, and decrypt them when deployed to a server / a developer workstation (both usually have the matching private-key for decryption).
+
+- Encrypt your password files using [`./devTools/passwordUtils.ts`](/devTools/passwordUtils.ts).
+- Put the encrypted file in `./passwords`. It can be safely committed with the project.
+- Set the encryption secret in the relevant environment variable (see `config/master.ts` for the variable name).
+- The infrastructure can now access you passwords using the `${password}` variable.
+
+You can see the expected password format and variable usage in the [`./src/features/examples`](/src/cucumber/features/examples) path.
+
+## In-depth look
+
+OK, so, you saw the demo run, and you want to know more.
+
+Browse the [examples folder](./src/cucumber/features/examples) for some common real-world scenarios.
+
+Browse the [test folder](./test/tests) to get a handle on the specific capabilities.
+
+You can find some less-than-basic details on the flow and infrastructure concepts in the [full guide](./documentation/guide.md).
+
+And last but not least, a comprehensive technical overview is available in the [technical readme](./documentation/technical_readme.md).
+
+
+
+
+Folder Structure: cucumber-js-boilerplate-master
+cucumber-js-boilerplate-master/
+    .DS_Store
+    CHANGELOG.md
+    README.md
+    .gitignore
+    package.json
+    tslint.json
+    tsconfig.json
+    infraRunner.ts
+    .travis.yml
+    LICENCE
+    documentation/
+        guide.md
+        technical_readme.md
+    config/
+        local_demo.ts
+        master.ts
+    devTools/
+        passwordUtils.ts
+        processGitHooks.ts
+    src/
+        .DS_Store
+        cucumber/
+            .DS_Store
+            features/
+                emptyFeature.feature
+                examples/
+                    failed_scenario.feature
+                    entities_basic.feature
+                    variables.feature
+                    meta_step_manipulations.feature
+                    entities_full_crud.feature
+            code/
+                support/
+                    timeouts.ts
+                    cucumberParameters.ts
+                    hooks.ts
+                    world.ts
+                step_definitions/
+                    entities.ts
+                    debug.ts
+                    misc.ts
+        configurationManager/
+            IAutomationConfig.ts
+            configurationManager.ts
+        runHelpers/
+            passwordManager.ts
+            cucumberRunner.ts
+        infrastructure/
+            automationInfrastructure.ts
+            infrastructureObject.ts
+            dataManager/
+                dataManager.ts
+                scenarioData.ts
+            testFlowManager/
+                testFlowManager.ts
+                hooksManager.ts
+            logic/
+                propertyFields.ts
+                entities.ts
+                logic.ts
+                fieldMutators/
+                    abstractFieldMutator.ts
+                    demo/
+                        demo.ts
+                    metaweather/
+                        location.ts
+                        forecast.ts
+                    internal/
+                        emptyMutator.ts
+                        internal.ts
+            utils/
+                variableProcessor.ts
+                utils.ts
+                parser.ts
+                logger.ts
+            assert/
+                entities.ts
+                assert.ts
+            testEnvironment/
+                testEnvironment.ts
+                metaWeather/
+                    metaWeatherAPI.ts
+                json/
+                    jsonPlaceholderAPI.ts
+                demoCRUD/
+                    demoCRUD.ts
+            cucumberFacades/
+                debugFacades.ts
+                entities.ts
+                cucumberFacades.ts
+                parameterTypes.ts
+                miscFacades.ts
+            services/
+                services.ts
+                entityServices/
+                    entityServices.ts
+                    additionalEntityServices.ts
+                    entityDeleters/
+                        abstractEntityDeleter.ts
+                        demo/
+                            demo.ts
+                    entityUpdaters/
+                        abstractEntityUpdater.ts
+                        demo/
+                            demo.ts
+                    entityGetters/
+                        abstractEntityGetter.ts
+                        demo/
+                            demo.ts
+                        metaweather/
+                            location.ts
+                            forecast.ts
+                        internal/
+                            internal.ts
+                        json/
+                            user.ts
+                    entityCreators/
+                        abstractEntityCreator.ts
+                        demo/
+                            demo.ts
+
+
+File: .DS_Store
+Content: Skipped binary file
+
+File: CHANGELOG.md
+Content:
+## CucumberJS Boilerplate Changelog
+
+### 0.9.0
+    CHANGE ALL THE THINGS. Notable changes include:
+    - Update everything to TypeScript
+    - Update to cucumber 5
+    - Add inner cucumber hooks (reorder tests, etc)
+    - Extensive mocha-based test suite
+    - Different passwords mechnism
+    - Many more changes
+    
+    Work in progress - still needs technical documentation and other tweaks
+
+### 0.1.0
+    Initial version
+
+File: README.md
+Content:
+# CucumberJS Boilerplate
+
+## General
+
+This project provides a boilerplate for large-scale cucumberJS projects, allowing you to hit the ground running, spending time on what matters - your organization's DSL and specs.
+
+- CI friendly
+- Module friendly
+- Composable configurations
+- Extensive cucumber hook support
+- Control the cucumber test flow
+- Cucumber / Infrastructure code separation
+- Debuggable infrastructure
+- Built in encrypted passwords/credentials management
+
+
+## Installation
+
+1. **Get the files** by one of these methods:
+
+- Clone the repository and reset its origin to your own repository
+- Download & extract the [zipped repo](https://github.com/yaronassa/cucumber-js-boilerplate/archive/master.zip).
+- Use [SAO](https://github.com/egoist/sao) to install from report via `sao yaronassa/cucumber-js-boilerplate` 
+
+2. **Install the dependencies**:
+
+- `npm install`
+
+OR
+
+- `yarn install`
+
+4. **You're good to go**. See The quick-start section below, or go through the more [in-depth guide](./documentation/guide.md)..
+
+
+## Features
+
+#### CI friendly
+
+The infrastructure provides many CI friendly features:
+
+- Cascading configuration files, allowing local machine / environment / custom overrides through files and parameters.
+- A single access point for easily running a project / integration build.
+- Ability to inject external build parameters into your cucumber features.
+- Ability to filter / reorder tests according to build parameters.
+- Flexible setup and teardown hooks, allowing post-run result manipulation. 
+
+#### Module friendly
+
+The entire infrastructure and its runner can be imported to your code and used as any other module.
+You can embed an entire cucumber project as a part of a greater whole.
+
+#### Composable configurations
+
+Customize the project's `masterConfig.ts` to your needs, then add as many more overriding configuration files as you want.
+Run the project with multiple `--configFile=someFile.ts` parameters to aggregate and override specific settings for every environment / build type / contingency.
+
+Want something more ad-hoc? No problem - run the project with multiple `--configParam a.b.c=Something` to override specific configuration paths.
+
+#### Extensive cucumber hook support
+
+In addition to the usual cucumber hooks, enjoy more fine-grained hooks:
+
+- beforeRun - To initialize your infrastructure before any scenario starts running
+- afterRun - To teardown any dependencies that need cucumber to finish runner in order to clean / post-process.
+- beforeStep, afterStep - Allows pre and post micro-actions to control how steps are executed
+
+#### Control the cucumber test flow
+
+Access the preloaded test-cases, and reorder, truncate or manipulate them to your liking.
+
+The infrastructure comes with a built in tag grouping mechanism: 
+
+- Scenarios tagged with `@setup`<sup>*</sup> will be executed first
+- Scenarios tagged with `@teardown`<sup>*</sup> will be executed last
+- Other scenarios will be executed between the above two
+
+<sup>*</sup> The actual tags are configurable
+
+#### Cucumber / Infrastructure code separation 
+
+Keep your cucumber world lean and simple - All cucumber support file, step definitions and hooks see simple code facades through a single access point.
+
+Your infrastructure is completely hidden from cucumber steps, allowing you to change your infrastructure's implementation without any impact on cucumber or the test flow.
+
+#### Debuggable infrastructure
+
+Run cucumber in-process, and debug your entire infrastructure from the comfort of your favorite IDE.
+
+#### Use steps that modify future steps
+
+Built in infrastructure for modifying future steps behavior according to the current step / configuration values.
+
+Customize your own behaviors by tracking a working real-world example for marking the next step as expected to fail with a specific error.
+
+#### Built in utils
+
+The project comes with some basic utils, allowing you to use scenario data context, parsed variables, integrated logs, and more.
+
+Or, throw all those to the bin, and write everything by yourself.
+
+#### Built in encrypted passwords/credentials management
+
+Encrypt your service passwords and credentials with a single command, and commit them with your code.
+Decrypt them with similar ease on deployment, and access them like any other infrastructure variable.
+
+## Quick start
+
+#### Demo run and examples
+
+It's probably best to see the infrastructure in action.
+
+Either run through the terminal with `npm start -- cucumber --tags=@demo`, or use `npm run demo` to the same effect.
+
+You'll see the infrastructure print out some configuration messages, and then run through with the demo features.
+When the run finishes, you'll have passed and failed scenarios, and console output, and a html result file in `./temp/<Date_Time>/results/index.html`.
+
+You can also take a look at the [example folder](/src/cucumber/features/examples), and the [test suite](./test/tests) to better understand the infrastructure features.
+
+#### Configuration
+
+The infrastructure comes with built-in support for multiple environments, configurations and configuration overrides.
+[`./config/master.ts`](./config/master.ts) represents the complete configuration tree for the run, reports and infrastructure capabilities.
+
+Specific parameters can be overridden by running with `--configFile=someFile.ts` (The files are expected to be in the `./config` folder) and `--configParam a.b.c.d=value` to override a specific configuration leaf.
+
+Any JSON path in the config file will override the parallel path in the master file, as well as any path in the configParam parameter.
+You can compose and re-compose as many overwriting files and parameters.
+
+#### New features and steps
+
+Writing more features is similar to any other cucumber project.
+Just go to the feature root directory at `src/cucumber/features`, and write new features, scenarios and matching step definitions.
+
+As you can see in existing steps, the cucumber world objects has `.facades` property, which leads to the `src/infrastructure/cucumberFacades` code structure.
+When adding new steps, implement them in new facade functions and objects as needed, and only access other infrastructure modules from within these facade functions.
+This will ensure proper code separation and encapsulation.
+
+**Please Note** - Facade functions MUST return a Promise as their result.
+
+#### New infrastructure modules
+
+As cucumber can only access the facade functions and code structures, other infrastructure modules only exists to "serve" these facades.
+You can write as many new infrastructure modules as you'd like. 
+
+It's best to follow the existing convention of creating them as a new instance, and attaching them to one of the existing infrastructure modules (or the root object).
+This will ensure every infrastructure module can reuse other modules public methods. 
+
+#### Using cucumber hooks
+
+All cucumber hooks are already connected to the infrastructure in [`src/infrastructure/testFlowManager/hooksManager.ts`](/src/infrastructure/testFlowManager/hooksManager.ts).
+Like the facade functions, it's best to leave these connector functions lean, and just add function calls to the `hookActions` array, as demonstrated in some of the functions.
+
+**Please Note** - Don't add your hook action directly to cucumber - instead, use the infrastructure's exiting methods and functions.
+
+**Please Note** - Hook action functions MUST return a Promise as their result.
+
+#### Using encrypted passwords
+
+Usually the automation infrastructure needs to access repositories, services and accounts, not all of which have access-keys similar methods of authorization.
+This raises the problem of passwords/credentials management. Should they be committed with the infrastructure code - exposed? Or managed separately, connected to the code via environment variables?
+Each method has its pros and cons.
+
+This boilerplate offers another option - encrypt your passwords with the organization's access-keys, commit them with the code, and decrypt them when deployed to a server / a developer workstation (both usually have the matching private-key for decryption).
+
+- Encrypt your password files using [`./devTools/passwordUtils.ts`](/devTools/passwordUtils.ts).
+- Put the encrypted file in `./passwords`. It can be safely committed with the project.
+- Set the encryption secret in the relevant environment variable (see `config/master.ts` for the variable name).
+- The infrastructure can now access you passwords using the `${password}` variable.
+
+You can see the expected password format and variable usage in the [`./src/features/examples`](/src/cucumber/features/examples) path.
+
+## In-depth look
+
+OK, so, you saw the demo run, and you want to know more.
+
+Browse the [examples folder](./src/cucumber/features/examples) for some common real-world scenarios.
+
+Browse the [test folder](./test/tests) to get a handle on the specific capabilities.
+
+You can find some less-than-basic details on the flow and infrastructure concepts in the [full guide](./documentation/guide.md).
+
+And last but not least, a comprehensive technical overview is available in the [technical readme](./documentation/technical_readme.md).
+
+
+
+
+File: .gitignore
+Content: Skipped binary file
+
+File: package.json
+Content:
+{
+  "name": "cucumber-js-boilerplate",
+  "version": "0.9.0",
+  "author": "Yaron Assa",
+  "description": "Boilerplate for a large scale, hierarchical cucumberJS projects",
+  "license": "MIT",
+  "keywords": [
+    "cucumber",
+    "boilerplate",
+    "testing"
+  ],
+  "scripts": {
+    "start": "./node_modules/.bin/ts-node ./infraRunner.ts",
+    "demo": "npm start -- cucumber --tags=@demo",
+    "test": "mocha -r ts-node/register -r ./test/testInfra/setup.ts './test/tests/**/*.ts'",
+    "coverage": "nyc mocha -r ts-node/register -r source-map-support/register --full-trace --bail -r ./test/testInfra/setup.ts './test/tests/**/*.ts' -R spec",
+    "reportCoverage": "nyc report --reporter=text-lcov | coveralls",
+    "precommit": "./node_modules/.bin/ts-node devTools/processGitHooks.ts --hook=preCommit",
+    "lint": "./node_modules/.bin/tslint --project ./",
+    "ci": "npm run lint && npm run coverage"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  },
+  "dependencies": {
+    "typescript": "^3.1.6",
+    "ts-node": "^7.0.1",
+    "cucumber": "^5.0.2",
+    "yargs": "^12.0.2",
+    "fs-extra": "^7.0.1",
+    "moment": "^2.22.2",
+    "assign-deep": "^1.0.0",
+    "uuid": "^3.3.2",
+    "multiple-cucumber-html-reporter": "^1.11.4"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.20",
+    "@types/chai": "^4.1.7",
+    "@types/chai-as-promised": "^7.1.0",
+    "@types/cucumber": "^4.0.4",
+    "@types/fs-extra": "^5.0.4",
+    "@types/mocha": "^5.2.5",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^10.0.8",
+    "@types/sinon": "^5.0.5",
+    "@types/sinon-chai": "^3.2.0",
+    "@types/uuid": "^3.4.4",
+    "@types/winston": "^2.3.9",
+    "@types/yargs": "^11.0.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "deep-equal-in-any-order": "^1.0.10",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "sinon": "^7.1.1",
+    "sinon-chai": "^3.2.0",
+    "source-map-support": "^0.5.9",
+    "tslint": "^5.11.0",
+    "tslint-no-unused-expression-chai": "^0.1.4",
+    "husky": "^1.3.1",
+    "coveralls": "^3.0.2"
+  }
+}
+
+
+File: tslint.json
+Content:
+{
+  "extends": ["tslint:recommended", "tslint-no-unused-expression-chai"],
+  "rules": {
+    "max-line-length": {
+      "options": [180]
+    },
+    "quotemark": false,
+    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
+    "new-parens": true,
+    "no-arg": true,
+    "no-bitwise": true,
+    "no-conditional-assignment": true,
+    "no-consecutive-blank-lines": false,
+    "no-var-requires": false,
+    "variable-name": [true, "allow-leading-underscore"],
+    "semicolon": [true, "always", "ignore-interfaces"],
+    "curly": [true, "ignore-same-line"],
+    "no-console": false,
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "no-trailing-whitespace": [true, "ignore-blank-lines"],
+    "only-arrow-functions": [true, "allow-named-functions"],
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "no-empty": [true, "allow-empty-catch", "allow-empty-functions"]
+  }
+}
+
+File: tsconfig.json
+Content:
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "target": "es2017",
+    "sourceMap": false,
+    "inlineSources": true,
+    "inlineSourceMap": true,
+    "declaration": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src"
+  ]
+}
+
+File: infraRunner.ts
+Content:
+/**
+ * Main access point runner
+ * Can still be consumed as a class
+ */
+
+import {Argv} from "yargs";
+import {CucumberRunner, ICucumberRunOptions} from "./src/runHelpers/cucumberRunner";
+
+const path = require('path');
+
+const projectPath = path.resolve(__dirname);
+const moment = require('moment');
+
+
+/**
+ * Runner for automation commands
+ */
+class AutomationInfrastructureRunner {
+    /**
+     * Run a command from arguments
+     */
+    public runFromArgs(): Promise<{result: boolean, error?: Error}> {
+        const pendingPromise = this.getPendingPromise<{result: boolean, error?: Error}>();
+
+        require('yargs')
+            .command(
+                'cucumber', 'Run the infrastructure cucumber scenarios',
+                args => this.parseRunCucumberArgs(args),
+                args => this.doRunCucumber(args as ICucumberRunOptions).then(pendingPromise.finishedOK).catch(pendingPromise.finishedError)
+            )
+            .demandCommand(1, 1)
+            .parse();
+
+
+        return pendingPromise.result;
+    }
+
+    /**
+     * Perform an infrastructure automation cucumber run
+     * @param options The run options
+     */
+    public async doRunCucumber(options: ICucumberRunOptions): Promise<{result: boolean, error?: Error}> {
+        const runner = new CucumberRunner(options);
+
+        const result = await runner.run();
+
+        return result;
+    }
+
+    /**
+     * Parses arguments for standard infrastructure cucumber run
+     * @param commandArgs The process command args
+     */
+    private parseRunCucumberArgs(commandArgs: Argv): Argv {
+        return commandArgs
+            .option('workPath', {
+                string: true,
+                describe: 'Work directory',
+                default: path.resolve(projectPath, 'temp', moment().format('DDMMYY_HHmm'))
+            })
+            .option('cucumberLibPath', {
+                string: true,
+                describe: 'The relative cucumber library path (containing features and support files)',
+                default: path.resolve(projectPath, 'src', 'cucumber'),
+                hidden: true
+            })
+            .options('configFile', {
+                describe: 'Config override files',
+                alias: 'configFiles',
+                array: true
+            })
+            .option('configParam', {
+                alias: 'configParams',
+                describe: 'Specific config overrides',
+                array: true,
+                coerce: arg => arg.map(item => {
+                    const [paramPath, paramValue] = item.split('=');
+                    return {paramPath, paramValue};
+                })
+            })
+            .group(['configParam', 'configFile'], 'Configuration')
+            .option('tags', {
+                string: true,
+                describe: 'Tag expression to run (not @skip will be added by default)',
+                default: '@debug'
+            })
+        .option('passwordFilesPath', {
+            string: true,
+            describe: 'Passwords file locations',
+            default: path.resolve(projectPath, 'passwords'),
+            hidden: true
+        });
+
+    }
+
+    /**
+     * Returns a pending promise with exposed resolve and reject methods
+     */
+    private getPendingPromise<T>(): {finishedOK: (result: T) => void, finishedError: (e: Error) => void, result: Promise<T>} {
+        let finishedOK: (T) => any = (res: T) => {throw new Error(`Called before initiation. Result = ${res}`); };
+        let finishedError: (e: Error) => void = (e: Error) => {throw new Error(`Called before initiation. Error = ${e.message}`); };
+
+        const result = new Promise((resolve, reject) => [finishedOK, finishedError] = [resolve, reject]) as Promise<T>;
+
+        return {result, finishedError, finishedOK};
+    }
+
+
+}
+
+
+if (require.main === module) {
+    const infraRunner = new AutomationInfrastructureRunner();
+    infraRunner.runFromArgs()
+        .then(runResult => {
+            if (runResult.result === false) throw runResult.error || new Error('Run ended with result = false');
+            console.log('Run ended');
+        })
+        .catch(e => {
+            console.log(`Error running process: ${e.stack}`);
+            process.exit(1);
+        });
+}
+
+export {AutomationInfrastructureRunner, ICucumberRunOptions};
+
+
+
+
+
+File: .travis.yml
+Content:
+language : node_js
+node_js :
+  - stable
+install:
+  - npm install
+script:
+  - npm run ci
+after_success:
+  - npm run reportCoverage
+
+File: LICENCE
+Content:
+MIT License
+
+Copyright (c) [2019] [Yaron Assa]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+File: documentation/guide.md
+Content:
+# In depth guid
+
+This is an in depth guid to using the infrastructure.
+
+It's recommended you start with the general quick start [readme](../README.md).
+
+Also, browse the [examples folder](../src/cucumber/features/examples) for some common real-world scenarios.
+
+## Code-first walkthrough
+
+If you prefer learning from the actual code, you can just look for all the `TODO:IMPLEMENT_ME` comments in the project.
+
+These are the "immediate suspects" I expect you to implement when actually using the infrastructure.
+(Some of these will be comments asking you to leave that section alone).
+
+## General
+
+This infrastructure was built with 3 major requirements in mind:
+
+- High degree of control over the actual flow of the test suite.
+- Structured, extendable handling of the AUT's entities and data models.
+- The possibility to separate the test-writer's steps from the inner-workings of the AUT.
+
+Combined, these allow both the infrastructure maintainer and the test writer to operate with a large degree of freedom, and with not many limitations.
+
+### Test flow control
+
+The infrastructure is extremely opinionated with regards to the inner working of Cucumber, up to a degree where some features violate Cucumber's encapsulation.
+
+While this has its drawbacks and may break some features in future versions of Cucumber, I believe the added value outweighs the risks.
+
+##### Pre-run setup
+
+The infrastructure wraps cucumber and runs it internally. This gives you a chance to perform any pre-run setup actions you'd like.
+
+Just add any behaviours you need to the `.setupRunEnvironment` method on [cucumberRunner.ts](../src/runHelpers/cucumberRunner.ts).
+
+These can be downloading features from a remote storage such as [TestRail](https://www.gurock.com/testrail), firing up virtual machines or setting up demo accounts on your AUT.
+
+##### Extended cucumber hooks
+
+The infrastructure takes control over all cucumber hooks, and adds a few of its own.
+You can see all the hook wrapper functions in [hooksManager.ts](../src/infrastructure/testFlowManager/hooksManager.ts), and implement your own behaviours in them.
+
+The available hooks are:
+
+- beforeRun - Allows you to perform the async initialization actions of the infrastructure itself
+- reorderTestCases - Allows you to control which test cases will actually be run and in which order  
+- beforeAllScenarios - The standard cucumber BeforeAll hook
+- beforeScenario - The standard cucumber Before hook
+- beforeStep - Allows you to perform pre-step actions (not likely you'll need it)
+- afterStep - Allows you to perform post-step actions, including mutating / cancelling step errors
+- afterScenario - The standard cucumber After step
+- afterAllScenarios - The standard cucumber AfterAll step
+- afterRun - Cucumber has shutdown, you can perform teardown operations, as well as mutate the results JSON if needed
+
+##### Built-in flow mutations
+
+Overriding and extending cucumber's hooks and internals allows the infrastructure to manipulate the standard test flow behaviours.
+
+You can implement your own behaviours, but the infrastructure comes with these built in options:
+
+- Flip a future step result. You can mark next *n* steps for failure, which means you can expect them to fail (and even with a specific error if you'd like to).
+This can allow you to quickly implement negative tests, without building "negative infrastructure" to support them.
+- Wait for a future step to pass in a given timespan. This allows you to automatically retry a given action until it passes (say, query the AUT for an entity you just created),
+without having to develop the specific infrastructure to support it.
+
+You can see these behaviours in the [step manipulation feature example](../src/cucumber/features/examples/meta_step_manipulations.feature).
+
+### Entity handling
+
+A central part of any meaningful test scenario is creating, modifying and validating entities.
+The infrastructure mirrors and facilitates this by providing a rich internal representation for entities life cycle.
+
+#### Getting entities from the test environment and using them
+
+The infrastructure generically supports getting entities and storing them using the *`"I work with a <type> with fields: <prop=value, prop=value>"`*.
+
+For example: `Given I work with a location list with fields: name = lond`
+
+This will automatically identify the entity type; mutate the user field (maybe the user wrote `name=someName` but the API field is called `fullName`, or maybe the value should be translated to an enum?); and call the relevant entity getter in the infrastructure.
+
+The entity will be retrieved and stored for future reference - steps can reference entities retrieved in the current scenario with terms like `The last`, and `#N` (e.g. The last user / User #3). 
+These references are automatically translated to the actual relevant entities.
+
+For example: `Then this location list has fields: count = 3`
+
+This entity-based language can be used to retrieve entities from the test environment and be used for assertions and validations.
+These capabilities are demonstrated in the [Basic Entities example](../src/cucumber/features/examples/entities_basic.feature).
+
+#### Updating, creating and deleting entities
+
+You'll have to write your own (probably separate) cucumber steps for updating and creating entities.
+
+These can be connected to the same generic entities infrastructure (like the entities getters), which can provide field mutation and payload preparation services.
+
+See these capabilities demonstrated in the [Advanced Entities example](../src/cucumber/features/examples/entities_full_crud.feature). 
+
+You can read more about the entity data flow from the code's perspective in the [technical readme](./documentation/technical_readme.md).
+ 
+#### Adding your own entities
+
+So, what's **actually** needed to add your own entity handlers?
+
+##### Add system and type logic
+
+The logic systems and types framework is used to parse the human readable entity types the user writes into the ridged constraints of code entity types.  
+
+In [logic/entities.ts](../src/infrastructure/logic/entities.ts): 
+
+- Update the `System` enum with your entity's system
+- Update the `processRawTypeSystem` method to extract and identify the above system.
+- Update the `getRootTypeName` method to extract the root type for your new entity types. 
+
+The root type will define the file-name the infrastructure will search for in the next sections.
+
+##### Add field mutation logic
+
+Field mutators are the bridge between the user possibly messy steps and the structured payloads and algorithms of your systems APIs and processes.
+
+A mutator can be as simple as mapping human-readable field names to API technical fields; cam include simple value mutations as lower-casing a value;
+and can have a full-blown algorithm adding, merging and mapping fields and values in sophisticated ways.
+
+In [logic/fieldMutators](../src/infrastructure/logic/fieldMutators), create a folder with your new system name.
+In it, place a mutator file with a filename matching the root-type of your new entity.
+
+The file should default-export a class extending the [abstractFieldMutator](../src/infrastructure/logic/fieldMutators/abstractFieldMutator.ts) class.
+You can see how to mutate user fields and values in the existing mutators and examples.
+
+In most cases, a simple mutator with a `sharedMutations` object property will be enough to map fields and values as needed.
+The [technical readme](./documentation/technical_readme.md) has an in-depth discussion of even more advanced mutation possibilities.
+
+##### Add relevant entity services
+
+Entity services are used to create, get, update and delete entities in the test-environment. 
+A service will usually prepare the payload and parse the API/DB response, while leaving the actual action to the testEnvironment module.
+
+Since entities are stored in a uniform manner in the infrastructure, the entity services expect structured inputs / outputs to their operations.
+
+In [services/entityServices](../src/infrastructure/services/entityServices/), under the relevant action (entityCreators, entityDeleters, entityGetters, entityUpdaters), add a file matching your entity's root type.
+
+The file should default-export a class extending the relevant abstract class. 
+You can look at the existing samples as to how to implement each class type.
+
+The [technical readme](./documentation/technical_readme.md) has an in-depth discussion of each class tyoe and it's relevant details and nuances.
+
+Additional unstructured services can be added under the [additionalEntityServices](../src/infrastructure/services/entityServices/additionalEntityServices.ts) class, and called from the cucumberFacades / other modules.
+
+##### Add and connect relevant testEnvironment classes
+
+The testEnvironment module is supposed to house method that actually "go out to the world" and perform some actions.
+Unlike the logic / services classes, the testEnvironment ones aren't structured and don't relay on common implementations.
+
+Just write the methods to retrieve / manipulate your AUT's entities, and use them from the different services.
+Change the config schema and master files to support your new operations.
+
+##### That's it
+
+### Field parsing & Variable processing
+
+Cucumber steps are just flat strings, but sometimes more is required - interloping strings, working with arrays, regexps, etc.
+
+The infrastructure provides two ways for enriching flat steps:
+
+- Parsing field-value pairs
+- Using variables
+
+##### Parsing field-value pairs
+
+In many situations, it's useful to specify many field-value pairs under one cucumber capture group.
+For example, when validating entity properties, we'd like to specify all expected values for all properties in a single, unlimited format.
+
+`Parser.parseFieldPairs` take a string of the format *`a=b, c=d, e=f`*, and breaks it down to an array of `{fieldName, fieldValue}` objects, while accounting for escaping and variable processing.
+
+This capability is demonstrated as part of the entity creation and validation steps.
+You can also explore the relevant [parser tests](../test/tests/infrastructure/utils/parser.tests.ts).
+
+##### Using variables
+
+Variables appear in the form `${Variable}` and can be used to reference entity properties, produce complex values, and allow for sophisticated value comparisons.
+
+Variables that are transformed to flat string:
+
+- createdEntities variables - are transformed to the relevant entity's property value. e.g. ${createdEntities_User_#1.name} will be transformed into the first created user's name.
+- global, external variables - are transformed to a previously stored / externally passed data, e.g. ${global_someName}, ${externalParams_someName}
+- date variables - are transformed into today's date, with the requested offset, and a possible output format. e.g ${Date_today_-1_year}, ${Date_today_-1_year_+5_days}, ${Date_today_format_DD/MM}
+- Math & random variables - Are transformed into the string representation of the calculation result. e.g. ${=_1+4*2} will be transformed into the string 9, and ${random_20_25} will be transformed into the string of a number between 20 and 25 (inclusive),
+- Password variables - Are transformed into the matching password from the encrypted password file. e.g. ${password_system_domain_user} will be transformed into the matching password for this system-domain-user combination (if exists).
+
+Variables that are transformed to objects:
+
+- array variables - are transformed into actual arrays, and can be useful for functions that expects multiple values: `${[a, b, c, d, ...]`}
+- regex variables - are transformed into regular expressions, and are mainly used for value comparisons. e.g. ${/some.*regexp/i}.
+
+Array and regex variables can also be used as testable objects, for sophisticated value comparisons.
+Testables support variable modifiers that can change their behaviour. These include:
+
+- contains - Makes the variable return true even on partial matches.
+- ignoreCase - Makes the variable return true when matching different cased strings
+- trim - Makes the variable return true when matching string with trailing spaces.
+
+See these capabilities demonstrated in the [variables example](../src/cucumber/features/examples/variables.featrure).
+
+You can also explore the relevant [variable tests](../test/tests/infrastructure/utils/variableProcessor.tests.ts) to gain a better understanding.
+
+**Please note** Currently all variable processing is logged and appears in the output, except for password variables.
+
+# Deeper dive - A Technical Overview
+
+A comprehensive technical overview is available in the [technical readme](./technical_readme.md). 
+
+
+File: documentation/technical_readme.md
+Content:
+# Cucumber Boilerplate Technical Readme
+
+## General
+
+This readme presents an overview of the project structure, as well as in depth examples and details of the possible implementations and code structures.
+
+Make sure you read the [general reame](../README.md) and go through the installation process before proceeding.
+It's also recommended you read the [general guide](./guide.md) before proceeding.
+
+# TODO: Fill the technical readme
+
+File: config/local_demo.ts
+Content:
+import {IAutomationConfig} from "../src/configurationManager/IAutomationConfig";
+
+// TODO:IMPLEMENT_ME - create environment-specific config files and use them accordingly
+
+/**
+ * This is a demonstration of a local override file
+ */
+const localConfig: IAutomationConfig = {
+    utils: {
+        debug: {warnOnCodeEval: false}
+    },
+    testEnvironment: {
+        behaviour: {
+            timeouts : {
+                http: 180000
+            },
+            revertEntityChanges: {
+                user: false
+            }
+        }
+    }
+
+
+};
+
+export default localConfig;
+
+
+File: config/master.ts
+Content:
+import {IAutomationConfig} from "../src/configurationManager/IAutomationConfig";
+
+const masterConfig: IAutomationConfig = {
+
+    externalParams: {},
+    passwords: {
+        fallbackToPreDecrypted: true,
+        decryptionKeyEnvVariable: 'AUTOMATION_INFRA_PASSWORDS_KEY'
+    },
+    utils: {
+        email: {
+            enabled: true,
+            user: 'someTestUser@gmail.com',
+            host: 'imap.gmail.com',
+            port: 993,
+            tls: true,
+            authTimeout: 3000
+        },
+        performance: {
+            generateForTags: ['@debug', '@performance', '@load']
+        },
+        debug: {
+            warnOnCodeEval: true
+        }
+    },
+    testEnvironment: {
+        behaviour: {
+            revertEntityChanges: true,
+            timeouts: {
+                sampleCreation: 1000 * 60 * 120,
+                http: 90000
+            }
+        },
+        metaWeather: {
+            baseURL: 'https://www.metaweather.com/api'
+        },
+        jsonPlaceholder: {
+            baseURL: 'https://jsonplaceholder.typicode.com'
+        }
+    },
+    logic: {
+        allowDefaultFieldMutator: true,
+        testCaseOrder: {
+            beginWithTag: '@setup',
+            endWithTag: '@teardown'
+        }
+    }
+};
+
+export default masterConfig;
+
+
+File: devTools/passwordUtils.ts
+Content:
+import {Argv, Arguments} from "yargs";
+
+const path = require('path');
+const fs = require('fs');
+const execSync = require('child_process').execSync;
+
+const runFromArgs = (manualArgs?: string[], exitOnFail: boolean = false): string => {
+
+    return require('yargs')
+        .command('encryptFile', 'Encrypts a password file', (commandArgs: Argv) => {
+            commandArgs
+                .option('password', {
+                    describe: 'The encryption password',
+                    demandOption: true,
+                    type: 'string'
+                })
+                .option('file', {
+                    describe: 'The source password file to encrypt',
+                    demandOption: true,
+                    type: 'string',
+                    coerce: val => path.resolve(val)
+                })
+                .option('output', {
+                    describe: 'The target encrypted file',
+                    type: 'string',
+                    coerce: val => (val) ? path.resolve(val) : val
+                })
+                .check(parsedArgs => {
+                    if (!fs.existsSync(parsedArgs.file)) throw new Error(`File ${parsedArgs.file} doesn't exist`);
+                    return true;
+                });
+        }, args => {
+            const output = args.output || `${args.file}.enc`;
+            execSync(`openssl enc -aes-256-cbc -in "${args.file}" -out "${output}" -k ${args.password}`);
+            console.log(`Password file has been encrypted. Output at ${output}`);
+        })
+        .command('decryptFile', 'Decrypt a password file', (commandArgs: Argv) => {
+            commandArgs
+                .option('password', {
+                    describe: 'The decryption password',
+                    demandOption: true,
+                    type: 'string'
+                })
+                .option('file', {
+                    describe: 'The source password file to decrypt',
+                    demandOption: true,
+                    type: 'string',
+                    coerce: val => path.resolve(val)
+                })
+                .option('output', {
+                    describe: 'The target decrypted file',
+                    type: 'string',
+                    coerce: val => (val) ? path.resolve(val) : val
+                })
+                .check(parsedArgs => {
+                    if (!fs.existsSync(parsedArgs.file)) throw new Error(`File ${parsedArgs.file} doesn't exist`);
+                    return true;
+                });
+        }, args => {
+            let output = args.output || args.file.replace(/\.enc$/, '');
+            if (output === args.file) output = output + '.dec';
+            execSync(`openssl enc -d -aes-256-cbc -in ${args.file} -out ${output} -k ${args.password}`);
+            console.log(`Password file has been decrypted. Output at ${output}`);
+        })
+        .demandCommand()
+        .fail((msg: string, err: Error) => {
+            if (err) throw err;
+            if (exitOnFail) {
+                console.error(msg);
+                process.exit(1);
+            } else {
+                throw new Error(msg);
+            }
+        }).parse(manualArgs);
+};
+
+if (require.main === module) {
+    runFromArgs(process.argv, true);
+}
+
+export {runFromArgs};
+
+
+File: devTools/processGitHooks.ts
+Content:
+
+
+const {execSync} = require('child_process');
+
+class GITHooksProcessor {
+    public async runFromArgs() {
+        const hook = require('yargs').argv.hook as string;
+        return this.processGitHook(hook);
+    }
+
+    public async processGitHook(hookName: string) {
+
+        switch (hookName) {
+            case 'preCommit':
+                return this.processPreCommit();
+
+            default:
+                throw new Error(`Unknown hook: ${hookName}`);
+        }
+    }
+
+    private async processPreCommit() {
+        const forbiddenFilesMatchers = [/^passwords\/decrypted\//, /passwords\/keys\//];
+        const files: string[] = execSync('git diff --cached --name-only').toString().split('\n');
+
+        const forbiddenFiles = files.filter(file => forbiddenFilesMatchers.some(matcher => matcher.test(file)));
+
+        if (forbiddenFiles.length > 0) throw new Error(`Commit includes forbidden files: ${forbiddenFiles.join(', ')}`);
+
+        const lintFiles = files.filter(file => file.endsWith('.ts'));
+
+        if (lintFiles.length > 0) execSync(`./node_modules/.bin/tslint ${lintFiles.join(' ')}`);
+
+    }
+}
+
+export {GITHooksProcessor};
+
+if (require.main === module) {
+    const processor = new GITHooksProcessor();
+    processor.runFromArgs()
+        .then(() => {
+            console.log('Git hook processed');
+            process.exit(0);
+        })
+        .catch(e => {
+            console.error(`Error processing git hook : ${e.message}`);
+            process.exit(1);
+        });
+}
+
+
+File: src/.DS_Store
+Content: Skipped binary file
+
+File: src/cucumber/.DS_Store
+Content: Skipped binary file
+
+File: src/cucumber/features/emptyFeature.feature
+Content:
+Feature: Empty feature
+  This feature only serves for the infrastructure to be able to dry-run
+
+
+File: src/cucumber/features/examples/failed_scenario.feature
+Content:
+@demo
+Feature: This feature houses a failed scenario
+
+  Scenario: Demonstrating a failure
+    Given I run a failed step
+
+File: src/cucumber/features/examples/entities_basic.feature
+Content:
+@demo
+Feature: Entities and assertions examples
+  This feature shows entity retrieval, validation and manipulation scenarios.
+  The entities are based on the MetaWeather API (https://www.metaweather.com/api/) and the JSON placeholder API (https://jsonplaceholder.typicode.com/)
+
+  Scenario: Basic entity retrieval
+    Given I work with a location list with fields: name = lond
+    Then This location list has fields: length = 1
+
+  Scenario: Validating list items
+    Given I work with a location list with fields: name = lond
+    Then This location list contains an item with fields: title = London
+    And This location list doesn't contain an item with fields: title = Other city
+
+  Scenario: Using entities as references for other entities
+    Given I work with a location list with fields: name = lond
+    And From this location list, I work with a location with: title = London
+    Then This location exists
+    And from this location, I work with a forecast
+    Then this forecast exists
+
+  Scenario: Checking item order
+    Given I work with the entire json user list
+    And from this json user list, I work with the json user with fields: email=${/melissa.tv/}
+    Then This json user exists
+    And This json user has fields: #=2
+
+  Scenario: Using object properties as separate entities
+    Given I work with a location list with fields: name = lond
+    And From this location list, I work with a location with: title = London
+    And from this location, I work with a forecast
+    And I work with the .consolidated_weather.0 property from this forecast
+    Then This property has fields: humidity = ${/\d+/}
+
+    Given I work with the entire json user list
+    And from this json user list, I work with the json user with fields: email=${/melissa.tv/}
+    And I work with the .company property of this json user
+    Then This property has fields: name = Deckow-Crist
+
+  Scenario: Working with entity ordinals
+    Given I work with the json user list with fields: username = Antonette
+    And I work with the json user list with fields: username = Leopoldo_Corkery
+    Then json user list #1 contains an item with fields: id = 2
+    And json user list #2 contains an item with fields: id = 6
+    And json user list #1 has fields: length = ${entities_json_user_list_2.length}
+
+  Scenario: Working with entity variables
+    Given I work with the entire json user list
+    And from this json user list, I work with the json user with fields: email=${/melissa.tv/}
+    Then The variable ${this_json_user.name} equals Ervin Howell
+
+  Scenario: Mixing systems
+    Given I work with the entire json user list
+    And from this json user list, I work with the json user with fields: email=${/melissa.tv/}
+    And I work with the .address.geo property of this json user
+    Given I work with a location list with fields: location = ${[${this_property.lat}\, ${this_property.lng}]}
+    Then This location list contains an item with fields: title = Johannesburg
+
+
+File: src/cucumber/features/examples/variables.feature
+Content:
+@demo
+Feature: Variable handling
+  These scenarios explore the possible variables the infrastructure offers
+
+  Scenario: Working with this / entities variables
+    Given I work with the entire json user list
+    And from this json user list, I work with the json user with fields: email=Shanna@melissa.tv
+    Then The variable ${this_json_user.name} equals Ervin Howell
+    And The variable ${entities_json_user_1.name} equals Ervin Howell
+
+  Scenario: Working with this / entities variables
+    Given I work with the entire json user list
+    And from this json user list, I work with the json user with fields: email=Shanna@melissa.tv
+    Then The variable ${this_json_user.name} equals Ervin Howell
+    And The variable ${entities_json_user_1.name} equals Ervin Howell
+
+  Scenario: Working with math variables
+    Given I work with the json user list with fields: email=Shanna@melissa.tv
+    Then This json user list has fields: length = ${=_10 - 3*3}
+
+  Scenario: Working with random variables
+    Given I create a demo entity with fields: number = ${random_10_30}
+    And I work with a demo entity with fields: id = ${this_demo_entity.id}
+    Then This demo entity has fields: number = ${this_random}
+
+  Scenario: Working with date variables - 1 of 2
+    Given I create a demo entity with fields: date = ${date_13/12/2000_-5_days_+5_months_format_DD-MM-YY}
+    And I work with a demo entity with fields: id = ${this_demo_entity.id}
+    Then This demo entity has fields: date = 08-05-01
+
+  Scenario: Working with date variables - 2 of 2
+    Given I create a demo entity with fields: date = ${date_now_format_YYYY}
+    And I work with a demo entity with fields: id = ${this_demo_entity.id}
+    Then This demo entity has fields: date = 2019
+
+  Scenario: Working with global variables - 1 of 2
+    Given I set the global variable variableData to thing
+
+  Scenario: Working with global variables - 2 of 2
+    Given I create a demo entity with fields: data = ${global_variableData}
+    And I work with a demo entity with fields: id = ${this_demo_entity.id}
+    Then This demo entity has fields: data = thing
+
+  Scenario: Working with regexp variables
+    Given I create a demo entity with fields: number = ${random_10_99}
+    And I work with a demo entity with fields: id = ${this_demo_entity.id}
+    Then This demo entity has fields: number = ${/\d\d/}
+
+  Scenario: Working with array variables
+    Given I create a demo entity with fields: data = ${[a, b]}
+    And I work with a demo entity with fields: id = ${this_demo_entity.id}
+    Then This demo entity has fields: data.0 = a
+
+
+File: src/cucumber/features/examples/meta_step_manipulations.feature
+Content:
+@demo
+Feature: Meta step manipulation
+  This feature presents the built-in options for manipulating steps and scenarios
+
+  Scenario: Negative tests (Expecting a step to fail)
+    Given I work with a location list with fields: name = lond
+    And The next step must fail with ${/Expected location_list to match spec/}
+    Then This location list has fields: length = 0
+
+
+
+File: src/cucumber/features/examples/entities_full_crud.feature
+Content:
+@demo
+Feature: Entities full CRUD cycle
+  This feature shows entity retrieval, validation and manipulation scenarios.
+  The entities are based on the MetaWeather API (https://www.metaweather.com/api/) and the JSON placeholder API (https://jsonplaceholder.typicode.com/)
+
+  Scenario: Entity creation id usage
+    When I create a demo entity with fields: some=thing
+    And I work with a demo entity with fields: id = ${entities_demo_entity_#1.entity.id}
+    Then This demo entity has fields: some = thing
+
+  Scenario: Basic entity creation
+    Given I work with a demo entity with fields: some=thing
+    Then This demo entity doesn't exist
+    When I create a demo entity with fields: some=thing
+    And I work with a demo entity with fields: some=thing
+    Then This demo entity exist
+
+  Scenario: Basic entity update and refresh
+    When I create a demo entity with fields: some=thing
+    And I work with a demo entity with fields: some=thing
+    When I update this demo entity with fields: some2=thing2
+    And I refresh this demo entity from the test environment
+    Then This demo entity has fields: some2=thing2, some = thing
+
+  Scenario: Basic entity deletion
+    When I create a demo entity with fields: some=thing
+    And I work with a demo entity with fields: some=thing
+    And I delete this demo entity
+    And I refresh this demo entity from the test environment
+    Then This demo entity doesn't exist
+
+    @skipRevert
+  Scenario: Keep created entities part 1 of 2
+      When I create a demo entity with fields: some=thing
+      And I set the global variable entityID to ${this_demo_entity.id}
+      
+  Scenario: Keep created entities part 2 of 2
+    And I work with a demo entity with fields: id = ${global_entityID}
+    Then This demo entity has fields: some = thing
+    And I delete this demo entity
+
+File: src/cucumber/code/support/timeouts.ts
+Content:
+const {setDefaultTimeout} = require('cucumber');
+
+setDefaultTimeout(180 * 1000);
+
+
+File: src/cucumber/code/support/cucumberParameters.ts
+Content:
+import {defineParameterType} from 'cucumber';
+import {ICucumberWorld} from "./world";
+
+// TODO:IMPLEMENT_ME - Add your own parameters or change these
+
+const dataEntityParameterType = {
+    name: 'DataEntity',
+    preferForRegexpMatch: true,
+    regexp: /(?:this|the latest|the last)? *.+? *(?:#\d+)?/,
+    /** @this {World} */
+    transformer(this: ICucumberWorld, value: string) { return this.facades.parameters.dataEntity(value); },
+    useForSnippets: false
+};
+
+const propertyFieldsParameterType = {
+    name: 'PropertyFields',
+    preferForRegexpMatch: true,
+    regexp: /(?:.+=.*, ?)*(?:.+=.*)/,
+    /** @this {World} */
+    transformer(this: ICucumberWorld, value: string) { return this.facades.parameters.matchFields(value); },
+    useForSnippets: false
+};
+
+defineParameterType(dataEntityParameterType);
+defineParameterType(propertyFieldsParameterType);
+
+
+
+
+File: src/cucumber/code/support/hooks.ts
+Content:
+import {AutomationInfrastructure} from "../../../infrastructure/automationInfrastructure";
+const {After, Before, AfterAll, BeforeAll, setDefinitionFunctionWrapper} = require('cucumber');
+
+AutomationInfrastructure.getInstance().testFlowManager.bindCucumberHooks({After, Before, AfterAll, BeforeAll, setDefinitionFunctionWrapper});
+
+// TODO:IMPLEMENT_ME - Actually, don't implement me.
+// This is a reminder that all hook actions are defined in the infrastructure itself, NOT through cucumber support files
+// Explore the testFlowManager and hooksManager classes instead
+
+
+File: src/cucumber/code/support/world.ts
+Content:
+import {setWorldConstructor} from 'cucumber';
+import {AutomationInfrastructure} from "../../../infrastructure/automationInfrastructure";
+import {CucumberFacades} from "../../../infrastructure/cucumberFacades/cucumberFacades";
+
+const infra = AutomationInfrastructure.getInstance();
+
+export interface ICucumberWorld { facades: CucumberFacades, attach: (value: any, type?: string) => void | Promise<void> }
+
+
+setWorldConstructor(function World({attach}) {
+    this.facades = infra.cucumberFacades;
+    this.attach = attach;
+});
+
+// TODO:IMPLEMENT_ME - Actually, don't implement me.
+// Cucumber's world should be lean. All utils and functionality should be added on the infrastructure itself.
+
+
+File: src/cucumber/code/step_definitions/entities.ts
+Content:
+import {Given, When, Then} from 'cucumber';
+import {ICucumberWorld} from "../support/world";
+
+Given(/^I refresh ((?:this|the latest|the last)? *.+? *(?:#\d+)?) *from the test environment$/i,
+    async function(this: ICucumberWorld, entityReference) {
+        return this.facades.entities.refreshEntityReference(entityReference);
+    });
+
+Given(/^I work with (?:a|an|the|my) (.+?) (?:matching|with)(?: fields)?: ((?:.+=.*, ?)*(?:.+=.*))$/i,
+    async function(entityType, matchFields) {
+        return this.facades.entities.storeEntityToMemory(undefined, entityType, matchFields);
+    });
+
+Given(/^(?:From|For) ((?:this|the latest|the last)? *.+? *(?:#\d+)?),? I work with (?:a|an|the|my) (.+?) (?:matching|with)(?: fields)?: ((?:.+=.*, ?)*(?:.+=.*))$/i,
+    async function(this: ICucumberWorld, fromEntity, entityType, matchFields) {
+        return this.facades.entities.storeEntityToMemory(fromEntity, entityType, matchFields);
+    });
+
+Given(/^(?:From|For) ((?:this|the latest|the last)? *.+? *(?:#\d+)?),? I work with (?:a|an|the|my) ([^=]+?)$/i,
+    async function(this: ICucumberWorld, fromEntity, entityType) {
+        return this.facades.entities.storeEntityToMemory(fromEntity, entityType);
+    });
+
+Given(/^I work with the entire ([^=]+?)$/i,
+    async function(this: ICucumberWorld, entityType) {
+        return this.facades.entities.storeEntityToMemory(undefined, entityType);
+    });
+
+Given(/^I work with the \.(.+?) property (?:from|of) ((?:this|the latest|the last)? *.+? *(?:#\d+)?)$/i,
+    async function(this: ICucumberWorld, property, entity) {
+        return this.facades.entities.storeEntityPropertyToMemory(property, entity);
+    });
+
+
+Given(/^I delete ((?:this|the latest|the last)? *.+? *(?:#\d+)?)$/i,
+    async function(this: ICucumberWorld, entityToDelete) {
+        return this.facades.entities.deleteEntity(entityToDelete);
+    });
+
+
+Then(/^((?:this|the latest|the last)? *.+? *(?:#\d+)?) (does(?:n't| not))? *(?:has|have) fields: ((?:.+=.*, ?)*(?:.+=.*))$/i,
+    async function(this: ICucumberWorld, entity, flipResult, matchFields) {
+        return this.facades.entities.assertEntityProperties(entity, matchFields, flipResult === undefined);
+    });
+
+Then(/^((?:this|the latest|the last)? *.+? *(?:#\d+)?) (does(?:n't| not))? *exists?$/i,
+    async function(this: ICucumberWorld, entity, flipResult) {
+        return this.facades.entities.assertEntityExists(entity, flipResult === undefined);
+    });
+
+Then(/^((?:this|the latest|the last)? *.+? *(?:#\d+)?) *(does(?:n't|not))? *contains? (?:an)? *(\d+)? *items? with fields: ((?:.+=.*, ?)*(?:.+=.*))$/i,
+
+    async function(this: ICucumberWorld, entity, flipResult, itemsCount, matchFields) {
+        if (isNaN(itemsCount) || itemsCount === undefined) itemsCount = -1;
+        return this.facades.entities.assertEntityHasItems(entity, matchFields, itemsCount, flipResult === undefined);
+    });
+
+When(/^I (?:edit|update) ((?:this|the latest|the last)? *.+? *(?:#\d+)?) with(?: fields)?: ((?:.+=.*, ?)*(?:.+=.*))$/,
+
+    async function(this: ICucumberWorld, entityReference, editFields) {
+        return this.facades.entities.updateEntity(entityReference, editFields);
+    });
+
+When(/^(?:From ((?:this|the latest|the last)? *.+? *(?:#\d+)?)?, )?I create a demo entity with(?: fields)?: ((?:.+=.*, ?)*(?:.+=.*))$/,
+
+    async function(this: ICucumberWorld, entityReference, creationFields) {
+        return this.facades.entities.createDemoEntity(entityReference, creationFields);
+    });
+
+
+File: src/cucumber/code/step_definitions/debug.ts
+Content:
+import {Given} from 'cucumber';
+import {ICucumberWorld} from "../support/world";
+
+Given(/^I run an? (.+)? *step$/, function(this: ICucumberWorld, rawProperties) {
+    const properties = {
+        async: /async/i.test(rawProperties),
+        failed: /fail/i.test(rawProperties),
+        skipped: /skip/i.test(rawProperties)
+    };
+
+    return this.facades.debug.demoStep(properties);
+});
+
+Given(/^Eval code (.+)$/, {timeout: -1},
+    function(this: ICucumberWorld, userCode) {
+        return this.facades.debug.evalCode(userCode);
+    });
+
+Given (/^(?:I )?print variable (.+)$/i, function(this: ICucumberWorld, variable) {
+    return this.facades.debug.printVariable(variable);
+});
+
+
+File: src/cucumber/code/step_definitions/misc.ts
+Content:
+import {Given} from 'cucumber';
+import {ICucumberWorld} from "../support/world";
+
+Given(/^I write (.+?) to (.+)$/i, function(this: ICucumberWorld, content, file) {
+    return this.facades.misc.writeToFile(file, content);
+});
+
+Given (/^I set the global variable (.+) to (.+)$/,
+    async function(this: ICucumberWorld, variableName, content) {
+        return this.facades.misc.setGlobalVariable(variableName, content);
+    });
+
+
+Given(/^The next (\d+)? *steps? (should|must|may) fail(?: with (.+?))?$/i,
+    function(this: ICucumberWorld, stepCount, mustFail, errorMessage) {
+        if (stepCount === undefined || isNaN(stepCount)) stepCount = 1;
+        mustFail = (!mustFail.match(/may/i));
+        return this.facades.misc.markNextStepsForFailure(stepCount, mustFail, errorMessage);
+    });
+
+Given(/^I wait for the next step to pass (?:(?:in|for) (\d+) minutes|indefinitely)?$/i,
+    function(this: ICucumberWorld, minutes) {
+        minutes = (minutes === undefined) ? 60 * 10 : Number(minutes);
+        return this.facades.misc.waitForNextStepToFinish(minutes);
+    });
+
+Given(/^The variable (.+?) (does(?:n't| not))? *equals? (.+?)$/i,
+    function(this: ICucumberWorld, actual, rawExpectedResult, expected) {
+        const expectedResult = (rawExpectedResult === undefined);
+        return this.facades.misc.compareVariables(actual, expected, expectedResult);
+    });
+
+
+
+File: src/configurationManager/IAutomationConfig.ts
+Content:
+// TODO:IMPLEMENT_ME - Add configuration options for you AUTs, test environments and custom behaviours
+
+export interface IAutomationConfig {
+    externalParams?: {[name: string]: string},
+    passwords?: {
+        fallbackToPreDecrypted?: boolean,
+        decryptionKeyEnvVariable?: string
+    },
+    utils?: {
+        email?: {
+            enabled?: boolean,
+            user?: string,
+            host?: string
+            port?: number,
+            tls?: boolean,
+            authTimeout?: number
+        },
+        performance?: {
+            generateForTags?: string[]
+        },
+        debug?: {
+            warnOnCodeEval?: boolean
+        }
+    },
+    testEnvironment?: {
+        behaviour?: {
+            revertEntityChanges?: boolean | { [key: string]: boolean },
+            timeouts?: {
+                sampleCreation?: number,
+                http?: number
+            }
+        },
+        metaWeather?: {
+            baseURL?: string
+        },
+        jsonPlaceholder?: {
+            baseURL?: string
+        }
+    },
+    logic?: {
+        allowDefaultFieldMutator?: boolean,
+        testCaseOrder?: {
+            beginWithTag?: string,
+            endWithTag?: string
+        }
+    }
+}
+
+
+
+
+File: src/configurationManager/configurationManager.ts
+Content:
+import {IAutomationConfig} from "./IAutomationConfig";
+const path = require('path');
+const fs = require('fs');
+const configPath = path.resolve(__dirname, '../../config');
+
+const deepAssign = require('assign-deep');
+
+
+// tslint:disable-next-line:max-line-length
+const getConfig = (configFiles: string[] = [], configParams: Array<{paramPath: string, paramValue: string}> = [], attemptToLoadLocalConfig: boolean = true): IAutomationConfig => {
+
+    let currentConfig: IAutomationConfig = {};
+
+    if (attemptToLoadLocalConfig && fs.existsSync(path.resolve(configPath, 'local.ts'))) configFiles.unshift(path.resolve(configPath, 'local.ts'));
+    if (configFiles.indexOf(path.resolve(configPath, 'master.ts')) < 0) configFiles.unshift(path.resolve(configPath, 'master.ts'));
+
+    configFiles.forEach(file => {
+        const filePath = path.resolve(configPath, file);
+        if (!fs.existsSync(filePath)) {
+            throw new Error('ERROR - Cannot load config file ' + filePath);
+            return;
+        }
+
+        let configContents = require(filePath);
+        if (configContents.default !== undefined) configContents = configContents.default;
+
+        currentConfig = deepAssign({}, currentConfig, configContents);
+    });
+
+    console.log(`Merged configuration from ${configFiles.length} files: ${configFiles.join(', ')}`);
+
+    const overrideParam = (paramPath: string, paramValue: any) => {
+        let target = currentConfig;
+
+        switch (paramValue.toLowerCase()) {
+            case 'false':
+            case 'true':
+                paramValue = /true/i.test(paramValue);
+                break;
+            default:
+                break;
+        }
+
+        paramPath.split('.').every(function overrideConfigPath(currentPath, index, arr) {
+            if (target[currentPath] === undefined) {
+                if (arr[index - 1] !== 'externalParams') throw new Error(`Current config doesn't have path ${paramPath}`);
+                target[currentPath] = {};
+            }
+
+            if (index === arr.length - 1) {
+                target[currentPath] = paramValue;
+            } else {
+                target = target[currentPath];
+            }
+            return true;
+        });
+    };
+
+    // Override config entries with manually given items
+    configParams.forEach(item => overrideParam(item.paramPath, item.paramValue));
+
+    if (configParams.length > 0) console.log(`Merged configuration from ${configParams.length} parameters`);
+
+    // Override config entries with env params
+    const envKeys = Object.keys(process.env).filter(key => key.startsWith('configParam_'));
+    envKeys.forEach(key => {
+        const paramPath = key.replace('configParam_', '').replace(/_/g, '.');
+        const paramValue = process.env[key];
+        overrideParam(paramPath, paramValue);
+    });
+
+    if (configParams.length > 0) console.log(`Merged configuration from ${envKeys.length} environment variables`);
+
+
+    return currentConfig;
+
+};
+
+export {getConfig};
+
+
+File: src/runHelpers/passwordManager.ts
+Content:
+interface IPasswordItem {
+    system: string,
+    domain: string,
+    user: string,
+    password: string
+}
+
+const fs = require('fs');
+const crypt = require('crypto');
+const path = require('path');
+const fsExtra = require('fs-extra');
+
+// TODO:IMPLEMENT_ME - Actually, don't implement me. Encrypt/Decrypt is kind of a drag. It does what it says on the box, not need to poke at it.
+// The one thing you may want to do is to change the IPasswordItem structure to better fit your needs
+
+const decrypt = (filePath: string, decryptionKey: string): string => {
+
+    // Decrypt AES-256-CBC w/ salt: https://stackoverflow.com/a/19939873
+    const md5 = data => {
+        const hash = crypt.createHash('md5');
+        hash.update(data);
+        return new Buffer(hash.digest('hex'), 'hex');
+    };
+
+    const text = fs.readFileSync(filePath);
+    const salt = text.slice(8, 16);
+    const cryptoText = text.slice(16);
+    const password = new Buffer(decryptionKey);
+
+    const hash0 = new Buffer('');
+    const hash1 = md5(Buffer.concat([hash0, password, salt]));
+    const hash2 = md5(Buffer.concat([hash1, password, salt]));
+    const hash3 = md5(Buffer.concat([hash2, password, salt]));
+    const key = Buffer.concat([hash1, hash2]);
+
+    const decoder = crypt.createDecipheriv('aes-256-cbc', key, hash3);
+
+    const chunks = [];
+    chunks.push(decoder.update(cryptoText, 'binary', 'utf8'));
+    chunks.push(decoder.final('utf8'));
+    return chunks.join('');
+};
+
+const loadPasswordsFromPath = (passwordsPath: string, decryptionKeyEnvVariable: string, fallbackToPreEncrypted: boolean = false): IPasswordItem[] => {
+    const decryptedPasswordsPath = path.resolve(passwordsPath, 'decrypted');
+    if (!fs.existsSync(decryptedPasswordsPath)) fsExtra.ensureDirSync(decryptedPasswordsPath);
+
+    const decryptionKey = process.env[decryptionKeyEnvVariable] || '';
+
+    if (decryptionKey === '') {
+        if (fallbackToPreEncrypted === false) throw new Error('Got empty decryption key. Configure fallbackToPreDecrypted = true to use pre-decrypted files');
+        console.log('Failed to get decryption key. Attempting to work with pre-decrypted files');
+    }
+
+    const passwordFiles = fs.readdirSync(passwordsPath)
+                                .filter(file => file.endsWith('.json') || file.endsWith('.enc'));
+
+    const result = passwordFiles.reduce((acc, passwordFile) => {
+        let additionalPasswords: IPasswordItem[] = [];
+
+        if (passwordFile.endsWith('.json')) {
+            // Regular file, just consume it
+            additionalPasswords = require(path.resolve(passwordsPath, passwordFile));
+        } else {
+
+            const preDecryptedPath = path.resolve(decryptedPasswordsPath, passwordFile.replace(/\.enc$/, ''));
+
+            if (decryptionKey === '') {
+                // Lets try to consume the pre-decrypted file
+                if (!fs.existsSync(preDecryptedPath)) throw new Error(`Cannot find pre-decrypted file for: ${passwordFile}`);
+                additionalPasswords = require(preDecryptedPath);
+            } else {
+                // Decrypt, save to cache and consume
+                const decryptedData = decrypt(path.resolve(passwordsPath, passwordFile), decryptionKey);
+
+                fs.writeFileSync(preDecryptedPath, decryptedData);
+                additionalPasswords = JSON.parse(decryptedData);
+            }
+        }
+
+        return acc.concat(additionalPasswords);
+    }, []);
+
+    console.log(`Read passwords from ${passwordFiles.length} files`);
+
+    return result;
+
+};
+
+export {loadPasswordsFromPath, IPasswordItem};
+
+
+File: src/runHelpers/cucumberRunner.ts
+Content:
+import {AutomationInfrastructure} from "../infrastructure/automationInfrastructure";
+import WriteStream = NodeJS.WriteStream;
+
+import {getConfig} from "../configurationManager/configurationManager";
+import {loadPasswordsFromPath, IPasswordItem} from "./passwordManager";
+import {IAutomationConfig} from "../configurationManager/IAutomationConfig";
+
+
+interface ICucumberRunOptions {
+    workPath: string,
+    cucumberLibPath: string,
+    configFiles: string[],
+    configParams: Array<{paramPath: string, paramValue: string}>,
+    passwordFilesPath: string,
+    tags: string
+}
+
+const fsExtra = require('fs-extra');
+const path = require('path');
+const fs = require('fs');
+const moment = require('moment');
+
+/**
+ * Executes infrastructure cucumber runs
+ */
+class CucumberRunner {
+    private cucumberOutStream: WriteStream;
+    private cucumberRunArgs: string[];
+    private cucumberFeaturesPath: string;
+    private resultsPath: string;
+    private readonly options: ICucumberRunOptions;
+    private readonly config: IAutomationConfig;
+    private passwords: IPasswordItem[];
+    private infra: AutomationInfrastructure;
+
+    constructor(options: ICucumberRunOptions, existingInfra?: AutomationInfrastructure) {
+        this.options = options;
+        this.config = getConfig(this.options.configFiles, this.options.configParams);
+        this.infra = existingInfra;
+    }
+
+    /**
+     * Actually runs cucumber
+     */
+    public async run(): Promise<{result: boolean, error?: Error}> {
+        this.passwords = loadPasswordsFromPath(this.options.passwordFilesPath, this.config.passwords.decryptionKeyEnvVariable, this.config.passwords.fallbackToPreDecrypted);
+
+        if (this.infra === undefined) this.infra = new AutomationInfrastructure(this.options.workPath, this.config, this.passwords);
+
+        await this.setupRunEnvironment();
+
+        this.buildCucumberArgs();
+        this.initOutStream();
+
+        const started = Date.now();
+
+        const runResult = await this.runCucumberCLI();
+
+        const ended = Date.now();
+
+        await this.produceRunReport(started, ended);
+
+        return runResult;
+    }
+
+    private async produceRunReport(started: number, ended: number) {
+        // TODO:IMPLEMENT_ME - You may want to implement your own reporter
+
+        const report = require('multiple-cucumber-html-reporter');
+
+        const startedMoment = new moment(started);
+        const endedMoment = new moment(ended);
+
+        const timeString = startedMoment.format('DD/MM/YY HH:MM:ss') + ' - '
+                            + endedMoment.format('HH:MM:ss')
+                            + ` (${endedMoment.diff(startedMoment, 'minutes')}m)`;
+
+        try {
+            report.generate({
+                durationInMS: true,
+                displayDuration: true,
+                disableLog: true,
+                pageTitle: 'Genoox Automation Run Report',
+                reportName: 'Genoox Automation Run Report', // TODO: change this
+                pageFooter: '<div>Page footer</div>', // TODO: change this
+                jsonDir: `${this.resultsPath}`,
+                reportPath: `${this.resultsPath}`,
+                customData: {
+                    title: 'Run Parameters',
+                    data: [
+                        {label: 'Time', value: timeString},
+                        {label: 'Tags', value: this.options.tags},
+                        {label: 'Run Performance', value: `<a href="performance/globalReport.html">Open Report</a>`}
+
+                    ]
+                },
+                customMetadata: true
+            });
+        } catch (e) {
+            // TODO: implement failure report
+            console.error(`Error producing report: ${e.message}`);
+            return;
+        }
+
+
+    }
+
+    /**
+     * Prepares the run environment
+     */
+    private async setupRunEnvironment() {
+        this.options.workPath = path.resolve(this.options.workPath);
+        this.cucumberFeaturesPath = path.resolve(this.options.workPath, 'features');
+        this.resultsPath = path.resolve(this.options.workPath, 'results');
+
+        fsExtra.emptyDirSync(this.options.workPath);
+        fsExtra.emptyDirSync(this.cucumberFeaturesPath);
+        fsExtra.copySync(path.resolve(this.options.cucumberLibPath, 'features'), this.cucumberFeaturesPath);
+
+        fsExtra.emptyDirSync(this.resultsPath);
+
+        fs.writeFileSync(path.resolve(this.options.workPath, 'mergedConfig.json'), JSON.stringify(this.config, null, 4));
+        fs.writeFileSync(path.resolve(this.options.workPath, 'runOptions.json'), JSON.stringify(this.options, null, 4));
+
+        // TODO:IMPLEMENT_ME - You want want to perform more pre-run actions, like downloading remote files, etc.
+
+    }
+
+    /**
+     * Constructs the appropriate arguments to pass to the cucumber CLI constructor
+     */
+    private buildCucumberArgs() {
+
+        const tagArgs = (this.options.tags.indexOf('not @skip') < 0) ? `(${this.options.tags}) and not @skip` : this.options.tags;
+
+        console.log(`Running scenarios tagged ${tagArgs}`);
+
+        // TODO: TBI
+        this.cucumberRunArgs = ['',
+            '--require', `${this.options.workPath}/features/**/*.feature`, '--require', `${this.options.cucumberLibPath}/**/*.ts`, `--tags=${tagArgs}`,
+            '--format', 'summary', '--format-options', '{"colorsEnabled": false}',
+            '--format', `json:${this.options.workPath}/results/results.json`];
+
+        fs.writeFileSync(path.resolve(this.options.workPath, 'cucumberRunArgs.json'), JSON.stringify(this.cucumberRunArgs));
+    }
+
+    private initOutStream() {
+        // TODO:IMPLEMENT_ME - You may want to control the output stream, clone or redirect it
+        this.cucumberOutStream = process.stdout;
+    }
+
+    /**
+     * Actually run the cucumber CLI
+     * Taken from https://github.com/cucumber/cucumber-js/blob/master/src/cli/run.js
+     */
+    private async runCucumberCLI(): Promise<{result: boolean, error?: Error}> {
+
+        const cli = new (require('cucumber')).Cli({
+            argv: this.cucumberRunArgs,
+            cwd: process.cwd(),
+            stdout: this.cucumberOutStream
+        });
+
+        let result;
+        try {
+            result = await cli.run();
+        } catch (e) {
+            return {result: false, error: e};
+        }
+
+        return {result: result.success, error: (result.success) ? undefined : new Error('Run failed')};
+    }
+
+}
+
+export {CucumberRunner, ICucumberRunOptions};
+
+
+File: src/infrastructure/automationInfrastructure.ts
+Content:
+import {CucumberFacades} from "./cucumberFacades/cucumberFacades";
+import {TestFlowManager} from "./testFlowManager/testFlowManager";
+import {Utils} from "./utils/utils";
+import {DataManager} from "./dataManager/dataManager";
+import {TestEnvironment} from "./testEnvironment/testEnvironment";
+import {Logic} from "./logic/logic";
+import {Services} from "./services/services";
+
+import {IAutomationConfig} from "../configurationManager/IAutomationConfig";
+import {IPasswordItem} from "../runHelpers/passwordManager";
+import {Assert} from "./assert/assert";
+
+
+/**
+ * The automation infrastructure tree root
+ */
+class AutomationInfrastructure {
+
+    public static getInstance(): AutomationInfrastructure {
+        if (AutomationInfrastructure.instance === undefined) console.error('No infrastructure instance. Have you initiated it before calling cucumber?');
+        return AutomationInfrastructure.instance;
+    }
+
+    protected static instance: AutomationInfrastructure;
+
+    public readonly workPath: string;
+    public readonly config: IAutomationConfig;
+
+    public readonly cucumberFacades = new CucumberFacades();
+    public readonly testFlowManager = new TestFlowManager();
+    public readonly logic = new Logic();
+    public readonly utils = new Utils();
+    public readonly data: DataManager;
+    public readonly testEnvironment = new TestEnvironment();
+    public readonly services = new Services();
+    public readonly assert = new Assert();
+
+    public constructor(workPath: string, config: IAutomationConfig, passwords: IPasswordItem[] = []) {
+        if (AutomationInfrastructure.instance !== undefined) {
+            const errorMessage = 'Attempted to create Automation infrastructure more than once';
+            console.error(errorMessage);
+            throw new Error(errorMessage);
+        }
+
+        this.data = new DataManager(passwords);
+
+        this.workPath = workPath || process.cwd();
+        this.config = config;
+
+        this.config.externalParams = this.config.externalParams || {};
+
+        AutomationInfrastructure.instance = this;
+    }
+}
+
+export {AutomationInfrastructure};
+
+
+File: src/infrastructure/infrastructureObject.ts
+Content:
+import {AutomationInfrastructure} from "./automationInfrastructure";
+
+/**
+ * Base class for Infrastructure objects
+ */
+abstract class InfrastructureObject {
+    /**
+     * returns the infrastructure root object
+     */
+    protected get infra(): AutomationInfrastructure {
+        return AutomationInfrastructure.getInstance();
+    }
+
+    protected log(message: string, indentLevel: number = 2) {
+        this.infra.utils.logger.writeToLog('info', message, indentLevel);
+    }
+
+    protected error(message: string, indentLevel: number = 2) {
+        this.infra.utils.logger.writeToLog('error', message, indentLevel);
+    }
+}
+
+export {InfrastructureObject};
+
+
+File: src/infrastructure/dataManager/dataManager.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {IPasswordItem} from "../../runHelpers/passwordManager";
+import {IDataEntity} from "../logic/entities";
+import {PropertyFields} from "../logic/propertyFields";
+
+class DataManager extends InfrastructureObject {
+    public globalData: {
+        globalVariables: {[name: string]: string}
+    } = {globalVariables: {} };
+
+    private readonly passwords: IPasswordItem[];
+
+    constructor(passwords: IPasswordItem[]) {
+        super();
+        this.passwords = passwords;
+    }
+
+    public getUserPassword(system: string, domain: string, user: string): string {
+        const lowerUser = user.toLowerCase();
+        const lowerDomain = domain.toLowerCase();
+        const lowerSystem = system.toLowerCase();
+
+        // TODO:IMPLEMENT_ME - If you changed the IPasswordItem structure, these will probably also need changing
+
+
+        const entry = this.passwords.find(
+            item => (item.system || '').toLowerCase() === lowerSystem
+                && (item.domain || '').toLowerCase() === lowerDomain
+                && (item.user || '').toLowerCase() === lowerUser
+        );
+
+        if (entry === undefined) throw new Error(`Could not find password for ${system} / ${domain} / ${user}`);
+
+        return entry.password;
+    }
+
+    public getScenarioEntitiesToUndo(): IDataEntity[] {
+        const currentScenario = this.infra.testFlowManager.currentStatus.currentScenario;
+        if (currentScenario === undefined) return [];
+        return currentScenario.scenarioData.getEntitiesToUndo();
+    }
+
+    public getScenarioEntity(rawUserEntityType: string, index: number | 'latest'): IDataEntity {
+        const currentScenario = this.infra.testFlowManager.currentStatus.currentScenario;
+        if (currentScenario === undefined) return undefined;
+        return currentScenario.scenarioData.getEntity(rawUserEntityType, index);
+    }
+
+    public storeScenarioEntity(entity: IDataEntity) {
+        const currentScenario = this.infra.testFlowManager.currentStatus.currentScenario;
+        if (currentScenario === undefined) throw new Error(`Cannot store scenario entity - currentScenario is null`);
+
+        currentScenario.scenarioData.storeEntity(entity);
+    }
+
+    public refreshScenarioEntity(refreshedEntity: IDataEntity, existingEntity: IDataEntity) {
+        existingEntity.history.push(existingEntity.entity);
+        existingEntity.entity = refreshedEntity.entity;
+    }
+
+    public storeRawEntityData(rawValue: any, typeName: string, matchFields?: PropertyFields, fromEntity?: IDataEntity) {
+
+        const entity: IDataEntity = {
+            type: this.infra.logic.entities.getEntityType(typeName),
+            entity: rawValue,
+            getterInfo: {
+                matchFields,
+                fromEntity
+            },
+            history: []
+        };
+
+        this.storeScenarioEntity(entity);
+    }
+
+
+}
+
+export {DataManager};
+
+
+File: src/infrastructure/dataManager/scenarioData.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {IDataEntity} from "../logic/entities";
+
+class ScenarioData extends InfrastructureObject {
+    private entities: Map<string, IDataEntity[]> = new Map<string, IDataEntity[]>();
+
+    // TODO:IMPLEMENT_ME - Store other scenario-bound useful info
+
+    public getEntity(rawUserEntityType: string, index: number | 'latest'): IDataEntity {
+        const entityType = this.infra.logic.entities.getEntityType(rawUserEntityType);
+
+        if (index === 0) throw new Error(`Entity index is 1-based. You requested ${rawUserEntityType} entity #0`);
+
+        const typeEntities = this.entities.get(entityType.fullTypeName) || [];
+
+        if (index === 'latest') {
+            return typeEntities[typeEntities.length - 1];
+        } else {
+            return typeEntities[index - 1];
+        }
+    }
+
+    public getEntitiesToUndo(): IDataEntity[] {
+        return Array.from(this.entities.values()).reduce((acc, group) => acc.concat(group.filter(entity => (entity.undoActions && entity.deleted !== true))), []);
+    }
+
+    public storeEntity(entity: IDataEntity) {
+        if (!this.entities.has(entity.type.fullTypeName)) this.entities.set(entity.type.fullTypeName, []);
+        this.entities.get(entity.type.fullTypeName).push(entity);
+    }
+
+}
+
+export {ScenarioData};
+
+
+File: src/infrastructure/testFlowManager/testFlowManager.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {HooksManager} from "./hooksManager";
+import {ScenarioData} from "../dataManager/scenarioData";
+import {ITestable} from "../utils/variableProcessor";
+
+interface ICucumberScenario {
+    sourceLocation: {line: number, uri: string},
+    result?: {duration: number, status: string},
+    pickle: {tags: Array<{name: string}>, name: string, steps: ICucumberStep[]},
+    scenarioData?: ScenarioData
+}
+
+interface ICucumberStep {
+    text: string,
+    arguments: string[],
+    result?: any,
+    error?: Error,
+    expectedFailure?: {
+        expectedErrorTest?: ITestable,
+        mustFail: boolean
+    },
+    retryMinutes?: number
+}
+
+class TestFlowManager extends InfrastructureObject {
+
+    public currentStatus: {currentScenario?: ICucumberScenario, currentStep?: ICucumberStep} = {};
+    public previousScenarios: ICucumberScenario[] = [];
+    public upcomingScenarios: ICucumberScenario[];
+    public totalScenarioCount: number;
+
+    public readonly hooksManager: HooksManager = new HooksManager();
+
+    private currentScenarioStepIndex: number = -1;
+
+    constructor() {
+        super();
+    }
+
+    public getPhaseLogMessage(messageType: 'beforeScenario' | 'beforeStep'): string {
+        // TODO:IMPLEMENT_ME - You may want other messages
+        switch (messageType) {
+            case 'beforeScenario':
+                return `Executing scenario: ${this.currentStatus.currentScenario.pickle.name} (${this.previousScenarios.length + 1} / ${this.totalScenarioCount})`;
+            case 'beforeStep':
+                let message = `Step: ${this.currentStatus.currentStep.text}`;
+                if (this.currentStatus.currentStep.retryMinutes !== undefined) message = message + ` (retrying for ${this.currentStatus.currentStep.retryMinutes} minutes)`;
+                return message;
+        }
+    }
+
+    public setRunScenarios(scenarios: ICucumberScenario[]) {
+        this.upcomingScenarios = scenarios;
+        this.totalScenarioCount = scenarios.length;
+    }
+
+    public async waitForNextStepToFinish(minutes: number) {
+        const affectedStep = this.currentStatus.currentScenario.pickle.steps[this.currentScenarioStepIndex + 1];
+        if (affectedStep === undefined) throw new Error(`Required to wait for next step to pass, but the scenario doesn't have any more steps`);
+
+        affectedStep.retryMinutes = minutes;
+        this.hooksManager.nullifyDefaultTimeout();
+    }
+
+    public async markStepsForFailure(stepCount: number, mustFail: boolean = true, expectedErrorMessage?: string) {
+        const affectedSteps = this.currentStatus.currentScenario.pickle.steps.slice(this.currentScenarioStepIndex + 1, this.currentScenarioStepIndex + 1 + stepCount);
+        if (affectedSteps.length < stepCount) throw new Error(`Required next ${stepCount} steps to fail, but the scenario only has ${affectedSteps.length} remaining steps`);
+        let expectedErrorTest;
+        if (expectedErrorMessage) expectedErrorTest = await this.infra.utils.variableProcessor.getTestable({fieldName: 'Error', fieldValue: expectedErrorMessage});
+
+        affectedSteps.forEach(step => step.expectedFailure = {mustFail, expectedErrorTest});
+    }
+
+    public startScenario(scenario: ICucumberScenario) {
+        this.upcomingScenarios.splice(0, 1);
+        scenario.scenarioData = new ScenarioData();
+        this.currentStatus.currentScenario = scenario;
+        this.currentScenarioStepIndex = -1;
+    }
+
+    public endScenario() {
+        this.previousScenarios.push(this.currentStatus.currentScenario);
+    }
+
+    public promoteStep() {
+        this.currentScenarioStepIndex = this.currentScenarioStepIndex + 1;
+        this.currentStatus.currentStep = this.currentStatus.currentScenario.pickle.steps[this.currentScenarioStepIndex];
+    }
+
+    public bindCucumberHooks(hooks) {
+        this.hooksManager.bindCucumberHooks(hooks);
+    }
+
+}
+
+export {TestFlowManager, ICucumberScenario, ICucumberStep};
+
+
+File: src/infrastructure/testFlowManager/hooksManager.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {ICucumberScenario} from "./testFlowManager";
+
+const bluebird = require('bluebird');
+
+const cucumber = require('cucumber');
+
+const originalRuntimeStart = cucumber.Runtime.prototype.start;
+
+
+class HooksManager extends InfrastructureObject {
+
+    private originalDefaultTimeout: number;
+    private supportCodeLibrary: {defaultTimeout: number};
+
+    public nullifyDefaultTimeout() {
+        this.supportCodeLibrary.defaultTimeout = -1;
+    }
+
+    public async beforeRun() {
+        await this.infra.utils.logger.beforeRun();
+
+        const parallelActions: Array<() => Promise<any>> = [
+            // TODO:IMPLEMENT_ME - Add initialization actions and calls here
+        ];
+
+        try {
+            await bluebird.map(parallelActions, action => action());
+        } catch (e) {
+            console.error(`BeforeRun hook failed: ${e.stack}`);
+            throw e;
+        }
+    }
+
+    public async afterRun() {
+
+        this.log(`\nPerforming AfterRun actions`, 0);
+
+        const hookActions: Array<() => Promise<any>> = [
+            // TODO:IMPLEMENT_ME - Add teardown actions and calls here, or mutate the results JSON according to your needs
+        ];
+
+        await bluebird.map(hookActions, action => action());
+        
+        console.log('\n');
+    }
+
+    public async runtimeStarted(runtime: {testCases: ICucumberScenario[], supportCodeLibrary: {defaultTimeout: number}}) {
+        console.log(`\nCucumber loaded ${runtime.testCases.length} scenarios`);
+
+        if (runtime.testCases.length === 0) throw new Error('Cucumber loaded 0 scenarios');
+
+        runtime.testCases = this.reorderTestCases(runtime.testCases);
+
+        this.infra.testFlowManager.setRunScenarios(runtime.testCases);
+        this.supportCodeLibrary = runtime.supportCodeLibrary;
+
+        await this.beforeRun();
+
+        try {
+            const result = await originalRuntimeStart.call(runtime);
+            return result;
+        } catch (e) {
+            return false;
+        } finally {
+            try {
+                await this.afterRun();
+            } catch (e) {
+                console.error(`Infrastructure after run failed: ${e.message}`);
+            }
+        }
+
+    }
+
+    /**
+     * Binds cucumber hooks to the infrastructure
+     */
+    public bindCucumberHooks({After, Before, AfterAll, BeforeAll, setDefinitionFunctionWrapper}) {
+        const _self = this;
+        const beforeHandler = function(scenario: ICucumberScenario) { return _self.beforeScenario(scenario, this); };
+        const afterHandler = function(scenario: ICucumberScenario) { return _self.afterScenario(scenario, this); };
+        const beforeAllHandler = () => this.beforeAllScenarios();
+        const afterAllHandler = () => this.afterAllScenarios();
+
+        Before(beforeHandler);
+        After(afterHandler);
+        BeforeAll(beforeAllHandler);
+        AfterAll(afterAllHandler);
+        setDefinitionFunctionWrapper(stepFunction => {
+            if ([beforeHandler, afterHandler, beforeAllHandler, afterAllHandler].every(handler => handler !== stepFunction)) {
+                return this.beforeStepFunction(stepFunction);
+            } else {
+                return stepFunction;
+            }
+        });
+
+        cucumber.Runtime.prototype.start = function() {
+            cucumber.Runtime.prototype.start = originalRuntimeStart;
+            return _self.runtimeStarted.call(_self, this);
+        };
+    }
+
+    public async beforeStep() {
+        try {
+            this.infra.testFlowManager.promoteStep();
+
+            this.log(this.infra.testFlowManager.getPhaseLogMessage('beforeStep'), 1);
+
+            // TODO:IMPLEMENT_ME - Add pre-step actions
+
+        } catch (e) {
+            throw new Error(`beforeStep hook failed: ${e.stack}`);
+        }
+    }
+
+    public async afterStep(finalError?: Error): Promise<Error> {
+        try {
+            // TODO:IMPLEMENT_ME - Add post-step actions
+
+            if (finalError) this.error(`Step failed: ${finalError.message}`, 3);
+
+            return finalError; // Or not?
+        } catch (e) {
+            throw new Error(`afterStep hook failed: ${e.stack}`);
+        }
+    }
+
+    public async beforeAllScenarios() {
+        try {
+
+            await this.runHookActions('beforeAllScenarios', [
+                // TODO:IMPLEMENT_ME - Add pre-scenarios actions
+            ]);
+
+        } catch (e) {
+            // TODO:IMPLEMENT_ME - Currently failing the beforeAllScenarios doesn't fail the run. Throw an error to change this behaviour
+            this.error(`beforeAllScenarios hook failed: ${e.stack}`);
+        }
+
+    }
+
+    public async afterAllScenarios() {
+        try {
+
+            this.log('\n\nFinished All Scenarios', 0);
+            await this.runHookActions('afterAllScenarios', [
+                // TODO:IMPLEMENT_ME - Add post-scenarios actions
+            ]);
+
+        } catch (e) {
+            this.error(`afterAllScenarios hook failed: ${e.stack}`);
+        }
+
+        this.log('\n');
+    }
+
+    public async beforeScenario(scenario: ICucumberScenario, world) {
+        try {
+            this.infra.testFlowManager.startScenario(scenario);
+
+            this.log('\n' + this.infra.testFlowManager.getPhaseLogMessage('beforeScenario'), 0);
+
+            await this.runHookActions('beforeScenario', [
+                // TODO:IMPLEMENT_ME - Add pre-scenario actions
+            ]);
+
+        } catch (e) {
+            throw new Error(`beforeScenario hook failed: ${e.stack}`);
+        }
+    }
+
+    public async afterScenario(scenario: ICucumberScenario, world) {
+        try {
+            if (scenario.result.status.toLowerCase() !== 'passed') {
+                this.error(`Scenario status = ${scenario.result.status.toUpperCase()}`);
+            }
+
+            await this.runHookActions('afterScenario', [
+                () => this.infra.testEnvironment.afterScenario()
+                // TODO:IMPLEMENT_ME - Add post-scenario actions
+            ]);
+
+        } catch (e) {
+            throw new Error(`afterScenario hook failed: ${e.stack}`);
+        } finally {
+            this.infra.testFlowManager.endScenario();
+        }
+
+    }
+
+    protected reorderTestCases(testCases: ICucumberScenario[]): ICucumberScenario[] {
+
+        // TODO:IMPLEMENT_ME - You might want to implement your own test-case reorder behaviour (or cancel this one)
+
+        const beginWith = [];
+        const endWith = [];
+        const others = [];
+
+        const {beginWithTag, endWithTag} = (this.infra.config.logic || {testCaseOrder: {}}).testCaseOrder;
+
+        testCases.forEach(testCase => {
+            if (testCase.pickle.tags.some(tag => tag.name === beginWithTag)) {
+                beginWith.push(testCase);
+                return;
+            }
+
+            if (testCase.pickle.tags.some(tag => tag.name === endWithTag)) {
+                endWith.push(testCase);
+                return;
+            }
+
+            others.push(testCase);
+        });
+
+        const newOrder = [].concat(beginWith).concat(others).concat(endWith);
+
+        return newOrder;
+    }
+
+
+    private async runHookActions(hookName: string, actions: Array<() => Promise<void>>) {
+
+        if (actions.length > 0) this.log(`Running ${actions.length} ${hookName} hook actions`, 1);
+
+        const errors: Error[] = await bluebird.reduce(actions, async (acc, action) => {
+            try {
+                await action();
+            } catch (e) {
+                acc.push(e);
+            }
+
+            return acc;
+        }, []);
+
+        if (errors.length > 0) {
+            const errorMessage = `Error - ${hookName} hook had these errors:\n${errors.map(e => e.message).join('\n')}`;
+            this.log(errorMessage + '\nAttempting to resume');
+
+            throw new Error(errorMessage);
+        }
+
+    }
+
+    // tslint:disable-next-line:ban-types
+    private beforeStepFunction(stepFunction: Function): Function {
+        // TODO:IMPLEMENT_ME - You can add very complex behaviors through this function.
+        // It completely controls the way actual cucumber steps are called and processed
+        // You can mutate a step arguments or alter it results
+
+        // Currently, this function support marking steps are expected-to-fail, and retrying steps until they pass
+
+        const _self = this;
+
+        return async function() {
+            await _self.beforeStep();
+
+            const currentStep = _self.infra.testFlowManager.currentStatus.currentStep;
+            const isRetryStep = (currentStep.retryMinutes !== undefined);
+            const retryUntil = Date.now() + (currentStep.retryMinutes || 0) * 60 * 1000;
+            const started = Date.now();
+
+            if (isRetryStep) _self.log(`Started waiting at ${new Date()}`);
+
+            do {
+                try {
+                    currentStep.result = await stepFunction.apply(this, arguments);
+                } catch (e) {
+                    currentStep.error = e;
+                    if (isRetryStep) await bluebird.delay(30 * 1000);
+                }
+            } while (Date.now() < retryUntil && currentStep.error !== undefined);
+
+            if (isRetryStep) {
+                _self.supportCodeLibrary.defaultTimeout = _self.originalDefaultTimeout;
+                _self.log(`Waited for ${((Date.now() - started) / 1000 / 60).toFixed(0)} minutes`);
+            }
+
+            let finalError;
+
+            if (currentStep.expectedFailure) {
+                const {mustFail, expectedErrorTest} = currentStep.expectedFailure;
+                if (mustFail && currentStep.error === undefined) {
+                    finalError = Error(`Expected step to fail, but it passed`);
+                } else {
+                    if (expectedErrorTest && currentStep.error) {
+                        if (!expectedErrorTest.test(currentStep.error.message)) {
+                            finalError = Error(`Expected step to fail with ${expectedErrorTest.toString}, but actual was: ${currentStep.error.message}`);
+                        }
+                    }
+                }
+
+                if (finalError === undefined) _self.log(`  The step failed as expected`);
+            } else {
+                finalError = currentStep.error;
+            }
+
+            finalError = await _self.afterStep(finalError);
+
+            if (finalError) throw finalError;
+
+        };
+    }
+}
+
+export {HooksManager};
+
+
+
+
+File: src/infrastructure/logic/propertyFields.ts
+Content:
+interface IPropertyField {
+    fieldName: string,
+    fieldValue: any,
+    compareType?: 'like' | 'in'
+}
+
+class PropertyFields extends Array<IPropertyField> {
+    constructor(fields: IPropertyField[]) {
+        super();
+        const clonedFields = [].concat(fields).map(field => ({fieldName: field.fieldName, fieldValue: field.fieldValue}));
+        clonedFields.forEach(field => { if (field.fieldName !== undefined) this.push(field); });
+    }
+
+    public toString(delimiter: string = ', ') {
+        return [].concat(this).map(field => {
+            const value = (typeof field.fieldValue === "string") ? field.fieldValue : JSON.stringify(field.fieldValue);
+            return `${field.fieldName}=${value}`;
+        }).join(delimiter);
+    }
+
+    public getField(fieldName: string | RegExp, defaultValue?: any): IPropertyField {
+        const nameTest = (typeof fieldName === 'string') ? new RegExp(`^ *${fieldName.trim()} *$`, 'i') : fieldName;
+        const resultField = this.find(field => nameTest.test(field.fieldName));
+        if (arguments.length === 1) return resultField;
+        return resultField || {fieldName: fieldName.toString(), fieldValue: defaultValue};
+    }
+
+    public removeField(fieldName: string | RegExp): IPropertyField {
+        const nameTest = (typeof fieldName === 'string') ? new RegExp(`^ *${fieldName.trim()} *$`, 'i') : fieldName;
+        const fieldIndex = this.findIndex(field => nameTest.test(field.fieldName));
+        if (fieldIndex > -1) return this.splice(fieldIndex, 1).pop();
+    }
+
+    public clone(): PropertyFields {
+        return new PropertyFields([].concat(this));
+    }
+
+    public removeByValue(valueToRemove: string): PropertyFields {
+        const removed: IPropertyField[] = [];
+        let index = 0;
+        while (index < this.length) {
+            if (this[index].fieldValue === valueToRemove) {
+                removed.push(this.splice(index, 1).pop());
+            } else {
+                index = index + 1;
+            }
+        }
+
+        return new PropertyFields(removed);
+    }
+
+    public push(item: IPropertyField | IPropertyField[]): number {
+        const items = Array.isArray(item) ? item : [item];
+        items.forEach(newItem => super.push(newItem));
+        return this.length;
+    }
+
+    public filter(filterFunction: (field: IPropertyField, index?: number, array?: IPropertyField[]) => boolean): PropertyFields {
+        const filteredFields = super.filter(filterFunction);
+        return new PropertyFields(filteredFields);
+    }
+
+}
+
+export {IPropertyField, PropertyFields};
+
+
+File: src/infrastructure/logic/entities.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {PropertyFields} from "./propertyFields";
+import {AbstractFieldMutator} from "./fieldMutators/abstractFieldMutator";
+
+interface IDataEntity {
+    type: IEntityType
+    entity: any,
+    getterInfo?: {
+        matchFields: PropertyFields,
+        fromEntity: IDataEntity
+    },
+    created?: boolean,
+    deleted?: boolean,
+    undoActions?: Array<{action: 'create' | 'update', undoFields: PropertyFields}>,
+    history: any[]
+}
+
+// TODO:IMPLEMENT_ME - Add your own systems
+
+enum System {
+    json,
+    metaweather,
+    demo,
+    internal
+}
+
+type EntityOperation = 'get' | 'assert' | 'create' | 'update';
+
+interface IEntityType {
+    typeName: string
+    system: System,
+    isList: boolean,
+    rootTypeName: string,
+    fullTypeName: string
+}
+
+import * as EmptyMutator from './fieldMutators/internal/emptyMutator';
+
+class EntitiesLogic extends InfrastructureObject {
+
+    public getEntityType(rawUserType: string = ''): IEntityType {
+
+        // TODO:IMPLEMENT_ME - Add your own type-decision algorithm
+
+        const {system, processedUserType} = this.processRawTypeSystem(rawUserType);
+
+        const isList = / list$/i.test(processedUserType);
+
+        const typeName = processedUserType.toLowerCase().replace(/ /g, '_');
+        const rootTypeName = this.getRootTypeName(system, typeName);
+
+        return {
+            system,
+            isList,
+            rootTypeName,
+            typeName,
+            fullTypeName: `${System[system]}_${typeName}`
+        };
+    }
+
+    public async mutateFields(entityType: IEntityType, fromEntity: IDataEntity, matchFields: PropertyFields, operation: EntityOperation): Promise<PropertyFields> {
+        const importRoute = `./fieldMutators/${System[entityType.system]}/${entityType.rootTypeName}`;
+
+        // TODO:IMPLEMENT_ME - Add your entities mutators to ./fieldMutators sub folders
+
+        // tslint:disable-next-line:variable-name
+        let FieldMutator;
+        try {
+            FieldMutator = await import(importRoute);
+        } catch (e) {
+            if (!this.infra.config.logic.allowDefaultFieldMutator) {
+                throw new Error(`Cannot locate field mutator for type ${entityType.typeName}.\nSwitch logic.allowDefaultFieldMutator config on for default empty mutator`);
+            }
+
+            FieldMutator = EmptyMutator;
+        }
+
+        const fieldMutator = new FieldMutator.default() as AbstractFieldMutator;
+
+        return fieldMutator.mutateFields(entityType, fromEntity, matchFields, operation);
+    }
+
+    private getRootTypeName(system: System, typeName: string): string {
+        // TODO:IMPLEMENT_ME - Add your own entities and root types
+
+        let rootTypeName = typeName.replace(/_list(?:_count)?$/, '');
+        if (System[system] === 'demo') rootTypeName = 'demo';
+
+        switch (rootTypeName) {
+            case 'location':
+                rootTypeName = 'location';
+                break;
+            case 'forecast':
+            case 'historical_forecast':
+                rootTypeName = 'forecast';
+                break;
+            case 'property':
+                rootTypeName = 'internal';
+                break;
+        }
+
+        return rootTypeName;
+    }
+
+    private processRawTypeSystem(rawUserType: string): {system: System, processedUserType: string} {
+        // TODO:IMPLEMENT_ME - Add your own system detection matchers
+
+        rawUserType = rawUserType.trim();
+
+        const systemMatchers = {
+            json: [/^jsonplaceholder/i, /^json/i, /^user(?:[ -_]list)?/i],
+            metaweather: [/^(:?meta[_ \-]?)?weather/i],
+            demo: [/^demo/i],
+            internal: [/^property$/]
+        };
+
+        const systemMatcher = Object.entries(systemMatchers).find(entry => {
+            const [id, matchers] = entry;
+            return matchers.some(matcher => matcher.test(rawUserType));
+        });
+
+        const system = (systemMatcher) ? System[systemMatcher[0]] : System.metaweather;
+
+        let processedUserType = (systemMatchers[System[system]] as RegExp[]).reduce((acc, regexp) => acc.replace(regexp, ''), rawUserType).trim();
+
+        if (processedUserType.startsWith('_')) processedUserType = processedUserType.substr(1);
+
+        if (processedUserType === '') processedUserType = rawUserType.toLowerCase();
+
+        return {system, processedUserType};
+    }
+
+}
+
+export {EntitiesLogic, IDataEntity, System, IEntityType};
+
+
+File: src/infrastructure/logic/logic.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {EntitiesLogic} from "./entities";
+
+class Logic extends InfrastructureObject {
+    public readonly entities = new EntitiesLogic();
+
+    // TODO:IMPLEMENT_ME - Add other logic classes and operations (logic = usually doesn't require any external information / actions from the test environment)
+
+}
+
+export {Logic};
+
+
+File: src/infrastructure/logic/fieldMutators/abstractFieldMutator.ts
+Content:
+import {InfrastructureObject} from "../../infrastructureObject";
+import {IPropertyField, PropertyFields} from "../propertyFields";
+import {IDataEntity, IEntityType} from "../entities";
+
+const bluebird = require('bluebird');
+
+interface IMutationObject {
+    shared?: IEntityMutationObject,
+    global?: IEntityMutationObject,
+    [typeName: string]: IEntityMutationObject
+}
+
+type MutationFunction = (field: IPropertyField) => Promise<void>;
+
+interface IEntityMutationObject {
+    [fieldName: string]: {
+        names?: string[],
+        mutate?: MutationFunction
+    }
+}
+
+abstract class AbstractFieldMutator extends InfrastructureObject {
+    protected abstract sharedMutations: IMutationObject;
+    protected getMutations: IMutationObject = {};
+    protected createMutations: IMutationObject = {};
+    protected updateMutations: IMutationObject = {};
+    protected assertMutations: IMutationObject = {};
+
+    private globalSharedMutations: IMutationObject = {
+        shared: {
+            length: {names: ['count']},
+            ordering: {names: ['sort', 'order']}
+        }
+    };
+
+    public async mutateFields(entityType: IEntityType, fromEntity: IDataEntity, matchFields: PropertyFields, operation: string): Promise<PropertyFields> {
+        const _self = this;
+
+        const mutationObject = this.getMutationObject(operation);
+
+        let mutatedFields = matchFields.clone();
+
+        mutatedFields = await this.preMutation(entityType, fromEntity, mutatedFields, operation);
+
+        await bluebird.each(mutatedFields, async (field: IPropertyField) => {
+            const canonizedFieldName = field.fieldName.toLowerCase().replace(/ /g, '_');
+            const mutationInfo =
+                _self.findMutation(mutationObject[entityType.typeName], canonizedFieldName)
+                || _self.findMutation(mutationObject.shared, canonizedFieldName)
+                || _self.findMutation(mutationObject.global, canonizedFieldName);
+            if (mutationInfo) {
+                field.fieldName = mutationInfo.realFieldName;
+                if (mutationInfo.mutation) await mutationInfo.mutation(field);
+            }
+        });
+
+        mutatedFields.removeByValue('${toDelete}');
+
+        mutatedFields = await this.postMutation(entityType, fromEntity, mutatedFields, operation);
+
+        return mutatedFields;
+    }
+
+    protected async preMutation(entityType: IEntityType, fromEntity: IDataEntity, matchFields: PropertyFields, operation: string): Promise<PropertyFields> {
+        return matchFields; // override if needed
+    }
+
+    protected async postMutation(entityType: IEntityType, fromEntity: IDataEntity, matchFields: PropertyFields, operation: string): Promise<PropertyFields> {
+        return matchFields; // override if needed
+    }
+
+    private getMutationObject(operation: string): IMutationObject {
+        const operationMutations = this[`${operation}Mutations`] as IMutationObject;
+        const sharedMutations = this.sharedMutations;
+        const globalMutations = this.globalSharedMutations;
+
+        const entityKeys = Object.keys(sharedMutations).concat(Object.keys(operationMutations));
+
+        const result: IMutationObject = entityKeys.reduce((resultAcc, entityKey) => {
+            if (resultAcc[entityKey] !== undefined) return resultAcc;
+
+            const fieldKeys = Object.keys(sharedMutations[entityKey] || {})
+                                .concat(Object.keys(globalMutations[entityKey] || {}))
+                                .concat(Object.keys(operationMutations[entityKey] || {}));
+
+            resultAcc[entityKey] = fieldKeys.reduce((fieldAcc, fieldKey) => {
+                fieldAcc[fieldKey] = (operationMutations[entityKey] || {})[fieldKey]
+                        || (sharedMutations[entityKey] || {})[fieldKey]
+                        || (globalMutations[entityKey] || {})[fieldKey];
+
+                return fieldAcc;
+            }, {});
+
+            return resultAcc;
+        }, {} as IMutationObject);
+
+        return result;
+    }
+
+    private findMutation(entityMutationObject: IEntityMutationObject, fieldName: string): {mutation: MutationFunction, realFieldName: string} {
+        if (entityMutationObject === undefined) return undefined;
+        if (entityMutationObject[fieldName]) return {mutation: entityMutationObject[fieldName].mutate, realFieldName: fieldName};
+
+        const realFieldName = Object.keys(entityMutationObject).find(key => {
+            if (!Array.isArray(entityMutationObject[key].names)) return false;
+            return (entityMutationObject[key].names.indexOf(fieldName) > -1);
+        });
+
+        return (realFieldName) ? {mutation: entityMutationObject[realFieldName].mutate, realFieldName} : undefined;
+    }
+}
+
+export {AbstractFieldMutator, IMutationObject};
+
+
+File: src/infrastructure/logic/fieldMutators/demo/demo.ts
+Content:
+import {AbstractFieldMutator, IMutationObject} from "../abstractFieldMutator";
+import {IDataEntity, IEntityType} from "../../entities";
+import {PropertyFields} from "../../propertyFields";
+
+const bluebird = require('bluebird');
+
+class DemoFieldMutator extends AbstractFieldMutator {
+    protected sharedMutations: IMutationObject = {};
+
+    protected async preMutation(entityType: IEntityType, fromEntity: IDataEntity, matchFields: PropertyFields, operation: string): Promise<PropertyFields> {
+
+        await bluebird.each(matchFields, async field => {
+            if (operation === 'assert' || operation === 'get') {
+                if (!field.fieldName.startsWith('properties.')) field.fieldName = 'properties.' + field.fieldName;
+            }
+            field.fieldValue = await this.infra.utils.variableProcessor.parseObjectVariables(field.fieldValue) || field.fieldValue;
+        });
+
+        return matchFields;
+    }
+}
+
+export default DemoFieldMutator;
+
+
+File: src/infrastructure/logic/fieldMutators/metaweather/location.ts
+Content:
+import {AbstractFieldMutator, IMutationObject} from "../abstractFieldMutator";
+import {IPropertyField} from "../../propertyFields";
+
+class LocationFieldMutator extends AbstractFieldMutator {
+    protected sharedMutations: IMutationObject = {
+        shared:
+            {
+                query: {
+                    names: ['name', 'search', 'text']
+                },
+                lattlong: {
+                    names: ['location', 'geo', 'geolocation'],
+                    mutate: async (field: IPropertyField) => {
+                        const valueObject = await this.infra.utils.variableProcessor.parseObjectVariables(field.fieldValue) as string[];
+                        if (valueObject) field.fieldValue = valueObject.join(',');
+                    }
+                }
+            }
+    };
+
+}
+
+export default LocationFieldMutator;
+
+
+File: src/infrastructure/logic/fieldMutators/metaweather/forecast.ts
+Content:
+import {AbstractFieldMutator, IMutationObject} from "../abstractFieldMutator";
+import {IPropertyField, PropertyFields} from "../../propertyFields";
+import {IDataEntity, IEntityType} from "../../entities";
+const moment = require('moment');
+
+class ForecastFieldMutator extends AbstractFieldMutator {
+    protected sharedMutations: IMutationObject = {
+        shared:
+            {
+                woeid: {
+                    names: ['location']
+                },
+                date: {
+                    names: ['day']
+                },
+                dateFormat: {
+                    names: ['format', 'date_format']
+                }
+            }
+    };
+
+    protected async postMutation(entityType: IEntityType, fromEntity: IDataEntity, matchFields: PropertyFields, operation: string): Promise<PropertyFields> {
+        const dateFormat = matchFields.getField('dateFormat', 'DD/MM/YYYY').fieldValue;
+        const dateField = matchFields.getField('date');
+        if (dateFormat !== undefined && dateField !== undefined) {
+            const parsedDate = new moment(dateField.fieldValue, dateFormat);
+            dateField.fieldValue = parsedDate.format('YYYY/MM/DD');
+        }
+
+        return matchFields;
+    }
+
+}
+
+export default ForecastFieldMutator;
+
+
+File: src/infrastructure/logic/fieldMutators/internal/emptyMutator.ts
+Content:
+import {AbstractFieldMutator, IMutationObject} from "../abstractFieldMutator";
+
+class EmptyFieldMutator extends AbstractFieldMutator {
+    protected sharedMutations: IMutationObject = {};
+}
+
+export default EmptyFieldMutator;
+
+
+File: src/infrastructure/logic/fieldMutators/internal/internal.ts
+Content:
+import {AbstractFieldMutator, IMutationObject} from "../abstractFieldMutator";
+
+class InternalFieldMutator extends AbstractFieldMutator {
+    protected sharedMutations: IMutationObject = {};
+}
+
+export default InternalFieldMutator;
+
+
+File: src/infrastructure/utils/variableProcessor.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {IPropertyField} from "../logic/propertyFields";
+
+interface ITestable {
+    test: (value: any) => boolean,
+    field: IPropertyField,
+    toString: () => string
+}
+
+interface ITestableOptions {
+    partial?: boolean,
+    trim?: boolean,
+    ignoreCase?: boolean
+}
+
+const moment = require('moment');
+
+class VariableProcessor extends InfrastructureObject {
+    private variableProcessors: Map<string, (value: string) => Promise<string>> = new Map<string, (value: string) => Promise<string>>();
+
+    constructor() {
+        super();
+
+        this.initProcessors();
+    }
+
+    public async parseObjectVariables(value: string) {
+        const innerValue = value.toString().replace(/\${(.+)}/g, '$1');
+
+        if (innerValue.match(/^\[.*]$/)) { // array
+            return this.infra.utils.parser.safeSplit(innerValue.replace(/^\[(.*)]$/, '$1'), ',').map(item => item.trim())
+                .filter(item => item.trim() !== '');
+        }
+        if (innerValue.match(/^\/.+?\/[igm]*$/)) { // regexp
+            const regexpParts = innerValue.match(/^\/(.+?)\/([igm]*)$/);
+            return new RegExp(regexpParts[1], regexpParts[2] || '');
+        }
+        if (innerValue.match(/^{.+}$/)) { // JSON
+            return JSON.parse(innerValue);
+        }
+
+        return undefined;
+    }
+
+    public async processVariables(value: string): Promise<string> {
+        let result = value;
+        const processedVariableMessage = [];
+        const variableStart = [];
+        let i = 0;
+        while (i < result.length) {
+            if (result[i] === '$' && i < result.length - 1 && result[i + 1] === '{' && (i === 0 || result[i - 1] !== '\\')) {
+                variableStart.push(i);
+            }
+
+            if (result[i] === '}' && (i === 0 || result[i - 1] !== '\\')) {
+                const start = variableStart.pop();
+                if (start !== undefined) {
+                    const variableToProcess = result.substr(start, i - start + 1);
+                    const modifiedOptions = this.extractValueOptions(variableToProcess);
+                    let processResult = (modifiedOptions) ? variableToProcess : await this.processVariableValue(variableToProcess);
+                    processResult = (processResult === undefined) ? 'undefined' : processResult.toString();
+
+                    if (/\${passwords?_.*/i.test(variableToProcess)) {
+                        processedVariableMessage.push(`"${variableToProcess}" => ${processResult[0]}************* (password variable)`);
+                    } else {
+                        if (variableToProcess !== processResult) processedVariableMessage.push(`"${variableToProcess}" => ${processResult}`);
+                    }
+
+                    result = result.substring(0, start) + processResult + result.substring(i + 1);
+                    i += processResult.length - variableToProcess.length;
+
+                }
+            }
+
+            i = i + 1;
+        }
+
+        if (processedVariableMessage.length > 0) this.log(`Variables processed: ${processedVariableMessage.join(', ')}`);
+
+
+        return result;
+    }
+
+    public async getTestable(field: IPropertyField, options: ITestableOptions = {ignoreCase : false, trim : true, partial : false}): Promise<ITestable> {
+        const _self = this;
+
+        const modifiedOptions = this.extractValueOptions(field.fieldValue);
+        if (modifiedOptions) return this.getTestable({fieldName: field.fieldName, fieldValue: modifiedOptions.innerValue}, Object.assign(options, modifiedOptions.options));
+
+        const parsedValue = await this.processVariables(field.fieldValue);
+        const objectValue = await this.parseObjectVariables(parsedValue) || parsedValue;
+
+        const result: ITestable = {
+            field,
+            test(target: any): boolean {
+                if (target === null || target === undefined) {
+                    return (parsedValue === null || parsedValue === undefined || parsedValue === 'null' || parsedValue === 'undefined' || parsedValue === '');
+                }
+
+                // TODO: add support for regexp and other variables
+
+                const compareSource = (target instanceof Object || objectValue instanceof RegExp) ? objectValue : parsedValue;
+
+                // String comparison as default last result
+                return _self.compareTestableWithOptions(compareSource, target, options);
+            },
+            toString() {
+                if (objectValue) return JSON.stringify(objectValue);
+                return parsedValue.toString();
+            }
+
+        };
+
+        return result;
+    }
+
+    private compareTestableWithOptions(source: any, target: any, options: ITestableOptions) {
+        const _self = this;
+
+        let compareSource = source;
+        let compareTarget = target;
+
+        if (typeof compareTarget === 'string' || typeof compareTarget === 'number' || typeof compareTarget === 'boolean') {
+            compareTarget = compareTarget.toString();
+
+            if (compareSource instanceof RegExp ) return compareSource.test(compareTarget);
+
+            compareSource = compareSource.toString();
+            if (options.ignoreCase) { compareSource = compareSource.toLowerCase(); compareTarget = compareTarget.toLowerCase(); }
+            if (options.trim) { compareSource = compareSource.trim(); compareTarget = compareTarget.trim(); }
+
+            // tslint:disable-next-line:triple-equals
+            return (options.partial) ? (compareTarget.indexOf(compareSource) >= 0 || compareSource.indexOf(compareTarget) >= 0) : (compareSource == compareTarget);
+        }
+
+        if (Array.isArray(target)) {
+            if (!Array.isArray(compareSource)) compareSource = [compareSource];
+            let result = compareSource.every(item => compareTarget.some(compareValue => _self.compareTestableWithOptions(item, compareValue, {})));
+            if (!options.partial) result = (result && (compareTarget.length === compareSource.length));
+            return result;
+        }
+
+        // TODO: add regexp, json, and others
+    }
+
+    private async processVariableValue(variableEnclosure): Promise<string> {
+        const variableContent = variableEnclosure.replace(/^\${(.*)}$/, '$1');
+        const splitVariable = variableContent.split('_');
+        const type = splitVariable.splice(0, 1)[0].toLowerCase();
+
+        const objectParse = await this.parseObjectVariables(variableContent);
+
+        if (objectParse !== undefined) return variableEnclosure;
+
+        const processor = this.variableProcessors.get(type) || this.variableProcessors.get(`${type}s`);
+
+        if (!processor) throw new Error('Cannot find variable processor for ' + type);
+
+        const result = await processor.call(this, splitVariable.join('_'));
+
+        return result;
+    }
+
+    private extractValueOptions(value: string): {innerValue: string, options: ITestableOptions} {
+        const options = value.toString().match(/\${(!)?(ignoreCase|trim|partial|contains?):(.+)}/i);
+        if (options) {
+
+            const optionToggle = (options[1] === undefined);
+            let optionName = options[2];
+            const innerValue = options[3];
+
+            switch (optionName.toLowerCase()) {
+                case 'ignorecase':
+                    optionName = 'ignoreCase';
+                    break;
+                case 'partial':
+                case 'contain':
+                case 'contains':
+                    optionName = 'partial';
+                    break;
+                default:
+                    optionName = optionName.toLowerCase();
+                    break;
+            }
+
+            const result = {innerValue, options : {}};
+            result.options[optionName] = optionToggle;
+
+            return result;
+        }
+    }
+
+
+    private initProcessors() {
+        const _self = this;
+
+        // TODO:IMPLEMENT_ME - Add your own variables and behaviours
+
+        this.variableProcessors.set('todelete', async variable => '${toDelete}');
+        this.variableProcessors.set('this', async variable => {
+            const splitVariable = variable.split('.');
+            splitVariable[0] = splitVariable[0] + '_this';
+            return _self.variableProcessors.get('entities')(splitVariable.join('.'));
+        });
+        this.variableProcessors.set('=', async variable => {
+            if (!variable.match(/^[\d+\-*() ]+$/)) throw new Error(`Cannot parse variable into math equation: ${variable}`);
+            // tslint:disable-next-line:no-eval
+            const result = eval(variable);
+
+            const propFields = await _self.infra.utils.parser.parseFieldPairs(`equation=${variable}`);
+
+            _self.infra.data.storeRawEntityData(result.toString(), 'math', propFields);
+
+            return result.toString();
+        });
+        this.variableProcessors.set('random', async variable => {
+            const splitVariable = variable.split('_');
+            const min = Number(splitVariable[0] || '1');
+            const max = Number(splitVariable[1] || '50');
+
+            if (isNaN(max) || isNaN(min)) throw new Error(`Cannot parse min/max numbers for ${variable}`);
+
+            const result = Math.floor(Math.random() * (max - min)) + min;
+
+            const propFields = await _self.infra.utils.parser.parseFieldPairs(`min=${min}, max=${max}`);
+
+            _self.infra.data.storeRawEntityData(result.toString(), 'random', propFields);
+
+            return result.toString();
+        });
+        this.variableProcessors.set('entities', async variable => {
+            const splitVariable = variable.split('.');
+            const entityIdentifierSplit = splitVariable.shift().split('_');
+            const propertyPath = splitVariable.join('.');
+            const entityDescription = entityIdentifierSplit.pop();
+            const entityType = entityIdentifierSplit.join('_');
+
+            const entityIndex = (/^\d+$/.test(entityDescription)) ? Number(entityDescription) : 'latest';
+
+            if (entityIndex === 0) throw new Error(`Entity indices are 1-based. Don't use a zero based index`);
+
+            const storedEntity = _self.infra.data.getScenarioEntity(entityType, entityIndex);
+
+            if (storedEntity === undefined) throw new Error(`Cannot find ${entityDescription} ${entityType} in internal storage`);
+
+            let entityProperty = _self.infra.utils.getPropertyRecursive(storedEntity, `entity.${propertyPath}`);
+            if (entityProperty === undefined) entityProperty = _self.infra.utils.getPropertyRecursive(storedEntity, propertyPath);
+            return entityProperty;
+        });
+        this.variableProcessors.set('date', async variable => {
+            let outFormat = 'DD/MM/YYYY';
+
+            const splitVariable = variable.split('_');
+            const baseDate = splitVariable.splice(0, 1)[0].toLowerCase();
+
+            let parsedBaseDate;
+
+            switch (baseDate) {
+                case 'today':
+                case 'now':
+                    parsedBaseDate = new moment();
+                    break;
+                default:
+                    parsedBaseDate = new moment(baseDate, 'DD/MM/YYYY');
+                    break;
+            }
+
+            for (let i = 0; i < splitVariable.length; i += 2) {
+                const modifierValue = splitVariable[i];
+                const modifierType = splitVariable[i + 1] || 'day';
+
+                if (modifierValue === 'format') {
+                    outFormat = modifierType;
+                } else {
+                    parsedBaseDate = parsedBaseDate.add(Number(modifierValue), modifierType);
+                }
+            }
+
+            return parsedBaseDate.format(outFormat);
+        });
+        this.variableProcessors.set('password', async variable => {
+            const splitVariable = variable.split('_');
+            const [system, domain] = splitVariable.splice(0, 2);
+            const user = splitVariable.join('_');
+
+            return _self.infra.data.getUserPassword(system, domain, user);
+        });
+        this.variableProcessors.set('global', async variable => {
+            const splitVariable = variable.split('.');
+            const variableName = splitVariable.shift();
+            const propertyPath = splitVariable.join('.');
+
+            const globalVariable = this.infra.data.globalData.globalVariables[variableName];
+            return this.infra.utils.getPropertyRecursive(globalVariable, propertyPath);
+        });
+
+        this.variableProcessors.set('externalparam', async variable => {
+            const result = this.infra.config.externalParams[variable];
+            if (result === undefined) throw new Error(`Could not get value for external param ${variable}`);
+            return result;
+        });
+        this.variableProcessors.set('externalparams', async variable => {
+            return this.variableProcessors.get('externalparam')(variable);
+        });
+    }
+}
+
+export {VariableProcessor, ITestable};
+
+
+File: src/infrastructure/utils/utils.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {Logger} from "./logger";
+import {Parser} from "./parser";
+import {VariableProcessor} from "./variableProcessor";
+import {PropertyFields} from "../logic/propertyFields";
+
+const bluebird = require('bluebird');
+
+class Utils extends InfrastructureObject {
+    public readonly logger: Logger;
+    public readonly parser: Parser = new Parser();
+    public readonly variableProcessor: VariableProcessor = new VariableProcessor();
+
+    constructor() {
+        super();
+        this.logger = new Logger();
+    }
+
+    // TODO:IMPLEMENT_ME - add your own util classes
+
+    public async filterArrayByProps(source: any[], filters: PropertyFields): Promise<any[]> {
+        if (source === undefined) throw new Error('Cannot filter undefined source');
+        if (!Array.isArray(source)) throw new Error('Cannot filter non-array source');
+
+        if (filters === undefined) return source;
+
+        const positionFilter = filters.removeField('#');
+
+        const tests = await bluebird.map(filters,  filter => this.infra.utils.variableProcessor.getTestable(filter));
+
+        if (positionFilter) {
+            const position = Number(positionFilter.fieldValue.replace('-', ''));
+            const startSlice = (positionFilter.fieldValue.startsWith('-') ? source.length - position : position - 1);
+            source = source.slice(startSlice, startSlice + 1);
+        }
+
+        return source.filter(item => tests.every(test => {
+            const target = this.infra.utils.getPropertyRecursive(item, test.field.fieldName);
+            return test.test(target);
+        }));
+    }
+
+    public getPropertyRecursive(obj: any, path: string | string[]): any {
+        if (path === undefined) return undefined;
+        if (obj === undefined) return undefined;
+
+        if (Array.isArray(path)) {
+            path = [].concat(path);
+        } else {
+            path = path.split(/[.[]/);
+        }
+
+        if (path.length === 0 || path.length === 1 && path[0] === '') return obj;
+
+        let currentPath = path.splice(0, 1)[0].trim();
+        if (/^.*]$/.test(currentPath)) currentPath = currentPath.substr(0, currentPath.length - 1);
+
+        let isFunc = false;
+        if (/^.*\(\)$/.test(currentPath)) {
+            currentPath = currentPath.substr(0, currentPath.length - 2);
+            isFunc = true;
+        }
+
+        let result = obj[currentPath];
+        if (isFunc) result = result.call(obj);
+
+        return this.getPropertyRecursive(result, path);
+    }
+
+    public async waitAndRetryAction(actionFunction: () => Promise<any>, timeout: number, interval: number = 1000, start: number = Date.now()) {
+
+        try {
+            const result = await actionFunction();
+            return result;
+        } catch (e) {
+            if (Date.now() - start > timeout) throw new Error(`Action didn't complete, even after ${Math.floor(timeout / 1000)}s:\n${e.message}`);
+            await bluebird.delay(interval);
+            return this.waitAndRetryAction(actionFunction, timeout, interval, start);
+
+        }
+    }
+}
+
+export {Utils};
+
+
+File: src/infrastructure/utils/parser.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {PropertyFields} from "../logic/propertyFields";
+const bluebird = require('bluebird');
+
+class Parser extends InfrastructureObject {
+
+    public async parseFieldPairs(fieldsData: string | PropertyFields, processVariables: boolean = true): Promise<PropertyFields> {
+        const _self = this;
+
+        let result: PropertyFields;
+        if (Array.isArray(fieldsData)) {
+            result = new PropertyFields(fieldsData);
+        } else {
+            if (fieldsData !== '') {
+
+                let fields = this.safeSplit(fieldsData, ',').map(fieldData => {
+                    const field = _self.safeSplit(fieldData, '=');
+                    const fieldName = field.splice(0, 1)[0] || '';
+                    const fieldValue = field.join('=');
+
+                    return {
+                        fieldName : fieldName.trim(),
+                        fieldValue : fieldValue.trim()
+                    };
+                });
+
+                if (processVariables) {
+                    fields = await bluebird.map(fields, async field => {
+                        field.fieldValue = await _self.infra.utils.variableProcessor.processVariables(field.fieldValue);
+                        return field;
+                    });
+                }
+
+                result = new PropertyFields(fields);
+            } else {
+                return new PropertyFields([]);
+            }
+        }
+
+        return result;
+    }
+
+    public safeSplit(value: string, delimiter: string): string[] {
+
+        const protectedVariables = value.replace(/\$\{[^}]+}/g, outerVariable => {
+            return outerVariable.split(delimiter).join('\\' + delimiter);
+        });
+
+        return protectedVariables.split('\\' + delimiter).map(shard => shard.split(delimiter)).reduce((acc: string[], shards: string[], index: number) => {
+            if (index > 0) {
+                const attachValue = shards.splice(0, 1)[0] || '';
+                acc[acc.length - 1] += delimiter + attachValue;
+            }
+
+            return acc.concat(shards);
+        }, []);
+    }
+
+}
+
+export {Parser};
+
+
+File: src/infrastructure/utils/logger.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {Logger as WinstonLogger, LoggerOptions} from "winston";
+const winston = require('winston');
+const moment = require('moment');
+
+class Logger extends InfrastructureObject {
+
+    // TODO:IMPLEMENT_ME - You may want your own infrastructure
+
+    private engine: WinstonLogger;
+
+    constructor() {
+        super();
+    }
+
+    public async beforeRun() {
+        this.initLogger();
+    }
+
+    public writeToLog(level: 'info'|'error', message: string, indentLevel: number = 2) {
+        this.engine.log(level, message, {indentLevel});
+    }
+
+    private initLogger() {
+
+        const loggerOptions: LoggerOptions = {
+            format: winston.format.combine(
+                winston.format.align(),
+                winston.format.printf(info => `${moment().format('DD/MM/YY-HH:mm:ss')}\t${info.level}\t${info.message}`)
+            ),
+            transports: [
+                new winston.transports.File({filename: `${this.infra.workPath}/log.log`, level: 'verbose'}),
+                new winston.transports.File({filename: `${this.infra.workPath}/errors.log`, level: 'error'}),
+                new winston.transports.Console({level: 'verbose', format: winston.format.printf(info => {
+                    return info.message
+                        .split('\n')
+                        .map(line => `${' '.repeat(info.indentLevel * 3)}${line}`)
+                        .join('\n');
+                })})
+            ]
+        };
+        this.engine = winston.createLogger(loggerOptions);
+
+        this.log('Infrastructure logger initialized', 0);
+    }
+}
+
+export {Logger};
+
+
+File: src/infrastructure/assert/entities.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {IDataEntity} from "../logic/entities";
+import {PropertyFields} from "../logic/propertyFields";
+
+class AssertEntities extends InfrastructureObject {
+    public async assertEntityProperties(entity: IDataEntity, matchProperties: PropertyFields, expectedResult: boolean) {
+        if (entity === undefined) throw new Error('Could not obtain reference entity');
+
+        const assertProperties = await this.infra.logic.entities.mutateFields(entity.type, entity.getterInfo.fromEntity, matchProperties, 'assert');
+
+        const compareResult = await this.infra.assert.compareObjectToExpectedSpec(entity.entity, assertProperties);
+
+        const errorString = compareResult.mismatches.map(item => `${item.fieldName}=${item.actual} != ${item.expected}`).join(', ');
+
+        if (compareResult.result !== expectedResult) {
+            // tslint:disable-next-line:max-line-length
+            throw new Error(`Expected ${entity.type.typeName} ${(expectedResult) ? '' : 'not '}to match spec (${matchProperties.toString()}), but it ${(expectedResult) ? 'did not:\n' + errorString : 'did'}`);
+        }
+    }
+
+    public async assertEntityExists(entity: IDataEntity, expectedResult: boolean) {
+        if ((entity.entity !== undefined) !== expectedResult) {
+            throw new Error(`Expected ${entity.type.typeName} ${(expectedResult) ? '' : 'not '}to exist, but it ${(expectedResult) ? 'did not' : 'did'}`);
+        }
+    }
+
+    public async assertEntityHasItems(entity: IDataEntity, matchProperties: PropertyFields, expectedCount: number, expectedResult: boolean) {
+        const assertProperties = await this.infra.logic.entities.mutateFields(entity.type, entity.getterInfo.fromEntity, matchProperties, 'assert');
+
+        const target = (Array.isArray(entity.entity)) ? entity.entity : entity.entity.data;
+
+        const filteredItems = await this.infra.utils.filterArrayByProps(target, assertProperties);
+
+        if (expectedCount === -1) {
+            if (filteredItems.length > 0 !== expectedResult) {
+                throw new Error(`Expected entity ${(expectedResult) ? 'to have' : 'not to have'} matching items, but it ${(expectedResult) ? 'did not' : 'did'}`);
+            }
+        } else {
+            if (filteredItems.length === expectedCount !== expectedResult) {
+                throw new Error(`Expected entity ${(expectedResult) ? 'to have' : 'not to have'} ${expectedCount} matching items, but it has ${filteredItems.length}`);
+            }
+        }
+    }
+}
+
+export {AssertEntities};
+
+
+File: src/infrastructure/assert/assert.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {AssertEntities} from "./entities";
+import {IPropertyField, PropertyFields} from "../logic/propertyFields";
+const bluebird = require('bluebird');
+
+interface IMismatchResult {
+    result: boolean,
+    mismatches: Array<{fieldName: string, expected: string, actual: string}>
+}
+
+class Assert extends InfrastructureObject {
+    public readonly entities = new AssertEntities();
+
+    public async compareObjectToExpectedSpec(actual: any, expectedSpec: PropertyFields): Promise<IMismatchResult> {
+        const _self = this;
+        const result = {result : true, mismatches: []};
+
+        await bluebird.each(expectedSpec, async (expectedField: IPropertyField) => {
+            const fieldName = expectedField.fieldName;
+            const actualValue = _self.infra.utils.getPropertyRecursive(actual, expectedField.fieldName);
+            const test = await _self.infra.utils.variableProcessor.getTestable(expectedField);
+
+            // TODO:IMPLEMENT_ME - Add more advanced comparisons
+            if (!test.test(actualValue)) {
+                result.result = false;
+                result.mismatches.push({fieldName, expected: test.toString(), actual: JSON.stringify(actualValue)});
+            }
+        });
+
+        return result;
+    }
+
+    public async compareVariableToExpected(expected: string, actual: string, expectedResult: boolean) {
+        const processedActual = await this.infra.utils.variableProcessor.processVariables(actual);
+        const processedExpected = await this.infra.utils.variableProcessor.processVariables(expected);
+
+        if (expectedResult) {
+            if (processedActual !== processedExpected) {
+                throw new Error(`Expected ${expected} (${processedExpected}) to equal ${processedActual}, but it didn't`);
+            }
+        } else {
+            if (processedActual === processedExpected) {
+                throw new Error(`Expected ${expected} (${processedExpected}) NOT to equal ${processedActual}, but it`);
+            }
+        }
+
+    }
+}
+
+export {Assert};
+
+
+File: src/infrastructure/testEnvironment/testEnvironment.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {MetaWeatherAPI} from "./metaWeather/metaWeatherAPI";
+import {JsonPlaceholderAPI} from "./json/jsonPlaceholderAPI";
+import {DemoCRUD} from "./demoCRUD/demoCRUD";
+import {IDataEntity} from "../logic/entities";
+import {PropertyFields} from "../logic/propertyFields";
+
+const bluebird = require('bluebird');
+
+class TestEnvironment extends InfrastructureObject {
+    public readonly metaWeather = new MetaWeatherAPI();
+    public readonly jsonPlaceholder = new JsonPlaceholderAPI();
+    public readonly demoCRUD = new DemoCRUD();
+
+    // TODO:IMPLEMENT_ME - Add your own test environment accessors - APIs, DBs, File systems etc.
+
+    public async afterScenario() {
+        await this.undoScenarioChanges();
+
+    }
+
+    private async undoScenarioChanges() {
+        if (this.infra.config.testEnvironment.behaviour.revertEntityChanges === false) {
+            this.log('Skipping scenario entity reversions (due to config value)');
+            return;
+        }
+
+        const currentScenarioTags = (this.infra.testFlowManager.currentStatus.currentScenario && this.infra.testFlowManager.currentStatus.currentScenario.pickle)
+            ? this.infra.testFlowManager.currentStatus.currentScenario.pickle.tags
+            : [];
+
+        if (currentScenarioTags.some(tag => tag.name === '@skipRevert')) {
+            this.log('Skipping scenario entity reversions (due to scenario @skipRevert tag)');
+            return;
+        }
+
+        const entitiesToUndo = this.infra.data.getScenarioEntitiesToUndo();
+
+        if (entitiesToUndo.length === 0) return;
+
+        this.log(`Undoing actions on ${entitiesToUndo.length} entities`);
+
+        const errors: Error[] = [];
+
+        await bluebird.each(entitiesToUndo.reverse(), async (entity: IDataEntity) => {
+            try {
+                await bluebird.each(entity.undoActions.reverse(), async (operation: {action: 'create' | 'update', undoFields: PropertyFields}) => {
+                    switch (operation.action) {
+                        case 'create':
+                            if (this.infra.config.testEnvironment.behaviour.revertEntityChanges[entity.type.typeName] === false) {
+                                this.log(`Skipping deletion of ${entity.type.typeName} due to revertEntityChanges config`);
+                                return;
+                            }
+                            return this.infra.services.entity.deleteEntity(entity);
+                        case 'update':
+                            return this.infra.services.entity.updateEntity(entity, operation.undoFields, false);
+                        default:
+                            throw new Error(`No undo handler for ${operation.action} action`);
+                    }
+                });
+            } catch (e) {
+                errors.push(e);
+            }
+        });
+
+        this.log(`Finished undoing actions on ${entitiesToUndo.length} entities ${(errors.length > 0) ? '(' + errors.length + ' errors)' : 'successfully'}`);
+
+        if (errors.length > 0) throw new Error(`Some undo actions failed: ${errors.map(e => e.message).join('\n')}`);
+    }
+}
+
+export {TestEnvironment};
+
+
+File: src/infrastructure/testEnvironment/metaWeather/metaWeatherAPI.ts
+Content:
+import {InfrastructureObject} from "../../infrastructureObject";
+
+const https = require('https');
+
+// See https://www.metaweather.com/api/ for specifications
+
+interface IMetaWeatherAPILocationResponse {
+    title: string,
+    location_type: 'City' | 'Region / State / Province' | 'Country' | 'Continent',
+    latt_long: string,
+    woeid: number,
+    distance: number
+}
+
+interface IMetaWeatherAPIForecastResponse extends IMetaWeatherAPILocationResponse {
+    consolidated_weather: IMetaWeatherAPIHistoricalForecastResponse[],
+    parent: IMetaWeatherAPILocationResponse,
+    time: Date,
+    sun_rise: Date,
+    sun_set: Date,
+    timezone_name: string,
+    sources: Array<{title: string, url: string}>
+}
+
+interface IMetaWeatherAPIHistoricalForecastResponse {
+    id: number,
+    applicable_date: Date,
+    weather_state_name: string,
+    weather_state_abbr: string,
+    wind_speed: number,
+    wind_direction: number,
+    wind_direction_compass: string,
+    min_temp: number,
+    max_temp: number,
+    the_temp: number,
+    air_pressure: number,
+    humidity: number,
+    visibility: number,
+    predictability: number
+}
+
+class MetaWeatherAPI extends InfrastructureObject {
+
+    public get baseURL(): string {
+        return this.infra.config.testEnvironment.metaWeather.baseURL;
+    }
+
+    public async getForecast(woeid: string): Promise<IMetaWeatherAPIForecastResponse> {
+        const getURL = `${this.baseURL}/location/${woeid}/`;
+
+        const result = await this.getHTTPSResponse(getURL) as IMetaWeatherAPIForecastResponse;
+
+        return result;
+    }
+
+    public async getHistoricalForecast(woeid: string, date: string): Promise<IMetaWeatherAPIHistoricalForecastResponse[]> {
+        const getURL = `${this.baseURL}/location/${woeid}/${date}/`;
+
+        const result = await this.getHTTPSResponse(getURL) as IMetaWeatherAPIHistoricalForecastResponse[];
+
+        return result;
+    }
+
+    public async searchLocation(queryField: 'query' | 'lattlong', fieldValue: string): Promise<IMetaWeatherAPILocationResponse[]> {
+        const getURL = `${this.baseURL}/location/search/?${queryField}=${fieldValue}`;
+
+        const result = await this.getHTTPSResponse(getURL) as IMetaWeatherAPILocationResponse[];
+
+        return result;
+    }
+
+
+    private async getHTTPSResponse(getURL: string): Promise<any> {
+        const result = await new Promise((resolve, reject) => {
+            const response = [];
+
+            https.get(getURL, res => {
+                if (res.statusCode !== 200) {
+                    res.resume();
+                    return reject(new Error(`Bad status code: ${res.statusCode}`));
+                }
+
+                res
+                    .on('data', d => response.push(d.toString()))
+                    .on('error', reject)
+                    .on('end', () => {
+                        try {
+                            const parsedData = JSON.parse(response.join(''));
+                            return resolve(parsedData);
+                        } catch (e) {
+                            return reject(new Error(`Failed to parse response data: ${e.message}`));
+                        }
+                    });
+            });
+        });
+
+        return result;
+    }
+}
+
+export {MetaWeatherAPI, IMetaWeatherAPILocationResponse, IMetaWeatherAPIForecastResponse, IMetaWeatherAPIHistoricalForecastResponse};
+
+
+File: src/infrastructure/testEnvironment/json/jsonPlaceholderAPI.ts
+Content:
+import {InfrastructureObject} from "../../infrastructureObject";
+import {PropertyFields} from "../../logic/propertyFields";
+
+const https = require('https');
+
+// See http://jsonplaceholder.typicode.com/ for specifications
+
+interface IJSONPlaceholderAPIUser {
+    id: number,
+    name: string,
+    email: string,
+    username: string,
+    address: {street: string, city: string, zipcode: string, geo: {lat: string, lng: string}},
+    phone: string,
+    website: string,
+    company: {name: string, catchPhrase: string, bs: string}
+}
+
+class JsonPlaceholderAPI extends InfrastructureObject {
+
+    public get baseURL(): string {
+        return this.infra.config.testEnvironment.jsonPlaceholder.baseURL;
+    }
+
+    public async getUsers(matchFields: PropertyFields): Promise<IJSONPlaceholderAPIUser[]> {
+        let getURL = `${this.baseURL}/users`;
+        if (matchFields.length > 0) getURL = getURL + '?' + matchFields.toString('&');
+
+        const result = await this.getHTTPSResponse(getURL) as IJSONPlaceholderAPIUser[];
+
+        return result;
+    }
+
+    private async getHTTPSResponse(getURL: string): Promise<any> {
+        const result = await new Promise((resolve, reject) => {
+            const response = [];
+
+            https.get(getURL, res => {
+                if (res.statusCode !== 200) {
+                    res.resume();
+                    return reject(new Error(`Bad status code: ${res.statusCode}`));
+                }
+
+                res
+                    .on('data', d => response.push(d.toString()))
+                    .on('error', reject)
+                    .on('end', () => {
+                        try {
+                            const parsedData = JSON.parse(response.join(''));
+                            return resolve(parsedData);
+                        } catch (e) {
+                            return reject(new Error(`Failed to parse response data: ${e.message}`));
+                        }
+                    });
+            });
+        });
+
+        return result;
+    }
+}
+
+export {JsonPlaceholderAPI, IJSONPlaceholderAPIUser};
+
+
+File: src/infrastructure/testEnvironment/demoCRUD/demoCRUD.ts
+Content:
+import {InfrastructureObject} from "../../infrastructureObject";
+import {PropertyFields} from "../../logic/propertyFields";
+
+interface IDemoEntity {
+    id: number,
+    wasCreated: boolean,
+    requestFields: PropertyFields,
+    properties: {[key: string]: any}
+}
+
+class DemoCRUD extends InfrastructureObject {
+    private demoEntities: IDemoEntity[] = [];
+    private generatedEntitiesCount: number = 0;
+
+    public async createEntity(creationFields: PropertyFields): Promise<number> {
+        const entity = this.generateAndStoreDemoEntity(creationFields, true);
+        return entity.id;
+    }
+
+    public async getDemoEntity(matchFields: PropertyFields): Promise<IDemoEntity> {
+        const matchingEntities: IDemoEntity[] = await this.infra.utils.filterArrayByProps(this.demoEntities, matchFields);
+        const result = matchingEntities.pop();
+
+        return result;
+    }
+
+    public async deleteDemoEntity(id: number) {
+        if (this.demoEntities.find(entity => entity.id === id) === undefined) throw new Error(`Cannot find entity with ID = ${id}`);
+        this.demoEntities = this.demoEntities.filter(entity => entity.id !== id);
+    }
+
+    public async updateDemoEntity(id: number, updateFields: PropertyFields) {
+        const entityToUpdate = this.demoEntities.find(entity => entity.id === id);
+        if (entityToUpdate === undefined) throw new Error(`Cannot find entity with ID = ${id}`);
+        updateFields.forEach(field => entityToUpdate.properties[field.fieldName] = field.fieldValue.toString());
+    }
+
+    private generateAndStoreDemoEntity(generationFields: PropertyFields, wasCreated: boolean): IDemoEntity {
+        const properties: {[key: string]: any} = {};
+        generationFields.forEach(field => properties[field.fieldName] = field.fieldValue);
+        properties.id = this.generatedEntitiesCount;
+
+        this.generatedEntitiesCount = this.generatedEntitiesCount + 1;
+
+        const result: IDemoEntity = {
+            wasCreated,
+            properties,
+            requestFields: generationFields,
+            id: properties.id
+        };
+
+        this.demoEntities.push(result);
+
+        return result;
+    }
+
+}
+
+export {DemoCRUD};
+
+
+File: src/infrastructure/cucumberFacades/debugFacades.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {ParameterTypes} from "./parameterTypes";
+import {PropertyFields} from "../logic/propertyFields";
+
+const bluebird = require('bluebird');
+const path = require('path');
+const fsExtra = require('fs-extra');
+
+/**
+ * Debug and internal facades
+ */
+class DebugFacades extends InfrastructureObject {
+
+    public async demoStep(stepProperties: {async: boolean, failed: boolean, skipped: boolean}) {
+        this.log(`Executing demo step with properties = ${JSON.stringify(stepProperties)}`);
+        if (stepProperties.async) await bluebird.delay(2000);
+        if (stepProperties.failed) throw new Error('This is a failed step');
+
+        // TODO: handle skipped
+    }
+
+    public async printVariable(variable) {
+        const processed = await this.infra.utils.variableProcessor.processVariables(variable);
+        this.log(processed);
+    }
+
+    public async evalCode(userCode: string) {
+        if (this.infra.config.utils.debug.warnOnCodeEval) this.log('ERROR: DEBUG STEP - SHOULD NEVER BE USED IN PRODUCTION');
+
+        const $ = this.infra;
+        return bluebird.try(() => {
+            // tslint:disable-next-line:prefer-const
+            let userCodeResult;
+            // tslint:disable-next-line:no-eval
+            let result = eval(userCode);
+            if (userCodeResult !== undefined) result = userCodeResult;
+            return result;
+        }).catch(e => {
+            throw new Error('Error running user code ' + e.toString());
+        });
+    }
+
+}
+
+export {DebugFacades};
+
+
+File: src/infrastructure/cucumberFacades/entities.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {PropertyFields} from "../logic/propertyFields";
+import {IDataEntity} from "../logic/entities";
+
+class EntitiesFacades extends InfrastructureObject {
+    public async storeEntityToMemory(fromEntity: IDataEntity, userEntityType: string, matchFields?: PropertyFields) {
+        if (matchFields === undefined) matchFields = await this.infra.utils.parser.parseFieldPairs('');
+        const entityType = this.infra.logic.entities.getEntityType(userEntityType);
+
+        const entity = await this.infra.services.entity.getEntity(entityType, fromEntity, matchFields);
+
+        this.infra.data.storeScenarioEntity(entity);
+    }
+
+    public async storeEntityPropertyToMemory(property: string, fromEntity: IDataEntity) {
+        const entityType = this.infra.logic.entities.getEntityType('property');
+        const matchFields = await this.infra.utils.parser.parseFieldPairs(`propertyPath=${property}`);
+
+        const entity = await this.infra.services.entity.getEntity(entityType, fromEntity, matchFields);
+
+        this.infra.data.storeScenarioEntity(entity);
+
+    }
+
+    public async deleteEntity(entityToDelete: IDataEntity) {
+        return this.infra.services.entity.deleteEntity(entityToDelete);
+    }
+
+    public async updateEntity(entityToUpdate: IDataEntity, updateFields: PropertyFields) {
+        return this.infra.services.entity.updateEntity(entityToUpdate, updateFields, true);
+    }
+
+    public async createDemoEntity(fromEntityReference: IDataEntity, creationFields: PropertyFields) {
+        const entityType = this.infra.logic.entities.getEntityType('demo entity');
+        return this.infra.services.entity.createEntity(entityType, {parent: [fromEntityReference]}, creationFields, true);
+    }
+
+    public async assertEntityProperties(entity: IDataEntity, matchFields: PropertyFields, expectedResult: boolean) {
+        return this.infra.assert.entities.assertEntityProperties(entity, matchFields, expectedResult);
+    }
+
+    public async assertEntityExists(entity: IDataEntity, expectedResult: boolean) {
+        return this.infra.assert.entities.assertEntityExists(entity, expectedResult);
+    }
+
+    public async assertEntityHasItems(entity: IDataEntity, matchFields: PropertyFields, itemsCount: number, expectedResult: boolean) {
+        return this.infra.assert.entities.assertEntityHasItems(entity, matchFields, itemsCount, expectedResult);
+    }
+
+    public async refreshEntityReference(entity: IDataEntity) {
+        let refreshedFrom;
+
+        if (entity.getterInfo.fromEntity) {
+            const fromEntityType = entity.getterInfo.fromEntity.type;
+            const fromEntityMatchFields = entity.getterInfo.fromEntity.getterInfo.matchFields;
+            const fromFromReference = entity.getterInfo.fromEntity.getterInfo.fromEntity;
+
+            this.log(`Refreshing ${entity.type.fullTypeName} original ${fromEntityType.fullTypeName} source`);
+
+
+            refreshedFrom = await this.infra.services.entity.getEntity(fromEntityType, fromFromReference, fromEntityMatchFields);
+        }
+
+        const refreshedEntity = await this.infra.services.entity.getEntity(entity.type, refreshedFrom, entity.getterInfo.matchFields);
+        this.infra.data.refreshScenarioEntity(refreshedEntity, entity);
+    }
+}
+
+export {EntitiesFacades};
+
+
+
+File: src/infrastructure/cucumberFacades/cucumberFacades.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {ParameterTypes} from "./parameterTypes";
+import {DebugFacades} from "./debugFacades";
+import {EntitiesFacades} from "./entities";
+import {MiscFacades} from "./miscFacades";
+
+/**
+ * Main access point for facades exposed to cucumber steps
+ */
+class CucumberFacades extends InfrastructureObject {
+
+    // TODO:IMPLEMENT_ME - Add as many facade categories as needed
+
+    public parameters: ParameterTypes = new ParameterTypes();
+    public debug: DebugFacades = new DebugFacades();
+    public entities: EntitiesFacades = new EntitiesFacades();
+    public misc: MiscFacades = new MiscFacades();
+}
+
+export {CucumberFacades};
+
+
+File: src/infrastructure/cucumberFacades/parameterTypes.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {IDataEntity} from "../logic/entities";
+import {PropertyFields} from "../logic/propertyFields";
+
+class ParameterTypes extends InfrastructureObject {
+
+    public dataEntity(value: string): IDataEntity {
+        if (value === undefined) return undefined;
+
+        const referenceBreakdown = value.toString().trim().match(/^(this|the latest|the last)? *(.+?) *(#\d+)?$/i);
+        if (!referenceBreakdown) throw new Error('Cannot breakdown entity reference');
+
+        const latestEntity = referenceBreakdown[1];
+        const userEntityType = referenceBreakdown[2];
+        const entityIndex = referenceBreakdown[3];
+
+        if (latestEntity === undefined && entityIndex === undefined) throw new Error('Must reference one of the options: "This" entity or a specific entity index');
+        if (latestEntity !== undefined && entityIndex !== undefined) throw new Error('Must reference ONLY one of the options: "This" entity or a specific entity index');
+
+        const entityIndexOrDescription = (latestEntity === undefined) ? Number((entityIndex || '').replace('#', '')) : 'latest';
+
+        // Actually get entity
+        return this.infra.testFlowManager.currentStatus.currentScenario.scenarioData.getEntity(userEntityType, entityIndexOrDescription);
+    }
+
+    public async matchFields(value: string): Promise<PropertyFields> {
+        return this.infra.utils.parser.parseFieldPairs(value);
+    }
+}
+
+export {ParameterTypes};
+
+
+File: src/infrastructure/cucumberFacades/miscFacades.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {ParameterTypes} from "./parameterTypes";
+import {PropertyFields} from "../logic/propertyFields";
+
+const bluebird = require('bluebird');
+const path = require('path');
+const fsExtra = require('fs-extra');
+
+/**
+ * Debug and internal facades
+ */
+class MiscFacades extends InfrastructureObject {
+
+    // TODO:IMPLEMENT_ME - Add other misc operations
+
+    public async writeToFile(filePath: string, content: string) {
+        const resolvedFullPath = path.resolve(this.infra.workPath, 'additionalFiles', filePath);
+        const realContent = await this.infra.utils.variableProcessor.processVariables(content);
+        fsExtra.ensureFileSync(resolvedFullPath);
+        fsExtra.appendFileSync(resolvedFullPath, realContent + '\n');
+    }
+
+    public async setGlobalVariable(variableName: string, content: string) {
+        const simpleContent = await this.infra.utils.variableProcessor.processVariables(content);
+        const objectContent = await this.infra.utils.variableProcessor.parseObjectVariables(content);
+
+        const realContent = objectContent || simpleContent;
+
+        this.infra.data.globalData.globalVariables[variableName] = realContent;
+    }
+
+    public async compareVariables(actual: string, expected: string, expectedResult: boolean) {
+        return this.infra.assert.compareVariableToExpected(actual, expected, expectedResult);
+
+    }
+
+    public async waitForNextStepToFinish(minutes: number) {
+        return this.infra.testFlowManager.waitForNextStepToFinish(minutes);
+    }
+
+    public async markNextStepsForFailure(stepCount: number, mustFail: boolean = true, errorMessage?: string) {
+        if (errorMessage) errorMessage = errorMessage.match(/^ *"?(.+?)"? *$/)[1];
+        return this.infra.testFlowManager.markStepsForFailure(stepCount, mustFail, errorMessage);
+    }
+
+}
+
+export {MiscFacades};
+
+
+File: src/infrastructure/services/services.ts
+Content:
+import {InfrastructureObject} from "../infrastructureObject";
+import {EntityServices} from "./entityServices/entityServices";
+
+class Services extends InfrastructureObject {
+    public readonly entity = new EntityServices();
+
+    // TODO:IMPLEMENT_ME - Add other services (service = usually requires / changes an external state in the test environment)
+}
+
+export {Services};
+
+
+File: src/infrastructure/services/entityServices/entityServices.ts
+Content:
+import {InfrastructureObject} from "../../infrastructureObject";
+import {IEntityType, IDataEntity, System} from "../../logic/entities";
+import {AbstractEntityGetter} from "./entityGetters/abstractEntityGetter";
+import {PropertyFields} from "../../logic/propertyFields";
+import {AbstractEntityCreator} from "./entityCreators/abstractEntityCreator";
+import {AbstractEntityDeleter} from "./entityDeleters/abstractEntityDeleter";
+import {AbstractEntityUpdater} from "./entityUpdaters/abstractEntityUpdater";
+import {AdditionalEntityServices} from "./additionalEntityServices";
+
+class EntityServices extends InfrastructureObject {
+    public additionalServices = new AdditionalEntityServices();
+
+    // TODO:IMPLEMENT_ME - Add you own getters, creators, deleters and updates in the sub folders
+
+    public async getEntity(entityType: IEntityType, fromEntity?: IDataEntity, matchFields?: PropertyFields): Promise<IDataEntity> {
+        if (matchFields === undefined) matchFields = new PropertyFields([]);
+        const importRoute = `./entityGetters/${System[entityType.system]}/${entityType.rootTypeName}`;
+        // tslint:disable-next-line:variable-name
+        let EntityGetter;
+        try {
+            EntityGetter = await import(importRoute);
+        } catch (e) {
+            throw new Error(`Cannot locate getter for type ${entityType.rootTypeName}`);
+        }
+
+        const entityGetter = new EntityGetter.default() as AbstractEntityGetter;
+
+        const mutatedFields = await this.infra.logic.entities.mutateFields(entityType, fromEntity, matchFields, 'get');
+
+        const entity = await entityGetter.getEntity(entityType, fromEntity, mutatedFields);
+
+        if (Array.isArray(entity.entity)) entity.entity.forEach((item, index) => item['#'] = index + 1);
+
+        return entity;
+    }
+
+    public async updateEntity(entity: IDataEntity, updateFields?: PropertyFields, saveUndoFields: boolean = true) {
+        const importRoute = `./entityUpdaters/${System[entity.type.system]}/${entity.type.rootTypeName}`;
+        // tslint:disable-next-line:variable-name
+        let EntityUpdater;
+        try {
+            EntityUpdater = await import(importRoute);
+        } catch (e) {
+            throw new Error(`Cannot locate updater for type ${entity.type.rootTypeName}`);
+        }
+
+        const entityUpdater = new EntityUpdater.default() as AbstractEntityUpdater;
+
+        const mutatedFields = await this.infra.logic.entities.mutateFields(entity.type, entity, updateFields, 'update');
+
+        await entityUpdater.updateEntity(entity, mutatedFields, saveUndoFields);
+    }
+
+    // tslint:disable-next-line:max-line-length
+    public async createEntity(entityType: IEntityType, fromEntities: {[role: string]: IDataEntity[]}, creationFields: PropertyFields, saveUndoFields: boolean = true): Promise<any> {
+        const importRoute = `./entityCreators/${System[entityType.system]}/${entityType.rootTypeName}`;
+        // tslint:disable-next-line:variable-name
+        let EntityCreator;
+        try {
+            EntityCreator = await import(importRoute);
+        } catch (e) {
+            throw new Error(`Cannot locate creator for type ${entityType.rootTypeName}`);
+        }
+
+        const entityCreator = new EntityCreator.default() as AbstractEntityCreator;
+
+        const mutatedFields = await this.infra.logic.entities.mutateFields(entityType, undefined, creationFields, 'create');
+
+        const createdEntities = await entityCreator.createEntity(entityType, fromEntities, mutatedFields, saveUndoFields);
+
+        createdEntities.forEach(creationResult => this.infra.data.storeScenarioEntity(creationResult));
+
+        return createdEntities;
+    }
+
+    public async deleteEntity(entity: IDataEntity, deletionFields?: PropertyFields) {
+        const importRoute = `./entityDeleters/${System[entity.type.system]}/${entity.type.rootTypeName}`;
+        // tslint:disable-next-line:variable-name
+        let EntityDeleter;
+        try {
+            EntityDeleter = await import(importRoute);
+        } catch (e) {
+            throw new Error(`Cannot locate deleter for type ${entity.type.rootTypeName}`);
+        }
+
+        const entityDeleter = new EntityDeleter.default() as AbstractEntityDeleter;
+
+        await entityDeleter.deleteEntity(entity, deletionFields);
+    }
+}
+
+export {EntityServices};
+
+
+File: src/infrastructure/services/entityServices/additionalEntityServices.ts
+Content:
+import {InfrastructureObject} from "../../infrastructureObject";
+
+class AdditionalEntityServices extends InfrastructureObject {
+    // TODO:IMPLEMENT_ME - Add additional services that relate to entities
+}
+
+export {AdditionalEntityServices};
+
+
+
+File: src/infrastructure/services/entityServices/entityDeleters/abstractEntityDeleter.ts
+Content:
+import {IDataEntity} from "../../../logic/entities";
+import {PropertyFields} from "../../../logic/propertyFields";
+import {InfrastructureObject} from "../../../infrastructureObject";
+
+abstract class AbstractEntityDeleter extends InfrastructureObject {
+    public abstract async deleteEntity(entity: IDataEntity, deletionFields?: PropertyFields): Promise<void>;
+
+    protected abstract async markEntitiesAsDeleted(mainDeletedEntity: IDataEntity): Promise<void>;
+}
+
+export {AbstractEntityDeleter};
+
+
+File: src/infrastructure/services/entityServices/entityDeleters/demo/demo.ts
+Content:
+import {AbstractEntityDeleter} from "../abstractEntityDeleter";
+import {IDataEntity} from "../../../../logic/entities";
+import {PropertyFields} from "../../../../logic/propertyFields";
+
+class DemoEntityDeleter extends AbstractEntityDeleter {
+    public async deleteEntity(entity: IDataEntity, deletionFields?: PropertyFields): Promise<void> {
+        switch (entity.type.typeName) {
+            case 'entity':
+                await this.deleteDemoEntity(entity);
+                break;
+            default:
+                throw new Error(`Implement deleter for demo entity type ${entity.type.typeName}`);
+        }
+    }
+
+    protected async markEntitiesAsDeleted(mainDeletedEntity: IDataEntity): Promise<void> {
+        const entities = this.infra.data.getScenarioEntitiesToUndo().filter(entity => entity.entity.id === mainDeletedEntity.entity.id);
+        entities.forEach(entity => entity.deleted = true);
+    }
+
+    private async deleteDemoEntity(entity: IDataEntity) {
+        await this.infra.testEnvironment.demoCRUD.deleteDemoEntity(entity.entity.id);
+        await this.markEntitiesAsDeleted(entity);
+    }
+
+}
+
+export default DemoEntityDeleter;
+
+
+File: src/infrastructure/services/entityServices/entityUpdaters/abstractEntityUpdater.ts
+Content:
+import {InfrastructureObject} from "../../../infrastructureObject";
+import {IDataEntity} from "../../../logic/entities";
+import {PropertyFields} from "../../../logic/propertyFields";
+
+abstract class AbstractEntityUpdater extends InfrastructureObject {
+    public abstract async updateEntity(entity: IDataEntity, updateFields: PropertyFields, saveUndoFields: boolean): Promise<void>;
+
+    protected updateEntityWithUndoFields(entity: IDataEntity, undoFields: PropertyFields, saveUndoFields: boolean) {
+        if (entity.undoActions === undefined) entity.undoActions = [];
+        entity.undoActions.push({action: 'update', undoFields});
+    }
+
+    protected prepareMinimalPayloadCurrentValues(entity: IDataEntity, minimalFields: any[]): {[fieldName: string]: string} {
+
+        const fields: Array<{fieldPath: string, fieldName: string}> = minimalFields.map(field => {
+            if (typeof field === 'string') {
+                return {fieldName: field as string, fieldPath: field as string};
+            } else {
+                return field as {fieldName: string, fieldPath: string};
+            }
+        });
+
+        const result: {[fieldName: string]: string} = fields.reduce((acc, field) => {
+            if (!field.fieldPath.startsWith('entity.')) field.fieldPath = 'entity.' + field.fieldPath;
+
+            let fieldPayloadValue = this.infra.utils.getPropertyRecursive(entity, field.fieldPath);
+
+            if (fieldPayloadValue === undefined && entity.undoActions !== undefined) {
+                fieldPayloadValue = entity.undoActions
+                    .filter(item => item.undoFields.getField(field.fieldName, undefined).fieldValue !== undefined)
+                    .pop().undoFields.getField(field.fieldName).fieldValue;
+            }
+
+            acc[field.fieldName] = fieldPayloadValue;
+
+            return acc;
+        }, {});
+
+        return result;
+    }
+
+}
+
+export {AbstractEntityUpdater};
+
+
+File: src/infrastructure/services/entityServices/entityUpdaters/demo/demo.ts
+Content:
+import {AbstractEntityUpdater} from "../abstractEntityUpdater";
+import {IDataEntity} from "../../../../logic/entities";
+import {PropertyFields} from "../../../../logic/propertyFields";
+
+class DemoEntityUpdater extends AbstractEntityUpdater {
+    public async updateEntity(entity: IDataEntity, updateFields: PropertyFields, saveUndoFields: boolean): Promise<void> {
+        switch (entity.type.typeName) {
+            case 'entity':
+                await this.demoUpdateEntity(entity, updateFields, saveUndoFields);
+                break;
+            default:
+                throw new Error(`Implement updater for demo entity ${entity.type.typeName}`);
+        }
+    }
+
+    private async demoUpdateEntity(entity: IDataEntity, updateFields: PropertyFields, saveUndoFields: boolean) {
+        await this.infra.testEnvironment.demoCRUD.updateDemoEntity(entity.entity.id, updateFields);
+        this.updateEntityWithUndoFields(entity, updateFields, saveUndoFields);
+    }
+
+}
+
+export default DemoEntityUpdater;
+
+
+File: src/infrastructure/services/entityServices/entityGetters/abstractEntityGetter.ts
+Content:
+import {InfrastructureObject} from "../../../infrastructureObject";
+import {IDataEntity, IEntityType} from "../../../logic/entities";
+import {PropertyFields} from "../../../logic/propertyFields";
+
+abstract class AbstractEntityGetter extends InfrastructureObject {
+    public abstract async getEntity(entityType: IEntityType, fromEntity: IDataEntity, matchFields: PropertyFields): Promise<IDataEntity>;
+
+    protected constructEntity(entityData: any, entityType: IEntityType, fromEntity: IDataEntity, matchFields: PropertyFields): IDataEntity {
+        return {
+            type: entityType,
+            entity: entityData,
+            getterInfo: {
+                fromEntity,
+                matchFields
+            },
+            history: [],
+            created: false
+        };
+    }
+    
+
+}
+
+export {AbstractEntityGetter};
+
+
+File: src/infrastructure/services/entityServices/entityGetters/demo/demo.ts
+Content:
+import {AbstractEntityGetter} from "../abstractEntityGetter";
+import {IDataEntity, IEntityType} from "../../../../logic/entities";
+import {PropertyFields} from "../../../../logic/propertyFields";
+
+class DemoEntityGetter extends AbstractEntityGetter {
+    public async getEntity(entityType: IEntityType, fromEntity: IDataEntity, matchFields: PropertyFields): Promise<IDataEntity> {
+        switch (entityType.typeName) {
+            case 'entity':
+                const demoData = await this.getDemoEntityData(fromEntity, matchFields);
+                return this.constructEntity(demoData, entityType, fromEntity, matchFields);
+
+            default:
+                throw new Error(`Unknown Demo entity type: ${entityType.typeName}`);
+        }
+    }
+
+    private async getDemoEntityData(fromEntity: IDataEntity, matchFields: PropertyFields) {
+        const demoData = await this.infra.testEnvironment.demoCRUD.getDemoEntity(matchFields);
+        return demoData;
+    }
+
+}
+
+export default DemoEntityGetter;
+
+
+
+File: src/infrastructure/services/entityServices/entityGetters/metaweather/location.ts
+Content:
+import {AbstractEntityGetter} from "../abstractEntityGetter";
+import {IDataEntity, IEntityType} from "../../../../logic/entities";
+import {PropertyFields} from "../../../../logic/propertyFields";
+import {IMetaWeatherAPILocationResponse} from "../../../../testEnvironment/metaWeather/metaWeatherAPI";
+
+class LocationEntityGetter extends AbstractEntityGetter {
+    public async getEntity(entityType: IEntityType, fromEntity: IDataEntity, matchFields: PropertyFields): Promise<IDataEntity> {
+        switch (entityType.typeName) {
+            case 'location':
+                const locationData = await this.getLocationEntityData(fromEntity, matchFields);
+                return this.constructEntity(locationData, entityType, fromEntity, matchFields);
+            case 'location_list':
+                const locationListData = await this.getLocationListEntityData(fromEntity, matchFields);
+                return this.constructEntity(locationListData, entityType, fromEntity, matchFields);
+            default:
+                throw new Error(`Unknown Location entity type: ${entityType.typeName}`);
+        }
+    }
+
+    private async getLocationEntityData(fromEntity: IDataEntity, matchFields: PropertyFields): Promise<IMetaWeatherAPILocationResponse> {
+        if (fromEntity === undefined) throw new Error('Cannot get location without a reference location list');
+
+        const locationList: IMetaWeatherAPILocationResponse[] = fromEntity.entity || [];
+
+        const filteredList = await this.infra.utils.filterArrayByProps(locationList, matchFields);
+
+        return filteredList[0];
+    }
+
+    private async getLocationListEntityData(fromEntity: IDataEntity, matchFields: PropertyFields): Promise<IMetaWeatherAPILocationResponse[]> {
+        const query = matchFields.getField('query', undefined).fieldValue;
+        const lattlong = matchFields.getField('lattlong', undefined).fieldValue;
+
+        if (query === undefined && lattlong === undefined) throw new Error('Must specify a text / lattlong search');
+        if (query !== undefined && lattlong !== undefined) throw new Error('Must specify only a text OR (i.e. XOR) lattlong search');
+
+        const queryField = (query !== undefined) ? 'query' : 'lattlong';
+        const queryValue = query || lattlong;
+
+        const result = await this.infra.testEnvironment.metaWeather.searchLocation(queryField, queryValue);
+
+        return result;
+    }
+
+}
+
+export default LocationEntityGetter;
+
+
+
+File: src/infrastructure/services/entityServices/entityGetters/metaweather/forecast.ts
+Content:
+import {AbstractEntityGetter} from "../abstractEntityGetter";
+import {IDataEntity, IEntityType} from "../../../../logic/entities";
+import {PropertyFields} from "../../../../logic/propertyFields";
+import {IMetaWeatherAPIForecastResponse, IMetaWeatherAPIHistoricalForecastResponse, IMetaWeatherAPILocationResponse} from "../../../../testEnvironment/metaWeather/metaWeatherAPI";
+
+class LocationEntityGetter extends AbstractEntityGetter {
+    public async getEntity(entityType: IEntityType, fromEntity: IDataEntity, matchFields: PropertyFields): Promise<IDataEntity> {
+        switch (entityType.typeName) {
+            case 'forecast':
+                const forecastData = await this.getForecastEntityData(fromEntity, matchFields);
+                return this.constructEntity(forecastData, entityType, fromEntity, matchFields);
+
+            case 'historical_forecast':
+                const historicalForecastData = await this.getHistoricalForecastEntityData(fromEntity, matchFields);
+                return this.constructEntity(historicalForecastData, entityType, fromEntity, matchFields);
+
+            default:
+                throw new Error(`Unknown Forcast entity type: ${entityType.typeName}`);
+        }
+    }
+
+    private async getForecastEntityData(fromEntity: IDataEntity, matchFields: PropertyFields): Promise<IMetaWeatherAPIForecastResponse> {
+        const woeid = this.getWOEID(fromEntity, matchFields);
+
+        const data = await this.infra.testEnvironment.metaWeather.getForecast(woeid);
+        return data;
+    }
+
+    private async getHistoricalForecastEntityData(fromEntity: IDataEntity, matchFields: PropertyFields): Promise<IMetaWeatherAPIHistoricalForecastResponse[]> {
+        const woeid = this.getWOEID(fromEntity, matchFields);
+        const date = matchFields.getField('date').fieldValue;
+
+        const data = await this.infra.testEnvironment.metaWeather.getHistoricalForecast(woeid, date);
+        return data;
+    }
+
+    private getWOEID(fromEntity: IDataEntity, matchFields: PropertyFields): string {
+        const fromEntityWOEID = (fromEntity) ? fromEntity.entity.woeid : undefined;
+        const woeid = matchFields.getField('woeid', fromEntityWOEID).fieldValue;
+        if (woeid === undefined) throw new Error('Must specify woeid or reference a location entity');
+
+        return woeid;
+    }
+
+}
+
+export default LocationEntityGetter;
+
+
+
+File: src/infrastructure/services/entityServices/entityGetters/internal/internal.ts
+Content:
+import {AbstractEntityGetter} from "../abstractEntityGetter";
+import {IDataEntity, IEntityType} from "../../../../logic/entities";
+import {PropertyFields} from "../../../../logic/propertyFields";
+
+class InternalEntityGetter extends AbstractEntityGetter {
+    public async getEntity(entityType: IEntityType, fromEntity: IDataEntity, matchFields: PropertyFields): Promise<IDataEntity> {
+        switch (entityType.typeName) {
+            case 'property':
+                const propertyData = await this.getPropertyEntityDate(fromEntity, matchFields);
+                return this.constructEntity(propertyData, entityType, fromEntity, matchFields);
+
+            default:
+                throw new Error(`Unknown Internal entity type: ${entityType.typeName}`);
+        }
+    }
+
+    private async getPropertyEntityDate(fromEntity: IDataEntity, matchFields: PropertyFields): Promise<any> {
+        if (fromEntity === undefined) throw new Error('Cannot extract property without reference entity');
+
+        const data = this.infra.utils.getPropertyRecursive(fromEntity.entity, matchFields.getField('propertyPath').fieldValue);
+
+        return data;
+    }
+
+}
+
+export default InternalEntityGetter;
+
+
+
+File: src/infrastructure/services/entityServices/entityGetters/json/user.ts
+Content:
+import {AbstractEntityGetter} from "../abstractEntityGetter";
+import {IDataEntity, IEntityType} from "../../../../logic/entities";
+import {PropertyFields} from "../../../../logic/propertyFields";
+import {IJSONPlaceholderAPIUser} from "../../../../testEnvironment/json/jsonPlaceholderAPI";
+
+class UserEntityGetter extends AbstractEntityGetter {
+    public async getEntity(entityType: IEntityType, fromEntity: IDataEntity, matchFields: PropertyFields): Promise<IDataEntity> {
+        switch (entityType.typeName) {
+            case 'user':
+                const userData = await this.getUserEntityData(fromEntity, matchFields);
+                return this.constructEntity(userData, entityType, fromEntity, matchFields);
+
+            case 'user_list':
+                const userListData = await this.getUserListData(fromEntity, matchFields);
+                return this.constructEntity(userListData, entityType, fromEntity, matchFields);
+
+            default:
+                throw new Error(`Unknown User entity type: ${entityType.typeName}`);
+        }
+    }
+
+    private async getUserEntityData(fromEntity: IDataEntity, matchFields: PropertyFields): Promise<IJSONPlaceholderAPIUser> {
+        const userList = (fromEntity) ? fromEntity.entity : await this.getUserListData(fromEntity, matchFields);
+
+        const filteredList = await this.infra.utils.filterArrayByProps(userList, matchFields);
+
+        return filteredList.pop();
+    }
+
+    private async getUserListData(fromEntity: IDataEntity, matchFields: PropertyFields): Promise<IJSONPlaceholderAPIUser[]> {
+        const result = await this.infra.testEnvironment.jsonPlaceholder.getUsers(matchFields);
+
+        return result;
+    }
+
+}
+
+export default UserEntityGetter;
+
+
+
+File: src/infrastructure/services/entityServices/entityCreators/abstractEntityCreator.ts
+Content:
+import {InfrastructureObject} from "../../../infrastructureObject";
+import {IDataEntity, IEntityType} from "../../../logic/entities";
+import {PropertyFields} from "../../../logic/propertyFields";
+
+abstract class AbstractEntityCreator extends InfrastructureObject {
+    // tslint:disable-next-line:max-line-length
+    public abstract async createEntity(entityType: IEntityType, fromEntities: {[role: string]: IDataEntity[]}, creationFields: PropertyFields, saveUndoFields: boolean): Promise<IDataEntity[]>;
+
+    protected constructEntity(entity: any, entityType: IEntityType, undoFields: PropertyFields, saveUndoFields: boolean): IDataEntity {
+        const creationReference: IDataEntity = {
+            type: entityType,
+            entity,
+            history: [],
+            created: true,
+            undoActions: (saveUndoFields) ? [{action: 'create', undoFields}] : undefined
+        };
+
+        return creationReference;
+    }
+}
+
+export {AbstractEntityCreator};
+
+
+File: src/infrastructure/services/entityServices/entityCreators/demo/demo.ts
+Content:
+import {AbstractEntityCreator} from "../abstractEntityCreator";
+import {IDataEntity, IEntityType} from "../../../../logic/entities";
+import {PropertyFields} from "../../../../logic/propertyFields";
+
+class DemoEntityCreator extends AbstractEntityCreator {
+    // tslint:disable-next-line:max-line-length
+    public async createEntity(entityType: IEntityType, fromEntities: { [p: string]: IDataEntity[] }, creationFields: PropertyFields, saveUndoFields: boolean): Promise<IDataEntity[]> {
+        switch (entityType.typeName) {
+            case 'entity':
+                const parent = (fromEntities && fromEntities.parent) ? fromEntities.parent.pop() : undefined;
+                return this.createDemoEntity(entityType, {parent}, creationFields, saveUndoFields);
+            default:
+                throw new Error(`Implement creator for demo entity ${entityType.typeName}`);
+        }
+    }
+
+    private async createDemoEntity(entityType: IEntityType, fromEntity: {parent: IDataEntity}, creationFields: PropertyFields, saveUndoFields: boolean): Promise<IDataEntity[]> {
+        const parentID = (fromEntity.parent) ? fromEntity.parent.entity.id : undefined;
+        if (parentID) creationFields.push({fieldValue: parentID, fieldName: 'parentID'});
+        const entityID = await this.infra.testEnvironment.demoCRUD.createEntity(creationFields);
+        const undoFields = await this.infra.utils.parser.parseFieldPairs(`id=${entityID.toString()}`);
+        const entityData = {id: entityID};
+        const entity = this.constructEntity(entityData, entityType, undoFields, saveUndoFields );
+
+        return [entity];
+    }
+
+}
+
+export default DemoEntityCreator;
+
+

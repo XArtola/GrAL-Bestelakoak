@@ -1,0 +1,1053 @@
+*GitHub Repository "JeremiahPetersen/RepoToText"*
+
+'''--- .eslintrc.yml ---
+env:
+  browser: true
+  es2021: true
+extends:
+  - react-app
+  - plugin:prettier/recommended
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+plugins:
+  - react
+settings:
+  react:
+    version: "detect"
+rules: {}
+
+'''
+'''--- .github/workflows/es-lint.yml ---
+name: "ESLint"
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      - name: install
+        run: yarn install
+      - name: ESLint
+        run: yarn run fix .
+      - name: Prettier
+        run: yarn prettier --write .
+
+'''
+'''--- .github/workflows/pylint.yml ---
+name: Pylint
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest", "windows-latest"]
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements.txt
+          pip install pylint
+      - name: Analysing the code with pylint
+        run: |
+          python -m pylint RepoToText.py
+
+'''
+'''--- .prettierrc.json ---
+{
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "printWidth": 80
+}
+'''
+'''--- FolderToText.py ---
+import os
+import re
+from datetime import datetime
+from tkinter import Tk, Label, Button, Entry, StringVar, filedialog, messagebox, Radiobutton, IntVar
+
+class LocalRepoScraper:
+    def __init__(self, repo_paths, output_path, output_filename, selected_file_types=[], filter_files=True):
+        self.repo_paths = repo_paths
+        self.output_path = output_path
+        self.output_filename = output_filename
+        self.selected_file_types = selected_file_types
+        self.filter_files = filter_files
+
+    def fetch_all_files(self):
+        files_data = []
+        for file_path in self.repo_paths:
+            # Check if file type is in selected file types
+            if not self.filter_files or any(file_path.endswith(file_type) for file_type in self.selected_file_types):
+                relative_path = os.path.basename(file_path)
+                file_content = ""
+                file_content += f"\n'''--- {relative_path} ---\n"
+                try:
+                    with open(file_path, 'rb') as f:  # Open file in binary mode
+                        content = f.read()
+                    try:
+                        # Try decoding as UTF-8
+                        content_decoded = content.decode('utf-8')
+                    except UnicodeDecodeError:
+                        # If decoding fails, replace non-decodable parts
+                        content_decoded = content.decode('utf-8', errors='replace')
+                    file_content += content_decoded
+                except Exception as e:  # catch any reading errors
+                    print(f"Error reading file {file_path}: {e}")
+                    continue
+                file_content += "\n'''"
+                files_data.append(file_content)
+                print(f"Processed file {file_path}: size {os.path.getsize(file_path)} bytes")  # Print file size
+            else:
+                print(f"Skipping file {file_path}: Does not match selected types.")
+        return files_data
+
+    def write_to_file(self, files_data):
+        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+        filename = f"{self.output_filename}_{timestamp}.txt"
+        output_file_path = os.path.join(self.output_path, filename)
+        with open(output_file_path, "w", encoding='utf-8') as f:
+            f.write(f"*Local Files*\n")
+            for file_data in files_data:
+                f.write(file_data)
+        return output_file_path
+
+    def clean_up_text(self, filename):
+        with open(filename, 'r', encoding='utf-8') as f:
+            text = f.read()
+        cleaned_text = re.sub('\n{3,}', '\n\n', text)
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write(cleaned_text)
+
+    def run(self):
+        print("Fetching all files...")
+        files_data = self.fetch_all_files()
+
+        print("Writing to file...")
+        filename = self.write_to_file(files_data)
+
+        print("Cleaning up file...")
+        self.clean_up_text(filename)
+
+        print("Done.")
+        return filename
+
+class FolderToTextGUI:
+    def __init__(self, master):
+        self.master = master
+        master.title("Folder to Text")
+
+        self.repo_path_label = Label(master, text="Local Files:")
+        self.repo_path_entry = Button(master, text="Browse...", command=self.browse_repo_path)
+
+        self.file_types_label = Label(master, text="File Types (comma separated):")
+        self.file_types_entry = Entry(master)
+
+        self.output_path_label = Label(master, text="Output Path:")
+        self.output_path_entry = Button(master, text="Browse...", command=self.browse_output_path)
+
+        self.output_filename_label = Label(master, text="Output Filename:")
+        self.output_filename_entry = Entry(master)
+
+        self.filter_files = IntVar()
+        self.filter_files.set(1)  # Set filtering to be on by default
+        self.filter_files_label = Label(master, text="Filter Files:")
+        self.filter_files_on = Radiobutton(master, text="On", variable=self.filter_files, value=1)
+        self.filter_files_off = Radiobutton(master, text="Off", variable=self.filter_files, value=0)
+
+        self.run_button = Button(master, text="Run", command=self.run)
+
+        self.repo_path_label.grid(row=0, column=0, sticky="E")
+        self.repo_path_entry.grid(row=0, column=1)
+
+        self.file_types_label.grid(row=1, column=0, sticky="E")
+        self.file_types_entry.grid(row=1, column=1)
+
+        self.output_path_label.grid(row=2, column=0, sticky="E")
+        self.output_path_entry.grid(row=2, column=1)
+
+        self.output_filename_label.grid(row=3, column=0, sticky="E")
+        self.output_filename_entry.grid(row=3, column=1)
+
+        self.filter_files_label.grid(row=4, column=0, sticky="E")
+        self.filter_files_on.grid(row=4, column=1, sticky="W")
+        self.filter_files_off.grid(row=4, column=1)
+
+        self.run_button.grid(row=5, column=1)
+
+        self.repo_paths = ()
+        self.output_path = ""
+
+    def browse_repo_path(self):
+        new_repo_paths = filedialog.askopenfilenames()
+        if not new_repo_paths:
+            return
+        self.repo_paths += new_repo_paths  # Add new selected files to existing ones
+        self.repo_path_label.config(text=f"Selected Files: {len(self.repo_paths)}")
+
+    def browse_output_path(self):
+        self.output_path = filedialog.askdirectory()
+        if not self.output_path:
+            return
+        self.output_path_label.config(text=f"Output Path: {self.output_path}")
+
+    def run(self):
+        selected_file_types = [ftype.strip() for ftype in self.file_types_entry.get().split(',')]
+        output_filename = self.output_filename_entry.get()
+        if not output_filename:
+            messagebox.showerror("Error", "Please enter an output filename.")
+            return
+        if not self.repo_paths:
+            messagebox.showerror("Error", "Please select files.")
+            return
+        if not self.output_path:
+            messagebox.showerror("Error", "Please select an output path.")
+            return
+        scraper = LocalRepoScraper(self.repo_paths, self.output_path, output_filename, selected_file_types, bool(self.filter_files.get()))
+        scraper.run()
+
+if __name__ == "__main__":
+    root = Tk()
+    gui = FolderToTextGUI(root)
+    root.mainloop()
+
+'''
+'''--- README.md ---
+
+![example workflow](https://github.com/JeremiahPetersen/RepoToText/actions/workflows/pylint.yml/badge.svg)
+![example workflow](https://github.com/JeremiahPetersen/RepoToText/actions/workflows/es-lint.yml/badge.svg)
+
+![repo to text 5](https://github.com/JeremiahPetersen/RepoToText/assets/118206017/0d65016d-6388-48e0-b833-4ea1a169acfe)
+
+![repo to text 7](https://github.com/JeremiahPetersen/RepoToText/assets/118206017/7d28fa8f-8bb1-4ddd-99f3-b33ddb26f0e9)
+
+## RepoToText
+
+RepoToText is a web app that scrapes a GitHub repository and converts its files into a single organized .txt. It allows you to enter the URL of a GitHub repository and an optional documentation URL (the doc info will append to the top of the .txt). The app retrieves the contents of the repository, including all files and directories, and also fetches the documentation from the provided URL and includes it in a single organized text file. The .txt file will be saved in the /data folder with user + repo + timestamp info. This file can then be uploaded to (GPT-4, Claude Opus, etc) and you can use the chatbot to interact with the entire GitHub repo. 
+
+## Demo
+
+Creating a React front end for a GitHub repo containing a functioning back end:
+
+https://chat.openai.com/share/0670c1ec-a8a8-4568-ad09-bb9b152e1f0b
+
+Working front-end project: https://github.com/JeremiahPetersen/CaseConnect/tree/front-end
+
+## Running the Application with Docker
+
+To run the application using Docker, follow these steps:
+
+1. Clone the repository.  Create a .env file in the root folder.
+2. Set up the environment variable `GITHUB_API_KEY` in the `.env` file.
+3. Build the Docker images with `docker compose build`.
+4. Start the containers with `docker compose up`.
+5. Access the application (http://localhost:3000) in a web browser and enter the GitHub repository URL and documentation URL (if available).
+6. Choose All files or choose specific file types.
+7. Click the "Submit" button to initiate the scraping process. The converted text will be displayed in the output area, and it will also be saved in the /data folder. 
+8. You can also click the "Copy Text" button to copy the generated text to the clipboard.
+
+## Prompt Example
+
+This is a .txt file that represents an entire GitHub repository. The repository's individual files are separated by the sequence '''--- , followed by the file path, ending with ---. Each file's content begins immediately after its file path and extends until the next sequence of '''--- *Add your idea here (Example)*: Please create a react front end that will work with the back end 
+
+## Environment Configuration
+Add your GitHub API Key in the .env file 
+
+```
+GITHUB_API_KEY='YOUR GITHUB API KEY HERE'
+```
+
+## FolderToText
+
+FolderToText.py is a script that allows you to turn a local folder, or local files, into a .txt in the same way RepoToText.py does.  Choose your files with browse (you can continue adding by clicking "Browse".  Once you have all of your files selected and uploaded with browse, type in the file type endings you want to copy with a ',' in between.  Example: .py , .js , .md , .ts ---> You can also turn this off and it will add every file you uploaded to the .txt ---> Last, enter in the file name you want to appear and the output path.  The file will be written with your file name choice and a timestamp.
+
+## Info
+
+- Creates a .txt with ('''---) separating each file from the repo.
+- Each file from the repo has a header after ('''---) with the file path as the title.
+- The .txt file is saved in the /data folder 
+- You can add a URL to a documentation page and the documentation page will append to the top of the .txt file (great to use for tech that came out after Sep 2021).
+
+## Tech Used
+
+- Frontend: React.js
+- Backend: Python Flask
+- Containerization: Docker
+- GitHub API: PyGithub library
+- Additional Python libraries: beautifulsoup4, requests, flask_cors, retry
+
+## TODO
+
+- [x] Add Docker to project
+- [x] Add Dark Mode
+- [ ] Build web app for (https://repototext.com/)
+- [ ] FIX: Broken file types: .ipynb
+- [ ] FIX: FolderToText - fix so a user can pick one folder (currently only working when user selects individual files)
+- [ ] Add in the ability to work with private repositories
+- [ ] Add ability to store change history and update .txt to reflect working changes
+- [ ] Add function to make sure .txt is current repo version
+- [ ] Adjust UI for flow, including change textarea output width, adding file management and history UI
+
+---
+
+'''
+'''--- RepoToText.py ---
+"""
+This module handles the back end flask server for RepoToText
+"""
+
+# pylint: disable=line-too-long
+# pylint: disable=C0103
+
+import os
+from datetime import datetime
+import re
+from github import Github, RateLimitExceededException
+from bs4 import BeautifulSoup
+import requests
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+from requests.exceptions import RequestException
+from retry import retry
+
+app = Flask(__name__)
+CORS(app)
+
+class GithubRepoScraper:
+    """Scrape GitHub repositories."""
+    def __init__(self, repo_name, doc_link=None, selected_file_types=None):
+        if selected_file_types is None:
+            selected_file_types = []
+        self.github_api_key = os.getenv("GITHUB_API_KEY")
+        self.repo_name = repo_name
+        self.doc_link = doc_link
+        self.selected_file_types = selected_file_types
+
+    @retry(RateLimitExceededException, tries=5, delay=2, backoff=2)
+    def fetch_all_files(self):
+        """Fetch all files from the GitHub repository."""
+        def recursive_fetch_files(repo, contents):
+            files_data = []
+            for content_file in contents:
+                if content_file.type == "dir":
+                    files_data += recursive_fetch_files(repo, repo.get_contents(content_file.path))
+                else:
+                    # Check if file type is in selected file types
+                    if any(content_file.name.endswith(file_type) for file_type in self.selected_file_types):
+                        file_content = ""
+                        file_content += f"\n'''--- {content_file.path} ---\n"
+
+                        if content_file.encoding == "base64":
+                            try:
+                                file_content += content_file.decoded_content.decode("utf-8")
+                            except UnicodeDecodeError: # catch decoding errors
+                                file_content += "[Content not decodable]"
+                        elif content_file.encoding == "none":
+                            # Handle files with encoding "none" here
+                            print(f"Warning: Skipping {content_file.path} due to unsupported encoding 'none'.")
+                            continue
+                        else:
+                            # Handle other unexpected encodings here
+                            print(f"Warning: Skipping {content_file.path} due to unexpected encoding '{content_file.encoding}'.")
+                            continue
+
+                        file_content += "\n'''"
+                        files_data.append(file_content)
+            return files_data
+
+        github_instance = Github(self.github_api_key)
+        repo = github_instance.get_repo(self.repo_name)
+        contents = repo.get_contents("")
+        files_data = recursive_fetch_files(repo, contents)
+        return files_data
+
+    def scrape_doc(self):
+        """Scrape webpage."""
+        if not self.doc_link:
+            return ""
+        try:
+            page = requests.get(self.doc_link, timeout=10)
+            soup = BeautifulSoup(page.content, 'html.parser')
+            return soup.get_text(separator="\n")
+        except RequestException as e:
+            print(f"Error fetching documentation: {e}")
+            return ""
+
+    def write_to_file(self, files_data):
+        """Built .txt file with all of the repo's files"""
+        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+        filename = f"/app/data/{self.repo_name.replace('/', '_')}_{timestamp}.txt"
+        with open(filename, "w", encoding='utf-8') as f:
+            doc_text = self.scrape_doc()
+            if doc_text:
+                f.write(f"Documentation Link: {self.doc_link}\n\n")
+                f.write(f"{doc_text}\n\n")
+            f.write(f"*GitHub Repository \"{self.repo_name}\"*\n")
+            for file_data in files_data:
+                f.write(file_data)
+        return filename
+
+    def clean_up_text(self, filename):
+        """Remove line breaks after 2."""
+        with open(filename, 'r', encoding='utf-8') as f:
+            text = f.read()
+        cleaned_text = re.sub('\n{3,}', '\n\n', text)
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write(cleaned_text)
+
+    def run(self):
+        """Run RepoToText."""
+        print("Fetching all files...")
+        files_data = self.fetch_all_files()
+
+        print("Writing to file...")
+        filename = self.write_to_file(files_data)
+
+        print("Cleaning up file...")
+        self.clean_up_text(filename)
+
+        print("Done.")
+        return filename
+
+@app.route('/scrape', methods=['POST'])
+def scrape():
+    """Scrape GitHub repositories."""
+    data = request.get_json()
+
+    repo_url = data.get('repoUrl')
+    doc_url = data.get('docUrl')
+    selected_file_types = data.get('selectedFileTypes', [])
+
+    if not repo_url:
+        return jsonify({"error": "Repo URL not provided."}), 400
+
+    repo_name = repo_url.split('github.com/')[-1]  # Extract repo name from URL
+
+    scraper = GithubRepoScraper(repo_name, doc_url, selected_file_types)
+    filename = scraper.run()
+
+    with open(filename, 'r', encoding='utf-8') as file:
+        file_content = file.read()
+
+    return jsonify({"response": file_content})
+
+if __name__ == "__main__": # -- UNCOMMENT TO RUN WITH DOCKER
+    app.run(host='0.0.0.0')
+
+# if __name__ == "__main__": -- UNCOMMENT TO RUN LOCALLY WITHOUT DOCKER
+#     app.run(port=5000)
+
+'''
+'''--- docker-compose.yml ---
+version: '3'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    volumes:
+      - ./data:/app/data
+    ports:
+      - 5000:5000
+    env_file:
+      - .env
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - 3000:3000
+
+'''
+'''--- package.json ---
+{
+  "name": "repo-to-text",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "fix": "eslint --fix .",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "prettier": "prettier --write ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-n": "^16.0.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.0",
+    "prettier": "^3.0.0"
+  }
+}
+
+'''
+'''--- public/index.html ---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>RepoToText</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
+
+'''
+'''--- public/manifest.json ---
+{
+  "short_name": "React App",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
+
+'''
+'''--- public/robots.txt ---
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+
+'''
+'''--- requirements.txt ---
+pygithub
+beautifulsoup4
+requests
+flask
+flask_cors
+retry
+'''
+'''--- src/App.css ---
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.inputContainer,
+.outputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inputArea,
+.smallInputArea {
+  height: auto;
+  max-width: 600px;
+  margin: 10px 0;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.smallInputArea {
+  max-width: 400px;
+  padding: 10px;
+  font-size: 0.85em;
+  margin-right: 10px;
+}
+.fileSelectionContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 10px 0;
+}
+
+.fileSelectionContainer div {
+  display: flex;
+  align-items: center;
+}
+
+.fileSelectionContainer label {
+  margin-left: 5px;
+}
+
+.fileTypesContainer {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 1px;
+  margin-bottom: 20px;
+}
+
+.fileTypesContainer div {
+  display: flex;
+  align-items: center;
+}
+
+.fileTypesContainer label {
+  margin-left: 5px;
+}
+
+.outputArea {
+  height: 50vh;
+  margin: 10px 0;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.transformButton,
+.addButton {
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #007bff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.transformButton:hover,
+.addButton:hover {
+  background-color: #0056b3;
+}
+
+.addButton {
+  padding: 5px 10px;
+  font-size: 0.85em;
+}
+
+.copyButton {
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #007bff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.copyButton:hover {
+  background-color: #0056b3;
+}
+
+/* Dark mode */
+.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .inputArea, .dark-mode .smallInputArea, .dark-mode .outputArea {
+  background-color: #555;
+  color: white;
+  border-color: #888;
+}
+
+'''
+'''--- src/App.js ---
+import React, { useState } from 'react';
+import axios from 'axios';
+import './App.css';
+
+function App() {
+  const [FILE_TYPES, setFileTypes] = useState([
+    '.txt',
+    '.py',
+    '.js',
+    '.sql',
+    '.env',
+    '.json',
+    '.html',
+    '.css',
+    '.md',
+    '.ts',
+    '.java',
+    '.cpp',
+    '.c',
+    '.cs',
+    '.php',
+    '.rb',
+    '.xml',
+    '.yml',
+    '.md',
+    '.sh',
+    '.swift',
+    '.h',
+    '.pyw',
+    '.asm',
+    '.bat',
+    '.cmd',
+    '.cls',
+    '.coffee',
+    '.erb',
+    '.go',
+    '.groovy',
+    '.htaccess',
+    '.java',
+    '.jsp',
+    '.lua',
+    '.make',
+    '.matlab',
+    '.pas',
+    '.perl',
+    '.pl',
+    '.ps1',
+    '.r',
+    '.scala',
+    '.scm',
+    '.sln',
+    '.svg',
+    '.vb',
+    '.vbs',
+    '.xhtml',
+    '.xsl',
+  ]);
+  const [repoUrl, setRepoUrl] = useState('');
+  const [docUrl, setDocUrl] = useState('');
+  const [response, setResponse] = useState('');
+  const [selectedFileTypes, setSelectedFileTypes] = useState([]);
+  const [fileSelection, setFileSelection] = useState('all');
+  const [customFileType, setCustomFileType] = useState('');
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleRepoChange = (e) => {
+    setRepoUrl(e.target.value);
+  };
+
+  const handleDocChange = (e) => {
+    setDocUrl(e.target.value);
+  };
+
+  const handleFileTypeChange = (e) => {
+    if (e.target.checked) {
+      setSelectedFileTypes([...selectedFileTypes, e.target.value]);
+    } else {
+      setSelectedFileTypes(
+        selectedFileTypes.filter((fileType) => fileType !== e.target.value)
+      );
+    }
+  };
+
+  const handleFileSelectionChange = (e) => {
+    setFileSelection(e.target.value);
+  };
+
+  const handleAddFileType = () => {
+    if (customFileType && !FILE_TYPES.includes(customFileType)) {
+      setFileTypes([...FILE_TYPES, customFileType]);
+    }
+    setCustomFileType('');
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    let fileTypesToSend = selectedFileTypes;
+    if (fileSelection === 'all') {
+      fileTypesToSend = FILE_TYPES;
+    }
+
+    try {
+      const result = await axios.post('http://localhost:5000/scrape', {
+        repoUrl,
+        docUrl,
+        selectedFileTypes: fileTypesToSend,
+      });
+      setResponse(result.data.response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleCopyText = () => {
+    const outputArea = document.querySelector('.outputArea');
+    outputArea.select();
+    document.execCommand('copy');
+  };
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  return (
+    <div className={`container ${isDarkMode ? 'dark-mode' : ''}`}>
+      <div className="inputContainer">
+        <input
+          value={repoUrl}
+          onChange={handleRepoChange}
+          placeholder="Enter Github repo URL"
+          className="inputArea"
+        />
+        <input
+          value={docUrl}
+          onChange={handleDocChange}
+          placeholder="Enter documentation URL (optional)"
+          className="inputArea"
+        />
+        <div className="fileSelectionContainer">
+          <div>
+            <input
+              type="radio"
+              value="all"
+              checked={fileSelection === 'all'}
+              onChange={handleFileSelectionChange}
+            />
+            <label>All Files</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              value="select"
+              checked={fileSelection === 'select'}
+              onChange={handleFileSelectionChange}
+            />
+            <label>Select File Types</label>
+          </div>
+        </div>
+        {fileSelection === 'select' && (
+          <div className="fileTypesContainer">
+            {FILE_TYPES.map((fileType, index) => (
+              <div key={index}>
+                <input
+                  type="checkbox"
+                  value={fileType}
+                  onChange={handleFileTypeChange}
+                />
+                <label>{fileType}</label>
+              </div>
+            ))}
+            <div>
+              <input
+                value={customFileType}
+                onChange={(e) => setCustomFileType(e.target.value)}
+                placeholder="Enter new file type"
+                className="smallInputArea"
+              />
+              <button onClick={handleAddFileType} className="addButton">
+                Add
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+      <div className="buttonContainer">
+        <button onClick={handleSubmit} className="transformButton">
+          Submit
+        </button>
+        <button onClick={handleCopyText} className="copyButton">
+          Copy Text
+        </button>
+        <button onClick={toggleTheme} className="toggleThemeButton">
+          {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
+      </div>
+      <div className="outputContainer">
+        <textarea value={response} readOnly className="outputArea" />
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+'''
+'''--- src/App.test.js ---
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect"; // For 'expect' to work properly
+import App from "./App";
+
+test("renders learn react link", () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
+'''
+'''--- src/index.css ---
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+'''
+'''--- src/index.js ---
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+'''
+'''--- src/logo.svg ---
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3"><g fill="#61DAFB"><path d="M666.3 296.5c0-32.5-40.7-63.3-103.1-82.4 14.4-63.6 8-114.2-20.2-130.4-6.5-3.8-14.1-5.6-22.4-5.6v22.3c4.6 0 8.3.9 11.4 2.6 13.6 7.8 19.5 37.5 14.9 75.7-1.1 9.4-2.9 19.3-5.1 29.4-19.6-4.8-41-8.5-63.5-10.9-13.5-18.5-27.5-35.3-41.6-50 32.6-30.3 63.2-46.9 84-46.9V78c-27.5 0-63.5 19.6-99.9 53.6-36.4-33.8-72.4-53.2-99.9-53.2v22.3c20.7 0 51.4 16.5 84 46.6-14 14.7-28 31.4-41.3 49.9-22.6 2.4-44 6.1-63.6 11-2.3-10-4-19.7-5.2-29-4.7-38.2 1.1-67.9 14.6-75.8 3-1.8 6.9-2.6 11.5-2.6V78.5c-8.4 0-16 1.8-22.6 5.6-28.1 16.2-34.4 66.7-19.9 130.1-62.2 19.2-102.7 49.9-102.7 82.3 0 32.5 40.7 63.3 103.1 82.4-14.4 63.6-8 114.2 20.2 130.4 6.5 3.8 14.1 5.6 22.5 5.6 27.5 0 63.5-19.6 99.9-53.6 36.4 33.8 72.4 53.2 99.9 53.2 8.4 0 16-1.8 22.6-5.6 28.1-16.2 34.4-66.7 19.9-130.1 62-19.1 102.5-49.9 102.5-82.3zm-130.2-66.7c-3.7 12.9-8.3 26.2-13.5 39.5-4.1-8-8.4-16-13.1-24-4.6-8-9.5-15.8-14.4-23.4 14.2 2.1 27.9 4.7 41 7.9zm-45.8 106.5c-7.8 13.5-15.8 26.3-24.1 38.2-14.9 1.3-30 2-45.2 2-15.1 0-30.2-.7-45-1.9-8.3-11.9-16.4-24.6-24.2-38-7.6-13.1-14.5-26.4-20.8-39.8 6.2-13.4 13.2-26.8 20.7-39.9 7.8-13.5 15.8-26.3 24.1-38.2 14.9-1.3 30-2 45.2-2 15.1 0 30.2.7 45 1.9 8.3 11.9 16.4 24.6 24.2 38 7.6 13.1 14.5 26.4 20.8 39.8-6.3 13.4-13.2 26.8-20.7 39.9zm32.3-13c5.4 13.4 10 26.8 13.8 39.8-13.1 3.2-26.9 5.9-41.2 8 4.9-7.7 9.8-15.6 14.4-23.7 4.6-8 8.9-16.1 13-24.1zM421.2 430c-9.3-9.6-18.6-20.3-27.8-32 9 .4 18.2.7 27.5.7 9.4 0 18.7-.2 27.8-.7-9 11.7-18.3 22.4-27.5 32zm-74.4-58.9c-14.2-2.1-27.9-4.7-41-7.9 3.7-12.9 8.3-26.2 13.5-39.5 4.1 8 8.4 16 13.1 24 4.7 8 9.5 15.8 14.4 23.4zM420.7 163c9.3 9.6 18.6 20.3 27.8 32-9-.4-18.2-.7-27.5-.7-9.4 0-18.7.2-27.8.7 9-11.7 18.3-22.4 27.5-32zm-74 58.9c-4.9 7.7-9.8 15.6-14.4 23.7-4.6 8-8.9 16-13 24-5.4-13.4-10-26.8-13.8-39.8 13.1-3.1 26.9-5.8 41.2-7.9zm-90.5 125.2c-35.4-15.1-58.3-34.9-58.3-50.6 0-15.7 22.9-35.6 58.3-50.6 8.6-3.7 18-7 27.7-10.1 5.7 19.6 13.2 40 22.5 60.9-9.2 20.8-16.6 41.1-22.2 60.6-9.9-3.1-19.3-6.5-28-10.2zM310 490c-13.6-7.8-19.5-37.5-14.9-75.7 1.1-9.4 2.9-19.3 5.1-29.4 19.6 4.8 41 8.5 63.5 10.9 13.5 18.5 27.5 35.3 41.6 50-32.6 30.3-63.2 46.9-84 46.9-4.5-.1-8.3-1-11.3-2.7zm237.2-76.2c4.7 38.2-1.1 67.9-14.6 75.8-3 1.8-6.9 2.6-11.5 2.6-20.7 0-51.4-16.5-84-46.6 14-14.7 28-31.4 41.3-49.9 22.6-2.4 44-6.1 63.6-11 2.3 10.1 4.1 19.8 5.2 29.1zm38.5-66.7c-8.6 3.7-18 7-27.7 10.1-5.7-19.6-13.2-40-22.5-60.9 9.2-20.8 16.6-41.1 22.2-60.6 9.9 3.1 19.3 6.5 28.1 10.2 35.4 15.1 58.3 34.9 58.3 50.6-.1 15.7-23 35.6-58.4 50.6zM320.8 78.4z"/><circle cx="420.9" cy="296.5" r="45.7"/><path d="M520.5 78.1z"/></g></svg>
+'''
+'''--- src/reportWebVitals.js ---
+const reportWebVitals = (onPerfEntry) => {
+  if (onPerfEntry && onPerfEntry instanceof Function) {
+    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+      getCLS(onPerfEntry);
+      getFID(onPerfEntry);
+      getFCP(onPerfEntry);
+      getLCP(onPerfEntry);
+      getTTFB(onPerfEntry);
+    });
+  }
+};
+
+export default reportWebVitals;
+
+'''
+'''--- src/setupTests.js ---
+// jest-dom adds custom jest matchers for asserting on DOM nodes.
+// allows you to do things like:
+// expect(element).toHaveTextContent(/react/i)
+// learn more: https://github.com/testing-library/jest-dom
+import '@testing-library/jest-dom';
+
+'''

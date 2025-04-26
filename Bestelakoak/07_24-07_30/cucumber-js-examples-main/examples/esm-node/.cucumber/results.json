@@ -1,0 +1,50 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "greeting;say-hello",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Say hello",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "the greeter says hello",
+            "match": {
+              "location": "file:\\C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\07_24-07_30\\cucumber-js-examples-main\\examples\\esm-node\\features\\step_definitions\\steps.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1073399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "I should have heard \"hello\"",
+            "match": {
+              "location": "file:\\C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\07_24-07_30\\cucumber-js-examples-main\\examples\\esm-node\\features\\step_definitions\\steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 424000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "greeting",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Greeting",
+    "tags": [],
+    "uri": "features\\greeting.feature"
+  }
+]

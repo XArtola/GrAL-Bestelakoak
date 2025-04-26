@@ -1,0 +1,28 @@
+Testen exekuzioa lehenengo eskuz gero automatizatuta
+
+
+Aztertu cypress-eko adibidea, testak nola sortzen diren aurkitu. Test horiek automatikoko exekutatzeko bide aurkitu.
+Testak automatikoki nola sortu
+
+
+iturburu kodea + before-erako testuingurua + it definizioa pasata
+
+
+Suposatu eginda ematen diogula import + beforeeach. Eta hortik saiatu lortzen hurrengoa. Funtzioaren gorputza betetzen saiatu
+cypress liburutegia erabilita
+
+test karpetako fitxategiak
+
+mermaid.js aplikazioa
+
+
+---------------------------------------------------------------------------------
+
+Lokalean copilot erabilita?
+
+
+---------------------------------------------------------------------
+
+AST sortzeko Esprima paketea erabili, azkenean typescriptek ekartzen duenarekin
+
+Local folder analyzer-ekin aldaketak lokalean egin etagithub-era igo gabe pasatzea dago Geminiri

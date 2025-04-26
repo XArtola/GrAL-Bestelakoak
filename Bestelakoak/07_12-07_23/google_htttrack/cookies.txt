@@ -1,0 +1,7 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.google.es	TRUE	/	FALSE	1999999999	AEC	AVYB7coNIWsaJhPPfTR097M2qg5g5YeGL15GtIPkwX2ziLYfLgzhIXVj
+.google.es	TRUE	/	FALSE	1999999999	SOCS	CAAaBgiA2ea0Bg
+.google.es	TRUE	/	FALSE	1999999999	__Secure-ENID	21.SE=0eXHciBd0Nfwv-xqP6he7RPMM-Dqugo6VJGH8GHEPXKUXXlXnpE28WoxYSA6tO6SvAfoA23PnDJgASoFgw5_VRlpv2hPHpaq9xB0TK3cQI__wHTWqNK0muPz-1iMBRPsZhqv_dRXHPP3gERzwC8Swva3e3_LTPr3FRFe3GJpAhpZZKOsHj8R4OHBSMufVJ_B4eCtrXz_ySSiQKPPTGmBd_lpa2yBFGYRmM2ZV0MOU8ui1jHPD4YRXGMMMxkR-vwEmpLb6BoFQxQMtojIYxON
+www.google.es	TRUE	/	FALSE	1999999999	SameSite	lax
+

@@ -1,0 +1,42 @@
+{
+  "extends": [
+    "config:base",
+    ":rebaseStalePrs",
+    "schedule:earlyMondays",
+    ":automergeMinor",
+    ":automergeTesters",
+    ":automergeLinters",
+    ":automergeTypes",
+    ":automergePatch"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "automerge": true
+    },
+    {
+      "groupName": "all major dependencies",
+      "groupSlug": "all-major",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["major"]
+    },
+    {
+      "groupName": "all minor dependencies",
+      "groupSlug": "all-minor",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["minor"]
+    },
+    {
+      "groupName": "all patch dependencies",
+      "groupSlug": "all-patch",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["patch"]
+    },
+    {
+      "groupName": "eslint",
+      "matchPackagePatterns": ["eslint"]
+    }
+  ],
+  "dependencyDashboard": false,
+  "dependencyDashboardAutoclose": true
+}

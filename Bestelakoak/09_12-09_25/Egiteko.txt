@@ -1,0 +1,8 @@
+Test bakoitzeko, it bloke barruko testua hartu eta testa generatzen saitu:
+	1 beste laguntzarik gabe, fitxategiz fitxategi hiru test dituen fitxategi batetik abiatuz. Kontuz " eta `
+		Kontutan izan repoaren parseo data
+		Hutsik dauden testak beste karpeta batera pasa
+		Prompt engineering, claude. Hau garrantzitsua da galderak egiteko erak erantzuan bandintzatzen duelako
+		429 errorea: token limit
+
+	2 

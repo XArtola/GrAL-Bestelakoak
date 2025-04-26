@@ -1,0 +1,130 @@
+Test Files for Gherkin Features (using Cucumber-JS)
+
+Here are the corresponding JavaScript test files using Cucumber-JS for the provided Gherkin features. Note that these files should be placed in the "step_definitions" directory within each respective example project.
+
+1. command-line (examples/command-line/features/step_definitions/greetingSteps.js):
+
+const { Given, When, Then } = require('@cucumber/cucumber');
+const { exec } = require('child_process');
+const assert = require('assert');
+
+When('I run the greet command', {timeout: 10000}, async () => {
+  this.output = '';
+  const done = new Promise((resolve, reject) => {
+    const command = 'node ./bin/greet';
+    const process = exec(command);
+  
+    process.stdout.on('data', (data) => {
+      this.output += data.toString();
+    });
+
+    process.on('exit', (code) => {
+      if (code === 0) {
+        resolve();
+      } else {
+        reject(new Error(`Command execution failed with code ${code}`));
+      }
+    });
+  });
+
+  await done;
+});
+
+Then('I should be greeted with {string}', (expectedGreeting) => {
+  assert.strictEqual(this.output.trim(), expectedGreeting);
+});
+content_copy
+Use code with caution.
+JavaScript
+
+2. esm-node & typescript-node-*(both esm and commonjs) (examples/esm-node/features/step_definitions/greetingSteps.js (or .ts)):
+
+import { Given, When, Then } from '@cucumber/cucumber';
+import { assert } from 'chai';
+
+let greeting;
+
+Given('a greeting', () => {
+  greeting = "Hello, world!";
+});
+
+When('I ask it to greet me', () => {
+  // No action needed, the greeting is already set
+});
+
+Then('I should be greeted with {string}', (expectedGreeting) => {
+  assert.strictEqual(greeting, expectedGreeting);
+});
+content_copy
+Use code with caution.
+JavaScript
+
+3. probot (examples/probot/features/step_definitions/commentOnIssuesSteps.ts):
+
+import { Given, When, Then } from '@cucumber/cucumber';
+import { Probot, ProbotOctokit } from 'probot';
+import nock from 'nock';
+import { describe, beforeEach, afterEach } from 'mocha';
+import fs from 'fs';
+import path from 'path';
+
+// Load the Probot app
+const probot = new Probot({
+  appId: 12345,
+  privateKey: fs.readFileSync(path.join(__dirname, '../../test/fixtures/mock-cert.pem')).toString(),
+  // disable request throttling and retries for testing
+  Octokit: ProbotOctokit.defaults({
+    retry: { enabled: false },
+    throttle: { enabled: false },
+  }),
+});
+// Load our app's code
+probot.load(require('../../src')); 
+
+let issueCreatedBody: any;
+
+// Mock the GitHub API
+nock.disableNetConnect();
+
+Given('an issue, titled {string}, is opened in {string}', (title: string, repo: string) => {
+  issueCreatedBody = {
+    // Use fixture data for the issue body
+    issue: JSON.parse(fs.readFileSync(path.join(__dirname, '../../test/fixtures/issues.opened.json')).toString()),
+  };
+  nock('https://api.github.com')
+    .post(`/repos/${repo}/issues/1/comments`, (body: any) => {
+      // Ensure the comment is created with the correct information
+      return body.body === ':+1: I\'ve added my support.';
+    })
+    .reply(200);
+});
+
+When('the issue_opened event is received', async () => {
+  // Receive a webhook event
+  await probot.receive({ name: 'issues', payload: issueCreatedBody });
+});
+
+Then('a comment should be created on the issue with the body {string}', (commentBody: string) => {
+  // No assertion needed here, as the Nock mock will ensure the comment is created
+  // You could add an assertion here to check if the comment was created with the correct data
+});
+
+// Clean up after each scenario
+afterEach(() => {
+  nock.cleanAll();
+});
+content_copy
+Use code with caution.
+TypeScript
+
+Important Considerations:
+
+These are basic examples and may require adjustments based on your specific project setup.
+
+Ensure you install the necessary dependencies: @cucumber/cucumber, assert or chai, child_process (for command-line example), etc.
+
+You might need to adjust paths and configurations according to your project structure.
+
+The Probot example assumes you've configured your project and have test fixtures available.
+
+These examples provide a starting point for creating your Cucumber-JS test files. Remember to write comprehensive tests that cover various scenarios and edge cases.

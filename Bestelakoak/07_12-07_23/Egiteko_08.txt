@@ -1,0 +1,10 @@
+Automatizatu cucumberren, testen egitura sorrera
+
+Hasi indibidualak diren input-ak probatzen (grid,...). Hasieran Gemini-rekin 
+Behin horiek lortuta, report-a sortu emaitzak konparatu ahal izateko
+LLM desberdinekin probatzen joan, kontuz batzuek besteek baino limitazio handiagoak dituzte
+Limitazio horiek ekiditeko, datu base bektoriala erabili beharko da. Hori montatzeko conversation-a erabili.
+
+
+Repo gehiago bilatzen joan
+Fintzen joan testak erauzteko script-a

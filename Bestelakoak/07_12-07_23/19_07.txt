@@ -1,0 +1,19 @@
+httrack
+ez ditu guztiz ondo deskargatzen web gune guztiak
+
+wget
+wget --mirror --convert-links --adjust-extension --page-requisites --no-parent --level=5 http://google.es
+
+google-ren kasuan depth-a ez du errespetatzen
+
+scrappy
+
+Aurretik probatuta
+
+-------------------------------
+
+Drivera igo proiektua eta feature bakoitzeko eskatu test bat sortzeko
+
+-------------------------------
+
+vector DB erabili ChromaDB

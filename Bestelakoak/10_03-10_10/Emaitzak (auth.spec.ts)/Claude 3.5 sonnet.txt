@@ -1,0 +1,74 @@
+import { User } from "../../../src/models";
+import { isMobile } from "../../support/utils";
+const apiGraphQL = `${Cypress.env("apiUrl")}/graphql`;
+describe("User Sign-up and Login", function () {
+    beforeEach(function () {
+        cy.task("db:seed");
+        cy.intercept("POST", "/users").as("signup");
+        cy.intercept("POST", apiGraphQL, (req) => {
+            const { body } = req;
+            if (body.hasOwnProperty("operationName") && body.operationName === "CreateBankAccount") {
+                req.alias = "gqlCreateBankAccountMutation";
+            }
+        });
+    });
+    it("should redirect unauthenticated user to signin page", () => {
+        cy.visit("/personal");
+        cy.location("pathname").should("equal", "/signin");
+    });
+
+    it("should redirect to the home page after login", () => {
+        cy.login("johndoe", "s3cret");
+        cy.location("pathname").should("equal", "/");
+    });
+
+    it("should remember a user for 30 days after login", () => {
+        cy.login("johndoe", "s3cret", { rememberUser: true });
+        cy.get("[data-test='sidenav-user-full-name']").should("be.visible");
+        cy.reload();
+        cy.get("[data-test='sidenav-user-full-name']").should("be.visible");
+    });
+
+    it("should allow a visitor to sign-up, login, and logout", () => {
+        cy.visit("/signup");
+        cy.get("#firstName").type("Test");
+        cy.get("#lastName").type("User");
+        cy.get("#username").type("testuser");
+        cy.get("#password").type("s3cret");
+        cy.get("#confirmPassword").type("s3cret");
+        cy.get("[data-test='signup-submit']").click();
+        cy.get("[data-test='signin-username']").type("testuser");
+        cy.get("[data-test='signin-password']").type("s3cret");
+        cy.get("[data-test='signin-submit']").click();
+        cy.get("[data-test='sidenav-signout']").click();
+        cy.location("pathname").should("equal", "/signin");
+    });
+
+    it("should display login errors", () => {
+        cy.visit("/signin");
+        cy.get("[data-test='signin-submit']").click();
+        cy.get("[data-test='signin-error']").should("be.visible");
+    });
+
+    it("should display signup errors", () => {
+        cy.visit("/signup");
+        cy.get("[data-test='signup-submit']").click();
+        cy.get("[data-test='signup-error']").should("be.visible");
+    });
+
+    it("should error for an invalid user", () => {
+        cy.visit("/signin");
+        cy.get("[data-test='signin-username']").type("invaliduser");
+        cy.get("[data-test='signin-password']").type("invalidpass");
+        cy.get("[data-test='signin-submit']").click();
+        cy.get("[data-test='signin-error']").should("be.visible");
+    });
+
+    it("should error for an invalid password for existing user", () => {
+        cy.visit("/signin");
+        cy.get("[data-test='signin-username']").type("johndoe");
+        cy.get("[data-test='signin-password']").type("wrongpassword");
+        cy.get("[data-test='signin-submit']").click();
+        cy.get("[data-test='signin-error']").should("be.visible");
+    });
+});

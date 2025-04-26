@@ -1,0 +1,9 @@
++ Konpondu local folder analyzer
+- Prompt-a iteratzen joan (Juanmi)
+- Cypress-en emaitzak nola automatizatu begiratu
+- Interfaze bidez beste modelo eta API key-ak erabiltzeko aukera
+
+
+Irakurri python-ekin fitxategi bat. 
+with open 'fitxategia',r,encoding=utf-8/utf-16/latin) as file:
+	data read file/read lines...

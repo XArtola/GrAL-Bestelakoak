@@ -1,0 +1,16 @@
+Bukaeran linkak
+V https://docs.cypress.io/guides/end-to-end-testing/writing-your-first-end-to-end-test
+
+V https://docs.cypress.io/guides/references/cypress-studio
+V https://learn.cypress.io/testing-your-first-application
+V https://docs.cypress.io/guides/end-to-end-testing/testing-your-app
+V https://docs.cypress.io/guides/cloud/introduction
+
+Selecting 
+https://docs.cypress.io/guides/references/best-practices#Selecting-Elements
+
+
+Repoak
+https://github.com/cypress-io/cypress-realworld-app
+
+https://github.com/cypress-io/cypress-realworld-testing-course-app

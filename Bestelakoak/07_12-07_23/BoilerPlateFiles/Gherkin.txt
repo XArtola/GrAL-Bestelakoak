@@ -1,0 +1,158 @@
+Feature: Debug steps
+
+  @debug
+  Scenario: Running simple steps
+    Given I run a step
+    Given I run an async step
+    Given I run an async fail step
+
+  @debug @skip
+  Scenario: Running a step that should be skipped
+    Given I run a skip step
+
+  @debug
+  Scenario: Eval and print
+    Given Eval code console.log(this)
+    Given I print variable ${global_someVar}
+    Given Eval code this.facades.misc.setGlobalVariable('someVar', 'abc')
+    Given I print variable ${global_someVar}
+
+Feature: Entity management
+
+  @debug @entities_basic
+  Scenario: Basic entity operations
+    Given I work with a location with fields: name = lond
+    Then this location has fields: title = London
+    Given I work with a location list
+    Then this location list has fields: length = 1
+
+  @debug @entities_full_crud
+  Scenario: Creating, Deleting, Getting and Validating entities
+    Given I work with a location with fields: name = Beer Sheva
+    Then this location exists
+    Then this location has fields: title = Beer Sheva, woeid = 2347588
+    Given I work with a forecast from this location
+    Then this forecast has fields: consolidated_weather.length = 6
+    Given From this forecast, I work with a historical forecast with fields: day = 20/02/2019
+    Then this historical forecast has fields: applicable_date = 20/02/2019, the_temp = 12
+    When From this location, I create a demo entity with fields: a = b, c = ${entities_location_this.woeid}, d = 1
+    Then this demo entity has fields: properties.a = b, properties.c = 2347588, properties.parentID = 2347588
+    Given I delete this demo entity
+    Then this demo entity does not exist
+
+Feature: Meta Step manipulations
+
+  @debug @meta_step_manipulations
+  Scenario: Modifying step results and execution time
+    Given The next step should fail
+    Given I run a step
+    Given The next 2 steps should fail with This is a failed step
+    Given I run a step
+    Given I run a step
+    Given The next step may fail with This is a failed step
+    Given I run an async fail step
+    Given The next step should fail with Some other error
+    Given I run an async fail step
+    Given I wait for the next step to pass indefinitely
+    Given I run an async fail step
+    Given I wait for the next step to pass in 1 minute
+    Given I run an async step
+
+Feature: Variables
+
+  @debug @variables
+  Scenario: Variables usage and edge cases
+    Given I work with a location with fields: name = lond
+    Given I write ${entities_location_this.title} to file.txt
+    Given I write ${entities_location_this.latt_long} to file.txt
+    Given I write ${entities_location_this['latt_long']} to file.txt
+    Given I set the global variable globalVar to hello
+    Given I write ${global_globalVar} to file.txt
+    Given I write ${[a,b,c,d]} to file.txt
+    Given I write ${/a.*b/i} to file.txt
+    Given I write ${date_today_-1_year} to file.txt
+    Given I write ${date_today_-1_year_+5_days} to file.txt
+    Given I write ${date_today_format_DD/MM} to file.txt
+    Given I write ${=_1+4*2} to file.txt
+    Given I write ${random_20_25} to file.txt
+    Given I write ${entities_location_this.title} to file.txt
+    Given I write ${toDelete} to file.txt
+
+Feature: Cucumber parameters test suite
+
+  @cucumberParameters
+  Scenario: Property fields parameter
+    Given I work with the property field parameter: a = b, b = c, ${global_someGlobal} = 1, d = ${entities_someEntity_1.data}
+    Then this propertyFieldsParameter has fields: a = b, b = c, someGlobal = 1, d = someEntity-1:data
+
+  @cucumberParameters
+  Scenario: Entity parameter
+    Given I work with a location with fields: name = lond
+    Given I work with the entity parameter: this location
+    Then this entityParameter has fields: woeid = ${entities_location_this.woeid}
+
+Feature: Hooks test suite
+
+  @hooks
+  Scenario: hooks scenario 1
+    Given I run a step
+    Given I run a step
+
+  @hooks
+  Scenario: hooks scenario 2
+    Given I run a step
+    Given I run a fail step
+    Given I run a step
+
+Feature: MarkNextStepForFailure test suite
+
+  @markNextStepForFailure
+  Scenario: Test may fail functionality
+    Given The next step may fail
+    Given I run a step
+
+  @markNextStepForFailure
+  Scenario: Test must fail functionality - fail
+    Given The next step must fail
+    Given I run a step
+
+  @markNextStepForFailure
+  Scenario: Test must fail functionality - pass
+    Given The next step must fail
+    Given I run a fail step
+
+  @markNextStepForFailure
+  Scenario: Test fail message functionality - pass
+    Given The next step must fail with This is a failed step
+    Given I run a fail step
+
+  @markNextStepForFailure
+  Scenario: Test fail message functionality - fail
+    Given The next step must fail with This is a failed step
+    Given I run a step
+
+  @markNextStepForFailure
+  Scenario: Test multiple fail functionality - pass
+    Given The next 2 steps must fail
+    Given I run a fail step
+    Given I run an async fail step
+
+  @markNextStepForFailure
+  Scenario: Test multiple fail functionality - fail
+    Given The next 2 steps must fail
+    Given I run a fail step
+    Given I run an async step
+
+Feature: Scenario reordering test suite
+
+  @scenarioOrder
+  Scenario: scenario in the middle
+    Given I run a step
+
+  @scenarioOrder @teardown
+  Scenario: pushed to last
+    Given I run a step
+
+  @scenarioOrder @setup
+  Scenario: pushed to first
+    Given I run a step

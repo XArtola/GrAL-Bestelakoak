@@ -1,0 +1,32 @@
+HTTrack3.49-2+libhtsjava.so.2 launched on Fri, 19 Jul 2024 16:45:28 at http://www.google.es
+(httrack http://www.google.es -O ./google_htttrack -r5 )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+16:46:07	Warning: 	Moved Permanently for www.google.es/intl/es/ads/
+16:46:07	Warning: 	File has moved from www.google.es/intl/es/ads/ to https://ads.google.com/intl/es/home/
+16:46:07	Warning: 	Moved Permanently for www.google.es/intl/es/services/
+16:46:07	Warning: 	Redirected link is identical because of 'URL Hack' option: www.google.es/intl/es/services/ and https://www.google.es/intl/es/services/
+16:46:07	Warning: 	File has moved from www.google.es/intl/es/services/ to https://www.google.es/intl/es/services/
+16:46:07	Warning: 	Moved Permanently for www.google.es/intl/es/about/
+16:46:07	Warning: 	File has moved from www.google.es/intl/es/about/ to https://about.google/intl/es/
+16:46:09	Warning: 	Found for https://www.google.es/setting/search/privateresults/?hl=es&authuser=0
+16:46:09	Warning: 	File has moved from https://www.google.es/setting/search/privateresults/?hl=es&authuser=0 to https://www.google.es/setting/search/privateresults/?hl=es
+16:46:11	Error: 	"Not Found" (404) at link https://www.google.es/gci_91f30755d6a6b787dcc2a4062e6e9824.js (from https://www.google.es/advanced_search?hl=es&authuser=0)
+16:46:11	Error: 	"Not Found" (404) at link https://www.google.es/Edg/ (from https://www.google.es/advanced_search?hl=es&authuser=0)
+16:46:11	Warning: 	Moved Permanently for https://www.google.es/+/
+16:46:11	Warning: 	File has moved from https://www.google.es/+/ to https://www.google.es/plus
+16:46:12	Error: 	"Not Found" (404) at link https://www.google.es/gbar.C (from https://www.google.es/advanced_search?hl=es&authuser=0)
+16:46:12	Error: 	"Not Found" (404) at link www.google.es/intl/es/policies/privacy/curl (from www.google.es/intl/es/policies/privacy/)
+16:46:12	Error: 	"Not Found" (404) at link www.google.es/intl/es/policies/terms/curl (from www.google.es/intl/es/policies/terms/)
+16:46:12	Warning: 	Found for https://www.google.es/setting/search/privateresults/?hl=es
+16:46:12	Warning: 	File has moved from https://www.google.es/setting/search/privateresults/?hl=es to https://accounts.google.com/ServiceLogin?passive=1209600&continue=https://www.google.es/setting/search/privateresults/?hl%3Des&followup=https://www.google.es/setting/search/privateresults/?hl%3Des&hl=es
+16:46:12	Warning: 	Found for https://www.google.es/?sca_esv=4a42ef09a1334cc3&hl=es&output=search&ie=UTF-8
+16:46:12	Warning: 	File has moved from https://www.google.es/?sca_esv=4a42ef09a1334cc3&hl=es&output=search&ie=UTF-8 to https://consent.google.es/ml?continue=https://www.google.es/%3Fsca_esv%3D4a42ef09a1334cc3%26hl%3Des%26output%3Dsearch%26ie%3DUTF-8&gl=ES&m=0&pc=shp&uxe=none&cm=2&hl=es&src=1
+16:46:19	Error: 	"Not Found" (404) at link https://www.google.es/plus (from https://www.google.es/+/)
+
+HTTrack Website Copier/3.49-2 mirror complete in 51 seconds : 26 links scanned, 11 files written (440909 bytes overall) [195639 bytes received at 3836 bytes/sec], 437610 bytes transferred using HTTP compression in 11 files, ratio 30%
+(6 errors, 15 warnings, 0 messages)

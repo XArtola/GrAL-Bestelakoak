@@ -1,0 +1,99 @@
+import { User } from "../../../src/models";
+import { isMobile } from "../../support/utils";
+const apiGraphQL = `${Cypress.env("apiUrl")}/graphql`;
+describe("User Sign-up and Login", function () {
+    beforeEach(function () {
+        cy.task("db:seed");
+        cy.intercept("POST", "/users").as("signup");
+        cy.intercept("POST", apiGraphQL, (req) => {
+            const { body } = req;
+            if (body.hasOwnProperty("operationName") && body.operationName === "CreateBankAccount") {
+                req.alias = "gqlCreateBankAccountMutation";
+            }
+        });
+    });
+    it("should redirect unauthenticated user to signin page", () => {
+        cy.visit("/personal");
+        cy.location("pathname").should("equal", "/signin");
+    });
+
+    it("should redirect to the home page after login", () => {
+        cy.visit("/signin");
+        cy.get("[data-test='signin-username']").type("johndoe");
+        cy.get("[data-test='signin-password']").type("s3cret");
+        cy.get("[data-test='signin-submit']").click();
+        cy.location("pathname").should("equal", "/");
+    });
+
+    it("should remember a user for 30 days after login", () => {
+        cy.visit("/signin");
+        cy.get("[data-test='signin-username']").type("johndoe");
+        cy.get("[data-test='signin-password']").type("s3cret");
+        cy.get("[data-test='signin-remember-me']").check();
+        cy.get("[data-test='signin-submit']").click();
+        
+        // Verify cookie exists with long expiration
+        cy.getCookie("connect.sid").should("exist");
+        
+        // Reload and verify we're still logged in
+        cy.reload();
+        cy.get("[data-test='sidenav-user-full-name']").should("be.visible");
+    });
+
+    it("should allow a visitor to sign-up, login, and logout", () => {
+        // Unique username to avoid conflicts
+        const username = `testuser_${Date.now()}`;
+        
+        // Sign-up
+        cy.visit("/signup");
+        cy.get("[data-test='signup-first-name']").type("Test");
+        cy.get("[data-test='signup-last-name']").type("User");
+        cy.get("[data-test='signup-username']").type(username);
+        cy.get("[data-test='signup-password']").type("s3cret");
+        cy.get("[data-test='signup-confirmPassword']").type("s3cret");
+        cy.get("[data-test='signup-submit']").click();
+        cy.wait("@signup");
+        
+        // Login
+        cy.get("[data-test='signin-username']").type(username);
+        cy.get("[data-test='signin-password']").type("s3cret");
+        cy.get("[data-test='signin-submit']").click();
+        cy.location("pathname").should("equal", "/");
+        
+        // Logout
+        cy.get("[data-test='sidenav-signout']").click();
+        cy.location("pathname").should("equal", "/signin");
+    });
+
+    it("should display login errors", () => {
+        cy.visit("/signin");
+        cy.get("[data-test='signin-submit']").click();
+        cy.get("[data-test='signin-error']").should("be.visible");
+        cy.get("[data-test='signin-error']").should("contain", "Username is required");
+    });
+
+    it("should display signup errors", () => {
+        cy.visit("/signup");
+        cy.get("[data-test='signup-submit']").click();
+        cy.get("[data-test='signup-error']").should("be.visible");
+        cy.get("[data-test='signup-error']").should("contain", "First Name is required");
+    });
+
+    it("should error for an invalid user", () => {
+        cy.visit("/signin");
+        cy.get("[data-test='signin-username']").type("nonexistentuser");
+        cy.get("[data-test='signin-password']").type("password123");
+        cy.get("[data-test='signin-submit']").click();
+        cy.get("[data-test='signin-error']").should("be.visible");
+        cy.get("[data-test='signin-error']").should("contain", "Username or password is invalid");
+    });
+
+    it("should error for an invalid password for existing user", () => {
+        cy.visit("/signin");
+        cy.get("[data-test='signin-username']").type("johndoe");
+        cy.get("[data-test='signin-password']").type("wrongpassword");
+        cy.get("[data-test='signin-submit']").click();
+        cy.get("[data-test='signin-error']").should("be.visible");
+        cy.get("[data-test='signin-error']").should("contain", "Username or password is invalid");
+    });
+});

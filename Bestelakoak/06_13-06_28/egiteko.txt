@@ -32,6 +32,7 @@ Driven gorde repoa nonbinary direnak kenduta eta pasa esteka
 
 Montatuta eduki 2 prozesuak
 
-    pasatzeko pista moduan 0 shot
-                            1 shot  
-                            Few shot
+    pasatzeko pista moduan 
+			- 0 shot
+			- 1 shot
+			- Few shot

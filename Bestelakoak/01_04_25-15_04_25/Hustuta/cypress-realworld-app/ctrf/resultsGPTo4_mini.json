@@ -1,0 +1,1178 @@
+{
+  "results": {
+    "tool": {
+      "name": "cypress"
+    },
+    "summary": {
+      "tests": 61,
+      "failed": 23,
+      "passed": 38,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 1745701667217,
+      "stop": 1745701980504
+    },
+    "tests": [
+      {
+        "name": "User Sign-up and Login should redirect unauthenticated user to signin page",
+        "status": "passed",
+        "duration": 6901,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\auth.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "User Sign-up and Login should redirect to the home page after login",
+        "status": "failed",
+        "duration": 733,
+        "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/auth.spec.ts:27:46)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/auth.spec.ts:27:46)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\auth.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "User Sign-up and Login should remember a user for 30 days after login",
+        "status": "failed",
+        "duration": 539,
+        "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/auth.spec.ts:37:46)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/auth.spec.ts:37:46)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\auth.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+        "status": "failed",
+        "duration": 533,
+        "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/auth.spec.ts:50:47)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/auth.spec.ts:50:47)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\auth.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "User Sign-up and Login should display login errors",
+        "status": "failed",
+        "duration": 537,
+        "message": "ReferenceError: loginCredentials is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/auth.spec.ts:70:46)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "trace": "ReferenceError: loginCredentials is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/auth.spec.ts:70:46)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\auth.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should display login errors (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "User Sign-up and Login should display signup errors",
+        "status": "failed",
+        "duration": 14589,
+        "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'First name is required' but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/auth.spec.ts:80:46)",
+        "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'First name is required' but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/auth.spec.ts:80:46)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\auth.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should display signup errors (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "User Sign-up and Login should error for an invalid user",
+        "status": "failed",
+        "duration": 529,
+        "message": "ReferenceError: loginCredentials is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/auth.spec.ts:88:46)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "trace": "ReferenceError: loginCredentials is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/auth.spec.ts:88:46)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\auth.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should error for an invalid user (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should error for an invalid user (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should error for an invalid user (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "User Sign-up and Login should error for an invalid password for existing user",
+        "status": "failed",
+        "duration": 571,
+        "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/auth.spec.ts:96:46)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/auth.spec.ts:96:46)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\auth.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should error for an invalid password for existing user (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should error for an invalid password for existing user (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\auth.spec.ts\\User Sign-up and Login -- should error for an invalid password for existing user (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "Bank Accounts creates a new bank account",
+        "status": "failed",
+        "duration": 5157,
+        "message": "ReferenceError: bankAccountInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/bankaccounts.spec.ts:37:46)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "trace": "ReferenceError: bankAccountInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/bankaccounts.spec.ts:37:46)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\bankaccounts.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts.spec.ts\\Bank Accounts -- creates a new bank account (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "Bank Accounts should display bank account form errors",
+        "status": "failed",
+        "duration": 18567,
+        "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `button[aria-label=\"Add Bank Account\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/bankaccounts.spec.ts:51:11)",
+        "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `button[aria-label=\"Add Bank Account\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/bankaccounts.spec.ts:51:11)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\bankaccounts.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts.spec.ts\\Bank Accounts -- should display bank account form errors (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "Bank Accounts soft deletes a bank account",
+        "status": "failed",
+        "duration": 5787,
+        "message": "ReferenceError: bankAccountInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/bankaccounts.spec.ts:71:20)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "trace": "ReferenceError: bankAccountInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/bankaccounts.spec.ts:71:20)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\bankaccounts.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts.spec.ts\\Bank Accounts -- soft deletes a bank account (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "Bank Accounts renders an empty bank account list state with onboarding modal",
+        "status": "failed",
+        "duration": 19473,
+        "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"onboarding-modal\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/bankaccounts.spec.ts:78:51)",
+        "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"onboarding-modal\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/bankaccounts.spec.ts:78:51)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\bankaccounts.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction payment",
+        "status": "failed",
+        "duration": 7060,
+        "message": "ReferenceError: paymentTransactions is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:35:61)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "trace": "ReferenceError: paymentTransactions is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:35:61)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\new-transaction.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction request",
+        "status": "failed",
+        "duration": 6111,
+        "message": "ReferenceError: requestTransactions is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:51:61)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "trace": "ReferenceError: requestTransactions is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:51:61)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\new-transaction.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "New Transaction displays new transaction errors",
+        "status": "failed",
+        "duration": 19125,
+        "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"submit-payment\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:63:11)",
+        "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"submit-payment\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:63:11)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\new-transaction.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- displays new transaction errors (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "New Transaction submits a transaction payment and verifies the deposit for the receiver",
+        "status": "failed",
+        "duration": 6418,
+        "message": "ReferenceError: paymentTransactions is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:75:61)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "trace": "ReferenceError: paymentTransactions is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:75:61)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\new-transaction.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "New Transaction submits a transaction request and accepts the request for the receiver",
+        "status": "failed",
+        "duration": 6390,
+        "message": "ReferenceError: requestTransactions is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:89:61)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "trace": "ReferenceError: requestTransactions is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:89:61)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\new-transaction.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "New Transaction displays new transaction errors",
+        "status": "passed",
+        "duration": 1857,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\new-transaction.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- displays new transaction errors (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "New Transaction submits a transaction payment and verifies the deposit for the receiver",
+        "status": "passed",
+        "duration": 1778,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\new-transaction.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "New Transaction submits a transaction request and accepts the request for the receiver",
+        "status": "passed",
+        "duration": 1630,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\new-transaction.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "New Transaction searches for a user by attribute firstName",
+        "status": "failed",
+        "duration": 18264,
+        "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"search-input\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:121:19)",
+        "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"search-input\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:121:19)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\new-transaction.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "New Transaction searches for a user by attribute lastName",
+        "status": "failed",
+        "duration": 17989,
+        "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"search-input\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:121:19)",
+        "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"search-input\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:121:19)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\new-transaction.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- lastName (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- lastName (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- lastName (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "New Transaction searches for a user by attribute username",
+        "status": "failed",
+        "duration": 18792,
+        "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"search-input\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:121:19)",
+        "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"search-input\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:121:19)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\new-transaction.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- username (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- username (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- username (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "New Transaction searches for a user by attribute email",
+        "status": "failed",
+        "duration": 19517,
+        "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"search-input\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:121:19)",
+        "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"search-input\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:121:19)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\new-transaction.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- email (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- email (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- email (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "New Transaction searches for a user by attribute phoneNumber",
+        "status": "failed",
+        "duration": 19171,
+        "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"search-input\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:121:19)",
+        "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"search-input\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/new-transaction.spec.ts:121:19)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\new-transaction.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- phoneNumber (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- phoneNumber (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\new-transaction.spec.ts\\New Transaction -- searches for a user by attribute -- phoneNumber (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "Notifications renders an empty notifications state",
+        "status": "passed",
+        "duration": 96,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\notifications.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Notifications notifications from user interactions User A likes a transaction of User B; User B gets notification that User A liked transaction ",
+        "status": "passed",
+        "duration": 64,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\notifications.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Notifications notifications from user interactions User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction",
+        "status": "passed",
+        "duration": 60,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\notifications.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Notifications notifications from user interactions User A comments on a transaction of User B; User B gets notification that User A commented on their transaction",
+        "status": "passed",
+        "duration": 64,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\notifications.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Notifications notifications from user interactions User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction",
+        "status": "passed",
+        "duration": 78,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\notifications.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Notifications notifications from user interactions User A sends a payment to User B",
+        "status": "passed",
+        "duration": 71,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\notifications.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Notifications notifications from user interactions User A sends a payment request to User C",
+        "status": "passed",
+        "duration": 79,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\notifications.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed app layout and responsiveness toggles the navigation drawer",
+        "status": "passed",
+        "duration": 3218,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed renders and paginates all transaction feeds renders transactions item variations in feed",
+        "status": "passed",
+        "duration": 1305,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed renders and paginates all transaction feeds paginates public transaction feed",
+        "status": "passed",
+        "duration": 1302,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed renders and paginates all transaction feeds paginates contacts transaction feed",
+        "status": "passed",
+        "duration": 1720,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed renders and paginates all transaction feeds paginates personal transaction feed",
+        "status": "passed",
+        "duration": 1663,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed filters transaction feeds by date range filters public transaction feed by date range",
+        "status": "passed",
+        "duration": 1828,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed filters transaction feeds by date range does not show public transactions for out of range date limits",
+        "status": "passed",
+        "duration": 1799,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed filters transaction feeds by date range filters contacts transaction feed by date range",
+        "status": "passed",
+        "duration": 1541,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed filters transaction feeds by date range does not show contacts transactions for out of range date limits",
+        "status": "passed",
+        "duration": 1543,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed filters transaction feeds by date range filters personal transaction feed by date range",
+        "status": "passed",
+        "duration": 1492,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed filters transaction feeds by date range does not show personal transactions for out of range date limits",
+        "status": "passed",
+        "duration": 1723,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed filters transaction feeds by amount range filters public transaction feed by amount range",
+        "status": "passed",
+        "duration": 1652,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed filters transaction feeds by amount range does not show public transactions for out of range amount limits",
+        "status": "passed",
+        "duration": 1600,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed filters transaction feeds by amount range filters contacts transaction feed by amount range",
+        "status": "passed",
+        "duration": 1800,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed filters transaction feeds by amount range does not show contacts transactions for out of range amount limits",
+        "status": "passed",
+        "duration": 1740,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed filters transaction feeds by amount range filters personal transaction feed by amount range",
+        "status": "passed",
+        "duration": 1725,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed filters transaction feeds by amount range does not show personal transactions for out of range amount limits",
+        "status": "passed",
+        "duration": 1609,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed Feed Item Visibility mine feed only shows personal transactions",
+        "status": "passed",
+        "duration": 1683,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed Feed Item Visibility first five items belong to contacts in public feed",
+        "status": "passed",
+        "duration": 1921,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction Feed Feed Item Visibility friends feed only shows contact transactions",
+        "status": "passed",
+        "duration": 1672,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-feeds.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+        "status": "passed",
+        "duration": 2829,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-view.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction View likes a transaction",
+        "status": "passed",
+        "duration": 1444,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-view.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction View comments on a transaction",
+        "status": "passed",
+        "duration": 1578,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-view.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction View accepts a transaction request",
+        "status": "passed",
+        "duration": 1901,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-view.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction View rejects a transaction request",
+        "status": "passed",
+        "duration": 2224,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-view.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "Transaction View does not display accept/reject buttons on completed request",
+        "status": "passed",
+        "duration": 1956,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\transaction-view.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "User Settings renders the user settings form",
+        "status": "passed",
+        "duration": 2788,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\user-settings.spec.ts",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137"
+      },
+      {
+        "name": "User Settings should display user setting form errors",
+        "status": "failed",
+        "duration": 21514,
+        "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+        "trace": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\user-settings.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\user-settings.spec.ts\\User Settings -- should display user setting form errors (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\user-settings.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\user-settings.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 3).png"
+          }
+        ]
+      },
+      {
+        "name": "User Settings updates first name, last name, email and phone number",
+        "status": "failed",
+        "duration": 6577,
+        "message": "ReferenceError: updatedUserInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/user-settings.spec.ts:38:55)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "trace": "ReferenceError: updatedUserInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/ui/user-settings.spec.ts:38:55)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+        "rawStatus": "failed",
+        "type": "e2e",
+        "filePath": "cypress\\tests\\ui\\user-settings.spec.ts",
+        "retries": 2,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\user-settings.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\user-settings.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed) (attempt 2).png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Test_gen\\cypress-realworld-app\\cypress\\screenshots\\user-settings.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed) (attempt 3).png"
+          }
+        ]
+      }
+    ]
+  }
+}
