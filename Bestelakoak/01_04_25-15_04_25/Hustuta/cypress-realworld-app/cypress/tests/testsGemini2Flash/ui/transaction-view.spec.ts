@@ -29,10 +29,90 @@ describe("Transaction View", function () {
         cy.getBySel("nav-personal-tab").click();
         cy.wait("@personalTransactions");
     });
-    it("transactions navigation tabs are hidden on a transaction view page", () => { });
-    it("likes a transaction", () => { });
-    it("comments on a transaction", () => { });
-    it("accepts a transaction request", () => { });
-    it("rejects a transaction request", () => { });
-    it("does not display accept/reject buttons on completed request", () => { });
+
+    // transactions navigation tabs are hidden on a transaction view page
+    it("transactions navigation tabs are hidden on a transaction view page", () => {
+      // filepath: c:\Users\xabia\OneDrive\Documentos\4.Maila\TFG-Bestelakoak\Bestelakoak\Test_gen\cypress-realworld-app\cypress\tests\ui\transaction-view.spec.ts
+      if (!ctx.transactionRequest) {
+        cy.getBySelLike("transaction-item").first().click();
+      } else {
+        cy.getBySelLike("transaction-item").contains(ctx.transactionRequest.description).click();
+      }
+      cy.getBySel("nav-personal-tab").should("not.exist");
+      cy.getBySel("nav-public-tab").should("not.exist");
+      cy.getBySel("nav-contacts-tab").should("not.exist");
+    });
+
+    // likes a transaction
+    it("likes a transaction", () => {
+      // filepath: c:\Users\xabia\OneDrive\Documentos\4.Maila\TFG-Bestelakoak\Bestelakoak\Test_gen\cypress-realworld-app\cypress\tests\ui\transaction-view.spec.ts
+      if (!ctx.transactionRequest) {
+        cy.getBySelLike("transaction-item").first().click();
+      } else {
+        cy.getBySelLike("transaction-item").contains(ctx.transactionRequest.description).click();
+      }
+      cy.getBySel("transaction-like-button").click();
+      cy.getBySel("transaction-like-count").should("contain", "1");
+    });
+
+    // comments on a transaction
+    it("comments on a transaction", () => {
+      // filepath: c:\Users\xabia\OneDrive\Documentos\4.Maila\TFG-Bestelakoak\Bestelakoak\Test_gen\cypress-realworld-app\cypress\tests\ui\transaction-view.spec.ts
+      const comment = "Test comment";
+      if (!ctx.transactionRequest) {
+        cy.getBySelLike("transaction-item").first().click();
+      } else {
+        cy.getBySelLike("transaction-item").contains(ctx.transactionRequest.description).click();
+      }
+      cy.getBySel("transaction-comment-input").type(comment);
+      cy.getBySel("transaction-comment-submit").click();
+      cy.getBySel("transaction-comment-list").should("contain", comment);
+    });
+
+    // accepts a transaction request
+    it("accepts a transaction request", () => {
+      // filepath: c:\Users\xabia\OneDrive\Documentos\4.Maila\TFG-Bestelakoak\Bestelakoak\Test_gen\cypress-realworld-app\cypress\tests\ui\transaction-view.spec.ts
+      if (ctx.transactionRequest) {
+        cy.getBySelLike("transaction-item").contains(ctx.transactionRequest.description).click();
+        cy.getBySel("transaction-accept-request").click();
+        cy.wait("@updateTransaction").then((interception) => {
+          expect(interception.response.statusCode).to.eq(200);
+          cy.getBySel("transaction-status").should("contain", "Complete");
+        });
+      } else {
+        cy.log("No transaction request found for this user.");
+      }
+    });
+
+    // rejects a transaction request
+    it("rejects a transaction request", () => {
+      // filepath: c:\Users\xabia\OneDrive\Documentos\4.Maila\TFG-Bestelakoak\Bestelakoak\Test_gen\cypress-realworld-app\cypress\tests\ui\transaction-view.spec.ts
+      if (ctx.transactionRequest) {
+        cy.getBySelLike("transaction-item").contains(ctx.transactionRequest.description).click();
+        cy.getBySel("transaction-reject-request").click();
+        cy.wait("@updateTransaction").then((interception) => {
+          expect(interception.response.statusCode).to.eq(200);
+        });
+      } else {
+        cy.log("No transaction request found for this user.");
+      }
+    });
+
+    // does not display accept/reject buttons on completed request
+    it("does not display accept/reject buttons on completed request", () => {
+      // filepath: c:\Users\xabia\OneDrive\Documentos\4.Maila\TFG-Bestelakoak\Bestelakoak\Test_gen\cypress-realworld-app\cypress\tests\ui\transaction-view.spec.ts
+      cy.database("find", "transactions", {
+        receiverId: ctx.authenticatedUser.id,
+        status: "complete",
+        requestStatus: "accepted",
+      }).then((transaction: Transaction) => {
+        if (transaction) {
+          cy.getBySelLike("transaction-item").contains(transaction.description).click();
+          cy.getBySel("transaction-accept-request").should("not.exist");
+          cy.getBySel("transaction-reject-request").should("not.exist");
+        } else {
+          cy.log("No completed transaction request found for this user.");
+        }
+      });
+    });
 });

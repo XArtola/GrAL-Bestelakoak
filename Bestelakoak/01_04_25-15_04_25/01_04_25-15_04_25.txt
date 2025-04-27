@@ -72,3 +72,10 @@ pnpm instalatu
 ---------------------------------------------
 
 Test hutsek it(""){}  passed ematen dute
+
+----------------------------------------------
+
+Cagaditas:
+
+    Exekutatu test gen, testuinguruan testak osatuta daudenean
+    Ez konprobatu nola sartzen duen user info
