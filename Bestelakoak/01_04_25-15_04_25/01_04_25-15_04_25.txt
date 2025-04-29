@@ -1,17 +1,18 @@
-Probatu LLM batekin ea beharrezko parametroak erauzteko gai den
-Behin hori eginda eta Juanmiren prompt berriarekin karpeta egin LLM bakoitzeko eta testak sortu emaitzak ikusteko.
-Emaitza horiek probatzeko exekutatu cypress proba
-Testak sortzeko ordena: Fitxategi bat aukeratu eta sortu  7 LLM desberdinekin test berdina. Ondoren konprobatu ea ze eamaitza ematen dituen
+X Probatu LLM batekin ea beharrezko parametroak erauzteko gai den
+X Behin hori eginda eta Juanmiren prompt berriarekin karpeta egin LLM bakoitzeko eta testak sortu emaitzak ikusteko.
+X Emaitza horiek probatzeko exekutatu cypress proba
+X Testak sortzeko ordena: Fitxategi bat aukeratu eta sortu  7 LLM desberdinekin test berdina. Ondoren konprobatu ea ze eamaitza ematen dituen
+
 Txostena betetzen jarraitu
-
-
+Orain arte erabilitako teknologien zerrenda egin eta laburtu
 
 ---------------------------------------------------------------------------
 
-JSON batean enpaketatu erauzitako eremuak eta datuak
-Pasa LLM bakoitzeko testa pasa fitxategika
-Eficiencia y eficacia exekuzio denbora eta lorpena
-Cypress testen exekuzioen emaitzak eta neurriak txt edo json formatuan nola lortu ikusi exportatu
+X JSON batean enpaketatu erauzitako eremuak eta datuak
+X Pasa LLM bakoitzeko testa fitxategika
+X Cypress testen exekuzioen emaitzak eta neurriak txt edo json formatuan nola lortu ikusi exportatu
+
+??Eficiencia y eficacia exekuzio denbora eta lorpena
 
 Aurkitutako gauzak:
 
@@ -20,12 +21,11 @@ Horiek nola gorde txt batean
 
 X Hustutzeko prompt-a martxan jarri eta nola erabili jakiteko txt idatzi
 X Lortu beahrrezko informazioa promparekin eta informazio hori gorde 
-Orain arte erabilitako teknologien zerrenda egin eta laburtu
 
 
-sortu testak ui eta gordetezen joan LLM bakoitzeko
-Testak pasa eta gorde
-Sortu taula bat??
+X sortu testak ui eta gordetezen joan LLM bakoitzeko
+X Testak pasa eta gorde
+X Sortu taula batzuk
 
 ---------------------------------------
 
@@ -39,6 +39,8 @@ Martxan jarri menua input bat githubeko link-a sartzeko:
 
 
 --------------------------------------------
+
+    cypress-ctrf-json-reporter
 
 https://medium.com/@ma11hewthomas/cypress-json-test-results-report-63a8a3092dd2
 https://github.com/ctrf-io/cypress-ctrf-json-reporter
@@ -56,7 +58,7 @@ cypress.config.ts aldatu eta sartu konfigurazioa
 
 ------------------------------------------------
 Screenshot-ak ere egiten ditu
--------------------------------------------
+-----------------------------------------------
 
 Bideo grabazioarako
 https://codi.link/PGJ1dHRvbj4KICDij7rvuI8gR3JhYmFyIHBhbnRhbGxhCjwvYnV0dG9uPg==|Ym9keSB7CgloZWlnaHQ6IDEwMHZoOwoJYmFja2dyb3VuZDogIzExMTsKCWRpc3BsYXk6IGdyaWQ7CglwbGFjZS1jb250ZW50OiBjZW50ZXI7Cn0KCmJ1dHRvbiB7Cglmb250LXNpemU6IDI0cHg7Cn0=|Y29uc3QgJGJ1dHRvbiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJ2J1dHRvbicpCgokYnV0dG9uLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgYXN5bmMgKCkgPT4gewogIGNvbnN0IG1lZGlhID0gYXdhaXQgbmF2aWdhdG9yLm1lZGlhRGV2aWNlcy5nZXREaXNwbGF5TWVkaWEoewogICAgdmlkZW86IHsgZnJhbWVSYXRlOiB7IGlkZWFsOiAzMCB9IH0KICB9KQogIGNvbnN0IG1lZGlhcmVjb3JkZXIgPSBuZXcgTWVkaWFSZWNvcmRlcihtZWRpYSwgewogICAgbWltZVR5cGU6ICd2aWRlby93ZWJtO2NvZGVjcz12cDgsb3B1cycKICB9KQogIG1lZGlhcmVjb3JkZXIuc3RhcnQoKQoKICBjb25zdCBbdmlkZW9dID0gbWVkaWEuZ2V0VmlkZW9UcmFja3MoKQogIHZpZGVvLmFkZEV2ZW50TGlzdGVuZXIoImVuZGVkIiwgKCkgPT4gewogICAgbWVkaWFyZWNvcmRlci5zdG9wKCkKICB9KQoKICBtZWRpYXJlY29yZGVyLmFkZEV2ZW50TGlzdGVuZXIoImRhdGFhdmFpbGFibGUiLCAoZSkgPT4gewogICAgY29uc3QgbGluayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoImEiKQogICAgbGluay5ocmVmID0gVVJMLmNyZWF0ZU9iamVjdFVSTChlLmRhdGEpCiAgICBsaW5rLmRvd25sb2FkID0gImNhcHR1cmEud2VibSIKICAgIGxpbmsuY2xpY2soKQogIH0pCn0p
@@ -65,17 +67,28 @@ https://codi.link/PGJ1dHRvbj4KICDij7rvuI8gR3JhYmFyIHBhbnRhbGxhCjwvYnV0dG9uPg==|Y
 
 Banatu proiektu nagusiaren testuingurua klonatutako proiektuenarengandik, azkeneam karpeta berri bat proiektuaren pareko mailan
 
-----------------------------------------------
+-------------------------------------------------
 
 pnpm instalatu
 
----------------------------------------------
+-------------------------------------------------
+
+KONTUZ!!!
 
 Test hutsek it(""){}  passed ematen dute
 
-----------------------------------------------
+--------------------------------------------------
 
 Cagaditas:
 
     Exekutatu test gen, testuinguruan testak osatuta daudenean
     Ez konprobatu nola sartzen duen user info
+
+-------------------------------------------------
+Nola lortu denboraketak testen sorkuntzan LLM bidez???
+V2 bertsioa ordezkatuz aldagaiak dagokien testuarekin eta consolako erroreak konponduz
+
+------------------------------------------------------------
+
+Cypress + AI
+https://workik.com/cypress-test-case-generator

@@ -1,23 +1,53 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+const { MongoClient } = require('mongodb');
+const uri = "mongodb://localhost:27017";
+const client = new MongoClient(uri);
+
+async function connectDB() {
+    try {
+        await client.connect();
+        console.log("Connected to MongoDB");
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+connectDB();
 
 export async function GET(request: Request) {
   try {
-    const dataDir = path.join(process.cwd(), 'data');
-    const files = fs.existsSync(dataDir) ? fs.readdirSync(dataDir) : [];
-    console.log("Data directory path:", dataDir); // Debugging log
-    console.log("Files in data directory:", files); // Debugging log
-    const results = files
-      .filter((f) => f.endsWith('.json'))
-      .map((file) => {
-        const raw = fs.readFileSync(path.join(dataDir, file), 'utf-8');
-        const content = JSON.parse(raw);
-        const id = path.basename(file, '.json');
-        return { id, ...content };
-      });
-    return NextResponse.json(results);
-  } catch {
-    return NextResponse.json({ error: 'Failed to read results' }, { status: 500 });
+    const database = client.db("tests");
+    const collection = database.collection("results");
+
+    const results = await collection.find({}).toArray();
+    
+    // Ensure all results have an ID field to prevent "item.id is undefined" errors
+    interface ResultItem {
+      id?: string;
+      results?: {
+        tool?: {
+          name?: string;
+        };
+      };
+    }
+    
+    const processedResults = results.map((item: ResultItem, index: number) => {
+      if (!item.id) {
+        // Create a unique ID based on available data or index as fallback
+        if (item.results && item.results.tool && item.results.tool.name) {
+          item.id = `results_${item.results.tool.name}_${index}`;
+        } else {
+          item.id = `results_record_${index}`;
+        }
+      }
+      return item;
+    });
+    
+    return NextResponse.json(processedResults);
+  } catch (err) {
+    console.error("Error fetching data from MongoDB:", err);
+    return NextResponse.json({ error: 'Failed to fetch results from database' }, { status: 500 });
   }
 }
