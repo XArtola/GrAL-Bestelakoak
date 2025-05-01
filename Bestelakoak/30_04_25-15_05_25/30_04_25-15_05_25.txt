@@ -1,0 +1,8 @@
+Github copilot workspace-ren exekuzio denbora neurtu
+- Python-ekin mouse kontrolatu eta begiratu ea send botoiak noiz egiten dituen aldaketak. Ezinezkoa
+- Saiatu github copilot cli instalatuz bertatik egiten neurketa. Ezin da egin ez delako aukera hori existitzen
+- Vscode-k web bertsioa daukanez, saiatu bertatik script-n bat egiten. Ez dago karpetak igotzerik (repo bidez bai) eta gainera ez dagoau
+aukerarik copilot extentsioa erabiltzeko
+- Vscodeko extentsio bat programatu eta hortik programatikoki exekutatu github copilot worksapce denborak neurtu ahal izateko. Ezinezkoa
+- Developer tools-ek vscode web moduan erakusten duela ikusita script baten bidez kontrolatu denbora. 
+Honek gauza gehiago automatizatzeko aukera ematen du!!!
