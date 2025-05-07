@@ -1,0 +1,75 @@
+{
+  "auth.spec.ts": {
+    "userInfo": {
+      "firstName": "Bob",
+      "lastName": "Ross",
+      "username": "PainterJoy90",
+      "password": "s3cret"
+    },
+    "bankAccountInfo": {
+      "bankName": "The Best Bank",
+      "accountNumber": "123456789",
+      "routingNumber": "987654321"
+    },
+    "loginCredentials": {
+      "validPassword": "s3cret",
+      "invalidUsername": "invalidUserName",
+      "invalidPassword": "invalidPa$$word",
+      "anotherInvalidPassword": "INVALID"
+    }
+  },
+  "bankaccounts.spec.ts": {
+    "bankAccountInfo": {
+      "bankName": "The Best Bank",
+      "routingNumber": "987654321",
+      "accountNumber": "123456789"
+    }
+  },
+  "new-transaction.spec.ts": {
+    "paymentTransactions": [
+      {
+        "amount": "35",
+        "description": "Sushi dinner 🍣"
+      },
+      {
+        "amount": 25,
+        "description": "Indian Food"
+      }
+    ],
+    "requestTransactions": [
+      {
+        "amount": "95",
+        "description": "Fancy Hotel 🏨"
+      },
+      {
+        "amount": 100,
+        "description": "Fancy Hotel"
+      }
+    ]
+  },
+  "user-settings.spec.ts": {
+    "updatedUserInfo": {
+      "firstName": "New First Name",
+      "lastName": "New Last Name",
+      "email": "email@email.com",
+      "phoneNumber": "6155551212"
+    }
+  },
+  "auth0.spec.ts": {
+    "credentials": {
+      "username": "Cypress.env(\"auth0_username\")",
+      "password": "Cypress.env(\"auth0_password\")"
+    },
+    "bankAccountInfo": {
+      "bankName": "The Best Bank",
+      "accountNumber": "123456789",
+      "routingNumber": "987654321"
+    }
+  },
+  "api-users.spec.ts": {
+    "balanceValue": "100_00"
+  },
+  "transaction-view.spec.ts": {},
+  "transaction-feeds.spec.ts": {},
+  "notifications.spec.ts": {}
+}

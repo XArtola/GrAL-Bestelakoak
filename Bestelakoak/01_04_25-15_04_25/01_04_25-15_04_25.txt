@@ -69,6 +69,7 @@ Banatu proiektu nagusiaren testuingurua klonatutako proiektuenarengandik, azkene
 
 -------------------------------------------------
 
+mermaid martxan jartzeko
 pnpm instalatu
 
 -------------------------------------------------
@@ -92,3 +93,15 @@ V2 bertsioa ordezkatuz aldagaiak dagokien testuarekin eta consolako erroreak kon
 
 Cypress + AI
 https://workik.com/cypress-test-case-generator
+
+
+
+Bi emaitza motak gorde
+
+test fitxategi bakoitzareko it bakoitzerako beste guztia kendu `prompt bidez
+
+
+Eficiency nola neurtu galdetu promptari
+
+
+Denboratu

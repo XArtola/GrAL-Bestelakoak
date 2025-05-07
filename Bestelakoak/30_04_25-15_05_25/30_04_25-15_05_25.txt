@@ -6,3 +6,17 @@ aukerarik copilot extentsioa erabiltzeko
 - Vscodeko extentsio bat programatu eta hortik programatikoki exekutatu github copilot worksapce denborak neurtu ahal izateko. Ezinezkoa
 - Developer tools-ek vscode web moduan erakusten duela ikusita script baten bidez kontrolatu denbora. 
 Honek gauza gehiago automatizatzeko aukera ematen du!!!
+
+--------------------------------------------------
+Fitxategika banatu test file bakoitzeko it blokeak:
+- Test batzuek zentzua galtzen dute
+- Agian poible litzateko it blokeak borratzean const = ... blokeak barruan uztea erauzketa aurrezteko
+- Agian describe berdinean dauden testak batera exekuatu beharko lirateke
+- AST erabiltzen dituzten liburutegiak erabili
+- It bat beste baten barruan dagoen kasuetan zer egin???
+ Adibidez transaction feed
+
+-------------------------------------------------
+Script bat sortu promptak sortzeko:
+- Python-ekin hasieran
+- Azkenean js script bat lengoaia berdina erabiltzearren

@@ -12,7 +12,6 @@ npx cypress run --env ctrfReportOutput=resultsClaude3_5.json ".\cypress\tests\te
 
 -------------------------------------------------------------------
 
-
 Testak exekutatu ahal izateko pattern aldatu edo test karpeta barruan egin aldaketak:
 
 cypress-realworld-app\cypress.config.ts

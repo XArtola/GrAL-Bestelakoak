@@ -27,3 +27,20 @@ Test json bakoitzari bere izena jartzeko env varible erabilita:
 npx cypress run --env testResultFileName=my-custom-result.json --spec "C:\Users\xabia\OneDrive\Documentos\4.Maila\TFG-Bestelakoak\Bestelakoak\01_04_25-15_04_25\Hustuta\cypress-realworld-app\cypress\testsGeminiPro\ui\auth.spec.ts"
 npx cypress run --env ctrfReportOutput=my-custom-report.json
 npx cypress run --env ctrfReportOutput=resultsClaude3_5.json ".\cypress\tests\testsClaude3_5\ui"
+
+-------------------------------------------------------------
+
+Split tests
+
+node splitTestFilesV2.js ..\ui split-output
+
+--------------------------------------------------------------
+AST
+
+npx jscodeshift -t path/to/split-specs.js <ruta_a_tus_tests> --parser=ts --extensions=ts
+npx jscodeshift -t .\split-specs5.js ..\ui --parser=ts --extensions=ts
+
+--------------------------------------------------------------
+Prepare prompts
+
+node process_spec_files.js ..\ui\results .\extracted-test-info.json ./prompts
