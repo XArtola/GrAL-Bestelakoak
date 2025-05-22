@@ -1,0 +1,10 @@
+[Window Title]
+Install Extension
+
+[Main Instruction]
+Would you like to install 'VS Code Speech' extension from 'Microsoft'?
+
+[Content]
+Microphone support requires this extension.
+
+[Install Extension] [Cancel]

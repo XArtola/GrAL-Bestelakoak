@@ -1,0 +1,20 @@
+{
+  "name": "automate-user",
+  "displayName": "Automate User Behavior",
+  "publisher": "your-name",
+  "version": "0.0.1",
+  "engines": { "vscode": "^1.70.0" },
+  "activationEvents": ["onCommand:extension.automateUser"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "extension.automateUser",
+      "title": "Automate User Behavior"
+    }]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": { "typescript": "^4.8.4", "vscode": "^1.1.53" }
+}

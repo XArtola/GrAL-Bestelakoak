@@ -1,0 +1,83 @@
+{
+  "name": "copilot-chat-automator",
+  "displayName": "Copilot Chat Automator",
+  "description": "Automate interactions with GitHub Copilot Chat",
+  "version": "0.1.0",
+  "publisher": "user",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:copilot-chat-automator.sendMessage",
+    "onCommand:copilot-chat-automator.startAutomatedSession",
+    "onCommand:copilot-chat-automator.loadPromptSet",
+    "onView:copilotChatAutomatorView"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copilot-chat-automator.sendMessage",
+        "title": "Send Message to Copilot Chat"
+      },
+      {
+        "command": "copilot-chat-automator.startAutomatedSession",
+        "title": "Start Automated Copilot Chat Session"
+      },
+      {
+        "command": "copilot-chat-automator.loadPromptSet",
+        "title": "Load Prompt Set for Automation"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Copilot Chat Automator Settings",
+      "properties": {
+        "copilot-chat-automator.promptDelay": {
+          "type": "number",
+          "default": 1000,
+          "description": "Delay in milliseconds between automated prompts"
+        },
+        "copilot-chat-automator.saveResponses": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to save Copilot Chat responses to disk"
+        },
+        "copilot-chat-automator.outputFolder": {
+          "type": "string",
+          "default": "",
+          "description": "Folder path for saving responses (empty for default location)"
+        }
+      }
+    }
+  },
+  "extensionDependencies": [
+    "GitHub.copilot-chat"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.60.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "eslint": "^7.27.0",
+    "glob": "^7.1.7",
+    "mocha": "^11.2.2",
+    "typescript": "^4.3.2",
+    "vsce": "^2.15.0",
+    "vscode-test": "^1.5.2"
+  }
+}

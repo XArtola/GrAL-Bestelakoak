@@ -1,0 +1,184 @@
+{
+  "files": [
+    {
+      "file": "auth1.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "auth2.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "auth3.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "auth4.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "auth5.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "auth6.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "auth7.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "auth8.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "bankaccounts1.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "bankaccounts2.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "bankaccounts3.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "bankaccounts4.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "new-transaction1.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "new-transaction2.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "new-transaction3.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "new-transaction4.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "new-transaction5.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "new-transaction6.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "notifications1.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "notifications2.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "notifications3.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "notifications4.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "notifications5.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "notifications6.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "notifications7.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-feeds1.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-feeds2.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-feeds3.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-feeds4.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-feeds5.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-feeds6.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-feeds7.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-feeds8.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-feeds9.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-feeds10.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-feeds11.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-view1.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-view2.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-view3.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-view4.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-view5.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "transaction-view6.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "user-settings1.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "user-settings2.spec.txt",
+      "location": "preparePrompts/prompts"
+    },
+    {
+      "file": "user-settings3.spec.txt",
+      "location": "preparePrompts/prompts"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+.vscode/**
+.vscode-test/**
+node_modules/**
+src/**
+.gitignore
+**/*.ts
+**/*.map
+**/tsconfig.json
+# Keep sample-prompts.json as it's needed for examples
+# Explicitly include the out directory - it contains the compiled code
+!out/**

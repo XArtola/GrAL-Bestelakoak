@@ -1,0 +1,11 @@
+{
+  "name": "Sample Coding Questions",
+  "description": "A set of common coding questions to ask GitHub Copilot",
+  "prompts": [
+    "How do I implement a binary search in JavaScript?",
+    "What's the best way to handle errors in async/await functions?",
+    "Can you explain the difference between REST and GraphQL?",
+    "How do I optimize a React component that renders a large list?",
+    "Write a unit test for a function that calculates the Fibonacci sequence."
+  ]
+}

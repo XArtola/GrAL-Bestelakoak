@@ -1,0 +1,22 @@
+{
+  "name": "my-file-creator-extension",
+  "displayName": "My File Creator Extension",
+  "description": "An extension to programmatically create a file.",
+  "version": "0.0.1",
+  "publisher": "yourname", // Replace with your publisher name or leave as is for local testing
+  "engines": {
+    "vscode": "^1.80.0" // Adjust if necessary, but this is a recent stable version
+  },
+  "activationEvents": [
+    "onCommand:myFileCreator.createFile"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "myFileCreator.createFile",
+        "title": "Create My Custom File"
+      }
+    ]
+  }
+}

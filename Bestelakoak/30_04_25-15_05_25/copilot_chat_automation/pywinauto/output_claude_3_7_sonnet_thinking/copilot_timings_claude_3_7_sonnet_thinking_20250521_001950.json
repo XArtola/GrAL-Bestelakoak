@@ -1,0 +1,272 @@
+[
+    {
+        "requestTimestamp": "2025-05-20 22:07:41.899",
+        "requestTimeMs": 1747771661899,
+        "responseTimeMs": 1747771679932,
+        "durationMs": 18033
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:09:02.490",
+        "requestTimeMs": 1747771742490,
+        "responseTimeMs": 1747771797388,
+        "durationMs": 54898
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:10:33.087",
+        "requestTimeMs": 1747771833087,
+        "responseTimeMs": 1747771862194,
+        "durationMs": 29107
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:11:53.619",
+        "requestTimeMs": 1747771913619,
+        "responseTimeMs": 1747771942605,
+        "durationMs": 28986
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:13:14.133",
+        "requestTimeMs": 1747771994133,
+        "responseTimeMs": 1747772019229,
+        "durationMs": 25096
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:14:34.946",
+        "requestTimeMs": 1747772074946,
+        "responseTimeMs": 1747772110185,
+        "durationMs": 35239
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:15:55.549",
+        "requestTimeMs": 1747772155549,
+        "responseTimeMs": 1747772188916,
+        "durationMs": 33367
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:17:16.186",
+        "requestTimeMs": 1747772236186,
+        "responseTimeMs": 1747772273304,
+        "durationMs": 37118
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:18:36.800",
+        "requestTimeMs": 1747772316800,
+        "responseTimeMs": 1747772340211,
+        "durationMs": 23411
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:19:57.384",
+        "requestTimeMs": 1747772397384,
+        "responseTimeMs": 1747772420402,
+        "durationMs": 23018
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:21:18.034",
+        "requestTimeMs": 1747772478034,
+        "responseTimeMs": 1747772502944,
+        "durationMs": 24910
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:22:38.697",
+        "requestTimeMs": 1747772558697,
+        "responseTimeMs": 1747772584437,
+        "durationMs": 25740
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:23:59.136",
+        "requestTimeMs": 1747772639136,
+        "responseTimeMs": 1747772684563,
+        "durationMs": 45427
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:25:19.494",
+        "requestTimeMs": 1747772719494,
+        "responseTimeMs": 1747772743408,
+        "durationMs": 23914
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:26:40.038",
+        "requestTimeMs": 1747772800038,
+        "responseTimeMs": 1747772822681,
+        "durationMs": 22643
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:28:00.438",
+        "requestTimeMs": 1747772880438,
+        "responseTimeMs": 1747772899964,
+        "durationMs": 19526
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:29:21.080",
+        "requestTimeMs": 1747772961080,
+        "responseTimeMs": 1747772989901,
+        "durationMs": 28821
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:30:41.502",
+        "requestTimeMs": 1747773041502,
+        "responseTimeMs": 1747773068983,
+        "durationMs": 27481
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:32:01.968",
+        "requestTimeMs": 1747773121968,
+        "responseTimeMs": 1747773149820,
+        "durationMs": 27852
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:33:22.518",
+        "requestTimeMs": 1747773202518,
+        "responseTimeMs": 1747773222376,
+        "durationMs": 19858
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:34:42.961",
+        "requestTimeMs": 1747773282961,
+        "responseTimeMs": 1747773307174,
+        "durationMs": 24213
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:36:03.470",
+        "requestTimeMs": 1747773363470,
+        "responseTimeMs": 1747773382433,
+        "durationMs": 18963
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:37:23.722",
+        "requestTimeMs": 1747773443722,
+        "responseTimeMs": 1747773466017,
+        "durationMs": 22295
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:38:44.313",
+        "requestTimeMs": 1747773524313,
+        "responseTimeMs": 1747773554625,
+        "durationMs": 30312
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:40:04.670",
+        "requestTimeMs": 1747773604670,
+        "responseTimeMs": 1747773628631,
+        "durationMs": 23961
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:41:25.172",
+        "requestTimeMs": 1747773685172,
+        "responseTimeMs": 1747773714872,
+        "durationMs": 29700
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:42:45.399",
+        "requestTimeMs": 1747773765399,
+        "responseTimeMs": 1747773793449,
+        "durationMs": 28050
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:44:05.969",
+        "requestTimeMs": 1747773845969,
+        "responseTimeMs": 1747773868983,
+        "durationMs": 23014
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:45:26.490",
+        "requestTimeMs": 1747773926490,
+        "responseTimeMs": 1747773945063,
+        "durationMs": 18573
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:46:46.856",
+        "requestTimeMs": 1747774006856,
+        "responseTimeMs": 1747774024194,
+        "durationMs": 17338
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:48:07.383",
+        "requestTimeMs": 1747774087383,
+        "responseTimeMs": 1747774105817,
+        "durationMs": 18434
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:49:27.552",
+        "requestTimeMs": 1747774167552,
+        "responseTimeMs": 1747774188831,
+        "durationMs": 21279
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:50:47.997",
+        "requestTimeMs": 1747774247997,
+        "responseTimeMs": 1747774269231,
+        "durationMs": 21234
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:52:08.537",
+        "requestTimeMs": 1747774328537,
+        "responseTimeMs": 1747774352616,
+        "durationMs": 24079
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:53:29.071",
+        "requestTimeMs": 1747774409071,
+        "responseTimeMs": 1747774436123,
+        "durationMs": 27052
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:54:49.588",
+        "requestTimeMs": 1747774489588,
+        "responseTimeMs": 1747774516875,
+        "durationMs": 27287
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:56:09.889",
+        "requestTimeMs": 1747774569889,
+        "responseTimeMs": 1747774594174,
+        "durationMs": 24285
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:57:30.267",
+        "requestTimeMs": 1747774650267,
+        "responseTimeMs": 1747774683291,
+        "durationMs": 33024
+    },
+    {
+        "requestTimestamp": "2025-05-20 22:58:50.690",
+        "requestTimeMs": 1747774730690,
+        "responseTimeMs": 1747774755225,
+        "durationMs": 24535
+    },
+    {
+        "requestTimestamp": "2025-05-20 23:00:11.199",
+        "requestTimeMs": 1747774811199,
+        "responseTimeMs": 1747774835696,
+        "durationMs": 24497
+    },
+    {
+        "requestTimestamp": "2025-05-20 23:01:31.612",
+        "requestTimeMs": 1747774891612,
+        "responseTimeMs": 1747774914895,
+        "durationMs": 23283
+    },
+    {
+        "requestTimestamp": "2025-05-20 23:02:52.086",
+        "requestTimeMs": 1747774972086,
+        "responseTimeMs": 1747774995960,
+        "durationMs": 23874
+    },
+    {
+        "requestTimestamp": "2025-05-20 23:04:12.692",
+        "requestTimeMs": 1747775052692,
+        "responseTimeMs": 1747775072494,
+        "durationMs": 19802
+    },
+    {
+        "requestTimestamp": "2025-05-20 23:05:33.116",
+        "requestTimeMs": 1747775133116,
+        "responseTimeMs": 1747775155545,
+        "durationMs": 22429
+    },
+    {
+        "requestTimestamp": "2025-05-20 23:06:53.577",
+        "requestTimeMs": 1747775213577,
+        "responseTimeMs": 1747775230648,
+        "durationMs": 17071
+    }
+]
