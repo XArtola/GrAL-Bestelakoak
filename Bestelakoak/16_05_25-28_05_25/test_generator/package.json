@@ -1,0 +1,14 @@
+{
+  "name": "test-generator",
+  "version": "1.0.0",
+  "description": "Test generator for model-generated code",
+  "main": "test_generator_updated.js",  "dependencies": {
+    "glob": "^10.3.10",
+    "fs-extra": "^11.2.0"
+  },
+  "scripts": {
+    "start": "node test_generator_updated.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,304 @@
+{
+  "metadata": {
+    "generatedAt": "2025-05-25T15:22:39.002Z",
+    "analyzer": "LLM Efficiency Analyzer v1.0",
+    "totalLLMs": 6,
+    "weights": {
+      "codeQuality": 0.4,
+      "generationSpeed": 0.2,
+      "executionSuccess": 0.3,
+      "codeReuse": 0.1
+    }
+  },
+  "summary": {
+    "topPerformer": "Claude Sonnet 4",
+    "avgEfficiencyScore": 0.7486892503158898,
+    "totalTestsAnalyzed": 269
+  },
+  "rankings": [
+    {
+      "rank": 1,
+      "llm": "Claude Sonnet 4",
+      "overallScore": 0.9700606060606061,
+      "codeQuality": 0.9933333333333334,
+      "generationSpeed": 1,
+      "executionSuccess": 0.9090909090909091,
+      "codeReuse": 1,
+      "avgGenerationTime": 11474.155555555555,
+      "testCount": 45,
+      "passRate": 0.9090909090909091,
+      "emptyCodeRatio": 0
+    },
+    {
+      "rank": 2,
+      "llm": "GPT-4o",
+      "overallScore": 0.8491132079787634,
+      "codeQuality": 0.9431818181818182,
+      "generationSpeed": 0.9760827454105224,
+      "executionSuccess": 0.5961538461538461,
+      "codeReuse": 0.9777777777777777,
+      "avgGenerationTime": 12121.2,
+      "testCount": 45,
+      "passRate": 0.5961538461538461,
+      "emptyCodeRatio": 0.022222222222222223
+    },
+    {
+      "rank": 3,
+      "llm": "Claude 3.5 Sonnet",
+      "overallScore": 0.7313949924929675,
+      "codeQuality": 0.9409090909090909,
+      "generationSpeed": 0.46808607357594856,
+      "executionSuccess": 0.5454545454545454,
+      "codeReuse": 0.9777777777777777,
+      "avgGenerationTime": 25864.266666666666,
+      "testCount": 45,
+      "passRate": 0.5454545454545454,
+      "emptyCodeRatio": 0.022222222222222223
+    },
+    {
+      "rank": 4,
+      "llm": "Claude 3.7 Sonnet",
+      "overallScore": 0.715447766402649,
+      "codeQuality": 0.9317073170731707,
+      "generationSpeed": 0.4687949581008214,
+      "executionSuccess": 0.5263157894736842,
+      "codeReuse": 0.9111111111111111,
+      "avgGenerationTime": 25845.088888888888,
+      "testCount": 45,
+      "passRate": 0.5263157894736842,
+      "emptyCodeRatio": 0.08888888888888889
+    },
+    {
+      "rank": 5,
+      "llm": "Gemini 2.5 Pro",
+      "overallScore": 0.6291269401330376,
+      "codeQuality": 0.9804878048780487,
+      "generationSpeed": 0,
+      "executionSuccess": 0.4791666666666667,
+      "codeReuse": 0.9318181818181818,
+      "avgGenerationTime": 38527.61363636364,
+      "testCount": 44,
+      "passRate": 0.4791666666666667,
+      "emptyCodeRatio": 0.06818181818181818
+    },
+    {
+      "rank": 6,
+      "llm": "GPT-4o Mini",
+      "overallScore": 0.5969919888273147,
+      "codeQuality": 0.9918918918918918,
+      "generationSpeed": 0.010519594696225099,
+      "executionSuccess": 0.38636363636363635,
+      "codeReuse": 0.8222222222222222,
+      "avgGenerationTime": 38243.02222222222,
+      "testCount": 45,
+      "passRate": 0.38636363636363635,
+      "emptyCodeRatio": 0.17777777777777778
+    }
+  ],
+  "detailedMetrics": {
+    "Claude Sonnet 4": {
+      "generationMetrics": {
+        "totalTime": 516337,
+        "avgTime": 11474.155555555555,
+        "testCount": 45,
+        "timePerTest": 11474.155555555555
+      },
+      "qualityMetrics": {
+        "avgQuality": 0.9933333333333334,
+        "emptyCodeRatio": 0,
+        "validCodeRatio": 1,
+        "totalEntries": 45,
+        "emptyCount": 0,
+        "validCount": 45
+      },
+      "executionMetrics": {
+        "totalTests": 55,
+        "passedTests": 50,
+        "failedTests": 8,
+        "skippedTests": 0,
+        "passRate": 0.9090909090909091,
+        "failRate": 0.14545454545454545,
+        "executionTime": 198226,
+        "avgExecutionTime": 3604.109090909091
+      },
+      "efficiencyScores": {
+        "codeQualityScore": 0.9933333333333334,
+        "generationSpeedScore": 1,
+        "executionSuccessScore": 0.9090909090909091,
+        "codeReuseScore": 1,
+        "overallScore": 0.9700606060606061,
+        "ranking": 1
+      }
+    },
+    "GPT-4o": {
+      "generationMetrics": {
+        "totalTime": 545454,
+        "avgTime": 12121.2,
+        "testCount": 45,
+        "timePerTest": 12121.2
+      },
+      "qualityMetrics": {
+        "avgQuality": 0.9431818181818182,
+        "emptyCodeRatio": 0.022222222222222223,
+        "validCodeRatio": 0.9777777777777777,
+        "totalEntries": 45,
+        "emptyCount": 1,
+        "validCount": 44
+      },
+      "executionMetrics": {
+        "totalTests": 52,
+        "passedTests": 31,
+        "failedTests": 26,
+        "skippedTests": 0,
+        "passRate": 0.5961538461538461,
+        "failRate": 0.5,
+        "executionTime": 531814,
+        "avgExecutionTime": 10227.192307692309
+      },
+      "efficiencyScores": {
+        "codeQualityScore": 0.9431818181818182,
+        "generationSpeedScore": 0.9760827454105224,
+        "executionSuccessScore": 0.5961538461538461,
+        "codeReuseScore": 0.9777777777777777,
+        "overallScore": 0.8491132079787634,
+        "ranking": 2
+      }
+    },
+    "Claude 3.5 Sonnet": {
+      "generationMetrics": {
+        "totalTime": 1163892,
+        "avgTime": 25864.266666666666,
+        "testCount": 45,
+        "timePerTest": 25864.266666666666
+      },
+      "qualityMetrics": {
+        "avgQuality": 0.9409090909090909,
+        "emptyCodeRatio": 0.022222222222222223,
+        "validCodeRatio": 0.9777777777777777,
+        "totalEntries": 45,
+        "emptyCount": 1,
+        "validCount": 44
+      },
+      "executionMetrics": {
+        "totalTests": 44,
+        "passedTests": 24,
+        "failedTests": 33,
+        "skippedTests": 0,
+        "passRate": 0.5454545454545454,
+        "failRate": 0.75,
+        "executionTime": 488576,
+        "avgExecutionTime": 11104
+      },
+      "efficiencyScores": {
+        "codeQualityScore": 0.9409090909090909,
+        "generationSpeedScore": 0.46808607357594856,
+        "executionSuccessScore": 0.5454545454545454,
+        "codeReuseScore": 0.9777777777777777,
+        "overallScore": 0.7313949924929675,
+        "ranking": 3
+      }
+    },
+    "Claude 3.7 Sonnet": {
+      "generationMetrics": {
+        "totalTime": 1163029,
+        "avgTime": 25845.088888888888,
+        "testCount": 45,
+        "timePerTest": 25845.088888888888
+      },
+      "qualityMetrics": {
+        "avgQuality": 0.9317073170731707,
+        "emptyCodeRatio": 0.08888888888888889,
+        "validCodeRatio": 0.9111111111111111,
+        "totalEntries": 45,
+        "emptyCount": 4,
+        "validCount": 41
+      },
+      "executionMetrics": {
+        "totalTests": 38,
+        "passedTests": 20,
+        "failedTests": 30,
+        "skippedTests": 0,
+        "passRate": 0.5263157894736842,
+        "failRate": 0.7894736842105263,
+        "executionTime": 494287,
+        "avgExecutionTime": 13007.552631578947
+      },
+      "efficiencyScores": {
+        "codeQualityScore": 0.9317073170731707,
+        "generationSpeedScore": 0.4687949581008214,
+        "executionSuccessScore": 0.5263157894736842,
+        "codeReuseScore": 0.9111111111111111,
+        "overallScore": 0.715447766402649,
+        "ranking": 4
+      }
+    },
+    "Gemini 2.5 Pro": {
+      "generationMetrics": {
+        "totalTime": 1695215,
+        "avgTime": 38527.61363636364,
+        "testCount": 44,
+        "timePerTest": 38527.61363636364
+      },
+      "qualityMetrics": {
+        "avgQuality": 0.9804878048780487,
+        "emptyCodeRatio": 0.06818181818181818,
+        "validCodeRatio": 0.9318181818181818,
+        "totalEntries": 44,
+        "emptyCount": 3,
+        "validCount": 41
+      },
+      "executionMetrics": {
+        "totalTests": 48,
+        "passedTests": 23,
+        "failedTests": 29,
+        "skippedTests": 0,
+        "passRate": 0.4791666666666667,
+        "failRate": 0.6041666666666666,
+        "executionTime": 531140,
+        "avgExecutionTime": 11065.416666666666
+      },
+      "efficiencyScores": {
+        "codeQualityScore": 0.9804878048780487,
+        "generationSpeedScore": 0,
+        "executionSuccessScore": 0.4791666666666667,
+        "codeReuseScore": 0.9318181818181818,
+        "overallScore": 0.6291269401330376,
+        "ranking": 5
+      }
+    },
+    "GPT-4o Mini": {
+      "generationMetrics": {
+        "totalTime": 1720936,
+        "avgTime": 38243.02222222222,
+        "testCount": 45,
+        "timePerTest": 38243.02222222222
+      },
+      "qualityMetrics": {
+        "avgQuality": 0.9918918918918918,
+        "emptyCodeRatio": 0.17777777777777778,
+        "validCodeRatio": 0.8222222222222222,
+        "totalEntries": 45,
+        "emptyCount": 8,
+        "validCount": 37
+      },
+      "executionMetrics": {
+        "totalTests": 44,
+        "passedTests": 17,
+        "failedTests": 28,
+        "skippedTests": 0,
+        "passRate": 0.38636363636363635,
+        "failRate": 0.6363636363636364,
+        "executionTime": 543274,
+        "avgExecutionTime": 12347.136363636364
+      },
+      "efficiencyScores": {
+        "codeQualityScore": 0.9918918918918918,
+        "generationSpeedScore": 0.010519594696225099,
+        "executionSuccessScore": 0.38636363636363635,
+        "codeReuseScore": 0.8222222222222222,
+        "overallScore": 0.5969919888273147,
+        "ranking": 6
+      }
+    }
+  }
+}

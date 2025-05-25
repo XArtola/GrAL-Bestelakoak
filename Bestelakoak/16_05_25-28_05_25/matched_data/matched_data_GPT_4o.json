@@ -1,0 +1,452 @@
+[
+  {
+    "timestamp": "2025-05-21 16:08:48.718",
+    "output_file": "output_GPT_4o\\transaction-feeds7.spec_response_GPT_4o_20250521_161028.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds7.spec.txt",
+    "requestTimestamp": "2025-05-21 16:08:48.919",
+    "requestTimeMs": 1747836528919,
+    "responseTimeMs": 1747836555011,
+    "durationMs": 26092,
+    "code": "it(`filters public transaction feed by amount range`, () => {\n// Navigate to the public feed\ncy.getBySel(feedViews.public.tab).click();\ncy.wait(`@${feedViews.public.routeAlias}`);\n\n// Open the filter menu and set the amount range\ncy.getBySel(\"filter-menu\").click();\ncy.getBySel(\"filter-amount-min\").clear().type(dollarAmountRange.min);\ncy.getBySel(\"filter-amount-max\").clear().type(dollarAmountRange.max);\ncy.getBySel(\"filter-apply\").click();\n\n// Verify that all transactions in the feed fall within the specified range\ncy.getBySel(\"transaction-item\").each(($el) => {\nconst amount = parseFloat($el.find(\"[data-test='transaction-amount']\").text().replace(\"$\", \"\"));\nexpect(amount).to.be.gte(dollarAmountRange.min);\nexpect(amount).to.be.lte(dollarAmountRange.max);\n});\n});"
+  },
+  {
+    "timestamp": "2025-05-21 16:10:54.439",
+    "output_file": "output_GPT_4o\\auth1.spec_response_GPT_4o_20250521_161234.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth1.spec.txt",
+    "requestTimestamp": "2025-05-21 16:10:54.652",
+    "requestTimeMs": 1747836654652,
+    "responseTimeMs": 1747836663368,
+    "durationMs": 8716,
+    "code": "// Attempt to visit a protected page without authentication\ncy.visit(\"/bankaccounts\");\n\n// Assert that the user is redirected to the signin page\ncy.url().should(\"include\", \"/signin\");\n\n// Verify that the signin page elements are visible\ncy.getBySel(\"signin-title\").should(\"be.visible\");\ncy.getBySel(\"signin-username\").should(\"be.visible\");\ncy.getBySel(\"signin-password\").should(\"be.visible\");\ncy.getBySel(\"signin-submit\").should(\"be.visible\");"
+  },
+  {
+    "timestamp": "2025-05-21 16:13:00.134",
+    "output_file": "output_GPT_4o\\auth7.spec_response_GPT_4o_20250521_161440.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth7.spec.txt",
+    "requestTimestamp": "2025-05-21 16:13:00.344",
+    "requestTimeMs": 1747836780344,
+    "responseTimeMs": 1747836788580,
+    "durationMs": 8236,
+    "code": "// Visit the sign-in page\ncy.visit(\"/signin\");\n\n// Enter invalid username and valid password\ncy.get(\"[data-test=signin-username]\").type(loginCredentials.invalidUsername);\ncy.get(\"[data-test=signin-password]\").type(loginCredentials.validPassword);\n\n// Submit the form\ncy.get(\"[data-test=signin-submit]\").click();\n\n// Assert that the error message is displayed\ncy.get(\"[data-test=signin-error]\")\n.should(\"be.visible\")\n.and(\"contain\", \"Username or password is invalid\");\n//"
+  },
+  {
+    "timestamp": "2025-05-21 16:15:05.893",
+    "output_file": "output_GPT_4o\\user-settings1.spec_response_GPT_4o_20250521_161646.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\user-settings1.spec.txt",
+    "requestTimestamp": "2025-05-21 16:15:06.123",
+    "requestTimeMs": 1747836906123,
+    "responseTimeMs": 1747836920307,
+    "durationMs": 14184,
+    "code": "// Verify that the user settings form is visible\ncy.getBySel(\"user-settings-form\").should(\"be.visible\");\n\n// Verify that all input fields are present and pre-filled with user information\ncy.getBySel(\"user-settings-firstName-input\").should(\"have.value\", \"New First Name\");\ncy.getBySel(\"user-settings-lastName-input\").should(\"have.value\", \"New Last Name\");\ncy.getBySel(\"user-settings-email-input\").should(\"have.value\", \"email@email.com\");\ncy.getBySel(\"user-settings-phoneNumber-input\").should(\"have.value\", \"6155551212\");\n//"
+  },
+  {
+    "timestamp": "2025-05-21 16:17:11.658",
+    "output_file": "output_GPT_4o\\transaction-feeds4.spec_response_GPT_4o_20250521_161851.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds4.spec.txt",
+    "requestTimestamp": "2025-05-21 16:17:11.870",
+    "requestTimeMs": 1747837031870,
+    "responseTimeMs": 1747837045097,
+    "durationMs": 13227,
+    "code": "// Test to verify that the date range picker modal closes on mobile devices\nit(\"closes date range picker modal\", () => {\n// Open the date range picker\ncy.getBySel(\"date-range-picker\").click();\n\n// Verify that the modal is visible\ncy.getBySel(\"date-range-modal\").should(\"be.visible\");\n\n// Close the modal\ncy.getBySel(\"date-range-close-button\").click();\n\n// Verify that the modal is no longer visible\ncy.getBySel(\"date-range-modal\").should(\"not.exist\");\n});"
+  },
+  {
+    "timestamp": "2025-05-21 16:19:17.015",
+    "output_file": "output_GPT_4o\\transaction-view1.spec_response_GPT_4o_20250521_162057.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view1.spec.txt",
+    "requestTimestamp": "2025-05-21 16:19:17.228",
+    "requestTimeMs": 1747837157228,
+    "responseTimeMs": 1747837167587,
+    "durationMs": 10359,
+    "code": "// Navigate to a specific transaction view page\ncy.get(\"@testTransaction\").then((transaction) => {\nconst transactionId = transaction.id;\n\n// Visit the transaction view page\ncy.visit(`/transaction/${transactionId}`);\ncy.wait(\"@getTransaction\");\n\n// Assert that the navigation tabs are not visible\ncy.getBySel(\"nav-personal-tab\").should(\"not.exist\");\ncy.getBySel(\"nav-public-tab\").should(\"not.exist\");\ncy.getBySel(\"nav-contacts-tab\").should(\"not.exist\");\n\n// Verify that the transaction details are displayed\ncy.getBySel(\"transaction-detail-header\").should(\"be.visible\");\ncy.getBySel(\"transaction-detail-amount\").should(\"contain\", transaction.amount);"
+  },
+  {
+    "timestamp": "2025-05-21 16:21:22.868",
+    "output_file": "output_GPT_4o\\transaction-view6.spec_response_GPT_4o_20250521_162303.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view6.spec.txt",
+    "requestTimestamp": "2025-05-21 16:21:23.086",
+    "requestTimeMs": 1747837283086,
+    "responseTimeMs": 1747837295801,
+    "durationMs": 12715,
+    "code": ""
+  },
+  {
+    "timestamp": "2025-05-21 16:23:28.682",
+    "output_file": "output_GPT_4o\\transaction-view5.spec_response_GPT_4o_20250521_162508.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view5.spec.txt",
+    "requestTimestamp": "2025-05-21 16:23:28.894",
+    "requestTimeMs": 1747837408894,
+    "responseTimeMs": 1747837424267,
+    "durationMs": 15373,
+    "code": "// Step 1: Navigate to the transaction request\ncy.getBySel(\"transaction-item\")\n.contains(ctx.transactionRequest!.description)\n.click();\n\n// Step 2: Wait for the transaction details to load\ncy.wait(\"@getTransaction\");\n\n// Step 3: Reject the transaction request\ncy.getBySel(\"transaction-reject-request\").click();\n\n// Step 4: Wait for the transaction update to complete\ncy.wait(\"@updateTransaction\");\n\n// Step 5: Verify the transaction status is updated to \"rejected\"\ncy.getBySel(\"transaction-payment-status\").should(\"contain\", \"Rejected\");\n\n// Step 6: Verify the transaction no longer appears in the pending list\ncy.getBySel(\"nav-personal-tab\").click();\ncy.wait(\"@personalTransactions\");\ncy.getBySel(\"transaction-item\")\n.should(\"not.contain\", ctx.transactionRequest!.description);"
+  },
+  {
+    "timestamp": "2025-05-21 16:25:34.325",
+    "output_file": "output_GPT_4o\\new-transaction4.spec_response_GPT_4o_20250521_162714.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction4.spec.txt",
+    "requestTimestamp": "2025-05-21 16:25:34.527",
+    "requestTimeMs": 1747837534527,
+    "responseTimeMs": 1747837545011,
+    "durationMs": 10484,
+    "code": "// Navigate to the new transaction form\ncy.getBySel(\"new-transaction\").click();\ncy.wait(\"@allUsers\");\n\n// Search for the contact user\ncy.getBySel(\"user-list-search-input\").type(ctx.contact!.firstName);\ncy.wait(\"@usersSearch\");\n\n// Select the first user from the search results\ncy.getBySel(\"user-list-item\").first().click();\n\n// Enter payment amount and description\ncy.getBySel(\"amount-input\").type(userInfo.paymentTransactions[0].amount);\ncy.getBySel(\"transaction-create-description-input\").type(userInfo.paymentTransactions[0].description);\n\n// Submit the payment\ncy.getBySel(\"transaction-create-submit-payment\").click();\ncy.wait(\"@createTransaction\");\n\n// Verify the transaction was created successfully\ncy.getBySel(\"transaction-success\").should(\"contain\", \"Transaction submitted successfully\");\n\n// Logout and login as the receiver\ncy.getBySel(\"sidenav-signout\").click();\ncy.loginByXstate(ctx.contact!.username);\n\n// Verify the transaction appears in the receiver's transaction list\ncy.getBySel(\"nav-personal-tab\").click();\ncy.wait(\"@personalTransactions\");\ncy.getBySel(\"transaction-item\").first().should(\"contain\", userInfo.paymentTransactions[0].description);\ncy.getBySel(\"transaction-item\").first().should(\"contain\", `$${userInfo.paymentTransactions[0].amount}`);"
+  },
+  {
+    "timestamp": "2025-05-21 16:27:39.983",
+    "output_file": "output_GPT_4o\\auth3.spec_response_GPT_4o_20250521_162920.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth3.spec.txt",
+    "requestTimestamp": "2025-05-21 16:27:40.188",
+    "requestTimeMs": 1747837660188,
+    "responseTimeMs": 1747837669726,
+    "durationMs": 9538,
+    "code": "// Visit the sign-in page\ncy.visit(\"/signin\");\n\n// Fill in login credentials\ncy.get(\"[data-test=signin-username]\").type(userInfo.username);\ncy.get(\"[data-test=signin-password]\").type(userInfo.password);\n\n// Check the \"Remember Me\" checkbox\ncy.get(\"[data-test=signin-remember-me]\").check();\n\n// Submit the login form\ncy.get(\"[data-test=signin-submit]\").click();\n\n// Verify successful login by checking the URL\ncy.location(\"pathname\").should(\"equal\", \"/\");\n\n// Verify the session cookie exists and has a long expiration date\ncy.getCookie(\"connect.sid\").then((cookie) => {\nconst cookieExpirationDate = new Date(cookie!.expiry! * 1000);\nconst now = new Date();\nconst thirtyDaysFromNow = new Date(now.setDate(now.getDate() + 30));\n\n// Assert that the cookie expiration date is approximately 30 days from now\nconst daysDifference = Math.round((cookieExpirationDate.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));\nexpect(daysDifference).to.be.closeTo(30, 1);\n});\n//"
+  },
+  {
+    "timestamp": "2025-05-21 16:29:45.572",
+    "output_file": "output_GPT_4o\\new-transaction5.spec_response_GPT_4o_20250521_163125.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction5.spec.txt",
+    "requestTimestamp": "2025-05-21 16:29:45.777",
+    "requestTimeMs": 1747837785777,
+    "responseTimeMs": 1747837803055,
+    "durationMs": 17278,
+    "code": "// Navigate to the new transaction form\ncy.getBySel(\"new-transaction\").click();\ncy.wait(\"@allUsers\");\n\n// Search for the contact user\ncy.getBySel(\"user-list-search-input\").type(ctx.contact!.firstName);\ncy.wait(\"@usersSearch\");\n\n// Select the first user from the search results\ncy.getBySel(\"user-list-item\").first().click();\n\n// Fill out the request form\ncy.getBySel(\"amount-input\").type(userInfo.requestTransactions[0].amount);\ncy.getBySel(\"transaction-create-description-input\").type(userInfo.requestTransactions[0].description);\n\n// Submit the transaction request\ncy.getBySel(\"transaction-create-submit-request\").click();\ncy.wait(\"@createTransaction\");\n\n// Log out and log in as the receiver\ncy.getBySel(\"sidenav-signout\").click();\ncy.loginByXstate(ctx.contact!.username);\n\n// Navigate to personal transactions\ncy.getBySel(\"nav-personal-tab\").click();\ncy.wait(\"@personalTransactions\");\n\n// Find and click on the transaction request\ncy.getBySel(\"transaction-item\").first().should(\"contain\", userInfo.requestTransactions[0].description).click();\n\n// Accept the transaction request\ncy.getBySel(\"transaction-accept-request\").click();\ncy.wait(\"@updateTransaction\");\n\n// Verify the transaction status is updated\ncy.getBySel(\"transaction-item\").first().should(\"contain\", \"accepted\");"
+  },
+  {
+    "timestamp": "2025-05-21 16:31:51.263",
+    "output_file": "output_GPT_4o\\user-settings3.spec_response_GPT_4o_20250521_163331.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\user-settings3.spec.txt",
+    "requestTimestamp": "2025-05-21 16:31:51.457",
+    "requestTimeMs": 1747837911457,
+    "responseTimeMs": 1747837924845,
+    "durationMs": 13388,
+    "code": "// Step 1: Clear existing values in the form fields\ncy.getBySel(\"user-settings-firstName-input\").clear();\ncy.getBySel(\"user-settings-lastName-input\").clear();\ncy.getBySel(\"user-settings-email-input\").clear();\ncy.getBySel(\"user-settings-phoneNumber-input\").clear();\n\n// Step 2: Enter new user information\ncy.getBySel(\"user-settings-firstName-input\").type(userInfo.firstName);\ncy.getBySel(\"user-settings-lastName-input\").type(userInfo.lastName);\ncy.getBySel(\"user-settings-email-input\").type(userInfo.email);\ncy.getBySel(\"user-settings-phoneNumber-input\").type(userInfo.phoneNumber);\n\n// Step 3: Submit the form\ncy.getBySel(\"user-settings-submit\").click();\n\n// Step 4: Wait for the update request to complete\ncy.wait(\"@updateUser\").its(\"response.statusCode\").should(\"equal\", 204);\n\n// Step 5: Reload the page to verify changes persisted\ncy.reload();\n\n// Step 6: Verify updated information is displayed in the form\ncy.getBySel(\"user-settings-firstName-input\").should(\"have.value\", userInfo.firstName);\ncy.getBySel(\"user-settings-lastName-input\").should(\"have.value\", userInfo.lastName);\ncy.getBySel(\"user-settings-email-input\").should(\"have.value\", userInfo.email);\ncy.getBySel(\"user-settings-phoneNumber-input\").should(\"have.value\", userInfo.phoneNumber);\n\n// Step 7: Verify success notification is displayed\ncy.getBySel(\"snackbar-success\").should(\"be.visible\").and(\"contain\", \"User Settings Updated Successfully\");\n//"
+  },
+  {
+    "timestamp": "2025-05-21 16:33:57.493",
+    "output_file": "output_GPT_4o\\bankaccounts3.spec_response_GPT_4o_20250521_163537.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\bankaccounts3.spec.txt",
+    "requestTimestamp": "2025-05-21 16:33:57.692",
+    "requestTimeMs": 1747838037692,
+    "responseTimeMs": 1747838047488,
+    "durationMs": 9796,
+    "code": "// Step 1: Navigate to the bank accounts page\ncy.getBySel(\"sidenav-bankaccounts\").click();\n\n// Step 2: Wait for the bank accounts list to load\ncy.wait(\"@gqlListBankAccountQuery\");\n\n// Step 3: Select the first bank account and click the delete button\ncy.getBySel(\"bankaccount-list\")\n.find(\"[data-test='bankaccount-delete']\")\n.first()\n.click();\n\n// Step 4: Confirm the deletion\ncy.getBySel(\"confirmation-dialog-confirm\").click();\n\n// Step 5: Wait for the delete mutation to complete\ncy.wait(\"@gqlDeleteBankAccountMutation\");\n\n// Step 6: Assert that the bank account is no longer visible in the list\ncy.getBySel(\"bankaccount-list\")\n.should(\"not.contain\", \"The Best Bank\");\n//"
+  },
+  {
+    "timestamp": "2025-05-21 16:36:03.094",
+    "output_file": "output_GPT_4o\\user-settings2.spec_response_GPT_4o_20250521_163743.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\user-settings2.spec.txt",
+    "requestTimestamp": "2025-05-21 16:36:03.293",
+    "requestTimeMs": 1747838163293,
+    "responseTimeMs": 1747838174055,
+    "durationMs": 10762,
+    "code": "// Clear all required fields and submit the form\ncy.getBySel(\"user-settings-firstName-input\").clear();\ncy.getBySel(\"user-settings-lastName-input\").clear();\ncy.getBySel(\"user-settings-email-input\").clear();\ncy.getBySel(\"user-settings-phoneNumber-input\").clear();\ncy.getBySel(\"user-settings-submit\").click();\n\n// Verify validation error messages are displayed\ncy.contains(\"Enter a first name\").should(\"be.visible\");\ncy.contains(\"Enter a last name\").should(\"be.visible\");\ncy.contains(\"Enter an email address\").should(\"be.visible\");\ncy.contains(\"Enter a phone number\").should(\"be.visible\");\n//"
+  },
+  {
+    "timestamp": "2025-05-21 16:38:08.755",
+    "output_file": "output_GPT_4o\\auth8.spec_response_GPT_4o_20250521_163948.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth8.spec.txt",
+    "requestTimestamp": "2025-05-21 16:38:08.938",
+    "requestTimeMs": 1747838288938,
+    "responseTimeMs": 1747838295991,
+    "durationMs": 7053,
+    "code": "// Visit the sign-in page\ncy.visit(\"/signin\");\n\n// Enter valid username but invalid password\ncy.get(\"[data-test='signin-username']\").type(userInfo.username);\ncy.get(\"[data-test='signin-password']\").type(loginCredentials.invalidPassword);\n\n// Submit the login form\ncy.get(\"[data-test='signin-submit']\").click();\n\n// Verify error message is displayed\ncy.get(\"[data-test='signin-error']\")\n.should(\"be.visible\")\n.and(\"contain\", \"Username or password is invalid\");\n//"
+  },
+  {
+    "timestamp": "2025-05-21 16:40:14.381",
+    "output_file": "output_GPT_4o\\new-transaction1.spec_response_GPT_4o_20250521_164154.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction1.spec.txt",
+    "requestTimestamp": "2025-05-21 16:40:14.590",
+    "requestTimeMs": 1747838414590,
+    "responseTimeMs": 1747838425714,
+    "durationMs": 11124,
+    "code": "// Navigate to the new transaction form\ncy.getBySel(\"new-transaction\").click();\ncy.wait(\"@allUsers\");\n\n// Search for the contact user\ncy.getBySel(\"user-list-search-input\").type(ctx.contact!.firstName);\ncy.wait(\"@usersSearch\");\n\n// Select the first user from the search results\ncy.getBySel(\"user-list-item\").first().click();\n\n// Fill out the payment form\ncy.getBySel(\"amount-input\").type(\"35\");\ncy.getBySel(\"transaction-create-description-input\").type(\"Sushi dinner 🍣\");\n\n// Submit the payment\ncy.getBySel(\"transaction-create-submit-payment\").click();\ncy.wait(\"@createTransaction\");\n\n// Verify the transaction was created successfully\ncy.getBySel(\"transaction-success\").should(\"contain\", \"Transaction submitted successfully\");"
+  },
+  {
+    "timestamp": "2025-05-21 16:42:20.021",
+    "output_file": "output_GPT_4o\\auth4.spec_response_GPT_4o_20250521_164400.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth4.spec.txt",
+    "requestTimestamp": "2025-05-21 16:42:20.226",
+    "requestTimeMs": 1747838540226,
+    "responseTimeMs": 1747838552459,
+    "durationMs": 12233,
+    "code": "// Step 1: Visit the signup page\ncy.visit(\"/signup\");\n\n// Step 2: Fill out the signup form\ncy.getBySel(\"signup-first-name\").type(userInfo.firstName);\ncy.getBySel(\"signup-last-name\").type(userInfo.lastName);\ncy.getBySel(\"signup-username\").type(userInfo.username);\ncy.getBySel(\"signup-password\").type(userInfo.password);\ncy.getBySel(\"signup-confirmPassword\").type(userInfo.password);\n\n// Step 3: Submit the signup form\ncy.getBySel(\"signup-submit\").click();\n\n// Step 4: Verify redirection to the signin page\ncy.location(\"pathname\").should(\"equal\", \"/signin\");\n\n// Step 5: Login with the newly created user credentials\ncy.getBySel(\"signin-username\").type(userInfo.username);\ncy.getBySel(\"signin-password\").type(userInfo.password);\ncy.getBySel(\"signin-submit\").click();\n\n// Step 6: Verify redirection to the home page\ncy.location(\"pathname\").should(\"equal\", \"/\");\n\n// Step 7: Logout\nif (isMobile()) {\ncy.getBySel(\"sidenav-toggle\").click();\n}\ncy.getBySel(\"sidenav-signout\").click();\n\n// Step 8: Verify redirection back to the signin page\ncy.location(\"pathname\").should(\"equal\", \"/signin\");\n//"
+  },
+  {
+    "timestamp": "2025-05-21 16:44:25.624",
+    "output_file": "output_GPT_4o\\notifications5.spec_response_GPT_4o_20250521_164605.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications5.spec.txt",
+    "requestTimestamp": "2025-05-21 16:44:25.839",
+    "requestTimeMs": 1747838665839,
+    "responseTimeMs": 1747838677588,
+    "durationMs": 11749,
+    "code": "// Log in as User A\ncy.loginByXstate(ctx.userA.username);\n\n// Navigate to the new transaction page\ncy.getBySel(\"nav-top-new-transaction\").click();\n\n// Select User B from the user list\ncy.getBySel(\"user-list-search-input\").type(ctx.userB.firstName);\ncy.getBySel(\"user-list-item\").contains(ctx.userB.firstName).click();\n\n// Enter payment details\ncy.getBySel(\"amount-input\").type(\"50\");\ncy.getBySel(\"transaction-create-description-input\").type(\"Dinner payment\");\n\n// Submit the payment\ncy.getBySel(\"transaction-create-submit-payment\").click();\ncy.wait(\"@createTransaction\");\n\n// Log out User A\ncy.getBySel(\"sidenav-signout\").click();\n\n// Log in as User B\ncy.loginByXstate(ctx.userB.username);\n\n// Check for notifications\ncy.getBySel(\"sidenav-notifications\").click();\ncy.wait(\"@getNotifications\");\n\n// Verify the notification about the payment exists\ncy.getBySel(\"notification-list-item\")\n.first()\n.should(\"contain\", ctx.userA.firstName)\n.and(\"contain\", \"paid you\");"
+  },
+  {
+    "timestamp": "2025-05-21 16:46:31.068",
+    "output_file": "output_GPT_4o\\new-transaction6.spec_response_GPT_4o_20250521_164811.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction6.spec.txt",
+    "requestTimestamp": "2025-05-21 16:46:31.267",
+    "requestTimeMs": 1747838791267,
+    "responseTimeMs": 1747838799872,
+    "durationMs": 8605,
+    "code": "// Test for searching a user by attribute\nsearchAttrs.forEach((attr: keyof User) => {\nit(attr, () => {\n// Step 1: Get the attribute value from the contact\nconst searchValue = ctx.contact![attr];\n\n// Step 2: Search for the user by the attribute\ncy.getBySelLike(\"user-list-search-input\").clear().type(searchValue);\ncy.wait(\"@usersSearch\");\n\n// Step 3: Verify that the search results contain the user\ncy.getBySelLike(\"user-list-item\")\n.should(\"have.length.at.least\", 1)\n.and(\"contain\", searchValue);\n});\n});"
+  },
+  {
+    "timestamp": "2025-05-21 16:48:36.684",
+    "output_file": "output_GPT_4o\\auth5.spec_response_GPT_4o_20250521_165016.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth5.spec.txt",
+    "requestTimestamp": "2025-05-21 16:48:36.870",
+    "requestTimeMs": 1747838916870,
+    "responseTimeMs": 1747838926552,
+    "durationMs": 9682,
+    "code": "// Visit the sign-in page\ncy.visit(\"/signin\");\n\n// Attempt to submit the form without entering any credentials\ncy.get(\"button[type='submit']\").click();\n\n// Assert that error messages are displayed for missing username and password\ncy.contains(\"Username is required\").should(\"be.visible\");\ncy.contains(\"Password is required\").should(\"be.visible\");\n\n// Enter an invalid username and valid password\ncy.get(\"input[name='username']\").type(loginCredentials.invalidUsername);\ncy.get(\"input[name='password']\").type(userInfo.password);\ncy.get(\"button[type='submit']\").click();\n\n// Assert that an error message is displayed for invalid username\ncy.contains(\"Incorrect username or password.\").should(\"be.visible\");\n\n// Enter a valid username and invalid password\ncy.get(\"input[name='username']\").clear().type(userInfo.username);\ncy.get(\"input[name='password']\").clear().type(loginCredentials.invalidPassword);\ncy.get(\"button[type='submit']\").click();\n\n// Assert that an error message is displayed for invalid password\ncy.contains(\"Incorrect username or password.\").should(\"be.visible\");\n//"
+  },
+  {
+    "timestamp": "2025-05-21 16:50:42.213",
+    "output_file": "output_GPT_4o\\notifications3.spec_response_GPT_4o_20250521_165222.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications3.spec.txt",
+    "requestTimestamp": "2025-05-21 16:50:42.412",
+    "requestTimeMs": 1747839042412,
+    "responseTimeMs": 1747839054759,
+    "durationMs": 12347,
+    "code": "// Log in as User A\ncy.loginByXstate(ctx.userA.username);\n\n// Find a transaction by User B\ncy.database(\"find\", \"transactions\", { senderId: ctx.userB.id"
+  },
+  {
+    "timestamp": "2025-05-21 16:52:47.842",
+    "output_file": "output_GPT_4o\\transaction-feeds1.spec_response_GPT_4o_20250521_165427.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds1.spec.txt",
+    "requestTimestamp": "2025-05-21 16:52:48.037",
+    "requestTimeMs": 1747839168037,
+    "responseTimeMs": 1747839175109,
+    "durationMs": 7072,
+    "code": "// Test to toggle the navigation drawer\nit(\"toggles the navigation drawer\", () => {\n// Open the navigation drawer\ncy.getBySel(\"nav-toggle\").click();\n\n// Assert that the navigation drawer is visible\ncy.getBySel(\"sidenav\").should(\"be.visible\");\n\n// Close the navigation drawer\ncy.getBySel(\"nav-toggle\").click();\n\n// Assert that the navigation drawer is hidden\ncy.getBySel(\"sidenav\").should(\"not.be.visible\");\n});"
+  },
+  {
+    "timestamp": "2025-05-21 16:54:53.363",
+    "output_file": "output_GPT_4o\\transaction-feeds8.spec_response_GPT_4o_20250521_165633.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds8.spec.txt",
+    "requestTimestamp": "2025-05-21 16:54:53.560",
+    "requestTimeMs": 1747839293560,
+    "responseTimeMs": 1747839306310,
+    "durationMs": 12750,
+    "code": "it(`does not show public transactions for out of range amount limits`, () => {\n// Navigate to the public feed\ncy.getBySel(feedViews.public.tab).click();\ncy.wait(`@${feedViews.public.routeAlias}`);\n\n// Apply the amount range filter\ncy.getBySel(\"amount-range-filter\").click();\ncy.getBySel(\"amount-range-min\").clear().type(dollarAmountRange.min.toString());\ncy.getBySel(\"amount-range-max\").clear().type(dollarAmountRange.max.toString());\ncy.getBySel(\"amount-range-apply\").click();\n\n// Verify that no transactions are displayed outside the specified range\ncy.getBySel(\"transaction-item\").each(($el) => {\nconst amount = parseFloat($el.find(\"[data-test='transaction-amount']\").text().replace(/[$,]/g, \"\"));\nexpect(amount).to.be.within(dollarAmountRange.min, dollarAmountRange.max);\n});\n});"
+  },
+  {
+    "timestamp": "2025-05-21 16:56:58.923",
+    "output_file": "output_GPT_4o\\auth6.spec_response_GPT_4o_20250521_165839.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth6.spec.txt",
+    "requestTimestamp": "2025-05-21 16:56:59.124",
+    "requestTimeMs": 1747839419124,
+    "responseTimeMs": 1747839429104,
+    "durationMs": 9980,
+    "code": "// Visit the signup page\ncy.visit(\"/signup\");\n\n// Submit the form without filling any fields\ncy.get(\"[data-test='signup-submit']\").click();\n\n// Assert error messages for required fields\ncy.get(\"[data-test='signup-first-name']\").should(\"have.class\", \"Mui-error\");\ncy.get(\"[data-test='signup-last-name']\").should(\"have.class\", \"Mui-error\");\ncy.get(\"[data-test='signup-username']\").should(\"have.class\", \"Mui-error\");\ncy.get(\"[data-test='signup-password']\").should(\"have.class\", \"Mui-error\");\ncy.get(\"[data-test='signup-confirmPassword']\").should(\"have.class\", \"Mui-error\");\n\n// Enter mismatched passwords\ncy.get(\"[data-test='signup-first-name']\").type(userInfo.firstName);\ncy.get(\"[data-test='signup-last-name']\").type(userInfo.lastName);\ncy.get(\"[data-test='signup-username']\").type(userInfo.username);\ncy.get(\"[data-test='signup-password']\").type(userInfo.password);\ncy.get(\"[data-test='signup-confirmPassword']\").type(loginCredentials.anotherInvalidPassword);\ncy.get(\"[data-test='signup-submit']\").click();\n\n// Assert error message for mismatched passwords\ncy.contains(\"Password does not match\").should(\"be.visible\");\n\n// Enter a short password\ncy.get(\"[data-test='signup-password']\").clear().type(\"123\");\ncy.get(\"[data-test='signup-confirmPassword']\").clear().type(\"123\");\ncy.get(\"[data-test='signup-submit']\").click();\n\n// Assert error message for password length\ncy.contains(\"Password must contain at least 4 characters\").should(\"be.visible\");\n//"
+  },
+  {
+    "timestamp": "2025-05-21 16:59:04.459",
+    "output_file": "output_GPT_4o\\bankaccounts1.spec_response_GPT_4o_20250521_170044.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\bankaccounts1.spec.txt",
+    "requestTimestamp": "2025-05-21 16:59:04.678",
+    "requestTimeMs": 1747839544678,
+    "responseTimeMs": 1747839558291,
+    "durationMs": 13613,
+    "code": "// Navigate to the Bank Accounts page\ncy.getBySel(\"sidenav-bankaccounts\").click();\n\n// Click on the \"Create\" button to open the bank account form\ncy.getBySel(\"bankaccount-new\").click();\n\n// Fill out the bank account form with the provided test data\ncy.getBySel(\"bankaccount-bankName-input\").type(\"The Best Bank\");\ncy.getBySel(\"bankaccount-routingNumber-input\").type(\"987654321\");\ncy.getBySel(\"bankaccount-accountNumber-input\").type(\"123456789\");\n\n// Submit the form\ncy.getBySel(\"bankaccount-submit\").click();\n\n// Wait for the GraphQL mutation to complete\ncy.wait(\"@gqlCreateBankAccountMutation\");\n\n// Assert that the new bank account appears in the list\ncy.getBySel(\"bankaccount-list\").should(\"contain\", \"The Best Bank\");\n//"
+  },
+  {
+    "timestamp": "2025-05-21 17:01:09.810",
+    "output_file": "output_GPT_4o\\transaction-feeds3.spec_response_GPT_4o_20250521_170249.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds3.spec.txt",
+    "requestTimestamp": "2025-05-21 17:01:10.021",
+    "requestTimeMs": 1747839670021,
+    "responseTimeMs": 1747839682288,
+    "durationMs": 12267,
+    "code": "// Navigate to the public feed tab\ncy.getBySel(feedViews.public.tab).click();\ncy.wait(`@${feedViews.public.routeAlias}`);\n\n// Assert that the public feed is visible and contains transactions\ncy.getBySel(\"transaction-list\").should(\"be.visible\");\ncy.getBySel(\"transaction-item\").should(\"have.length.at.least\", 1);\n\n// Scroll to the bottom to trigger pagination\ncy.scrollTo(\"bottom\");\ncy.wait(`@${feedViews.public.routeAlias}`);\n\n// Assert that more transactions are loaded\ncy.getBySel(\"transaction-item\").should(\"have.length.greaterThan\", 1);"
+  },
+  {
+    "timestamp": "2025-05-21 17:03:15.304",
+    "output_file": "output_GPT_4o\\transaction-view4.spec_response_GPT_4o_20250521_170455.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view4.spec.txt",
+    "requestTimestamp": "2025-05-21 17:03:15.480",
+    "requestTimeMs": 1747839795480,
+    "responseTimeMs": 1747839803294,
+    "durationMs": 7814,
+    "code": "// Step 1: Navigate to the transaction request\ncy.getBySel(\"transaction-item\")\n.contains(ctx.transactionRequest!.description)\n.click();\n\n// Step 2: Wait for the transaction details to load\ncy.wait(\"@getTransaction\");\n\n// Step 3: Accept the transaction request\ncy.getBySel(\"transaction-accept-request\").click();\n\n// Step 4: Wait for the transaction update to complete\ncy.wait(\"@updateTransaction\");\n\n// Step 5: Verify the transaction status is updated to \"complete\"\ncy.getBySel(\"transaction-payment-status\").should(\"contain\", \"Complete\");\n//"
+  },
+  {
+    "timestamp": "2025-05-21 17:05:20.847",
+    "output_file": "output_GPT_4o\\transaction-view3.spec_response_GPT_4o_20250521_170701.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view3.spec.txt",
+    "requestTimestamp": "2025-05-21 17:05:21.046",
+    "requestTimeMs": 1747839921046,
+    "responseTimeMs": 1747839937243,
+    "durationMs": 16197,
+    "code": "// Test adding a comment to a transaction\nit(\"comments on a transaction\", () => {\n// Navigate to the first transaction in the personal feed\ncy.getBySel(\"transaction-item\").first().click();\ncy.wait(\"@getTransaction\");\n\n// Add a comment to the transaction\nconst commentText = \"This is a test comment.\";\ncy.getBySel(\"transaction-comment-input\").type(commentText);\ncy.getBySel(\"transaction-comment-submit\").click();\n\n// Wait for the comment to be posted\ncy.wait(\"@postComment\");\n\n// Verify the comment appears in the transaction details\ncy.getBySel(\"transaction-comment\").should(\"contain\", commentText);\n});"
+  },
+  {
+    "timestamp": "2025-05-21 17:07:26.387",
+    "output_file": "output_GPT_4o\\transaction-feeds6.spec_response_GPT_4o_20250521_170906.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds6.spec.txt",
+    "requestTimestamp": "2025-05-21 17:07:26.594",
+    "requestTimeMs": 1747840046594,
+    "responseTimeMs": 1747840057563,
+    "durationMs": 10969,
+    "code": "// Navigate to the public feed\ncy.getBySel(feedViews.public.tab).click();\ncy.wait(`@${feedViews.public.routeAlias}`);\n\n// Apply a date range filter that excludes all transactions\ncy.getBySel(\"date-range-filter\").click();\ncy.getBySel(\"date-range-start\").type(\"2000-01-01\");\ncy.getBySel(\"date-range-end\").type(\"2000-12-31\");\ncy.getBySel(\"date-range-apply\").click();\n\n// Assert that no transactions are displayed\ncy.getBySel(\"transaction-item\").should(\"not.exist\");"
+  },
+  {
+    "timestamp": "2025-05-21 17:09:31.952",
+    "output_file": "output_GPT_4o\\notifications2.spec_response_GPT_4o_20250521_171112.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications2.spec.txt",
+    "requestTimestamp": "2025-05-21 17:09:32.159",
+    "requestTimeMs": 1747840172159,
+    "responseTimeMs": 1747840186693,
+    "durationMs": 14534,
+    "code": "// Step 1: Find a transaction between User A and User B\ncy.database(\"find\", \"transactions\", { senderId: ctx.userA.id, receiverId: ctx.userB.id"
+  },
+  {
+    "timestamp": "2025-05-21 17:11:37.503",
+    "output_file": "output_GPT_4o\\notifications6.spec_response_GPT_4o_20250521_171317.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications6.spec.txt",
+    "requestTimestamp": "2025-05-21 17:11:37.711",
+    "requestTimeMs": 1747840297711,
+    "responseTimeMs": 1747840310520,
+    "durationMs": 12809,
+    "code": "// Log in as User A\ncy.loginByXstate(ctx.userA.username);\n\n// Navigate to the new transaction page\ncy.getBySel(\"new-transaction\").click();\n\n// Search for User C in the user list and select them\ncy.getBySel(\"user-list-search-input\").type(ctx.userC.firstName);\ncy.getBySel(\"user-list-item\").contains(ctx.userC.firstName).click();\n\n// Enter the payment request details\ncy.getBySel(\"amount-input\").type(\"75\");\ncy.getBySel(\"transaction-create-description-input\").type(\"Concert tickets\");\n\n// Submit the payment request\ncy.getBySel(\"transaction-create-submit-request\").click();\ncy.wait(\"@createTransaction\");\n\n// Log out as User A\ncy.getBySel(\"sidenav-signout\").click();\n\n// Log in as User C\ncy.loginByXstate(ctx.userC.username);\n\n// Check for the notification\ncy.getBySel(\"sidenav-notifications\").click();\ncy.getBySel(\"notification-list\").should(\"contain\", ctx.userA.firstName).and(\"contain\", \"requested\");"
+  },
+  {
+    "timestamp": "2025-05-21 17:13:43.065",
+    "output_file": "output_GPT_4o\\transaction-feeds9.spec_response_GPT_4o_20250521_171523.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds9.spec.txt",
+    "requestTimestamp": "2025-05-21 17:13:43.269",
+    "requestTimeMs": 1747840423269,
+    "responseTimeMs": 1747840432372,
+    "durationMs": 9103,
+    "code": "it(\"mine feed only shows personal transactions\", () => {\n// Navigate to the personal feed\ncy.getBySel(feedViews.personal.tab).click();\ncy.wait(`@${feedViews.personal.routeAlias}`);\n\n// Verify that all transactions in the personal feed involve the current user\ncy.getBySel(\"transaction-item\").each(($el) => {\n// For every transaction, it should be either sent or received by the current user\nconst transactionInvolvesUser =\n$el.find(`[data-test=\"transaction-sender-${ctx.user!.id}\"]`).length > 0 ||\n$el.find(`[data-test=\"transaction-receiver-${ctx.user!.id}\"]`).length > 0;\n\nexpect(transactionInvolvesUser).to.be.true;\n});\n});"
+  },
+  {
+    "timestamp": "2025-05-21 17:15:48.790",
+    "output_file": "output_GPT_4o\\transaction-feeds5.spec_response_GPT_4o_20250521_171728.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds5.spec.txt",
+    "requestTimestamp": "2025-05-21 17:15:48.993",
+    "requestTimeMs": 1747840548993,
+    "responseTimeMs": 1747840571684,
+    "durationMs": 22691,
+    "code": "// Navigate to the public feed\ncy.getBySel(feedViews.public.tab).click();\ncy.wait(`@${feedViews.public.routeAlias}`);\n\n// Open the date range filter\ncy.get(\"[data-test='date-range-filter']\").click();\n\n// Set the start and end dates\ncy.get(\"[data-test='date-range-start']\").type(\"2023-01-01\");\ncy.get(\"[data-test='date-range-end']\").type(\"2023-12-31\");\ncy.get(\"[data-test='date-range-apply']\").click();\n\n// Verify that the transactions displayed fall within the specified date range\ncy.get(\"[data-test='transaction-item']\").each(($item) => {\ncy.wrap($item)\n.find(\"[data-test='transaction-date']\")\n.invoke(\"text\")\n.then((dateText) => {\nconst transactionDate = new Date(dateText);\nexpect(transactionDate).to.be.within(\nnew Date(\"2023-01-01\"),\nnew Date(\"2023-12-31\")\n);"
+  },
+  {
+    "timestamp": "2025-05-21 17:17:54.433",
+    "output_file": "output_GPT_4o\\transaction-view2.spec_response_GPT_4o_20250521_171934.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view2.spec.txt",
+    "requestTimestamp": "2025-05-21 17:17:54.638",
+    "requestTimeMs": 1747840674638,
+    "responseTimeMs": 1747840686260,
+    "durationMs": 11622,
+    "code": "// Step 1: Navigate to the transaction details page\ncy.getBySel(\"transaction-item\")\n.first()\n.click(); // Click on the first transaction in the list\ncy.wait(\"@getTransaction\");\n\n// Step 2: Like the transaction\ncy.getBySel(\"transaction-like-button\")\n.click(); // Click the like button\n\n// Step 3: Verify the like was successful\ncy.getBySel(\"transaction-like-count\")\n.should(\"contain\", \"1\"); // Assert the like count increased to 1"
+  },
+  {
+    "timestamp": "2025-05-21 17:20:00.073",
+    "output_file": "output_GPT_4o\\transaction-feeds11.spec_response_GPT_4o_20250521_172140.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds11.spec.txt",
+    "requestTimestamp": "2025-05-21 17:20:00.268",
+    "requestTimeMs": 1747840800268,
+    "responseTimeMs": 1747840816898,
+    "durationMs": 16630,
+    "code": "it(\"friends feed only shows contact transactions\", () => {\n// Navigate to the friends feed\ncy.getBySel(feedViews.contacts.tab).click();\ncy.wait(`@${feedViews.contacts.routeAlias}`);\n\n// Fetch the user's contacts from the database\ncy.database(\"filter\", \"contacts\", { userId: ctx.user!.id }).then((contacts: Contact[]) => {\nconst contactIds = contacts.map(contact => contact.contactUserId);\nctx.contactIds = contactIds;\n\n// Ensure transactions are loaded\ncy.getBySel(\"transaction-item\").should(\"have.length.at.least\", 1);\n\n// Verify that each transaction involves a contact\ncy.getBySel(\"transaction-item\").each(($el) => {\nconst senderId = $el.find(\"[data-test^='transaction-sender-']\").attr(\"data-test\")?.split(\"-\")[2];\nconst receiverId = $el.find(\"[data-test^='transaction-receiver-']\").attr(\"data-test\")?.split(\"-\")[2];\n\n// Assert that either the sender or receiver is a contact\nconst isContactTransaction = contactIds.includes(senderId!) || contactIds.includes(receiverId!);\nexpect(isContactTransaction).to.be.true;\n});\n});\n});"
+  },
+  {
+    "timestamp": "2025-05-21 17:22:05.676",
+    "output_file": "output_GPT_4o\\bankaccounts2.spec_response_GPT_4o_20250521_172345.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\bankaccounts2.spec.txt",
+    "requestTimestamp": "2025-05-21 17:22:05.877",
+    "requestTimeMs": 1747840925877,
+    "responseTimeMs": 1747840936806,
+    "durationMs": 10929,
+    "code": "// Step 1: Navigate to the bank accounts page\ncy.getBySel(\"sidenav-bankaccounts\").click();\n\n// Step 2: Click on the \"Create\" button to open the bank account form\ncy.getBySel(\"bankaccount-new\").click();\n\n// Step 3: Attempt to submit the form with missing fields\ncy.getBySel(\"bankaccount-submit\").click();\n\n// Step 4: Verify error messages for each required field\ncy.getBySel(\"bankaccount-bankName-input-error\")\n.should(\"be.visible\")\n.and(\"contain\", \"Bank name is required\");\ncy.getBySel(\"bankaccount-routingNumber-input-error\")\n.should(\"be.visible\")\n.and(\"contain\", \"Routing number is required\");\ncy.getBySel(\"bankaccount-accountNumber-input-error\")\n.should(\"be.visible\")\n.and(\"contain\", \"Account number is required\");\n//"
+  },
+  {
+    "timestamp": "2025-05-21 17:24:11.019",
+    "output_file": "output_GPT_4o\\auth2.spec_response_GPT_4o_20250521_172551.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth2.spec.txt",
+    "requestTimestamp": "2025-05-21 17:24:11.227",
+    "requestTimeMs": 1747841051227,
+    "responseTimeMs": 1747841060727,
+    "durationMs": 9500,
+    "code": "// Test: Redirect to the home page after login\nit(\"should redirect to the home page after login\", () => {\n// Step 1: Visit the sign-in page\ncy.visit(\"/signin\");\n\n// Step 2: Fill in valid login credentials\ncy.get(\"[data-test='signin-username']\").type(userInfo.username);\ncy.get(\"[data-test='signin-password']\").type(userInfo.password);\n\n// Step 3: Submit the login form\ncy.get(\"[data-test='signin-submit']\").click();\n\n// Step 4: Verify redirection to the home page\ncy.url().should(\"eq\", `${Cypress.config().baseUrl}/`);\n\n// Step 5: Verify that the user's full name is displayed in the sidebar\ncy.get(\"[data-test='sidenav-user-full-name']\").should(\"contain\", `${userInfo.firstName} ${userInfo.lastName}`);\n});"
+  },
+  {
+    "timestamp": "2025-05-21 17:26:16.681",
+    "output_file": "output_GPT_4o\\notifications4.spec_response_GPT_4o_20250521_172756.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications4.spec.txt",
+    "requestTimestamp": "2025-05-21 17:26:16.878",
+    "requestTimeMs": 1747841176878,
+    "responseTimeMs": 1747841193395,
+    "durationMs": 16517,
+    "code": "// Step 1: Find a transaction between User A and User B\ncy.database(\"find\", \"transactions\", {\nsenderId: ctx.userA.id,\nreceiverId: ctx.userB.id,"
+  },
+  {
+    "timestamp": "2025-05-21 17:28:22.274",
+    "output_file": "output_GPT_4o\\bankaccounts4.spec_response_GPT_4o_20250521_173002.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\bankaccounts4.spec.txt",
+    "requestTimestamp": "2025-05-21 17:28:22.476",
+    "requestTimeMs": 1747841302476,
+    "responseTimeMs": 1747841316722,
+    "durationMs": 14246,
+    "code": "// Step 1: Seed the database to reset the state\ncy.task(\"db:seed\");\n\n// Step 2: Log in with a user who has no bank accounts\ncy.database(\"find\", \"users\").then((user: User) => {\ncy.loginByXstate(user.username);\n\n// Step 3: Navigate to the bank accounts page\ncy.getBySel(\"sidenav-bankaccounts\").click();\n\n// Step 4: Verify that the bank account list is empty\ncy.getBySel(\"bankaccount-list\").should(\"not.exist\");\n\n// Step 5: Verify that the onboarding modal is displayed\ncy.getBySel(\"onboarding-modal\").should(\"be.visible\");\n});\n//"
+  },
+  {
+    "timestamp": "2025-05-21 17:30:27.824",
+    "output_file": "output_GPT_4o\\transaction-feeds2.spec_response_GPT_4o_20250521_173207.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds2.spec.txt",
+    "requestTimestamp": "2025-05-21 17:30:28.023",
+    "requestTimeMs": 1747841428023,
+    "responseTimeMs": 1747841439384,
+    "durationMs": 11361,
+    "code": "// Verify that transaction items are displayed correctly in the feed\ncy.visit(\"/\");\ncy.wait(\"@publicTransactions\");\n\n// Ensure the public feed tab is active\ncy.getBySel(feedViews.public.tab).should(\"have.class\", \"Mui-selected\");\n\n// Verify that transaction items are visible\ncy.getBySel(\"transaction-item\").should(\"have.length.at.least\", 1);\n\n// Check that each transaction item has the expected structure\ncy.getBySel(\"transaction-item\").each(($el) => {\ncy.wrap($el).within(() => {\ncy.get(\"[data-test='transaction-sender']\").should(\"exist\");\ncy.get(\"[data-test='transaction-receiver']\").should(\"exist\");\ncy.get(\"[data-test='transaction-amount']\").should(\"exist\");\n});\n});"
+  },
+  {
+    "timestamp": "2025-05-21 17:32:33.349",
+    "output_file": "output_GPT_4o\\transaction-feeds10.spec_response_GPT_4o_20250521_173413.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds10.spec.txt",
+    "requestTimestamp": "2025-05-21 17:32:33.536",
+    "requestTimeMs": 1747841553536,
+    "responseTimeMs": 1747841568655,
+    "durationMs": 15119,
+    "code": "it(\"first five items belong to contacts in public feed\", () => {\n// Navigate to the public feed\ncy.getBySel(feedViews.public.tab).click();\ncy.wait(`@${feedViews.public.routeAlias}`);\n\n// Fetch the user's contacts\ncy.database(\"filter\", \"contacts\", { userId: ctx.user!.id }).then((contacts: Contact[]) => {\nconst contactIds = contacts.map(contact => contact.contactUserId);\n\n// Verify the first 5 transactions in the public feed\ncy.getBySel(\"transaction-item\").then($items => {\nconst numToCheck = Math.min(5, $items.length);\nfor (let i = 0; i < numToCheck; i++) {\ncy.wrap($items[i]).within(() => {\n// Check if the transaction involves a contact\ncy.get(\"[data-test*='sender-'], [data-test*='receiver-']\")\n.invoke(\"attr\", \"data-test\")\n.then(dataTestAttr => {\nconst userId = dataTestAttr!.split(\"-\")[1];\nconst isContactTransaction = contactIds.includes(userId);\nexpect(isContactTransaction).to.be.true;\n});\n});\n}\n});\n});\n});"
+  },
+  {
+    "timestamp": "2025-05-21 17:34:38.814",
+    "output_file": "output_GPT_4o\\new-transaction3.spec_response_GPT_4o_20250521_173618.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction3.spec.txt",
+    "requestTimestamp": "2025-05-21 17:34:39.026",
+    "requestTimeMs": 1747841679026,
+    "responseTimeMs": 1747841687591,
+    "durationMs": 8565,
+    "code": "it(\"displays new transaction errors\", () => {\n// Navigate to the new transaction form\ncy.getBySelLike(\"new-transaction\").click();\ncy.wait(\"@allUsers\");\n\n// Select a user from the list\ncy.getBySelLike(\"user-list-item\").first().click();\n\n// Attempt to submit the form without entering any details\ncy.getBySelLike(\"submit-payment\").click();\n\n// Verify error messages for missing amount and description\ncy.get(\".MuiFormHelperText-root\")\n.should(\"contain\", \"Please enter a valid amount\")\n.and(\"contain\", \"Please enter a note\");\n\n// Enter an invalid amount (e.g., 0) and leave the description empty\ncy.getBySelLike(\"amount-input\").type(\"0\");\ncy.getBySelLike(\"submit-payment\").click();\n\n// Verify error messages for invalid amount and missing description\ncy.get(\".MuiFormHelperText-root\")\n.should(\"contain\", \"Please enter a valid amount\")\n.and(\"contain\", \"Please enter a note\");\n});"
+  },
+  {
+    "timestamp": "2025-05-21 17:36:44.642",
+    "output_file": "output_GPT_4o\\notifications1.spec_response_GPT_4o_20250521_173824.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications1.spec.txt",
+    "requestTimestamp": "2025-05-21 17:36:44.849",
+    "requestTimeMs": 1747841804849,
+    "responseTimeMs": 1747841813354,
+    "durationMs": 8504,
+    "code": "// Step 1: Log in as User A\ncy.loginByXstate(ctx.userA.username);\n\n// Step 2: Navigate to a transaction of User B\ncy.database(\"find\", \"transactions\", { senderId: ctx.userB.id"
+  },
+  {
+    "timestamp": "2025-05-21 17:38:50.375",
+    "output_file": "output_GPT_4o\\notifications7.spec_response_GPT_4o_20250521_174030.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications7.spec.txt",
+    "requestTimestamp": "2025-05-21 17:38:50.583",
+    "requestTimeMs": 1747841930583,
+    "responseTimeMs": 1747841937841,
+    "durationMs": 7258,
+    "code": "// Seed the database with no interactions\ncy.task(\"db:seed\");\n\n// Log in as User A\ncy.loginByXstate(ctx.userA.username);\n\n// Navigate to the notifications page\ncy.getBySel(\"nav-notifications\").click();\n\n// Assert that the notifications list is empty\ncy.getBySelLike(\"notification-item\").should(\"have.length\", 0);\n\n// Verify the empty state message is displayed\ncy.contains(\"No notifications\").should(\"exist\");\n//"
+  },
+  {
+    "timestamp": "2025-05-21 17:40:55.825",
+    "output_file": "output_GPT_4o\\new-transaction2.spec_response_GPT_4o_20250521_174235.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction2.spec.txt",
+    "requestTimestamp": "2025-05-21 17:40:56.020",
+    "requestTimeMs": 1747842056020,
+    "responseTimeMs": 1747842068483,
+    "durationMs": 12463,
+    "code": "// Navigate to the new transaction form\ncy.getBySel(\"new-transaction\").click();\ncy.wait(\"@allUsers\");\n\n// Search for a user by name\ncy.getBySel(\"user-list-search-input\").type(ctx.contact!.firstName);\ncy.wait(\"@usersSearch\");\n\n// Select the first user from the search results\ncy.getBySel(\"user-list-item\").first().click();\n\n// Fill out the request form\ncy.getBySel(\"amount-input\").type(userInfo.requestTransactions[0].amount);\ncy.getBySel(\"transaction-create-description-input\").type(userInfo.requestTransactions[0].description);\n\n// Submit the request\ncy.getBySelLike(\"transaction-create-submit-request\").click();\n\n// Confirm the transaction request was created\ncy.wait(\"@createTransaction\");\n\n// Verify the request appears in the personal transactions feed\ncy.getBySel(\"personal-tab\").should(\"have.class\", \"Mui-selected\");\ncy.getBySel(\"transaction-item\").first().should(\"contain\", userInfo.requestTransactions[0].description);\ncy.getBySel(\"transaction-item\").first().should(\"contain\", `$${userInfo.requestTransactions[0].amount}`);\n//"
+  }
+]

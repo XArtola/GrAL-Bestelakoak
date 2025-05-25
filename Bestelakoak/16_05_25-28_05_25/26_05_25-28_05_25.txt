@@ -1,0 +1,60 @@
+LORTUTAKO EMAITZAK PROZESATU
+-----------------------------------------
+Raw-etik kode zatia lortu eta dagokion denborarekin lotu
+Python script 
+
+-----------------------------------------
+Lortutako it blokeetako kodea berriz test fitxateagian sartu
+user inofori egiten zaizkien erreferentziak LLM-ari aldatzeko eskatu? eskuz egin?
+
+-----------------------------------------
+Testak exekutatu eta emaitzak gorde
+
+Berriz ere zazpi fitxategietan dena lotu ala banatuta
+Test hutsak ontzak ematen ditu 
+Ez dago hobekuntza handirik
+Testa raw moduan gordetzeak crtf-ko neurketa denborak luzatzen ditu
+
+BYE CHRISTIANISM CLAUDE 4 IS MY NEW GOD!!!  
+-----------------------------------------
+Dashborad-a eguneratu informazio berria erakusteko
+
+
+-----------------------------------------
+Efizientzia neurketa nola egin aztertu
+
+Performance Metrics
+Time-based metrics:
+
+Generation time: Time taken to generate tests per line of code/function/class
+Execution time: How long the generated tests take to run
+Setup time: Time needed for any preprocessing or analysis
+Quality metrics:
+
+Code coverage: Percentage of code covered by generated tests
+Mutation testing score: How well tests detect injected bugs
+Pass/fail ratio: Percentage of generated tests that actually work
+
+-----------------------------------------------------
+KOMENTATZEKO!!!
+copilot chat-n kodea askatu dute
+Codex (GPT)
+Jules (Google)
+Opus 4 (Anthropic)
+
+Autohotkey Script?
+
+
+----------------------------------------------------------------
+COMMANDS AND INSTRUCTIONS
+Get Json files with times and code piece:
+Process_result_times/process_all_data2.js --> matchedData
+
+Merge result test code with original test files
+test_generator/test_generator_updated.js --> ui/complete_tests
+
+Channge references by variable  values
+insertExtractedData/ast_processor_ts.js
+
+Duration luzatu
+

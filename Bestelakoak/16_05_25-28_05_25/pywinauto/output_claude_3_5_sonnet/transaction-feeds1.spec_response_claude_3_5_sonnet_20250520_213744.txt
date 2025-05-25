@@ -1,0 +1,136 @@
+---
+tools: ['codebase']
+---
+
+#file:cypress-realworld-app 
+You are tasked with generating the code inside the 'it' blocks for a Cypress test suite. The test suite is for user sign-up and login functionality. You will be provided with the test suite structure and user information to use in your generated code.
+
+Here is the Cypress test code structure:
+
+<cypress_test_code>
+import Dinero from "dinero.js";
+import { User, Transaction, TransactionRequestStatus, TransactionResponseItem, Contact, TransactionStatus, } from "../../../src/models";
+import { addDays, isWithinInterval, startOfDay } from "date-fns";
+import { startOfDayUTC, endOfDayUTC } from "../../../src/utils/transactionUtils";
+import { isMobile } from "../../support/utils";
+const { _ } = Cypress;
+type TransactionFeedsCtx = {
+    allUsers?: User[];
+    user?: User;
+    contactIds?: string[];
+};
+describe("Transaction Feed", function () {
+    const ctx: TransactionFeedsCtx = {};
+    const feedViews = {
+        public: {
+            tab: "public-tab",
+            tabLabel: "everyone",
+            routeAlias: "publicTransactions",
+            service: "publicTransactionService",
+        },
+        contacts: {
+            tab: "contacts-tab",
+            tabLabel: "friends",
+            routeAlias: "contactsTransactions",
+            service: "contactTransactionService",
+        },
+        personal: {
+            tab: "personal-tab",
+            tabLabel: "mine",
+            routeAlias: "personalTransactions",
+            service: "personalTransactionService",
+        },
+    };
+    beforeEach(function () {
+        cy.task("db:seed");
+        cy.intercept("GET", "/notifications").as("notifications");
+        cy.intercept("GET", "/transactions*").as(feedViews.personal.routeAlias);
+        cy.intercept("GET", "/transactions/public*").as(feedViews.public.routeAlias);
+        cy.intercept("GET", "/transactions/contacts*").as(feedViews.contacts.routeAlias);
+        cy.database("filter", "users").then((users: User[]) => {
+            ctx.user = users[0];
+            ctx.allUsers = users;
+            cy.loginByXstate(ctx.user.username);
+        });
+    });
+    describe("app layout and responsiveness", function () {
+        it("toggles the navigation drawer", () => { });
+    });
+});
+
+</cypress_test_code>
+
+And here is the user information to use in your tests:
+
+<user_info>
+{}
+</user_info>
+
+Your task is to generate the code inside each 'it' block so that the Cypress test runs and gets positive results. Follow these guidelines:
+
+1. For each 'it' block, write Cypress commands that test the functionality described in the test name.
+2. Use the provided user information (firstName, lastName, username, password) in your test commands where appropriate.
+3. Ensure that your generated code follows Cypress best practices and conventions.
+4. Include appropriate assertions to verify the expected behavior of each test.
+5. If a test requires multiple steps, use comments to explain each step.
+6. Do not modify the existing code structure or add new 'it' blocks.
+
+When using the user information, refer to it as 'userInfo' followed by the property name, e.g., 'userInfo.firstName'.
+
+If you encounter any scenarios where you need additional information that isn't provided, do not make assumptions. Instead, indicate that more information is needed for that specific test.
+
+For error handling tests, use invalid data that is clearly different from the provided user information.
+
+Place your generated code for each 'it' block within <generated_code> tags, and include the original 'it' block description as a comment before each block of generated code.
+
+Begin generating the code for each 'it' block now.
+
+
+> Copilot: I'll help generate the code for the 'it' block in the transaction feed test suite. Let me write the test for toggling the navigation drawer.
+> 
+> ```typescript
+> // it("toggles the navigation drawer")
+> it("toggles the navigation drawer", () => {
+>     // Initial state check - full screen view (nav drawer visible)
+>     cy.getBySel("sidenav").should("be.visible");
+>     cy.getBySel("sidenav-home").should("be.visible");
+>     cy.getBySel("sidenav-user-full-name").should("be.visible");
+>     
+>     // If on mobile viewport, test drawer toggle functionality
+>     cy.viewport("iphone-x");
+> 
+>     // Initial state on mobile - drawer should be hidden
+>     cy.getBySel("sidenav").should("not.be.visible");
+>     
+>     // Click hamburger menu to open drawer
+>     cy.getBySel("drawer-button").click();
+>     cy.getBySel("sidenav").should("be.visible");
+>     
+>     // Click outside drawer to close it
+>     cy.get("body").click(0, 0);
+>     cy.getBySel("sidenav").should("not.be.visible");
+>     
+>     // Return to desktop view - drawer should be visible again
+>     cy.viewport(1024, 768);
+>     cy.getBySel("sidenav").should("be.visible");
+> });
+> ```
+> 
+> This test code:
+> 
+> 1. First checks if navigation drawer is visible in desktop view
+> 2. Switches to mobile viewport to test responsive behavior
+> 3. Verifies drawer is hidden by default on mobile
+> 4. Tests opening drawer via hamburger menu
+> 5. Tests closing drawer by clicking outside
+> 6. Returns to desktop view and verifies drawer visibility
+> 
+> I've used standard Cypress commands and selectors, assuming there is a custom `getBySel` command (common in Cypress projects) that gets elements by data-test attributes.
+> 
+> The test focuses on the responsive behavior of the navigation drawer:
+> - Desktop: Drawer is always visible
+> - Mobile: Drawer is hidden by default and can be toggled
+> 
+> Key assertions verify the visibility state of the drawer in different scenarios. Note that I'm using the viewport command to test both desktop and mobile behaviors in the same test.
+> 
+> Let me know if you want me to add more assertions or handle any additional test scenarios for the navigation drawer functionality.

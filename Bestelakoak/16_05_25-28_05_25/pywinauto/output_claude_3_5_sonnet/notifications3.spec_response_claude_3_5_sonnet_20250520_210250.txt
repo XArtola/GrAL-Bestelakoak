@@ -1,0 +1,139 @@
+---
+tools: ['codebase']
+---
+
+#file:cypress-realworld-app 
+You are tasked with generating the code inside the 'it' blocks for a Cypress test suite. The test suite is for user sign-up and login functionality. You will be provided with the test suite structure and user information to use in your generated code.
+
+Here is the Cypress test code structure:
+
+<cypress_test_code>
+import { isMobile } from "../../support/utils";
+import { User, Transaction } from "../../../src/models";
+type NotificationsCtx = {
+    userA: User;
+    userB: User;
+    userC: User;
+};
+describe("Notifications", function () {
+    const ctx = {} as NotificationsCtx;
+    beforeEach(function () {
+        cy.task("db:seed");
+        cy.intercept("GET", "/notifications*").as("getNotifications");
+        cy.intercept("POST", "/transactions").as("createTransaction");
+        cy.intercept("PATCH", "/notifications/*").as("updateNotification");
+        cy.intercept("POST", "/comments/*").as("postComment");
+        cy.database("filter", "users").then((users: User[]) => {
+            ctx.userA = users[0];
+            ctx.userB = users[1];
+            ctx.userC = users[2];
+        });
+    });
+    describe("notifications from user interactions", function () {
+        it("User A comments on a transaction of User B; User B gets notification that User A commented on their transaction", () => { });
+    });
+});
+
+</cypress_test_code>
+
+And here is the user information to use in your tests:
+
+<user_info>
+{}
+</user_info>
+
+Your task is to generate the code inside each 'it' block so that the Cypress test runs and gets positive results. Follow these guidelines:
+
+1. For each 'it' block, write Cypress commands that test the functionality described in the test name.
+2. Use the provided user information (firstName, lastName, username, password) in your test commands where appropriate.
+3. Ensure that your generated code follows Cypress best practices and conventions.
+4. Include appropriate assertions to verify the expected behavior of each test.
+5. If a test requires multiple steps, use comments to explain each step.
+6. Do not modify the existing code structure or add new 'it' blocks.
+
+When using the user information, refer to it as 'userInfo' followed by the property name, e.g., 'userInfo.firstName'.
+
+If you encounter any scenarios where you need additional information that isn't provided, do not make assumptions. Instead, indicate that more information is needed for that specific test.
+
+For error handling tests, use invalid data that is clearly different from the provided user information.
+
+Place your generated code for each 'it' block within <generated_code> tags, and include the original 'it' block description as a comment before each block of generated code.
+
+Begin generating the code for each 'it' block now.
+
+
+> Copilot: I'll help you generate the code for the notification test case. Based on the test description and context, here's the implementation:
+> 
+> ```typescript
+> // Test: User A comments on a transaction of User B; User B gets notification that User A commented on their transaction
+> it("User A comments on a transaction of User B; User B gets notification that User A commented on their transaction", () => {
+>     // Find or create a transaction from User B
+>     cy.loginByXstate(ctx.userB.username);
+>     cy.visit("/transaction/new");
+>     cy.getBySel("user-list-item").contains(ctx.userA.firstName).click();
+>     cy.getBySel("amount-input").type("50");
+>     cy.getBySel("transaction-create-description-input").type("Test transaction");
+>     cy.getBySel("transaction-create-submit-payment").click();
+>     cy.wait("@createTransaction");
+> 
+>     // Get transaction ID from URL
+>     let transactionId: string;
+>     cy.url().then(url => {
+>         transactionId = url.split("/").pop()!;
+>         
+>         // Log out as User B
+>         cy.getBySel("sidenav-signout").click();
+>         
+>         // Log in as User A and add a comment
+>         cy.loginByXstate(ctx.userA.username);
+>         cy.visit(`/transaction/${transactionId}`);
+>         const commentText = "Test comment from User A";
+>         cy.getBySel("comment-input").type(commentText);
+>         cy.getBySel("comment-submit").click();
+>         cy.wait("@postComment");
+>         
+>         // Verify comment appears
+>         cy.getBySel("comments-list")
+>             .should("contain", commentText)
+>             .and("contain", ctx.userA.firstName);
+>         
+>         // Log out as User A
+>         cy.getBySel("sidenav-signout").click();
+>         
+>         // Log back in as User B to check notification
+>         cy.loginByXstate(ctx.userB.username);
+>         cy.visit("/notifications");
+>         cy.wait("@getNotifications");
+>         
+>         // Verify notification exists
+>         cy.getBySel("notification-list-item")
+>             .first()
+>             .should("contain", ctx.userA.firstName)
+>             .and("contain", "commented on your transaction");
+>     });
+> });
+> ```
+> 
+> This implementation:
+> 
+> 1. Creates a test transaction from User B to User A
+> 2. Captures the transaction ID for later use
+> 3. Logs in as User A and adds a comment to the transaction
+> 4. Verifies the comment appears correctly
+> 5. Logs in as User B and verifies they received a notification about the comment
+> 
+> The test uses the following Cypress patterns:
+> - Intercepts API calls with wait assertions
+> - Uses data-test selectors with getBySel
+> - Chains assertions for more specific verification
+> - Handles async operations properly
+> - Follows proper login/logout sequences
+> - Uses the provided context (ctx) for user information
+> 
+> The test covers all the requirements:
+> - User interaction (commenting)
+> - Notification creation
+> - Proper user switching
+> - Verification of notification content
+> 
+> All selectors used are based on common patterns seen in the code base (getBySel).

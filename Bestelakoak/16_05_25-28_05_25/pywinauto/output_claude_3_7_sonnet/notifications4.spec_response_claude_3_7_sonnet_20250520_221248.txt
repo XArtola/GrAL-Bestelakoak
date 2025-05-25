@@ -1,0 +1,152 @@
+---
+tools: ['codebase']
+---
+
+#file:cypress-realworld-app 
+You are tasked with generating the code inside the 'it' blocks for a Cypress test suite. The test suite is for user sign-up and login functionality. You will be provided with the test suite structure and user information to use in your generated code.
+
+Here is the Cypress test code structure:
+
+<cypress_test_code>
+import { isMobile } from "../../support/utils";
+import { User, Transaction } from "../../../src/models";
+type NotificationsCtx = {
+    userA: User;
+    userB: User;
+    userC: User;
+};
+describe("Notifications", function () {
+    const ctx = {} as NotificationsCtx;
+    beforeEach(function () {
+        cy.task("db:seed");
+        cy.intercept("GET", "/notifications*").as("getNotifications");
+        cy.intercept("POST", "/transactions").as("createTransaction");
+        cy.intercept("PATCH", "/notifications/*").as("updateNotification");
+        cy.intercept("POST", "/comments/*").as("postComment");
+        cy.database("filter", "users").then((users: User[]) => {
+            ctx.userA = users[0];
+            ctx.userB = users[1];
+            ctx.userC = users[2];
+        });
+    });
+    describe("notifications from user interactions", function () {
+        it("User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction", () => { });
+    });
+});
+
+</cypress_test_code>
+
+And here is the user information to use in your tests:
+
+<user_info>
+{}
+</user_info>
+
+Your task is to generate the code inside each 'it' block so that the Cypress test runs and gets positive results. Follow these guidelines:
+
+1. For each 'it' block, write Cypress commands that test the functionality described in the test name.
+2. Use the provided user information (firstName, lastName, username, password) in your test commands where appropriate.
+3. Ensure that your generated code follows Cypress best practices and conventions.
+4. Include appropriate assertions to verify the expected behavior of each test.
+5. If a test requires multiple steps, use comments to explain each step.
+6. Do not modify the existing code structure or add new 'it' blocks.
+
+When using the user information, refer to it as 'userInfo' followed by the property name, e.g., 'userInfo.firstName'.
+
+If you encounter any scenarios where you need additional information that isn't provided, do not make assumptions. Instead, indicate that more information is needed for that specific test.
+
+For error handling tests, use invalid data that is clearly different from the provided user information.
+
+Place your generated code for each 'it' block within <generated_code> tags, and include the original 'it' block description as a comment before each block of generated code.
+
+Begin generating the code for each 'it' block now.
+
+
+> Copilot: I'll generate the code for the test that checks the notification functionality when User C comments on a transaction between User A and User B.
+> 
+> Looking at the test structure, we need to:
+> 1. Create a transaction between User A and User B
+> 2. Login as User C and add a comment to that transaction
+> 3. Verify that both User A and User B receive notifications about User C's comment
+> 
+> Here's the code for the `it` block:
+> 
+> ```typescript
+> // User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction
+> it("User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction", () => {
+>     // Login as User A
+>     cy.loginByXstate(ctx.userA.username);
+>     
+>     // Create a transaction between User A and User B
+>     cy.visit("/transaction/new");
+>     cy.getBySel("user-list-item").contains(ctx.userB.firstName).click();
+>     cy.getBySel("amount-input").type("50");
+>     cy.getBySel("transaction-create-description-input").type("Test transaction AB");
+>     cy.getBySel("transaction-create-submit-payment").click();
+>     cy.wait("@createTransaction");
+>     
+>     // Get transaction ID from URL
+>     let transactionId: string;
+>     cy.url().then(url => {
+>         transactionId = url.split("/").pop()!;
+>         
+>         // Log out as User A
+>         cy.getBySel("sidenav-signout").click();
+>         
+>         // Login as User C
+>         cy.loginByXstate(ctx.userC.username);
+>         
+>         // Visit the transaction
+>         cy.visit(`/transaction/${transactionId}`);
+>         
+>         // Add a comment
+>         const comment = "This is a comment from User C!";
+>         cy.getBySel("comment-input").type(comment);
+>         cy.getBySel("comment-submit").click();
+>         cy.wait("@postComment");
+>         
+>         // Verify the comment appears
+>         cy.getBySel("comments-list").should("contain", comment);
+>         
+>         // Log out as User C
+>         cy.getBySel("sidenav-signout").click();
+>         
+>         // Login as User A and check for notification
+>         cy.loginByXstate(ctx.userA.username);
+>         cy.getBySel("nav-top-notifications-count").should("exist");
+>         cy.getBySel("nav-top-notifications-link").click();
+>         cy.wait("@getNotifications");
+>         
+>         // Verify notification about User C's comment
+>         cy.getBySel("notification-list-item")
+>             .first()
+>             .should("contain", ctx.userC.firstName)
+>             .and("contain", "commented");
+>             
+>         // Log out as User A
+>         cy.getBySel("sidenav-signout").click();
+>         
+>         // Login as User B and check for notification
+>         cy.loginByXstate(ctx.userB.username);
+>         cy.getBySel("nav-top-notifications-count").should("exist");
+>         cy.getBySel("nav-top-notifications-link").click();
+>         cy.wait("@getNotifications");
+>         
+>         // Verify notification about User C's comment
+>         cy.getBySel("notification-list-item")
+>             .first()
+>             .should("contain", ctx.userC.firstName)
+>             .and("contain", "commented");
+>     });
+> });
+> ```
+> 
+> This test:
+> 1. Creates a transaction from User A to User B
+> 2. Captures the transaction ID from the URL
+> 3. Logs in as User C and comments on the transaction
+> 4. Verifies that both User A and User B receive notifications about the comment
+> 5. Uses proper waiting for network requests with the defined intercepts
+> 6. Follows the application's authentication flow for each user
+> 
+> The test uses the custom selector helper `getBySel` that's part of the application's testing utilities to find elements by their data-test attributes.

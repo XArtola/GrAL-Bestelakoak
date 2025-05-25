@@ -1,0 +1,94 @@
+LLM EFFICIENCY ANALYSIS REPORT
+Generated: 2025-05-25T15:22:39.002Z
+==============================
+
+SUMMARY
+-------
+Total LLMs Analyzed: 6
+Top Performer: Claude Sonnet 4
+Average Efficiency Score: 0.7487
+Total Tests Analyzed: 269
+
+SCORING WEIGHTS
+---------------
+Code Quality: 40.0%
+Generation Speed: 20.0%
+Execution Success: 30.0%
+Code Reuse: 10.0%
+
+RANKINGS
+--------
+1. Claude Sonnet 4
+     Overall Score: 0.9701
+     Code Quality: 0.9933
+     Generation Speed: 1.0000
+     Execution Success: 0.9091
+     Code Reuse: 1.0000
+     Avg Generation Time: 11474.16ms
+     Test Count: 45
+     Pass Rate: 90.9%
+     Empty Code Ratio: 0.0%
+
+2. GPT-4o
+     Overall Score: 0.8491
+     Code Quality: 0.9432
+     Generation Speed: 0.9761
+     Execution Success: 0.5962
+     Code Reuse: 0.9778
+     Avg Generation Time: 12121.20ms
+     Test Count: 45
+     Pass Rate: 59.6%
+     Empty Code Ratio: 2.2%
+
+3. Claude 3.5 Sonnet
+     Overall Score: 0.7314
+     Code Quality: 0.9409
+     Generation Speed: 0.4681
+     Execution Success: 0.5455
+     Code Reuse: 0.9778
+     Avg Generation Time: 25864.27ms
+     Test Count: 45
+     Pass Rate: 54.5%
+     Empty Code Ratio: 2.2%
+
+4. Claude 3.7 Sonnet
+     Overall Score: 0.7154
+     Code Quality: 0.9317
+     Generation Speed: 0.4688
+     Execution Success: 0.5263
+     Code Reuse: 0.9111
+     Avg Generation Time: 25845.09ms
+     Test Count: 45
+     Pass Rate: 52.6%
+     Empty Code Ratio: 8.9%
+
+5. Gemini 2.5 Pro
+     Overall Score: 0.6291
+     Code Quality: 0.9805
+     Generation Speed: 0.0000
+     Execution Success: 0.4792
+     Code Reuse: 0.9318
+     Avg Generation Time: 38527.61ms
+     Test Count: 44
+     Pass Rate: 47.9%
+     Empty Code Ratio: 6.8%
+
+6. GPT-4o Mini
+     Overall Score: 0.5970
+     Code Quality: 0.9919
+     Generation Speed: 0.0105
+     Execution Success: 0.3864
+     Code Reuse: 0.8222
+     Avg Generation Time: 38243.02ms
+     Test Count: 45
+     Pass Rate: 38.6%
+     Empty Code Ratio: 17.8%
+
+
+ANALYSIS INSIGHTS
+-----------------
+• Fastest generation: Claude Sonnet 4 (11474ms avg)
+• Highest code quality: Claude Sonnet 4 (99.3% quality score)
+• Lowest empty code ratio: Claude Sonnet 4 (0.0%)
+• Highest empty code ratio: GPT-4o Mini (17.8%)
+• Best test pass rate: Claude Sonnet 4 (90.9%)

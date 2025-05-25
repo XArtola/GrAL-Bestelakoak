@@ -1,0 +1,452 @@
+[
+  {
+    "timestamp": "2025-05-24 22:46:28.649",
+    "output_file": "output_claude_sonnet_4\\transaction-view3.spec_response_claude_sonnet_4_20250524_224838.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view3.spec.txt",
+    "requestTimestamp": "2025-05-24 22:46:28.865",
+    "requestTimeMs": 1748119588865,
+    "responseTimeMs": 1748119598621,
+    "durationMs": 9756,
+    "code": "// comments on a transaction\nit(\"comments on a transaction\", () => {\n// Navigate to the first transaction in the personal transactions list\ncy.getBySel(\"transaction-item\").first().click();\n\n// Wait for the transaction details to load\ncy.wait(\"@getTransaction\");\n\n// Verify we're on the transaction view page\ncy.getBySel(\"transaction-detail\").should(\"be.visible\");\n\n// Add a comment to the transaction\nconst commentText = \"This is a test comment on the transaction\";\ncy.getBySel(\"transaction-comment-input\").type(commentText);\ncy.getBySel(\"transaction-comment-submit\").click();\n\n// Wait for the comment to be posted\ncy.wait(\"@postComment\");\n\n// Verify the comment appears in the transaction comments\ncy.getBySel(\"transaction-comment-list\")\n.should(\"contain\", commentText)\n.and(\"contain\", ctx.authenticatedUser.firstName);\n\n// Verify comment count is updated\ncy.getBySel(\"transaction-comment-count\").should(\"contain\", \"1\");\n});"
+  },
+  {
+    "timestamp": "2025-05-24 22:49:04.234",
+    "output_file": "output_claude_sonnet_4\\auth1.spec_response_claude_sonnet_4_20250524_225114.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth1.spec.txt",
+    "requestTimestamp": "2025-05-24 22:49:04.445",
+    "requestTimeMs": 1748119744445,
+    "responseTimeMs": 1748119752229,
+    "durationMs": 7784,
+    "code": "// should redirect unauthenticated user to signin page\ncy.visit(\"/\");\ncy.url().should(\"include\", \"/signin\");"
+  },
+  {
+    "timestamp": "2025-05-24 22:51:40.046",
+    "output_file": "output_claude_sonnet_4\\transaction-feeds6.spec_response_claude_sonnet_4_20250524_225350.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds6.spec.txt",
+    "requestTimestamp": "2025-05-24 22:51:40.263",
+    "requestTimeMs": 1748119900263,
+    "responseTimeMs": 1748119914767,
+    "durationMs": 14504,
+    "code": "// does not show ${feedName} transactions for out of range date limits\ncy.visit(\"/\");\n\n// Wait for the initial feed to load\ncy.wait(`@${feed.routeAlias}`);\n\n// Click on the specific feed tab\ncy.getBySel(feed.tab).click();\ncy.wait(`@${feed.routeAlias}`);\n\n// Set up date range that should exclude transactions\n// Using a date range from 2020 to ensure no recent transactions are shown\nconst startDate = \"2020-01-01\";\nconst endDate = \"2020-12-31\";\n\n// Apply date range filter (assuming there's a date filter component)\ncy.getBySel(\"date-range-filter\").click();\ncy.getBySel(\"date-range-start\").clear().type(startDate);\ncy.getBySel(\"date-range-end\").clear().type(endDate);\ncy.getBySel(\"date-range-apply\").click();\n\n// Wait for the filtered results\ncy.wait(`@${feed.routeAlias}`);\n\n// Verify that no transactions are shown or empty state is displayed\ncy.get(\"body\").then(($body) => {\nif ($body.find(\"[data-test='transaction-item']\").length > 0) {\n// If transactions exist, verify they are all within the date range\ncy.getBySel(\"transaction-item\").each(($item) => {\ncy.wrap($item).within(() => {\ncy.get(\"[data-test*='transaction-date']\").invoke(\"text\").then((dateText) => {\nconst transactionDate = new Date(dateText);\nconst filterStartDate = new Date(startDate);\nconst filterEndDate = new Date(endDate);\n\nexpect(isWithinInterval(transactionDate, {\nstart: filterStartDate,\nend: filterEndDate\n})).to.be.true;\n});\n});\n});\n} else {\n// Verify empty state is shown\ncy.getBySel(\"empty-list-header\").should(\"be.visible\");\n}\n});\n\n// Reset the date filter to show all transactions again\ncy.getBySel(\"date-range-clear\").click();\ncy.wait(`@${feed.routeAlias}`);\n\n// Verify transactions are visible again\ncy.getBySel(\"transaction-item\").should(\"have.length.at.least\", 1);"
+  },
+  {
+    "timestamp": "2025-05-24 22:54:15.815",
+    "output_file": "output_claude_sonnet_4\\transaction-feeds8.spec_response_claude_sonnet_4_20250524_225625.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds8.spec.txt",
+    "requestTimestamp": "2025-05-24 22:54:16.023",
+    "requestTimeMs": 1748120056023,
+    "responseTimeMs": 1748120070513,
+    "durationMs": 14490,
+    "code": "// does not show ${feedName} transactions for out of range amount limits\ncy.visit(\"/\");\n\n// Wait for the specific feed to load\ncy.wait(`@${feed.routeAlias}`);\n\n// Click on the appropriate tab for this feed\ncy.getBySel(feed.tab).click();\n\n// Wait for feed to load again after tab change\ncy.wait(`@${feed.routeAlias}`);\n\n// Apply amount range filter\n// Note: The actual filter implementation may vary - this assumes there's an amount filter UI\ncy.getBySel(\"amount-range-filter\").should(\"exist\");\ncy.getBySel(\"amount-min-input\").clear().type(dollarAmountRange.min.toString());\ncy.getBySel(\"amount-max-input\").clear().type(dollarAmountRange.max.toString());\ncy.getBySel(\"apply-amount-filter\").click();\n\n// Wait for filtered results\ncy.wait(`@${feed.routeAlias}`);\n\n// Verify that all displayed transactions fall within the specified amount range\ncy.getBySel(\"transaction-item\").each(($el) => {\n// Extract amount from transaction item\ncy.wrap($el).find(\"[data-test*='transaction-amount']\").invoke('text').then((amountText) => {\n// Parse the amount (remove $ and convert to number)\nconst amount = parseFloat(amountText.replace(/[$,]/g, ''));\n\n// Assert the amount is within the specified range\nexpect(amount).to.be.at.least(dollarAmountRange.min);\nexpect(amount).to.be.at.most(dollarAmountRange.max);\n});\n});\n\n// Alternatively, if no transactions match the filter, verify empty state\ncy.get(\"body\").then(($body) => {\nif ($body.find(\"[data-test='empty-list-header']\").length > 0) {\ncy.getBySel(\"empty-list-header\").should(\"be.visible\");\ncy.getBySel(\"transaction-item\").should(\"not.exist\");\n}\n});"
+  },
+  {
+    "timestamp": "2025-05-24 22:56:51.448",
+    "output_file": "output_claude_sonnet_4\\auth2.spec_response_claude_sonnet_4_20250524_225901.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth2.spec.txt",
+    "requestTimestamp": "2025-05-24 22:56:51.656",
+    "requestTimeMs": 1748120211656,
+    "responseTimeMs": 1748120222749,
+    "durationMs": 11093,
+    "code": "```typescript\n// should redirect to the home page after login\nit(\"should redirect to the home page after login\", () => {\n// Visit the signin page\ncy.visit(\"/signin\");\n\n// Enter valid login credentials\ncy.getBySel(\"signin-username\").type(userInfo.username);\ncy.getBySel(\"signin-password\").type(userInfo.password);\n\n// Submit the login form\ncy.getBySel(\"signin-submit\").click();\n\n// Verify successful login by checking redirection to home page\ncy.location(\"pathname\").should(\"equal\", \"/\");\n\n// Verify user is logged in by checking for user elements in the sidebar\ncy.getBySel(\"sidenav-user-full-name\").should(\"be.visible\");\n});\n```"
+  },
+  {
+    "timestamp": "2025-05-24 22:59:27.227",
+    "output_file": "output_claude_sonnet_4\\transaction-feeds4.spec_response_claude_sonnet_4_20250524_230137.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds4.spec.txt",
+    "requestTimestamp": "2025-05-24 22:59:27.432",
+    "requestTimeMs": 1748120367432,
+    "responseTimeMs": 1748120381762,
+    "durationMs": 14330,
+    "code": "// it(\"closes date range picker modal\") - Mobile specific test\nit(\"closes date range picker modal\", () => {\n// Navigate to personal feed\ncy.getBySel(\"nav-personal-tab\").click();\ncy.wait(\"@personalTransactions\");\n\n// Open date range picker\ncy.getBySel(\"filter-date-range-button\").click();\n\n// Verify modal is open\ncy.getBySel(\"date-range-picker-modal\").should(\"be.visible\");\n\n// Close the modal (typically via close button or backdrop click)\ncy.getBySel(\"date-range-picker-close\").click();\n\n// Verify modal is closed\ncy.getBySel(\"date-range-picker-modal\").should(\"not.exist\");\n});\n\n// Note: The _.each(feedViews, (feed, feedName) => {}) block appears incomplete\n// Based on the test structure, this should test date range filtering for each feed view\n// Here's what the complete implementation might look like:\n\n/*\n_.each(feedViews, (feed, feedName) => {\nit(`filters ${feedName} transactions by date range`, () => {\n// Navigate to the specific feed\ncy.getBySel(`nav-${feed.tab}`).click();\ncy.wait(`@${feed.routeAlias}`);\n\n// Open date range filter\ncy.getBySel(\"filter-date-range-button\").click();\n\n// Set date range (last 30 days)\nconst endDate = new Date();\nconst startDate = addDays(endDate, -30);\n\ncy.getBySel(\"date-range-start\").clear().type(startDate.toISOString().split('T')[0]);\ncy.getBySel(\"date-range-end\").clear().type(endDate.toISOString().split('T')[0]);\n\n// Apply filter\ncy.getBySel(\"date-range-apply\").click();\n\n// Wait for filtered results\ncy.wait(`@${feed.routeAlias}`);\n\n// Verify transactions are within date range\ncy.getBySel(\"transaction-item\").each(($transaction) => {\ncy.wrap($transaction).within(() => {\ncy.getBySel(\"transaction-date\").invoke('text').then((dateText) => {\nconst transactionDate = new Date(dateText);\nexpect(isWithinInterval(transactionDate, { start: startOfDay(startDate), end: endDate })).to.be.true;\n});\n});\n});\n});\n});\n*/"
+  },
+  {
+    "timestamp": "2025-05-24 23:02:02.809",
+    "output_file": "output_claude_sonnet_4\\bankaccounts2.spec_response_claude_sonnet_4_20250524_230412.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\bankaccounts2.spec.txt",
+    "requestTimestamp": "2025-05-24 23:02:03.013",
+    "requestTimeMs": 1748120523013,
+    "responseTimeMs": 1748120534038,
+    "durationMs": 11025,
+    "code": "// should display bank account form errors\nit(\"should display bank account form errors\", () => {\n// Navigate to bank accounts page\ncy.getBySel(\"sidenav-bankaccounts\").click();\n\n// Click on the \"Create\" button to open the bank account form\ncy.getBySel(\"bankaccount-new\").click();\n\n// Try to submit the form without filling any fields to trigger validation errors\ncy.getBySel(\"bankaccount-submit\").click();\n\n// Assert that error messages are displayed for required fields\ncy.getBySel(\"bankaccount-bankName-input-helper-text\")\n.should(\"be.visible\")\n.and(\"contain\", \"Enter a bank name\");\n\ncy.getBySel(\"bankaccount-routingNumber-input-helper-text\")\n.should(\"be.visible\")\n.and(\"contain\", \"Enter a valid bank routing number\");\n\ncy.getBySel(\"bankaccount-accountNumber-input-helper-text\")\n.should(\"be.visible\")\n.and(\"contain\", \"Enter a valid bank account number\");\n\n// Test invalid routing number format\ncy.getBySel(\"bankaccount-bankName-input\").type(\"Test Bank\");\ncy.getBySel(\"bankaccount-routingNumber-input\").type(\"123\"); // Invalid format\ncy.getBySel(\"bankaccount-accountNumber-input\").type(\"456\");\ncy.getBySel(\"bankaccount-submit\").click();\n\n// Assert routing number error for invalid format\ncy.getBySel(\"bankaccount-routingNumber-input-helper-text\")\n.should(\"be.visible\")\n.and(\"contain\", \"Must contain a valid routing number\");\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:04:38.541",
+    "output_file": "output_claude_sonnet_4\\bankaccounts4.spec_response_claude_sonnet_4_20250524_230648.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\bankaccounts4.spec.txt",
+    "requestTimestamp": "2025-05-24 23:04:38.745",
+    "requestTimeMs": 1748120678745,
+    "responseTimeMs": 1748120688282,
+    "durationMs": 9537,
+    "code": "// renders an empty bank account list state with onboarding modal\nit(\"renders an empty bank account list state with onboarding modal\", () => {\n// Navigate to the bank accounts page\ncy.getBySel(\"sidenav-bankaccounts\").click();\n\n// Wait for the bank account list query to complete\ncy.wait(\"@gqlListBankAccountQuery\");\n\n// Verify that the bank account list is empty or doesn't exist\ncy.getBySel(\"bankaccount-list\").should(\"not.exist\");\n\n// Verify that the onboarding modal is visible\ncy.getBySel(\"user-onboarding-dialog\").should(\"be.visible\");\n\n// Verify empty state message or header is displayed\ncy.getBySel(\"empty-list-header\").should(\"be.visible\");\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:07:14.218",
+    "output_file": "output_claude_sonnet_4\\new-transaction3.spec_response_claude_sonnet_4_20250524_230924.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction3.spec.txt",
+    "requestTimestamp": "2025-05-24 23:07:14.421",
+    "requestTimeMs": 1748120834421,
+    "responseTimeMs": 1748120848743,
+    "durationMs": 14322,
+    "code": "// displays new transaction errors\nit(\"displays new transaction errors\", () => {\n// Navigate to the new transaction form\ncy.getBySel(\"nav-top-new-transaction\").click();\ncy.wait(\"@allUsers\");\n\n// Select a user from the list\ncy.getBySel(\"user-list-item\").first().click();\n\n// Try to submit without entering amount or description\ncy.getBySel(\"transaction-create-submit-payment\").click();\n\n// Verify error messages are displayed for required fields\ncy.getBySel(\"transaction-create-amount-input\").should(\"have.attr\", \"aria-invalid\", \"true\");\ncy.getBySel(\"transaction-create-description-input\").should(\"have.attr\", \"aria-invalid\", \"true\");\n\n// Enter invalid amount (0 or negative)\ncy.getBySel(\"transaction-create-amount-input\").type(\"0\");\ncy.getBySel(\"transaction-create-submit-payment\").click();\n\n// Verify amount error is still displayed\ncy.getBySel(\"transaction-create-amount-input\").should(\"have.attr\", \"aria-invalid\", \"true\");\n\n// Clear and enter negative amount\ncy.getBySel(\"transaction-create-amount-input\").clear().type(\"-10\");\ncy.getBySel(\"transaction-create-submit-payment\").click();\n\n// Verify amount error is still displayed\ncy.getBySel(\"transaction-create-amount-input\").should(\"have.attr\", \"aria-invalid\", \"true\");\n\n// Enter valid amount but leave description empty\ncy.getBySel(\"transaction-create-amount-input\").clear().type(\"25\");\ncy.getBySel(\"transaction-create-submit-payment\").click();\n\n// Verify description error is displayed\ncy.getBySel(\"transaction-create-description-input\").should(\"have.attr\", \"aria-invalid\", \"true\");\n\n// Fill in description and verify form can be submitted successfully\ncy.getBySel(\"transaction-create-description-input\").type(\"Test transaction\");\ncy.getBySel(\"transaction-create-submit-payment\").click();\n\n// Wait for successful transaction creation\ncy.wait(\"@createTransaction\");\n\n// Verify we're redirected to transactions page or success state\ncy.url().should(\"not.include\", \"/transaction/new\");\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:09:49.801",
+    "output_file": "output_claude_sonnet_4\\transaction-view2.spec_response_claude_sonnet_4_20250524_231159.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view2.spec.txt",
+    "requestTimestamp": "2025-05-24 23:09:50.001",
+    "requestTimeMs": 1748120990001,
+    "responseTimeMs": 1748120998647,
+    "durationMs": 8646,
+    "code": "// it(\"likes a transaction\", () => { });\nit(\"likes a transaction\", () => {\n// Verify we have a transaction request to work with\nexpect(ctx.transactionRequest).to.exist;\n\n// Find and click on the transaction item to view details\ncy.getBySel(\"transaction-item\")\n.filter(`:contains(\"${ctx.transactionRequest.description}\")`)\n.first()\n.click();\n\n// Wait for transaction details to load\ncy.wait(\"@getTransaction\");\n\n// Verify we're on the transaction detail page\ncy.getBySel(\"transaction-detail\").should(\"be.visible\");\n\n// Find and click the like button\ncy.getBySel(\"transaction-like-button\").click();\n\n// Verify the like was successful (button should show as liked)\ncy.getBySel(\"transaction-like-button\")\n.should(\"have.class\", \"liked\")\n.or(\"contain\", \"1\"); // Could show like count\n\n// Verify the transaction shows it has been liked\ncy.getBySel(\"transaction-likes-count\")\n.should(\"be.visible\")\n.and(\"contain\", \"1\");\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:12:25.553",
+    "output_file": "output_claude_sonnet_4\\auth6.spec_response_claude_sonnet_4_20250524_231435.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth6.spec.txt",
+    "requestTimestamp": "2025-05-24 23:12:25.761",
+    "requestTimeMs": 1748121145761,
+    "responseTimeMs": 1748121154048,
+    "durationMs": 8287,
+    "code": "// should display signup errors\ncy.visit(\"/signup\");\n\n// Test submitting empty form - should show required field errors\ncy.getBySel(\"signup-submit\").click();\ncy.get(\"#firstName-helper-text\").should(\"contain\", \"First Name is required\");\ncy.get(\"#lastName-helper-text\").should(\"contain\", \"Last Name is required\");\ncy.get(\"#username-helper-text\").should(\"contain\", \"Username is required\");\ncy.get(\"#password-helper-text\").should(\"contain\", \"Enter your password\");\ncy.get(\"#confirmPassword-helper-text\").should(\"contain\", \"Confirm your password\");\n\n// Test password mismatch error\ncy.getBySel(\"signup-first-name\").type(userInfo.firstName);\ncy.getBySel(\"signup-last-name\").type(userInfo.lastName);\ncy.getBySel(\"signup-username\").type(\"TestUser123\");\ncy.getBySel(\"signup-password\").type(userInfo.password);\ncy.getBySel(\"signup-confirmPassword\").type(loginCredentials.invalidPassword);\ncy.getBySel(\"signup-submit\").click();\ncy.get(\"#confirmPassword-helper-text\").should(\"contain\", \"Password does not match\");"
+  },
+  {
+    "timestamp": "2025-05-24 23:15:01.373",
+    "output_file": "output_claude_sonnet_4\\transaction-feeds10.spec_response_claude_sonnet_4_20250524_231711.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds10.spec.txt",
+    "requestTimestamp": "2025-05-24 23:15:01.578",
+    "requestTimeMs": 1748121301578,
+    "responseTimeMs": 1748121315085,
+    "durationMs": 13507,
+    "code": "```typescript\n// first five items belong to contacts in public feed\nit(\"first five items belong to contacts in public feed\", () => {\n// Navigate to the public feed tab\ncy.getBySel(\"nav-public-tab\").click();\ncy.wait(`@${feedViews.public.routeAlias}`);\n\n// Get the user's contacts to verify against\ncy.database(\"filter\", \"contacts\", { userId: ctx.user!.id }).then((contacts: Contact[]) => {\nconst contactIds = contacts.map(contact => contact.contactUserId);\nctx.contactIds = contactIds;\n\n// If user has no contacts, skip this test\nif (contactIds.length === 0) {\ncy.log(\"User has no contacts. Skipping test.\");\nreturn;\n}\n\n// Check the first 5 transaction items (or fewer if less than 5 exist)\ncy.getBySel(\"transaction-item\").then($items => {\nconst itemsToCheck = Math.min(5, $items.length);\n\nif (itemsToCheck === 0) {\ncy.log(\"No transaction items found in public feed.\");\nreturn;\n}\n\n// Verify each of the first 5 items involves a contact\nfor (let i = 0; i < itemsToCheck; i++) {\ncy.getBySel(\"transaction-item\").eq(i).within(() => {\n// Check if either sender or receiver is a contact\ncy.get(\"[data-test*='sender-'], [data-test*='receiver-']\").then($elements => {\nlet hasContact = false;\n\n$elements.each((index, element) => {\nconst dataTest = Cypress.$(element).attr(\"data-test\");\nif (dataTest) {\nconst userId = dataTest.split(\"-\")[1];\nif (contactIds.includes(userId) || userId === ctx.user!.id) {\nhasContact = true;\n}\n}\n});\n\nexpect(hasContact).to.be.true;\n});\n});\n}\n});\n});\n});\n```"
+  },
+  {
+    "timestamp": "2025-05-24 23:17:37.036",
+    "output_file": "output_claude_sonnet_4\\user-settings3.spec_response_claude_sonnet_4_20250524_231947.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\user-settings3.spec.txt",
+    "requestTimestamp": "2025-05-24 23:17:37.245",
+    "requestTimeMs": 1748121457245,
+    "responseTimeMs": 1748121466564,
+    "durationMs": 9319,
+    "code": "// updates first name, last name, email and phone number\ncy.getBySel(\"user-settings-firstName-input\").clear().type(\"New First Name\");\ncy.getBySel(\"user-settings-lastName-input\").clear().type(\"New Last Name\");\ncy.getBySel(\"user-settings-email-input\").clear().type(\"email@email.com\");\ncy.getBySel(\"user-settings-phoneNumber-input\").clear().type(\"6155551212\");\n\n// Submit the form\ncy.getBySel(\"user-settings-submit\").click();\n\n// Wait for the update request to complete\ncy.wait(\"@updateUser\");\n\n// Verify the form fields still contain the updated values\ncy.getBySel(\"user-settings-firstName-input\").should(\"have.value\", \"New First Name\");\ncy.getBySel(\"user-settings-lastName-input\").should(\"have.value\", \"New Last Name\");\ncy.getBySel(\"user-settings-email-input\").should(\"have.value\", \"email@email.com\");\ncy.getBySel(\"user-settings-phoneNumber-input\").should(\"have.value\", \"6155551212\");"
+  },
+  {
+    "timestamp": "2025-05-24 23:20:12.680",
+    "output_file": "output_claude_sonnet_4\\bankaccounts3.spec_response_claude_sonnet_4_20250524_232222.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\bankaccounts3.spec.txt",
+    "requestTimestamp": "2025-05-24 23:20:12.884",
+    "requestTimeMs": 1748121612884,
+    "responseTimeMs": 1748121621671,
+    "durationMs": 8787,
+    "code": "// soft deletes a bank account\nit(\"soft deletes a bank account\", () => {\n// Navigate to bank accounts page\ncy.getBySel(\"sidenav-bankaccounts\").click();\ncy.wait(\"@gqlListBankAccountQuery\");\n\n// First, create a bank account to delete\ncy.getBySel(\"bankaccount-new\").click();\ncy.getBySel(\"bankaccount-bankName-input\").type(\"The Best Bank\");\ncy.getBySel(\"bankaccount-routingNumber-input\").type(\"987654321\");\ncy.getBySel(\"bankaccount-accountNumber-input\").type(\"123456789\");\ncy.getBySel(\"bankaccount-submit\").click();\ncy.wait(\"@gqlCreateBankAccountMutation\");\n\n// Verify the bank account appears in the list\ncy.getBySel(\"bankaccount-list\").should(\"contain\", \"The Best Bank\");\n\n// Find and click the delete button for the bank account\ncy.getBySel(\"bankaccount-delete\").first().click();\n\n// Wait for the delete mutation to complete\ncy.wait(\"@gqlDeleteBankAccountMutation\");\n\n// Verify the bank account is no longer visible in the list\ncy.getBySel(\"bankaccount-list\").should(\"not.contain\", \"The Best Bank\");\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:22:48.190",
+    "output_file": "output_claude_sonnet_4\\notifications4.spec_response_claude_sonnet_4_20250524_232458.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications4.spec.txt",
+    "requestTimestamp": "2025-05-24 23:22:48.411",
+    "requestTimeMs": 1748121768411,
+    "responseTimeMs": 1748121781287,
+    "durationMs": 12876,
+    "code": "// User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction\nit(\"User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction\", () => {\n// Step 1: Login as User A and create a transaction with User B\ncy.loginByXstate(ctx.userA.username);\n\n// Navigate to create new transaction\ncy.getBySel(\"nav-top-new-transaction\").click();\n\n// Select User B as recipient\ncy.getBySel(\"user-list-search-input\").type(ctx.userB.firstName);\ncy.getBySel(\"user-list-item\").contains(ctx.userB.firstName).click();\n\n// Fill transaction details\ncy.getBySel(\"amount-input\").type(\"50\");\ncy.getBySel(\"transaction-create-description-input\").type(\"Test transaction for comments\");\n\n// Submit payment\ncy.getBySel(\"transaction-create-submit-payment\").click();\ncy.wait(\"@createTransaction\");\n\n// Get transaction ID from URL\ncy.url().then((url) => {\nconst transactionId = url.split(\"/\").pop();\n\n// Step 2: Logout User A and login as User C\ncy.getBySel(\"sidenav-signout\").click();\ncy.loginByXstate(ctx.userC.username);\n\n// Step 3: Navigate to the transaction and add a comment\ncy.visit(`/transaction/${transactionId}`);\n\n// Add comment\nconst commentText = \"Great transaction between you two!\";\ncy.getBySel(\"comment-input\").type(commentText);\ncy.getBySel(\"comment-submit\").click();\ncy.wait(\"@postComment\");\n\n// Verify comment appears\ncy.getBySel(\"comments-list\").should(\"contain\", commentText);\n\n// Step 4: Logout User C and check User A's notifications\ncy.getBySel(\"sidenav-signout\").click();\ncy.loginByXstate(ctx.userA.username);\n\n// Navigate to notifications\ncy.wait(\"@getNotifications\");\ncy.getBySel(\"nav-top-notifications-link\").click();\n\n// Verify User A received notification about User C's comment\ncy.getBySel(\"notification-list-item\")\n.should(\"contain\", ctx.userC.firstName)\n.and(\"contain\", \"commented\");\n\n// Step 5: Logout User A and check User B's notifications\ncy.getBySel(\"sidenav-signout\").click();\ncy.loginByXstate(ctx.userB.username);\n\n// Navigate to notifications\ncy.wait(\"@getNotifications\");\ncy.getBySel(\"nav-top-notifications-link\").click();\n\n// Verify User B received notification about User C's comment\ncy.getBySel(\"notification-list-item\")\n.should(\"contain\", ctx.userC.firstName)\n.and(\"contain\", \"commented\");\n});\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:25:23.821",
+    "output_file": "output_claude_sonnet_4\\transaction-feeds11.spec_response_claude_sonnet_4_20250524_232733.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds11.spec.txt",
+    "requestTimestamp": "2025-05-24 23:25:24.028",
+    "requestTimeMs": 1748121924028,
+    "responseTimeMs": 1748121935829,
+    "durationMs": 11801,
+    "code": "// friends feed only shows contact transactions\nit(\"friends feed only shows contact transactions\", () => {\n// Get the user's contacts first\ncy.database(\"filter\", \"contacts\", { userId: ctx.user!.id }).then((contacts: Contact[]) => {\nconst contactIds = contacts.map(contact => contact.contactUserId);\nctx.contactIds = contactIds;\n\n// Navigate to contacts/friends feed\ncy.getBySel(\"nav-contacts-tab\").click();\ncy.wait(\"@contactsTransactions\");\n\n// Check if there are any transactions in the friends feed\ncy.get(\"body\").then(($body) => {\nif ($body.find(\"[data-test=empty-list-header]\").length > 0) {\ncy.log(\"No transactions found in friends feed. Test passed - empty state is valid.\");\nreturn;\n}\n\n// If transactions exist, verify each one involves a contact\ncy.getBySel(\"transaction-item\").should(\"have.length.at.least\", 1);\n\ncy.getBySel(\"transaction-item\").each(($transactionItem) => {\n// Check if this transaction involves any of the user's contacts\ncy.wrap($transactionItem).within(() => {\n// Look for sender and receiver elements to get their IDs\ncy.get(\"[data-test*='transaction-sender-'], [data-test*='transaction-receiver-']\")\n.should(\"exist\")\n.then(($elements) => {\nlet involvesContact = false;\n\n$elements.each((index, element) => {\nconst dataTest = element.getAttribute(\"data-test\");\nif (dataTest) {\n// Extract user ID from data-test attribute\nconst userId = dataTest.split(\"-\")[2];\n\n// Check if this user ID is in our contacts or is the current user\nif (contactIds.includes(userId) || userId === ctx.user!.id) {\ninvolvesContact = true;\n}\n}\n});\n\n// Assert that this transaction involves at least one contact\nexpect(involvesContact).to.be.true;\n});\n});\n});\n});\n});\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:28:00.040",
+    "output_file": "output_claude_sonnet_4\\transaction-feeds1.spec_response_claude_sonnet_4_20250524_233010.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds1.spec.txt",
+    "requestTimestamp": "2025-05-24 23:28:00.245",
+    "requestTimeMs": 1748122080245,
+    "responseTimeMs": 1748122090886,
+    "durationMs": 10641,
+    "code": "// toggles the navigation drawer\nit(\"toggles the navigation drawer\", () => {\n// Visit the main page where the navigation drawer should be present\ncy.visit(\"/\");\n\n// Wait for the page to load and transactions to be fetched\ncy.wait(\"@personalTransactions\");\n\n// Check if we're on mobile or desktop to handle different drawer behaviors\nif (isMobile()) {\n// On mobile, the drawer should be closed by default\n// Look for the hamburger menu button and click it to open drawer\ncy.getBySel(\"sidenav-toggle\").click();\n\n// Verify the drawer is now visible/open\ncy.getBySel(\"sidenav-drawer\").should(\"be.visible\");\n\n// Click the toggle again to close the drawer\ncy.getBySel(\"sidenav-toggle\").click();\n\n// Verify the drawer is now hidden/closed\ncy.getBySel(\"sidenav-drawer\").should(\"not.be.visible\");\n} else {\n// On desktop, the drawer might be open by default\n// Check if drawer is visible initially\ncy.get(\"body\").then(($body) => {\nif ($body.find(\"[data-test=sidenav-drawer]\").is(\":visible\")) {\n// If visible, click to hide it\ncy.getBySel(\"sidenav-toggle\").click();\ncy.getBySel(\"sidenav-drawer\").should(\"not.be.visible\");\n\n// Click again to show it\ncy.getBySel(\"sidenav-toggle\").click();\ncy.getBySel(\"sidenav-drawer\").should(\"be.visible\");\n} else {\n// If hidden, click to show it\ncy.getBySel(\"sidenav-toggle\").click();\ncy.getBySel(\"sidenav-drawer\").should(\"be.visible\");\n\n// Click again to hide it\ncy.getBySel(\"sidenav-toggle\").click();\ncy.getBySel(\"sidenav-drawer\").should(\"not.be.visible\");\n}\n});\n}\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:30:35.697",
+    "output_file": "output_claude_sonnet_4\\notifications3.spec_response_claude_sonnet_4_20250524_233245.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications3.spec.txt",
+    "requestTimestamp": "2025-05-24 23:30:35.897",
+    "requestTimeMs": 1748122235897,
+    "responseTimeMs": 1748122249738,
+    "durationMs": 13841,
+    "code": "// User A comments on a transaction of User B; User B gets notification that User A commented on their transaction\nit(\"User A comments on a transaction of User B; User B gets notification that User A commented on their transaction\", () => {\n// Step 1: Login as User B and create a transaction or find an existing one\ncy.loginByXstate(ctx.userB.username);\n\n// Step 2: Create a new transaction as User B to User A so we have a transaction to comment on\ncy.getBySel(\"nav-top-new-transaction\").click();\ncy.getBySel(\"user-list-search-input\").type(ctx.userA.firstName);\ncy.getBySel(\"user-list-item\").contains(ctx.userA.firstName).click();\ncy.getBySel(\"amount-input\").type(\"25\");\ncy.getBySel(\"transaction-create-description-input\").type(\"Test transaction for comments\");\ncy.getBySel(\"transaction-create-submit-payment\").click();\ncy.wait(\"@createTransaction\");\n\n// Step 3: Get the transaction ID from the URL\ncy.url().then((url) => {\nconst transactionId = url.split(\"/\").pop();\n\n// Step 4: Logout User B\ncy.getBySel(\"sidenav-signout\").click();\n\n// Step 5: Login as User A\ncy.loginByXstate(ctx.userA.username);\n\n// Step 6: Navigate to the transaction created by User B\ncy.visit(`/transaction/${transactionId}`);\n\n// Step 7: Add a comment to the transaction\nconst commentText = \"Great transaction!\";\ncy.getBySel(\"comment-input\").type(commentText);\ncy.getBySel(\"comment-submit\").click();\ncy.wait(\"@postComment\");\n\n// Step 8: Verify the comment appears\ncy.getBySel(\"comments-list\").should(\"contain\", commentText);\n\n// Step 9: Logout User A\ncy.getBySel(\"sidenav-signout\").click();\n\n// Step 10: Login as User B to check notifications\ncy.loginByXstate(ctx.userB.username);\ncy.wait(\"@getNotifications\");\n\n// Step 11: Navigate to notifications and verify User B received notification about User A's comment\ncy.getBySel(\"sidenav-notifications\").click();\n\n// Step 12: Verify the notification exists and contains User A's information\ncy.getBySel(\"notification-list-item\")\n.first()\n.should(\"contain\", ctx.userA.firstName)\n.and(\"contain\", \"commented\");\n});\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:33:11.253",
+    "output_file": "output_claude_sonnet_4\\auth4.spec_response_claude_sonnet_4_20250524_233521.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth4.spec.txt",
+    "requestTimestamp": "2025-05-24 23:33:11.457",
+    "requestTimeMs": 1748122391457,
+    "responseTimeMs": 1748122405162,
+    "durationMs": 13705,
+    "code": "```typescript\n// should allow a visitor to sign-up, login, and logout\nit(\"should allow a visitor to sign-up, login, and logout\", () => {\n// Step 1: Visit the signup page\ncy.visit(\"/signup\");\n\n// Step 2: Fill out the signup form with user information\ncy.getBySel(\"signup-first-name\").type(userInfo.firstName);\ncy.getBySel(\"signup-last-name\").type(userInfo.lastName);\ncy.getBySel(\"signup-username\").type(userInfo.username);\ncy.getBySel(\"signup-password\").type(userInfo.password);\ncy.getBySel(\"signup-confirmPassword\").type(userInfo.password);\n\n// Step 3: Submit the signup form\ncy.getBySel(\"signup-submit\").click();\n\n// Step 4: Wait for signup request to complete\ncy.wait(\"@signup\");\n\n// Step 5: Complete onboarding by creating a bank account\n// Navigate through onboarding flow\ncy.getBySel(\"user-onboarding-next\").click();\n\n// Fill in bank account details\ncy.getBySel(\"bankaccount-bankName-input\").type(bankAccountInfo.bankName);\ncy.getBySel(\"bankaccount-routingNumber-input\").type(bankAccountInfo.routingNumber);\ncy.getBySel(\"bankaccount-accountNumber-input\").type(bankAccountInfo.accountNumber);\n\n// Submit bank account form\ncy.getBySel(\"bankaccount-submit\").click();\n\n// Wait for bank account creation\ncy.wait(\"@gqlCreateBankAccountMutation\");\n\n// Complete onboarding\ncy.getBySel(\"user-onboarding-next\").click();\ncy.getBySel(\"user-onboarding-done\").click();\n\n// Step 6: Verify successful login - should be on home page\ncy.location(\"pathname\").should(\"equal\", \"/\");\ncy.getBySel(\"sidenav-user-full-name\").should(\"contain\", `${userInfo.firstName} ${userInfo.lastName}`);\n\n// Step 7: Logout\n// Handle mobile navigation if needed\nif (isMobile()) {\ncy.getBySel(\"sidenav-toggle\").click();\n}\ncy.getBySel(\"sidenav-signout\").click();\n\n// Step 8: Verify logout - should be redirected to signin page\ncy.location(\"pathname\").should(\"equal\", \"/signin\");\n});\n```"
+  },
+  {
+    "timestamp": "2025-05-24 23:35:46.803",
+    "output_file": "output_claude_sonnet_4\\transaction-feeds7.spec_response_claude_sonnet_4_20250524_233756.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds7.spec.txt",
+    "requestTimestamp": "2025-05-24 23:35:47.013",
+    "requestTimeMs": 1748122547013,
+    "responseTimeMs": 1748122560062,
+    "durationMs": 13049,
+    "code": "```typescript\n// filters ${feedName} transaction feed by amount range\ncy.visit(\"/\");\n\n// Navigate to the specific feed tab\ncy.getBySel(feed.tab).click();\ncy.wait(`@${feed.routeAlias}`);\n\n// Verify transactions are loaded\ncy.getBySel(\"transaction-item\").should(\"exist\");\n\n// Open amount range filter (assuming there's a filter UI)\ncy.getBySel(\"amount-range-filter\").click();\n\n// Set minimum amount filter\ncy.getBySel(\"amount-range-min\").clear().type(dollarAmountRange.min.toString());\n\n// Set maximum amount filter\ncy.getBySel(\"amount-range-max\").clear().type(dollarAmountRange.max.toString());\n\n// Apply the filter\ncy.getBySel(\"amount-range-apply\").click();\n\n// Wait for filtered results\ncy.wait(`@${feed.routeAlias}`);\n\n// Verify that all visible transactions fall within the specified amount range\ncy.getBySel(\"transaction-item\").each(($el) => {\ncy.wrap($el).within(() => {\n// Extract amount from transaction item (assuming it's in a specific element)\ncy.getBySel(\"transaction-amount\").invoke(\"text\").then((amountText) => {\n// Parse the amount (remove $ and convert to number)\nconst amount = parseFloat(amountText.replace(/[$,]/g, \"\"));\n\n// Assert the amount is within the specified range\nexpect(amount).to.be.at.least(dollarAmountRange.min);\nexpect(amount).to.be.at.most(dollarAmountRange.max);\n});\n});\n});\n\n// Verify filter controls show the applied range\ncy.getBySel(\"amount-range-min\").should(\"have.value\", dollarAmountRange.min.toString());\ncy.getBySel(\"amount-range-max\").should(\"have.value\", dollarAmountRange.max.toString());\n```"
+  },
+  {
+    "timestamp": "2025-05-24 23:38:22.380",
+    "output_file": "output_claude_sonnet_4\\notifications6.spec_response_claude_sonnet_4_20250524_234032.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications6.spec.txt",
+    "requestTimestamp": "2025-05-24 23:38:22.567",
+    "requestTimeMs": 1748122702567,
+    "responseTimeMs": 1748122712751,
+    "durationMs": 10184,
+    "code": "// User A sends a payment request to User C\nit(\"User A sends a payment request to User C\", () => {\n// Login as User A\ncy.loginByXstate(ctx.userA.username);\n\n// Navigate to create new transaction\ncy.getBySel(\"new-transaction\").click();\n\n// Search for and select User C\ncy.getBySel(\"user-list-search-input\").type(ctx.userC.firstName);\ncy.getBySel(\"user-list-item\").first().click();\n\n// Enter transaction details for a request\ncy.getBySel(\"amount-input\").type(\"75\");\ncy.getBySel(\"transaction-create-description-input\").type(\"Payment request from A to C\");\n\n// Submit the payment request\ncy.getBySel(\"transaction-create-submit-request\").click();\n\n// Wait for the transaction to be created\ncy.wait(\"@createTransaction\");\n\n// Switch to User C to verify notification\ncy.loginByXstate(ctx.userC.username);\n\n// Navigate to notifications\ncy.visit(\"/notifications\");\ncy.wait(\"@getNotifications\");\n\n// Verify that User C received a notification about the payment request\ncy.getBySel(\"notification-list-item\")\n.should(\"contain\", ctx.userA.firstName)\n.and(\"contain\", \"requested\");\n\n// Verify notification count is updated\ncy.getBySel(\"nav-top-notifications-count\").should(\"exist\");\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:40:57.960",
+    "output_file": "output_claude_sonnet_4\\new-transaction2.spec_response_claude_sonnet_4_20250524_234308.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction2.spec.txt",
+    "requestTimestamp": "2025-05-24 23:40:58.175",
+    "requestTimeMs": 1748122858175,
+    "responseTimeMs": 1748122868851,
+    "durationMs": 10676,
+    "code": "// navigates to the new transaction form, selects a user and submits a transaction request\nit(\"navigates to the new transaction form, selects a user and submits a transaction request\", () => {\nconst requestTransaction = {\namount: \"95\",\ndescription: \"Fancy Hotel 🏨\"\n};\n\n// Navigate to the new transaction form\ncy.getBySel(\"nav-top-new-transaction\").click();\n\n// Wait for users to load\ncy.wait(\"@allUsers\");\n\n// Search for the contact user\ncy.getBySel(\"user-list-search-input\").type(ctx.contact!.firstName);\ncy.wait(\"@usersSearch\");\n\n// Select the contact user from the search results\ncy.getBySel(\"user-list-item\").first().click();\n\n// Switch to request tab (instead of payment)\ncy.getBySel(\"transaction-create-submit-request\").click();\n\n// Enter the request amount\ncy.getBySel(\"amount-input\").type(requestTransaction.amount);\n\n// Enter the request description\ncy.getBySel(\"transaction-create-description-input\").type(requestTransaction.description);\n\n// Submit the request\ncy.getBySel(\"transaction-create-submit-request\").click();\n\n// Wait for the transaction to be created\ncy.wait(\"@createTransaction\");\n\n// Verify we're redirected to the personal transactions page\ncy.getBySel(\"nav-personal-tab\").should(\"be.visible\");\n\n// Verify the request transaction appears in the transaction list\ncy.getBySel(\"transaction-item\").first().should(\"contain\", requestTransaction.description);\ncy.getBySel(\"transaction-item\").first().should(\"contain\", `$${requestTransaction.amount}`);\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:43:33.555",
+    "output_file": "output_claude_sonnet_4\\transaction-feeds3.spec_response_claude_sonnet_4_20250524_234543.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds3.spec.txt",
+    "requestTimestamp": "2025-05-24 23:43:33.760",
+    "requestTimeMs": 1748123013760,
+    "responseTimeMs": 1748123026967,
+    "durationMs": 13207,
+    "code": "// paginates ${feedName} transaction feed\ncy.visit(\"/\");\n\n// Navigate to the specific feed tab\ncy.getBySel(feed.tab).click();\n\n// Wait for the feed to load\ncy.wait(`@${feed.routeAlias}`);\n\n// Verify that transaction items are displayed\ncy.getBySel(\"transaction-item\").should(\"have.length.at.least\", 1);\n\n// Check if pagination is available (look for pagination controls)\ncy.get(\"body\").then(($body) => {\nif ($body.find(\"[data-test*='pagination']\").length > 0) {\n// If pagination exists, test it\ncy.getBySel(\"transaction-list\").should(\"be.visible\");\n\n// Get initial number of transactions\ncy.getBySel(\"transaction-item\").then(($initialItems) => {\nconst initialCount = $initialItems.length;\n\n// Look for and click next page if available\ncy.get(\"body\").then(($bodyCheck) => {\nif ($bodyCheck.find(\"[data-test='pagination-next']:not([disabled])\").length > 0) {\ncy.getBySel(\"pagination-next\").click();\ncy.wait(`@${feed.routeAlias}`);\n\n// Verify new transactions are loaded\ncy.getBySel(\"transaction-item\").should(\"exist\");\n}\n});\n});\n} else {\n// If no pagination, just verify the feed loads correctly\ncy.getBySel(\"transaction-list\").should(\"be.visible\");\ncy.getBySel(\"transaction-item\").should(\"have.length.at.least\", 1);\n}\n});\n\n// Verify the correct feed is active\ncy.getBySel(feed.tab).should(\"have.class\", \"Mui-selected\");"
+  },
+  {
+    "timestamp": "2025-05-24 23:46:09.109",
+    "output_file": "output_claude_sonnet_4\\notifications2.spec_response_claude_sonnet_4_20250524_234819.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications2.spec.txt",
+    "requestTimestamp": "2025-05-24 23:46:09.307",
+    "requestTimeMs": 1748123169307,
+    "responseTimeMs": 1748123182162,
+    "durationMs": 12855,
+    "code": "// User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction\nit(\"User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction\", () => {\n// First, create a transaction between User A and User B\ncy.loginByXstate(ctx.userA.username);\n\n// Navigate to new transaction page\ncy.getBySel(\"nav-top-new-transaction\").click();\n\n// Select User B as recipient\ncy.getBySel(\"user-list-search-input\").type(ctx.userB.firstName);\ncy.getBySel(\"user-list-item\").contains(ctx.userB.firstName).click();\n\n// Enter transaction details\ncy.getBySel(\"amount-input\").type(\"50\");\ncy.getBySel(\"transaction-create-description-input\").type(\"Test transaction for like notification\");\n\n// Submit payment\ncy.getBySel(\"transaction-create-submit-payment\").click();\ncy.wait(\"@createTransaction\");\n\n// Get transaction ID from URL\ncy.url().then((url) => {\nconst transactionId = url.split(\"/\").pop();\n\n// Logout User A\ncy.getBySel(\"sidenav-signout\").click();\n\n// Login as User C\ncy.loginByXstate(ctx.userC.username);\n\n// Visit the transaction page\ncy.visit(`/transaction/${transactionId}`);\n\n// Like the transaction\ncy.getBySel(\"like-button\").click();\ncy.wait(\"@postLike\");\n\n// Logout User C\ncy.getBySel(\"sidenav-signout\").click();\n\n// Login as User A and check notifications\ncy.loginByXstate(ctx.userA.username);\ncy.visit(\"/\");\ncy.wait(\"@getNotifications\");\n\n// Check notification count and content for User A\ncy.getBySel(\"nav-top-notifications-count\").should(\"contain\", \"1\");\ncy.getBySel(\"nav-top-notifications-link\").click();\ncy.getBySelLike(\"notification-list-item\")\n.first()\n.should(\"contain\", `${ctx.userC.firstName} ${ctx.userC.lastName} liked your transaction`);\n\n// Logout User A\ncy.getBySel(\"sidenav-signout\").click();\n\n// Login as User B and check notifications\ncy.loginByXstate(ctx.userB.username);\ncy.visit(\"/\");\ncy.wait(\"@getNotifications\");\n\n// Check notification count and content for User B\ncy.getBySel(\"nav-top-notifications-count\").should(\"contain\", \"1\");\ncy.getBySel(\"nav-top-notifications-link\").click();\ncy.getBySelLike(\"notification-list-item\")\n.first()\n.should(\"contain\", `${ctx.userC.firstName} ${ctx.userC.lastName} liked your transaction`);\n});\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:48:44.753",
+    "output_file": "output_claude_sonnet_4\\transaction-view5.spec_response_claude_sonnet_4_20250524_235054.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view5.spec.txt",
+    "requestTimestamp": "2025-05-24 23:48:44.955",
+    "requestTimeMs": 1748123324955,
+    "responseTimeMs": 1748123336551,
+    "durationMs": 11596,
+    "code": "// rejects a transaction request\nit(\"rejects a transaction request\", () => {\n// Verify we have a pending transaction request to work with\ncy.then(() => {\nexpect(ctx.transactionRequest).to.exist;\nexpect(ctx.transactionRequest.status).to.equal(\"pending\");\n});\n\n// Find and click on the pending transaction request in the personal feed\ncy.getBySel(\"transaction-item\")\n.filter(`:contains(\"${ctx.transactionRequest.description}\")`)\n.first()\n.click();\n\n// Wait for the transaction details to load\ncy.wait(\"@getTransaction\");\n\n// Verify we're on the transaction detail page and it shows as pending\ncy.getBySel(\"transaction-detail-header\").should(\"contain\", \"pending\");\n\n// Reject the transaction request\ncy.getBySel(\"transaction-reject-request\").click();\n\n// Wait for the transaction update to complete\ncy.wait(\"@updateTransaction\");\n\n// Verify the transaction status is now rejected/declined\ncy.getBySel(\"transaction-detail-header\").should(\"contain\", \"rejected\");\n\n// Verify success message or status change\ncy.getBySel(\"alert-bar-success\")\n.should(\"be.visible\")\n.and(\"contain\", \"Transaction Rejected\");\n\n// Navigate back to personal transactions to verify the change\ncy.getBySel(\"nav-personal-tab\").click();\ncy.wait(\"@personalTransactions\");\n\n// Verify the transaction now shows as rejected in the transaction list\ncy.getBySel(\"transaction-item\")\n.filter(`:contains(\"${ctx.transactionRequest.description}\")`)\n.first()\n.should(\"contain\", \"rejected\");\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:51:20.311",
+    "output_file": "output_claude_sonnet_4\\new-transaction5.spec_response_claude_sonnet_4_20250524_235330.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction5.spec.txt",
+    "requestTimestamp": "2025-05-24 23:51:20.517",
+    "requestTimeMs": 1748123480517,
+    "responseTimeMs": 1748123494380,
+    "durationMs": 13863,
+    "code": "```typescript\n// submits a transaction request and accepts the request for the receiver\nit(\"submits a transaction request and accepts the request for the receiver\", () => {\nconst requestTransaction = {\namount: \"95\",\ndescription: \"Fancy Hotel 🏨\"\n};\n\n// Navigate to new transaction form\ncy.getBySel(\"new-transaction\").click();\ncy.wait(\"@allUsers\");\n\n// Search for and select the contact user\ncy.getBySel(\"user-list-search-input\").type(ctx.contact!.firstName);\ncy.wait(\"@usersSearch\");\ncy.getBySel(\"user-list-item\").first().click();\n\n// Fill in the request details\ncy.getBySel(\"amount-input\").type(requestTransaction.amount);\ncy.getBySel(\"transaction-create-description-input\").type(requestTransaction.description);\n\n// Submit the request (not payment)\ncy.getBySel(\"transaction-create-submit-request\").click();\ncy.wait(\"@createTransaction\");\n\n// Verify request was created successfully\ncy.getBySel(\"alert-bar-success\").should(\"be.visible\");\n\n// Switch to the receiver's account (contact user)\ncy.switchUserByXstate(ctx.contact!.username);\n\n// Navigate to personal transactions to see the request\ncy.getBySel(\"nav-personal-tab\").click();\ncy.wait(\"@personalTransactions\");\n\n// Find and click on the transaction request\ncy.getBySel(\"transaction-item\")\n.first()\n.should(\"contain\", requestTransaction.description)\n.should(\"contain\", `$${requestTransaction.amount}`)\n.click();\n\n// Accept the request\ncy.getBySel(\"transaction-accept-request\").click();\ncy.wait(\"@updateTransaction\");\n\n// Verify the transaction was accepted\ncy.getBySel(\"alert-bar-success\").should(\"be.visible\");\n\n// Verify the transaction status is updated to completed/accepted\ncy.getBySel(\"transaction-item\")\n.first()\n.should(\"contain\", \"paid\")\n.or(\"contain\", \"completed\");\n});\n```"
+  },
+  {
+    "timestamp": "2025-05-24 23:53:55.917",
+    "output_file": "output_claude_sonnet_4\\transaction-feeds5.spec_response_claude_sonnet_4_20250524_235606.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds5.spec.txt",
+    "requestTimestamp": "2025-05-24 23:53:56.117",
+    "requestTimeMs": 1748123636117,
+    "responseTimeMs": 1748123650974,
+    "durationMs": 14857,
+    "code": "// filters ${feedName} transaction feed by date range\nit(`filters ${feedName} transaction feed by date range`, () => {\n// Navigate to the specific feed tab\ncy.getBySel(`nav-${feed.tab}`).click();\n\n// Wait for the feed to load\ncy.wait(`@${feed.routeAlias}`);\n\n// Get current date for date range filtering\nconst today = new Date();\nconst startDate = startOfDay(addDays(today, -30)); // 30 days ago\nconst endDate = startOfDay(today);\n\n// Format dates for input fields (YYYY-MM-DD format)\nconst startDateStr = startDate.toISOString().split('T')[0];\nconst endDateStr = endDate.toISOString().split('T')[0];\n\n// Open date filter if it exists\ncy.get('body').then(($body) => {\nif ($body.find('[data-test=\"transaction-date-filter\"]').length > 0) {\ncy.getBySel(\"transaction-date-filter\").click();\n\n// Set start date\ncy.getBySel(\"date-range-start\").clear().type(startDateStr);\n\n// Set end date\ncy.getBySel(\"date-range-end\").clear().type(endDateStr);\n\n// Apply the filter\ncy.getBySel(\"date-filter-apply\").click();\n\n// Wait for filtered results\ncy.wait(`@${feed.routeAlias}`);\n\n// Verify that transactions are filtered by date\ncy.getBySel(\"transaction-item\").should(\"exist\");\n\n// Check that all visible transactions fall within the date range\ncy.getBySel(\"transaction-item\").each(($transaction) => {\ncy.wrap($transaction).within(() => {\ncy.getBySel(\"transaction-date\").invoke('text').then((dateText) => {\nconst transactionDate = new Date(dateText);\nexpect(transactionDate).to.be.at.least(startDate);\nexpect(transactionDate).to.be.at.most(endDate);\n});\n});\n});\n\n// Clear the filter to reset\ncy.getBySel(\"date-filter-clear\").click();\ncy.wait(`@${feed.routeAlias}`);\n\n} else {\n// If no date filter exists, just verify the feed loads\ncy.getBySel(\"transaction-item\").should(\"exist\");\ncy.log(`No date filter available for ${feedName} feed`);\n}\n});\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:56:31.568",
+    "output_file": "output_claude_sonnet_4\\user-settings1.spec_response_claude_sonnet_4_20250524_235841.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\user-settings1.spec.txt",
+    "requestTimestamp": "2025-05-24 23:56:31.776",
+    "requestTimeMs": 1748123791776,
+    "responseTimeMs": 1748123800234,
+    "durationMs": 8458,
+    "code": "// renders the user settings form\nit(\"renders the user settings form\", () => {\n// Verify that the user settings form is visible\ncy.getBySel(\"user-settings-form\").should(\"be.visible\");\n\n// Verify that all form input fields are present and visible\ncy.getBySel(\"user-settings-firstName-input\").should(\"be.visible\");\ncy.getBySel(\"user-settings-lastName-input\").should(\"be.visible\");\ncy.getBySel(\"user-settings-email-input\").should(\"be.visible\");\ncy.getBySel(\"user-settings-phoneNumber-input\").should(\"be.visible\");\n\n// Verify that the submit button is present\ncy.getBySel(\"user-settings-submit\").should(\"be.visible\");\n\n// Verify that the form fields contain some values (should be pre-filled with user data)\ncy.getBySel(\"user-settings-firstName-input\").should(\"have.value\").and(\"not.be.empty\");\ncy.getBySel(\"user-settings-lastName-input\").should(\"have.value\").and(\"not.be.empty\");\ncy.getBySel(\"user-settings-email-input\").should(\"have.value\").and(\"not.be.empty\");\ncy.getBySel(\"user-settings-phoneNumber-input\").should(\"have.value\").and(\"not.be.empty\");\n});"
+  },
+  {
+    "timestamp": "2025-05-24 23:59:07.196",
+    "output_file": "output_claude_sonnet_4\\new-transaction1.spec_response_claude_sonnet_4_20250525_000117.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction1.spec.txt",
+    "requestTimestamp": "2025-05-24 23:59:07.410",
+    "requestTimeMs": 1748123947410,
+    "responseTimeMs": 1748123960087,
+    "durationMs": 12677,
+    "code": "// navigates to the new transaction form, selects a user and submits a transaction payment\nit(\"navigates to the new transaction form, selects a user and submits a transaction payment\", () => {\n// Navigate to the new transaction form\ncy.getBySel(\"nav-top-new-transaction\").click();\ncy.wait(\"@allUsers\");\n\n// Search for and select the contact user\ncy.getBySel(\"user-list-search-input\").type(ctx.contact.firstName);\ncy.wait(\"@usersSearch\");\ncy.getBySel(\"user-list-item\").first().click();\n\n// Fill out the payment form using the first payment transaction from user info\ncy.getBySel(\"amount-input\").type(\"35\");\ncy.getBySel(\"transaction-create-description-input\").type(\"Sushi dinner 🍣\");\n\n// Submit the payment\ncy.getBySel(\"transaction-create-submit-payment\").click();\ncy.wait(\"@createTransaction\");\n\n// Verify the transaction was successful\ncy.getBySel(\"alert-bar-success\").should(\"be.visible\");\n\n// Verify we're redirected to the personal transactions page\ncy.getBySel(\"nav-personal-tab\").should(\"have.class\", \"Mui-selected\");\n\n// Verify the transaction appears in the list\ncy.getBySel(\"transaction-item\").first().should(\"contain\", \"Sushi dinner 🍣\");\ncy.getBySel(\"transaction-item\").first().should(\"contain\", \"$35\");\n});"
+  },
+  {
+    "timestamp": "2025-05-25 00:01:43.011",
+    "output_file": "output_claude_sonnet_4\\auth7.spec_response_claude_sonnet_4_20250525_000353.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth7.spec.txt",
+    "requestTimestamp": "2025-05-25 00:01:43.226",
+    "requestTimeMs": 1748124103226,
+    "responseTimeMs": 1748124113296,
+    "durationMs": 10070,
+    "code": "// should error for an invalid user\nit(\"should error for an invalid user\", () => {\n// Visit the signin page\ncy.visit(\"/signin\");\n\n// Fill in invalid username with valid password\ncy.getBySel(\"signin-username\").type(\"invalidUserName\");\ncy.getBySel(\"signin-password\").type(\"s3cret\");\n\n// Click the sign in button\ncy.getBySel(\"signin-submit\").click();\n\n// Verify error message is displayed\ncy.getBySel(\"signin-error\")\n.should(\"be.visible\")\n.and(\"contain\", \"Username or password is invalid\");\n});"
+  },
+  {
+    "timestamp": "2025-05-25 00:04:18.514",
+    "output_file": "output_claude_sonnet_4\\notifications7.spec_response_claude_sonnet_4_20250525_000628.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications7.spec.txt",
+    "requestTimestamp": "2025-05-25 00:04:18.694",
+    "requestTimeMs": 1748124258694,
+    "responseTimeMs": 1748124270486,
+    "durationMs": 11792,
+    "code": "```typescript\n// renders an empty notifications state\nit(\"renders an empty notifications state\", () => {\n// Create a fresh user with no interactions/notifications\ncy.task(\"db:seed:user\").then((user: User) => {\n// Login as the new user\ncy.loginByXstate(user.username);\ncy.wait(\"@getNotifications\");\n\n// Navigate to notifications page\nif (isMobile()) {\ncy.getBySel(\"sidenav-toggle\").click();\n}\ncy.getBySel(\"sidenav-notifications\").click();\n\n// Verify empty notifications state is displayed\ncy.getBySel(\"empty-list-header\").should(\"be.visible\");\ncy.getBySel(\"empty-list-sub-header\").should(\"be.visible\");\n\n// Verify no notification items are present\ncy.getBySel(\"notification-list-item\").should(\"not.exist\");\n});\n});\n```"
+  },
+  {
+    "timestamp": "2025-05-25 00:06:54.208",
+    "output_file": "output_claude_sonnet_4\\transaction-view6.spec_response_claude_sonnet_4_20250525_000904.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view6.spec.txt",
+    "requestTimestamp": "2025-05-25 00:06:54.393",
+    "requestTimeMs": 1748124414393,
+    "responseTimeMs": 1748124423671,
+    "durationMs": 9278,
+    "code": "// does not display accept/reject buttons on completed request\nit(\"does not display accept/reject buttons on completed request\", () => {\n// Find a completed transaction in the personal transactions list\ncy.getBySel(\"transaction-item\")\n.should(\"be.visible\")\n.first()\n.click();\n\n// Wait for transaction details to load\ncy.wait(\"@getTransaction\");\n\n// Verify that the transaction view is displayed\ncy.getBySel(\"transaction-detail-header\").should(\"be.visible\");\n\n// Check that accept/reject buttons are not present for completed transactions\ncy.getBySel(\"transaction-accept-request\").should(\"not.exist\");\ncy.getBySel(\"transaction-reject-request\").should(\"not.exist\");\n\n// Verify that the transaction status shows as complete or settled\ncy.getBySel(\"transaction-status\")\n.should(\"be.visible\")\n.and(\"not.contain\", \"pending\");\n});"
+  },
+  {
+    "timestamp": "2025-05-25 00:09:29.750",
+    "output_file": "output_claude_sonnet_4\\user-settings2.spec_response_claude_sonnet_4_20250525_001139.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\user-settings2.spec.txt",
+    "requestTimestamp": "2025-05-25 00:09:29.960",
+    "requestTimeMs": 1748124569960,
+    "responseTimeMs": 1748124579658,
+    "durationMs": 9698,
+    "code": "// should display user setting form errors\nit(\"should display user setting form errors\", () => {\n// Clear all required fields to trigger validation errors\ncy.getBySel(\"user-settings-firstName-input\").clear();\ncy.getBySel(\"user-settings-lastName-input\").clear();\ncy.getBySel(\"user-settings-email-input\").clear();\ncy.getBySel(\"user-settings-phoneNumber-input\").clear();\n\n// Submit the form to trigger validation\ncy.getBySel(\"user-settings-submit\").click();\n\n// Verify that validation error messages are displayed for required fields\ncy.contains(\"Enter a first name\").should(\"be.visible\");\ncy.contains(\"Enter a last name\").should(\"be.visible\");\ncy.contains(\"Enter an email address\").should(\"be.visible\");\ncy.contains(\"Enter a phone number\").should(\"be.visible\");\n\n// Test invalid email format\ncy.getBySel(\"user-settings-firstName-input\").type(\"Test\");\ncy.getBySel(\"user-settings-lastName-input\").type(\"User\");\ncy.getBySel(\"user-settings-email-input\").type(\"invalid-email\");\ncy.getBySel(\"user-settings-phoneNumber-input\").type(\"123\");\ncy.getBySel(\"user-settings-submit\").click();\n\n// Verify email validation error\ncy.contains(\"Must contain a valid email address\").should(\"be.visible\");\n\n// Test invalid phone number format\ncy.getBySel(\"user-settings-email-input\").clear().type(\"test@example.com\");\ncy.getBySel(\"user-settings-phoneNumber-input\").clear().type(\"abc\");\ncy.getBySel(\"user-settings-submit\").click();\n\n// Verify phone number validation error\ncy.contains(\"Phone number is not valid\").should(\"be.visible\");\n});"
+  },
+  {
+    "timestamp": "2025-05-25 00:12:05.266",
+    "output_file": "output_claude_sonnet_4\\auth3.spec_response_claude_sonnet_4_20250525_001415.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth3.spec.txt",
+    "requestTimestamp": "2025-05-25 00:12:05.476",
+    "requestTimeMs": 1748124725476,
+    "responseTimeMs": 1748124736622,
+    "durationMs": 11146,
+    "code": "```typescript\n// should remember a user for 30 days after login\nit(\"should remember a user for 30 days after login\", () => {\n// Visit the signin page\ncy.visit(\"/signin\");\n\n// Fill in login credentials\ncy.getBySel(\"signin-username\").type(userInfo.username);\ncy.getBySel(\"signin-password\").type(userInfo.password);\n\n// Check the remember me checkbox\ncy.getBySel(\"signin-remember-me\").check();\n\n// Submit the login form\ncy.getBySel(\"signin-submit\").click();\n\n// Verify successful login by checking we're redirected to home page\ncy.location(\"pathname\").should(\"equal\", \"/\");\n\n// Verify the session cookie exists and has approximately 30 days expiration\ncy.getCookie(\"connect.sid\").then(cookie => {\nexpect(cookie).to.exist;\n\nif (cookie && cookie.expiry) {\nconst cookieExpirationDate = new Date(cookie.expiry * 1000);\nconst now = new Date();\nconst daysDifference = Math.round((cookieExpirationDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));\n\n// The cookie should expire approximately 30 days from now (give or take a day for timing)\nexpect(daysDifference).to.be.closeTo(30, 1);\n}\n});\n\n// Reload the page to verify session persistence\ncy.reload();\n\n// Should still be logged in (not redirected to signin)\ncy.location(\"pathname\").should(\"equal\", \"/\");\ncy.getBySel(\"sidenav-user-full-name\").should(\"be.visible\");\n});\n```"
+  },
+  {
+    "timestamp": "2025-05-25 00:14:40.818",
+    "output_file": "output_claude_sonnet_4\\new-transaction4.spec_response_claude_sonnet_4_20250525_001651.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction4.spec.txt",
+    "requestTimestamp": "2025-05-25 00:14:41.017",
+    "requestTimeMs": 1748124881017,
+    "responseTimeMs": 1748124892893,
+    "durationMs": 11876,
+    "code": "// submits a transaction payment and verifies the deposit for the receiver\nit(\"submits a transaction payment and verifies the deposit for the receiver\", () => {\n// Get the receiver's initial balance\nlet receiverInitialBalance: number;\ncy.database(\"find\", \"users\", { id: ctx.contact!.id }).then((user: User) => {\nreceiverInitialBalance = user.balance;\n});\n\n// Navigate to the new transaction form\ncy.getBySel(\"nav-top-new-transaction\").click();\ncy.wait(\"@allUsers\");\n\n// Search for and select the contact user\ncy.getBySel(\"user-list-search-input\").type(ctx.contact!.firstName);\ncy.wait(\"@usersSearch\");\ncy.getBySel(\"user-list-item\").first().click();\n\n// Enter payment details using the first payment transaction\ncy.getBySel(\"amount-input\").type(\"35\");\ncy.getBySel(\"transaction-create-description-input\").type(\"Sushi dinner 🍣\");\n\n// Submit the payment\ncy.getBySel(\"transaction-create-submit-payment\").click();\ncy.wait(\"@createTransaction\");\n\n// Verify success message appears\ncy.getBySel(\"alert-bar-success\").should(\"be.visible\").and(\"contain\", \"Transaction Submitted!\");\n\n// Switch to the receiver's account to verify the deposit\ncy.switchUserByXstate(ctx.contact!.username);\n\n// Navigate to personal transactions to see the received payment\ncy.getBySel(\"nav-personal-tab\").click();\ncy.wait(\"@personalTransactions\");\n\n// Verify the transaction appears in the receiver's transaction list\ncy.getBySel(\"transaction-item\").first().should(\"contain\", \"Sushi dinner 🍣\");\ncy.getBySel(\"transaction-item\").first().should(\"contain\", \"$35\");\n\n// Verify the receiver's balance has increased\ncy.database(\"find\", \"users\", { id: ctx.contact!.id }).then((user: User) => {\nconst expectedBalance = receiverInitialBalance + (35 * 100); // Convert dollars to cents\nexpect(user.balance).to.equal(expectedBalance);\n});\n});"
+  },
+  {
+    "timestamp": "2025-05-25 00:17:16.435",
+    "output_file": "output_claude_sonnet_4\\transaction-view1.spec_response_claude_sonnet_4_20250525_001926.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view1.spec.txt",
+    "requestTimestamp": "2025-05-25 00:17:16.633",
+    "requestTimeMs": 1748125036633,
+    "responseTimeMs": 1748125047487,
+    "durationMs": 10854,
+    "code": "// transactions navigation tabs are hidden on a transaction view page\nit(\"transactions navigation tabs are hidden on a transaction view page\", () => {\n// Verify we're on the personal transactions page initially\ncy.getBySel(\"nav-personal-tab\").should(\"be.visible\");\ncy.getBySel(\"nav-public-tab\").should(\"be.visible\");\ncy.getBySel(\"nav-contacts-tab\").should(\"be.visible\");\n\n// Click on the first transaction to view its details\ncy.getBySel(\"transaction-item\").first().click();\n\n// Wait for the transaction details page to load\ncy.wait(\"@getTransaction\");\n\n// Verify we're now on a transaction view page by checking for transaction details\ncy.getBySel(\"transaction-detail\").should(\"be.visible\");\n\n// Verify that the navigation tabs are hidden on the transaction view page\ncy.getBySel(\"nav-personal-tab\").should(\"not.exist\");\ncy.getBySel(\"nav-public-tab\").should(\"not.exist\");\ncy.getBySel(\"nav-contacts-tab\").should(\"not.exist\");\n\n// Verify that the transaction navigation tabs container is not visible\ncy.getBySel(\"nav-transaction-tabs\").should(\"not.exist\");\n});"
+  },
+  {
+    "timestamp": "2025-05-25 00:19:52.181",
+    "output_file": "output_claude_sonnet_4\\transaction-feeds2.spec_response_claude_sonnet_4_20250525_002202.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds2.spec.txt",
+    "requestTimestamp": "2025-05-25 00:19:52.378",
+    "requestTimeMs": 1748125192378,
+    "responseTimeMs": 1748125206038,
+    "durationMs": 13660,
+    "code": "// renders transactions item variations in feed\nit(\"renders transactions item variations in feed\", () => {\n// Visit the main page to view the default feed\ncy.visit(\"/\");\ncy.wait(\"@publicTransactions\");\n\n// Verify that transaction items are rendered\ncy.getBySel(\"transaction-item\").should(\"have.length.at.least\", 1);\n\n// Check for various transaction item elements that should be present\ncy.getBySel(\"transaction-item\").first().within(() => {\n// Should contain transaction amount\ncy.get(\"[data-test*='transaction-amount']\").should(\"exist\");\n\n// Should contain transaction description or note\ncy.get(\"[data-test*='transaction']\").should(\"contain.text\");\n\n// Should show user information (sender/receiver)\ncy.get(\"[data-test*='user']\").should(\"exist\");\n});\n\n// Verify different transaction types are displayed if they exist\ncy.getBySel(\"transaction-item\").each(($el) => {\ncy.wrap($el).should(\"be.visible\");\n// Each transaction should have readable content\ncy.wrap($el).should(\"not.be.empty\");\n});\n});\n\n// Loop through each feed view (public, contacts, personal)\n_.each(feedViews, (feed, feedName) => {\nit(`${feedName} feed renders and paginates correctly`, () => {\n// Visit the main page\ncy.visit(\"/\");\n\n// Click on the specific feed tab\ncy.getBySel(feed.tab).click();\ncy.wait(`@${feed.routeAlias}`);\n\n// Verify the feed loads with transactions\ncy.getBySel(\"transaction-item\").should(\"have.length.at.least\", 0);\n\n// Check if pagination exists when there are many transactions\ncy.get(\"body\").then(($body) => {\nif ($body.find(\"[data-test*='pagination']\").length > 0) {\n// If pagination exists, test it\ncy.getBySel(\"pagination\").should(\"be.visible\");\n\n// Check if next page button exists and is clickable\ncy.get(\"[data-test*='pagination']\").within(() => {\ncy.get(\"button\").should(\"exist\");\n});\n}\n});\n\n// Verify feed-specific behavior\nif (feedName === \"personal\") {\n// Personal feed should show user's own transactions\ncy.getBySel(\"transaction-item\").each(($el) => {\n// Each transaction should involve the current user\ncy.wrap($el).should(\"contain\", ctx.user?.firstName || ctx.user?.username);\n});\n}\n\n// Verify the correct tab is selected\ncy.getBySel(feed.tab).should(\"have.class\", \"Mui-selected\");\n});\n});"
+  },
+  {
+    "timestamp": "2025-05-25 00:22:27.879",
+    "output_file": "output_claude_sonnet_4\\auth5.spec_response_claude_sonnet_4_20250525_002438.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth5.spec.txt",
+    "requestTimestamp": "2025-05-25 00:22:28.079",
+    "requestTimeMs": 1748125348079,
+    "responseTimeMs": 1748125359251,
+    "durationMs": 11172,
+    "code": "// should display login errors\nit(\"should display login errors\", () => {\n// Visit the signin page\ncy.visit(\"/signin\");\n\n// Test 1: Submit empty form to check required field errors\ncy.getBySel(\"signin-submit\").click();\n\n// Assert that error messages are displayed for empty fields\ncy.get(\"#username-helper-text\").should(\"contain\", \"Username is required\");\ncy.get(\"#password-helper-text\").should(\"contain\", \"Enter your password\");\n\n// Test 2: Try login with invalid username and valid password\ncy.getBySel(\"signin-username\").type(\"invalidUserName\");\ncy.getBySel(\"signin-password\").type(\"s3cret\");\ncy.getBySel(\"signin-submit\").click();\n\n// Assert error message for invalid credentials\ncy.getBySel(\"signin-error\")\n.should(\"be.visible\")\n.and(\"contain\", \"Username or password is invalid\");\n\n// Test 3: Clear fields and try with valid username but invalid password\ncy.getBySel(\"signin-username\").clear().type(\"PainterJoy90\");\ncy.getBySel(\"signin-password\").clear().type(\"invalidPa$word\");\ncy.getBySel(\"signin-submit\").click();\n\n// Assert error message for invalid password\ncy.getBySel(\"signin-error\")\n.should(\"be.visible\")\n.and(\"contain\", \"Username or password is invalid\");\n});"
+  },
+  {
+    "timestamp": "2025-05-25 00:25:03.476",
+    "output_file": "output_claude_sonnet_4\\new-transaction6.spec_response_claude_sonnet_4_20250525_002713.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction6.spec.txt",
+    "requestTimestamp": "2025-05-25 00:25:03.674",
+    "requestTimeMs": 1748125503674,
+    "responseTimeMs": 1748125514193,
+    "durationMs": 10519,
+    "code": "```typescript\n// it(attr, () => { });\nit(attr, () => {\n// Get the attribute value from the contact user to search for\nconst searchValue = ctx.contact![attr];\n\n// Type the search value into the user search input\ncy.getBySelLike(\"user-list-search-input\").type(searchValue);\n\n// Wait for the search API call to complete\ncy.wait(\"@usersSearch\");\n\n// Verify that search results are displayed and contain the contact user\ncy.getBySelLike(\"user-list-item\")\n.should(\"have.length.at.least\", 1)\n.and(\"contain\", searchValue);\n\n// Verify that the contact user appears in the search results\ncy.getBySelLike(\"user-list-item\")\n.contains(ctx.contact!.firstName)\n.should(\"be.visible\");\n});\n```"
+  },
+  {
+    "timestamp": "2025-05-25 00:27:39.273",
+    "output_file": "output_claude_sonnet_4\\transaction-feeds9.spec_response_claude_sonnet_4_20250525_002949.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds9.spec.txt",
+    "requestTimestamp": "2025-05-25 00:27:39.476",
+    "requestTimeMs": 1748125659476,
+    "responseTimeMs": 1748125668542,
+    "durationMs": 9066,
+    "code": "// mine feed only shows personal transactions\nit(\"mine feed only shows personal transactions\", () => {\n// Navigate to the personal/mine feed\ncy.getBySel(\"nav-personal-tab\").click();\ncy.wait(\"@personalTransactions\");\n\n// Verify that transactions are displayed\ncy.getBySel(\"transaction-item\").should(\"exist\");\n\n// Check each transaction item to ensure it involves the current user\ncy.getBySel(\"transaction-item\").each(($transactionItem) => {\n// Look for sender and receiver elements within each transaction\ncy.wrap($transactionItem).within(() => {\n// Check if the current user is either the sender or receiver\n// Using a promise to handle the assertion properly\ncy.get(\"body\").then(() => {\nconst hasSender = $transactionItem.find(`[data-test*=\"sender-${ctx.user!.id}\"]`).length > 0;\nconst hasReceiver = $transactionItem.find(`[data-test*=\"receiver-${ctx.user!.id}\"]`).length > 0;\n\n// Assert that the user is involved in this transaction\nexpect(hasSender || hasReceiver).to.be.true;\n});\n});\n});\n\n// Verify the personal tab is selected/active\ncy.getBySel(\"nav-personal-tab\").should(\"have.class\", \"Mui-selected\");\n});"
+  },
+  {
+    "timestamp": "2025-05-25 00:30:14.908",
+    "output_file": "output_claude_sonnet_4\\auth8.spec_response_claude_sonnet_4_20250525_003225.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth8.spec.txt",
+    "requestTimestamp": "2025-05-25 00:30:15.119",
+    "requestTimeMs": 1748125815119,
+    "responseTimeMs": 1748125826289,
+    "durationMs": 11170,
+    "code": "// should error for an invalid password for existing user\n// Visit the signin page\ncy.visit(\"/signin\");\n\n// Enter valid username but invalid password\ncy.getBySel(\"signin-username\").type(\"PainterJoy90\");\ncy.getBySel(\"signin-password\").type(\"INVALID\");\n\n// Submit the signin form\ncy.getBySel(\"signin-submit\").click();\n\n// Verify error message is displayed\ncy.getBySel(\"signin-error\")\n.should(\"be.visible\")\n.and(\"contain\", \"Username or password is invalid\");"
+  },
+  {
+    "timestamp": "2025-05-25 00:32:50.040",
+    "output_file": "output_claude_sonnet_4\\transaction-view4.spec_response_claude_sonnet_4_20250525_003500.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view4.spec.txt",
+    "requestTimestamp": "2025-05-25 00:32:50.243",
+    "requestTimeMs": 1748125970243,
+    "responseTimeMs": 1748125981609,
+    "durationMs": 11366,
+    "code": "// accepts a transaction request\nit(\"accepts a transaction request\", () => {\n// Verify that we have a pending transaction request in the context\ncy.then(() => {\nexpect(ctx.transactionRequest).to.exist;\nexpect(ctx.transactionRequest.status).to.equal(\"pending\");\nexpect(ctx.transactionRequest.requestStatus).to.equal(\"pending\");\n});\n\n// Find and click on the pending transaction request in the personal transactions list\ncy.getBySel(\"transaction-item\")\n.should(\"contain\", ctx.transactionRequest.description)\n.and(\"contain\", \"requested\")\n.first()\n.click();\n\n// Wait for the transaction details to load\ncy.wait(\"@getTransaction\");\n\n// Verify we're on the transaction detail page and can see the request details\ncy.getBySel(\"transaction-detail-header\").should(\"be.visible\");\ncy.getBySel(\"transaction-amount\").should(\"contain\", `$${(ctx.transactionRequest.amount / 100).toFixed(2)}`);\ncy.getBySel(\"transaction-description\").should(\"contain\", ctx.transactionRequest.description);\n\n// Accept the transaction request\ncy.getBySel(\"transaction-accept-request\").click();\n\n// Wait for the update request to complete\ncy.wait(\"@updateTransaction\");\n\n// Verify the transaction status has been updated to complete\ncy.getBySel(\"transaction-detail-header\").should(\"contain\", \"complete\");\n\n// Verify success message or notification appears\ncy.getBySel(\"alert-bar-success\")\n.should(\"be.visible\")\n.and(\"contain\", \"Transaction request accepted\");\n\n// Navigate back to personal transactions to verify the change\ncy.getBySel(\"nav-personal-tab\").click();\ncy.wait(\"@personalTransactions\");\n\n// Verify the transaction no longer appears as pending but as completed\ncy.getBySel(\"transaction-item\")\n.first()\n.should(\"contain\", ctx.transactionRequest.description)\n.and(\"contain\", \"received\")\n.and(\"not.contain\", \"requested\");\n});"
+  },
+  {
+    "timestamp": "2025-05-25 00:35:25.671",
+    "output_file": "output_claude_sonnet_4\\bankaccounts1.spec_response_claude_sonnet_4_20250525_003735.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\bankaccounts1.spec.txt",
+    "requestTimestamp": "2025-05-25 00:35:25.873",
+    "requestTimeMs": 1748126125873,
+    "responseTimeMs": 1748126136681,
+    "durationMs": 10808,
+    "code": "// creates a new bank account\nit(\"creates a new bank account\", () => {\n// Navigate to bank accounts page\ncy.getBySel(\"sidenav-bankaccounts\").click();\n\n// Click the create new bank account button\ncy.getBySel(\"bankaccount-new\").click();\n\n// Fill in the bank account form with the provided information\ncy.getBySel(\"bankaccount-bankName-input\").type(\"The Best Bank\");\ncy.getBySel(\"bankaccount-routingNumber-input\").type(\"987654321\");\ncy.getBySel(\"bankaccount-accountNumber-input\").type(\"123456789\");\n\n// Submit the form\ncy.getBySel(\"bankaccount-submit\").click();\n\n// Wait for the GraphQL mutation to complete\ncy.wait(\"@gqlCreateBankAccountMutation\");\n\n// Verify the bank account was created successfully\ncy.getBySel(\"bankaccount-list\").should(\"contain\", \"The Best Bank\");\ncy.getBySel(\"bankaccount-list\").should(\"contain\", \"123456789\");\n});"
+  },
+  {
+    "timestamp": "2025-05-25 00:38:01.355",
+    "output_file": "output_claude_sonnet_4\\notifications5.spec_response_claude_sonnet_4_20250525_004011.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications5.spec.txt",
+    "requestTimestamp": "2025-05-25 00:38:01.559",
+    "requestTimeMs": 1748126281559,
+    "responseTimeMs": 1748126293656,
+    "durationMs": 12097,
+    "code": "// User A sends a payment to User B\ncy.loginByXstate(ctx.userA.username);\n\n// Navigate to create new transaction\ncy.getBySel(\"new-transaction\").click();\n\n// Search for and select User B\ncy.getBySel(\"user-list-search-input\").type(ctx.userB.firstName);\ncy.getBySel(\"user-list-item\").first().click();\n\n// Enter payment amount and description\ncy.getBySel(\"amount-input\").type(\"50\");\ncy.getBySel(\"transaction-create-description-input\").type(\"Payment from A to B\");\n\n// Submit the payment\ncy.getBySel(\"transaction-create-submit-payment\").click();\ncy.wait(\"@createTransaction\");\n\n// Logout User A\ncy.getBySel(\"sidenav-signout\").click();\n\n// Login as User B to check notifications\ncy.loginByXstate(ctx.userB.username);\n\n// Navigate to notifications\ncy.getBySel(\"nav-top-notifications-count\").should(\"exist\");\ncy.getBySel(\"sidenav-notifications\").click();\ncy.wait(\"@getNotifications\");\n\n// Verify User B received notification about the payment\ncy.getBySel(\"notification-list-item\")\n.first()\n.should(\"contain\", ctx.userA.firstName)\n.and(\"contain\", \"paid\");"
+  },
+  {
+    "timestamp": "2025-05-25 00:40:36.933",
+    "output_file": "output_claude_sonnet_4\\notifications1.spec_response_claude_sonnet_4_20250525_004247.txt",
+    "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications1.spec.txt",
+    "requestTimestamp": "2025-05-25 00:40:37.143",
+    "requestTimeMs": 1748126437143,
+    "responseTimeMs": 1748126449235,
+    "durationMs": 12092,
+    "code": "// User A likes a transaction of User B; User B gets notification that User A liked transaction\nit(\"User A likes a transaction of User B; User B gets notification that User A liked transaction \", () => {\n// Login as User B to create a transaction\ncy.loginByXstate(ctx.userB.username);\n\n// Create a new transaction from User B to another user\ncy.getBySel(\"new-transaction\").click();\ncy.getBySel(\"user-list-item\").contains(ctx.userC.firstName).click();\ncy.getBySel(\"amount-input\").type(\"25\");\ncy.getBySel(\"transaction-create-description-input\").type(\"Test transaction for like\");\ncy.getBySel(\"transaction-create-submit-payment\").click();\ncy.wait(\"@createTransaction\");\n\n// Get the transaction ID from the URL\nlet transactionId: string;\ncy.url().then(url => {\ntransactionId = url.split(\"/\").pop()!;\n\n// Logout User B\ncy.getBySel(\"sidenav-signout\").click();\n\n// Login as User A\ncy.loginByXstate(ctx.userA.username);\n\n// Navigate to the transaction and like it\ncy.visit(`/transaction/${transactionId}`);\ncy.getBySel(\"like-button\").click();\n\n// Logout User A\ncy.getBySel(\"sidenav-signout\").click();\n\n// Login as User B to check notifications\ncy.loginByXstate(ctx.userB.username);\ncy.wait(\"@getNotifications\");\n\n// Navigate to notifications page\ncy.getBySel(\"sidenav-notifications\").click();\n\n// Verify User B received a notification about User A's like\ncy.getBySel(\"notification-list-item\")\n.first()\n.should(\"contain\", ctx.userA.firstName)\n.and(\"contain\", \"liked\");\n});\n});"
+  }
+]
