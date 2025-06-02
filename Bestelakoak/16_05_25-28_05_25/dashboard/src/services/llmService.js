@@ -3,23 +3,41 @@ export function normalizeLlmName(llmName) {
   
   const name = llmName.toLowerCase().trim();
 
-  // Expanded handling for Claude Sonnet 4 and 3.5 variations
   if (name.includes('claude')) {
-    // Handle 3.5 sonnet variations (e.g., "claude 3.5 sonnet", "claude sonnet 3.5")
-    if ((name.includes('3.5') || name.includes('3_5') || name.includes('3-5')) && (name.includes('sonnet') || name.includes('sonet'))) {
-      return 'claude-sonnet-4'; // Map 3.5 sonnet to sonnet-4 for consistency
+    // Handle with most specific names first to ensure correct mapping
+
+    // Handle 3.7 sonnet thinking
+    if ((name.includes('3.7') || name.includes('3_7') || name.includes('3-7')) && 
+        (name.includes('sonnet') || name.includes('sonet')) && 
+        name.includes('thinking')) {
+      return 'claude-3-7-sonnet-thinking';
     }
-    // Handle sonnet 4 variations (e.g., "claude sonnet 4", "claude sonet four", "claude sonnet4", "claude sonnet v4")
-    if ((name.includes('sonnet') || name.includes('sonet')) && (name.includes('4') || name.includes('four') || name.includes('v4') || name.includes('sonnet4'))) {
+
+    // Handle 3.7 sonnet
+    if ((name.includes('3.7') || name.includes('3_7') || name.includes('3-7')) && 
+        (name.includes('sonnet') || name.includes('sonet'))) {
+      return 'claude-3-7-sonnet';
+    }
+
+    // Handle 3.5 sonnet variations
+    if ((name.includes('3.5') || name.includes('3_5') || name.includes('3-5')) && 
+        (name.includes('sonnet') || name.includes('sonet'))) {
+      return 'claude-3-5-sonnet';
+    }
+
+    // Handle sonnet 4 variations
+    if ((name.includes('sonnet') || name.includes('sonet')) && 
+        (name.includes('4') || name.includes('four') || name.includes('v4') || name.includes('sonnet4'))) {
       return 'claude-sonnet-4';
     }
-  }
-  
-  // Special case for Claude 3 models
-  if (name.includes('claude') && name.includes('3')) {
-    if (name.includes('opus')) return 'claude-3-opus';
-    if (name.includes('sonnet')) return 'claude-3-sonnet';
-    if (name.includes('haiku')) return 'claude-3-haiku';
+    
+    // Special case for general Claude 3 models (after specific versioned Sonnets)
+    // This handles names like "Claude 3 Opus", "Claude 3 Sonnet" (non-versioned), "Claude 3 Haiku"
+    if (name.includes('3')) {
+      if (name.includes('opus')) return 'claude-3-opus';
+      if (name.includes('sonnet')) return 'claude-3-sonnet'; // Catches "Claude 3 Sonnet" if not a more specific version
+      if (name.includes('haiku')) return 'claude-3-haiku';
+    }
   }
   
   // Handle other common LLM name variations
@@ -34,6 +52,7 @@ export function getMatchedDataFilename(normalizedName) {
     'claude-sonnet-4': 'matched_data_claude_sonnet_4.json',
     'claude-3-5-sonnet': 'matched_data_claude_3_5_sonnet.json',
     'claude-3-7-sonnet': 'matched_data_claude_3_7_sonnet.json',
+    'claude-3-7-sonnet-thinking': 'matched_data_claude_3_7_sonnet_thinking.json',
     // Add more mappings as needed
   };
   if (mapping[normalizedName]) return mapping[normalizedName];

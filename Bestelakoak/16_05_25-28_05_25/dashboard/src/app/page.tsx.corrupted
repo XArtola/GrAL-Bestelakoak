@@ -1,15 +1,14 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import LlmTestComparisonView from './components/LlmTestComparisonView';
-import ModernResultsView from './components/ModernResultsView';
 
 export default function Home() {
   const [link, setLink] = useState("");
   const [status, setStatus] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [view, setView] = useState<"add" | "results" | "modern-results" | "llm-tests">("add");
+  const [view, setView] = useState<"add" | "results" | "llm-tests">("add");
   const [resultsTab, setResultsTab] = useState<"original" | "summary">("summary");
   const [resultsData, setResultsData] = useState<any[]>([]);
   const [summaryData, setSummaryData] = useState<any[]>([]);
@@ -18,22 +17,14 @@ export default function Home() {
   const [sortCriteria, setSortCriteria] = useState<'tests'|'passed'|'failed'|'skipped'|'pending'|'other'>('passed');
   const [expandedItem, setExpandedItem] = useState<any>(null);  const [llmTestData, setLlmTestData] = useState<any>(null);
   const [llmTestsLoading, setLlmTestsLoading] = useState(false);
-    // Cache busting - force browser to load latest version (client-side only)
-  const [cacheBuster, setCacheBuster] = useState<number | null>(null);
-  const [showDebugPanel, setShowDebugPanel] = useState(process.env.NODE_ENV === 'development');
-
-  // Set cache buster only on client side to avoid hydration mismatch
-  useEffect(() => {
-    setCacheBuster(Date.now());
-  }, []);
-  
   // Load persisted view state on component mount
   useEffect(() => {
     const savedView = localStorage.getItem('dashboard-view');
     const savedResultsTab = localStorage.getItem('dashboard-results-tab');
     const savedSortCriteria = localStorage.getItem('dashboard-sort-criteria');
-      if (savedView && ['add', 'results', 'modern-results', 'llm-tests'].includes(savedView)) {
-      setView(savedView as "add" | "results" | "modern-results" | "llm-tests");
+    
+    if (savedView && ['add', 'results', 'llm-tests'].includes(savedView)) {
+      setView(savedView as "add" | "results" | "llm-tests");
     }
     
     if (savedResultsTab && ['original', 'summary'].includes(savedResultsTab)) {
@@ -89,8 +80,9 @@ export default function Home() {
       setIsLoading(false);
     }
   };
+
   useEffect(() => {
-    if (view === "results" || view === "modern-results") {      setResultsLoading(true);
+    if (view === "results") {      setResultsLoading(true);
       fetch("/api/results")
         .then((res) => res.json())
         .then((data) => {
@@ -117,16 +109,15 @@ export default function Home() {
           console.error("Error fetching summary data:", error); // Debugging log
           setSummaryData([]);
         })
-        .finally(() => setSummaryLoading(false));    } else if (view === "llm-tests") {
+        .finally(() => setSummaryLoading(false));
+    } else if (view === "llm-tests") {
       // Fetch LLM test comparison data
       setLlmTestsLoading(true);
       fetch("/api/llm-tests")
         .then((res) => res.json())
         .then((data) => {
           console.log("Fetched LLM tests comparison data:", data);
-          // Extract the testComparison data from the enhanced API response
-          const comparisonData = data.testComparison || null;
-          setLlmTestData(comparisonData);
+          setLlmTestData(data);
         })
         .catch((error) => {
           console.error("Error fetching LLM tests comparison data:", error);
@@ -252,146 +243,15 @@ export default function Home() {
 
     return lmmVersionMap;
   }, [resultsData]);
+
   return (
-    <div className="min-h-screen flex bg-black text-white">      {/* Modern Sidebar */}
-      <aside className="w-64 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 border-r border-gray-700/50 min-h-screen sticky top-0 shadow-2xl sidebar-glow custom-scrollbar overflow-y-auto">
-        {/* Logo/Brand Section */}
-        <div className="p-6 border-b border-gray-700/50">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                LLM Dashboard
-              </h1>
-              <p className="text-xs text-gray-400">Testing Suite</p>
-            </div>
-          </div>
-        </div>        {/* Navigation Menu */}
-        <nav className="p-4 space-y-2" data-cache-buster={cacheBuster || 'loading'}>
-          <div className="mb-6">
-            <h2 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-3">
-              Main Navigation
-            </h2>
-              {/* Add Project Button */}
-            <button 
-              onClick={() => setView("add")} 
-              className={`nav-button group w-full flex items-center px-4 py-3 rounded-lg text-left transition-all duration-200 ${
-                view === "add" 
-                  ? "bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 border border-blue-500/30 shadow-lg shadow-blue-500/10" 
-                  : "text-gray-300 hover:bg-gray-700/50 hover:text-white"
-              }`}
-            >
-              <div className={`flex items-center justify-center w-8 h-8 rounded-lg mr-3 transition-colors ${
-                view === "add" 
-                  ? "bg-gradient-to-br from-blue-500 to-purple-600 text-white shadow-lg" 
-                  : "bg-gray-700 group-hover:bg-gray-600"
-              }`}>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                </svg>
-              </div>
-              <span className="font-medium">Add Project</span>
-              {view === "add" && (
-                <div className="ml-auto w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-              )}
-            </button>
-
-            {/* See Results Button */}
-            <button 
-              onClick={() => setView("results")} 
-              className={`nav-button group w-full flex items-center px-4 py-3 rounded-lg text-left transition-all duration-200 ${
-                view === "results" 
-                  ? "bg-gradient-to-r from-green-500/20 to-emerald-500/20 text-green-300 border border-green-500/30 shadow-lg shadow-green-500/10" 
-                  : "text-gray-300 hover:bg-gray-700/50 hover:text-white"
-              }`}
-            >
-              <div className={`flex items-center justify-center w-8 h-8 rounded-lg mr-3 transition-colors ${
-                view === "results" 
-                  ? "bg-gradient-to-br from-green-500 to-emerald-600 text-white shadow-lg" 
-                  : "bg-gray-700 group-hover:bg-gray-600"
-              }`}>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <span className="font-medium">View Results</span>
-              {view === "results" && (
-                <div className="ml-auto w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              )}            </button>
-
-            {/* Modern Results Button */}
-            <button 
-              onClick={() => setView("modern-results")} 
-              className={`nav-button group w-full flex items-center px-4 py-3 rounded-lg text-left transition-all duration-200 ${
-                view === "modern-results" 
-                  ? "bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 text-indigo-300 border border-indigo-500/30 shadow-lg shadow-indigo-500/10" 
-                  : "text-gray-300 hover:bg-gray-700/50 hover:text-white"
-              }`}
-            >
-              <div className={`flex items-center justify-center w-8 h-8 rounded-lg mr-3 transition-colors ${
-                view === "modern-results" 
-                  ? "bg-gradient-to-br from-indigo-500 to-cyan-600 text-white shadow-lg" 
-                  : "bg-gray-700 group-hover:bg-gray-600"
-              }`}>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-                </svg>
-              </div>
-              <span className="font-medium">Modern Results</span>
-              {view === "modern-results" && (
-                <div className="ml-auto w-2 h-2 bg-indigo-400 rounded-full animate-pulse" />
-              )}
-            </button>
-
-            {/* LLM Test Comparison Button */}
-            <button 
-              onClick={() => setView("llm-tests")} 
-              className={`nav-button group w-full flex items-center px-4 py-3 rounded-lg text-left transition-all duration-200 ${
-                view === "llm-tests" 
-                  ? "bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 border border-purple-500/30 shadow-lg shadow-purple-500/10" 
-                  : "text-gray-300 hover:bg-gray-700/50 hover:text-white"
-              }`}
-            >
-              <div className={`flex items-center justify-center w-8 h-8 rounded-lg mr-3 transition-colors ${
-                view === "llm-tests" 
-                  ? "bg-gradient-to-br from-purple-500 to-pink-600 text-white shadow-lg" 
-                  : "bg-gray-700 group-hover:bg-gray-600"
-              }`}>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
-              </div>
-              <span className="font-medium">LLM Comparison</span>
-              {view === "llm-tests" && (
-                <div className="ml-auto w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
-              )}
-            </button>
-          </div>
-
-          {/* Status/Info Section */}
-          <div className="pt-4 border-t border-gray-700/50">
-            <div className="px-3 py-2">
-              <div className="flex items-center justify-between text-xs text-gray-400">
-                <span>Status</span>
-                <div className="flex items-center space-x-1">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span>Online</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
-
-        {/* Footer */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-700/50">
-          <div className="text-xs text-gray-500 text-center">
-            <p>Dashboard v1.0</p>
-            <p className="mt-1">© 2025 LLM Testing</p>
-          </div>
+    <div className="min-h-screen flex bg-black text-white">
+      {/* Sidebar */}
+      <aside className="w-48 flex flex-col items-center py-8 bg-gray-900 border-r border-gray-800 min-h-screen sticky top-0">
+        <div className="flex flex-col gap-4 w-full">
+          <button onClick={() => setView("add")} className={`w-full px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 focus:bg-blue-600 transition-colors ${view === "add" ? "" : "opacity-80"}`}>Add project</button>
+          <button onClick={() => setView("results")} className={`w-full px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 focus:bg-blue-600 transition-colors ${view === "results" ? "" : "opacity-80"}`}>See results</button>
+          <button onClick={() => setView("llm-tests")} className={`w-full px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 focus:bg-blue-600 transition-colors ${view === "llm-tests" ? "" : "opacity-80"}`}>LLM Test Comparison</button>
         </div>
       </aside>
 
@@ -573,20 +433,10 @@ export default function Home() {
                       <h2 className="text-xl font-bold mb-4">Summary Data</h2>
                       <p>No summary data found.</p>
                     </div>
-                  )}                </>
+                  )}
+                </>
               )}
-            </div>          ) : view === "modern-results" ? (
-            <ModernResultsView
-              resultsData={resultsData}
-              summaryData={summaryData}
-              resultsLoading={resultsLoading}
-              summaryLoading={summaryLoading}
-              resultsByLLMVersion={resultsByLLMVersion}
-              chartData={chartData}
-              handleBarClick={handleBarClick}
-              sortCriteria={sortCriteria}
-              setSortCriteria={(criteria: string) => setSortCriteria(criteria as 'tests'|'passed'|'failed'|'skipped'|'pending'|'other')}
-            />
+            </div>
           ) : view === "llm-tests" ? (
             <div className="w-full max-w-6xl">
               <h1 className="text-2xl font-bold mb-6">LLM Test Comparison</h1>
@@ -594,11 +444,9 @@ export default function Home() {
             </div>
           ) : null}
         </main>
-          <footer className="flex gap-[24px] flex-wrap items-center justify-center mt-8">
-          <div className="text-center text-sm text-gray-400">
-            <p>LLM Testing Dashboard - Analyze and compare LLM performance</p>
-            <p className="mt-1">Built for TFG research project</p>
-          </div>
+        
+        <footer className="flex gap-[24px] flex-wrap items-center justify-center mt-8">
+          
         </footer>
         
         {expandedItem && (
@@ -641,35 +489,9 @@ export default function Home() {
                 Close
               </button>
             </div>
-          </div>        )}
-      </div>      {/* Debug Panel for Development */}
-      {showDebugPanel && (
-        <div className="fixed bottom-4 right-4 bg-gray-800 border border-gray-600 rounded-lg p-3 text-xs text-gray-300 z-50 max-w-xs">
-          <div className="flex items-center justify-between mb-2">
-            <span className="font-semibold text-blue-400">Development Debug</span>
-            <button 
-              onClick={() => setShowDebugPanel(false)}
-              className="text-gray-400 hover:text-white"
-            >
-              ✕
-            </button>
-          </div>          <div className="space-y-1">
-            <div>Build: {cacheBuster || 'Loading...'}</div>
-            <div>Active Section: <span className="text-green-400">{view}</span></div>
-            <div>Navigation Loaded: <span className="text-green-400">✓</span></div>
-            <div>Results Count: {resultsData.length}</div>
-            <div className="text-xs text-gray-500 mt-2">
-              Development mode - this panel is hidden in production
-            </div>
-            <button 
-              onClick={() => window.location.reload()}
-              className="mt-2 px-2 py-1 bg-blue-600 text-white rounded text-xs hover:bg-blue-700 w-full"
-            >
-              Force Refresh
-            </button>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

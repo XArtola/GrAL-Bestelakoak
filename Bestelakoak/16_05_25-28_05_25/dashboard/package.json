@@ -2,11 +2,13 @@
   "name": "dashboard",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack -p 3010",
     "build": "next build",
     "start": "next start -p 3010",
-    "lint": "next lint"
+    "lint": "next lint",
+    "process-efficiency": "node scripts/process-efficiency-data.js"
   },
   "dependencies": {
     "dotenv": "^16.5.0",

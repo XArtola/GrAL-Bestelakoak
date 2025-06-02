@@ -1,6 +1,8 @@
-const { MongoClient } = require('mongodb');
-const fs = require('fs');
-const path = require('path');
+import { MongoClient } from 'mongodb';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
 
 /**
  * Script to save efficiency analysis results to MongoDB
@@ -9,8 +11,12 @@ const path = require('path');
  * Usage: node scripts/load-efficiency-data.js
  */
 
+// Get __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 // Database configuration - reads from dashboard .env
-require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
+dotenv.config({ path: path.join(__dirname, '..', '.env') });
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017';
 const DB_NAME = process.env.MONGODB_DB_NAME || 'tests';
@@ -242,8 +248,8 @@ async function main() {
   console.log('3. View rankings, metrics, and detailed performance data');
 }
 
-// CLI argument handling
-if (require.main === module) {
+// CLI argument handling  
+if (process.argv[1] === new URL(import.meta.url).pathname) {
   const args = process.argv.slice(2);
   
   if (args.includes('--check')) {

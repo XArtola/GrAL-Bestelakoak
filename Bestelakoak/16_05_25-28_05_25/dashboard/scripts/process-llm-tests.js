@@ -14,6 +14,7 @@ const summaryCollection = process.env.MONGODB_COLLECTION_SUMMARY || 'summary';
 const LLM_FILE_MAP = {
   'Claude 3.5 Sonnet': 'claude_3_5_sonnet',
   'Claude 3.7 Sonnet': 'claude_3_7_sonnet',
+  'Claude 3.7 Sonnet Thinking': 'claude_3_7_sonnet_thinking', // Fixed mapping to match actual file
   'Claude Sonnet 4': 'claude_sonnet_4',
   'Gemini 2.5 Pro': 'gemini_2_5_pro_preview',
   'GPT-4o': 'GPT_4o',
@@ -36,20 +37,30 @@ function loadTestResults() {
           const data = fs.readFileSync(filePath, 'utf8');
           const jsonData = JSON.parse(data);
           
-          // Extract LLM name from filename
-          let llmName = file.replace('results', '').replace('_inserted', '').replace('.json', '');
-            // Format the LLM name
-          if (llmName === 'Claude3_5') llmName = 'Claude 3.5 Sonnet';
-          else if (llmName === 'Claude3_7') llmName = 'Claude 3.7 Sonnet';
-          else if (llmName === 'Gemini2_5Pro') llmName = 'Gemini 2.5 Pro';
-          else if (llmName === 'GPT_4o') llmName = 'GPT-4o';
-          else if (llmName === 'o4_mini_preview') llmName = 'GPT-4o Mini';
-          else if (llmName === 'claude_sonnet_4' || llmName === 'Claude_sonnet_4') llmName = 'Claude Sonnet 4';
+          // Extract LLM name key from filename
+          const llmNameKey = file.replace('results', '').replace('_inserted', '').replace('.json', '');
+            const fileNameToLlmNameMap = {
+            'Claude3_5': 'Claude 3.5 Sonnet',
+            'Claude3_7_sonnet_thinking': 'Claude 3.7 Sonnet Thinking',
+            'Claude3_7': 'Claude 3.7 Sonnet',
+            'Gemini2_5Pro': 'Gemini 2.5 Pro',
+            'GPT_4o': 'GPT-4o',
+            'o4_mini_preview': 'GPT-4o Mini',
+            'claude_sonnet_4': 'Claude Sonnet 4',
+            'Claude_sonnet_4': 'Claude Sonnet 4' // Handle potential variation
+          };
+          
+          let llmName = fileNameToLlmNameMap[llmNameKey];
+          
+          if (!llmName) {
+            console.warn(`Unmapped LLM file key: '${llmNameKey}' from file '${file}'. Using key as LLM name.`);
+            llmName = llmNameKey; // Default to the extracted key if no mapping found
+          }
           
           // Add LLM name to the data
           const testData = {
             ...jsonData,
-            LLM: llmName
+            LLM: llmName // Use the potentially re-mapped name
           };
           results.push(testData);
         } catch (error) {
@@ -332,75 +343,38 @@ async function processAndSaveData() {
       
       // Debug: Show some sample generation times after processing
       console.log(`Sample generation times for ${llmName}:`);
-      let sampleCount = 0;
       for (const [testName, testData] of llmData.tests.entries()) {
-        if (sampleCount < 3) {
-          console.log(`  ${testName}: ${testData.generationTime}ms`);
-          sampleCount++;
+        if (testData.generationTime) {
+          console.log(`  ${testName}: ${testData.generationTime} ms`);
         }
       }
     }
     
-    // Convert test data to format for MongoDB
-    console.log('Processing test data for MongoDB...');
-    const llmsList = Array.from(llmTestMap.keys());
-    const testNamesList = Array.from(testNames);
+    // Prepare summary data
+    const summaryData = [];
     
-    // Create summary document for MongoDB
-    const summaryData = {
-      llms: llmsList,
-      testNames: testNamesList,
-      lastUpdated: new Date()
-    };
-    
-    // Create individual test documents for MongoDB
-    const testDocuments = [];
-    
-    // Convert map to array of documents
-    for (const [llmName, llmData] of llmTestMap.entries()) {
-      const llmSummary = {
-        llmName,
-        totalTests: llmData.totalTests,
-        passedTests: llmData.passedTests,
-        failedTests: llmData.failedTests
-      };
-      
-      // Add LLM summary to summary collection
-      await summaryCol.updateOne(
-        { llmName },
-        { $set: llmSummary },
-        { upsert: true }
-      );
-      
-      // Add individual test results
-      for (const [testName, testData] of llmData.tests.entries()) {
-        const testDocument = {
-          llmName,
-          testName,
+    llmTestMap.forEach((data, llmName) => {
+      const summaryEntry = {
+        LLM: llmName,
+        totalTests: data.totalTests,
+        passedTests: data.passedTests,
+        failedTests: data.failedTests,        tests: Array.from(data.tests.entries()).map(([testName, testData]) => ({
+          name: testName,
           status: testData.status,
           executionTime: testData.executionTime,
           generationTime: testData.generationTime,
           filePath: testData.filePath
-        };
-        
-        testDocuments.push(testDocument);
-      }
-    }
+        }))
+      };
+      
+      summaryData.push(summaryEntry);
+    });
     
-    // Save test data to MongoDB
-    if (testDocuments.length > 0) {
-      console.log(`Inserting ${testDocuments.length} test documents into MongoDB...`);
-      await resultsCol.insertMany(testDocuments);
-    }
-    
-    // Save the summary data
-    await summaryCol.updateOne(
-      { _id: 'summary' },
-      { $set: summaryData },
-      { upsert: true }
-    );
-    
-    console.log('Data successfully processed and saved to MongoDB.');
+    // Save results to MongoDB
+    console.log('Saving processed data to MongoDB...');
+    await resultsCol.insertMany(results);
+    await summaryCol.insertMany(summaryData);
+    console.log('Data saved to MongoDB');
   } catch (error) {
     console.error('Error processing and saving data:', error);
   } finally {
@@ -409,7 +383,9 @@ async function processAndSaveData() {
   }
 }
 
-// Run the script
-processAndSaveData()
-  .then(() => console.log('Script completed'))
-  .catch(err => console.error('Script failed:', err));
+// Execute the data processing and saving
+processAndSaveData().then(() => {
+  console.log('Data processing complete');
+}).catch((error) => {
+  console.error('Error in data processing:', error);
+});

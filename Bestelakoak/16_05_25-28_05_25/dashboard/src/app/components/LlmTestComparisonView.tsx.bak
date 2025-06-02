@@ -6,8 +6,13 @@ interface LlmTestData {
   llms: string[];
   testNames: string[];
   testData: {
-    llmName: string;
-    totalTests: number;
+    llmName: string;                  <tr key={index} className={index % 2 === 0 ? 'bg-gray-800' : 'bg-gray-750'}>
+                    <td className="px-4 py-3 text-left font-medium">{getDisplayName(llm.llmName)}</td>
+                    <td className="px-4 py-3 text-right">{llm.totalTests}</td>
+                    <td className="px-4 py-3 text-right text-green-400">{llm.passedTests}</td>
+                    <td className="px-4 py-3 text-right text-red-400">{llm.failedTests}</td>
+                    <td className="px-4 py-3 text-right font-medium">{passRate}</td>
+                  </tr>talTests: number;
     passedTests: number;
     failedTests: number;
     tests: {
@@ -38,17 +43,8 @@ interface LLMRanking {
   rank: number;
   llm: string;
   overallScore: number;
-  codeQuality: number;
-  generationSpeed: number;
-  executionSuccess: number;
-  codeReuse: number;
-  avgGenerationTime: number;
-  testCount: number;
-  passRate: number;
-  emptyCodeRatio: number;
-  // Support for both old and new data structures
-  metrics?: EfficiencyMetrics;
-  performance?: PerformanceMetrics;
+  metrics: EfficiencyMetrics;
+  performance: PerformanceMetrics;
 }
 
 interface EfficiencyData {
@@ -67,7 +63,7 @@ interface EfficiencyData {
     codeReuse: number;
   };
   rankings: LLMRanking[];
-  insights?: {
+  insights: {
     performanceGap: number;
     fastestLLM: string;
     mostAccurateLLM: string;
@@ -87,11 +83,6 @@ export default function LlmTestComparisonView({ loading, testData }: LlmTestComp
   const [activeTab, setActiveTab] = useState<'performance' | 'efficiency' | 'methodology' | null>(null);
   const [isMounted, setIsMounted] = useState(false);
   const [llmDisplayNames, setLlmDisplayNames] = useState<Record<string, string>>({});
-
-  // Helper function to get display name for LLM
-  const getDisplayName = (llmName: string): string => {
-    return llmDisplayNames[llmName] || getLlmDisplayName(llmName);
-  };
 
   // Initialize tab state from localStorage on mount
   useEffect(() => {
@@ -228,10 +219,10 @@ export default function LlmTestComparisonView({ loading, testData }: LlmTestComp
                   ? 'border-blue-500 text-blue-400'
                   : 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-300'
               }`}
-            >              Efficiency Analysis
+            >
+              Efficiency Analysis
               {efficiencyLoading && <span className="ml-2 text-xs">(Loading...)</span>}
               {!efficiencyData && !efficiencyLoading && <span className="ml-2 text-xs text-yellow-400">(Not Available)</span>}
-              {efficiencyData && !efficiencyData.summary && !efficiencyLoading && <span className="ml-2 text-xs text-red-400">(Invalid Data)</span>}
             </button>
             <button
               onClick={() => handleTabChange('methodology')}
@@ -344,7 +335,8 @@ export default function LlmTestComparisonView({ loading, testData }: LlmTestComp
           {efficiencyLoading ? (
             <div className="flex justify-center items-center h-32">
               <p className="text-lg">Loading efficiency analysis data...</p>
-            </div>          ) : !efficiencyData || !efficiencyData.summary ? (
+            </div>
+          ) : !efficiencyData ? (
             <div className="p-4 border border-yellow-500 bg-yellow-900 bg-opacity-20 rounded">
               <p className="text-yellow-400 font-medium">Efficiency Analysis Not Available</p>
               <p className="text-sm text-gray-300 mt-2">
@@ -421,22 +413,22 @@ export default function LlmTestComparisonView({ loading, testData }: LlmTestComp
                               {(ranking.overallScore * 100).toFixed(1)}%
                             </td>
                             <td className="px-4 py-3 text-right">
-                              {(ranking.metrics?.codeQuality !== undefined ? (ranking.metrics.codeQuality * 100).toFixed(1) : 'N/A')}%
+                              {(ranking.metrics.codeQuality * 100).toFixed(1)}%
                             </td>
                             <td className="px-4 py-3 text-right">
-                              {(ranking.metrics?.generationSpeed !== undefined ? (ranking.metrics.generationSpeed * 100).toFixed(1) : 'N/A')}%
+                              {(ranking.metrics.generationSpeed * 100).toFixed(1)}%
                             </td>
                             <td className="px-4 py-3 text-right">
-                              {(ranking.metrics?.executionSuccess !== undefined ? (ranking.metrics.executionSuccess * 100).toFixed(1) : 'N/A')}%
+                              {(ranking.metrics.executionSuccess * 100).toFixed(1)}%
                             </td>
                             <td className="px-4 py-3 text-right">
-                              {(ranking.metrics?.codeReuse !== undefined ? (ranking.metrics.codeReuse * 100).toFixed(1) : 'N/A')}%
+                              {(ranking.metrics.codeReuse * 100).toFixed(1)}%
                             </td>
                             <td className="px-4 py-3 text-right">
-                              {(ranking.performance?.avgGenerationTime !== undefined ? (ranking.performance.avgGenerationTime / 1000).toFixed(1) : 'N/A')}s
+                              {(ranking.performance.avgGenerationTime / 1000).toFixed(1)}s
                             </td>
                             <td className="px-4 py-3 text-right">
-                              {(ranking.performance?.passRate !== undefined ? (ranking.performance.passRate * 100).toFixed(1) : 'N/A')}%
+                              {(ranking.performance.passRate * 100).toFixed(1)}%
                             </td>
                           </tr>
                         );
@@ -444,80 +436,34 @@ export default function LlmTestComparisonView({ loading, testData }: LlmTestComp
                     </tbody>
                   </table>
                 </div>
-              </div>              {/* Efficiency Insights */}
-              {(() => {
-                // Calculate insights from available data
-                const insights = efficiencyData.insights || (() => {
-                  if (!efficiencyData.rankings || efficiencyData.rankings.length === 0) {
-                    return {
-                      performanceGap: 0,
-                      fastestLLM: 'N/A',
-                      mostAccurateLLM: 'N/A',
-                      avgPassRate: 0
-                    };
-                  }
+              </div>
 
-                  const rankings = efficiencyData.rankings;
-                  const topScore = rankings[0]?.overallScore || 0;
-                  const bottomScore = rankings[rankings.length - 1]?.overallScore || 0;
-                  const performanceGap = topScore - bottomScore;
-
-                  // Find fastest LLM (highest generation speed or lowest avg generation time)
-                  const fastestLLM = rankings.reduce((fastest, current) => {
-                    const currentGenTime = current.performance?.avgGenerationTime || current.avgGenerationTime || Infinity;
-                    const fastestGenTime = fastest.performance?.avgGenerationTime || fastest.avgGenerationTime || Infinity;
-                    return currentGenTime < fastestGenTime ? current : fastest;
-                  }).llm;
-
-                  // Find most accurate LLM (highest pass rate)
-                  const mostAccurateLLM = rankings.reduce((mostAccurate, current) => {
-                    const currentPassRate = current.performance?.passRate || current.passRate || 0;
-                    const bestPassRate = mostAccurate.performance?.passRate || mostAccurate.passRate || 0;
-                    return currentPassRate > bestPassRate ? current : mostAccurate;
-                  }).llm;
-
-                  // Calculate average pass rate
-                  const avgPassRate = rankings.reduce((sum, ranking) => {
-                    const passRate = ranking.performance?.passRate || ranking.passRate || 0;
-                    return sum + passRate;
-                  }, 0) / rankings.length;
-
-                  return {
-                    performanceGap,
-                    fastestLLM,
-                    mostAccurateLLM,
-                    avgPassRate
-                  };
-                })();
-
-                return (
-                  <div className="mb-8">
-                    <h2 className="text-xl font-semibold mb-4">Key Insights</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="bg-gray-800 p-4 rounded-lg">
-                        <h3 className="text-lg font-medium text-blue-400 mb-2">Performance Gap</h3>
-                        <p className="text-2xl font-bold text-white">{(insights.performanceGap * 100).toFixed(1)}%</p>
-                        <p className="text-sm text-gray-300">Difference between top and bottom performer</p>
-                      </div>
-                      <div className="bg-gray-800 p-4 rounded-lg">
-                        <h3 className="text-lg font-medium text-green-400 mb-2">Fastest LLM</h3>
-                        <p className="text-lg font-bold text-white">{getDisplayName(insights.fastestLLM)}</p>
-                        <p className="text-sm text-gray-300">Lowest average generation time</p>
-                      </div>
-                      <div className="bg-gray-800 p-4 rounded-lg">
-                        <h3 className="text-lg font-medium text-purple-400 mb-2">Most Accurate</h3>
-                        <p className="text-lg font-bold text-white">{getDisplayName(insights.mostAccurateLLM)}</p>
-                        <p className="text-sm text-gray-300">Highest pass rate</p>
-                      </div>
-                      <div className="bg-gray-800 p-4 rounded-lg">
-                        <h3 className="text-lg font-medium text-orange-400 mb-2">Avg Pass Rate</h3>
-                        <p className="text-2xl font-bold text-white">{(insights.avgPassRate * 100).toFixed(1)}%</p>
-                        <p className="text-sm text-gray-300">Across all LLMs</p>
-                      </div>
-                    </div>
+              {/* Efficiency Insights */}
+              <div className="mb-8">
+                <h2 className="text-xl font-semibold mb-4">Key Insights</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-gray-800 p-4 rounded-lg">
+                    <h3 className="text-lg font-medium text-blue-400 mb-2">Performance Gap</h3>
+                    <p className="text-2xl font-bold text-white">{(efficiencyData.insights.performanceGap * 100).toFixed(1)}%</p>
+                    <p className="text-sm text-gray-300">Difference between top and bottom performer</p>
                   </div>
-                );
-              })()}
+                  <div className="bg-gray-800 p-4 rounded-lg">
+                    <h3 className="text-lg font-medium text-green-400 mb-2">Fastest LLM</h3>
+                    <p className="text-lg font-bold text-white">{getDisplayName(efficiencyData.insights.fastestLLM)}</p>
+                    <p className="text-sm text-gray-300">Lowest average generation time</p>
+                  </div>
+                  <div className="bg-gray-800 p-4 rounded-lg">
+                    <h3 className="text-lg font-medium text-purple-400 mb-2">Most Accurate</h3>
+                    <p className="text-lg font-bold text-white">{getDisplayName(efficiencyData.insights.mostAccurateLLM)}</p>
+                    <p className="text-sm text-gray-300">Highest pass rate</p>
+                  </div>
+                  <div className="bg-gray-800 p-4 rounded-lg">
+                    <h3 className="text-lg font-medium text-orange-400 mb-2">Avg Pass Rate</h3>
+                    <p className="text-2xl font-bold text-white">{(efficiencyData.insights.avgPassRate * 100).toFixed(1)}%</p>
+                    <p className="text-sm text-gray-300">Across all LLMs</p>
+                  </div>
+                </div>
+              </div>
 
               {/* Methodology */}
               <div className="bg-gray-800 p-4 rounded-lg">
