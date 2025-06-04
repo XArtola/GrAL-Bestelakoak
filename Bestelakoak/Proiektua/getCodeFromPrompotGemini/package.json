@@ -1,0 +1,19 @@
+{
+  "name": "getcodefromprompotgemini",
+  "version": "1.0.0",
+  "description": "A script to extract TypeScript/JavaScript code blocks from transcription files using Babel AST parsing",
+  "main": "extract.js",
+  "scripts": {
+    "start": "node extract.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["babel", "ast", "code-extraction", "typescript", "parser"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/parser": "^7.27.3",
+    "@babel/traverse": "^7.27.3",
+    "@babel/generator": "^7.27.3",
+    "@babel/types": "^7.27.3"
+  }
+}

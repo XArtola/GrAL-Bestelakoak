@@ -1,0 +1,459 @@
+{
+  "testFiles": {
+    "user-settings.spec.ts": {
+      "totalTests": 3,
+      "tests": {
+        "renders the user settings form": {
+          "actionableCommands": 2,
+          "commands": [
+            "click",
+            "click"
+          ]
+        },
+        "should display user setting form errors": {
+          "actionableCommands": 12,
+          "commands": [
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "blur",
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "blur"
+          ]
+        },
+        "updates first name, last name, email and phone number": {
+          "actionableCommands": 7,
+          "commands": [
+            "clear",
+            "type",
+            "clear",
+            "type",
+            "clear",
+            "type",
+            "clear",
+            "type",
+            "blur",
+            "click",
+            "click"
+          ]
+        }
+      }
+    },
+    "notifications.spec.ts": {
+      "totalTests": 7,
+      "tests": {
+        "User A likes a transaction of User B; User B gets notification that User A liked transaction": {
+          "actionableCommands": 5,
+          "commands": [
+            "visit",
+            "click",
+            "click",
+            "visit",
+            "click"
+          ]
+        },
+        "User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction": {
+          "actionableCommands": 6,
+          "commands": [
+            "visit",
+            "click",
+            "click",
+            "click",
+            "click",
+            "click"
+          ]
+        },
+        "User A comments on a transaction of User B; User B gets notification that User A commented on their transaction": {
+          "actionableCommands": 3,
+          "commands": [
+            "visit",
+            "type",
+            "click"
+          ]
+        },
+        "User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction": {
+          "actionableCommands": 5,
+          "commands": [
+            "visit",
+            "type",
+            "click",
+            "click",
+            "click"
+          ]
+        },
+        "User A sends a payment to User B": {
+          "actionableCommands": 2,
+          "commands": [
+            "click",
+            "click"
+          ]
+        },
+        "User A sends a payment request to User C": {
+          "actionableCommands": 2,
+          "commands": [
+            "click",
+            "click"
+          ]
+        },
+        "renders an empty notifications state": {
+          "actionableCommands": 2,
+          "commands": [
+            "click",
+            "click"
+          ]
+        }
+      }
+    },
+    "new-transaction.spec.ts": {
+      "totalTests": 8,
+      "tests": {
+        "navigates to the new transaction form, selects a user and submits a transaction payment": {
+          "actionableCommands": 10,
+          "commands": [
+            "click",
+            "type",
+            "click",
+            "type",
+            "type",
+            "click",
+            "click",
+            "click",
+            "click",
+            "click"
+          ]
+        },
+        "navigates to the new transaction form, selects a user and submits a transaction request": {
+          "actionableCommands": 7,
+          "commands": [
+            "click",
+            "click",
+            "type",
+            "type",
+            "click",
+            "click",
+            "click"
+          ]
+        },
+        "displays new transaction errors": {
+          "actionableCommands": 6,
+          "commands": [
+            "click",
+            "click",
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "clear",
+            "blur"
+          ]
+        },
+        "submits a transaction payment and verifies the deposit for the receiver": {
+          "actionableCommands": 2,
+          "commands": [
+            "click",
+            "createTransaction"
+          ]
+        },
+        "submits a transaction request and accepts the request for the receiver": {
+          "actionableCommands": 5,
+          "commands": [
+            "click",
+            "createTransaction",
+            "click",
+            "click",
+            "click"
+          ]
+        },
+        "searches for a user by attribute - firstName": {
+          "actionableCommands": 3,
+          "commands": [
+            "click",
+            "type",
+            "clear"
+          ]
+        },
+        "searches for a user by attribute - lastName": {
+          "actionableCommands": 3,
+          "commands": [
+            "click",
+            "type",
+            "clear"
+          ]
+        },
+        "searches for a user by attribute - username": {
+          "actionableCommands": 3,
+          "commands": [
+            "click",
+            "type",
+            "clear"
+          ]
+        }
+      }
+    },
+    "bankaccounts.spec.ts": {
+      "totalTests": 4,
+      "tests": {
+        "creates a new bank account": {
+          "actionableCommands": 7,
+          "commands": [
+            "click",
+            "click",
+            "click",
+            "type",
+            "type",
+            "type",
+            "click"
+          ]
+        },
+        "should display bank account form errors": {
+          "actionableCommands": 14,
+          "commands": [
+            "visit",
+            "click",
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "blur",
+            "focus",
+            "blur",
+            "type",
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "focus",
+            "blur",
+            "type",
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "clear",
+            "type",
+            "blur"
+          ]
+        },
+        "soft deletes a bank account": {
+          "actionableCommands": 2,
+          "commands": [
+            "visit",
+            "click"
+          ]
+        },
+        "renders an empty bank account list state with onboarding modal": {
+          "actionableCommands": 1,
+          "commands": [
+            "visit"
+          ]
+        }
+      }
+    },
+    "auth.spec.ts": {
+      "totalTests": 8,
+      "tests": {
+        "should redirect unauthenticated user to signin page": {
+          "actionableCommands": 1,
+          "commands": [
+            "visit"
+          ]
+        },
+        "should redirect to the home page after login": {
+          "actionableCommands": 1,
+          "commands": [
+            "login"
+          ]
+        },
+        "should remember a user for 30 days after login": {
+          "actionableCommands": 3,
+          "commands": [
+            "login",
+            "click",
+            "click"
+          ]
+        },
+        "should allow a visitor to sign-up, login, and logout": {
+          "actionableCommands": 20,
+          "commands": [
+            "visit",
+            "click",
+            "type",
+            "type",
+            "type",
+            "type",
+            "type",
+            "click",
+            "login",
+            "click",
+            "type",
+            "type",
+            "type",
+            "click",
+            "click",
+            "click",
+            "click",
+            "click",
+            "click"
+          ]
+        },
+        "should display login errors": {
+          "actionableCommands": 5,
+          "commands": [
+            "visit",
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "blur"
+          ]
+        },
+        "should display signup errors": {
+          "actionableCommands": 10,
+          "commands": [
+            "visit",
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "blur"
+          ]
+        },
+        "should error for an invalid user": {
+          "actionableCommands": 1,
+          "commands": [
+            "login"
+          ]
+        },
+        "should error for an invalid password for existing user": {
+          "actionableCommands": 1,
+          "commands": [
+            "login"
+          ]
+        }
+      }
+    },
+    "transaction-view.spect.ts": {
+      "totalTests": 6,
+      "tests": {
+        "transactions navigation tabs are hidden on a transaction view page": {
+          "actionableCommands": 2,
+          "commands": [
+            "click",
+            "click"
+          ]
+        },
+        "likes a transaction": {
+          "actionableCommands": 2,
+          "commands": [
+            "click",
+            "click"
+          ]
+        },
+        "comments on a transaction": {
+          "actionableCommands": 3,
+          "commands": [
+            "click",
+            "type",
+            "type"
+          ]
+        },
+        "accepts a transaction request": {
+          "actionableCommands": 2,
+          "commands": [
+            "visit",
+            "click"
+          ]
+        },
+        "rejects a transaction request": {
+          "actionableCommands": 2,
+          "commands": [
+            "visit",
+            "click"
+          ]
+        },
+        "does not display accept/reject buttons on completed request": {
+          "actionableCommands": 1,
+          "commands": [
+            "visit"
+          ]
+        }
+      }
+    }
+  },
+  "summary": {
+    "totalTestFiles": 6,
+    "totalTestCases": 36,
+    "totalActionableCommands": 156,
+    "averageCommandsPerTest": 4.33,
+    "fileBreakdown": {
+      "auth.spec.ts": 42,
+      "user-settings.spec.ts": 21,
+      "transaction-view.spect.ts": 12,
+      "notifications.spec.ts": 25,
+      "new-transaction.spec.ts": 40,
+      "bankaccounts.spec.ts": 24
+    }
+  },
+  "actionableCommandTypes": [
+    "visit",
+    "click",
+    "type",
+    "clear",
+    "blur",
+    "focus",
+    "select",
+    "check",
+    "uncheck",
+    "submit",
+    "login",
+    "createTransaction",
+    "switchUserByXstate",
+    "loginByXstate"
+  ],
+  "excludedCommands": [
+    "get",
+    "find",
+    "should",
+    "wait",
+    "location",
+    "contains",
+    "its",
+    "then",
+    "and",
+    "intercept",
+    "task",
+    "database",
+    "getBySel",
+    "getBySelLike",
+    "getCookie",
+    "visualSnapshot"
+  ]
+}

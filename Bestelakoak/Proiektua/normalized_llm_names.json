@@ -1,0 +1,46 @@
+[
+  {
+    "nombre_original": "Claude 3.5 Sonnet",
+    "nombre_normalizado": "claude_3_5_sonnet"
+  },
+  {
+    "nombre_original": "Claude 3.7 Sonnet",
+    "nombre_normalizado": "claude_3_7_sonnet"
+  },
+  {
+    "nombre_original": "Claude 3.7 Sonnet Thinking",
+    "nombre_normalizado": "claude_3_7_sonnet_thinking"
+  },
+  {
+    "nombre_original": "Claude Sonnet 4",
+    "nombre_normalizado": "claude_sonnet_4"
+  },
+  {
+    "nombre_original": "Gemini 2.0 Flash",
+    "nombre_normalizado": "gemini_2_0_flash"
+  },
+  {
+    "nombre_original": "Gemini 2.5 Pro (Preview)",
+    "nombre_normalizado": "gemini_2_5_pro_preview"
+  },
+  {
+    "nombre_original": "GPT-4.1",
+    "nombre_normalizado": "gpt_4_1"
+  },
+  {
+    "nombre_original": "GPT-4o",
+    "nombre_normalizado": "gpt_4o"
+  },
+  {
+    "nombre_original": "o1 (Preview)",
+    "nombre_normalizado": "o1_preview"
+  },
+  {
+    "nombre_original": "o3-mini",
+    "nombre_normalizado": "o3_mini"
+  },
+  {
+    "nombre_original": "o4-mini (Preview)",
+    "nombre_normalizado": "o4_mini_preview"
+  }
+]
