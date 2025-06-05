@@ -12,7 +12,13 @@
     "ingest-data": "tsx scripts/ingest-efficiency-data.ts",
     "ingest-prompt-results": "node scripts/ingest-prompt-results.js",
     "ingest-prompt-results:stats": "node scripts/ingest-prompt-results.js --stats",
-    "ingest-prompt-results:clear": "node scripts/ingest-prompt-results.js --clear"
+    "ingest-prompt-results:clear": "node scripts/ingest-prompt-results.js --clear",
+    "merge-results": "node scripts/merge-test-results.js",
+    "merge-results:all": "node scripts/merge-test-results.js --all",
+    "save-to-db": "node scripts/save-to-database.js",
+    "save-to-db:all": "node scripts/save-to-database.js --all",
+    "save-to-db:reset": "node scripts/save-to-database.js --reset",
+    "save-to-db:stats": "node scripts/save-to-database.js --stats"
   },
   "dependencies": {
     "dotenv": "^16.5.0",

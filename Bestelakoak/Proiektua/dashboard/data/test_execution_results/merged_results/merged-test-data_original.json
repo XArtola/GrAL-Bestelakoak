@@ -1,0 +1,2395 @@
+{
+  "llm": "original",
+  "timestamp": "2025-06-05T11:15:59.498Z",
+  "metadata": {
+    "source": {
+      "executionResults": "results_original.json",
+      "efficiencyMetrics": "test-efficiency-metrics_original.json"
+    },
+    "totalTests": 58,
+    "totalTestFiles": 45,
+    "mergedTests": 38,
+    "unmatchedTests": 20
+  },
+  "summary": {
+    "execution": {
+      "tests": 58,
+      "failed": 0,
+      "passed": 58,
+      "skipped": 0,
+      "pending": 0,
+      "other": 0,
+      "start": 1749062391676,
+      "stop": 1749062748601
+    },
+    "efficiency": {
+      "totalTestFiles": 45,
+      "totalTestCases": 39,
+      "totalActionableCommands": 202,
+      "averageCommandsPerTest": 5.18,
+      "fileBreakdown": {
+        "user-settings3.spec.ts": {
+          "actionableCommands": 11,
+          "itBlockCount": 1
+        },
+        "user-settings2.spec.ts": {
+          "actionableCommands": 13,
+          "itBlockCount": 1
+        },
+        "user-settings1.spec.ts": {
+          "actionableCommands": 0,
+          "itBlockCount": 1
+        },
+        "transaction-view6.spec.ts": {
+          "actionableCommands": 1,
+          "itBlockCount": 1
+        },
+        "transaction-view5.spec.ts": {
+          "actionableCommands": 2,
+          "itBlockCount": 1
+        },
+        "transaction-view4.spec.ts": {
+          "actionableCommands": 2,
+          "itBlockCount": 1
+        },
+        "transaction-view3.spec.ts": {
+          "actionableCommands": 2,
+          "itBlockCount": 1
+        },
+        "transaction-view2.spec.ts": {
+          "actionableCommands": 2,
+          "itBlockCount": 1
+        },
+        "transaction-view1.spec.ts": {
+          "actionableCommands": 1,
+          "itBlockCount": 1
+        },
+        "transaction-feeds9.spec.ts": {
+          "actionableCommands": 1,
+          "itBlockCount": 1
+        },
+        "transaction-feeds8.spec.ts": {
+          "actionableCommands": 0,
+          "itBlockCount": 0
+        },
+        "transaction-feeds7.spec.ts": {
+          "actionableCommands": 0,
+          "itBlockCount": 0
+        },
+        "transaction-feeds6.spec.ts": {
+          "actionableCommands": 0,
+          "itBlockCount": 0
+        },
+        "transaction-feeds5.spec.ts": {
+          "actionableCommands": 0,
+          "itBlockCount": 0
+        },
+        "transaction-feeds4.spec.ts": {
+          "actionableCommands": 2,
+          "itBlockCount": 1
+        },
+        "transaction-feeds3.spec.ts": {
+          "actionableCommands": 0,
+          "itBlockCount": 0
+        },
+        "transaction-feeds2.spec.ts": {
+          "actionableCommands": 1,
+          "itBlockCount": 1
+        },
+        "transaction-feeds11.spec.ts": {
+          "actionableCommands": 1,
+          "itBlockCount": 1
+        },
+        "transaction-feeds10.spec.ts": {
+          "actionableCommands": 0,
+          "itBlockCount": 1
+        },
+        "transaction-feeds1.spec.ts": {
+          "actionableCommands": 5,
+          "itBlockCount": 1
+        },
+        "notifications7.spec.ts": {
+          "actionableCommands": 3,
+          "itBlockCount": 1
+        },
+        "notifications6.spec.ts": {
+          "actionableCommands": 5,
+          "itBlockCount": 1
+        },
+        "notifications5.spec.ts": {
+          "actionableCommands": 5,
+          "itBlockCount": 1
+        },
+        "notifications4.spec.ts": {
+          "actionableCommands": 7,
+          "itBlockCount": 1
+        },
+        "notifications3.spec.ts": {
+          "actionableCommands": 5,
+          "itBlockCount": 1
+        },
+        "notifications2.spec.ts": {
+          "actionableCommands": 7,
+          "itBlockCount": 1
+        },
+        "notifications1.spec.ts": {
+          "actionableCommands": 6,
+          "itBlockCount": 1
+        },
+        "new-transaction6.spec.ts": {
+          "actionableCommands": 0,
+          "itBlockCount": 0
+        },
+        "new-transaction5.spec.ts": {
+          "actionableCommands": 8,
+          "itBlockCount": 1
+        },
+        "new-transaction4.spec.ts": {
+          "actionableCommands": 4,
+          "itBlockCount": 1
+        },
+        "new-transaction3.spec.ts": {
+          "actionableCommands": 8,
+          "itBlockCount": 1
+        },
+        "new-transaction2.spec.ts": {
+          "actionableCommands": 7,
+          "itBlockCount": 1
+        },
+        "new-transaction1.spec.ts": {
+          "actionableCommands": 11,
+          "itBlockCount": 1
+        },
+        "bankaccounts4.spec.ts": {
+          "actionableCommands": 1,
+          "itBlockCount": 1
+        },
+        "bankaccounts3.spec.ts": {
+          "actionableCommands": 2,
+          "itBlockCount": 1
+        },
+        "bankaccounts2.spec.ts": {
+          "actionableCommands": 27,
+          "itBlockCount": 1
+        },
+        "bankaccounts1.spec.ts": {
+          "actionableCommands": 7,
+          "itBlockCount": 1
+        },
+        "auth8.spec.ts": {
+          "actionableCommands": 1,
+          "itBlockCount": 1
+        },
+        "auth7.spec.ts": {
+          "actionableCommands": 1,
+          "itBlockCount": 1
+        },
+        "auth6.spec.ts": {
+          "actionableCommands": 15,
+          "itBlockCount": 1
+        },
+        "auth5.spec.ts": {
+          "actionableCommands": 6,
+          "itBlockCount": 1
+        },
+        "auth4.spec.ts": {
+          "actionableCommands": 17,
+          "itBlockCount": 1
+        },
+        "auth3.spec.ts": {
+          "actionableCommands": 3,
+          "itBlockCount": 1
+        },
+        "auth2.spec.ts": {
+          "actionableCommands": 1,
+          "itBlockCount": 1
+        },
+        "auth1.spec.ts": {
+          "actionableCommands": 1,
+          "itBlockCount": 1
+        }
+      }
+    }
+  },
+  "tests": [
+    {
+      "name": "User Sign-up and Login should redirect unauthenticated user to signin page",
+      "filename": "auth1.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth1.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 2859,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 1,
+        "commands": [
+          "visit"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "User Sign-up and Login should redirect to the home page after login",
+      "filename": "auth2.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth2.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3957,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 1,
+        "commands": [
+          "login"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "User Sign-up and Login should remember a user for 30 days after login",
+      "filename": "auth3.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth3.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3567,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 3,
+        "commands": [
+          "login",
+          "click",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+      "filename": "auth4.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth4.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 8088,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 17,
+        "commands": [
+          "visit",
+          "click",
+          "type",
+          "type",
+          "type",
+          "type",
+          "type",
+          "click",
+          "login",
+          "click",
+          "type",
+          "type",
+          "type",
+          "click",
+          "click",
+          "click",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "User Sign-up and Login should display login errors",
+      "filename": "auth5.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth5.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 2874,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 6,
+        "commands": [
+          "visit",
+          "blur",
+          "clear",
+          "type",
+          "blur",
+          "type"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "User Sign-up and Login should display signup errors",
+      "filename": "auth6.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth6.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 4325,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 15,
+        "commands": [
+          "visit",
+          "blur",
+          "clear",
+          "type",
+          "blur",
+          "clear",
+          "type",
+          "blur",
+          "clear",
+          "type",
+          "blur",
+          "clear",
+          "type",
+          "blur",
+          "type"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "User Sign-up and Login should error for an invalid user",
+      "filename": "auth7.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth7.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3859,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 1,
+        "commands": [
+          "login"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "User Sign-up and Login should error for an invalid password for existing user",
+      "filename": "auth8.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth8.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3131,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 1,
+        "commands": [
+          "login"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Bank Accounts creates a new bank account",
+      "filename": "bankaccounts1.spec.ts",
+      "filePath": "cypress\\tests\\original\\bankaccounts1.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 4781,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 7,
+        "commands": [
+          "click",
+          "click",
+          "click",
+          "type",
+          "type",
+          "type",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Bank Accounts should display bank account form errors",
+      "filename": "bankaccounts2.spec.ts",
+      "filePath": "cypress\\tests\\original\\bankaccounts2.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 7655,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 27,
+        "commands": [
+          "visit",
+          "click",
+          "blur",
+          "clear",
+          "type",
+          "blur",
+          "type",
+          "blur",
+          "focus",
+          "blur",
+          "type",
+          "clear",
+          "blur",
+          "type",
+          "blur",
+          "focus",
+          "blur",
+          "type",
+          "clear",
+          "blur",
+          "type",
+          "clear",
+          "blur",
+          "type",
+          "clear",
+          "blur",
+          "type"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Bank Accounts soft deletes a bank account",
+      "filename": "bankaccounts3.spec.ts",
+      "filePath": "cypress\\tests\\original\\bankaccounts3.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 4737,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 2,
+        "commands": [
+          "visit",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Bank Accounts renders an empty bank account list state with onboarding modal",
+      "filename": "bankaccounts4.spec.ts",
+      "filePath": "cypress\\tests\\original\\bankaccounts4.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 4086,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 1,
+        "commands": [
+          "visit"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction payment",
+      "filename": "new-transaction1.spec.ts",
+      "filePath": "cypress\\tests\\original\\new-transaction1.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 8319,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 11,
+        "commands": [
+          "click",
+          "type",
+          "click",
+          "type",
+          "type",
+          "click",
+          "click",
+          "click",
+          "click",
+          "click",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction request",
+      "filename": "new-transaction2.spec.ts",
+      "filePath": "cypress\\tests\\original\\new-transaction2.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 7074,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 7,
+        "commands": [
+          "click",
+          "click",
+          "type",
+          "type",
+          "click",
+          "click",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "New Transaction displays new transaction errors",
+      "filename": "new-transaction3.spec.ts",
+      "filePath": "cypress\\tests\\original\\new-transaction3.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 4273,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 8,
+        "commands": [
+          "click",
+          "click",
+          "blur",
+          "clear",
+          "type",
+          "blur",
+          "clear",
+          "type"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "New Transaction submits a transaction payment and verifies the deposit for the receiver",
+      "filename": "new-transaction4.spec.ts",
+      "filePath": "cypress\\tests\\original\\new-transaction4.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 4515,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 4,
+        "commands": [
+          "click",
+          "createTransaction",
+          "switchUserByXstate",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "New Transaction submits a transaction request and accepts the request for the receiver",
+      "filename": "new-transaction5.spec.ts",
+      "filePath": "cypress\\tests\\original\\new-transaction5.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 7686,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 8,
+        "commands": [
+          "click",
+          "createTransaction",
+          "switchUserByXstate",
+          "click",
+          "click",
+          "click",
+          "switchUserByXstate",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "New Transaction searches for a user by attribute firstName",
+      "filename": "new-transaction6.spec.ts",
+      "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 4591,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "New Transaction searches for a user by attribute lastName",
+      "filename": "new-transaction6.spec.ts",
+      "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 2420,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "New Transaction searches for a user by attribute username",
+      "filename": "new-transaction6.spec.ts",
+      "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 2714,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "New Transaction searches for a user by attribute email",
+      "filename": "new-transaction6.spec.ts",
+      "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3400,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "New Transaction searches for a user by attribute phoneNumber",
+      "filename": "new-transaction6.spec.ts",
+      "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 2420,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Notifications notifications from user interactions User A likes a transaction of User B; User B gets notification that User A liked transaction ",
+      "filename": "notifications1.spec.ts",
+      "filePath": "cypress\\tests\\original\\notifications1.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 7203,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 6,
+        "commands": [
+          "loginByXstate",
+          "visit",
+          "click",
+          "switchUserByXstate",
+          "visit",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Notifications notifications from user interactions User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction",
+      "filename": "notifications2.spec.ts",
+      "filePath": "cypress\\tests\\original\\notifications2.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 7690,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 7,
+        "commands": [
+          "loginByXstate",
+          "visit",
+          "click",
+          "switchUserByXstate",
+          "click",
+          "switchUserByXstate",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Notifications notifications from user interactions User A comments on a transaction of User B; User B gets notification that User A commented on their transaction",
+      "filename": "notifications3.spec.ts",
+      "filePath": "cypress\\tests\\original\\notifications3.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 5541,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 5,
+        "commands": [
+          "loginByXstate",
+          "visit",
+          "type",
+          "switchUserByXstate",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Notifications notifications from user interactions User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction",
+      "filename": "notifications4.spec.ts",
+      "filePath": "cypress\\tests\\original\\notifications4.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 7791,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 7,
+        "commands": [
+          "loginByXstate",
+          "visit",
+          "type",
+          "switchUserByXstate",
+          "click",
+          "switchUserByXstate",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Notifications notifications from user interactions User A sends a payment to User B",
+      "filename": "notifications5.spec.ts",
+      "filePath": "cypress\\tests\\original\\notifications5.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 4604,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 5,
+        "commands": [
+          "loginByXstate",
+          "click",
+          "createTransaction",
+          "switchUserByXstate",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Notifications notifications from user interactions User A sends a payment request to User C",
+      "filename": "notifications6.spec.ts",
+      "filePath": "cypress\\tests\\original\\notifications6.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 4515,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 5,
+        "commands": [
+          "loginByXstate",
+          "click",
+          "createTransaction",
+          "switchUserByXstate",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Notifications renders an empty notifications state",
+      "filename": "notifications7.spec.ts",
+      "filePath": "cypress\\tests\\original\\notifications7.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 2741,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 3,
+        "commands": [
+          "loginByXstate",
+          "click",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Transaction Feed app layout and responsiveness toggles the navigation drawer",
+      "filename": "transaction-feeds1.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds1.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3020,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 5,
+        "commands": [
+          "click",
+          "click",
+          "click",
+          "click",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Transaction Feed Feed Item Visibility first five items belong to contacts in public feed",
+      "filename": "transaction-feeds10.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds10.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 2815,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 0,
+        "commands": []
+      },
+      "matched": true
+    },
+    {
+      "name": "Transaction Feed Feed Item Visibility friends feed only shows contact transactions",
+      "filename": "transaction-feeds11.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds11.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 2996,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 1,
+        "commands": [
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Transaction Feed renders and paginates all transaction feeds renders transactions item variations in feed",
+      "filename": "transaction-feeds2.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds2.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3994,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 1,
+        "commands": [
+          "visit"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Transaction Feed renders and paginates all transaction feeds paginates public transaction feed",
+      "filename": "transaction-feeds3.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds3.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3960,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed renders and paginates all transaction feeds paginates contacts transaction feed",
+      "filename": "transaction-feeds3.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds3.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3021,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed renders and paginates all transaction feeds paginates personal transaction feed",
+      "filename": "transaction-feeds3.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds3.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3045,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed filters transaction feeds by date range filters public transaction feed by date range",
+      "filename": "transaction-feeds5.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds5.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 7228,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed filters transaction feeds by date range filters contacts transaction feed by date range",
+      "filename": "transaction-feeds5.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds5.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 5999,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed filters transaction feeds by date range filters personal transaction feed by date range",
+      "filename": "transaction-feeds5.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds5.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 5923,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed filters transaction feeds by date range does not show public transactions for out of range date limits",
+      "filename": "transaction-feeds6.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds6.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 6297,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed filters transaction feeds by date range does not show contacts transactions for out of range date limits",
+      "filename": "transaction-feeds6.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds6.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 5968,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed filters transaction feeds by date range does not show personal transactions for out of range date limits",
+      "filename": "transaction-feeds6.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds6.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 6094,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed filters transaction feeds by amount range filters public transaction feed by amount range",
+      "filename": "transaction-feeds7.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds7.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3819,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed filters transaction feeds by amount range filters contacts transaction feed by amount range",
+      "filename": "transaction-feeds7.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds7.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 2627,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed filters transaction feeds by amount range filters personal transaction feed by amount range",
+      "filename": "transaction-feeds7.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds7.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3346,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed filters transaction feeds by amount range does not show public transactions for out of range amount limits",
+      "filename": "transaction-feeds8.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds8.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3313,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed filters transaction feeds by amount range does not show contacts transactions for out of range amount limits",
+      "filename": "transaction-feeds8.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds8.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 2113,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed filters transaction feeds by amount range does not show personal transactions for out of range amount limits",
+      "filename": "transaction-feeds8.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds8.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3585,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": null,
+      "matched": false
+    },
+    {
+      "name": "Transaction Feed Feed Item Visibility mine feed only shows personal transactions",
+      "filename": "transaction-feeds9.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds9.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 2998,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 1,
+        "commands": [
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+      "filename": "transaction-view1.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-view1.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3002,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 1,
+        "commands": [
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Transaction View likes a transaction",
+      "filename": "transaction-view2.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-view2.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3232,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 2,
+        "commands": [
+          "click",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Transaction View comments on a transaction",
+      "filename": "transaction-view3.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-view3.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3801,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 2,
+        "commands": [
+          "click",
+          "type"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Transaction View accepts a transaction request",
+      "filename": "transaction-view4.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-view4.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3876,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 2,
+        "commands": [
+          "visit",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Transaction View rejects a transaction request",
+      "filename": "transaction-view5.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-view5.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 4456,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 2,
+        "commands": [
+          "visit",
+          "click"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "Transaction View does not display accept/reject buttons on completed request",
+      "filename": "transaction-view6.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-view6.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 4105,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 1,
+        "commands": [
+          "visit"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "User Settings renders the user settings form",
+      "filename": "user-settings1.spec.ts",
+      "filePath": "cypress\\tests\\original\\user-settings1.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 3358,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 0,
+        "commands": []
+      },
+      "matched": true
+    },
+    {
+      "name": "User Settings should display user setting form errors",
+      "filename": "user-settings2.spec.ts",
+      "filePath": "cypress\\tests\\original\\user-settings2.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 4741,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 13,
+        "commands": [
+          "blur",
+          "clear",
+          "type",
+          "blur",
+          "clear",
+          "type",
+          "blur",
+          "type",
+          "blur",
+          "clear",
+          "type",
+          "blur",
+          "type"
+        ]
+      },
+      "matched": true
+    },
+    {
+      "name": "User Settings updates first name, last name, email and phone number",
+      "filename": "user-settings3.spec.ts",
+      "filePath": "cypress\\tests\\original\\user-settings3.spec.ts",
+      "execution": {
+        "status": "passed",
+        "duration": 5705,
+        "rawStatus": "passed",
+        "type": "e2e",
+        "retries": 0,
+        "flaky": false,
+        "browser": "electron 130.0.6723.137",
+        "message": null,
+        "trace": null,
+        "attachments": []
+      },
+      "efficiency": {
+        "orderInFile": 1,
+        "actionableCommands": 11,
+        "commands": [
+          "type",
+          "clear",
+          "type",
+          "clear",
+          "type",
+          "clear",
+          "blur",
+          "type",
+          "clear",
+          "click",
+          "click"
+        ]
+      },
+      "matched": true
+    }
+  ],
+  "testFiles": {
+    "user-settings3.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "updates first name, last name, email and phone number": {
+          "orderInFile": 1,
+          "actionableCommands": 11,
+          "commands": [
+            "type",
+            "clear",
+            "type",
+            "clear",
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "clear",
+            "click",
+            "click"
+          ]
+        }
+      }
+    },
+    "user-settings2.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "should display user setting form errors": {
+          "orderInFile": 1,
+          "actionableCommands": 13,
+          "commands": [
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "type",
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "type"
+          ]
+        }
+      }
+    },
+    "user-settings1.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "renders the user settings form": {
+          "orderInFile": 1,
+          "actionableCommands": 0,
+          "commands": []
+        }
+      }
+    },
+    "transaction-view6.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "does not display accept/reject buttons on completed request": {
+          "orderInFile": 1,
+          "actionableCommands": 1,
+          "commands": [
+            "visit"
+          ]
+        }
+      }
+    },
+    "transaction-view5.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "rejects a transaction request": {
+          "orderInFile": 1,
+          "actionableCommands": 2,
+          "commands": [
+            "visit",
+            "click"
+          ]
+        }
+      }
+    },
+    "transaction-view4.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "accepts a transaction request": {
+          "orderInFile": 1,
+          "actionableCommands": 2,
+          "commands": [
+            "visit",
+            "click"
+          ]
+        }
+      }
+    },
+    "transaction-view3.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "comments on a transaction": {
+          "orderInFile": 1,
+          "actionableCommands": 2,
+          "commands": [
+            "click",
+            "type"
+          ]
+        }
+      }
+    },
+    "transaction-view2.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "likes a transaction": {
+          "orderInFile": 1,
+          "actionableCommands": 2,
+          "commands": [
+            "click",
+            "click"
+          ]
+        }
+      }
+    },
+    "transaction-view1.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "transactions navigation tabs are hidden on a transaction view page": {
+          "orderInFile": 1,
+          "actionableCommands": 1,
+          "commands": [
+            "click"
+          ]
+        }
+      }
+    },
+    "transaction-feeds9.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "mine feed only shows personal transactions": {
+          "orderInFile": 1,
+          "actionableCommands": 1,
+          "commands": [
+            "click"
+          ]
+        }
+      }
+    },
+    "transaction-feeds8.spec.ts": {
+      "totalTests": 0,
+      "tests": {}
+    },
+    "transaction-feeds7.spec.ts": {
+      "totalTests": 0,
+      "tests": {}
+    },
+    "transaction-feeds6.spec.ts": {
+      "totalTests": 0,
+      "tests": {}
+    },
+    "transaction-feeds5.spec.ts": {
+      "totalTests": 0,
+      "tests": {}
+    },
+    "transaction-feeds4.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "closes date range picker modal": {
+          "orderInFile": 1,
+          "actionableCommands": 2,
+          "commands": [
+            "click",
+            "click"
+          ]
+        }
+      }
+    },
+    "transaction-feeds3.spec.ts": {
+      "totalTests": 0,
+      "tests": {}
+    },
+    "transaction-feeds2.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "renders transactions item variations in feed": {
+          "orderInFile": 1,
+          "actionableCommands": 1,
+          "commands": [
+            "visit"
+          ]
+        }
+      }
+    },
+    "transaction-feeds11.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "friends feed only shows contact transactions": {
+          "orderInFile": 1,
+          "actionableCommands": 1,
+          "commands": [
+            "click"
+          ]
+        }
+      }
+    },
+    "transaction-feeds10.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "first five items belong to contacts in public feed": {
+          "orderInFile": 1,
+          "actionableCommands": 0,
+          "commands": []
+        }
+      }
+    },
+    "transaction-feeds1.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "toggles the navigation drawer": {
+          "orderInFile": 1,
+          "actionableCommands": 5,
+          "commands": [
+            "click",
+            "click",
+            "click",
+            "click",
+            "click"
+          ]
+        }
+      }
+    },
+    "notifications7.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "renders an empty notifications state": {
+          "orderInFile": 1,
+          "actionableCommands": 3,
+          "commands": [
+            "loginByXstate",
+            "click",
+            "click"
+          ]
+        }
+      }
+    },
+    "notifications6.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "User A sends a payment request to User C": {
+          "orderInFile": 1,
+          "actionableCommands": 5,
+          "commands": [
+            "loginByXstate",
+            "click",
+            "createTransaction",
+            "switchUserByXstate",
+            "click"
+          ]
+        }
+      }
+    },
+    "notifications5.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "User A sends a payment to User B": {
+          "orderInFile": 1,
+          "actionableCommands": 5,
+          "commands": [
+            "loginByXstate",
+            "click",
+            "createTransaction",
+            "switchUserByXstate",
+            "click"
+          ]
+        }
+      }
+    },
+    "notifications4.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction": {
+          "orderInFile": 1,
+          "actionableCommands": 7,
+          "commands": [
+            "loginByXstate",
+            "visit",
+            "type",
+            "switchUserByXstate",
+            "click",
+            "switchUserByXstate",
+            "click"
+          ]
+        }
+      }
+    },
+    "notifications3.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "User A comments on a transaction of User B; User B gets notification that User A commented on their transaction": {
+          "orderInFile": 1,
+          "actionableCommands": 5,
+          "commands": [
+            "loginByXstate",
+            "visit",
+            "type",
+            "switchUserByXstate",
+            "click"
+          ]
+        }
+      }
+    },
+    "notifications2.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction": {
+          "orderInFile": 1,
+          "actionableCommands": 7,
+          "commands": [
+            "loginByXstate",
+            "visit",
+            "click",
+            "switchUserByXstate",
+            "click",
+            "switchUserByXstate",
+            "click"
+          ]
+        }
+      }
+    },
+    "notifications1.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "User A likes a transaction of User B; User B gets notification that User A liked transaction ": {
+          "orderInFile": 1,
+          "actionableCommands": 6,
+          "commands": [
+            "loginByXstate",
+            "visit",
+            "click",
+            "switchUserByXstate",
+            "visit",
+            "click"
+          ]
+        }
+      }
+    },
+    "new-transaction6.spec.ts": {
+      "totalTests": 0,
+      "tests": {}
+    },
+    "new-transaction5.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "submits a transaction request and accepts the request for the receiver": {
+          "orderInFile": 1,
+          "actionableCommands": 8,
+          "commands": [
+            "click",
+            "createTransaction",
+            "switchUserByXstate",
+            "click",
+            "click",
+            "click",
+            "switchUserByXstate",
+            "click"
+          ]
+        }
+      }
+    },
+    "new-transaction4.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "submits a transaction payment and verifies the deposit for the receiver": {
+          "orderInFile": 1,
+          "actionableCommands": 4,
+          "commands": [
+            "click",
+            "createTransaction",
+            "switchUserByXstate",
+            "click"
+          ]
+        }
+      }
+    },
+    "new-transaction3.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "displays new transaction errors": {
+          "orderInFile": 1,
+          "actionableCommands": 8,
+          "commands": [
+            "click",
+            "click",
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "clear",
+            "type"
+          ]
+        }
+      }
+    },
+    "new-transaction2.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "navigates to the new transaction form, selects a user and submits a transaction request": {
+          "orderInFile": 1,
+          "actionableCommands": 7,
+          "commands": [
+            "click",
+            "click",
+            "type",
+            "type",
+            "click",
+            "click",
+            "click"
+          ]
+        }
+      }
+    },
+    "new-transaction1.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "navigates to the new transaction form, selects a user and submits a transaction payment": {
+          "orderInFile": 1,
+          "actionableCommands": 11,
+          "commands": [
+            "click",
+            "type",
+            "click",
+            "type",
+            "type",
+            "click",
+            "click",
+            "click",
+            "click",
+            "click",
+            "click"
+          ]
+        }
+      }
+    },
+    "bankaccounts4.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "renders an empty bank account list state with onboarding modal": {
+          "orderInFile": 1,
+          "actionableCommands": 1,
+          "commands": [
+            "visit"
+          ]
+        }
+      }
+    },
+    "bankaccounts3.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "soft deletes a bank account": {
+          "orderInFile": 1,
+          "actionableCommands": 2,
+          "commands": [
+            "visit",
+            "click"
+          ]
+        }
+      }
+    },
+    "bankaccounts2.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "should display bank account form errors": {
+          "orderInFile": 1,
+          "actionableCommands": 27,
+          "commands": [
+            "visit",
+            "click",
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "type",
+            "blur",
+            "focus",
+            "blur",
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "blur",
+            "focus",
+            "blur",
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "clear",
+            "blur",
+            "type",
+            "clear",
+            "blur",
+            "type"
+          ]
+        }
+      }
+    },
+    "bankaccounts1.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "creates a new bank account": {
+          "orderInFile": 1,
+          "actionableCommands": 7,
+          "commands": [
+            "click",
+            "click",
+            "click",
+            "type",
+            "type",
+            "type",
+            "click"
+          ]
+        }
+      }
+    },
+    "auth8.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "should error for an invalid password for existing user": {
+          "orderInFile": 1,
+          "actionableCommands": 1,
+          "commands": [
+            "login"
+          ]
+        }
+      }
+    },
+    "auth7.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "should error for an invalid user": {
+          "orderInFile": 1,
+          "actionableCommands": 1,
+          "commands": [
+            "login"
+          ]
+        }
+      }
+    },
+    "auth6.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "should display signup errors": {
+          "orderInFile": 1,
+          "actionableCommands": 15,
+          "commands": [
+            "visit",
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "type"
+          ]
+        }
+      }
+    },
+    "auth5.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "should display login errors": {
+          "orderInFile": 1,
+          "actionableCommands": 6,
+          "commands": [
+            "visit",
+            "blur",
+            "clear",
+            "type",
+            "blur",
+            "type"
+          ]
+        }
+      }
+    },
+    "auth4.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "should allow a visitor to sign-up, login, and logout": {
+          "orderInFile": 1,
+          "actionableCommands": 17,
+          "commands": [
+            "visit",
+            "click",
+            "type",
+            "type",
+            "type",
+            "type",
+            "type",
+            "click",
+            "login",
+            "click",
+            "type",
+            "type",
+            "type",
+            "click",
+            "click",
+            "click",
+            "click"
+          ]
+        }
+      }
+    },
+    "auth3.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "should remember a user for 30 days after login": {
+          "orderInFile": 1,
+          "actionableCommands": 3,
+          "commands": [
+            "login",
+            "click",
+            "click"
+          ]
+        }
+      }
+    },
+    "auth2.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "should redirect to the home page after login": {
+          "orderInFile": 1,
+          "actionableCommands": 1,
+          "commands": [
+            "login"
+          ]
+        }
+      }
+    },
+    "auth1.spec.ts": {
+      "totalTests": 1,
+      "tests": {
+        "should redirect unauthenticated user to signin page": {
+          "orderInFile": 1,
+          "actionableCommands": 1,
+          "commands": [
+            "visit"
+          ]
+        }
+      }
+    }
+  },
+  "actionableCommandTypes": [
+    "visit",
+    "click",
+    "type",
+    "clear",
+    "blur",
+    "focus",
+    "select",
+    "check",
+    "uncheck",
+    "submit",
+    "login",
+    "createTransaction",
+    "switchUserByXstate",
+    "loginByXstate"
+  ],
+  "excludedCommands": [
+    "get",
+    "find",
+    "should",
+    "wait",
+    "location",
+    "contains",
+    "its",
+    "then",
+    "and",
+    "intercept",
+    "task",
+    "database",
+    "getBySel",
+    "getBySelLike",
+    "getCookie",
+    "visualSnapshot"
+  ]
+}

@@ -96,28 +96,27 @@ const TestGenerationTimingView: React.FC = () => {
     }
     setShowDetailedTable(!showDetailedTable);
   };
-
   if (loading) {
     return (
       <div className="flex justify-center items-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-        <span className="ml-2">Loading test generation data...</span>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-400"></div>
+        <span className="ml-2 text-gray-300">Loading test generation data...</span>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-        <p className="text-red-600">Error: {error}</p>
+      <div className="bg-red-900 border border-red-700 rounded-lg p-4">
+        <p className="text-red-200">Error: {error}</p>
       </div>
     );
   }
 
   if (!testGenerationData?.llmSummaries || testGenerationData.llmSummaries.length === 0) {
     return (
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-        <p className="text-yellow-600">No test generation data available</p>
+      <div className="bg-yellow-900 border border-yellow-700 rounded-lg p-4">
+        <p className="text-yellow-200">No test generation data available</p>
       </div>
     );
   }
@@ -135,47 +134,45 @@ const TestGenerationTimingView: React.FC = () => {
   });
 
   return (
-    <div className="space-y-6">
-      <div className="bg-white rounded-lg shadow-sm border p-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Test Generation Timing & Results</h2>
+    <div className="space-y-6">      <div className="bg-gray-800 rounded-lg shadow-sm border border-gray-700 p-6">
+        <h2 className="text-2xl font-bold text-white mb-6">Test Generation Timing & Results</h2>
           {/* Summary Statistics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-blue-50 p-4 rounded-lg">
-            <div className="text-2xl font-bold text-blue-600">{llmSummaries.length}</div>
-            <div className="text-sm text-gray-600">Total LLMs</div>
-          </div>          <div className="bg-green-50 p-4 rounded-lg">
-            <div className="text-2xl font-bold text-green-600">
+          <div className="bg-gray-700 p-4 rounded-lg">
+            <div className="text-2xl font-bold text-blue-400">{llmSummaries.length}</div>
+            <div className="text-sm text-gray-300">Total LLMs</div>
+          </div>          <div className="bg-gray-700 p-4 rounded-lg">
+            <div className="text-2xl font-bold text-green-400">
               {llmSummaries.reduce((sum, llm) => sum + (llm.filesGenerated || 0), 0)}
             </div>
-            <div className="text-sm text-gray-600">Files Generated (Target: 45)</div>
-          </div>
-          <div className="bg-purple-50 p-4 rounded-lg">
-            <div className="text-2xl font-bold text-purple-600">
+            <div className="text-sm text-gray-300">Files Generated (Target: 45)</div>
+          </div>          <div className="bg-gray-700 p-4 rounded-lg">
+            <div className="text-2xl font-bold text-purple-400">
               {((llmSummaries.reduce((sum, llm) => sum + llm.filesGenerated, 0) / (llmSummaries.length * 45)) * 100).toFixed(1)}%
             </div>
-            <div className="text-sm text-gray-600">Overall File Generation Rate</div>
+            <div className="text-sm text-gray-300">Overall File Generation Rate</div>
           </div>
-          <div className="bg-orange-50 p-4 rounded-lg">
-            <div className="text-2xl font-bold text-orange-600">
+          <div className="bg-gray-700 p-4 rounded-lg">
+            <div className="text-2xl font-bold text-orange-400">
               {(llmSummaries.reduce((sum, llm) => sum + llm.averageGenerationTime, 0) / llmSummaries.length / 1000).toFixed(1)}s
             </div>
-            <div className="text-sm text-gray-600">Avg Generation Time</div>
+            <div className="text-sm text-gray-300">Avg Generation Time</div>
           </div>
         </div>        {/* LLM Performance Summary Table */}
         <div className="overflow-x-auto">
-          <table className="min-w-full bg-white border border-gray-200 rounded-lg">
-            <thead className="bg-gray-50">
+          <table className="min-w-full bg-gray-800 border border-gray-700 rounded-lg">
+            <thead className="bg-gray-700">
               <tr>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rank</th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">LLM</th>
-                <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Files Generated</th>
-                <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">File Generation Rate</th>
-                <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Avg Generation Time</th>
-                <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Performance</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Rank</th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">LLM</th>
+                <th className="px-4 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">Files Generated</th>
+                <th className="px-4 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">File Generation Rate</th>
+                <th className="px-4 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">Avg Generation Time</th>
+                <th className="px-4 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">Performance</th>
               </tr>            </thead>
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-gray-600">
               {sortedLLMs.map((llm, index) => (
-                <tr key={llm.llm} className={`hover:bg-gray-50 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-25'}`}>
+                <tr key={llm.llm} className={`hover:bg-gray-700 ${index % 2 === 0 ? 'bg-gray-800' : 'bg-gray-750'}`}>
                   <td className="px-4 py-3 text-sm">
                     <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-white text-sm font-bold ${
                       index < 2 ? 'bg-green-500' : 
@@ -185,16 +182,16 @@ const TestGenerationTimingView: React.FC = () => {
                       {index + 1}
                     </span>
                   </td>                  <td className="px-4 py-3">
-                    <div className="text-sm font-medium text-gray-900">
+                    <div className="text-sm font-medium text-white">
                       {llm.llm.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
                     </div>
                   </td><td className="px-4 py-3 text-center">
-                    <div className="text-sm font-semibold text-gray-900">{(llm.filesGenerated || 0)}/45</div>
-                    <div className="text-xs text-gray-500">files</div>
+                    <div className="text-sm font-semibold text-white">{(llm.filesGenerated || 0)}/45</div>
+                    <div className="text-xs text-gray-400">files</div>
                   </td>
                   <td className="px-4 py-3 text-center">
-                    <div className="text-sm font-semibold text-gray-900">{(llm.fileGenerationRate || 0).toFixed(1)}%</div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
+                    <div className="text-sm font-semibold text-white">{(llm.fileGenerationRate || 0).toFixed(1)}%</div>
+                    <div className="w-full bg-gray-600 rounded-full h-2 mt-1">
                       <div 
                         className={`h-2 rounded-full ${
                           (llm.fileGenerationRate || 0) >= 90 ? 'bg-green-500' :
@@ -205,30 +202,28 @@ const TestGenerationTimingView: React.FC = () => {
                       ></div>                    </div>
                   </td>
                   <td className="px-4 py-3 text-center">
-                    <div className="text-sm font-semibold text-gray-900">
+                    <div className="text-sm font-semibold text-white">
                       {(llm.averageGenerationTime / 1000).toFixed(2)}s
                     </div>
-                    <div className="text-xs text-gray-500">
+                    <div className="text-xs text-gray-400">
                       {llm.averageGenerationTime < 5000 ? 'Fast' : 
                        llm.averageGenerationTime < 10000 ? 'Moderate' : 'Slow'}
                     </div>
-                  </td><td className="px-4 py-3 text-center">
+                  </td>                  <td className="px-4 py-3 text-center">
                     <div className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                      (llm.fileGenerationRate || 0) >= 90 && llm.averageGenerationTime < 10000 ? 'bg-green-100 text-green-800' :
-                      (llm.fileGenerationRate || 0) >= 75 ? 'bg-yellow-100 text-yellow-800' :
-                      'bg-red-100 text-red-800'
+                      (llm.fileGenerationRate || 0) >= 90 && llm.averageGenerationTime < 10000 ? 'bg-green-900 text-green-200' :
+                      (llm.fileGenerationRate || 0) >= 75 ? 'bg-yellow-900 text-yellow-200' :
+                      'bg-red-900 text-red-200'
                     }`}>
                       {(llm.fileGenerationRate || 0) >= 90 && llm.averageGenerationTime < 10000 ? 'Excellent' :
                        (llm.fileGenerationRate || 0) >= 75 ? 'Good' : 'Poor'}
-                    </div>                  </td>
+                    </div></td>
                 </tr>
               ))}
             </tbody>
           </table>
-        </div>
-
-        {/* Legend */}
-        <div className="mt-4 flex flex-wrap gap-4 text-xs text-gray-600">
+        </div>        {/* Legend */}
+        <div className="mt-4 flex flex-wrap gap-4 text-xs text-gray-300">
           <div className="flex items-center">
             <div className="w-3 h-3 bg-green-500 rounded-full mr-1"></div>
             <span>Top Performers (Rank 1-2)</span>
@@ -241,16 +236,16 @@ const TestGenerationTimingView: React.FC = () => {
             <div className="w-3 h-3 bg-red-500 rounded-full mr-1"></div>
             <span>Lower Performers (Rank 5+)</span>
           </div>
-          <div className="ml-auto text-gray-500">
+          <div className="ml-auto text-gray-400">
             Ranked by pass rate, then by generation speed
           </div>
         </div>
       </div>
 
       {/* Detailed Test Results Section */}
-      <div className="bg-white rounded-lg shadow-sm border p-6">
+      <div className="bg-gray-800 rounded-lg shadow-sm border border-gray-700 p-6">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">Detailed Test Results</h2>
+          <h2 className="text-2xl font-bold text-white">Detailed Test Results</h2>
           <div className="flex items-center gap-4">
             <select
               value={selectedLLM}
@@ -259,10 +254,10 @@ const TestGenerationTimingView: React.FC = () => {
                 setShowDetailedTable(false);
                 setDetailedTests([]);
               }}
-              className="px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 bg-white focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             >
               {llmSummaries.map(llm => (
-                <option key={llm.llm} value={llm.llm} className="text-gray-900">
+                <option key={llm.llm} value={llm.llm} className="text-white bg-gray-700">
                   {llm.llm.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
                 </option>
               ))}
@@ -277,47 +272,43 @@ const TestGenerationTimingView: React.FC = () => {
         </div>
 
         {showDetailedTable && (
-          <div className="space-y-4">
-            {loadingDetails ? (
+          <div className="space-y-4">            {loadingDetails ? (
               <div className="flex justify-center items-center p-8">
-                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
-                <span className="ml-2">Loading detailed test data...</span>
+                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-400"></div>
+                <span className="ml-2 text-gray-300">Loading detailed test data...</span>
               </div>
             ) : detailedTests.length > 0 ? (
               <>
                 {/* Summary Statistics for Selected LLM */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                  <div className="bg-blue-50 p-4 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-blue-600">{detailedTests.length}</div>
-                    <div className="text-sm text-gray-600">Total Tests</div>
-                  </div>                  <div className="bg-green-50 p-4 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-green-600">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">                  <div className="bg-gray-700 p-4 rounded-lg text-center border-l-4 border-blue-500">
+                    <div className="text-2xl font-bold text-blue-400">{detailedTests.length}</div>
+                    <div className="text-sm text-gray-300">Total Tests</div>
+                  </div>                  <div className="bg-gray-700 p-4 rounded-lg text-center border-l-4 border-green-500">
+                    <div className="text-2xl font-bold text-green-400">
                       {detailedTests.filter(t => t.generated).length}
                     </div>
-                    <div className="text-sm text-gray-600">Generated Tests</div>
-                  </div>
-                  <div className="bg-red-50 p-4 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-red-600">
+                    <div className="text-sm text-gray-300">Generated Tests</div>
+                  </div>                  <div className="bg-gray-700 p-4 rounded-lg text-center border-l-4 border-red-500">
+                    <div className="text-2xl font-bold text-red-400">
                       {detailedTests.filter(t => !t.generated).length}
                     </div>
-                    <div className="text-sm text-gray-600">Not Generated</div>
-                  </div>
-                  <div className="bg-purple-50 p-4 rounded-lg text-center">
-                    <div className="text-2xl font-bold text-purple-600">
+                    <div className="text-sm text-gray-300">Not Generated</div>
+                  </div>                  <div className="bg-gray-700 p-4 rounded-lg text-center border-l-4 border-purple-500">
+                    <div className="text-2xl font-bold text-purple-400">
                       {detailedTests.length > 0 ? (detailedTests.reduce((sum, t) => sum + t.generationTime, 0) / detailedTests.length / 1000).toFixed(1) : '0'}s
                     </div>
-                    <div className="text-sm text-gray-600">Avg Generation Time</div>
+                    <div className="text-sm text-gray-300">Avg Generation Time</div>
                   </div>
                 </div>                {/* Detailed Test Results Table */}
-                <div className="overflow-x-auto">                  <table className="min-w-full bg-white border border-gray-200 rounded-lg">
-                    <thead className="bg-gray-50"><tr>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">File Name</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">It Block #</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Test Name</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Generation Time</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Generation Status</th>
+                <div className="overflow-x-auto">                  <table className="min-w-full bg-gray-800 border border-gray-700 rounded-lg">
+                    <thead className="bg-gray-700">                      <tr>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">File Name</th>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">It Block #</th>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Test Name</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">Generation Time</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">Generation Status</th>
                       </tr></thead>
-                    <tbody className="divide-y divide-gray-200">
+                    <tbody className="divide-y divide-gray-600">
                       {detailedTests.map((test, index) => {
                         // Extract file name base and it block number
                         // Handle cases like "auth1.spec.ts" -> "auth.spec.ts" as filename and "1" as block number
@@ -327,24 +318,22 @@ const TestGenerationTimingView: React.FC = () => {
                           : test.fileName;
                         const itBlockNum = fileNameParts ? fileNameParts[2] : '';
                           return (
-                          <tr key={`${test.filePath}-${test.testName}-${index}`} className="hover:bg-gray-50">
-                            <td className="px-4 py-3 text-sm text-gray-600">
+                          <tr key={`${test.filePath}-${test.testName}-${index}`} className={`hover:bg-gray-700 ${index % 2 === 0 ? 'bg-gray-800' : 'bg-gray-850'}`}>                            <td className="px-4 py-3 text-sm text-gray-300">
                               <div className="max-w-xs truncate" title={fileNameBase}>
                                 {fileNameBase}
                               </div>
                             </td>
-                            <td className="px-4 py-3 text-sm font-medium text-gray-900">
+                            <td className="px-4 py-3 text-sm font-medium text-white">
                               {itBlockNum}
                             </td>
-                            <td className="px-4 py-3 text-sm font-medium text-gray-900">
+                            <td className="px-4 py-3 text-sm font-medium text-white">
                               <div className="max-w-xs truncate" title={test.testName}>
                                 {test.testName}
                               </div>
-                            </td>
-                            <td className="px-4 py-3 text-sm text-gray-600">
+                            </td>                            <td className="px-4 py-3 text-sm text-gray-300">
                               <div className="flex items-center justify-center">
-                                <span className="font-medium">{(test.generationTime / 1000).toFixed(2)}s</span>
-                                <div className="ml-2 w-16 bg-gray-200 rounded-full h-2">
+                                <span className="font-medium text-white">{(test.generationTime / 1000).toFixed(2)}s</span>
+                                <div className="ml-2 w-16 bg-gray-600 rounded-full h-2">
                                   <div 
                                     className="h-2 bg-blue-500 rounded-full"
                                     style={{ 
@@ -356,11 +345,11 @@ const TestGenerationTimingView: React.FC = () => {
                             </td>                            <td className="px-4 py-3 text-sm text-center">
                               <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
                                 test.generated 
-                                  ? 'bg-green-100 text-green-800' 
-                                  : 'bg-red-100 text-red-800'
+                                  ? 'bg-green-900 text-green-200' 
+                                  : 'bg-red-900 text-red-200'
                               }`}>
                                 {test.generated ? 'Generated' : 'Not Generated'}
-                              </span>                            </td>
+                              </span></td>
                           </tr>
                         );
                       })}
@@ -368,8 +357,7 @@ const TestGenerationTimingView: React.FC = () => {
                   </table>
                 </div>
               </>
-            ) : (
-              <div className="text-center p-8 text-gray-500">
+            ) : (              <div className="text-center p-8 text-gray-400">
                 No detailed test data available for {selectedLLM.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
               </div>
             )}
