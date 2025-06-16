@@ -1,0 +1,19 @@
+Mi tfg trata sobre testing automatico de aplicaciones web usando LLM. Hay una parte de investigación en la que he
+pasadi mucho tiempo buscando las tecnologias existentes diferentes opciones. Al final he decidido utilizar cypress y
+    generar sus test de forma automatica.
+
+Para ello he creado una serie de scripts y dashboard que muestra los resultados.
+1. Iteración descargar el proyecto del que se van a crear los test ponerla en marcha, identificar los tests cypress
+    relativos a UI. Separar cada bloque it en un archivo a parte y vaciarlos para generar una plantilla por test.
+    Extraer la información que el usuario tiene que introducir sí o sí. Genera los archivos txt con un prompt por cada
+    test a generar
+2. Iteración: Probar y encontrar la manera (con diferentes tecnologias) para poder usar ejecutar los prompts en la
+    extensión github copilot chat para vscode. Encontrar la manera de medir los tiempos y generar un JSON por cada LLM
+    utilizada con el resultado de cara prompt + el tiempo de generación
+3. Iteración volver a añadir la parte generada a los ficheros con la sintasix cypress para poder ejecutar los tests y
+    guardar los resultados. Procesar los resultados y generar el dashboard donde sea posible ver los resultados de forma
+    clara y visual. Ademas hacer ciertas pruebas para comprobar que los resultados han sido fiables y salvar ciertos
+    errores
+
+Estas 3 iteraciones muestran el proceso de desarrollo. Como podria explicar de forma extensa pero sin meter
+    información innecesaria esto. Separado en las tres secciones Analisis, Diseño e Implementación

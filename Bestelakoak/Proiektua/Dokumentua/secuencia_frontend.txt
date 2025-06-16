@@ -1,0 +1,50 @@
+sequenceDiagram
+    participant E as Erabiltzailea
+    participant F as Aurreko aldea
+    participant DB as Datu-basea
+    participant FS as Fitxategi Sistema
+
+    Note over E,F: Frontendaren script independenteak
+
+    Note over E,F: Script 1: Test sorkuntza metrikak kargatzea
+    E->>F: Script 1 exekutatu (sorkuntza metrikak kargatu)
+    F->>FS: Test sorkuntza metriken fitxategiak irakurri
+    FS-->>F: Sorkuntza metriken datuak
+    F->>DB: Sorkuntza metrikak datu-basean gorde
+    DB-->>F: Gordetze konfirmazioa
+    F-->>E: Script 1 osatuta
+
+    Note over E,F: Script 2: Exekuzio metrikak eta komando kontadorea kargatzea
+    E->>F: Script 2 exekutatu (exekuzio metrikak + komandoak kargatu)
+    F->>FS: Test exekuzio metriken fitxategiak irakurri
+    FS-->>F: Exekuzio metriken datuak
+    F->>FS: Komando erabilera metriken fitxategiak irakurri
+    FS-->>F: Komando erabileraren datuak
+    F->>F: Exekuzio metrikak eta komando datuak konbinatu
+    F->>DB: Konbinatutako metrikak datu-basean gorde
+    DB-->>F: Gordetze konfirmazioa
+    F-->>E: Script 2 osatuta
+
+    Note over E,F: Datuen kontsulta sekzioak
+
+    Note over E,F: Test sorkuntza datuen kontsulta
+    E->>F: Test sorkuntza sekzioa bisitatu
+    F->>DB: Sorkuntza metrikak eskatu
+    DB-->>F: Sorkuntza metriken datuak
+    F->>F: Datuak aurkeztu (grafikoak, taulak...)
+    F-->>E: Sorkuntza metrikak bistaratu
+
+    Note over E,F: Test exekuzio datuen kontsulta
+    E->>F: Test exekuzio sekzioa bisitatu
+    F->>DB: Exekuzio metrikak eskatu
+    DB-->>F: Exekuzio metriken datuak
+    F->>F: Datuak aurkeztu (emaitzak, estatistikak...)
+    F-->>E: Exekuzio metrikak bistaratu
+
+    Note over E,F: Komando erabilera datuen kontsulta
+    E->>F: Komando erabilera sekzioa bisitatu
+    F->>DB: Komando erabilera metrikak eskatu
+    DB-->>F: Komando erabileraren datuak
+    F->>F: Datuak aurkeztu (komando estatistikak...)
+    F-->>E: Komando erabilera metrikak bistaratu
+

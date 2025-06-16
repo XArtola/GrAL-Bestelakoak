@@ -1,0 +1,52 @@
+flowchart TD
+    A[Script-aren Hasiera] --> B[CLI Argumentuak Analizatu]
+    B --> C[Direktorioak Hasieratu]
+    C --> D{¿Karpeta Espezifikoa?}
+    
+    D -->|Bai| E[Karpeta Espezifikoa Prozesatu]
+    D -->|Ez| F[output_* Karpeta Guztiak Bilatu]
+    
+    E --> G[Karpeta Prozesatu]
+    F --> G
+    
+    G --> H[timestamps_*.json Fitxategiak Bilatu]
+    H --> I[copilot_timings_*.json Fitxategiak Bilatu]
+    I --> J[JSON Fitxategiak Irakurri eta Analizatu]
+    
+    J --> K[Timestamp Mapa Sortu]
+    K --> L[Timestamp Matching-a ±5s Tolerantziarekin]
+    L --> M[matched_data_*.json Sortu]
+    
+    M --> N[Korrelazionatutako Datu-fitxategia Prozesatu]
+    N --> O[output_file duen sarrera bakoitzeko]
+    
+    O --> P[Erantzun-fitxategitik Kodea Atera]
+    P --> Q['>'-z hasten diren lerroak Filtratu]
+    Q --> R[TypeScript Kode-blokeak Bilatu]
+    
+    R --> S{¿Kodea Aurkitua?}
+    S -->|Bai| T[Babel AST-rekin Analizatu]
+    S -->|Ez| U[generated_code etiketek Bilatu]
+    
+    T --> V[AST-a zeharkatu it() bilatuz]
+    V --> W{¿it() blokeak aurkituak?}
+    W -->|Bai| X[it() blokeen kodea Atera]
+    W -->|Ez| Y[Kode osoa generiko gisa Atera]
+    
+    U --> Z{¿Etiketetan aurkitua?}
+    Z -->|Bai| Y
+    Z -->|Ez| AA[Ez da koderik atera]
+    
+    X --> BB[Sarrera kodearekin Eguneratu]
+    Y --> BB
+    AA --> BB
+    
+    BB --> CC{¿Fitxategi gehiago?}
+    CC -->|Bai| O
+    CC -->|Ez| DD[Eguneratutako fitxategia Gorde]
+    
+    DD --> EE{¿Karpeta gehiago?}
+    EE -->|Bai| G
+    EE -->|Ez| FF[Prozesamenduaren Amaiera]
+    
+    FF --> GG[Azken Estatistikak Erakutsi]

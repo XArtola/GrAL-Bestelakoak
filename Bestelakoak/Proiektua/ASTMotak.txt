@@ -1,0 +1,85 @@
+¡Hola! Entiendo perfectamente lo que buscas. Quieres manipular archivos JavaScript de forma programática, navegando y modificando su estructura de manera similar a como se hace con el DOM (Document Object Model) en HTML.
+
+La analogía es muy acertada. Mientras que en HTML trabajamos con el DOM, en JavaScript (y en la mayoría de los lenguajes de programación), la estructura del código se representa mediante un Árbol de Sintaxis Abstracta (AST - Abstract Syntax Tree).
+
+Un AST es una representación en forma de árbol de la estructura sintáctica del código fuente. Cada nodo del árbol representa una construcción en el código, como una declaración de variable, una llamada a función, una expresión, etc.
+
+Para modificar archivos JS programáticamente basándote en su estructura, necesitas herramientas que puedan:
+
+    Parsear (Analizar): Convertir el código JS de texto a un AST.
+    Atravesar (Traverse): Navegar por los nodos del AST.
+    Modificar: Cambiar, añadir o eliminar nodos en el AST.
+    Generar: Convertir el AST modificado de nuevo a código JS en formato texto.
+
+Aquí tienes algunas de las herramientas y librerías más populares (principalmente del ecosistema JavaScript/Node.js, que es lo más común para esta tarea) que te permiten hacer esto:
+
+Librerías y Herramientas Clave:
+
+    Babel:
+        Aunque es más conocido por transpilar JavaScript moderno a versiones más antiguas, Babel tiene un ecosistema completo para trabajar con ASTs.
+        @babel/parser: Parsea el código JS a un AST compatible con la especificación ESTree (la especificación estándar de facto para ASTs de JavaScript).
+        @babel/traverse: Una utilidad muy potente para recorrer el AST. Te permite definir "visitantes" para tipos específicos de nodos (ej., FunctionDeclaration, VariableDeclarator, CallExpression). Cuando el recorrido encuentra un nodo de ese tipo, ejecuta tu función visitante.
+        @babel/types: Proporciona métodos para construir nuevos nodos AST y verificar los tipos de nodos existentes. Esencial para modificar el árbol.
+        @babel/generator: Convierte un AST modificado de nuevo en código JavaScript, intentando mantener un formato razonable.
+
+    Acorn:
+        Un parser de JavaScript muy popular, pequeño y rápido. Genera ASTs compatibles con ESTree. Es la base de muchas otras herramientas (incluyendo versiones anteriores de Babel y Webpack). No incluye herramientas de recorrido o generación por sí mismo, pero se puede combinar con otras como estraverse.
+
+    Esprima:
+        Otro parser de JavaScript muy conocido y uno de los pioneros en popularizar el trabajo con ASTs en JS. También genera ASTs compatibles con ESTree. Similar a Acorn, necesitarás otras librerías para el recorrido y la generación.
+
+    ESTraverse:
+        Una librería agnóstica al parser para recorrer cualquier AST que siga la especificación ESTree. Puedes usarla junto con parsers como Acorn o Esprima.
+
+    Recast:
+        Esta es una herramienta muy interesante porque se enfoca en preservar el formato del código original tanto como sea posible al regenerarlo después de modificar el AST. Utiliza parsers como Esprima o Babel por debajo y tiene su propio sistema de recorrido y generación. Es muy útil si quieres que los cambios programáticos se vean "naturales" y no destruyan completamente el estilo del código.
+
+    JSCodeshift (de Facebook/Meta):
+        Una herramienta (y un toolkit) específicamente diseñada para realizar transformaciones de código a gran escala (a menudo llamadas "codemods"). Utiliza Recast por defecto (y por tanto, preserva el formato). Proporciona una API tipo jQuery para consultar y manipular el AST, lo que puede ser más intuitivo para algunas operaciones. Es excelente para refactorizaciones automatizadas.
+
+Zein eta zergatik?
+
+Okay, analicemos los requisitos específicos para determinar la herramienta más adecuada:
+
+    Procesar archivos .spec.ts recursivamente: Necesitas capacidad para interactuar con el sistema de archivos (leer directorios, leer/escribir archivos). Esto es independiente de la manipulación del AST, pero tu script principal lo necesitará (Node.js fs y path son ideales para esto).
+    Identificar bloques it(...): Requiere parsear TypeScript y encontrar nodos específicos (CallExpression con identificador it).
+    Generar múltiples archivos por cada archivo original: El núcleo del problema.
+    Preservar la estructura original: Este es el punto MÁS CRÍTICO. Significa que no basta con extraer el texto del bloque it. Necesitas mantener los import, los describe que envuelven al it, beforeEach, afterEach, variables/funciones auxiliares definidas en el ámbito del describe o del archivo, etc. Solo deben eliminarse los otros bloques it hermanos.
+    Nomenclatura de archivos: nombre-original<numero>.spec.ts.
+
+Evaluación de las Herramientas para esta Tarea:
+
+    Babel (directamente):
+        Pros: Excelente parser de TS (@babel/parser), buenas herramientas de recorrido (@babel/traverse) y manipulación (@babel/types). Puede hacer el trabajo.
+        Contras: La generación de código (@babel/generator) por defecto no se enfoca en preservar el formato original al 100%. Puede cambiar espacios, saltos de línea, comillas, etc. Requeriría mucho esfuerzo mantener el estilo exacto.
+
+    Acorn/Esprima + ESTraverse + Escodegen (u otro generador):
+        Pros: Modular.
+        Contras: Menos soporte integrado para TS que Babel. La preservación del formato con generadores genéricos como escodegen suele ser aún menor que con Babel. No es la opción ideal aquí.
+
+    Recast:
+        Pros: ¡Su principal ventaja es la preservación del formato! Intenta mantener el estilo del código original lo máximo posible al regenerarlo. Utiliza parsers potentes (como Babel) por debajo. Es excelente para la parte de "preservar la estructura original" en cuanto a estilo.
+        Contras: Es una librería, tendrás que orquestar tú mismo el proceso de encontrar archivos, parsear, clonar ASTs, modificar y generar.
+
+    JSCodeshift:
+        Pros:
+            Diseñado específicamente para transformaciones de código (codemods).
+            Utiliza Recast por defecto, por lo que hereda su excelente preservación del formato.
+            Proporciona una API más cómoda (tipo jQuery) para buscar y manipular nodos AST, lo que puede simplificar la lógica de encontrar los it y sus hermanos.
+            Incluye un runner para aplicar transformaciones desde la línea de comandos, aunque también puedes usar sus librerías programáticamente.
+        Contras: Puede ser un poco más "opinado" o requerir entender su flujo de trabajo específico.
+
+Conclusión y Recomendación:
+
+Para tu caso específico, donde la preservación de la estructura y el formato original es crucial, y necesitas generar múltiples variantes de un archivo original eliminando selectivamente ciertos nodos hermanos (it), las mejores opciones son:
+
+    JSCodeshift: Es probablemente la herramienta más adecuada. Está diseñada para este tipo de refactorización programática, su API puede facilitar la selección y eliminación de los bloques it hermanos, y su uso de Recast asegura la mejor preservación posible del formato original. Tendrás que escribir un "transform" que, para un archivo dado, identifique todos los it, y luego genere múltiples salidas (una por cada it conservado).
+
+    Recast (usado directamente): Si prefieres un control más manual o no quieres usar el runner/API de JSCodeshift, usar Recast directamente es la segunda mejor opción. Te da el mismo beneficio de preservación de formato, pero tendrás que escribir más código para manejar la lógica de clonar el AST, encontrar los nodos it hermanos y eliminarlos selectivamente en cada copia antes de generar el código.
+
+En resumen: Te recomiendo enfáticamente usar JSCodeshift. Es la herramienta que mejor combina la capacidad de análisis/manipulación de ASTs de TypeScript con una excelente preservación del formato original, que es clave para tu requisito de "respetar la estructura".
+
+Flujo General con JSCodeshift (o Recast):
+
+    Encuentra todos los archivos *.spec.ts.
+    Para cada archivo: a. Pársealo a un AST (JSCodeshift/Recast lo harán usando un parser compatible con TS). b. Encuentra todos los nodos CallExpression cuyo callee.name sea it y que estén dentro del cuerpo principal o de un describe. Guarda sus localizaciones o referencias. c. Si encuentras N bloques it: i. Itera N veces (una por cada it a conservar). ii. Crea una copia profunda del AST original. iii. En la copia, navega hasta el bloque padre que contiene los it (el describe o el cuerpo del programa). iv. Filtra la lista de nodos hijos de ese bloque padre, eliminando todos los nodos it excepto el que quieres conservar en esta iteración. v. Genera el código a partir del AST modificado usando el generador de Recast (implícito en JSCodeshift). vi. Guarda el código generado en el nuevo archivo (nombre-original<numero_iteracion>.spec.ts).

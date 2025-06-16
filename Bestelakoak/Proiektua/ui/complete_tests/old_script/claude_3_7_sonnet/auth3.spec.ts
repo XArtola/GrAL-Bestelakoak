@@ -1,0 +1,252 @@
+import { User } from "../../../src/models";
+import { isMobile } from "../../support/utils";
+const apiGraphQL = `${Cypress.env("apiUrl")}/graphql`;
+describe("User Sign-up and Login", function () {
+    beforeEach(function () {
+        cy.task("db:seed");
+        cy.intercept("POST", "/users").as("signup");
+        cy.intercept("POST", apiGraphQL, (req) => {
+            const { body } = req;
+            if (body.hasOwnProperty("operationName") && body.operationName === "CreateBankAccount") {
+                req.alias = "gqlCreateBankAccountMutation";
+            }
+        });
+    });
+    it("should remember a user for 30 days after login", () => {
+---
+
+tools: ['codebase']
+
+---
+
+
+
+#file:cypress-realworld-app 
+
+You are tasked with generating the code inside the 'it' blocks for a Cypress test suite. The test suite is for user sign-up and login functionality. You will be provided with the test suite structure and user information to use in your generated code.
+
+
+
+Here is the Cypress test code structure:
+
+
+
+<cypress_test_code>
+
+import { User } from "../../../src/models";
+
+import { isMobile } from "../../support/utils";
+
+const apiGraphQL = `${Cypress.env("apiUrl")}/graphql`;
+
+describe("User Sign-up and Login", function () {
+
+    beforeEach(function () {
+
+        cy.task("db:seed");
+
+        cy.intercept("POST", "/users").as("signup");
+
+        cy.intercept("POST", apiGraphQL, (req) => {
+
+            const { body } = req;
+
+            if (body.hasOwnProperty("operationName") && body.operationName === "CreateBankAccount") {
+
+                req.alias = "gqlCreateBankAccountMutation";
+
+            }
+
+        });
+
+    });
+
+    it("should remember a user for 30 days after login", () => { });
+
+});
+
+
+
+</cypress_test_code>
+
+
+
+And here is the user information to use in your tests:
+
+
+
+<user_info>
+
+{
+
+  "userInfo": {
+
+    "firstName": "Bob",
+
+    "lastName": "Ross",
+
+    "username": "PainterJoy90",
+
+    "password": "s3cret"
+
+  },
+
+  "bankAccountInfo": {
+
+    "bankName": "The Best Bank",
+
+    "accountNumber": "123456789",
+
+    "routingNumber": "987654321"
+
+  },
+
+  "loginCredentials": {
+
+    "validPassword": "s3cret",
+
+    "invalidUsername": "invalidUserName",
+
+    "invalidPassword": "invalidPa$word",
+
+    "anotherInvalidPassword": "INVALID"
+
+  }
+
+}
+
+</user_info>
+
+
+
+Your task is to generate the code inside each 'it' block so that the Cypress test runs and gets positive results. Follow these guidelines:
+
+
+
+1. For each 'it' block, write Cypress commands that test the functionality described in the test name.
+
+2. Use the provided user information (firstName, lastName, username, password) in your test commands where appropriate.
+
+3. Ensure that your generated code follows Cypress best practices and conventions.
+
+4. Include appropriate assertions to verify the expected behavior of each test.
+
+5. If a test requires multiple steps, use comments to explain each step.
+
+6. Do not modify the existing code structure or add new 'it' blocks.
+
+
+
+When using the user information, refer to it as 'userInfo' followed by the property name, e.g., 'userInfo.firstName'.
+
+
+
+If you encounter any scenarios where you need additional information that isn't provided, do not make assumptions. Instead, indicate that more information is needed for that specific test.
+
+
+
+For error handling tests, use invalid data that is clearly different from the provided user information.
+
+
+
+Place your generated code for each 'it' block within <generated_code> tags, and include the original 'it' block description as a comment before each block of generated code.
+
+
+
+Begin generating the code for each 'it' block now.
+
+
+
+
+
+> Copilot: Looking at your request, I need to write Cypress code to test remembering a user for 30 days after login. Based on the examples in your workspace, I'll create a test that verifies the cookie expiration date is set correctly when a user logs in with the "remember me" option.
+
+> 
+
+> Here's the code for the "should remember a user for 30 days after login" test:
+
+> 
+
+> ```typescript
+
+> // should remember a user for 30 days after login
+
+> cy.visit("/signin");
+
+> 
+
+> // Enter valid login credentials
+
+> cy.getBySel("signin-username").type(userInfo.username);
+
+> cy.getBySel("signin-password").type(userInfo.password);
+
+> 
+
+> // Check the "Remember me" checkbox
+
+> cy.getBySel("signin-remember-me").check();
+
+> 
+
+> // Submit the login form
+
+> cy.getBySel("signin-submit").click();
+
+> 
+
+> // Verify login was successful by checking we're on the home page
+
+> cy.location("pathname").should("equal", "/");
+
+> 
+
+> // Verify the cookie has a long expiration date (approximately 30 days)
+
+> cy.getCookie("connect.sid").then(cookie => {
+
+>   const cookieExpirationDate = new Date(cookie!.expiry! * 1000);
+
+>   const now = new Date();
+
+>   const thirtyDaysFromNow = new Date(now.setDate(now.getDate() + 30));
+
+>   
+
+>   // The cookie should expire approximately 30 days from now (give or take a day for timing)
+
+>   const daysDifference = Math.round(
+
+>     (cookieExpirationDate.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)
+
+>   );
+
+>   expect(daysDifference).to.be.closeTo(30, 1);
+
+> });
+
+> ```
+
+> 
+
+> This test:
+
+> 1. Visits the signin page
+
+> 2. Enters the provided username and password
+
+> 3. Checks the "Remember me" checkbox
+
+> 4. Submits the form
+
+> 5. Verifies successful login by checking the URL
+
+> 6. Verifies that the session cookie has an expiration date approximately 30 days in the future
+
+> 
+
+> The test uses the `getBySel` custom command which appears to be a helper for selecting elements by data-test attributes in your application.
+
+
+ });
+});

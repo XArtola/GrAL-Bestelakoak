@@ -1,0 +1,22 @@
+---
+config:
+  theme: neo
+---
+gantt
+    title LLM bidezko web aplikazioen testing automatikoa
+    dateFormat  YYYY-MM-DD
+    tickInterval 16day
+    section Garapena
+    I_WA              :ik1,  2024-02-15, 35d
+    I_TA              :ik2,  after ik1,  35d
+    I_LI              :ik3,  after ik2,  30d
+    1. Iterazioa      :it1,  after ik3,  35d
+    2. Iterazioa      :it2,  after it1,  35d
+    3. Iterazioa      :it3,  after it2,  2024-09-10
+    section Dokumentazioa
+    DD_M              :DD_M, 2024-02-15, 2024-09-10
+    DD_D              :DD_D, after DD_M, 2024-09-30
+    section Proeiktuaren kudeaketa
+    PK_P              :PK_P, 2024-02-01, 14d
+    PK_JK             :PK_JK, after PK_P, 2024-09-10
+    

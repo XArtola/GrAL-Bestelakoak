@@ -1,0 +1,21 @@
+graph TD
+    subgraph "Frontend Sistema"
+        E[Erabiltzailea]
+        
+        subgraph "Datu Karga"
+            UC9[Sorkuntza metrikak kargatu]
+            UC10[Exekuzio eta komando metrikak kargatu]
+        end
+        
+        subgraph "Datu Kontsulta"
+            UC11[Test sorkuntza datuak kontsultatu]
+            UC12[Test exekuzio datuak kontsultatu]
+            UC13[Komando erabilera datuak kontsultatu]
+        end
+        
+        E --> UC9
+        E --> UC10
+        E --> UC11
+        E --> UC12
+        E --> UC13
+    end

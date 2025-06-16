@@ -1,0 +1,42 @@
+---
+config:
+  theme: neo
+  gantt:
+    axisFormat: "%Y-%m-%d"
+    todayMarker: off
+---
+gantt
+    title LLM bidezko web aplikazioen testing automatikoa
+    dateFormat  YYYY-MM-DD
+    tickInterval 1month
+    section 📋 Garapena (Planeado)
+    I_WA (Plan)       :done, ik1,  2024-02-15, 35d
+    I_TA (Plan)       :done, ik2,  after ik1,  35d
+    I_LI (Plan)       :done, ik3,  after ik2,  30d
+    1. Iterazioa (Plan) :it1,  after ik3,  35d
+    2. Iterazioa (Plan) :it2,  after it1,  35d
+    3. Iterazioa (Plan) :it3,  after it2,  2024-09-10
+    section 🔵 Garapena (Real)
+    I_WA (Real)       :done, real_ik1,  2024-02-15, 2024-04-15
+    I_TA (Real)       :done, real_ik2,  after real_ik1, 2024-06-15
+    I_LI (Real)       :done, real_ik3,  after real_ik2, 2024-07-31
+    Garapena atzerapena    :crit, paron_dev, 2024-07-31, 2025-04-01
+    1. Iterazioa (Real) :done, real_it1,  2025-04-01, 2025-04-26
+    2. Iterazioa (Real) :done, real_it2,  after real_it1, 2025-05-21
+    3. Iterazioa (Real) :done, real_it3,  after real_it2, 2025-06-16
+    section 📋 Dokumentazioa (Planeado)
+    DD_M (Plan)       :DD_M, 2024-02-15, 2024-09-10
+    DD_D (Plan)       :DD_D, after DD_M, 2024-09-30
+    section 🔵 Dokumentazioa (Real)
+    DD_M (Real)       :done, real_DD_M, 2024-02-15, 2024-07-31
+    Dokumentazioa atzerapena :crit, paron_doc, 2024-07-31, 2025-04-01
+    DD_M (Jarraipena) :done, real_DD_M_cont, 2025-04-01, 2025-06-22
+    DD_D (Real)       :done, real_DD_D, after real_DD_M_cont, 2025-06-30
+    section 📋 Proeiktuaren kudeaketa (Planeado)
+    PK_P (Plan)       :PK_P, 2024-02-01, 14d
+    PK_JK (Plan)      :PK_JK, after PK_P, 2024-09-10
+    section 🔵 Proeiktuaren kudeaketa (Real)
+    PK_P (Real)       :done, real_PK_P, 2024-02-01, 14d
+    PK_JK (Real - Fase 1) :done, real_PK_JK_1, after real_PK_P, 2024-07-31
+    PK atzerapena         :crit, paron_pk, 2024-07-31, 2025-04-01
+    PK_JK (Real - Fase 2) :done, real_PK_JK_2, 2025-04-01, 2025-06-16

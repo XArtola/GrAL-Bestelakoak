@@ -1,0 +1,22 @@
+graph TD
+    A[Inicio del proceso] --> B[Leer directorio de tests]
+    B --> C[Buscar archivos .spec.js o .cy.js]
+    C --> D[Para cada archivo de test]
+    D --> E[Parsear código con AST]
+    E --> F[Identificar bloques 'it']
+    F --> G[Extraer código de cada 'it']
+    G --> H[Crear archivos individuales]
+    H --> I[Mantener estructura describe]
+    I --> J[Guardar archivos divididos]
+    J --> K{¿Más archivos?}
+    K -->|Sí| D
+    K -->|No| L[Generar reporte]
+    L --> M[Fin del proceso]
+    
+    E --> E1[Analizar sintaxis]
+    E1 --> E2[Construir árbol AST]
+    E2 --> F
+    
+    H --> H1[archivo_test_it_1.cy.js]
+    H --> H2[archivo_test_it_2.cy.js]
+    H --> H3[archivo_test_it_N.cy.js]

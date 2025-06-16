@@ -1,0 +1,119 @@
+sequenceDiagram
+    participant E as Erabiltzailea
+    participant A as Backend
+    participant TS as Test Sistema
+    participant LLM as LLM eredua
+    participant P as Probatzeko Proiektua
+
+    Note over E,A: Testing automatikoko prozesuaren eskuzkoa exekuzioa
+
+    E->>A: Test analisirako scripta exekutatu
+    
+    Note over A,TS: Existitzen diren testen prozesatzea
+    A->>TS: Proiektuaren existitzen diren testak lortu
+    TS-->>A: Jatorrizko testak
+    
+    A->>A: Testak banandu (fitxategi bakoitzeko 'it' bloke 1)
+    A->>A: 'it' blokeak hustu (egitura mantendu)
+    A->>A: Jatorrizko testetan erabiltzaile datuak atera
+    
+    Note over A,LLM: Prompten sorkuntza eta exekuzioa
+    A->>A: Prompt fitxategiak sortu (txantiloia + test hutsa + erabiltzaile datuak)
+    
+    loop Sortutako prompt bakoitzerako
+        A->>LLM: Prompta exekutatu
+        LLM-->>A: Test kodearekin erantzuna
+        A->>A: Transkripzioa + exekuzio denbora gorde
+    end
+    
+    Note over A: Lehen metrika - Kodearen sorkuntza
+    A->>A: LLM erantzunetatik test kodea atera
+    A->>A: Sorkuntzaren denbora kalkulatu
+    A->>A: JSON fitxategian gorde (kodea + denbora)
+    
+    Note over A,P: Testen txertatzea eta exekuzioa
+    A->>A: JSON fitxategitik kodea irakurri
+    A->>TS: Kodea test fitxategi hutetan txertatu
+    
+    A->>P: Testak proiektuan exekutatu
+    P-->>A: Test exekuzioaren emaitzak
+    
+    Note over A: Bigarren metrika - Testen emaitzak
+    A->>A: Exekuzio emaitzak gorde
+    
+    Note over A: Komandoen analisia
+    A->>A: Analisi scripta exekutatu
+    A->>A: Erabilitako erabiltzaile komandoen kantitatea atera
+    A->>A: Erabilera estatistikak sortu
+    
+    A-->>E: Prozesua osatuta (metriken fitxategiak sortuta)
+    
+    Note over E: Erabiltzaileak aurreko aldea kontsultatu dezake emaitzak ikusteko
+
+
+
+
+
+    ///////////////////////////////////////////////////////////////////
+
+    sequenceDiagram
+    participant E as Erabiltzailea
+    participant A as Atzeko aldea
+    participant TS as Test Sistema
+    participant LLM as LLM Zerbitzua
+    participant P as Probatzeko Proiektua
+
+    Note over E,A: Script independenteak eskuz exekutatzea
+
+    Note over E,A: Script 1: Testak banatzea
+    E->>A: Script 1 exekutatu (testak banandu)
+    A->>TS: Existitzen diren testak lortu
+    TS-->>A: Jatorrizko testak
+    A->>A: Testak banandu (fitxategi bakoitzeko 'it' bloke 1)
+    A-->>E: Script 1 osatuta
+
+    Note over E,A: Script 2: Test blokeak hustea
+    E->>A: Script 2 exekutatu (blokeak hustu)
+    A->>A: 'it' blokeak hustu (egitura mantendu)
+    A-->>E: Script 2 osatuta
+
+    Note over E,LLM: Zuzeneko interakzioa: Erabiltzaile datuak ateratzea
+    E->>LLM: Jatorrizko testetan erabiltzaile datuak atera
+    LLM-->>E: Erabiltzaile datuak
+
+    Note over E,A: Script 3: Prompt fitxategiak sortzea
+    E->>A: Script 3 exekutatu (prompt fitxategiak sortu)
+    A->>A: Prompt fitxategiak sortu (txantiloia + test hutsa + erabiltzaile datuak)
+    A-->>E: Script 3 osatuta
+
+    Note over E,A: Script 4: Promptak exekutatzea
+    E->>A: Script 4 exekutatu (promptak exekutatu)
+    loop Prompt bakoitzerako
+        A->>LLM: Prompta exekutatu
+        LLM-->>A: Test kodearekin erantzuna
+        A->>A: Transkripzioa + exekuzio denbora gorde
+    end
+    A-->>E: Script 4 osatuta
+
+    Note over E,A: Script 5: Lehenengo metrika (JSON fitxategia)
+    E->>A: Script 5 exekutatu (kodea atera eta JSON sortu)
+    A->>A: LLM erantzunetatik test kodea atera
+    A->>A: Sorkuntzaren denbora kalkulatu
+    A->>A: JSON fitxategian gorde (kodea + denbora)
+    A-->>E: Script 5 osatuta
+
+    Note over E,A: Script 6: Kodea txertatu eta testak exekutatu
+    E->>A: Script 6 exekutatu (kodea txertatu eta testak exekutatu)
+    A->>A: JSON fitxategitik kodea irakurri
+    A->>TS: Kodea test fitxategi hutetan txertatu
+    A->>P: Testak proiektuan exekutatu
+    P-->>A: Test exekuzioaren emaitzak
+    A->>A: Exekuzio emaitzak gorde (bigarren metrika)
+    A-->>E: Script 6 osatuta
+
+    Note over E,A: Script 7: Komandoen analisia
+    E->>A: Script 7 exekutatu (komandoen analisia)
+    A->>A: Analisi scripta exekutatu
+    A->>A: Erabilitako erabiltzaile komandoen kantitatea atera
+    A->>A: Erabilera estatistikak sortu
+    A-->>E: Script 7 osatuta

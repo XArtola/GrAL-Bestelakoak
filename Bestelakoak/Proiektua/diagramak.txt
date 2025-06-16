@@ -1,0 +1,36 @@
+Para representar correctamente tu proceso de testing automático con LLM, necesitas estos diagramas clave:
+
+1. Diagrama de Flujo General del Proceso
+Propósito: Mostrar las 3 iteraciones principales y el flujo completo
+Elementos: Proyecto inicial → Análisis → Generación → Validación → Dashboard
+Útil para: Visión general del sistema
+2. Diagrama de Arquitectura del Sistema
+Propósito: Mostrar los módulos principales y sus interacciones
+Elementos:
+Módulo de preprocesamiento
+Motor de generación LLM
+Dashboard de resultados
+Conexiones entre módulos
+3. Diagrama de Secuencia
+Propósito: Detallar la interacción temporal entre componentes
+Elementos: Usuario → Sistema → GitHub Copilot API → Cypress → Dashboard
+Fases: Cada iteración como secuencia separada
+4. Diagrama de Actividades (UML)
+Propósito: Mostrar el flujo de trabajo detallado
+Elementos: Decisiones, paralelismos, puntos de sincronización
+Útil para: Documentar la lógica de cada iteración
+5. Diagrama de Componentes
+Propósito: Mostrar la estructura técnica y dependencias
+Elementos:
+Parser de Cypress
+Generador de prompts
+Cliente API
+Validador de tests
+Generador de métricas
+6. Diagrama de Casos de Uso
+Propósito: Mostrar las funcionalidades desde la perspectiva del usuario
+Actores: Desarrollador, Sistema LLM, Framework Cypress
+Casos: Generar tests, Validar resultados, Comparar modelos
+7. Diagrama de Datos/Entidad-Relación
+Propósito: Mostrar la estructura de datos y metadatos
+Elementos: Proyectos, Tests, Prompts, Resultados, Métricas

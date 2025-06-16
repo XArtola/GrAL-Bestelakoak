@@ -1,0 +1,17 @@
+Estoy en la seccion de analisis de un proyecto de desarrollo. Quiero crear un diagrma de secuencia para las dos principales parte de mi proyecto que son frontend y backend
+
+Se trata de testear automaticamente una aplicaion web con LLM. Para ello he separado el proyecto en dos partes. Fronted y backend
+
+El backed hara lo siguiente:
+
+Toma los test existentes en el proyecto
+Los separa para que solo haya un bloque it por archivo
+Vaciarlo los bloques it para dejar solo la estrucutra vacia
+Extra los datos de usuario de los test originales para darselos en el prompt
+Crea los fichero prompt para que sean ejecutados mezclando la plantilla prompt, el test vaciado y la informacion de usuario extraida
+-Ejecuta los prompts y guarda la transcripcion de la conversacion junto con el tiempo de ejecución
+Extrae el codigo correspondiente al test y lo une al tiempo necesario para crearlo en un fichero JSON (Primera metrica)
+Toma el codigo del fichero JSON y inserta dentro del archivo de test vaciado anteriormente
+Ejecuta los test sobre el proyecto y guarda los resultados (segunda metrica)
+Extrae mediante un script la cantidad de cada comando de uduario utilizada en el código generado
+Genera el diagrama de secuencia para mermaid.js

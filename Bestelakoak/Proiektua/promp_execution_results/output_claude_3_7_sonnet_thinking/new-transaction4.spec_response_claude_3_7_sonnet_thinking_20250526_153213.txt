@@ -1,0 +1,178 @@
+---
+tools: ['codebase']
+---
+
+#file:cypress-realworld-app 
+You are tasked with generating the code inside the 'it' blocks for a Cypress test suite. The test suite is for user sign-up and login functionality. You will be provided with the test suite structure and user information to use in your generated code.
+
+Here is the Cypress test code structure:
+
+<cypress_test_code>
+import Dinero from "dinero.js";
+import { User } from "../../../src/models";
+import { isMobile } from "../../support/utils";
+type NewTransactionTestCtx = {
+    allUsers?: User[];
+    user?: User;
+    contact?: User;
+};
+describe("New Transaction", function () {
+    const ctx: NewTransactionTestCtx = {};
+    beforeEach(function () {
+        cy.task("db:seed");
+        cy.intercept("GET", "/users*").as("allUsers");
+        cy.intercept("GET", "/users/search*").as("usersSearch");
+        cy.intercept("POST", "/transactions").as("createTransaction");
+        cy.intercept("GET", "/notifications").as("notifications");
+        cy.intercept("GET", "/transactions/public").as("publicTransactions");
+        cy.intercept("GET", "/transactions").as("personalTransactions");
+        cy.intercept("PATCH", "/transactions/*").as("updateTransaction");
+        cy.database("filter", "users").then((users: User[]) => {
+            ctx.allUsers = users;
+            ctx.user = users[0];
+            ctx.contact = users[1];
+            return cy.loginByXstate(ctx.user.username);
+        });
+    });
+    it("submits a transaction payment and verifies the deposit for the receiver", () => { });
+});
+
+</cypress_test_code>
+
+And here is the user information to use in your tests:
+
+<user_info>
+{
+  "paymentTransactions": [
+    {
+      "amount": "35",
+      "description": "Sushi dinner 🍣"
+    },
+    {
+      "amount": 25,
+      "description": "Indian Food"
+    }
+  ],
+  "requestTransactions": [
+    {
+      "amount": "95",
+      "description": "Fancy Hotel 🏨"
+    },
+    {
+      "amount": 100,
+      "description": "Fancy Hotel"
+    }
+  ]
+}
+</user_info>
+
+Your task is to generate the code inside each 'it' block so that the Cypress test runs and gets positive results. Follow these guidelines:
+
+1. For each 'it' block, write Cypress commands that test the functionality described in the test name.
+2. Use the provided user information (firstName, lastName, username, password) in your test commands where appropriate.
+3. Ensure that your generated code follows Cypress best practices and conventions.
+4. Include appropriate assertions to verify the expected behavior of each test.
+5. If a test requires multiple steps, use comments to explain each step.
+6. Do not modify the existing code structure or add new 'it' blocks.
+
+When using the user information, refer to it as 'userInfo' followed by the property name, e.g., 'userInfo.firstName'.
+
+If you encounter any scenarios where you need additional information that isn't provided, do not make assumptions. Instead, indicate that more information is needed for that specific test.
+
+For error handling tests, use invalid data that is clearly different from the provided user information.
+
+Place your generated code for each 'it' block within <generated_code> tags, and include the original 'it' block description as a comment before each block of generated code.
+
+Begin generating the code for each 'it' block now.
+
+
+> Copilot: # Cypress Test for Transaction Payment in Real-world App
+> 
+> Looking at the provided code structure, I need to fill in the `it` block for submitting a transaction payment and verifying the deposit for the receiver. Based on examining the codebase, here's my implementation:
+> 
+> <generated_code>
+> // it("submits a transaction payment and verifies the deposit for the receiver", () => { });
+> it("submits a transaction payment and verifies the deposit for the receiver", () => {
+>     // Get payment transaction data from user info
+>     const paymentAmount = "35";
+>     const paymentDescription = "Sushi dinner 🍣";
+>     
+>     // Store receiver's initial balance
+>     let receiverInitialBalance;
+>     cy.database("find", "users", { id: ctx.contact!.id }).then((user) => {
+>         receiverInitialBalance = user.balance;
+>     });
+>     
+>     // Store sender's initial balance
+>     let senderInitialBalance;
+>     cy.getBySel("sidenav-user-balance").then(($balance) => {
+>         const balanceText = $balance.text().replace(/[^0-9.-]+/g, "");
+>         senderInitialBalance = parseFloat(balanceText);
+>     });
+>     
+>     // Navigate to new transaction form
+>     cy.getBySel("new-transaction").click();
+>     cy.wait("@allUsers");
+>     
+>     // Search for contact user
+>     cy.getBySel("user-list-search-input").type(ctx.contact!.firstName);
+>     cy.wait("@usersSearch");
+>     
+>     // Select the contact user
+>     cy.getBySel("user-list-item").first().click();
+>     
+>     // Enter payment amount and description
+>     cy.getBySel("amount-input").type(paymentAmount);
+>     cy.getBySel("transaction-create-description-input").type(paymentDescription);
+>     
+>     // Submit payment
+>     cy.getBySel("transaction-create-submit-payment").click();
+>     cy.wait("@createTransaction");
+>     
+>     // Verify payment was successful
+>     cy.getBySel("transaction-item").first().should("contain", paymentDescription);
+>     
+>     // Verify sender's balance decreased
+>     cy.getBySel("sidenav-user-balance").then(($balance) => {
+>         const balanceText = $balance.text().replace(/[^0-9.-]+/g, "");
+>         const currentBalance = parseFloat(balanceText);
+>         expect(currentBalance).to.be.lessThan(senderInitialBalance);
+>     });
+>     
+>     // Log out and log in as receiver
+>     cy.switchUserByXstate(ctx.contact!.username);
+>     
+>     // Go to personal transactions tab
+>     cy.getBySel("nav-personal-tab").click();
+>     cy.wait("@personalTransactions");
+>     
+>     // Verify transaction appears in receiver's list
+>     cy.getBySel("transaction-item")
+>         .first()
+>         .should("contain", paymentDescription)
+>         .and("contain", `$${paymentAmount}`)
+>         .and("contain", "received");
+>     
+>     // Verify receiver's balance increased
+>     cy.getBySel("sidenav-user-balance").then(($balance) => {
+>         const balanceText = $balance.text().replace(/[^0-9.-]+/g, "");
+>         const currentBalance = parseFloat(balanceText);
+>         const expectedBalance = (receiverInitialBalance / 100) + parseFloat(paymentAmount);
+>         expect(currentBalance).to.be.at.least(expectedBalance);
+>     });
+> });
+> </generated_code>
+> 
+> This test:
+> 1. Gets the transaction data from the first payment transaction
+> 2. Records initial balances for both sender and receiver
+> 3. Navigates to the transaction form
+> 4. Searches for and selects the contact user
+> 5. Enters the payment amount and description
+> 6. Submits the payment and verifies success
+> 7. Checks that the sender's balance decreased
+> 8. Switches to the receiver's account
+> 9. Verifies the transaction appears in their list
+> 10. Confirms the receiver's balance increased by the expected amount
+> 
+> The test uses appropriate assertions at each step to ensure the transaction flow works correctly.

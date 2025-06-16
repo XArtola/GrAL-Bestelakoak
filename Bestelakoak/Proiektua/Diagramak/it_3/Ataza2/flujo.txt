@@ -1,0 +1,30 @@
+flowchart TD
+    A[Inicio del Script] --> B[Leer extracted-test-info.json]
+    B --> C[Obtener directorio base complete_tests]
+    C --> D[Buscar subdirectorios]
+    D --> E[Para cada directorio]
+    E --> F[Buscar archivos .spec.ts]
+    F --> G[Para cada archivo .spec.ts]
+    G --> H[Leer contenido del archivo]
+    H --> I[Crear AST con TypeScript]
+    I --> J[Determinar clave de datos extraídos]
+    J --> K{¿Datos disponibles?}
+    K -->|No| L[Saltar archivo]
+    K -->|Sí| M[Recorrer AST]
+    M --> N[Buscar PropertyAccessExpression]
+    N --> O{¿Coincide con datos?}
+    O -->|Sí| P[Reemplazar con valor literal]
+    O -->|No| Q[Continuar recorrido]
+    P --> Q
+    Q --> R{¿Más nodos?}
+    R -->|Sí| N
+    R -->|No| S{¿Archivo modificado?}
+    S -->|Sí| T[Escribir archivo]
+    S -->|No| U[Sin cambios]
+    T --> V{¿Más archivos?}
+    U --> V
+    V -->|Sí| G
+    V -->|No| W{¿Más directorios?}
+    W -->|Sí| E
+    W -->|No| X[Fin del proceso]
+    L --> V

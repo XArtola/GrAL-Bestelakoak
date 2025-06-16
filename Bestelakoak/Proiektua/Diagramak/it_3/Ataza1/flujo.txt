@@ -1,0 +1,58 @@
+flowchart TD
+    A[Inicio del Script] --> B[Parsear argumentos CLI]
+    B --> C{¿Carpeta específica?}
+    C -->|Sí| D[Usar carpeta especificada]
+    C -->|No| E[Buscar todas las carpetas output_*]
+    
+    D --> F[Validar directorio pywinauto]
+    E --> F
+    
+    F --> G[Para cada directorio output_]
+    G --> H[Extraer nombre del modelo]
+    H --> I[Buscar archivo matched_data_modelo.json]
+    
+    I --> J{¿Archivo JSON existe?}
+    J -->|No| K[Saltar al siguiente]
+    J -->|Sí| L[Crear directorio del modelo]
+    
+    L --> M[Leer y parsear JSON]
+    M --> N[Para cada entrada JSON]
+    
+    N --> O[Extraer nombre base del archivo]
+    O --> P[Buscar archivo fuente en ui/results]
+    
+    P --> Q{¿Archivo fuente existe?}
+    Q -->|No| R[Generar archivo nuevo]
+    Q -->|Sí| S[Leer contenido original]
+    
+    S --> T[Buscar bloque it()]
+    T --> U{¿Bloque it() tiene contenido?}
+    U -->|Sí| V[Copiar archivo sin modificar]
+    U -->|No| W[Insertar código en bloque it()]
+    
+    R --> X[Escribir archivo destino]
+    V --> X
+    W --> X
+    
+    X --> Y{¿Más entradas JSON?}
+    Y -->|Sí| N
+    Y -->|No| Z{¿Más directorios?}
+    Z -->|Sí| G
+    Z -->|No| AA[Fin del proceso]
+    
+    K --> Z
+
+
+    graph TD
+    A[Código fuente TypeScript/JS] --> B[@babel/parser]
+    B --> C[AST]
+    C --> D[@babel/traverse]
+    D --> E[Encontrar bloques it()]
+    E --> F[@babel/types]
+    F --> G[Verificar si está vacío]
+    G --> H{¿Vacío?}
+    H -->|Sí| I[Insertar código]
+    H -->|No| J[Copiar sin modificar]
+    I --> K[@babel/generator]
+    J --> K
+    K --> L[Código TypeScript/JS final]

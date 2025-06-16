@@ -1,0 +1,25 @@
+flowchart TD
+    A[Inicio del Script] --> B[Parsear argumentos LLM]
+    B --> C[Configurar carpetas de salida]
+    C --> D[Obtener archivos de prompts]
+    D --> E[Abrir VS Code con workspace]
+    E --> F[Configurar ventana principal]
+    F --> G[Ejecutar script DevTools inicial]
+    
+    G --> H[Bucle: Para cada archivo prompt]
+    H --> I[Enfocar chat con Ctrl+Alt+I]
+    I --> J[Limpiar input con Ctrl+L]
+    J --> K[Escribir referencia workspace]
+    K --> L[Enviar contenido del prompt]
+    L --> M[Capturar timestamp de envío]
+    M --> N[Esperar respuesta - 120s]
+    N --> O[Guardar con /save]
+    O --> P[Copiar respuesta completa]
+    P --> Q[Guardar en archivo de salida]
+    Q --> R[Cerrar archivo sin guardar]
+    R --> S{¿Más archivos?}
+    
+    S -->|Sí| H
+    S -->|No| T[Extraer timings de Copilot]
+    T --> U[Guardar timestamps JSON]
+    U --> V[Finalizar - VS Code queda abierto]

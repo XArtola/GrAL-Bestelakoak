@@ -1,0 +1,27 @@
+graph TD
+    A[Usuario introduce URL] --> B[Validar repositorio]
+    B --> C[Clonar/Descargar proyecto]
+    C --> D[Análisis automático]
+    D --> E[Mostrar en dashboard]
+    E --> F[Listo para iteraciones LLM]
+
+
+    graph TD
+    A[Usuario introduce URL] --> B[Validar repositorio]
+    B --> C[Clonar/Descargar proyecto]
+    C --> D[Detectar package manager]
+    D --> E[Instalar dependencias]
+    E --> F[Verificar instalación Cypress]
+    F --> G[Análisis automático de tests]
+    G --> H[Mostrar en dashboard]
+    H --> I[Listo para iteraciones LLM]
+    
+    D --> D1{npm/yarn/pnpm?}
+    D1 -->|npm| E1[npm install]
+    D1 -->|yarn| E2[yarn install]
+    D1 -->|pnpm| E3[pnpm install]
+    
+    F --> F1{Cypress instalado?}
+    F1 -->|No| F2[npm install cypress --save-dev]
+    F1 -->|Sí| G
+    F2 --> G

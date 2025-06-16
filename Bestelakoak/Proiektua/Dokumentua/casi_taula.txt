@@ -1,0 +1,77 @@
+\begin{sidewaystable}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}ll*{6}{S[table-format=3.1]}@{}}
+\toprule
+\multirow{2}{*}{\textbf{Test File}} & \multirow{2}{*}{\textbf{Test Name}} & {\textbf{Claude 3.5}} & {\textbf{Claude 3.7}} & {\textbf{Claude 3.7-T}} & {\textbf{Sonnet 4}} & {\textbf{Gemini 2.5}} & {\textbf{GPT-4o}} \\
+\cmidrule(lr){3-3} \cmidrule(lr){4-4} \cmidrule(lr){5-5} \cmidrule(lr){6-6} \cmidrule(lr){7-7} \cmidrule(lr){8-8}
+& & {Exec (s)} & {Exec (s)} & {Exec (s)} & {Exec (s)} & {Exec (s)} & {Exec (s)} \\
+\midrule
+\rowcolor{gray!10}
+auth1 & Redirect unauthenticated user & 24.3 & 17.5 & 17.4 & \textbf{9.3} & 15.5 & 15.5 \\
+auth2 & Redirect to home after login & 20.0 & 19.5 & 19.1 & 18.6 & 17.2 & 17.9 \\
+\rowcolor{gray!10}
+auth3 & Remember user for 30 days & 6.4 & 5.7 & 6.0 & 5.5 & \textbf{4.8} & 4.9 \\
+auth4 & Visitor sign-up, login, logout & 24.2 & 24.2 & 22.8 & 22.1 & \textbf{4.5} & 4.5 \\
+\rowcolor{gray!10}
+auth5 & Display login errors & 17.9 & 17.4 & 17.0 & 16.5 & 15.5 & 15.5 \\
+auth6 & Display signup errors & 15.7 & 17.5 & 17.2 & 16.7 & 15.4 & 15.5 \\
+\rowcolor{gray!10}
+auth7 & Error for invalid user & 2.6 & 3.1 & 3.4 & 3.2 & 2.5 & \textbf{2.1} \\
+auth8 & Error for invalid password & \textbf{2.2} & 2.7 & 2.9 & 2.5 & 2.2 & 2.3 \\
+\midrule
+\rowcolor{gray!10}
+bankaccounts1 & Create new bank account & 21.2 & 24.9 & 23.8 & 23.2 & 4.5 & \textbf{3.3} \\
+bankaccounts2 & Display form errors & 16.3 & 21.3 & 19.8 & 18.6 & 16.4 & 17.5 \\
+\rowcolor{gray!10}
+bankaccounts3 & Soft delete bank account & 17.0 & 25.6 & 24.7 & 23.9 & \textbf{4.8} & 17.6 \\
+bankaccounts4 & Empty list with onboarding & 4.4 & 6.5 & 18.9 & 18.1 & 16.8 & 22.5 \\
+\midrule
+\rowcolor{gray!10}
+new-transaction1 & Navigate and submit payment & \textbf{4.4} & 18.9 & 18.8 & 19.3 & 4.7 & 4.7 \\
+new-transaction2 & Navigate and submit request & 16.3 & 18.5 & 18.1 & 18.1 & \textbf{4.3} & 4.9 \\
+\rowcolor{gray!10}
+new-transaction3 & Display transaction errors & 18.5 & 22.0 & 21.4 & 17.1 & 17.1 & 17.7 \\
+new-transaction5 & Submit and accept request & 19.3 & 19.6 & 18.8 & \textbf{5.0} & 4.9 & 4.4 \\
+\rowcolor{gray!10}
+new-transaction6 & Search user by firstName & 3.1 & \textbf{2.9} & 2.8 & 2.2 & 2.1 & 1.9 \\
+new-transaction6 & Search user by lastName & 1.5 & 1.6 & 1.4 & \textbf{1.1} & 1.1 & 1.1 \\
+\rowcolor{gray!10}
+new-transaction6 & Search user by username & 1.3 & 1.4 & 1.3 & \textbf{1.1} & 1.0 & 1.0 \\
+new-transaction6 & Search user by email & 1.8 & 1.8 & 1.4 & \textbf{1.0} & 1.0 & 1.0 \\
+\rowcolor{gray!10}
+new-transaction6 & Search user by phoneNumber & 1.7 & 1.9 & 1.7 & 1.2 & \textbf{1.0} & 1.1 \\
+\midrule
+\rowcolor{gray!10}
+transaction-feeds3 & Paginate public feed & 3.0 & 3.3 & 2.3 & \textbf{2.5} & 2.7 & 2.3 \\
+transaction-feeds3 & Paginate contacts feed & 1.3 & 1.4 & 1.0 & \textbf{1.0} & 1.3 & 0.9 \\
+\rowcolor{gray!10}
+transaction-feeds3 & Paginate personal feed & 1.2 & 1.2 & \textbf{0.9} & 0.8 & 1.1 & 0.9 \\
+transaction-feeds5 & Filter public by date & 3.0 & {---} & \textbf{2.0} & 1.9 & {---} & 1.9 \\
+\rowcolor{gray!10}
+transaction-feeds5 & Filter contacts by date & 1.2 & {---} & \textbf{1.0} & 1.0 & {---} & 1.0 \\
+transaction-feeds5 & Filter personal by date & 1.2 & {---} & \textbf{0.9} & 0.9 & {---} & 0.9 \\
+\rowcolor{gray!10}
+transaction-feeds6 & Date range limits public & 2.5 & 2.7 & 2.0 & \textbf{1.9} & 2.8 & 1.9 \\
+transaction-feeds6 & Date range limits contacts & 1.3 & 1.3 & 1.1 & \textbf{1.0} & 1.2 & 1.0 \\
+\rowcolor{gray!10}
+transaction-feeds6 & Date range limits personal & 1.2 & 1.1 & \textbf{0.9} & 0.9 & 1.1 & 1.0 \\
+transaction-feeds7 & Amount range filter public & 2.5 & 2.6 & 2.0 & \textbf{1.9} & 2.3 & 1.8 \\
+\rowcolor{gray!10}
+transaction-feeds7 & Amount range filter contacts & 1.0 & 1.2 & \textbf{1.0} & 1.0 & 1.2 & 1.0 \\
+transaction-feeds7 & Amount range filter personal & \textbf{0.9} & 1.2 & 0.9 & 1.0 & 1.1 & 0.9 \\
+\rowcolor{gray!10}
+transaction-feeds8 & Amount limits public & 1.9 & 2.5 & 1.9 & \textbf{1.8} & 2.3 & 2.0 \\
+transaction-feeds8 & Amount limits contacts & 1.0 & 1.3 & \textbf{1.0} & 1.0 & 1.2 & 1.1 \\
+\rowcolor{gray!10}
+transaction-feeds8 & Amount limits personal & 1.0 & 1.1 & \textbf{0.9} & 0.9 & 1.1 & 0.9 \\
+\midrule
+\rowcolor{gray!10}
+transaction-view1 & Hidden navigation tabs & 23.0 & 20.0 & 6.3 & 17.0 & \textbf{2.8} & 4.9 \\
+user-settings1 & Render user settings form & 2.6 & 19.2 & {---} & 19.0 & \textbf{2.8} & 17.3 \\
+\bottomrule
+\end{tabular}
+\caption{Execution Time Comparison Across Language Models for Cypress E2E Tests}
+\label{tab:llm-execution-times}
+\end{sidewaystable}

@@ -322,10 +322,19 @@ const ActionUsageComparisonView: React.FC = () => {
       </div>
     );
   };
-
   const renderSummaryView = () => {
     if (!actionSummary) {
       return <div className="text-center py-8 text-gray-300">No summary data available</div>;
+    }
+
+    // Add safety checks for required properties
+    if (!actionSummary.llmAnalyses || !Array.isArray(actionSummary.llmAnalyses)) {
+      return (
+        <div className="text-center py-8 text-gray-300">
+          <div>Summary data incomplete</div>
+          <div className="text-sm text-gray-400 mt-2">Missing LLM analyses data</div>
+        </div>
+      );
     }
 
     return (
@@ -334,42 +343,46 @@ const ActionUsageComparisonView: React.FC = () => {
         <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
           <h2 className="text-2xl font-bold text-blue-300 mb-2">Action Usage Analysis Summary</h2>
           <p className="text-blue-200">
-            Analysis of {actionSummary.totalLLMs} LLMs compared to baseline: {actionSummary.baseline}
+            Analysis of {actionSummary.totalLLMs || 0} LLMs compared to baseline: {actionSummary.baseline || 'unknown'}
           </p>
           <p className="text-sm text-blue-300 mt-1">
-            Last updated: {new Date(actionSummary.timestamp).toLocaleString()}
+            Last updated: {actionSummary.timestamp ? new Date(actionSummary.timestamp).toLocaleString() : 'Unknown'}
           </p>
         </div>
 
         {/* LLM Performance Comparison Table - Now at the Top */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
-          <h3 className="text-xl font-semibold mb-4 text-white">LLM Performance Comparison</h3>
-          <div className="overflow-x-auto">
-            <table className="min-w-full table-auto">              <thead>
+          <h3 className="text-xl font-semibold mb-4 text-white">LLM Performance Comparison</h3><div className="overflow-x-auto">
+            <table className="min-w-full table-auto">
+              <thead>
                 <tr className="bg-gray-700">
                   <th className="px-4 py-3 text-left text-gray-200 font-semibold">LLM</th>
                   <th className="px-4 py-3 text-center text-gray-200 font-semibold">Executed Tests</th>
+                  <th className="px-4 py-3 text-center text-gray-200 font-semibold">Executed Percentage</th>
                   <th className="px-4 py-3 text-center text-gray-200 font-semibold">Passed Tests</th>
+                  <th className="px-4 py-3 text-center text-gray-200 font-semibold">Passed Percentage</th>
                   <th className="px-4 py-3 text-center text-gray-200 font-semibold">Overall Performance</th>
-                </tr>
-              </thead>              <tbody>
-                {(() => {
+                </tr>              </thead>
+              <tbody>{(() => {
                   // Find the original (baseline) LLM data to get total tests
-                  const originalLLM = actionSummary.llmAnalyses.find(llm => llm.llm === 'original');
-                  const totalTestsFromOriginal = originalLLM ? originalLLM.totalTests : actionSummary.llmAnalyses[0]?.totalTests || 0;
-                    // Calculate overall performance scores for sorting
-                  const llmsWithPerformance = actionSummary.llmAnalyses.map(llm => {
-                    const executionRate = totalTestsFromOriginal > 0 ? (llm.totalTests / totalTestsFromOriginal) * 100 : 0;
-                    const passRate = llm.totalTests > 0 ? (llm.passed / llm.totalTests) * 100 : 0; // Pass rate based on executed tests
-                    
-                    // Overall performance: 60% execution rate + 40% pass rate of executed tests
-                    // This gives more weight to actually executing tests, then passing the ones that were executed
-                    const overallScore = (executionRate * 0.6) + (passRate * 0.4);
-                    
-                    return { ...llm, overallScore, executionRate, passRate };
-                  });
-                  
-                  return llmsWithPerformance
+                  const originalLLM = actionSummary.llmAnalyses?.find(llm => llm?.llm === 'original');
+                  const totalTestsFromOriginal = originalLLM ? originalLLM.totalTests : actionSummary.llmAnalyses?.[0]?.totalTests || 0;                  // Calculate overall performance scores for sorting
+                  const llmsWithPerformance = (actionSummary.llmAnalyses || [])
+                    .filter((llm): llm is NonNullable<typeof llm> => Boolean(llm)) // Type guard
+                    .map(llm => {
+                      const executionRate = totalTestsFromOriginal > 0 ? (llm.totalTests / totalTestsFromOriginal) * 100 : 0;
+                      const passRate = totalTestsFromOriginal > 0 ? (llm.passed / totalTestsFromOriginal) * 100 : 0; // Pass rate based on baseline total tests
+                      
+                      // Overall performance: 60% execution rate + 40% pass rate of baseline tests
+                      // This gives more weight to actually executing tests, then passing the ones relative to baseline
+                      const overallScore = (executionRate * 0.6) + (passRate * 0.4);
+                      
+                      return { 
+                        ...llm, 
+                        overallScore: overallScore || 0, 
+                        executionRate: executionRate || 0, 
+                        passRate: passRate || 0 
+                      };                    });                  return llmsWithPerformance
                     .sort((a, b) => b.overallScore - a.overallScore) // Sort by overall performance (highest first)
                     .map((llm, index) => (
                       <tr key={llm.llm} className={`hover:bg-gray-600 ${index % 2 === 0 ? 'bg-gray-700' : 'bg-gray-800'}`}>
@@ -381,15 +394,33 @@ const ActionUsageComparisonView: React.FC = () => {
                           <div className="text-white font-semibold">
                             {llm.totalTests}/{totalTestsFromOriginal}
                           </div>
-                          <div className="text-xs text-gray-400">
-                            {llm.executionRate.toFixed(1)}% executed
+                        </td>
+                        <td className="px-4 py-3 text-center">
+                          <div className={`text-lg font-bold ${
+                            llm.executionRate >= 90 ? 'text-green-400' :
+                            llm.executionRate >= 70 ? 'text-yellow-400' :
+                            llm.executionRate >= 50 ? 'text-orange-400' : 'text-red-400'
+                          }`}>
+                            {llm.executionRate.toFixed(1)}%
+                          </div>                          <div className="text-xs text-gray-400">
+                            Execution Rate
                           </div>
-                        </td>                        <td className="px-4 py-3 text-center">
+                        </td>
+                        <td className="px-4 py-3 text-center">
                           <div className="text-white font-semibold">{llm.passed}</div>
-                          <div className="text-xs text-gray-400">
-                            {llm.passRate.toFixed(1)}% pass rate
+                        </td>
+                        <td className="px-4 py-3 text-center">
+                          <div className={`text-lg font-bold ${
+                            llm.passRate >= 90 ? 'text-green-400' :
+                            llm.passRate >= 70 ? 'text-yellow-400' :
+                            llm.passRate >= 50 ? 'text-orange-400' : 'text-red-400'
+                          }`}>
+                            {llm.passRate.toFixed(1)}%
+                          </div>                          <div className="text-xs text-gray-400">
+                            Pass Rate
                           </div>
-                        </td><td className="px-4 py-3 text-center">
+                        </td>
+                        <td className="px-4 py-3 text-center">
                           <div className={`text-lg font-bold ${
                             llm.overallScore >= 80 ? 'text-green-400' :
                             llm.overallScore >= 60 ? 'text-yellow-400' :

@@ -42,12 +42,13 @@ console.log('📂 Setting up paths and constants...');
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017';
-const DB_NAME = process.env.MONGODB_DB_NAME || 'llm_dashboard';
+const DB_NAME = process.env.MONGODB_DB_NAME || 'tests';
 
 console.log('📊 Database config loaded:', { MONGODB_URI, DB_NAME });
 
 // Collection names
 const COLLECTIONS = {
+  MERGED_TEST_DATA: 'merged_test_data',
   ACTION_USAGE_ANALYSIS: 'action_usage_analysis',
   ACTION_USAGE_SUMMARY: 'action_usage_summary',
   ACTION_USAGE_COMPARISON: 'action_usage_comparison'
@@ -63,11 +64,14 @@ const LLM_MAPPING = {
   'original': 'Original (Baseline)',
   'claude_3_5_sonnet': 'Claude 3.5 Sonnet',
   'claude_3_7_sonnet': 'Claude 3.7 Sonnet', 
-  'claude_3_7_thinking': 'Claude 3.7 Thinking',
+  'claude_3_7_sonnet_thinking': 'Claude 3.7 Sonnet Thinking',
   'claude_sonnet_4': 'Claude Sonnet 4',
-  'gemini_2_5_pro_preview': 'Gemini 2.5 Pro Preview',
+  'gemini_2_0_flash': 'Gemini 2.0 Flash',  'gemini_2_5_pro_preview': 'Gemini 2.5 Pro (Preview)',
+  'gpt_4_1': 'GPT-4.1',
   'gpt_4o': 'GPT-4o',
-  'o4_mini_preview': 'O4 Mini Preview'
+  'o1_preview': 'o1 (Preview)',
+  'o3_mini': 'o3-mini',
+  'o4_mini_preview': 'o4-mini (Preview)'
 };
 
 /**
@@ -267,11 +271,9 @@ class ActionUsageAnalysisManager {
     
     // Compare with baseline
     console.log(`🔍 Comparing ${llmKey} with baseline...`);
-    const comparisonAnalysis = this.compareWithBaseline(actionAnalysis, llmKey);
-
-    // Store in database
+    const comparisonAnalysis = this.compareWithBaseline(actionAnalysis, llmKey);    // Store in database
     console.log(`💾 Storing action analysis for ${llmKey}...`);
-    await this.storeActionAnalysis(actionAnalysis, llmKey);
+    await this.storeActionAnalysis(executedResults, efficiencyMetrics, llmKey);
     
     if (comparisonAnalysis) {
       console.log(`💾 Storing comparison analysis for ${llmKey}...`);
@@ -555,33 +557,55 @@ class ActionUsageAnalysisManager {
 
     return comparison;
   }
-
   /**
-   * Store action analysis in database
-   */
-  async storeActionAnalysis(actionAnalysis, llmKey) {
-    const collection = this.db.collection(COLLECTIONS.ACTION_USAGE_ANALYSIS);
+   * Store action analysis in database  */  async storeActionAnalysis(executedResults, efficiencyMetrics, llmKey) {
+    const collection = this.db.collection(COLLECTIONS.MERGED_TEST_DATA);
     
+    // Calculate command usage statistics for comparisons
+    const commandUsageStats = this.calculateCommandUsageStats(efficiencyMetrics.testFiles);
+    
+    // Prepare data in the format expected by the API
     const document = {
-      _id: `action_analysis_${llmKey}_${Date.now()}`,
-      ...actionAnalysis,
+      llm: llmKey,
+      displayName: LLM_MAPPING[llmKey] || llmKey,
+      timestamp: new Date(),
+      
+      // Raw execution results
+      results: executedResults,
+      
+      // Efficiency metrics in the expected format
+      summary: {
+        efficiency: {
+          totalTestCases: efficiencyMetrics.summary?.totalTestCases || 0,
+          totalActionableCommands: efficiencyMetrics.summary?.totalActionableCommands || 0,
+          averageCommandsPerTest: efficiencyMetrics.summary?.averageCommandsPerTest || 0
+        },
+        execution: {
+          tests: executedResults?.results?.summary?.tests || 0,
+          passed: executedResults?.results?.summary?.passed || 0,
+          failed: executedResults?.results?.summary?.failed || 0,
+          start: executedResults?.results?.summary?.start || 0,
+          stop: executedResults?.results?.summary?.stop || 0
+        }
+      },
+      testFiles: efficiencyMetrics.testFiles,
+      tests: this.convertTestFilesToTestsArray(efficiencyMetrics.testFiles, executedResults),
+      actionableCommandTypes: commandUsageStats.allCommands, // Array with all command occurrences
+      uniqueActionableCommandTypes: efficiencyMetrics.actionableCommandTypes, // Array with unique types
+      excludedCommands: efficiencyMetrics.excludedCommands,
+      commandUsageStats, // Additional stats for better comparisons
+      
       metadata: {
-        dataType: 'action_usage_analysis',
+        dataType: 'merged_test_data',
         version: '1.0',
         processedAt: new Date()
       }
     };
 
-    await collection.replaceOne(
-      { _id: document._id },
-      document,
-      { upsert: true }
-    );
-
-    // Also create/update a "latest" document for easy access
-    await collection.replaceOne(
-      { _id: `latest_action_analysis_${llmKey}` },
-      { ...document, _id: `latest_action_analysis_${llmKey}` },
+    // Use updateOne with upsert to avoid _id conflicts
+    await collection.updateOne(
+      { llm: llmKey },
+      { $set: document },
       { upsert: true }
     );
 
@@ -815,6 +839,177 @@ class ActionUsageAnalysisManager {
       console.error('❌ Status check failed:', error.message);
       throw error;
     }  }
+
+    /**
+   * Convert testFiles structure to tests array format expected by API   */  convertTestFilesToTestsArray(testFiles, executedResults) {
+    const tests = [];
+    const executedTestsMap = {};
+    
+    // Create a map of executed tests for easy lookup
+    if (executedResults?.results?.tests) {
+      executedResults.results.tests.forEach(test => {
+        const fileName = test.filePath.split('\\').pop(); // Extract just the filename
+        const fullTestName = test.name;
+        
+        // Create multiple key variations to handle test name mismatches
+        const keys = [
+          `${fileName}_${fullTestName}`, // Full match
+          // Extract the "should ..." part from full test names like "User Sign-up and Login should remember a user for 30 days after login"
+          fullTestName.includes(' should ') ? `${fileName}_should ${fullTestName.split(' should ').slice(1).join(' should ')}` : null,
+          // Also try without "should" prefix for cases where efficiency metrics don't have it
+          fullTestName.startsWith('should ') ? `${fileName}_${fullTestName.substring(7)}` : null
+        ].filter(Boolean);
+        
+        keys.forEach(key => {
+          executedTestsMap[key] = test;
+        });
+      });
+    }
+    
+    console.log(`📋 Created execution map with ${Object.keys(executedTestsMap).length} entries`);
+    
+    // Convert testFiles to tests array
+    Object.keys(testFiles).forEach(fileName => {
+      const fileData = testFiles[fileName];
+      if (fileData.tests) {
+        Object.keys(fileData.tests).forEach(testName => {
+          const testData = fileData.tests[testName];
+          
+          // Try multiple lookup keys to find matching execution data
+          const lookupKeys = [
+            `${fileName}_${testName}`,
+            // If testName doesn't start with "should", try adding it
+            testName.startsWith('should ') ? `${fileName}_${testName}` : `${fileName}_should ${testName}`,
+            // Try without "should" prefix if it exists
+            testName.startsWith('should ') ? `${fileName}_${testName.substring(7)}` : null
+          ].filter(Boolean);
+          
+          let executedTest = null;
+          let foundKey = null;
+          
+          // First try exact matches
+          for (const key of lookupKeys) {
+            executedTest = executedTestsMap[key];
+            if (executedTest) {
+              foundKey = key;
+              break;
+            }
+          }
+          
+          // If no exact match found, try fuzzy matching
+          if (!executedTest) {
+            const testNameWords = testName.toLowerCase().split(/\s+/).filter(word => word.length > 2);
+            
+            let bestMatch = null;
+            let bestScore = 0;
+            let bestKey = null;
+            
+            // Look through all execution map keys for this file
+            Object.keys(executedTestsMap).forEach(key => {
+              if (key.startsWith(fileName + '_')) {
+                const execTestName = key.substring(fileName.length + 1).toLowerCase();
+                
+                // Count matching words
+                const matchingWords = testNameWords.filter(word => execTestName.includes(word));
+                const score = matchingWords.length;
+                
+                // Use this match if it's better and has reasonable overlap
+                if (score > bestScore && (score >= 2 || score / testNameWords.length >= 0.6)) {
+                  bestScore = score;
+                  bestMatch = executedTestsMap[key];
+                  bestKey = key;
+                }
+              }
+            });
+            
+            if (bestMatch) {
+              executedTest = bestMatch;
+              foundKey = bestKey;
+              console.log(`🔍 Fuzzy match: "${testName}" -> "${foundKey}" (${bestScore}/${testNameWords.length} words)`);
+            }
+          }
+          
+          if (foundKey) {
+            console.log(`✅ Found execution data with key: ${foundKey}`);
+          } else {
+            console.log(`❌ No execution data found for test: ${testName} in file: ${fileName}`);
+          }
+          
+          tests.push({
+            name: testName,
+            filePath: `cypress\\tests\\ui\\${fileName}`,
+            filename: fileName, // Add filename for easier debugging
+            efficiency: {
+              actionableCommands: testData.actionableCommands,
+              commands: testData.commands
+            },          execution: executedTest ? {
+            status: executedTest.status,
+            duration: executedTest.duration,
+            rawStatus: executedTest.rawStatus,
+            type: executedTest.type,
+            retries: executedTest.retries,
+            flaky: executedTest.flaky,
+            browser: executedTest.browser,
+            message: executedTest.message || null,
+            trace: executedTest.trace || null,
+            attachments: executedTest.attachments || []
+          } : {
+            // Provide default execution data when no match is found
+            status: 'not_executed',
+            duration: 0,
+            rawStatus: 'not_executed',
+            type: 'e2e',
+            retries: 0,
+            flaky: false,
+            browser: 'unknown',
+            message: 'Test was not executed or could not be matched with execution results',
+            trace: null,
+            attachments: []          },
+          matched: executedTest !== null // Track whether this test was successfully matched
+        });
+        });
+      }
+    });    
+    const matchedTests = tests.filter(t => t.matched).length;
+    const unmatchedTests = tests.filter(t => !t.matched).length;
+    
+    console.log(`✅ Converted ${tests.length} tests:`);
+    console.log(`   📊 ${matchedTests} matched with execution data`);
+    console.log(`   ❌ ${unmatchedTests} unmatched (will show as 'not_executed')`);
+    
+    return tests;
+  }
+
+  /**
+   * Calculate command usage statistics for comparisons
+   */
+  calculateCommandUsageStats(testFiles) {
+    const commandCounts = {};
+    const allCommands = [];
+    
+    // Count all commands across all tests
+    Object.keys(testFiles).forEach(fileName => {
+      const fileData = testFiles[fileName];
+      if (fileData.tests) {
+        Object.keys(fileData.tests).forEach(testName => {
+          const testData = fileData.tests[testName];
+          if (testData.commands) {
+            testData.commands.forEach(command => {
+              allCommands.push(command);
+              commandCounts[command] = (commandCounts[command] || 0) + 1;
+            });
+          }
+        });
+      }
+    });
+    
+    return {
+      allCommands, // Array with all command occurrences
+      commandCounts, // Object with command counts
+      totalCommands: allCommands.length,
+      uniqueCommands: Object.keys(commandCounts).length
+    };
+  }
 }
 
 console.log('📋 ActionUsageAnalysisManager class defined...');

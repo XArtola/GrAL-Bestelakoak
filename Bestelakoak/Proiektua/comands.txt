@@ -1,0 +1,34 @@
+SISTEMA MARTXAN JARRI 
+yarn dev
+
+TESTAK EXEKUTATATU (headless) 
+npx cypress run --spec ".\cypress\tests\ui\auth.spec.ts" > results.txt
+
+DELETE IT BLOCKS
+node .\deleteIt.js "..\Hustuta\cypress-realworld-app"
+
+TESTEI IZENA EMAN (ENV bidez)
+npx cypress run --env ctrfReportOutput=resultsClaude3_5.json --spec ".\cypress\tests\testsClaude3_5\ui"
+
+-------------------------------------------------------------------
+
+Testak exekutatu ahal izateko pattern aldatu edo test karpeta barruan egin aldaketak:
+
+cypress-realworld-app\cypress.config.ts
+
+-------------------------------------------------------------
+REPOAK
+
+git clone https://github.com/cypress-io/cypress-realworld-app
+git clone https://github.com/mermaid-js/
+
+-------------------------------------------------------------
+
+Get Json files with times and code piece:
+Process_result_times/process_all_data2.js --> matchedData
+
+Merge result test code with original test files
+test_generator/test_generator_updated.js --> ui/complete_tests
+
+Channge references by variable  values
+insertExtractedData/ast_processor_ts.js

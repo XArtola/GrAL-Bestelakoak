@@ -1,0 +1,47 @@
+graph LR
+    subgraph "Eragileak"
+        E[Erabiltzailea]
+        LLM[LLM Sistema]
+    end
+    
+    subgraph "Backend Erabilera Kasuak"
+        UC1[Testak banandu]
+        UC2[Test blokeak hustu]
+        UC3[Erabiltzaile datuak atera]
+        UC4[Prompt fitxategiak sortu]
+        UC5[Promptak exekutatu]
+        UC6[Kodea atera eta JSON sortu]
+        UC7[Testak exekutatu]
+        UC8[Komando erabilera analizatu]
+    end
+    
+    subgraph "Frontend Erabilera Kasuak"
+        UC9[Metrikak kargatu]
+        UC10[Datuak kontsultatu]
+        UC11[Emaitzak bistaratu]
+    end
+    
+    E --> UC1
+    E --> UC2
+    E --> UC3
+    E --> UC4
+    E --> UC5
+    E --> UC6
+    E --> UC7
+    E --> UC8
+    E --> UC9
+    E --> UC10
+    E --> UC11
+    
+    LLM --> UC5
+    
+    UC1 -.-> UC2
+    UC2 -.-> UC3
+    UC3 -.-> UC4
+    UC4 -.-> UC5
+    UC5 -.-> UC6
+    UC6 -.-> UC7
+    UC7 -.-> UC8
+    UC8 -.-> UC9
+    UC9 -.-> UC10
+    UC10 -.-> UC11

@@ -175,13 +175,21 @@ export default function LlmTestComparisonView({ loading, testData }: LlmTestComp
   }
   
   const hasTestData = testData && testData.testData && Array.isArray(testData.testData);
-    // Function to extract filename without path and extension
+  // Function to extract filename without path and extension
   const extractFilename = (filePath: string): string => {
     if (!filePath) return '';
     // Handle both forward and backward slashes for cross-platform compatibility
     const parts = filePath.split(/[\\\/]/);
     const filename = parts[parts.length - 1];
     return filename.replace('.spec.ts', '');
+  };
+
+  // Function to extract base prefix from filename (removes numbers at the end)
+  const extractFilePrefix = (fileName: string): string => {
+    if (!fileName) return '';
+    // Remove numbers at the end of the filename to group similar files
+    // e.g., "auth1", "auth2", "auth3" -> "auth"
+    return fileName.replace(/\d+$/, '');
   };
 
   // Process and sort test data by file name
@@ -281,60 +289,96 @@ export default function LlmTestComparisonView({ loading, testData }: LlmTestComp
           </table>
         </div>
       </div>
-      
-      {/* Detailed Test Comparison Table */}
+        {/* Detailed Test Comparison Tables by File */}
       <div>
         <h2 className="text-xl font-semibold mb-4">Test Details by LLM</h2>
-        <div className="overflow-x-auto">
-          <table className="min-w-full bg-gray-800 rounded-lg overflow-hidden">
-            <thead className="bg-gray-700">
-              <tr>
-                <th className="px-4 py-3 text-left text-sm font-medium text-white sticky left-0 bg-gray-700 w-28">Test file</th>
-                <th className="px-4 py-3 text-left text-sm font-medium text-white sticky left-[112px] bg-gray-700 w-40 max-w-[160px] truncate">Test Name</th>
-                {hasTestData && testData.llms.map((llmName, index) => (
-                  <th key={index} className="px-2 py-3 text-center text-xs font-medium text-white" colSpan={2}>{getDisplayName(llmName)}</th>
-                ))}
-              </tr>
-              <tr>
-                <th className="px-4 py-2 text-left text-xs font-medium text-white sticky left-0 bg-gray-700"></th>
-                <th className="px-4 py-2 text-left text-xs font-medium text-white sticky left-[112px] bg-gray-700"></th>
-                {hasTestData && testData.llms.map((_, index) => (
-                  <React.Fragment key={index}>
-                    <th className="px-2 py-2 text-center text-xs font-medium text-white">Gen Time (s)</th>
-                    <th className="px-2 py-2 text-center text-xs font-medium text-white">Exec Time (s)</th>
-                  </React.Fragment>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {hasTestData && processedTestNames.map((item, rowIndex) => (
-                <tr key={rowIndex} className={rowIndex % 2 === 0 ? 'bg-gray-800' : 'bg-gray-750'}>
-                  <td className="px-4 py-3 text-left text-sm font-medium sticky left-0 bg-inherit w-28 truncate">{item.fileName}</td>
-                  <td className="px-4 py-3 text-left text-xs sticky left-[112px] bg-inherit w-40 max-w-[160px] truncate" title={item.testName}>{item.testName}</td>
-                  {testData.testData.map((llm, llmIndex) => {
-                    // Find test data for this LLM and test
-                    const test = llm.tests.find((t: any) => t.testName === item.testName);
-                    // Get status for background color
-                    const bgColorClass = test 
-                      ? test.status === 'passed' 
-                        ? 'bg-green-900 bg-opacity-40' 
-                        : 'bg-red-900 bg-opacity-40'
-                      : '';                    return (
-                      <React.Fragment key={`${rowIndex}-${llmIndex}`}>
-                        <td className={`px-2 py-3 text-right text-xs w-16 ${bgColorClass}`}>
-                          {test && test.generationTime ? `${(test.generationTime / 1000).toFixed(1)}s` : '-'}
+          {hasTestData && (() => {
+          // Group tests by file prefix (removing numbers)
+          const testsByFilePrefix = processedTestNames.reduce((acc, item) => {
+            const filePrefix = extractFilePrefix(item.fileName);
+            const groupKey = filePrefix || item.fileName; // Use original name if no prefix extracted
+            
+            if (!acc[groupKey]) {
+              acc[groupKey] = [];
+            }
+            acc[groupKey].push(item);
+            return acc;
+          }, {} as Record<string, typeof processedTestNames>);
+
+          return Object.entries(testsByFilePrefix).map(([groupName, tests]) => (
+            <div key={groupName} className="mb-8">
+              <h3 className="text-lg font-medium mb-3 text-blue-400 capitalize">
+                {groupName} 
+                {tests.length > 1 && (
+                  <span className="text-sm text-gray-400 ml-2">
+                    ({tests.length} files)
+                  </span>
+                )}
+              </h3>              <div className="overflow-x-auto">
+                <table className="min-w-full bg-gray-800 rounded-lg overflow-hidden">
+                  <thead className="bg-gray-700">
+                    <tr>                      {tests.length > 1 && (
+                        <th className="px-4 py-3 text-left text-sm font-medium text-white w-24">File</th>
+                      )}
+                      <th className="px-4 py-3 text-left text-sm font-medium text-white w-60">Test Name</th>
+                      {testData.llms.map((llmName, index) => (
+                        <th key={index} className="px-2 py-3 text-center text-xs font-medium text-white" colSpan={2}>
+                          {getDisplayName(llmName)}
+                        </th>
+                      ))}
+                    </tr>
+                    <tr>
+                      {tests.length > 1 && (
+                        <th className="px-4 py-2 text-left text-xs font-medium text-white"></th>
+                      )}
+                      <th className="px-4 py-2 text-left text-xs font-medium text-white"></th>
+                      {testData.llms.map((_, index) => (
+                        <React.Fragment key={index}>
+                          <th className="px-2 py-2 text-center text-xs font-medium text-white">Gen Time (s)</th>
+                          <th className="px-2 py-2 text-center text-xs font-medium text-white">Exec Time (s)</th>
+                        </React.Fragment>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tests.map((item, rowIndex) => (
+                      <tr key={rowIndex} className={rowIndex % 2 === 0 ? 'bg-gray-800' : 'bg-gray-750'}>                        {tests.length > 1 && (
+                          <td className="px-4 py-3 text-left text-xs w-24 text-gray-400">
+                            {item.fileName}
+                          </td>
+                        )}
+                        <td className="px-4 py-3 text-left text-sm w-60 whitespace-normal break-words leading-tight">
+                          {item.testName}
                         </td>
-                        <td className={`px-2 py-3 text-right text-xs w-16 ${bgColorClass}`}>
-                          {test ? `${(test.executionTime / 1000).toFixed(1)}s` : '-'}
-                        </td>
-                      </React.Fragment>
-                    );
-                  })}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+                        {testData.testData.map((llm, llmIndex) => {
+                          // Find test data for this LLM and test
+                          const test = llm.tests.find((t: any) => t.testName === item.testName);
+                          // Get status for background color
+                          const bgColorClass = test 
+                            ? test.status === 'passed' 
+                              ? 'bg-green-900 bg-opacity-40' 
+                              : 'bg-red-900 bg-opacity-40'
+                            : '';
+                          
+                          return (
+                            <React.Fragment key={`${rowIndex}-${llmIndex}`}>
+                              <td className={`px-2 py-3 text-right text-xs w-16 ${bgColorClass}`}>
+                                {test && test.generationTime ? `${(test.generationTime / 1000).toFixed(1)}s` : '-'}
+                              </td>
+                              <td className={`px-2 py-3 text-right text-xs w-16 ${bgColorClass}`}>
+                                {test ? `${(test.executionTime / 1000).toFixed(1)}s` : '-'}
+                              </td>
+                            </React.Fragment>
+                          );
+                        })}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ));
+        })()}
       </div>
       </>
       )}

@@ -1,0 +1,30 @@
+graph TD
+    A[Iniciar Análisis] --> B[Cargar Métricas Base]
+    B --> C[Leer Archivos JSON de Métricas]
+    C --> D{¿Comparar Modelos?}
+    
+    D -->|Sí| E[Cargar Métricas por Modelo]
+    D -->|No| F[Analizar Métricas Individuales]
+    
+    E --> G[Procesar y Comparar Datos]
+    F --> G
+    
+    G --> H[Calcular Eficiencia]
+    H --> I[Generar Estadísticas]
+    I --> J[Crear Reporte de Comparación]
+    J --> K[Exportar Resultados]
+    
+    K --> L{¿Guardar en Archivo?}
+    L -->|Sí| M[Guardar JSON/CSV]
+    L -->|No| N[Mostrar en Consola]
+    
+    M --> O[Fin]
+    N --> O
+    
+    subgraph "Métricas Analizadas"
+        P[Tiempo de Ejecución]
+        Q[Número de Tests]
+        R[Tasa de Éxito]
+        S[Cobertura de Código]
+        T[Eficiencia Relativa]
+    end
