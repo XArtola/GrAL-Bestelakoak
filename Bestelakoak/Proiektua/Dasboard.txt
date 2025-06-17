@@ -1,0 +1,12 @@
+Cargar resultados prompt generado
+
+npm run ingest-prompt-results
+Colección test_creation_results
+
+
+Cargar resultados de ejecucion
+
+npm run ingest-test-data
+node scripts/ingest-test-data.js
+test_execution_results
+test_efficiency_metrics

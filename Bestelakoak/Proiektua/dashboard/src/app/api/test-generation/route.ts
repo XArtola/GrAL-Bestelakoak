@@ -24,11 +24,11 @@ export async function GET(request: Request) {
     const dbClient = await connectToDatabase();
     const database = dbClient.db("tests");
     const testCreationCollection = database.collection("test_creation_results");
-    
-    // Check if detailed test data is requested
+      // Check if detailed test data is requested
     const { searchParams } = new URL(request.url);
     const includeDetails = searchParams.get('details') === 'true';
     const selectedLLM = searchParams.get('llm');
+    const allLLMs = searchParams.get('all') === 'true';
     
     // Get test creation data from the collection
     const testCreationData = await testCreationCollection.find({}).toArray();    // Process the data to create LLM summaries from test_creation_results
@@ -103,11 +103,10 @@ export async function GET(request: Request) {
         filesGenerated: filesGenerated,
         fileGenerationRate: fileGenerationRate
       };
-    });
-      let detailedTests: any[] = [];
+    });      let detailedTests: any[] = [];
     if (includeDetails) {
-      // Filter by selected LLM if specified
-      const filteredData = selectedLLM 
+      // Filter by selected LLM if specified, unless all=true
+      const filteredData = (selectedLLM && !allLLMs)
         ? testCreationData.filter((test: any) => test.llmName === selectedLLM || test.llmNormalizedName === selectedLLM)
         : testCreationData;
       

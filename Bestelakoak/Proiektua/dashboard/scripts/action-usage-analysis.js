@@ -328,33 +328,27 @@ class ActionUsageAnalysisManager {
       
       for (const [filePath, testFile] of Object.entries(efficiencyMetrics.testFiles)) {
         console.log(`   📄 Processing test file: ${filePath}`);
-        analysis.efficiency.totalTests += testFile.totalTests || 0;
+        analysis.efficiency.totalTests += 1; // Each file contains one test in new structure
         
-        if (testFile.tests) {
-          console.log(`   📄 Processing ${Object.keys(testFile.tests).length} tests in ${filePath}`);
-          
-          for (const [testName, test] of Object.entries(testFile.tests)) {
-            const testAnalysis = {
-              filePath: filePath,
-              orderInFile: test.orderInFile,
-              actionableCommands: test.actionableCommands || 0,
-              commands: test.commands || []
-            };
+        const testAnalysis = {
+          filePath: filePath,
+          testName: testFile.test_name,
+          actionableCommands: testFile.actionableCommands || 0,
+          commands: testFile.commands || {}
+        };
 
-            // Count command types
-            if (test.commands) {
-              console.log(`      🔍 Analyzing ${test.commands.length} commands for test ${test.orderInFile}`);
-              for (const command of test.commands) {
-                const commandType = this.categorizeCommand(command);
-                analysis.actions.byType[commandType] = (analysis.actions.byType[commandType] || 0) + 1;
-                analysis.actions.total++;
-              }
-            }
-
-            analysis.actions.byTest.push(testAnalysis);
-            analysis.efficiency.totalCommands += test.actionableCommands || 0;
+        // Count command types from the new structure (commands as object with counts)
+        if (testFile.commands && typeof testFile.commands === 'object') {
+          console.log(`      🔍 Analyzing commands for test ${testFile.test_name}`);
+          for (const [commandType, count] of Object.entries(testFile.commands)) {
+            const categorizedType = this.categorizeCommand(commandType);
+            analysis.actions.byType[categorizedType] = (analysis.actions.byType[categorizedType] || 0) + count;
+            analysis.actions.total += count;
           }
         }
+
+        analysis.actions.byTest.push(testAnalysis);
+        analysis.efficiency.totalCommands += testFile.actionableCommands || 0;
       }
     } else {
       console.warn(`⚠️ No testFiles found in efficiency metrics for ${llmKey}`);
@@ -840,8 +834,10 @@ class ActionUsageAnalysisManager {
       throw error;
     }  }
 
-    /**
-   * Convert testFiles structure to tests array format expected by API   */  convertTestFilesToTestsArray(testFiles, executedResults) {
+    /**  /**
+   * Convert testFiles structure to tests array format expected by API
+   */
+  convertTestFilesToTestsArray(testFiles, executedResults) {
     const tests = [];
     const executedTestsMap = {};
     
@@ -868,108 +864,107 @@ class ActionUsageAnalysisManager {
     
     console.log(`📋 Created execution map with ${Object.keys(executedTestsMap).length} entries`);
     
-    // Convert testFiles to tests array
+    // Convert testFiles to tests array (new simplified structure)
     Object.keys(testFiles).forEach(fileName => {
       const fileData = testFiles[fileName];
-      if (fileData.tests) {
-        Object.keys(fileData.tests).forEach(testName => {
-          const testData = fileData.tests[testName];
-          
-          // Try multiple lookup keys to find matching execution data
-          const lookupKeys = [
-            `${fileName}_${testName}`,
-            // If testName doesn't start with "should", try adding it
-            testName.startsWith('should ') ? `${fileName}_${testName}` : `${fileName}_should ${testName}`,
-            // Try without "should" prefix if it exists
-            testName.startsWith('should ') ? `${fileName}_${testName.substring(7)}` : null
-          ].filter(Boolean);
-          
-          let executedTest = null;
-          let foundKey = null;
-          
-          // First try exact matches
-          for (const key of lookupKeys) {
-            executedTest = executedTestsMap[key];
-            if (executedTest) {
-              foundKey = key;
-              break;
-            }
-          }
-          
-          // If no exact match found, try fuzzy matching
-          if (!executedTest) {
-            const testNameWords = testName.toLowerCase().split(/\s+/).filter(word => word.length > 2);
-            
-            let bestMatch = null;
-            let bestScore = 0;
-            let bestKey = null;
-            
-            // Look through all execution map keys for this file
-            Object.keys(executedTestsMap).forEach(key => {
-              if (key.startsWith(fileName + '_')) {
-                const execTestName = key.substring(fileName.length + 1).toLowerCase();
-                
-                // Count matching words
-                const matchingWords = testNameWords.filter(word => execTestName.includes(word));
-                const score = matchingWords.length;
-                
-                // Use this match if it's better and has reasonable overlap
-                if (score > bestScore && (score >= 2 || score / testNameWords.length >= 0.6)) {
-                  bestScore = score;
-                  bestMatch = executedTestsMap[key];
-                  bestKey = key;
-                }
-              }
-            });
-            
-            if (bestMatch) {
-              executedTest = bestMatch;
-              foundKey = bestKey;
-              console.log(`🔍 Fuzzy match: "${testName}" -> "${foundKey}" (${bestScore}/${testNameWords.length} words)`);
-            }
-          }
-          
-          if (foundKey) {
-            console.log(`✅ Found execution data with key: ${foundKey}`);
-          } else {
-            console.log(`❌ No execution data found for test: ${testName} in file: ${fileName}`);
-          }
-          
-          tests.push({
-            name: testName,
-            filePath: `cypress\\tests\\ui\\${fileName}`,
-            filename: fileName, // Add filename for easier debugging
-            efficiency: {
-              actionableCommands: testData.actionableCommands,
-              commands: testData.commands
-            },          execution: executedTest ? {
-            status: executedTest.status,
-            duration: executedTest.duration,
-            rawStatus: executedTest.rawStatus,
-            type: executedTest.type,
-            retries: executedTest.retries,
-            flaky: executedTest.flaky,
-            browser: executedTest.browser,
-            message: executedTest.message || null,
-            trace: executedTest.trace || null,
-            attachments: executedTest.attachments || []
-          } : {
-            // Provide default execution data when no match is found
-            status: 'not_executed',
-            duration: 0,
-            rawStatus: 'not_executed',
-            type: 'e2e',
-            retries: 0,
-            flaky: false,
-            browser: 'unknown',
-            message: 'Test was not executed or could not be matched with execution results',
-            trace: null,
-            attachments: []          },
-          matched: executedTest !== null // Track whether this test was successfully matched
-        });
-        });
+      const testName = fileData.test_name;
+      
+      // Try multiple lookup keys to find matching execution data
+      const lookupKeys = [
+        `${fileName}_${testName}`,
+        // If testName doesn't start with "should", try adding it
+        testName.startsWith('should ') ? `${fileName}_${testName}` : `${fileName}_should ${testName}`,
+        // Try without "should" prefix if it exists
+        testName.startsWith('should ') ? `${fileName}_${testName.substring(7)}` : null
+      ].filter(Boolean);
+      
+      let executedTest = null;
+      let foundKey = null;
+      
+      // First try exact matches
+      for (const key of lookupKeys) {
+        executedTest = executedTestsMap[key];
+        if (executedTest) {
+          foundKey = key;
+          break;
+        }
       }
-    });    
+      
+      // If no exact match found, try fuzzy matching
+      if (!executedTest) {
+        const testNameWords = testName.toLowerCase().split(/\s+/).filter(word => word.length > 2);
+        
+        let bestMatch = null;
+        let bestScore = 0;
+        let bestKey = null;
+        
+        // Look through all execution map keys for this file
+        Object.keys(executedTestsMap).forEach(key => {
+          if (key.startsWith(fileName + '_')) {
+            const execTestName = key.substring(fileName.length + 1).toLowerCase();
+            
+            // Count matching words
+            const matchingWords = testNameWords.filter(word => execTestName.includes(word));
+            const score = matchingWords.length;
+            
+            // Use this match if it's better and has reasonable overlap
+            if (score > bestScore && (score >= 2 || score / testNameWords.length >= 0.6)) {
+              bestScore = score;
+              bestMatch = executedTestsMap[key];
+              bestKey = key;
+            }
+          }
+        });
+        
+        if (bestMatch) {
+          executedTest = bestMatch;
+          foundKey = bestKey;
+          console.log(`🔍 Fuzzy match: "${testName}" -> "${foundKey}" (${bestScore}/${testNameWords.length} words)`);
+        }
+      }
+      
+      if (foundKey) {
+        console.log(`✅ Found execution data with key: ${foundKey}`);
+      } else {
+        console.log(`❌ No execution data found for test: ${testName} in file: ${fileName}`);
+      }
+      
+      tests.push({
+        name: testName,
+        filePath: `cypress\\tests\\ui\\${fileName}`,
+        filename: fileName, // Add filename for easier debugging
+        efficiency: {
+          actionableCommands: fileData.actionableCommands,
+          commands: fileData.commands // This is now an object with command counts
+        },
+        execution: executedTest ? {
+          status: executedTest.status,
+          duration: executedTest.duration,
+          rawStatus: executedTest.rawStatus,
+          type: executedTest.type,
+          retries: executedTest.retries,
+          flaky: executedTest.flaky,
+          browser: executedTest.browser,
+          message: executedTest.message || null,
+          trace: executedTest.trace || null,
+          attachments: executedTest.attachments || []
+        } : {
+          // Provide default execution data when no match is found
+          status: 'not_executed',
+          duration: 0,
+          rawStatus: 'not_executed',
+          type: 'e2e',
+          retries: 0,
+          flaky: false,
+          browser: 'unknown',
+          message: 'Test was not executed or could not be matched with execution results',
+          trace: null,
+          attachments: []
+        },
+        matched: executedTest !== null // Track whether this test was successfully matched
+      });
+    });
+    
     const matchedTests = tests.filter(t => t.matched).length;
     const unmatchedTests = tests.filter(t => !t.matched).length;
     
@@ -982,23 +977,21 @@ class ActionUsageAnalysisManager {
 
   /**
    * Calculate command usage statistics for comparisons
-   */
-  calculateCommandUsageStats(testFiles) {
+   */  calculateCommandUsageStats(testFiles) {
     const commandCounts = {};
     const allCommands = [];
     
-    // Count all commands across all tests
+    // Count all commands across all test files with new structure
     Object.keys(testFiles).forEach(fileName => {
       const fileData = testFiles[fileName];
-      if (fileData.tests) {
-        Object.keys(fileData.tests).forEach(testName => {
-          const testData = fileData.tests[testName];
-          if (testData.commands) {
-            testData.commands.forEach(command => {
-              allCommands.push(command);
-              commandCounts[command] = (commandCounts[command] || 0) + 1;
-            });
+      if (fileData.commands && typeof fileData.commands === 'object') {
+        // In new structure, commands is an object with command names as keys and counts as values
+        Object.entries(fileData.commands).forEach(([command, count]) => {
+          // Add the command 'count' times to allCommands array
+          for (let i = 0; i < count; i++) {
+            allCommands.push(command);
           }
+          commandCounts[command] = (commandCounts[command] || 0) + count;
         });
       }
     });

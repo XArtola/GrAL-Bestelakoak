@@ -30,5 +30,5 @@ Process_result_times/process_all_data2.js --> matchedData
 Merge result test code with original test files
 test_generator/test_generator_updated.js --> ui/complete_tests
 
-Channge references by variable  values
+Change references by variable  values
 insertExtractedData/ast_processor_ts.js

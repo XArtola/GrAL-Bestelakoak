@@ -1,0 +1,134 @@
+[
+    {
+        "timestamp": "2025-06-17 11:37:55.874",
+        "requestTimeMs": 1750153075874,
+        "responseTimeMs": 1750153110736,
+        "durationMs": 34862
+    },
+    {
+        "timestamp": "2025-06-17 11:40:20.167",
+        "requestTimeMs": 1750153220167,
+        "responseTimeMs": 1750153240424,
+        "durationMs": 20257
+    },
+    {
+        "timestamp": "2025-06-17 11:42:44.001",
+        "requestTimeMs": 1750153364001,
+        "responseTimeMs": 1750153394621,
+        "durationMs": 30620
+    },
+    {
+        "timestamp": "2025-06-17 11:45:08.095",
+        "requestTimeMs": 1750153508095,
+        "responseTimeMs": 1750153547293,
+        "durationMs": 39198
+    },
+    {
+        "timestamp": "2025-06-17 11:47:32.337",
+        "requestTimeMs": 1750153652337,
+        "responseTimeMs": 1750153665424,
+        "durationMs": 13087
+    },
+    {
+        "timestamp": "2025-06-17 11:49:56.540",
+        "requestTimeMs": 1750153796540,
+        "responseTimeMs": 1750153833007,
+        "durationMs": 36467
+    },
+    {
+        "timestamp": "2025-06-17 11:52:20.682",
+        "requestTimeMs": 1750153940682,
+        "responseTimeMs": 1750153979312,
+        "durationMs": 38630
+    },
+    {
+        "timestamp": "2025-06-17 11:54:44.620",
+        "requestTimeMs": 1750154084620,
+        "responseTimeMs": 1750154108291,
+        "durationMs": 23671
+    },
+    {
+        "timestamp": "2025-06-17 11:57:08.716",
+        "requestTimeMs": 1750154228716,
+        "responseTimeMs": 1750154253024,
+        "durationMs": 24308
+    },
+    {
+        "timestamp": "2025-06-17 11:59:32.850",
+        "requestTimeMs": 1750154372850,
+        "responseTimeMs": 1750154409015,
+        "durationMs": 36165
+    },
+    {
+        "timestamp": "2025-06-17 12:01:57.053",
+        "requestTimeMs": 1750154517053,
+        "responseTimeMs": 1750154544131,
+        "durationMs": 27078
+    },
+    {
+        "timestamp": "2025-06-17 12:04:21.156",
+        "requestTimeMs": 1750154661156,
+        "responseTimeMs": 1750154681696,
+        "durationMs": 20540
+    },
+    {
+        "timestamp": "2025-06-17 12:06:45.161",
+        "requestTimeMs": 1750154805161,
+        "responseTimeMs": 1750154826712,
+        "durationMs": 21551
+    },
+    {
+        "timestamp": "2025-06-17 12:09:09.167",
+        "requestTimeMs": 1750154949167,
+        "responseTimeMs": 1750154980400,
+        "durationMs": 31233
+    },
+    {
+        "timestamp": "2025-06-17 12:11:33.288",
+        "requestTimeMs": 1750155093288,
+        "responseTimeMs": 1750155141755,
+        "durationMs": 48467
+    },
+    {
+        "timestamp": "2025-06-17 12:13:57.527",
+        "requestTimeMs": 1750155237527,
+        "responseTimeMs": 1750155266127,
+        "durationMs": 28600
+    },
+    {
+        "timestamp": "2025-06-17 12:16:21.589",
+        "requestTimeMs": 1750155381589,
+        "responseTimeMs": 1750155398273,
+        "durationMs": 16684
+    },
+    {
+        "timestamp": "2025-06-17 12:18:45.619",
+        "requestTimeMs": 1750155525619,
+        "responseTimeMs": 1750155527370,
+        "durationMs": 1751
+    },
+    {
+        "timestamp": "2025-06-17 12:21:09.899",
+        "requestTimeMs": 1750155669899,
+        "responseTimeMs": 1750155672654,
+        "durationMs": 2755
+    },
+    {
+        "timestamp": "2025-06-17 12:23:34.114",
+        "requestTimeMs": 1750155814114,
+        "responseTimeMs": 1750155815855,
+        "durationMs": 1741
+    },
+    {
+        "timestamp": "2025-06-17 12:25:58.284",
+        "requestTimeMs": 1750155958284,
+        "responseTimeMs": 1750155960585,
+        "durationMs": 2301
+    },
+    {
+        "timestamp": "2025-06-17 12:28:22.474",
+        "requestTimeMs": 1750156102474,
+        "responseTimeMs": 1750156104175,
+        "durationMs": 1701
+    }
+]

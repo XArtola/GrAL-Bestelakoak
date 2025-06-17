@@ -23,7 +23,7 @@ vscode_path = r"C:\Users\xabia\AppData\Local\Programs\Microsoft VS Code\Code.exe
 
 # Timing configuration
 wait_time = 2
-long_wait_time = 120
+long_wait_time = 85
 
 # Screen configuration (adjust based on your screen resolution)
 screen_width = 1920

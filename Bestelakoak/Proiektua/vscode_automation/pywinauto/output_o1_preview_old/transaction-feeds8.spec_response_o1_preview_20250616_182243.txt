@@ -1,0 +1,135 @@
+---
+tools: ['codebase']
+---
+
+#file:cypress-realworld-app 
+You are tasked with generating the code inside the 'it' blocks for a Cypress test suite. The test suite is for user sign-up and login functionality. You will be provided with the test suite structure and user information to use in your generated code.
+
+Here is the Cypress test code structure:
+
+<cypress_test_code>
+import Dinero from "dinero.js";
+import { User, Transaction, TransactionRequestStatus, TransactionResponseItem, Contact, TransactionStatus, } from "../../../src/models";
+import { addDays, isWithinInterval, startOfDay } from "date-fns";
+import { startOfDayUTC, endOfDayUTC } from "../../../src/utils/transactionUtils";
+import { isMobile } from "../../support/utils";
+const { _ } = Cypress;
+type TransactionFeedsCtx = {
+    allUsers?: User[];
+    user?: User;
+    contactIds?: string[];
+};
+describe("Transaction Feed", function () {
+    const ctx: TransactionFeedsCtx = {};
+    const feedViews = {
+        public: {
+            tab: "public-tab",
+            tabLabel: "everyone",
+            routeAlias: "publicTransactions",
+            service: "publicTransactionService",
+        },
+        contacts: {
+            tab: "contacts-tab",
+            tabLabel: "friends",
+            routeAlias: "contactsTransactions",
+            service: "contactTransactionService",
+        },
+        personal: {
+            tab: "personal-tab",
+            tabLabel: "mine",
+            routeAlias: "personalTransactions",
+            service: "personalTransactionService",
+        },
+    };
+    beforeEach(function () {
+        cy.task("db:seed");
+        cy.intercept("GET", "/notifications").as("notifications");
+        cy.intercept("GET", "/transactions*").as(feedViews.personal.routeAlias);
+        cy.intercept("GET", "/transactions/public*").as(feedViews.public.routeAlias);
+        cy.intercept("GET", "/transactions/contacts*").as(feedViews.contacts.routeAlias);
+        cy.database("filter", "users").then((users: User[]) => {
+            ctx.user = users[0];
+            ctx.allUsers = users;
+            cy.loginByXstate(ctx.user.username);
+        });
+    });
+    describe("filters transaction feeds by amount range", function () {
+        const dollarAmountRange = {
+            min: 200,
+            max: 800,
+        };
+        _.each(feedViews, (feed, feedName) => {
+            it(`does not show ${feedName} transactions for out of range amount limits`, () => { });
+        });
+    });
+});
+
+</cypress_test_code>
+
+And here is the user information to use in your tests:
+
+<user_info>
+{}
+</user_info>
+
+Your task is to generate the code inside each 'it' block so that the Cypress test runs and gets positive results. Follow these guidelines:
+
+1. For each 'it' block, write Cypress commands that test the functionality described in the test name.
+2. Use the provided user information (firstName, lastName, username, password) in your test commands where appropriate.
+3. Ensure that your generated code follows Cypress best practices and conventions.
+4. Include appropriate assertions to verify the expected behavior of each test.
+5. If a test requires multiple steps, use comments to explain each step.
+6. Do not modify the existing code structure or add new 'it' blocks.
+
+When using the user information, refer to it as 'userInfo' followed by the property name, e.g., 'userInfo.firstName'.
+
+If you encounter any scenarios where you need additional information that isn't provided, do not make assumptions. Instead, indicate that more information is needed for that specific test.
+
+For error handling tests, use invalid data that is clearly different from the provided user information.
+
+Place your generated code for each 'it' block within <generated_code> tags, and include the original 'it' block description as a comment before each block of generated code.
+
+Begin generating the code for each 'it' block now.
+
+
+> Copilot: <generated_code>
+> // it(`does not show ${feedName} transactions for out of range amount limits`)
+> //
+> // This test ensures that when we set an amount filter that excludes the valid range (200 to 800),
+> // no transactions are displayed in the given feed (public, contacts, personal).
+> 
+> it(`does not show ${feedName} transactions for out of range amount limits`, () => {
+>   // 1. Click on the corresponding feed tab (e.g., Public, Contacts, Personal).
+>   cy.getBySel(feed.tab).click();
+> 
+>   // 2. Wait for the feed's transactions data to load.
+>   cy.wait(`@${feed.routeAlias}`);
+> 
+>   // 3. Open the "Amount Range" filter UI (adjust the selector to match your actual UI).
+>   //    (Selectors below are examples; update them to match real selectors in your app.)
+>   cy.getBySel("transaction-filter-toggle").click();
+> 
+>   // 4. Enter out-of-range minimum and maximum values that exclude valid transactions.
+>   //    For example, set min=900 and max=1000 which is higher than the valid max (800).
+>   cy.getBySel("transaction-filter-amount-min")
+>     .clear()
+>     .type("900");
+>   cy.getBySel("transaction-filter-amount-max")
+>     .clear()
+>     .type("1000");
+> 
+>   // 5. Apply the filter.
+>   cy.getBySel("transaction-filter-apply").click();
+> 
+>   // 6. Verify that no transactions appear in the feed list.
+>   //    (Adjust the selector for your transaction list items as appropriate.)
+>   cy.getBySelLike("transaction-item")
+>     .should("exist")     // The component might exist with an empty state.
+>     .should("have.length", 0);   // Confirm zero transaction items are shown.
+> 
+>   // 7. (Optional) If there's an empty-state or "no results" message, verify it is displayed.
+>   cy.getBySel("transaction-empty-state")
+>     .should("be.visible")
+>     .and("contain.text", "No Transactions Found");
+> });
+> </generated_code>

@@ -43,50 +43,9 @@ interface ActionAnalysis {
   };
 }
 
-interface ActionComparison {
-  _id: string;
-  target: string;
-  targetDisplayName: string;
-  baseline: string;
-  baselineDisplayName: string;
-  timestamp: string;
-  metrics: {
-    actionEfficiency: {
-      target: number;
-      baseline: number;
-      difference: number;
-      percentageChange: number;
-    };
-    executionEfficiency: {
-      target: number;
-      baseline: number;
-      difference: number;
-      percentageChange: number;
-    };
-    avgExecutionTime: {
-      target: number;
-      baseline: number;
-      difference: number;
-      percentageChange: number;
-    };
-  };
-  actionTypeComparison: {
-    [actionType: string]: {
-      target: number;
-      baseline: number;
-      difference: number;
-      percentageChange: number;
-    };
-  };
-  summary: {
-    isMoreEfficient: boolean;
-    hasHigherPassRate: boolean;
-    isFaster: boolean;
-  };
-}
-
 // New interfaces for test details
 interface TestDetails {
+  id?: string;
   testName: string;
   filename: string;
   filePath: string;
@@ -195,12 +154,11 @@ interface ActionSummary {
 const ActionUsageComparisonView: React.FC = () => {
   const [actionSummary, setActionSummary] = useState<ActionSummary | null>(null);
   const [actionAnalyses, setActionAnalyses] = useState<ActionAnalysis[]>([]);
-  const [actionComparisons, setActionComparisons] = useState<ActionComparison[]>([]);
   const [testDetails, setTestDetails] = useState<TestDetailsComparison[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedLLM, setSelectedLLM] = useState<string>('');
-  const [selectedView, setSelectedView] = useState<'summary' | 'detailed' | 'comparison'>('summary');
+  const [selectedView, setSelectedView] = useState<'summary' | 'detailed'>('summary');
   const [availableLLMs, setAvailableLLMs] = useState<Array<{key: string, displayName: string}>>([]);
 
   useEffect(() => {
@@ -218,23 +176,13 @@ const ActionUsageComparisonView: React.FC = () => {
         throw new Error('Failed to fetch action usage summary');
       }
       const summaryData = await summaryResponse.json();
-      setActionSummary(summaryData);
-
-      // Fetch all action analyses
+      setActionSummary(summaryData);      // Fetch all action analyses
       const analysesResponse = await fetch('/api/mongo/action-usage-analysis?type=analysis&latest=true');
       if (!analysesResponse.ok) {
         throw new Error('Failed to fetch action analyses');
       }
       const analysesData = await analysesResponse.json();
       setActionAnalyses(Array.isArray(analysesData) ? analysesData : []);
-
-      // Fetch all comparisons
-      const comparisonsResponse = await fetch('/api/mongo/action-usage-analysis?type=comparison&latest=true');
-      if (!comparisonsResponse.ok) {
-        throw new Error('Failed to fetch action comparisons');
-      }
-      const comparisonsData = await comparisonsResponse.json();
-      setActionComparisons(Array.isArray(comparisonsData) ? comparisonsData : []);
 
       // Fetch test details
       const testDetailsResponse = await fetch('/api/mongo/action-usage-analysis?type=test-details&latest=true');
@@ -250,14 +198,18 @@ const ActionUsageComparisonView: React.FC = () => {
         throw new Error('Failed to fetch LLM list');
       }
       const llmListData = await llmListResponse.json();
-      setAvailableLLMs(Array.isArray(llmListData) ? llmListData : []);
-
-      console.log('✅ Action Usage Analysis data loaded successfully');
+      setAvailableLLMs(Array.isArray(llmListData) ? llmListData : []);      console.log('✅ Action Usage Analysis data loaded successfully');
       console.log('Summary:', summaryData);
       console.log('Analyses:', analysesData?.length || 0, 'items');
-      console.log('Comparisons:', comparisonsData?.length || 0, 'items');
       console.log('Test Details:', testDetailsData?.length || 0, 'items');
       console.log('Available LLMs:', llmListData?.length || 0, 'items');
+      
+      // Detailed logging for test details
+      if (testDetailsData && testDetailsData.length > 0) {
+        console.log('📊 First test detail:', testDetailsData[0]);
+        console.log('📊 Test comparison structure:', testDetailsData[0]?.testComparison);
+        console.log('📊 Tests array:', testDetailsData[0]?.testComparison?.tests?.length || 0, 'tests');
+      }
 
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
@@ -352,7 +304,8 @@ const ActionUsageComparisonView: React.FC = () => {
 
         {/* LLM Performance Comparison Table - Now at the Top */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
-          <h3 className="text-xl font-semibold mb-4 text-white">LLM Performance Comparison</h3><div className="overflow-x-auto">
+          <h3 className="text-xl font-semibold mb-4 text-white">LLM Performance Comparison</h3>
+          <div className="overflow-x-auto">
             <table className="min-w-full table-auto">
               <thead>
                 <tr className="bg-gray-700">
@@ -362,11 +315,14 @@ const ActionUsageComparisonView: React.FC = () => {
                   <th className="px-4 py-3 text-center text-gray-200 font-semibold">Passed Tests</th>
                   <th className="px-4 py-3 text-center text-gray-200 font-semibold">Passed Percentage</th>
                   <th className="px-4 py-3 text-center text-gray-200 font-semibold">Overall Performance</th>
-                </tr>              </thead>
+                </tr>
+              </thead>
               <tbody>{(() => {
                   // Find the original (baseline) LLM data to get total tests
                   const originalLLM = actionSummary.llmAnalyses?.find(llm => llm?.llm === 'original');
-                  const totalTestsFromOriginal = originalLLM ? originalLLM.totalTests : actionSummary.llmAnalyses?.[0]?.totalTests || 0;                  // Calculate overall performance scores for sorting
+                  const totalTestsFromOriginal = originalLLM ? originalLLM.totalTests : actionSummary.llmAnalyses?.[0]?.totalTests || 0;
+
+                  // Calculate overall performance scores for sorting
                   const llmsWithPerformance = (actionSummary.llmAnalyses || [])
                     .filter((llm): llm is NonNullable<typeof llm> => Boolean(llm)) // Type guard
                     .map(llm => {
@@ -382,7 +338,10 @@ const ActionUsageComparisonView: React.FC = () => {
                         overallScore: overallScore || 0, 
                         executionRate: executionRate || 0, 
                         passRate: passRate || 0 
-                      };                    });                  return llmsWithPerformance
+                      };
+                    });
+
+                  return llmsWithPerformance
                     .sort((a, b) => b.overallScore - a.overallScore) // Sort by overall performance (highest first)
                     .map((llm, index) => (
                       <tr key={llm.llm} className={`hover:bg-gray-600 ${index % 2 === 0 ? 'bg-gray-700' : 'bg-gray-800'}`}>
@@ -402,7 +361,8 @@ const ActionUsageComparisonView: React.FC = () => {
                             llm.executionRate >= 50 ? 'text-orange-400' : 'text-red-400'
                           }`}>
                             {llm.executionRate.toFixed(1)}%
-                          </div>                          <div className="text-xs text-gray-400">
+                          </div>
+                          <div className="text-xs text-gray-400">
                             Execution Rate
                           </div>
                         </td>
@@ -416,7 +376,8 @@ const ActionUsageComparisonView: React.FC = () => {
                             llm.passRate >= 50 ? 'text-orange-400' : 'text-red-400'
                           }`}>
                             {llm.passRate.toFixed(1)}%
-                          </div>                          <div className="text-xs text-gray-400">
+                          </div>
+                          <div className="text-xs text-gray-400">
                             Pass Rate
                           </div>
                         </td>
@@ -469,129 +430,23 @@ const ActionUsageComparisonView: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Action Type Distribution */}
-        <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
-          <h3 className="text-lg font-semibold mb-4 text-white">Action Type Distribution Across All LLMs</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
-            {Object.entries(actionSummary.summary.actionTypeDistribution).map(([actionType, count], index) => (
-              <div key={actionType} className="text-center p-3 bg-gray-700 rounded">
-                <div className="text-sm font-medium text-gray-200">{actionType}</div>
-                <div className="text-lg font-bold text-blue-400">{count}</div>
-                <div className="text-xs text-gray-400">total uses</div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     );
   };
-
   const renderDetailedView = () => {
     const selectedAnalysis = actionAnalyses.find(a => a.llm === selectedLLM);
     const selectedTestDetails = testDetails.find(td => td.target === selectedLLM);
     
+    console.log(`🔍 Rendering detailed view for LLM: ${selectedLLM}`);
+    console.log(`📊 Selected analysis found:`, !!selectedAnalysis);
+    console.log(`📊 Selected test details found:`, !!selectedTestDetails);
+    console.log(`📊 Available test details targets:`, testDetails.map(td => td.target));
+    console.log(`📊 Selected test details:`, selectedTestDetails);
+    
     if (!selectedAnalysis) {
       return <div className="text-center py-8 text-gray-300">Select an LLM to view detailed analysis</div>;
-    }
-
-    return (
+    }return (
       <div className="space-y-6">
-        <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
-          <h2 className="text-xl font-bold mb-4 text-white">{selectedAnalysis.displayName} - Detailed Analysis</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            {/* Action Summary */}
-            <div className="bg-gray-700 p-4 rounded">
-              <h3 className="font-semibold text-blue-300 mb-3">Action Summary</h3>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Total Actions:</span>
-                  <span className="font-medium text-white">{selectedAnalysis.actions.total}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Commands per Test:</span>
-                  <span className="font-medium text-white">{selectedAnalysis.efficiency.commandsPerTest.toFixed(1)}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Total Tests:</span>
-                  <span className="font-medium text-white">{selectedAnalysis.efficiency.totalTests}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Execution Summary */}
-            <div className="bg-gray-700 p-4 rounded">
-              <h3 className="font-semibold text-green-300 mb-3">Execution Summary</h3>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Pass Rate:</span>
-                  <span className="font-medium text-white">{selectedAnalysis.execution.passRate.toFixed(1)}%</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Passed:</span>
-                  <span className="font-medium text-white">{selectedAnalysis.execution.passed}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Failed:</span>
-                  <span className="font-medium text-white">{selectedAnalysis.execution.failed}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Test Complexity */}
-            <div className="bg-gray-700 p-4 rounded">
-              <h3 className="font-semibold text-purple-300 mb-3">Test Complexity</h3>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Simple (1-5):</span>
-                  <span className="font-medium text-white">{selectedAnalysis.actions.patterns.testComplexity.simple}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Medium (6-15):</span>
-                  <span className="font-medium text-white">{selectedAnalysis.actions.patterns.testComplexity.medium}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Complex (16+):</span>
-                  <span className="font-medium text-white">{selectedAnalysis.actions.patterns.testComplexity.complex}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Action Distribution */}
-          <div className="mt-6">
-            <h3 className="font-semibold mb-3 text-white">Action Type Distribution</h3>
-            {renderActionDistributionChart(selectedAnalysis.actions.patterns.actionDistribution)}
-          </div>
-
-          {/* Most/Least Used Actions */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-            <div>
-              <h3 className="font-semibold mb-3 text-white">Most Used Actions</h3>
-              <div className="space-y-2">
-                {selectedAnalysis.actions.patterns.mostUsedActions.slice(0, 5).map(([action, count]) => (
-                  <div key={action} className="flex justify-between text-sm bg-gray-700 p-2 rounded">
-                    <span className="text-gray-300">{action}</span>
-                    <span className="font-medium text-white">{count}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-3 text-white">Least Used Actions</h3>
-              <div className="space-y-2">
-                {selectedAnalysis.actions.patterns.leastUsedActions.slice(0, 5).map(([action, count]) => (
-                  <div key={action} className="flex justify-between text-sm bg-gray-700 p-2 rounded">
-                    <span className="text-gray-300">{action}</span>
-                    <span className="font-medium text-white">{count}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Comprehensive Test Details */}
         {selectedTestDetails && (
           <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
@@ -647,10 +502,10 @@ const ActionUsageComparisonView: React.FC = () => {
                 </thead>
                 <tbody>
                   {selectedTestDetails.testComparison.tests.map((test, index) => (
-                    <tr key={`${test.filename}-${test.testName}`} className={`hover:bg-gray-600 ${index % 2 === 0 ? 'bg-gray-700' : 'bg-gray-800'}`}>
+                    <tr key={test.id || `${selectedTestDetails.target}-${test.filename}-${test.testName || 'unnamed'}-${index}`} className={`hover:bg-gray-600 ${index % 2 === 0 ? 'bg-gray-700' : 'bg-gray-800'}`}>
                       <td className="px-3 py-2 text-xs">
-                        <div className="text-white font-medium truncate max-w-xs" title={test.testName}>
-                          {test.testName}
+                        <div className="text-white font-medium truncate max-w-xs" title={test.testName || 'Unnamed test'}>
+                          {test.testName || 'Unnamed test'}
                         </div>
                         <div className="text-gray-400 text-xs truncate max-w-xs" title={test.filename}>
                           {test.filename}
@@ -707,268 +562,6 @@ const ActionUsageComparisonView: React.FC = () => {
     );
   };
 
-  const renderComparisonView = () => {
-    const selectedComparison = actionComparisons.find(c => c.target === selectedLLM);
-    const selectedTestDetails = testDetails.find(td => td.target === selectedLLM);
-    
-    if (!selectedComparison) {
-      return <div className="text-center py-8 text-gray-300">Select an LLM to view comparison with baseline</div>;
-    }
-
-    return (
-      <div className="space-y-6">
-        <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
-          <h2 className="text-xl font-bold mb-4 text-white">
-            {selectedComparison.targetDisplayName} vs {selectedComparison.baselineDisplayName}
-          </h2>
-
-          {/* Key Metrics Comparison */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-            <div className="bg-gray-700 p-4 rounded">
-              <h3 className="font-semibold text-blue-300 mb-3">Action Efficiency</h3>
-              <div className="text-2xl font-bold text-white mb-2">
-                {selectedComparison.metrics.actionEfficiency.target.toFixed(1)} 
-                <span className="text-sm text-gray-400 ml-1">vs {selectedComparison.metrics.actionEfficiency.baseline.toFixed(1)}</span>
-              </div>
-              <div className={`text-sm font-medium ${
-                selectedComparison.metrics.actionEfficiency.percentageChange > 0 ? 'text-red-400' : 'text-green-400'
-              }`}>
-                {selectedComparison.metrics.actionEfficiency.percentageChange > 0 ? '+' : ''}
-                {selectedComparison.metrics.actionEfficiency.percentageChange.toFixed(1)}% change
-              </div>
-            </div>
-
-            <div className="bg-gray-700 p-4 rounded">
-              <h3 className="font-semibold text-green-300 mb-3">Execution Efficiency</h3>
-              <div className="text-2xl font-bold text-white mb-2">
-                {selectedComparison.metrics.executionEfficiency.target.toFixed(1)}%
-                <span className="text-sm text-gray-400 ml-1">vs {selectedComparison.metrics.executionEfficiency.baseline.toFixed(1)}%</span>
-              </div>
-              <div className={`text-sm font-medium ${
-                selectedComparison.metrics.executionEfficiency.percentageChange > 0 ? 'text-green-400' : 'text-red-400'
-              }`}>
-                {selectedComparison.metrics.executionEfficiency.percentageChange > 0 ? '+' : ''}
-                {selectedComparison.metrics.executionEfficiency.percentageChange.toFixed(1)}% change
-              </div>
-            </div>
-
-            <div className="bg-gray-700 p-4 rounded">
-              <h3 className="font-semibold text-purple-300 mb-3">Execution Time</h3>
-              <div className="text-2xl font-bold text-white mb-2">
-                {selectedComparison.metrics.avgExecutionTime.target.toFixed(0)}ms
-                <span className="text-sm text-gray-400 ml-1">vs {selectedComparison.metrics.avgExecutionTime.baseline.toFixed(0)}ms</span>
-              </div>
-              <div className={`text-sm font-medium ${
-                selectedComparison.metrics.avgExecutionTime.percentageChange > 0 ? 'text-red-400' : 'text-green-400'
-              }`}>
-                {selectedComparison.metrics.avgExecutionTime.percentageChange > 0 ? '+' : ''}
-                {selectedComparison.metrics.avgExecutionTime.percentageChange.toFixed(1)}% change
-              </div>
-            </div>
-          </div>
-
-          {/* Action Type Comparison */}
-          <div className="bg-gray-700 p-4 rounded mb-6">
-            <h3 className="font-semibold text-white mb-4">Action Type Usage Comparison</h3>
-            <div className="overflow-x-auto">
-              <table className="min-w-full">
-                <thead>
-                  <tr className="bg-gray-600">
-                    <th className="px-3 py-2 text-left text-xs font-semibold text-gray-200">Action Type</th>
-                    <th className="px-3 py-2 text-center text-xs font-semibold text-gray-200">Target</th>
-                    <th className="px-3 py-2 text-center text-xs font-semibold text-gray-200">Baseline</th>
-                    <th className="px-3 py-2 text-center text-xs font-semibold text-gray-200">Difference</th>
-                    <th className="px-3 py-2 text-center text-xs font-semibold text-gray-200">Change %</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {Object.entries(selectedComparison.actionTypeComparison).map(([actionType, comparison], index) => (
-                    <tr key={actionType} className={`${index % 2 === 0 ? 'bg-gray-700' : 'bg-gray-800'}`}>
-                      <td className="px-3 py-2 text-xs font-medium text-white">{actionType}</td>
-                      <td className="px-3 py-2 text-center text-xs text-white">{comparison.target}</td>
-                      <td className="px-3 py-2 text-center text-xs text-white">{comparison.baseline}</td>
-                      <td className="px-3 py-2 text-center text-xs">
-                        <span className={`${comparison.difference > 0 ? 'text-red-400' : comparison.difference < 0 ? 'text-green-400' : 'text-gray-400'}`}>
-                          {comparison.difference > 0 ? '+' : ''}{comparison.difference}
-                        </span>
-                      </td>
-                      <td className="px-3 py-2 text-center text-xs">
-                        <span className={`${comparison.percentageChange > 0 ? 'text-red-400' : comparison.percentageChange < 0 ? 'text-green-400' : 'text-gray-400'}`}>
-                          {comparison.percentageChange > 0 ? '+' : ''}{comparison.percentageChange.toFixed(1)}%
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Summary */}
-          <div className="bg-gray-700 p-4 rounded">
-            <h3 className="font-semibold text-white mb-3">Performance Summary</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="flex items-center space-x-2">
-                <span className={`w-3 h-3 rounded-full ${selectedComparison.summary.isMoreEfficient ? 'bg-green-500' : 'bg-red-500'}`}></span>
-                <span className="text-sm text-gray-300">
-                  {selectedComparison.summary.isMoreEfficient ? 'More Efficient' : 'Less Efficient'}
-                </span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className={`w-3 h-3 rounded-full ${selectedComparison.summary.hasHigherPassRate ? 'bg-green-500' : 'bg-red-500'}`}></span>
-                <span className="text-sm text-gray-300">
-                  {selectedComparison.summary.hasHigherPassRate ? 'Higher Pass Rate' : 'Lower Pass Rate'}
-                </span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className={`w-3 h-3 rounded-full ${selectedComparison.summary.isFaster ? 'bg-green-500' : 'bg-red-500'}`}></span>
-                <span className="text-sm text-gray-300">
-                  {selectedComparison.summary.isFaster ? 'Faster Execution' : 'Slower Execution'}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Comprehensive Test Comparison */}
-        {selectedTestDetails && (
-          <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
-            <h3 className="text-xl font-bold mb-4 text-white">
-              Comprehensive Test Comparison with {selectedTestDetails.baselineDisplayName}
-            </h3>
-            
-            {/* Test Summary Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-              <div className="bg-gray-700 p-3 rounded text-center">
-                <div className="text-lg font-bold text-blue-400">
-                  {selectedTestDetails.testComparison.summary.totalTargetTests}/{selectedTestDetails.testComparison.summary.totalBaselineTests}
-                </div>
-                <div className="text-xs text-gray-300">Tests Executed</div>
-                <div className="text-xs text-blue-300">
-                  {selectedTestDetails.testComparison.summary.executionRate.toFixed(1)}%
-                </div>
-              </div>
-              <div className="bg-gray-700 p-3 rounded text-center">
-                <div className="text-lg font-bold text-green-400">
-                  {selectedTestDetails.testComparison.summary.targetPassedTests}
-                </div>
-                <div className="text-xs text-gray-300">Tests Passed</div>
-                <div className="text-xs text-green-300">
-                  {selectedTestDetails.testComparison.summary.targetPassRate.toFixed(1)}%
-                </div>
-              </div>
-              <div className="bg-gray-700 p-3 rounded text-center">
-                <div className="text-lg font-bold text-yellow-400">
-                  {selectedTestDetails.testComparison.summary.matchingPassed}
-                </div>
-                <div className="text-xs text-gray-300">Both Passed</div>
-              </div>
-              <div className="bg-gray-700 p-3 rounded text-center">
-                <div className="text-lg font-bold text-red-400">
-                  {selectedTestDetails.testComparison.summary.matchingFailed}
-                </div>
-                <div className="text-xs text-gray-300">Both Failed</div>
-              </div>
-            </div>
-
-            {/* Detailed Test List with filters */}
-            <div className="mb-4">
-              <div className="flex flex-wrap gap-2">
-                <span className="text-sm text-gray-300">Filter by status:</span>
-                <button className="px-2 py-1 text-xs bg-green-600 text-white rounded">Both Passed</button>
-                <button className="px-2 py-1 text-xs bg-red-600 text-white rounded">Both Failed</button>
-                <button className="px-2 py-1 text-xs bg-yellow-600 text-white rounded">Status Mismatch</button>
-                <button className="px-2 py-1 text-xs bg-gray-600 text-white rounded">Not Executed</button>
-                <button className="px-2 py-1 text-xs bg-blue-600 text-white rounded">All Tests</button>
-              </div>
-            </div>
-
-            {/* Comprehensive Test Table */}
-            <div className="overflow-x-auto">
-              <table className="min-w-full text-xs">
-                <thead>
-                  <tr className="bg-gray-700">
-                    <th className="px-2 py-2 text-left text-xs font-semibold text-gray-200">Test Name</th>
-                    <th className="px-2 py-2 text-center text-xs font-semibold text-gray-200">Baseline</th>
-                    <th className="px-2 py-2 text-center text-xs font-semibold text-gray-200">Target</th>
-                    <th className="px-2 py-2 text-center text-xs font-semibold text-gray-200">Status Match</th>
-                    <th className="px-2 py-2 text-center text-xs font-semibold text-gray-200">Actions</th>
-                    <th className="px-2 py-2 text-center text-xs font-semibold text-gray-200">Duration</th>
-                    <th className="px-2 py-2 text-center text-xs font-semibold text-gray-200">Commands</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {selectedTestDetails.testComparison.tests.map((test, index) => (
-                    <tr key={`${test.filename}-${test.testName}`} className={`hover:bg-gray-600 ${index % 2 === 0 ? 'bg-gray-700' : 'bg-gray-800'}`}>
-                      <td className="px-2 py-2">
-                        <div className="text-white font-medium truncate max-w-xs" title={test.testName}>
-                          {test.testName}
-                        </div>
-                        <div className="text-gray-400 text-xs truncate max-w-xs" title={test.filename}>
-                          {test.filename}
-                        </div>
-                      </td>
-                      <td className="px-2 py-2 text-center">
-                        <div className={`inline-block px-2 py-1 rounded text-xs font-semibold ${
-                          test.baseline.passed ? 'bg-green-600 text-green-100' : 'bg-red-600 text-red-100'
-                        }`}>
-                          {test.baseline.status}
-                        </div>
-                        <div className="text-xs text-gray-400 mt-1">{test.baseline.duration}ms</div>
-                      </td>
-                      <td className="px-2 py-2 text-center">
-                        {test.target.executed ? (
-                          <>
-                            <div className={`inline-block px-2 py-1 rounded text-xs font-semibold ${
-                              test.target.passed ? 'bg-green-600 text-green-100' : 'bg-red-600 text-red-100'
-                            }`}>
-                              {test.target.status}
-                            </div>
-                            <div className="text-xs text-gray-400 mt-1">{test.target.duration}ms</div>
-                          </>
-                        ) : (
-                          <div className="inline-block px-2 py-1 rounded text-xs font-semibold bg-gray-600 text-gray-300">
-                            Not executed
-                          </div>
-                        )}
-                      </td>
-                      <td className="px-2 py-2 text-center">
-                        <span className={`inline-block w-3 h-3 rounded-full ${
-                          test.comparison.statusMatch ? 'bg-green-500' : 'bg-red-500'
-                        }`}></span>
-                      </td>
-                      <td className="px-2 py-2 text-center">
-                        <div className="text-white">
-                          {test.baseline.actionableCommands} → {test.target.actionableCommands}
-                        </div>
-                        {test.comparison.actionsDifference !== 0 && (
-                          <div className={`text-xs ${test.comparison.actionsDifference > 0 ? 'text-red-400' : 'text-green-400'}`}>
-                            {test.comparison.actionsDifference > 0 ? '+' : ''}{test.comparison.actionsDifference}
-                          </div>
-                        )}
-                      </td>
-                      <td className="px-2 py-2 text-center">
-                        {test.comparison.durationDifference !== 0 && (
-                          <div className={`text-xs ${test.comparison.durationDifference > 0 ? 'text-red-400' : 'text-green-400'}`}>
-                            {test.comparison.durationDifference > 0 ? '+' : ''}{test.comparison.durationDifference}ms
-                          </div>
-                        )}
-                      </td>
-                      <td className="px-2 py-2 text-center">
-                        <div className="text-xs text-gray-400">
-                          B: {test.baseline.commands.length} | T: {test.target.commands.length}
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
-      </div>
-    );
-  };
 
   if (loading) {
     return (
@@ -1046,20 +639,10 @@ const ActionUsageComparisonView: React.FC = () => {
             >
               Detailed Analysis
             </button>
-            <button
-              onClick={() => setSelectedView('comparison')}
-              className={`px-4 py-2 rounded text-sm font-medium transition-colors ${
-                selectedView === 'comparison'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-              }`}
-            >
-              Comparison
-            </button>
           </div>
 
-          {/* LLM Selector (for detailed and comparison views) */}
-          {(selectedView === 'detailed' || selectedView === 'comparison') && (
+          {/* LLM Selector (for detailed view) */}
+          {selectedView === 'detailed' && (
             <div className="flex items-center gap-4">
               <label className="text-gray-300 font-medium">Select LLM:</label>
               <select
@@ -1095,12 +678,9 @@ const ActionUsageComparisonView: React.FC = () => {
               Trigger New Analysis
             </button>
           </div>
-        </div>
-
-        {/* Content */}
+        </div>        {/* Content */}
         {selectedView === 'summary' && renderSummaryView()}
         {selectedView === 'detailed' && renderDetailedView()}
-        {selectedView === 'comparison' && renderComparisonView()}
       </div>
     </div>
   );

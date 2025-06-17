@@ -29,43 +29,5 @@ describe("Transaction View", function () {
         cy.getBySel("nav-personal-tab").click();
         cy.wait("@personalTransactions");
     });
-    it("comments on a transaction", () => {
-// Assuming we need to navigate to a specific transaction first
-
-  // We'll use the transaction request that was found in beforeEach
-
-  if (!ctx.transactionRequest) {
-    cy.log('No pending transaction request found for testing');
-    return;
-  }
-
-  // Click on the pending transaction to view its details
-
-  cy.getBySel("transaction-item").contains(`$${ctx.transactionRequest.amount}`).first().click();
-
-  // Wait for transaction details to load
-
-  cy.wait("@getTransaction");
-
-  // Type a comment in the comment input field
-
-  const commentText = "This is a test comment on the transaction";
-  cy.getBySel("transaction-comment-input").should("be.visible").type(commentText);
-
-  // Submit the comment
-
-  cy.getBySel("transaction-comment-submit").should("be.visible").click();
-
-  // Wait for the comment to be submitted and the transaction to refresh
-
-  cy.wait("@getTransaction");
-
-  // Verify that the comment appears in the transaction comments section
-
-  cy.getBySel("transaction-comment-list").should("contain", commentText);
-
-  // Verify the comment shows the current user's name
-
-  cy.getBySel("transaction-comment-list").should("contain", ctx.authenticatedUser?.firstName).should("contain", ctx.authenticatedUser?.lastName);
- });
+    it("comments on a transaction", () => { });
 });

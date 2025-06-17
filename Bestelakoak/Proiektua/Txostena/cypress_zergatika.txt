@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Pommelo}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Description}
+The pommelo (\textit{Citrus maxima} or \textit{Citrus grandis}) is the largest citrus fruit from the family Rutaceae and the principal ancestor of the grapefruit.
+
+\section*{Characteristics}
+\begin{itemize}
+    \item Largest citrus fruit
+    \item Sweet taste
+    \item Thick rind
+\end{itemize}
+
+\section*{Uses}
+\begin{itemize}
+    \item Fresh consumption
+    \item Ingredient in salads
+    \item

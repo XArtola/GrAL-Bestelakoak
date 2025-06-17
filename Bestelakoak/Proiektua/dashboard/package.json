@@ -13,6 +13,7 @@
     "ingest-prompt-results": "node scripts/ingest-prompt-results.js",
     "ingest-prompt-results:stats": "node scripts/ingest-prompt-results.js --stats",
     "ingest-prompt-results:clear": "node scripts/ingest-prompt-results.js --clear",
+    "ingest-test-data": "node scripts/ingest-test-data.js",
     "merge-results": "node scripts/merge-test-results.js",
     "merge-results:all": "node scripts/merge-test-results.js --all",
     "save-to-db": "node scripts/save-to-database.js",

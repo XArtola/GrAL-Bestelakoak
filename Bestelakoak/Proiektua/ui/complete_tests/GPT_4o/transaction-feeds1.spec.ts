@@ -44,24 +44,6 @@ describe("Transaction Feed", function () {
         });
     });
     describe("app layout and responsiveness", function () {
-        it("toggles the navigation drawer", () => {
-// it("toggles the navigation drawer", () => { });
-<generated_code>
-// Test to toggle the navigation drawer
-it("toggles the navigation drawer", () => {
-    // Open the navigation drawer
-    cy.getBySel("nav-toggle").click();
-    
-    // Assert that the navigation drawer is visible
-    cy.getBySel("sidenav").should("be.visible");
-    
-    // Close the navigation drawer
-    cy.getBySel("nav-toggle").click();
-    
-    // Assert that the navigation drawer is hidden
-    cy.getBySel("sidenav").should("not.be.visible");
-});
-</generated_code>
- });
+        it("toggles the navigation drawer", () => { });
     });
 });

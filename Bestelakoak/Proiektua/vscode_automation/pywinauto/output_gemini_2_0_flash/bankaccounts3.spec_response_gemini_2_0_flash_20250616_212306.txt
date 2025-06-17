@@ -1,0 +1,133 @@
+---
+tools: ['codebase']
+---
+
+#file:cypress-realworld-app 
+You are tasked with generating the code inside the 'it' blocks for a Cypress test suite. The test suite is for user sign-up and login functionality. You will be provided with the test suite structure and user information to use in your generated code.
+
+Here is the Cypress test code structure:
+
+<cypress_test_code>
+import { User } from "../../../src/models";
+import { isMobile } from "../../support/utils";
+const apiGraphQL = `${Cypress.env("apiUrl")}/graphql`;
+type BankAccountsTestCtx = {
+    user?: User;
+};
+describe("Bank Accounts", function () {
+    const ctx: BankAccountsTestCtx = {};
+    beforeEach(function () {
+        cy.task("db:seed");
+        cy.intercept("GET", "/notifications").as("getNotifications");
+        cy.intercept("POST", apiGraphQL, (req) => {
+            const operationAliases: Record<string, string> = {
+                ListBankAccount: "gqlListBankAccountQuery",
+                CreateBankAccount: "gqlCreateBankAccountMutation",
+                DeleteBankAccount: "gqlDeleteBankAccountMutation",
+            };
+            const { body } = req;
+            const operationName = body?.operationName;
+            if (body.hasOwnProperty("operationName") &&
+                operationName &&
+                operationAliases[operationName]) {
+                req.alias = operationAliases[operationName];
+            }
+        });
+        cy.database("find", "users").then((user: User) => {
+            ctx.user = user;
+            return cy.loginByXstate(ctx.user.username);
+        });
+    });
+    it("soft deletes a bank account", () => { });
+});
+
+</cypress_test_code>
+
+And here is the user information to use in your tests:
+
+<user_info>
+{
+  "bankAccountInfo": {
+    "bankName": "The Best Bank",
+    "routingNumber": "987654321",
+    "accountNumber": "123456789"
+  }
+}
+</user_info>
+
+Your task is to generate the code inside each 'it' block so that the Cypress test runs and gets positive results. Follow these guidelines:
+
+1. For each 'it' block, write Cypress commands that test the functionality described in the test name.
+2. Use the provided user information (firstName, lastName, username, password) in your test commands where appropriate.
+3. Ensure that your generated code follows Cypress best practices and conventions.
+4. Include appropriate assertions to verify the expected behavior of each test.
+5. If a test requires multiple steps, use comments to explain each step.
+6. Do not modify the existing code structure or add new 'it' blocks.
+
+When using the user information, refer to it as 'userInfo' followed by the property name, e.g., 'userInfo.firstName'.
+
+If you encounter any scenarios where you need additional information that isn't provided, do not make assumptions. Instead, indicate that more information is needed for that specific test.
+
+For error handling tests, use invalid data that is clearly different from the provided user information.
+
+Place your generated code for each 'it' block within <generated_code> tags, and include the original 'it' block description as a comment before each block of generated code.
+
+Begin generating the code for each 'it' block now.
+
+
+> Copilot:
+>```languageId:typescript
+> import { User } from "../../../src/models";
+> import { isMobile } from "../../support/utils";
+> const apiGraphQL = `${Cypress.env("apiUrl")}/graphql`;
+> type BankAccountsTestCtx = {
+>     user?: User;
+> };
+> describe("Bank Accounts", function () {
+>     const ctx: BankAccountsTestCtx = {};
+>     beforeEach(function () {
+>         cy.task("db:seed");
+>         cy.intercept("GET", "/notifications").as("getNotifications");
+>         cy.intercept("POST", apiGraphQL, (req) => {
+>             const operationAliases: Record<string, string> = {
+>                 ListBankAccount: "gqlListBankAccountQuery",
+>                 CreateBankAccount: "gqlCreateBankAccountMutation",
+>                 DeleteBankAccount: "gqlDeleteBankAccountMutation",
+>             };
+>             const { body } = req;
+>             const operationName = body?.operationName;
+>             if (body.hasOwnProperty("operationName") &&
+>                 operationName &&
+>                 operationAliases[operationName]) {
+>                 req.alias = operationAliases[operationName];
+>             }
+>         });
+>         cy.database("find", "users").then((user: User) => {
+>             ctx.user = user;
+>             return cy.loginByXstate(ctx.user.username);
+>         });
+>     });
+>     // soft deletes a bank account
+>     it("soft deletes a bank account", () => {
+>         // Navigate to bank accounts page
+>         cy.getBySel("sidenav-bankaccounts").click();
+> 
+>         // Wait for bank accounts to load
+>         cy.wait("@gqlListBankAccountQuery");
+> 
+>         // Find the first bank account and click the delete button
+>         cy.get("[data-test*=bankaccount-list-item]")
+>             .first()
+>             .find("[data-test*=bankaccount-delete]")
+>             .click();
+> 
+>         // Wait for the delete mutation to complete
+>         cy.wait("@gqlDeleteBankAccountMutation");
+> 
+>         // Assert that the bank account is no longer visible
+>         cy.get("[data-test*=bankaccount-list-item]")
+>             .first()
+>             .should("not.exist");
+>     });
+> });
+> ```

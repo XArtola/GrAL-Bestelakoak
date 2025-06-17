@@ -3,12 +3,12 @@ const path = require('path');
 const ts = require('typescript');
 
 // Read the extracted test info JSON
-const extractedInfoPath = path.resolve(__dirname, 'insertExtractedData/extracted-test-info.json');
+const extractedInfoPath = path.resolve(__dirname, 'extracted-test-info.json');
 const extractedInfo = JSON.parse(fs.readFileSync(extractedInfoPath, 'utf8'));
 
 // Process directories function
 async function processDirectories() {
-  const baseDir = path.resolve(__dirname, 'ui/complete_tests');
+  const baseDir = path.resolve(__dirname, '..', 'ui', 'complete_tests');
   const dirs = fs.readdirSync(baseDir).filter(file => 
     fs.statSync(path.join(baseDir, file)).isDirectory()
   );

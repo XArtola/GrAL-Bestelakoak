@@ -45,28 +45,7 @@ describe("Transaction Feed", function () {
     });
     describe("filters transaction feeds by date range", function () {
         if (isMobile()) {
-            it("closes date range picker modal", () => {
-// Skip if not mobile view
-
-  if (!isMobile()) {
-    return;
-  }
-
-  // Visit the transactions page
-
-  cy.visit("/");
-  cy.wait("@publicTransactions");
-
-  // Open date range picker
-
-  cy.getBySel("filter-date-range-button").click();
-  cy.getBySel("date-range-filter-drawer").should("be.visible");
-
-  // Close the modal
-
-  cy.getBySel("date-range-filter-drawer-close").click();
-  cy.getBySel("date-range-filter-drawer").should("not.exist");
- });
+            it("closes date range picker modal", () => { });
         }
         _.each(feedViews, (feed, feedName) => {});
     });

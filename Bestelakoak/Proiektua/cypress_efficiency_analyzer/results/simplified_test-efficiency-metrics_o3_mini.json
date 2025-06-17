@@ -1,0 +1,520 @@
+{
+  "testFiles": {
+    "user-settings3.spec.ts": {
+      "test_name": "updates first name, last name, email and phone number",
+      "actionableCommands": 9,
+      "commands": {
+        "type": 4,
+        "clear": 4,
+        "click": 1
+      }
+    },
+    "user-settings2.spec.ts": {
+      "test_name": "should display user setting form errors",
+      "actionableCommands": 11,
+      "commands": {
+        "type": 2,
+        "clear": 4,
+        "blur": 4,
+        "click": 1
+      }
+    },
+    "user-settings1.spec.ts": {
+      "test_name": "renders the user settings form",
+      "actionableCommands": 9,
+      "commands": {
+        "type": 4,
+        "clear": 4,
+        "click": 1
+      }
+    },
+    "transaction-view6.spec.ts": {
+      "test_name": "does not display accept/reject buttons on completed request",
+      "actionableCommands": 1,
+      "commands": {
+        "visit": 1
+      }
+    },
+    "transaction-view5.spec.ts": {
+      "test_name": "rejects a transaction request",
+      "actionableCommands": 1,
+      "commands": {
+        "click": 1
+      }
+    },
+    "transaction-view4.spec.ts": {
+      "test_name": "accepts a transaction request",
+      "actionableCommands": 1,
+      "commands": {
+        "click": 1
+      }
+    },
+    "transaction-view3.spec.ts": {
+      "test_name": "comments on a transaction",
+      "actionableCommands": 0,
+      "commands": {}
+    },
+    "transaction-view2.spec.ts": {
+      "test_name": "likes a transaction",
+      "actionableCommands": 1,
+      "commands": {
+        "click": 1
+      }
+    },
+    "transaction-view1.spec.ts": {
+      "test_name": "transactions navigation tabs are hidden on a transaction view page",
+      "actionableCommands": 1,
+      "commands": {
+        "click": 1
+      }
+    },
+    "transaction-feeds9.spec.ts": {
+      "test_name": "mine feed only shows personal transactions",
+      "actionableCommands": 0,
+      "commands": {}
+    },
+    "transaction-feeds8.spec.ts": {
+      "test_name": "does not show ${feedName} transactions for out of range amount limits",
+      "actionableCommands": 0,
+      "commands": {}
+    },
+    "transaction-feeds6.spec.ts": {
+      "test_name": "does not show ${feedName} transactions for out of range date limits",
+      "actionableCommands": 0,
+      "commands": {}
+    },
+    "transaction-feeds5.spec.ts": {
+      "test_name": "filters ${feedName} transaction feed by date range",
+      "actionableCommands": 0,
+      "commands": {}
+    },
+    "transaction-feeds4.spec.ts": {
+      "test_name": "closes date range picker modal",
+      "actionableCommands": 7,
+      "commands": {
+        "click": 3,
+        "type": 2,
+        "clear": 2
+      }
+    },
+    "transaction-feeds3.spec.ts": {
+      "test_name": "paginates ${feedName} transaction feed",
+      "actionableCommands": 0,
+      "commands": {}
+    },
+    "transaction-feeds2.spec.ts": {
+      "test_name": "renders transactions item variations in feed",
+      "actionableCommands": 0,
+      "commands": {}
+    },
+    "transaction-feeds11.spec.ts": {
+      "test_name": "friends feed only shows contact transactions",
+      "actionableCommands": 0,
+      "commands": {}
+    },
+    "transaction-feeds10.spec.ts": {
+      "test_name": "first five items belong to contacts in public feed",
+      "actionableCommands": 0,
+      "commands": {}
+    },
+    "transaction-feeds1.spec.ts": {
+      "test_name": "toggles the navigation drawer",
+      "actionableCommands": 2,
+      "commands": {
+        "click": 2
+      }
+    },
+    "notifications7.spec.ts": {
+      "test_name": "renders an empty notifications state",
+      "actionableCommands": 1,
+      "commands": {
+        "visit": 1
+      }
+    },
+    "notifications6.spec.ts": {
+      "test_name": "User A sends a payment request to User C",
+      "actionableCommands": 7,
+      "commands": {
+        "loginByXstate": 1,
+        "click": 3,
+        "type": 3
+      }
+    },
+    "notifications5.spec.ts": {
+      "test_name": "User A sends a payment to User B",
+      "actionableCommands": 7,
+      "commands": {
+        "loginByXstate": 2,
+        "visit": 2,
+        "type": 2,
+        "click": 1
+      }
+    },
+    "notifications4.spec.ts": {
+      "test_name": "User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction",
+      "actionableCommands": 1,
+      "commands": {
+        "loginByXstate": 1
+      }
+    },
+    "notifications3.spec.ts": {
+      "test_name": "User A comments on a transaction of User B; User B gets notification that User A commented on their transaction",
+      "actionableCommands": 0,
+      "commands": {}
+    },
+    "notifications2.spec.ts": {
+      "test_name": "User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction",
+      "actionableCommands": 0,
+      "commands": {}
+    },
+    "notifications1.spec.ts": {
+      "test_name": "User A likes a transaction of User B; User B gets notification that User A liked transaction ",
+      "actionableCommands": 0,
+      "commands": {}
+    },
+    "new-transaction5.spec.ts": {
+      "test_name": "submits a transaction request and accepts the request for the receiver",
+      "actionableCommands": 11,
+      "commands": {
+        "click": 5,
+        "type": 3,
+        "clear": 2,
+        "loginByXstate": 1
+      }
+    },
+    "new-transaction4.spec.ts": {
+      "test_name": "submits a transaction payment and verifies the deposit for the receiver",
+      "actionableCommands": 8,
+      "commands": {
+        "type": 2,
+        "clear": 2,
+        "select": 1,
+        "click": 3
+      }
+    },
+    "new-transaction3.spec.ts": {
+      "test_name": "displays new transaction errors",
+      "actionableCommands": 5,
+      "commands": {
+        "visit": 1,
+        "type": 1,
+        "clear": 2,
+        "click": 1
+      }
+    },
+    "new-transaction2.spec.ts": {
+      "test_name": "navigates to the new transaction form, selects a user and submits a transaction request",
+      "actionableCommands": 8,
+      "commands": {
+        "click": 4,
+        "type": 2,
+        "clear": 2
+      }
+    },
+    "new-transaction1.spec.ts": {
+      "test_name": "navigates to the new transaction form, selects a user and submits a transaction payment",
+      "actionableCommands": 7,
+      "commands": {
+        "click": 2,
+        "type": 2,
+        "clear": 2,
+        "select": 1
+      }
+    },
+    "bankaccounts4.spec.ts": {
+      "test_name": "renders an empty bank account list state with onboarding modal",
+      "actionableCommands": 5,
+      "commands": {
+        "click": 2,
+        "type": 3
+      }
+    },
+    "bankaccounts3.spec.ts": {
+      "test_name": "soft deletes a bank account",
+      "actionableCommands": 1,
+      "commands": {
+        "click": 1
+      }
+    },
+    "bankaccounts2.spec.ts": {
+      "test_name": "should display bank account form errors",
+      "actionableCommands": 8,
+      "commands": {
+        "visit": 1,
+        "type": 3,
+        "clear": 3,
+        "submit": 1
+      }
+    },
+    "bankaccounts1.spec.ts": {
+      "test_name": "creates a new bank account",
+      "actionableCommands": 6,
+      "commands": {
+        "visit": 1,
+        "click": 2,
+        "type": 3
+      }
+    },
+    "auth8.spec.ts": {
+      "test_name": "should error for an invalid password for existing user",
+      "actionableCommands": 4,
+      "commands": {
+        "visit": 1,
+        "type": 2,
+        "click": 1
+      }
+    },
+    "auth7.spec.ts": {
+      "test_name": "should error for an invalid user",
+      "actionableCommands": 6,
+      "commands": {
+        "visit": 1,
+        "type": 4,
+        "click": 1
+      }
+    },
+    "auth6.spec.ts": {
+      "test_name": "should display signup errors",
+      "actionableCommands": 33,
+      "commands": {
+        "visit": 1,
+        "clear": 15,
+        "type": 14,
+        "click": 3
+      }
+    },
+    "auth5.spec.ts": {
+      "test_name": "should display login errors",
+      "actionableCommands": 12,
+      "commands": {
+        "visit": 2,
+        "type": 4,
+        "clear": 4,
+        "click": 2
+      }
+    },
+    "auth4.spec.ts": {
+      "test_name": "should allow a visitor to sign-up, login, and logout",
+      "actionableCommands": 11,
+      "commands": {
+        "visit": 1,
+        "type": 6,
+        "click": 4
+      }
+    },
+    "auth3.spec.ts": {
+      "test_name": "should remember a user for 30 days after login",
+      "actionableCommands": 11,
+      "commands": {
+        "visit": 2,
+        "type": 6,
+        "click": 2,
+        "check": 1
+      }
+    },
+    "auth2.spec.ts": {
+      "test_name": "should redirect to the home page after login",
+      "actionableCommands": 4,
+      "commands": {
+        "visit": 1,
+        "type": 2,
+        "click": 1
+      }
+    },
+    "auth1.spec.ts": {
+      "test_name": "should redirect unauthenticated user to signin page",
+      "actionableCommands": 1,
+      "commands": {
+        "visit": 1
+      }
+    }
+  },
+  "summary": {
+    "totalTestFiles": 45,
+    "totalTestCases": 43,
+    "totalActionableCommands": 200,
+    "averageCommandsPerTest": 4.65,
+    "fileBreakdown": {
+      "user-settings3.spec.ts": {
+        "actionableCommands": 9,
+        "itBlockCount": 1
+      },
+      "user-settings2.spec.ts": {
+        "actionableCommands": 11,
+        "itBlockCount": 1
+      },
+      "user-settings1.spec.ts": {
+        "actionableCommands": 9,
+        "itBlockCount": 1
+      },
+      "transaction-view6.spec.ts": {
+        "actionableCommands": 1,
+        "itBlockCount": 1
+      },
+      "transaction-view5.spec.ts": {
+        "actionableCommands": 1,
+        "itBlockCount": 1
+      },
+      "transaction-view4.spec.ts": {
+        "actionableCommands": 1,
+        "itBlockCount": 1
+      },
+      "transaction-view3.spec.ts": {
+        "actionableCommands": 0,
+        "itBlockCount": 1
+      },
+      "transaction-view2.spec.ts": {
+        "actionableCommands": 1,
+        "itBlockCount": 1
+      },
+      "transaction-view1.spec.ts": {
+        "actionableCommands": 1,
+        "itBlockCount": 1
+      },
+      "transaction-feeds9.spec.ts": {
+        "actionableCommands": 0,
+        "itBlockCount": 1
+      },
+      "transaction-feeds8.spec.ts": {
+        "actionableCommands": 0,
+        "itBlockCount": 1
+      },
+      "transaction-feeds7.spec.ts": {
+        "actionableCommands": 0,
+        "itBlockCount": 0
+      },
+      "transaction-feeds6.spec.ts": {
+        "actionableCommands": 0,
+        "itBlockCount": 1
+      },
+      "transaction-feeds5.spec.ts": {
+        "actionableCommands": 0,
+        "itBlockCount": 1
+      },
+      "transaction-feeds4.spec.ts": {
+        "actionableCommands": 7,
+        "itBlockCount": 1
+      },
+      "transaction-feeds3.spec.ts": {
+        "actionableCommands": 0,
+        "itBlockCount": 1
+      },
+      "transaction-feeds2.spec.ts": {
+        "actionableCommands": 0,
+        "itBlockCount": 1
+      },
+      "transaction-feeds11.spec.ts": {
+        "actionableCommands": 0,
+        "itBlockCount": 1
+      },
+      "transaction-feeds10.spec.ts": {
+        "actionableCommands": 0,
+        "itBlockCount": 1
+      },
+      "transaction-feeds1.spec.ts": {
+        "actionableCommands": 2,
+        "itBlockCount": 1
+      },
+      "notifications7.spec.ts": {
+        "actionableCommands": 1,
+        "itBlockCount": 1
+      },
+      "notifications6.spec.ts": {
+        "actionableCommands": 7,
+        "itBlockCount": 1
+      },
+      "notifications5.spec.ts": {
+        "actionableCommands": 7,
+        "itBlockCount": 1
+      },
+      "notifications4.spec.ts": {
+        "actionableCommands": 1,
+        "itBlockCount": 1
+      },
+      "notifications3.spec.ts": {
+        "actionableCommands": 0,
+        "itBlockCount": 1
+      },
+      "notifications2.spec.ts": {
+        "actionableCommands": 0,
+        "itBlockCount": 1
+      },
+      "notifications1.spec.ts": {
+        "actionableCommands": 0,
+        "itBlockCount": 1
+      },
+      "new-transaction6.spec.ts": {
+        "actionableCommands": 0,
+        "itBlockCount": 0
+      },
+      "new-transaction5.spec.ts": {
+        "actionableCommands": 11,
+        "itBlockCount": 1
+      },
+      "new-transaction4.spec.ts": {
+        "actionableCommands": 8,
+        "itBlockCount": 1
+      },
+      "new-transaction3.spec.ts": {
+        "actionableCommands": 5,
+        "itBlockCount": 1
+      },
+      "new-transaction2.spec.ts": {
+        "actionableCommands": 8,
+        "itBlockCount": 1
+      },
+      "new-transaction1.spec.ts": {
+        "actionableCommands": 7,
+        "itBlockCount": 1
+      },
+      "bankaccounts4.spec.ts": {
+        "actionableCommands": 5,
+        "itBlockCount": 1
+      },
+      "bankaccounts3.spec.ts": {
+        "actionableCommands": 1,
+        "itBlockCount": 1
+      },
+      "bankaccounts2.spec.ts": {
+        "actionableCommands": 8,
+        "itBlockCount": 1
+      },
+      "bankaccounts1.spec.ts": {
+        "actionableCommands": 6,
+        "itBlockCount": 1
+      },
+      "auth8.spec.ts": {
+        "actionableCommands": 4,
+        "itBlockCount": 1
+      },
+      "auth7.spec.ts": {
+        "actionableCommands": 6,
+        "itBlockCount": 1
+      },
+      "auth6.spec.ts": {
+        "actionableCommands": 33,
+        "itBlockCount": 1
+      },
+      "auth5.spec.ts": {
+        "actionableCommands": 12,
+        "itBlockCount": 1
+      },
+      "auth4.spec.ts": {
+        "actionableCommands": 11,
+        "itBlockCount": 1
+      },
+      "auth3.spec.ts": {
+        "actionableCommands": 11,
+        "itBlockCount": 1
+      },
+      "auth2.spec.ts": {
+        "actionableCommands": 4,
+        "itBlockCount": 1
+      },
+      "auth1.spec.ts": {
+        "actionableCommands": 1,
+        "itBlockCount": 1
+      }
+    }
+  }
+}

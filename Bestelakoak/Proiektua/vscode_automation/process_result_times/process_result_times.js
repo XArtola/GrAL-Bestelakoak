@@ -7,6 +7,39 @@ const parser = require('@babel/parser');
 const traverse = require('@babel/traverse').default;
 const generate = require('@babel/generator').default;
 
+// LLM name mappings
+const LLM_NAME_MAPPING = {
+    'claude_3_5_sonnet': 'Claude 3.5 Sonnet',
+    'claude_3_7_sonnet': 'Claude 3.7 Sonnet',
+    'claude_3_7_sonnet_thinking': 'claude 3.7 Sonnet Thinking',
+    'claude_sonnet_4': 'claude Sonnet 4',
+    'gemini_2_0_flash': 'Gemini 2.0 flash',
+    'gemini_2_5_pro_preview': 'Gemini 2.5 Pro (Preview)',
+    'gpt_4_1': 'GPT-4.1',
+    'gpt_4o': 'GPT-4o',
+    'o1_preview': 'o1 (Preview)',
+    'o3_mini': 'o3-mini',
+    'o4_mini_preview': 'o4-mini (Preview)'
+};
+
+// Function to extract testId from source file path
+function extractTestId(sourceFilePath) {
+    if (!sourceFilePath) return null;
+    
+    const fileName = path.basename(sourceFilePath, '.txt');
+    // Remove .spec if present
+    return fileName.replace(/\.spec$/, '');
+}
+
+// Function to get LLM names from normalized name
+function getLLMNames(normalizedName) {
+    const llmName = LLM_NAME_MAPPING[normalizedName] || normalizedName;
+    return {
+        llmName: llmName,
+        llmNormalizedName: normalizedName
+    };
+}
+
 // Base directory paths - using path relative to script's location
 const DEFAULT_BASE_DIR = path.join(__dirname, '..');
 
@@ -123,8 +156,7 @@ async function processOutputFolder(folderPath) {
         
         for (const timestamp of timestampData) {
             if (!timestamp.timestamp) continue;
-            
-            const closestTimestamp = findClosestTimestamp(timestamp.timestamp, copilotTimestamps);
+              const closestTimestamp = findClosestTimestamp(timestamp.timestamp, copilotTimestamps);
             
             if (closestTimestamp && !processedTimestamps.has(closestTimestamp)) {
                 const copilotTiming = copilotTimingMap.get(closestTimestamp);
@@ -133,10 +165,19 @@ async function processOutputFolder(folderPath) {
                     // Mark this timestamp as processed
                     processedTimestamps.add(closestTimestamp);
                     
+                    // Extract testId from source file
+                    const testId = extractTestId(timestamp.source_file);
+                    
+                    // Get LLM names from model name
+                    const llmNames = getLLMNames(modelName);
+                    
                     // Create a matched entry
                     matchedData.push({
                         ...timestamp,
                         ...copilotTiming,
+                        testId: testId,
+                        llmName: llmNames.llmName,
+                        llmNormalizedName: llmNames.llmNormalizedName,
                         code: "" // Will be filled in later
                     });
                 }
@@ -168,6 +209,106 @@ async function processOutputFolder(folderPath) {
 // PART 2: Extract code from response files using extract.js logic
 // ------------------------------------------------------------------------
 
+// Function to extract code specifically for Gemini 2.0 Flash (extracts only content inside it blocks)
+function extractCodeFromFileGemini20Flash(fileContent) {
+    let extractedTests = [];
+
+    // 1. Aislar y limpiar el contenido del bloque de cita (líneas que empiezan con '>').
+    const blockquoteLines = fileContent
+        .split('\n') // Dividir el texto en líneas individuales.
+        .filter(line => line.trim().startsWith('>')) // Quedarse solo con las líneas que forman parte de la cita[cite: 1].
+        .map(line => line.replace(/^>\s?/, '')); // Quitar el símbolo '>' y el espacio opcional del inicio.
+
+    let blockquoteContent = blockquoteLines.join('\n'); // Unir las líneas limpias de nuevo.
+    console.log(`Contenido de cita extraído para Gemini 2.0 Flash: ${blockquoteContent.length} caracteres`);
+
+    // 2. Remove markdown code block markers that Gemini 2.0 Flash includes
+    blockquoteContent = blockquoteContent.replace(/```(?:languageId:typescript|typescript|ts)\s*\n?/g, '');
+    blockquoteContent = blockquoteContent.replace(/\n?\s*```\s*$/g, '');
+    blockquoteContent = blockquoteContent.trim();
+    
+    console.log(`Contenido después de limpiar marcadores de código: ${blockquoteContent.length} caracteres`);
+
+    // Para Gemini 2.0 Flash, buscar directamente los bloques it() en el contenido de la cita
+    try {
+        // Parse the entire blockquote content as TypeScript/JavaScript
+        const ast = parser.parse(blockquoteContent, {
+            sourceType: "module",
+            plugins: ["typescript"],
+            allowImportExportEverywhere: true,
+            allowReturnOutsideFunction: true
+        });
+
+        // Traverse the AST to find it() blocks
+        traverse(ast, {
+            CallExpression(path) {
+                const callee = path.get('callee');
+                if (callee.isIdentifier({ name: 'it' }) && path.node.arguments[0]) {
+                    const testName = path.node.arguments[0].value;
+                    console.log(`Encontrado test en Gemini 2.0 Flash: "${testName}"`);
+                    
+                    const callback = path.get('arguments.1');
+                    if (callback.isArrowFunctionExpression() || callback.isFunctionExpression()) {
+                        const bodyNode = callback.get('body').node;
+                        
+                        // Generate the code string and clean it
+                        const generated = generate(bodyNode, {});
+                        const testCode = generated.code.slice(1, -1).trim();
+
+                        extractedTests.push({
+                            testName: testName,
+                            code: testCode
+                        });
+
+                        console.log(`Código extraído del test en Gemini 2.0 Flash: "${testName}" (${testCode.length} caracteres)`);
+                    }
+                }
+            }
+        });
+
+        if (extractedTests.length > 0) {
+            console.log(`Se extrajeron ${extractedTests.length} test(s) de Gemini 2.0 Flash`);
+            return extractedTests;
+        } else {
+            console.log("No se encontraron bloques it() en el contenido de Gemini 2.0 Flash");
+            return null;
+        }
+
+    } catch (error) {
+        console.error("Error al analizar el código de Gemini 2.0 Flash:", error.message);
+        console.log("Intentando extraer código mediante regex como fallback...");
+        
+        // Fallback: try to extract using regex instead of AST parsing
+        try {
+            // Look for it() blocks using regex
+            const itBlockRegex = /it\s*\(\s*["']([^"']+)["']\s*,\s*\(\s*\)\s*=>\s*\{([\s\S]*?)\}\s*\);?/g;
+            let match;
+            
+            while ((match = itBlockRegex.exec(blockquoteContent)) !== null) {
+                const testName = match[1];
+                const testCode = match[2].trim();
+                
+                extractedTests.push({
+                    testName: testName,
+                    code: testCode
+                });
+                
+                console.log(`Código extraído con regex fallback: "${testName}" (${testCode.length} caracteres)`);
+            }
+            
+            if (extractedTests.length > 0) {
+                return extractedTests;
+            } else {
+                console.log("No se pudieron extraer bloques it() con regex fallback");
+                return null;
+            }
+        } catch (regexError) {
+            console.error("Error en regex fallback:", regexError.message);
+            return null;
+        }
+    }
+}
+
 // Function to extract code from file content (same logic as extract.js)
 function extractCodeFromFile(fileContent) {
     let extractedTests = [];
@@ -179,7 +320,7 @@ function extractCodeFromFile(fileContent) {
         .map(line => line.replace(/^>\s?/, '')); // Quitar el símbolo '>' y el espacio opcional del inicio.
 
     const blockquoteContent = blockquoteLines.join('\n'); // Unir las líneas limpias de nuevo.
-    console.log(`Contenido de cita extraído: ${blockquoteContent.length} caracteres`);    // 2. Extraer el bloque de código de la cita ya limpia.
+    console.log(`Contenido de cita extraído: ${blockquoteContent.length} caracteres`);// 2. Extraer el bloque de código de la cita ya limpia.
     // First try to find regular code blocks (typescript/ts)
     let codeToProcess = null;
     const codeBlockRegex = /```(?:typescript|ts)\s*([\s\S]*?)\s*```/;
@@ -330,7 +471,16 @@ async function extractCodeBlock(filePath) {
         const fileContent = fs.readFileSync(filePath, 'utf8');
         console.log(`Procesando archivo: ${filePath}`);
         
-        const result = extractCodeFromFile(fileContent);
+        // Check if this is a Gemini 2.0 Flash file by looking at the path
+        const isGemini20Flash = filePath.includes('output_gemini_2_0_flash');
+        
+        let result;
+        if (isGemini20Flash) {
+            console.log("Detectado archivo de Gemini 2.0 Flash - usando procesado específico");
+            result = extractCodeFromFileGemini20Flash(fileContent);
+        } else {
+            result = extractCodeFromFile(fileContent);
+        }
         
         if (result && result.length > 0) {
             // Return the code from the first test found

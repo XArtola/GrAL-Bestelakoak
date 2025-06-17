@@ -7,12 +7,13 @@ import ModernResultsView from './components/ModernResultsView';
 import EfficiencyMeasuringView from './components/EfficiencyMeasuringViewReal';
 import TestGenerationTimingView from './components/TestGenerationTimingView';
 import ActionUsageComparisonView from './components/ActionUsageComparisonView';
+import TestFilePerformanceView from './components/TestFilePerformanceView';
 
 export default function Home() {
   const [link, setLink] = useState("");
   const [status, setStatus] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [view, setView] = useState<"add" | "results" | "modern-results" | "llm-tests" | "efficiency" | "test-generation" | "action-usage">("add");
+  const [view, setView] = useState<"add" | "results" | "modern-results" | "llm-tests" | "efficiency" | "test-generation" | "action-usage" | "test-file-performance">("add");
   const [resultsTab, setResultsTab] = useState<"original" | "summary">("summary");
   const [resultsData, setResultsData] = useState<any[]>([]);
   const [summaryData, setSummaryData] = useState<any[]>([]);
@@ -34,8 +35,8 @@ export default function Home() {
   useEffect(() => {
     const savedView = localStorage.getItem('dashboard-view');
     const savedResultsTab = localStorage.getItem('dashboard-results-tab');
-    const savedSortCriteria = localStorage.getItem('dashboard-sort-criteria');    if (savedView && ['add', 'results', 'modern-results', 'llm-tests', 'efficiency', 'test-generation', 'action-usage'].includes(savedView)) {
-      setView(savedView as "add" | "results" | "modern-results" | "llm-tests" | "efficiency" | "test-generation" | "action-usage");
+    const savedSortCriteria = localStorage.getItem('dashboard-sort-criteria');    if (savedView && ['add', 'results', 'modern-results', 'llm-tests', 'efficiency', 'test-generation', 'action-usage', 'test-file-performance'].includes(savedView)) {
+      setView(savedView as "add" | "results" | "modern-results" | "llm-tests" | "efficiency" | "test-generation" | "action-usage" | "test-file-performance");
     }
     
     if (savedResultsTab && ['original', 'summary'].includes(savedResultsTab)) {
@@ -415,9 +416,7 @@ export default function Home() {
               {view === "test-generation" && (
                 <div className="ml-auto w-2 h-2 bg-teal-400 rounded-full animate-pulse" />
               )}
-            </button>
-
-            {/* Action Usage Analysis Button */}
+            </button>            {/* Action Usage Analysis Button */}
             <button 
               onClick={() => setView("action-usage")} 
               className={`nav-button group w-full flex items-center px-4 py-3 rounded-lg text-left transition-all duration-200 ${
@@ -438,6 +437,30 @@ export default function Home() {
               <span className="font-medium">Action Usage Analysis</span>
               {view === "action-usage" && (
                 <div className="ml-auto w-2 h-2 bg-rose-400 rounded-full animate-pulse" />
+              )}
+            </button>
+
+            {/* Test File Performance Button */}
+            <button 
+              onClick={() => setView("test-file-performance")} 
+              className={`nav-button group w-full flex items-center px-4 py-3 rounded-lg text-left transition-all duration-200 ${
+                view === "test-file-performance" 
+                  ? "bg-gradient-to-r from-emerald-500/20 to-green-500/20 text-emerald-300 border border-emerald-500/30 shadow-lg shadow-emerald-500/10" 
+                  : "text-gray-300 hover:bg-gray-700/50 hover:text-white"
+              }`}
+            >
+              <div className={`flex items-center justify-center w-8 h-8 rounded-lg mr-3 transition-colors ${
+                view === "test-file-performance" 
+                  ? "bg-gradient-to-br from-emerald-500 to-green-600 text-white shadow-lg" 
+                  : "bg-gray-700 group-hover:bg-gray-600"
+              }`}>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2 2v-6a2 2 0 012-2h2a2 2 0 012 2zm0 0a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 0v2a2 2 0 01-2 2H9a2 2 0 01-2-2V7" />
+                </svg>
+              </div>
+              <span className="font-medium">Test File Performance</span>
+              {view === "test-file-performance" && (
+                <div className="ml-auto w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
               )}
             </button>
           </div>
@@ -668,11 +691,15 @@ export default function Home() {
             <div className="w-full max-w-6xl">
               <h1 className="text-2xl font-bold mb-6">Test Generation Timing Analysis</h1>
               <TestGenerationTimingView />
-            </div>
-          ) : view === "action-usage" ? (
+            </div>          ) : view === "action-usage" ? (
             <div className="w-full max-w-6xl">
               <h1 className="text-2xl font-bold mb-6">Action Usage Comparison</h1>
               <ActionUsageComparisonView />
+            </div>
+          ) : view === "test-file-performance" ? (
+            <div className="w-full max-w-6xl">
+              <h1 className="text-2xl font-bold mb-6">Test File Performance Analysis</h1>
+              <TestFilePerformanceView />
             </div>
           ) : null}
         </main>

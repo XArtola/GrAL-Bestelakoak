@@ -2,11 +2,13 @@ import { NextResponse } from 'next/server';
 import { MongoClient } from 'mongodb';
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017';
-const DB_NAME = process.env.MONGODB_DB_NAME || 'tests';
+const DB_NAME = process.env.MONGODB_DB_NAME || 'llm_testing_dashboard';
 
 // Collection names
 const COLLECTIONS = {
-  MERGED_TEST_DATA: 'merged_test_data'
+  MERGED_TEST_DATA: 'merged_test_data',
+  TEST_EXECUTION_RESULTS: 'test_execution_results',
+  TEST_EFFICIENCY_METRICS: 'test_efficiency_metrics'
 };
 
 let client;
@@ -32,42 +34,72 @@ export async function GET(request) {
     let result;
 
     switch (type) {      case 'summary':
-        // Generate summary from all LLM data
-        console.log('📊 Generating summary...');
-        const allData = await collection.find({}).toArray();
-        console.log(`📊 Found ${allData.length} records for summary`);
+        // Generate summary from the new simplified collections
+        console.log('📊 Generating summary from simplified collections...');
+        const resultsCollection = database.collection(COLLECTIONS.TEST_EXECUTION_RESULTS);
+        const metricsCollection = database.collection(COLLECTIONS.TEST_EFFICIENCY_METRICS);
         
-        if (allData.length === 0) {
+        const testResults = await resultsCollection.find({}).toArray();
+        const testMetrics = await metricsCollection.find({}).toArray();
+        
+        console.log(`📊 Found ${testResults.length} test result records and ${testMetrics.length} metric records`);
+        
+        if (testResults.length === 0 && testMetrics.length === 0) {
           console.log('⚠️ No data found for summary generation');
           result = {
             error: 'No data available',
-            message: 'No LLM data found in database. Please run the backend processing script first.'
+            message: 'No test data found in database. Please run the ingest-test-data script first.'
           };
         } else {
-          result = generateSummaryFromMergedData(allData);
+          result = generateSummaryFromTestData(testResults, testMetrics);
           console.log('📊 Summary generated:', result ? 'Success' : 'Failed');
           if (!result) {
             result = {
               error: 'Summary generation failed',
-              message: 'Failed to generate summary from available data'
+              message: 'Failed to generate summary from available test data'
             };
           }
         }
-        break;
-
-      case 'analysis':
+        break;      case 'analysis':
+        // Get detailed analysis from the new simplified collections
+        const analysisResultsCollection = database.collection(COLLECTIONS.TEST_EXECUTION_RESULTS);
+        const analysisMetricsCollection = database.collection(COLLECTIONS.TEST_EFFICIENCY_METRICS);
+        
         if (llm) {
           // Get specific LLM analysis
-          result = await collection.findOne({ llm });
-          if (result) {
-            result = transformToAnalysisFormat(result);
+          console.log(`📊 Getting detailed analysis for LLM: ${llm}`);
+          const resultRecord = await analysisResultsCollection.findOne({ llm });
+          const metricRecord = await analysisMetricsCollection.findOne({ llm });
+          
+          if (resultRecord || metricRecord) {
+            result = generateDetailedAnalysisFromTestData(resultRecord, metricRecord, llm);
+          } else {
+            console.log(`❌ No data found for LLM: ${llm}`);
           }
         } else {
           // Get all analyses
-          const allAnalyses = await collection.find({}).toArray();
-          result = allAnalyses.map(data => transformToAnalysisFormat(data));
+          console.log('📊 Getting analysis for all LLMs');
+          const allResultRecords = await analysisResultsCollection.find({}).toArray();
+          const allMetricRecords = await analysisMetricsCollection.find({}).toArray();
+          
+          // Generate analysis for each LLM
+          const llmMap = new Map();
+          
+          // Collect all LLM names
+          allResultRecords.forEach(record => llmMap.set(record.llm, { results: record }));
+          allMetricRecords.forEach(record => {
+            if (llmMap.has(record.llm)) {
+              llmMap.get(record.llm).metrics = record;
+            } else {
+              llmMap.set(record.llm, { metrics: record });
+            }
+          });
+          
+          result = Array.from(llmMap.entries()).map(([llmName, data]) => 
+            generateDetailedAnalysisFromTestData(data.results, data.metrics, llmName)
+          ).filter(analysis => analysis !== null);
         }
-        break;      case 'comparison':
+        break;case 'comparison':
         // Generate comparisons between LLMs
         const comparisonData = await collection.find({}).toArray();
         if (llm) {
@@ -75,35 +107,77 @@ export async function GET(request) {
         } else {
           result = generateAllComparisons(comparisonData);
         }
-        break;
-
-      case 'test-details':
-        // Get detailed test comparison data
-        const testDetailsData = await collection.find({}).toArray();
+        break;      case 'test-details':
+        // Get detailed test comparison data from new collections
+        const testDetailsResultsCollection = database.collection(COLLECTIONS.TEST_EXECUTION_RESULTS);
+        const testDetailsMetricsCollection = database.collection(COLLECTIONS.TEST_EFFICIENCY_METRICS);
+        
         if (llm) {
-          result = generateTestDetailsForLLM(testDetailsData, llm);
+          console.log(`📊 Getting test details for LLM: ${llm}`);
+          const targetResults = await testDetailsResultsCollection.findOne({ llm });
+          const targetMetrics = await testDetailsMetricsCollection.findOne({ llm });
+          const baselineResults = await testDetailsResultsCollection.findOne({ llm: 'original' });
+          const baselineMetrics = await testDetailsMetricsCollection.findOne({ llm: 'original' });
+            if ((targetResults || targetMetrics) && (baselineResults || baselineMetrics)) {
+            result = generateTestDetailsFromTestData(targetResults, targetMetrics, baselineResults, baselineMetrics, llm);
+            console.log(`📋 Generated test details result for ${llm}:`, result ? `${result.testComparison?.tests?.length || 0} test comparisons` : 'null');
+          } else {
+            console.log(`❌ Insufficient data for test details comparison: ${llm}`);
+            console.log(`   Target results: ${!!targetResults}, Target metrics: ${!!targetMetrics}`);
+            console.log(`   Baseline results: ${!!baselineResults}, Baseline metrics: ${!!baselineMetrics}`);
+          }
         } else {
-          result = generateAllTestDetails(testDetailsData);
+          console.log('📊 Getting test details for all LLMs');
+          const allResults = await testDetailsResultsCollection.find({}).toArray();
+          const allMetrics = await testDetailsMetricsCollection.find({}).toArray();
+          const baselineResults = allResults.find(r => r.llm === 'original');
+          const baselineMetrics = allMetrics.find(m => m.llm === 'original');
+          
+          if (baselineResults || baselineMetrics) {
+            result = allResults
+              .filter(r => r.llm !== 'original')
+              .map(targetResults => {
+                const targetMetrics = allMetrics.find(m => m.llm === targetResults.llm);
+                return generateTestDetailsFromTestData(targetResults, targetMetrics, baselineResults, baselineMetrics, targetResults.llm);
+              })
+              .filter(details => details !== null);
+          } else {
+            console.log('❌ No baseline data found for test details comparison');
+          }
         }
-        break;
-
-      case 'stats':
-        // Get collection statistics
-        const count = await collection.countDocuments();
-        const latestRecord = await collection.findOne({}, { sort: { timestamp: -1 } });
+        break;case 'stats':
+        // Get collection statistics from all collections
+        const mergedCount = await collection.countDocuments();
+        const resultsCount = await database.collection(COLLECTIONS.TEST_EXECUTION_RESULTS).countDocuments();
+        const metricsCount = await database.collection(COLLECTIONS.TEST_EFFICIENCY_METRICS).countDocuments();
+        
+        const latestMerged = await collection.findOne({}, { sort: { timestamp: -1 } });
+        const latestResults = await database.collection(COLLECTIONS.TEST_EXECUTION_RESULTS).findOne({}, { sort: { timestamp: -1 } });
+        const latestMetrics = await database.collection(COLLECTIONS.TEST_EFFICIENCY_METRICS).findOne({}, { sort: { timestamp: -1 } });
         
         result = {
           [COLLECTIONS.MERGED_TEST_DATA]: {
-            count,
-            latestDate: latestRecord?.timestamp || null
+            count: mergedCount,
+            latestDate: latestMerged?.timestamp || null
+          },
+          [COLLECTIONS.TEST_EXECUTION_RESULTS]: {
+            count: resultsCount,
+            latestDate: latestResults?.timestamp || null
+          },
+          [COLLECTIONS.TEST_EFFICIENCY_METRICS]: {
+            count: metricsCount,
+            latestDate: latestMetrics?.timestamp || null
           }
         };
-        break;
-
-      case 'llm-list':
-        // Get list of available LLMs
-        const llmList = await collection.distinct('llm');
-        result = llmList.map(llm => ({
+        break;case 'llm-list':
+        // Get list of available LLMs from both collections
+        const resultsLLMs = await database.collection(COLLECTIONS.TEST_EXECUTION_RESULTS).distinct('llm');
+        const metricsLLMs = await database.collection(COLLECTIONS.TEST_EFFICIENCY_METRICS).distinct('llm');
+        
+        // Combine and deduplicate LLM lists
+        const allLLMs = [...new Set([...resultsLLMs, ...metricsLLMs])];
+        
+        result = allLLMs.map(llm => ({
           key: llm,
           displayName: getLLMDisplayName(llm)
         }));
@@ -297,6 +371,558 @@ function transformToAnalysisFormat(mergedData) {
       avgDuration: avgDuration // Use calculated average from matched tests
     }
   };
+}
+
+// Generate test details comparison from simplified test data collections
+function generateTestDetailsFromTestData(targetResults, targetMetrics, baselineResults, baselineMetrics, llmName) {
+  console.log(`🔍 generateTestDetailsFromTestData for LLM: ${llmName}`);
+  console.log(`📊 Target results:`, targetResults ? `${targetResults.results?.tests?.length || 0} tests` : 'none');
+  console.log(`📊 Target metrics:`, targetMetrics ? `${Object.keys(targetMetrics.testFiles || {}).length} files` : 'none');
+  console.log(`📊 Baseline results:`, baselineResults ? `${baselineResults.results?.tests?.length || 0} tests` : 'none');
+  console.log(`📊 Baseline metrics:`, baselineMetrics ? `${Object.keys(baselineMetrics.testFiles || {}).length} files` : 'none');
+  
+  // Log first few test names from each source
+  if (targetResults?.results?.tests?.length > 0) {
+    console.log(`📊 Sample target test names:`, targetResults.results.tests.slice(0, 3).map(t => t.name));
+  }
+  if (baselineResults?.results?.tests?.length > 0) {
+    console.log(`📊 Sample baseline test names:`, baselineResults.results.tests.slice(0, 3).map(t => t.name));
+  }
+  
+  if (!targetResults && !targetMetrics) {
+    console.log(`❌ No target data found for LLM: ${llmName}`);
+    return null;
+  }
+
+  if (!baselineResults && !baselineMetrics) {
+    console.log(`❌ No baseline data found for comparison`);
+    return null;
+  }
+
+  try {
+    const testDetails = {
+      target: llmName,
+      targetDisplayName: getLLMDisplayName(llmName),
+      baseline: baselineResults?.llm || baselineMetrics?.llm || 'original',
+      baselineDisplayName: getLLMDisplayName(baselineResults?.llm || baselineMetrics?.llm || 'original'),
+      timestamp: new Date().toISOString()
+    };
+
+    // Create test comparison data by correlating individual tests
+    const testComparison = {
+      summary: {
+        totalBaselineTests: baselineResults?.results?.summary?.tests || 0,
+        totalTargetTests: targetResults?.results?.summary?.tests || 0,
+        baselinePassedTests: baselineResults?.results?.summary?.passed || 0,
+        targetPassedTests: targetResults?.results?.summary?.passed || 0,
+        baselinePassRate: baselineResults?.results?.summary?.tests > 0 ? 
+          (baselineResults.results.summary.passed / baselineResults.results.summary.tests) * 100 : 0,
+        targetPassRate: targetResults?.results?.summary?.tests > 0 ? 
+          (targetResults.results.summary.passed / targetResults.results.summary.tests) * 100 : 0,
+        executionRate: 0,
+        matchingPassed: 0,
+        matchingFailed: 0
+      },
+      tests: []
+    };
+
+    // Calculate execution rate
+    if (testComparison.summary.totalBaselineTests > 0) {
+      testComparison.summary.executionRate = 
+        (testComparison.summary.totalTargetTests / testComparison.summary.totalBaselineTests) * 100;
+    }
+
+    // Process individual tests for detailed comparison
+    const baselineTests = baselineResults?.results?.tests || [];
+    const targetTests = targetResults?.results?.tests || [];
+    
+    // Create a map of target tests by filename and test name for quick lookup
+    const targetTestMap = new Map();
+    targetTests.forEach(test => {
+      // Skip tests without proper name
+      const testName = test.name;
+      if (!testName) {
+        return;
+      }
+      const filename = test.filePath ? test.filePath.replace(/\\/g, '/').split('/').pop() : '';
+      const key = `${filename}-${testName}`;
+      targetTestMap.set(key, test);
+      
+      // Also add an entry with the base test name for dynamic executions
+      const baseTestName = testName
+        .replace(/\s*\(\d+\)$/, '')           // Remove (1), (2), etc.
+        .replace(/\s*-\s*run\s*\d+$/i, '')    // Remove "- run 1", "- run 2", etc.
+        .replace(/\s*#\d+$/, '')              // Remove "#1", "#2", etc.
+        .trim();
+        
+      if (baseTestName !== testName) {
+        const baseKey = `${filename}-${baseTestName}`;
+        if (!targetTestMap.has(baseKey)) {
+          targetTestMap.set(baseKey, test);
+        }
+      }
+    });
+    
+    // Get metrics for test-level command comparison (new simplified structure)
+    const baselineTestFiles = baselineMetrics?.testFiles || {};
+    const targetTestFiles = targetMetrics?.testFiles || {};
+    
+    console.log(`📁 Available baseline test files:`, Object.keys(baselineTestFiles).slice(0, 5));
+    console.log(`📁 Available target test files:`, Object.keys(targetTestFiles).slice(0, 5));
+
+    // Helper function to find test metrics in new simplified structure
+    function findTestMetrics(testFiles, filename, testName) {
+      const fileMetrics = testFiles[filename];
+      if (!fileMetrics) return null;
+      
+      // In new structure, each file has direct test_name, actionableCommands, and commands
+      if (fileMetrics.test_name === testName || 
+          fileMetrics.test_name.includes(testName) || 
+          testName.includes(fileMetrics.test_name)) {
+        return {
+          actionableCommands: fileMetrics.actionableCommands || 0,
+          commands: fileMetrics.commands || {}
+        };
+      }
+      
+      return null;
+    }
+
+    // Process each baseline test and find corresponding target test
+    console.log(`🔄 Processing ${baselineTests.length} baseline tests for correlation...`);
+    baselineTests.forEach((baselineTest, index) => {
+      // Skip tests without proper name
+      if (!baselineTest.name) {
+        console.log(`⚠️ Skipping test without name at index ${index}`);
+        return;
+      }
+      
+      const baselineFilename = baselineTest.filePath ? baselineTest.filePath.replace(/\\/g, '/').split('/').pop() : '';
+      const baselineTestName = baselineTest.name;
+      const key = `${baselineFilename}-${baselineTestName}`;
+      let targetTest = targetTestMap.get(key);
+      
+      // If not found, try with base test name for dynamic executions
+      if (!targetTest) {
+        const baseTestName = baselineTestName
+          .replace(/\s*\(\d+\)$/, '')           // Remove (1), (2), etc.
+          .replace(/\s*-\s*run\s*\d+$/i, '')    // Remove "- run 1", "- run 2", etc.
+          .replace(/\s*#\d+$/, '')              // Remove "#1", "#2", etc.
+          .trim();
+          
+        if (baseTestName !== baselineTestName) {
+          const baseKey = `${baselineFilename}-${baseTestName}`;
+          targetTest = targetTestMap.get(baseKey);
+        }
+      }
+      
+      if (index < 3) { // Log first 3 for debugging
+        console.log(`🔍 Test ${index + 1}: ${key} -> ${targetTest ? 'Found' : 'Not found'}`);
+      }
+      
+      // Get command data from metrics (new simplified structure)
+      const baseTestName = baselineTestName
+        .replace(/\s*\(\d+\)$/, '')           // Remove (1), (2), etc.
+        .replace(/\s*-\s*run\s*\d+$/i, '')    // Remove "- run 1", "- run 2", etc.
+        .replace(/\s*#\d+$/, '')              // Remove "#1", "#2", etc.
+        .trim();
+        
+      const baselineTestMetrics = findTestMetrics(baselineTestFiles, baselineFilename, baseTestName) || 
+                                  findTestMetrics(baselineTestFiles, baselineFilename, baselineTestName);
+      const targetTestMetrics = findTestMetrics(targetTestFiles, baselineFilename, baseTestName) || 
+                               findTestMetrics(targetTestFiles, baselineFilename, baselineTestName);
+      
+      if (index < 3) { // Log first 3 for debugging
+        const isDynamicExecution = baseTestName !== baselineTestName;
+        console.log(`📋 Metrics lookup for ${baselineFilename}:`);
+        console.log(`   Test name: "${baselineTestName}"`);
+        console.log(`   Base test name: "${baseTestName}"`);
+        console.log(`   Is dynamic execution: ${isDynamicExecution}`);
+        console.log(`   Baseline test metrics:`, baselineTestMetrics ? `${baselineTestMetrics.actionableCommands} actions` : 'none');
+        console.log(`   Target test metrics:`, targetTestMetrics ? `${targetTestMetrics.actionableCommands} actions` : 'none');
+      }
+
+      const testDetail = {
+        id: `${llmName}-${baselineFilename}-${baselineTestName || 'unnamed'}-${index}`,
+        filename: baselineFilename || 'unknown',
+        testName: baselineTestName || 'unnamed',
+        baseline: {
+          status: baselineTest.status || 'unknown',
+          passed: baselineTest.status === 'passed',
+          duration: baselineTest.duration || 0,
+          actionableCommands: baselineTestMetrics?.actionableCommands || 0,
+          commands: baselineTestMetrics?.commands || {}
+        },
+        target: {
+          executed: !!targetTest,
+          status: targetTest?.status || 'not executed',
+          passed: targetTest?.status === 'passed' || false,
+          duration: targetTest?.duration || 0,
+          actionableCommands: targetTestMetrics?.actionableCommands || 0,
+          commands: targetTestMetrics?.commands || {}
+        },
+        comparison: {
+          statusMatch: false,
+          actionsDifference: 0,
+          durationDifference: 0
+        }
+      };
+
+      // Calculate comparisons
+      if (targetTest) {
+        testDetail.comparison.statusMatch = baselineTest.status === targetTest.status;
+        testDetail.comparison.actionsDifference = 
+          testDetail.target.actionableCommands - testDetail.baseline.actionableCommands;
+        testDetail.comparison.durationDifference = 
+          testDetail.target.duration - testDetail.baseline.duration;
+        
+        // Update summary stats
+        if (baselineTest.status === 'passed' && (targetTest?.status === 'passed')) {
+          testComparison.summary.matchingPassed++;
+        } else if (baselineTest.status !== 'passed' && (targetTest?.status !== 'passed')) {
+          testComparison.summary.matchingFailed++;
+        }
+      }
+
+      testComparison.tests.push(testDetail);
+    });
+    
+    testDetails.testComparison = testComparison;
+
+    console.log(`✅ Generated test details for ${llmName}:`, {
+      totalTests: testComparison.summary.totalTargetTests,
+      executionRate: testComparison.summary.executionRate.toFixed(1) + '%',
+      comparisons: testComparison.tests.length,
+      testsWithActions: testComparison.tests.filter(t => t.baseline.actionableCommands > 0 || t.target.actionableCommands > 0).length,
+      dynamicExecutions: testComparison.tests.filter(t => t.testName.match(/\(\d+\)|#\d+|- run \d+/i)).length,
+      avgBaselineActions: (testComparison.tests.reduce((sum, t) => sum + t.baseline.actionableCommands, 0) / testComparison.tests.length).toFixed(1),
+      avgTargetActions: (testComparison.tests.reduce((sum, t) => sum + t.target.actionableCommands, 0) / testComparison.tests.length).toFixed(1),
+      sampleIds: testComparison.tests.slice(0, 3).map(t => t.id)
+    });
+    
+    console.log(`📝 Final testDetails structure:`, {
+      target: testDetails.target,
+      baseline: testDetails.baseline,
+      hasTestComparison: !!testDetails.testComparison,
+      hasTests: !!testDetails.testComparison?.tests,
+      testCount: testDetails.testComparison?.tests?.length || 0
+    });
+
+    return testDetails;
+
+  } catch (error) {
+    console.error(`❌ Error generating test details for ${llmName}:`, error);
+    return null;
+  }
+}
+
+// Generate detailed analysis from simplified test data collections
+function generateDetailedAnalysisFromTestData(resultRecord, metricRecord, llmName) {
+  console.log(`🔍 generateDetailedAnalysisFromTestData for LLM: ${llmName}`);
+  
+  if (!resultRecord && !metricRecord) {
+    console.log(`❌ No data found for LLM: ${llmName}`);
+    return null;
+  }
+
+  try {
+    const analysis = {
+      llm: llmName,
+      displayName: getLLMDisplayName(llmName),
+      timestamp: new Date().toISOString()
+    };
+
+    // Extract execution data from results (new simplified structure)
+    if (resultRecord && resultRecord.results && resultRecord.results.summary) {
+      const summary = resultRecord.results.summary;
+      const totalDuration = (summary.stop || 0) - (summary.start || 0);
+      
+      analysis.execution = {
+        totalTests: summary.tests || 0,
+        passed: summary.passed || 0,
+        failed: summary.failed || 0,
+        skipped: summary.skipped || 0,
+        passRate: summary.tests > 0 ? (summary.passed / summary.tests) * 100 : 0,
+        avgDuration: summary.tests > 0 ? totalDuration / summary.tests : 0,
+        totalDuration: totalDuration
+      };
+    } else {
+      analysis.execution = {
+        totalTests: 0,
+        passed: 0,
+        failed: 0,
+        skipped: 0,
+        passRate: 0,
+        avgDuration: 0,
+        totalDuration: 0
+      };
+    }
+
+    // Extract efficiency data from metrics (new simplified structure)
+    if (metricRecord && metricRecord.testFiles) {
+      const testFiles = metricRecord.testFiles;
+      let totalCommands = 0;
+      let totalTests = 0;
+      const allCommands = {};
+      
+      // Calculate totals from testFiles structure
+      Object.values(testFiles).forEach(fileData => {
+        totalCommands += fileData.actionableCommands || 0;
+        totalTests += 1; // Each file has one test
+        
+        // Aggregate command usage
+        if (fileData.commands && typeof fileData.commands === 'object') {
+          Object.entries(fileData.commands).forEach(([command, count]) => {
+            allCommands[command] = (allCommands[command] || 0) + count;
+          });
+        }
+      });
+      
+      analysis.efficiency = {
+        totalCommands: totalCommands,
+        commandsPerTest: totalTests > 0 ? totalCommands / totalTests : 0,
+        totalTests: totalTests
+      };
+      
+      // Generate action patterns from command usage
+      const mostUsedCommands = Object.entries(allCommands)
+        .sort(([,a], [,b]) => b - a)
+        .slice(0, 10)
+        .map(([command, count]) => [command, count]);
+      
+      const leastUsedCommands = Object.entries(allCommands)
+        .sort(([,a], [,b]) => a - b)
+        .slice(0, 10)
+        .map(([command, count]) => [command, count]);
+      
+      // Calculate test complexity distribution
+      const complexity = { simple: 0, medium: 0, complex: 0 };
+      Object.values(testFiles).forEach(fileData => {
+        const commands = fileData.actionableCommands || 0;
+        if (commands <= 5) complexity.simple++;
+        else if (commands <= 15) complexity.medium++;
+        else complexity.complex++;
+      });
+      
+      // Generate action distribution
+      const totalCommandCount = Object.values(allCommands).reduce((sum, count) => sum + count, 0);
+      const actionDistribution = {};
+      Object.entries(allCommands).forEach(([command, count]) => {
+        actionDistribution[command] = {
+          count: count,
+          percentage: totalCommandCount > 0 ? (count / totalCommandCount) * 100 : 0
+        };
+      });
+      
+      analysis.actions = {
+        total: totalCommands,
+        patterns: {
+          actionDistribution: actionDistribution,
+          testComplexity: complexity,
+          mostUsedActions: mostUsedCommands,
+          leastUsedActions: leastUsedCommands
+        }
+      };
+      
+    } else {
+      analysis.efficiency = {
+        totalCommands: 0,
+        commandsPerTest: 0,
+        totalTests: 0
+      };
+      analysis.actions = {
+        total: 0,
+        patterns: {
+          actionDistribution: {},
+          testComplexity: { simple: 0, medium: 0, complex: 0 },
+          mostUsedActions: [],
+          leastUsedActions: []
+        }
+      };
+    }
+
+    console.log(`✅ Generated detailed analysis for ${llmName}:`, {
+      totalTests: analysis.execution.totalTests,
+      passRate: analysis.execution.passRate,
+      commandsPerTest: analysis.efficiency.commandsPerTest
+    });
+
+    return analysis;
+
+  } catch (error) {
+    console.error(`❌ Error generating detailed analysis for ${llmName}:`, error);
+    return null;
+  }
+}
+
+// Generate summary from simplified test data collections
+function generateSummaryFromTestData(testResults, testMetrics) {
+  console.log('🔍 generateSummaryFromTestData called with', testResults.length, 'result records and', testMetrics.length, 'metric records');
+  
+  if (!testResults && !testMetrics) {
+    console.log('❌ No data provided to generateSummaryFromTestData');
+    return null;
+  }
+
+  try {
+    // Process test results and metrics to create LLM analyses
+    const llmAnalyses = [];
+    const llmSet = new Set();
+    
+    // Collect all LLM names
+    testResults.forEach(record => llmSet.add(record.llm));
+    testMetrics.forEach(record => llmSet.add(record.llm));
+    
+    console.log('🎯 Processing LLMs:', Array.from(llmSet));
+    
+    // Process each LLM
+    Array.from(llmSet).forEach(llmName => {
+      const resultRecord = testResults.find(r => r.llm === llmName);
+      const metricRecord = testMetrics.find(m => m.llm === llmName);
+      
+      if (resultRecord || metricRecord) {
+        const analysis = {
+          llm: llmName,
+          displayName: getLLMDisplayName(llmName)
+        };
+        
+        // Extract data from test results (new simplified structure)
+        if (resultRecord) {
+          // Get data from the original file structure
+          if (resultRecord.results && resultRecord.results.summary) {
+            analysis.totalTests = resultRecord.results.summary.tests || 0;
+            analysis.passed = resultRecord.results.summary.passed || 0;
+            analysis.failed = resultRecord.results.summary.failed || 0;
+            analysis.passRate = analysis.totalTests > 0 ? (analysis.passed / analysis.totalTests) * 100 : 0;
+            analysis.executionDuration = (resultRecord.results.summary.stop || 0) - (resultRecord.results.summary.start || 0);
+            analysis.avgDuration = analysis.totalTests > 0 ? analysis.executionDuration / analysis.totalTests : 0;
+          } else {
+            analysis.totalTests = 0;
+            analysis.passed = 0;
+            analysis.failed = 0;
+            analysis.passRate = 0;
+            analysis.executionDuration = 0;
+            analysis.avgDuration = 0;
+          }
+        } else {
+          analysis.totalTests = 0;
+          analysis.passed = 0;
+          analysis.failed = 0;
+          analysis.passRate = 0;
+          analysis.executionDuration = 0;
+          analysis.avgDuration = 0;
+        }
+        
+        // Extract data from efficiency metrics (new simplified structure)
+        if (metricRecord && metricRecord.testFiles) {
+          // Calculate totals from the new testFiles structure
+          const testFiles = metricRecord.testFiles;
+          let totalActionableCommands = 0;
+          let totalTestCases = 0;
+          
+          Object.values(testFiles).forEach(fileData => {
+            totalActionableCommands += fileData.actionableCommands || 0;
+            totalTestCases += 1; // Each file has one test in new structure
+          });
+          
+          analysis.totalActionableCommands = totalActionableCommands;
+          analysis.commandsPerTest = totalTestCases > 0 ? totalActionableCommands / totalTestCases : 0;
+          analysis.totalTestFiles = Object.keys(testFiles).length;
+          analysis.totalTestCases = totalTestCases;
+        } else {
+          analysis.totalActionableCommands = 0;
+          analysis.commandsPerTest = 0;
+          analysis.totalTestFiles = 0;
+          analysis.totalTestCases = 0;
+        }
+        
+        llmAnalyses.push(analysis);
+      }
+    });
+    
+    if (llmAnalyses.length === 0) {
+      console.log('❌ No LLM analyses could be generated');
+      return null;
+    }
+    
+    // Find baseline (original) or use first LLM
+    const baseline = llmAnalyses.find(analysis => analysis.llm === 'original') || llmAnalyses[0];
+    console.log('📍 Baseline LLM:', baseline.llm);
+    
+    // Calculate best performing LLMs
+    let mostEfficientLLM = llmAnalyses[0];
+    let highestPassRateLLM = llmAnalyses[0];
+    let fastestLLM = llmAnalyses[0];
+    
+    llmAnalyses.forEach(analysis => {
+      // Most efficient = lowest commands per test (but > 0)
+      if (analysis.commandsPerTest > 0 && 
+          (mostEfficientLLM.commandsPerTest === 0 || analysis.commandsPerTest < mostEfficientLLM.commandsPerTest)) {
+        mostEfficientLLM = analysis;
+      }
+      
+      // Highest pass rate
+      if (analysis.passRate > highestPassRateLLM.passRate) {
+        highestPassRateLLM = analysis;
+      }
+      
+      // Fastest execution
+      if (analysis.avgDuration > 0 && 
+          (fastestLLM.avgDuration === 0 || analysis.avgDuration < fastestLLM.avgDuration)) {
+        fastestLLM = analysis;
+      }
+    });
+    
+    // Calculate overall metrics
+    const totalTests = llmAnalyses.reduce((sum, analysis) => sum + analysis.totalTests, 0);
+    const totalCommands = llmAnalyses.reduce((sum, analysis) => sum + analysis.totalActionableCommands, 0);
+    const totalPassed = llmAnalyses.reduce((sum, analysis) => sum + analysis.passed, 0);
+    const totalDuration = llmAnalyses.reduce((sum, analysis) => sum + analysis.executionDuration, 0);
+    
+    return {
+      _id: 'latest_action_usage_summary',
+      timestamp: new Date().toISOString(),
+      totalLLMs: llmAnalyses.length,
+      baseline: baseline.llm,
+      summary: {
+        mostEfficientLLM: {
+          llm: mostEfficientLLM.llm,
+          displayName: mostEfficientLLM.displayName,
+          commandsPerTest: mostEfficientLLM.commandsPerTest
+        },
+        highestPassRateLLM: {
+          llm: highestPassRateLLM.llm,
+          displayName: highestPassRateLLM.displayName,
+          passRate: highestPassRateLLM.passRate
+        },
+        fastestLLM: {
+          llm: fastestLLM.llm,
+          displayName: fastestLLM.displayName,
+          avgDuration: fastestLLM.avgDuration
+        },
+        overallMetrics: {
+          avgCommandsPerTest: totalTests > 0 ? totalCommands / totalTests : 0,
+          avgPassRate: totalTests > 0 ? (totalPassed / totalTests) * 100 : 0,
+          avgExecutionTime: totalTests > 0 ? totalDuration / totalTests : 0
+        }
+      },
+      llmAnalyses: llmAnalyses.map(analysis => ({
+        llm: analysis.llm,
+        displayName: analysis.displayName,
+        commandsPerTest: analysis.commandsPerTest,
+        passRate: analysis.passRate,
+        avgDuration: analysis.avgDuration,
+        totalActions: analysis.totalActionableCommands,
+        totalTests: analysis.totalTests,
+        passed: analysis.passed,
+        failed: analysis.failed
+      }))
+    };
+    
+  } catch (error) {
+    console.error('❌ Error in generateSummaryFromTestData:', error);
+    return null;
+  }
 }
 
 // Generate summary from all merged data

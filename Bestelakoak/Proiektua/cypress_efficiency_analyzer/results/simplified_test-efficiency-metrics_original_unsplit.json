@@ -1,0 +1,94 @@
+{
+  "testFiles": {
+    "user-settings.spec.ts": {
+      "test_name": "updates first name, last name, email and phone number",
+      "actionableCommands": 11,
+      "commands": {
+        "type": 4,
+        "clear": 4,
+        "blur": 1,
+        "click": 2
+      }
+    },
+    "transaction-view.spec.ts": {
+      "test_name": "does not display accept/reject buttons on completed request",
+      "actionableCommands": 1,
+      "commands": {
+        "visit": 1
+      }
+    },
+    "transaction-feeds.spec.ts": {
+      "test_name": "friends feed only shows contact transactions",
+      "actionableCommands": 1,
+      "commands": {
+        "click": 1
+      }
+    },
+    "notifications.spec.ts": {
+      "test_name": "renders an empty notifications state",
+      "actionableCommands": 3,
+      "commands": {
+        "loginByXstate": 1,
+        "click": 2
+      }
+    },
+    "new-transaction.spec.ts": {
+      "test_name": "phoneNumber",
+      "actionableCommands": 3,
+      "commands": {
+        "type": 2,
+        "clear": 1
+      }
+    },
+    "bankaccounts.spec.ts": {
+      "test_name": "renders an empty bank account list state with onboarding modal",
+      "actionableCommands": 1,
+      "commands": {
+        "visit": 1
+      }
+    },
+    "auth.spec.ts": {
+      "test_name": "should error for an invalid password for existing user",
+      "actionableCommands": 1,
+      "commands": {
+        "login": 1
+      }
+    }
+  },
+  "summary": {
+    "totalTestFiles": 7,
+    "totalTestCases": 44,
+    "totalActionableCommands": 217,
+    "averageCommandsPerTest": 4.93,
+    "fileBreakdown": {
+      "user-settings.spec.ts": {
+        "actionableCommands": 24,
+        "itBlockCount": 3
+      },
+      "transaction-view.spec.ts": {
+        "actionableCommands": 10,
+        "itBlockCount": 6
+      },
+      "transaction-feeds.spec.ts": {
+        "actionableCommands": 10,
+        "itBlockCount": 6
+      },
+      "notifications.spec.ts": {
+        "actionableCommands": 38,
+        "itBlockCount": 7
+      },
+      "new-transaction.spec.ts": {
+        "actionableCommands": 53,
+        "itBlockCount": 10
+      },
+      "bankaccounts.spec.ts": {
+        "actionableCommands": 37,
+        "itBlockCount": 4
+      },
+      "auth.spec.ts": {
+        "actionableCommands": 45,
+        "itBlockCount": 8
+      }
+    }
+  }
+}

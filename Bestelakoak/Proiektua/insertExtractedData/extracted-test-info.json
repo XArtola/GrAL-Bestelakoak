@@ -71,5 +71,16 @@
   },
   "transaction-view.spec.ts": {},
   "transaction-feeds.spec.ts": {},
-  "notifications.spec.ts": {}
+  "notifications.spec.ts": {},
+  "cognito.spec.ts": {},
+  "okta.spec.ts": {},
+  "google.spec.ts": {},
+  "api-transactions.spec.ts": {},
+  "api-testdata.spec.ts": {},
+  "api-notifications.spec.ts": {},
+  "api-likes.spec.ts": {},
+  "api-contacts.spec.ts": {},
+  "api-comments.spec.ts": {},
+  "api-banktransfers.spec.ts": {},
+  "cypress-studio.spec.ts": {}
 }

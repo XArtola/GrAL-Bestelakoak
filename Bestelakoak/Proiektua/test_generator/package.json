@@ -2,9 +2,14 @@
   "name": "test-generator",
   "version": "1.0.0",
   "description": "Test generator for model-generated code",
-  "main": "test_generator_updated.js",  "dependencies": {
-    "glob": "^10.3.10",
-    "fs-extra": "^11.2.0"
+  "main": "test_generator_updated.js",
+  "dependencies": {
+    "@babel/generator": "^7.27.5",
+    "@babel/parser": "^7.27.5",
+    "@babel/traverse": "^7.27.4",
+    "@babel/types": "^7.27.6",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10"
   },
   "scripts": {
     "start": "node test_generator_updated.js"
