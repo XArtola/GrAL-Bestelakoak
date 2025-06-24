@@ -1,0 +1,127 @@
+classDiagram
+    class TestFitxategia {
+        +String fitxategiIzena
+        +String bidea
+        +String edukia
+        +Boolean hutsa
+        +Date aldatzeData
+        +banandu()
+        +hustu()
+        +kodeaTxertatu()
+    }
+
+    class TestBlokea {
+        +String izena
+        +String deskribapena
+        +String kodea
+        +String egoera
+        +atera()
+        +txertatu()
+    }
+
+    class ErabiltzaileDatuak {
+        +String testIzena
+        +String deskribapena
+        +String helburua
+        +Map parametroak
+        +atera()
+        +formateatu()
+    }
+
+    class PromptTxantiloia {
+        +String izena
+        +String edukia
+        +String hizkuntza
+        +sortu()
+        +konbinatu()
+    }
+
+    class PromptFitxategia {
+        +String izena
+        +String edukia
+        +Date sortzeData
+        +sortu()
+        +exekutatu()
+    }
+
+    class LLMElkarrizketa {
+        +String id
+        +String prompta
+        +String erantzuna
+        +Date hasieraData
+        +Date bukaeraData
+        +Integer iraupena
+        +gorde()
+        +kodeaAtera()
+    }
+
+    class SorkuntzaMetrika {
+        +String testId
+        +String sortutakoKodea
+        +Integer sorkuntzaDenbora
+        +Date data
+        +Boolean arrakasta
+        +kalkulatu()
+        +gorde()
+    }
+
+    class ExekuzioMetrika {
+        +String testId
+        +String emaitza
+        +Integer exekuzioDenbora
+        +Integer pasatutakoTestak
+        +Integer hondatutakoTestak
+        +Date data
+        +kalkulatu()
+        +gorde()
+    }
+
+    class KomandoErabilera {
+        +String komandoMota
+        +Integer kantitatea
+        +String testId
+        +Date data
+        +kontatu()
+        +analizatu()
+    }
+
+    class FrontendSekzioa {
+        +String sekzioIzena
+        +bistaratu()
+        +datuakKargatu()
+        +grafikoakSortu()
+    }
+
+    class SorkuntzaSekzioa {
+        +sorkuntzaMetrikakBistaratu()
+        +denboraGrafikoak()
+        +arrakastaTasak()
+    }
+
+    class ExekuzioSekzioa {
+        +exekuzioMetrikakBistaratu()
+        +emaitzaGrafikoak()
+        +errendimenduTasak()
+    }
+
+    class KomandoSekzioa {
+        +komandoStatistikakBistaratu()
+        +erabileraGrafikoak()
+        +komandoRankingak()
+    }
+
+    TestFitxategia "1" --> "*" TestBlokea : eduki
+    TestBlokea "1" --> "1" ErabiltzaileDatuak : sortu
+    PromptTxantiloia "1" --> "*" PromptFitxategia : erabili
+    TestFitxategia "1" --> "*" PromptFitxategia : oinarritu
+    ErabiltzaileDatuak "1" --> "*" PromptFitxategia : gehitu
+    PromptFitxategia "1" --> "1" LLMElkarrizketa : sortu
+    LLMElkarrizketa "1" --> "1" SorkuntzaMetrika : eragin
+    TestFitxategia "1" --> "*" ExekuzioMetrika : eragin
+    SorkuntzaMetrika "1" --> "*" KomandoErabilera : analizatu
+    FrontendSekzioa <|-- SorkuntzaSekzioa
+    FrontendSekzioa <|-- ExekuzioSekzioa
+    FrontendSekzioa <|-- KomandoSekzioa
+    SorkuntzaSekzioa --> SorkuntzaMetrika : kontsultatu
+    ExekuzioSekzioa --> ExekuzioMetrika : kontsultatu
+    KomandoSekzioa --> KomandoErabilera : kontsultatu

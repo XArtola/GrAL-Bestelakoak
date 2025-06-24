@@ -1,0 +1,2015 @@
+{
+  "category": "notifications",
+  "llms": {
+    "claude_3_5_sonnet": {
+      "summary": {
+        "tests": 7,
+        "passed": 0,
+        "failed": 7,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Notifications notifications from user interactions User A likes a transaction of User B; User B gets notification that User A liked transaction ",
+          "status": "failed",
+          "duration": 17784,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=like-button]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=like-button]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\notifications1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction",
+          "status": "failed",
+          "duration": 809,
+          "message": "TypeError: cy.switchUser is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/notifications2.spec.ts:52:7)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144750:15)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)",
+          "trace": "TypeError: cy.switchUser is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/notifications2.spec.ts:52:7)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144750:15)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\notifications2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A comments on a transaction of User B; User B gets notification that User A commented on their transaction",
+          "status": "failed",
+          "duration": 18508,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\notifications3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction",
+          "status": "failed",
+          "duration": 18187,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\notifications4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment to User B",
+          "status": "failed",
+          "duration": 18725,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\notifications5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment request to User C",
+          "status": "failed",
+          "duration": 18628,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\notifications6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications renders an empty notifications state",
+          "status": "failed",
+          "duration": 808,
+          "message": "CypressError: `cy.task('db:seed:user')` failed with the following error:\n\nThe task 'db:seed:user' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/notifications7.spec.ts:25:5)",
+          "trace": "CypressError: `cy.task('db:seed:user')` failed with the following error:\n\nThe task 'db:seed:user' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/notifications7.spec.ts:25:5)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\notifications7.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "claude_3_7_sonnet": {
+      "summary": {
+        "tests": 7,
+        "passed": 0,
+        "failed": 7,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Notifications notifications from user interactions User A likes a transaction of User B; User B gets notification that User A liked transaction ",
+          "status": "failed",
+          "duration": 22519,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\notifications1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction",
+          "status": "failed",
+          "duration": 24569,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=like-button]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=like-button]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\notifications2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A comments on a transaction of User B; User B gets notification that User A commented on their transaction",
+          "status": "failed",
+          "duration": 25180,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\notifications3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction",
+          "status": "failed",
+          "duration": 25538,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\notifications4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment to User B",
+          "status": "failed",
+          "duration": 24278,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\notifications5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment request to User C",
+          "status": "failed",
+          "duration": 21614,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\notifications6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications renders an empty notifications state",
+          "status": "failed",
+          "duration": 1031,
+          "message": "CypressError: `cy.task('db:seed:user')` failed with the following error:\n\nThe task 'db:seed:user' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/notifications7.spec.ts:25:5)",
+          "trace": "CypressError: `cy.task('db:seed:user')` failed with the following error:\n\nThe task 'db:seed:user' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/notifications7.spec.ts:25:5)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\notifications7.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "claude_3_7_sonnet_thinking": {
+      "summary": {
+        "tests": 6,
+        "passed": 0,
+        "failed": 6,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Notifications notifications from user interactions User A likes a transaction of User B; User B gets notification that User A liked transaction ",
+          "status": "failed",
+          "duration": 17850,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\notifications1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction",
+          "status": "failed",
+          "duration": 21803,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\notifications2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A comments on a transaction of User B; User B gets notification that User A commented on their transaction",
+          "status": "failed",
+          "duration": 20992,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\notifications3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction",
+          "status": "failed",
+          "duration": 17459,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\notifications4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment request to User C",
+          "status": "failed",
+          "duration": 21797,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\notifications6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications renders an empty notifications state",
+          "status": "failed",
+          "duration": 837,
+          "message": "CypressError: `cy.task('db:seed:user')` failed with the following error:\n\nThe task 'db:seed:user' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/notifications7.spec.ts:25:5)",
+          "trace": "CypressError: `cy.task('db:seed:user')` failed with the following error:\n\nThe task 'db:seed:user' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/notifications7.spec.ts:25:5)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\notifications7.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "claude_sonnet_4": {
+      "summary": {
+        "tests": 7,
+        "passed": 0,
+        "failed": 7,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Notifications notifications from user interactions User A likes a transaction of User B; User B gets notification that User A liked transaction ",
+          "status": "failed",
+          "duration": 21942,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\notifications1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction",
+          "status": "failed",
+          "duration": 23477,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\notifications2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A comments on a transaction of User B; User B gets notification that User A commented on their transaction",
+          "status": "failed",
+          "duration": 23632,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\notifications3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction",
+          "status": "failed",
+          "duration": 23125,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\notifications4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment to User B",
+          "status": "failed",
+          "duration": 21328,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\notifications5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment request to User C",
+          "status": "failed",
+          "duration": 22221,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\notifications6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications renders an empty notifications state",
+          "status": "failed",
+          "duration": 998,
+          "message": "CypressError: `cy.task('db:seed:user')` failed with the following error:\n\nThe task 'db:seed:user' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/notifications7.spec.ts:25:5)",
+          "trace": "CypressError: `cy.task('db:seed:user')` failed with the following error:\n\nThe task 'db:seed:user' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/notifications7.spec.ts:25:5)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\notifications7.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "gemini_2_0_flash": {
+      "summary": {
+        "tests": 2,
+        "passed": 0,
+        "failed": 2,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment request to User C",
+          "status": "failed",
+          "duration": 23875,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test*=request-money]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:39:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test*=request-money]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:39:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\notifications6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications renders an empty notifications state",
+          "status": "failed",
+          "duration": 456,
+          "message": "Error: Test body for \"renders an empty notifications state\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"renders an empty notifications state\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\notifications7.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 2).png"
+            }
+          ]
+        }
+      ]
+    },
+    "gemini_2_5_pro_preview": {
+      "summary": {
+        "tests": 4,
+        "passed": 0,
+        "failed": 4,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Notifications notifications from user interactions User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction",
+          "status": "failed",
+          "duration": 20661,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\notifications2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A comments on a transaction of User B; User B gets notification that User A commented on their transaction",
+          "status": "failed",
+          "duration": 23188,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\notifications3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment request to User C",
+          "status": "failed",
+          "duration": 19829,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\notifications6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications renders an empty notifications state",
+          "status": "failed",
+          "duration": 1015,
+          "message": "CypressError: `cy.task('db:seed:user')` failed with the following error:\n\nThe task 'db:seed:user' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/notifications7.spec.ts:25:7)",
+          "trace": "CypressError: `cy.task('db:seed:user')` failed with the following error:\n\nThe task 'db:seed:user' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/notifications7.spec.ts:25:7)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\notifications7.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "gpt_4o": {
+      "summary": {
+        "tests": 7,
+        "passed": 0,
+        "failed": 7,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Notifications notifications from user interactions User A likes a transaction of User B; User B gets notification that User A liked transaction ",
+          "status": "failed",
+          "duration": 21627,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=like-button]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=like-button]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\notifications1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction",
+          "status": "failed",
+          "duration": 27536,
+          "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `postLike`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:75176:18)\n    at Object.errByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:75230:10)\n    at checkForXhr (http://localhost:3000/__cypress/runner/cypress_runner.js:136070:84)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:136096:28)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "trace": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `postLike`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:75176:18)\n    at Object.errByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:75230:10)\n    at checkForXhr (http://localhost:3000/__cypress/runner/cypress_runner.js:136070:84)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:136096:28)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\notifications2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A comments on a transaction of User B; User B gets notification that User A commented on their transaction",
+          "status": "failed",
+          "duration": 21797,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\notifications3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction",
+          "status": "failed",
+          "duration": 22445,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\notifications4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment to User B",
+          "status": "failed",
+          "duration": 20980,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\notifications5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment request to User C",
+          "status": "failed",
+          "duration": 19680,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\notifications6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications renders an empty notifications state",
+          "status": "failed",
+          "duration": 19547,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=nav-notifications]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=nav-notifications]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\notifications7.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "gpt_4_1": {
+      "summary": {
+        "tests": 7,
+        "passed": 0,
+        "failed": 7,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Notifications notifications from user interactions User A likes a transaction of User B; User B gets notification that User A liked transaction ",
+          "status": "failed",
+          "duration": 17128,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=nav-new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=nav-new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\notifications1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction",
+          "status": "failed",
+          "duration": 18256,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=amount-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=amount-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\notifications2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A comments on a transaction of User B; User B gets notification that User A commented on their transaction",
+          "status": "failed",
+          "duration": 18136,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\notifications3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction",
+          "status": "failed",
+          "duration": 18441,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=amount-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=amount-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\notifications4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment to User B",
+          "status": "failed",
+          "duration": 20893,
+          "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `allUsers`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:75176:18)\n    at Object.errByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:75230:10)\n    at checkForXhr (http://localhost:3000/__cypress/runner/cypress_runner.js:136070:84)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:136096:28)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "trace": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `allUsers`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:75176:18)\n    at Object.errByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:75230:10)\n    at checkForXhr (http://localhost:3000/__cypress/runner/cypress_runner.js:136070:84)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:136096:28)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\notifications5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment request to User C",
+          "status": "failed",
+          "duration": 20543,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-create-request-button]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-create-request-button]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\notifications6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications renders an empty notifications state",
+          "status": "failed",
+          "duration": 16610,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=nav-notifications-tab]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=nav-notifications-tab]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\notifications7.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "o3_mini": {
+      "summary": {
+        "tests": 7,
+        "passed": 0,
+        "failed": 7,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Notifications notifications from user interactions User A likes a transaction of User B; User B gets notification that User A liked transaction ",
+          "status": "failed",
+          "duration": 905,
+          "message": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:3000/api/likes\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: http://localhost:3000/api/likes\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/14.0.3 Chrome/130.0.6723.137 Electron/33.2.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 46\n}\nBody: {\"transactionId\":\"tx-123\",\"likedBy\":\"Heath93\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"vary\": \"Origin\",\n  \"date\": \"Wed, 18 Jun 2025 15:46:08 GMT\",\n  \"connection\": \"keep-alive\",\n  \"keep-alive\": \"timeout=5\",\n  \"content-length\": \"0\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:133603:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/notifications1.spec.ts:32:7)",
+          "trace": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:3000/api/likes\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: http://localhost:3000/api/likes\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/14.0.3 Chrome/130.0.6723.137 Electron/33.2.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 46\n}\nBody: {\"transactionId\":\"tx-123\",\"likedBy\":\"Heath93\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"vary\": \"Origin\",\n  \"date\": \"Wed, 18 Jun 2025 15:46:08 GMT\",\n  \"connection\": \"keep-alive\",\n  \"keep-alive\": \"timeout=5\",\n  \"content-length\": \"0\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:133603:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/notifications1.spec.ts:32:7)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\notifications1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications1.spec.ts\\Notifications -- notifications from user interactions -- User A likes a transaction of User B; User B gets notification that User A liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction",
+          "status": "failed",
+          "duration": 1396,
+          "message": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:3000/transactions\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: http://localhost:3000/transactions\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/14.0.3 Chrome/130.0.6723.137 Electron/33.2.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"cookie\": \"connect.sid=s%3Ap6P0hmgiLHr-4_p5xT4b2Kvk60N_pG68.oNUPUVKDSbvHhXYgPZ%2Fn47gX1NRbBezH7lWrgc2A9o0\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 139\n}\nBody: {\"senderId\":\"uBmeaz5pX\",\"receiverId\":\"GjWovtg2hr\",\"description\":\"Test Transaction between User A and User B\",\"amount\":100,\"type\":\"payment\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"vary\": \"Origin\",\n  \"date\": \"Wed, 18 Jun 2025 15:46:11 GMT\",\n  \"connection\": \"keep-alive\",\n  \"keep-alive\": \"timeout=5\",\n  \"content-length\": \"0\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:133603:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/notifications2.spec.ts:31:7)",
+          "trace": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:3000/transactions\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: http://localhost:3000/transactions\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/14.0.3 Chrome/130.0.6723.137 Electron/33.2.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"cookie\": \"connect.sid=s%3Ap6P0hmgiLHr-4_p5xT4b2Kvk60N_pG68.oNUPUVKDSbvHhXYgPZ%2Fn47gX1NRbBezH7lWrgc2A9o0\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 139\n}\nBody: {\"senderId\":\"uBmeaz5pX\",\"receiverId\":\"GjWovtg2hr\",\"description\":\"Test Transaction between User A and User B\",\"amount\":100,\"type\":\"payment\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"vary\": \"Origin\",\n  \"date\": \"Wed, 18 Jun 2025 15:46:11 GMT\",\n  \"connection\": \"keep-alive\",\n  \"keep-alive\": \"timeout=5\",\n  \"content-length\": \"0\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:133603:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/notifications2.spec.ts:31:7)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\notifications2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A comments on a transaction of User B; User B gets notification that User A commented on their transaction",
+          "status": "failed",
+          "duration": 1105,
+          "message": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:3000/comments/Lii0F5wMZbi\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: http://localhost:3000/comments/Lii0F5wMZbi\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/14.0.3 Chrome/130.0.6723.137 Electron/33.2.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 85\n}\nBody: {\"userId\":\"uBmeaz5pX\",\"transactionId\":\"Lii0F5wMZbi\",\"content\":\"Awesome transaction!\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"vary\": \"Origin\",\n  \"date\": \"Wed, 18 Jun 2025 15:46:14 GMT\",\n  \"connection\": \"keep-alive\",\n  \"keep-alive\": \"timeout=5\",\n  \"content-length\": \"0\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:133603:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/notifications3.spec.ts:33:6)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)",
+          "trace": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:3000/comments/Lii0F5wMZbi\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: http://localhost:3000/comments/Lii0F5wMZbi\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/14.0.3 Chrome/130.0.6723.137 Electron/33.2.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 85\n}\nBody: {\"userId\":\"uBmeaz5pX\",\"transactionId\":\"Lii0F5wMZbi\",\"content\":\"Awesome transaction!\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"vary\": \"Origin\",\n  \"date\": \"Wed, 18 Jun 2025 15:46:14 GMT\",\n  \"connection\": \"keep-alive\",\n  \"keep-alive\": \"timeout=5\",\n  \"content-length\": \"0\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:133603:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/notifications3.spec.ts:33:6)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\notifications3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction",
+          "status": "failed",
+          "duration": 6225,
+          "message": "TypeError: transactions.find is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/notifications4.spec.ts:30:39)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144750:15)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)",
+          "trace": "TypeError: transactions.find is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/notifications4.spec.ts:30:39)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144750:15)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\notifications4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment to User B",
+          "status": "failed",
+          "duration": 842,
+          "message": "TypeError: cy.logout is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/notifications5.spec.ts:44:7)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "TypeError: cy.logout is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/notifications5.spec.ts:44:7)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\notifications5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment request to User C",
+          "status": "failed",
+          "duration": 19513,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"new-transaction\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/notifications6.spec.ts:30:9)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"new-transaction\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/notifications6.spec.ts:30:9)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\notifications6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications renders an empty notifications state",
+          "status": "failed",
+          "duration": 16936,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"notifications-list\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/notifications7.spec.ts:32:47)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"notifications-list\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/notifications7.spec.ts:32:47)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\notifications7.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "o4_mini_preview": {
+      "summary": {
+        "tests": 6,
+        "passed": 0,
+        "failed": 6,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Notifications notifications from user interactions User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction",
+          "status": "failed",
+          "duration": 1171,
+          "message": "CypressError: `cy.task('create:database')` failed with the following error:\n\nThe task 'create:database' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:321:12)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "CypressError: `cy.task('create:database')` failed with the following error:\n\nThe task 'create:database' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:321:12)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\notifications2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications2.spec.ts\\Notifications -- notifications from user interactions -- User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A comments on a transaction of User B; User B gets notification that User A commented on their transaction",
+          "status": "failed",
+          "duration": 1253,
+          "message": "CypressError: `cy.task('create:database')` failed with the following error:\n\nThe task 'create:database' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:321:12)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "CypressError: `cy.task('create:database')` failed with the following error:\n\nThe task 'create:database' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:321:12)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\notifications3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications3.spec.ts\\Notifications -- notifications from user interactions -- User A comments on a transaction of User B; User B gets notification that User A commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction",
+          "status": "failed",
+          "duration": 1106,
+          "message": "TypeError: cy.switchUser is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/notifications4.spec.ts:56:7)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144750:15)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)",
+          "trace": "TypeError: cy.switchUser is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/notifications4.spec.ts:56:7)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144750:15)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\notifications4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications4.spec.ts\\Notifications -- notifications from user interactions -- User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment to User B",
+          "status": "failed",
+          "duration": 25605,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=amount-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=amount-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\notifications5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications5.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment to User B (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment request to User C",
+          "status": "failed",
+          "duration": 24788,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\notifications6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications6.spec.ts\\Notifications -- notifications from user interactions -- User A sends a payment request to User C (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Notifications renders an empty notifications state",
+          "status": "failed",
+          "duration": 22708,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=notifications-link]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=notifications-link]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\notifications7.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\notifications7.spec.ts\\Notifications -- renders an empty notifications state (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "original": {
+      "summary": {
+        "tests": 7,
+        "passed": 7,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Notifications notifications from user interactions User A likes a transaction of User B; User B gets notification that User A liked transaction ",
+          "status": "passed",
+          "duration": 7203,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\notifications1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Notifications notifications from user interactions User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction",
+          "status": "passed",
+          "duration": 7690,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\notifications2.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Notifications notifications from user interactions User A comments on a transaction of User B; User B gets notification that User A commented on their transaction",
+          "status": "passed",
+          "duration": 5541,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\notifications3.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Notifications notifications from user interactions User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction",
+          "status": "passed",
+          "duration": 7791,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\notifications4.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment to User B",
+          "status": "passed",
+          "duration": 4604,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\notifications5.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Notifications notifications from user interactions User A sends a payment request to User C",
+          "status": "passed",
+          "duration": 4515,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\notifications6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Notifications renders an empty notifications state",
+          "status": "passed",
+          "duration": 2741,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\notifications7.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    }
+  },
+  "overall_stats": {
+    "total_llms": 11,
+    "total_tests_across_llms": 67,
+    "total_passed_across_llms": 7,
+    "total_failed_across_llms": 60
+  }
+}

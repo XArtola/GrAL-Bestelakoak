@@ -1,0 +1,1662 @@
+{
+  "metadata": {
+    "generatedAt": "2025-06-22T01:31:10.960Z",
+    "totalPassedTests": 37,
+    "llmsAnalyzed": [
+      "claude_3_5_sonnet",
+      "claude_3_7_sonnet",
+      "claude_3_7_sonnet_thinking",
+      "claude_sonnet_4",
+      "gemini_2_0_flash",
+      "gemini_2_5_pro_preview",
+      "gpt_4o",
+      "gpt_4_1",
+      "o3_mini",
+      "o4_mini_preview"
+    ],
+    "description": "Comparativa de tests con resultado PASSED vs baseline",
+    "dataSource": "Local JSON files",
+    "uniqueTestGroups": 37,
+    "duplicateInstances": 0,
+    "duplicateHandling": "Each passed duplicate test counted as separate instance"
+  },
+  "passedTestsComparison": [
+    {
+      "llm": "claude_3_5_sonnet",
+      "llmDisplayName": "Claude 3.5 Sonnet",
+      "testName": "User Sign-up and Login should error for an invalid user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid user",
+      "fileName": "auth7.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth7.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2598,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4022,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": -1424
+      }
+    },
+    {
+      "llm": "claude_3_5_sonnet",
+      "llmDisplayName": "Claude 3.5 Sonnet",
+      "testName": "User Sign-up and Login should error for an invalid password for existing user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid password for existing user",
+      "fileName": "auth8.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth8.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2374,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid password for existing user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4132,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid password for existing user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": -1758
+      }
+    },
+    {
+      "llm": "claude_3_5_sonnet",
+      "llmDisplayName": "Claude 3.5 Sonnet",
+      "testName": "User Settings renders the user settings form",
+      "testNameWithInstance": "User Settings renders the user settings form",
+      "fileName": "user-settings1.spec.ts",
+      "filePath": "cypress\\tests\\original\\user-settings1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2454,
+        "actionableCommands": 0,
+        "commands": {},
+        "originalTestName": "User Settings renders the user settings form"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2798,
+        "actionableCommands": 0,
+        "commands": {},
+        "originalTestName": "User Settings renders the user settings form"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 0,
+        "durationDifference": -344
+      }
+    },
+    {
+      "llm": "claude_3_7_sonnet",
+      "llmDisplayName": "Claude 3.7 Sonnet",
+      "testName": "User Sign-up and Login should error for an invalid user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid user",
+      "fileName": "auth7.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth7.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4717,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4022,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": 695
+      }
+    },
+    {
+      "llm": "claude_3_7_sonnet",
+      "llmDisplayName": "Claude 3.7 Sonnet",
+      "testName": "User Sign-up and Login should error for an invalid password for existing user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid password for existing user",
+      "fileName": "auth8.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth8.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3937,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid password for existing user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4132,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid password for existing user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": -195
+      }
+    },
+    {
+      "llm": "claude_3_7_sonnet_thinking",
+      "llmDisplayName": "Claude 3.7 Sonnet Thinking",
+      "testName": "User Sign-up and Login should error for an invalid user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid user",
+      "fileName": "auth7.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth7.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3099,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4022,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": -923
+      }
+    },
+    {
+      "llm": "claude_3_7_sonnet_thinking",
+      "llmDisplayName": "Claude 3.7 Sonnet Thinking",
+      "testName": "User Sign-up and Login should error for an invalid password for existing user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid password for existing user",
+      "fileName": "auth8.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth8.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2942,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid password for existing user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4132,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid password for existing user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": -1190
+      }
+    },
+    {
+      "llm": "claude_3_7_sonnet_thinking",
+      "llmDisplayName": "Claude 3.7 Sonnet Thinking",
+      "testName": "User Settings renders the user settings form",
+      "testNameWithInstance": "User Settings renders the user settings form",
+      "fileName": "user-settings1.spec.ts",
+      "filePath": "cypress\\tests\\original\\user-settings1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3949,
+        "actionableCommands": 0,
+        "commands": {},
+        "originalTestName": "User Settings renders the user settings form"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2798,
+        "actionableCommands": 0,
+        "commands": {},
+        "originalTestName": "User Settings renders the user settings form"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 0,
+        "durationDifference": 1151
+      }
+    },
+    {
+      "llm": "claude_3_7_sonnet_thinking",
+      "llmDisplayName": "Claude 3.7 Sonnet Thinking",
+      "testName": "User Settings updates first name, last name, email and phone number",
+      "testNameWithInstance": "User Settings updates first name, last name, email and phone number",
+      "fileName": "user-settings3.spec.ts",
+      "filePath": "cypress\\tests\\original\\user-settings3.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 7208,
+        "actionableCommands": 9,
+        "commands": {
+          "clear": 4,
+          "type": 4,
+          "click": 1
+        },
+        "originalTestName": "User Settings updates first name, last name, email and phone number"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 5580,
+        "actionableCommands": 11,
+        "commands": {
+          "type": 4,
+          "clear": 4,
+          "blur": 1,
+          "click": 2
+        },
+        "originalTestName": "User Settings updates first name, last name, email and phone number"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": -2,
+        "durationDifference": 1628
+      }
+    },
+    {
+      "llm": "claude_sonnet_4",
+      "llmDisplayName": "Claude Sonnet 4",
+      "testName": "User Sign-up and Login should redirect unauthenticated user to signin page",
+      "testNameWithInstance": "User Sign-up and Login should redirect unauthenticated user to signin page",
+      "fileName": "auth1.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3493,
+        "actionableCommands": 1,
+        "commands": {
+          "visit": 1
+        },
+        "originalTestName": "User Sign-up and Login should redirect unauthenticated user to signin page"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2285,
+        "actionableCommands": 1,
+        "commands": {
+          "visit": 1
+        },
+        "originalTestName": "User Sign-up and Login should redirect unauthenticated user to signin page"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 0,
+        "durationDifference": 1208
+      }
+    },
+    {
+      "llm": "claude_sonnet_4",
+      "llmDisplayName": "Claude Sonnet 4",
+      "testName": "User Sign-up and Login should error for an invalid user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid user",
+      "fileName": "auth7.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth7.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3443,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4022,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": -579
+      }
+    },
+    {
+      "llm": "claude_sonnet_4",
+      "llmDisplayName": "Claude Sonnet 4",
+      "testName": "User Sign-up and Login should error for an invalid password for existing user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid password for existing user",
+      "fileName": "auth8.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth8.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4022,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid password for existing user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4132,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid password for existing user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": -110
+      }
+    },
+    {
+      "llm": "claude_sonnet_4",
+      "llmDisplayName": "Claude Sonnet 4",
+      "testName": "User Settings updates first name, last name, email and phone number",
+      "testNameWithInstance": "User Settings updates first name, last name, email and phone number",
+      "fileName": "user-settings3.spec.ts",
+      "filePath": "cypress\\tests\\original\\user-settings3.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 8846,
+        "actionableCommands": 9,
+        "commands": {
+          "type": 4,
+          "clear": 4,
+          "click": 1
+        },
+        "originalTestName": "User Settings updates first name, last name, email and phone number"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 5580,
+        "actionableCommands": 11,
+        "commands": {
+          "type": 4,
+          "clear": 4,
+          "blur": 1,
+          "click": 2
+        },
+        "originalTestName": "User Settings updates first name, last name, email and phone number"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": -2,
+        "durationDifference": 3266
+      }
+    },
+    {
+      "llm": "gemini_2_0_flash",
+      "llmDisplayName": "Gemini 2.0 Flash",
+      "testName": "User Sign-up and Login should redirect unauthenticated user to signin page",
+      "testNameWithInstance": "User Sign-up and Login should redirect unauthenticated user to signin page",
+      "fileName": "auth1.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 6872,
+        "actionableCommands": 1,
+        "commands": {
+          "visit": 1
+        },
+        "originalTestName": "User Sign-up and Login should redirect unauthenticated user to signin page"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2285,
+        "actionableCommands": 1,
+        "commands": {
+          "visit": 1
+        },
+        "originalTestName": "User Sign-up and Login should redirect unauthenticated user to signin page"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 0,
+        "durationDifference": 4587
+      }
+    },
+    {
+      "llm": "gemini_2_0_flash",
+      "llmDisplayName": "Gemini 2.0 Flash",
+      "testName": "User Sign-up and Login should display login errors",
+      "testNameWithInstance": "User Sign-up and Login should display login errors",
+      "fileName": "auth5.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth5.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3151,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should display login errors"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2559,
+        "actionableCommands": 6,
+        "commands": {
+          "visit": 1,
+          "blur": 2,
+          "clear": 1,
+          "type": 2
+        },
+        "originalTestName": "User Sign-up and Login should display login errors"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": -2,
+        "durationDifference": 592
+      }
+    },
+    {
+      "llm": "gemini_2_0_flash",
+      "llmDisplayName": "Gemini 2.0 Flash",
+      "testName": "Transaction Feed app layout and responsiveness toggles the navigation drawer",
+      "testNameWithInstance": "Transaction Feed app layout and responsiveness toggles the navigation drawer",
+      "fileName": "transaction-feeds1.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2369,
+        "actionableCommands": 2,
+        "commands": {
+          "click": 2
+        },
+        "originalTestName": "Transaction Feed app layout and responsiveness toggles the navigation drawer"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3826,
+        "actionableCommands": 5,
+        "commands": {
+          "click": 5
+        },
+        "originalTestName": "Transaction Feed app layout and responsiveness toggles the navigation drawer"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": -3,
+        "durationDifference": -1457
+      }
+    },
+    {
+      "llm": "gemini_2_0_flash",
+      "llmDisplayName": "Gemini 2.0 Flash",
+      "testName": "User Settings should display user setting form errors",
+      "testNameWithInstance": "User Settings should display user setting form errors",
+      "fileName": "user-settings2.spec.ts",
+      "filePath": "cypress\\tests\\original\\user-settings2.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2943,
+        "actionableCommands": 0,
+        "commands": {},
+        "originalTestName": "User Settings should display user setting form errors"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4823,
+        "actionableCommands": 13,
+        "commands": {
+          "blur": 5,
+          "clear": 3,
+          "type": 5
+        },
+        "originalTestName": "User Settings should display user setting form errors"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": -13,
+        "durationDifference": -1880
+      }
+    },
+    {
+      "llm": "gemini_2_5_pro_preview",
+      "llmDisplayName": "Gemini 2.5 Pro (Preview)",
+      "testName": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+      "testNameWithInstance": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+      "fileName": "auth4.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth4.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 6670,
+        "actionableCommands": 13,
+        "commands": {
+          "visit": 2,
+          "type": 7,
+          "click": 4
+        },
+        "originalTestName": "User Sign-up and Login should allow a visitor to sign-up, login, and logout"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 6906,
+        "actionableCommands": 17,
+        "commands": {
+          "visit": 1,
+          "click": 7,
+          "type": 8,
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should allow a visitor to sign-up, login, and logout"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": -4,
+        "durationDifference": -236
+      }
+    },
+    {
+      "llm": "gemini_2_5_pro_preview",
+      "llmDisplayName": "Gemini 2.5 Pro (Preview)",
+      "testName": "User Sign-up and Login should error for an invalid user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid user",
+      "fileName": "auth7.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth7.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3395,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4022,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": -627
+      }
+    },
+    {
+      "llm": "gemini_2_5_pro_preview",
+      "llmDisplayName": "Gemini 2.5 Pro (Preview)",
+      "testName": "User Sign-up and Login should error for an invalid password for existing user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid password for existing user",
+      "fileName": "auth8.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth8.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3391,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid password for existing user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4132,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid password for existing user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": -741
+      }
+    },
+    {
+      "llm": "gemini_2_5_pro_preview",
+      "llmDisplayName": "Gemini 2.5 Pro (Preview)",
+      "testName": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+      "testNameWithInstance": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+      "fileName": "transaction-view1.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-view1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2477,
+        "actionableCommands": 1,
+        "commands": {
+          "click": 1
+        },
+        "originalTestName": "Transaction View transactions navigation tabs are hidden on a transaction view page"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3220,
+        "actionableCommands": 1,
+        "commands": {
+          "click": 1
+        },
+        "originalTestName": "Transaction View transactions navigation tabs are hidden on a transaction view page"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 0,
+        "durationDifference": -743
+      }
+    },
+    {
+      "llm": "gemini_2_5_pro_preview",
+      "llmDisplayName": "Gemini 2.5 Pro (Preview)",
+      "testName": "User Settings renders the user settings form",
+      "testNameWithInstance": "User Settings renders the user settings form",
+      "fileName": "user-settings1.spec.ts",
+      "filePath": "cypress\\tests\\original\\user-settings1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3530,
+        "actionableCommands": 0,
+        "commands": {},
+        "originalTestName": "User Settings renders the user settings form"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2798,
+        "actionableCommands": 0,
+        "commands": {},
+        "originalTestName": "User Settings renders the user settings form"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 0,
+        "durationDifference": 732
+      }
+    },
+    {
+      "llm": "gemini_2_5_pro_preview",
+      "llmDisplayName": "Gemini 2.5 Pro (Preview)",
+      "testName": "User Settings updates first name, last name, email and phone number",
+      "testNameWithInstance": "User Settings updates first name, last name, email and phone number",
+      "fileName": "user-settings3.spec.ts",
+      "filePath": "cypress\\tests\\original\\user-settings3.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 6348,
+        "actionableCommands": 9,
+        "commands": {
+          "type": 4,
+          "clear": 4,
+          "click": 1
+        },
+        "originalTestName": "User Settings updates first name, last name, email and phone number"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 5580,
+        "actionableCommands": 11,
+        "commands": {
+          "type": 4,
+          "clear": 4,
+          "blur": 1,
+          "click": 2
+        },
+        "originalTestName": "User Settings updates first name, last name, email and phone number"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": -2,
+        "durationDifference": 768
+      }
+    },
+    {
+      "llm": "gpt_4o",
+      "llmDisplayName": "GPT-4o",
+      "testName": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+      "testNameWithInstance": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+      "fileName": "auth4.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth4.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 5663,
+        "actionableCommands": 12,
+        "commands": {
+          "visit": 1,
+          "type": 7,
+          "click": 4
+        },
+        "originalTestName": "User Sign-up and Login should allow a visitor to sign-up, login, and logout"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 6906,
+        "actionableCommands": 17,
+        "commands": {
+          "visit": 1,
+          "click": 7,
+          "type": 8,
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should allow a visitor to sign-up, login, and logout"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": -5,
+        "durationDifference": -1243
+      }
+    },
+    {
+      "llm": "gpt_4o",
+      "llmDisplayName": "GPT-4o",
+      "testName": "User Sign-up and Login should error for an invalid user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid user",
+      "fileName": "auth7.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth7.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3013,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4022,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": -1009
+      }
+    },
+    {
+      "llm": "gpt_4o",
+      "llmDisplayName": "GPT-4o",
+      "testName": "User Sign-up and Login should error for an invalid password for existing user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid password for existing user",
+      "fileName": "auth8.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth8.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2950,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid password for existing user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4132,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid password for existing user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": -1182
+      }
+    },
+    {
+      "llm": "gpt_4o",
+      "llmDisplayName": "GPT-4o",
+      "testName": "Bank Accounts creates a new bank account",
+      "testNameWithInstance": "Bank Accounts creates a new bank account",
+      "fileName": "bankaccounts1.spec.ts",
+      "filePath": "cypress\\tests\\original\\bankaccounts1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4251,
+        "actionableCommands": 6,
+        "commands": {
+          "click": 3,
+          "type": 3
+        },
+        "originalTestName": "Bank Accounts creates a new bank account"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 5225,
+        "actionableCommands": 7,
+        "commands": {
+          "click": 4,
+          "type": 3
+        },
+        "originalTestName": "Bank Accounts creates a new bank account"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": -1,
+        "durationDifference": -974
+      }
+    },
+    {
+      "llm": "gpt_4_1",
+      "llmDisplayName": "GPT-4.1",
+      "testName": "User Sign-up and Login should redirect unauthenticated user to signin page",
+      "testNameWithInstance": "User Sign-up and Login should redirect unauthenticated user to signin page",
+      "fileName": "auth1.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 1862,
+        "actionableCommands": 1,
+        "commands": {
+          "visit": 1
+        },
+        "originalTestName": "User Sign-up and Login should redirect unauthenticated user to signin page"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2285,
+        "actionableCommands": 1,
+        "commands": {
+          "visit": 1
+        },
+        "originalTestName": "User Sign-up and Login should redirect unauthenticated user to signin page"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 0,
+        "durationDifference": -423
+      }
+    },
+    {
+      "llm": "gpt_4_1",
+      "llmDisplayName": "GPT-4.1",
+      "testName": "User Sign-up and Login should error for an invalid user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid user",
+      "fileName": "auth7.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth7.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3730,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4022,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": -292
+      }
+    },
+    {
+      "llm": "gpt_4_1",
+      "llmDisplayName": "GPT-4.1",
+      "testName": "User Sign-up and Login should error for an invalid password for existing user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid password for existing user",
+      "fileName": "auth8.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth8.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2970,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid password for existing user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4132,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid password for existing user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": -1162
+      }
+    },
+    {
+      "llm": "gpt_4_1",
+      "llmDisplayName": "GPT-4.1",
+      "testName": "Transaction Feed app layout and responsiveness toggles the navigation drawer",
+      "testNameWithInstance": "Transaction Feed app layout and responsiveness toggles the navigation drawer",
+      "fileName": "transaction-feeds1.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-feeds1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2296,
+        "actionableCommands": 2,
+        "commands": {
+          "click": 2
+        },
+        "originalTestName": "Transaction Feed app layout and responsiveness toggles the navigation drawer"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3826,
+        "actionableCommands": 5,
+        "commands": {
+          "click": 5
+        },
+        "originalTestName": "Transaction Feed app layout and responsiveness toggles the navigation drawer"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": -3,
+        "durationDifference": -1530
+      }
+    },
+    {
+      "llm": "gpt_4_1",
+      "llmDisplayName": "GPT-4.1",
+      "testName": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+      "testNameWithInstance": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+      "fileName": "transaction-view1.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-view1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3117,
+        "actionableCommands": 1,
+        "commands": {
+          "visit": 1
+        },
+        "originalTestName": "Transaction View transactions navigation tabs are hidden on a transaction view page"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3220,
+        "actionableCommands": 1,
+        "commands": {
+          "click": 1
+        },
+        "originalTestName": "Transaction View transactions navigation tabs are hidden on a transaction view page"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 0,
+        "durationDifference": -103
+      }
+    },
+    {
+      "llm": "o3_mini",
+      "llmDisplayName": "o3-mini",
+      "testName": "User Sign-up and Login should redirect unauthenticated user to signin page",
+      "testNameWithInstance": "User Sign-up and Login should redirect unauthenticated user to signin page",
+      "fileName": "auth1.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2353,
+        "actionableCommands": 1,
+        "commands": {
+          "visit": 1
+        },
+        "originalTestName": "User Sign-up and Login should redirect unauthenticated user to signin page"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2285,
+        "actionableCommands": 1,
+        "commands": {
+          "visit": 1
+        },
+        "originalTestName": "User Sign-up and Login should redirect unauthenticated user to signin page"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 0,
+        "durationDifference": 68
+      }
+    },
+    {
+      "llm": "o4_mini_preview",
+      "llmDisplayName": "o4-mini (Preview)",
+      "testName": "User Sign-up and Login should redirect unauthenticated user to signin page",
+      "testNameWithInstance": "User Sign-up and Login should redirect unauthenticated user to signin page",
+      "fileName": "auth1.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2343,
+        "actionableCommands": 1,
+        "commands": {
+          "visit": 1
+        },
+        "originalTestName": "User Sign-up and Login should redirect unauthenticated user to signin page"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2285,
+        "actionableCommands": 1,
+        "commands": {
+          "visit": 1
+        },
+        "originalTestName": "User Sign-up and Login should redirect unauthenticated user to signin page"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 0,
+        "durationDifference": 58
+      }
+    },
+    {
+      "llm": "o4_mini_preview",
+      "llmDisplayName": "o4-mini (Preview)",
+      "testName": "User Sign-up and Login should error for an invalid user",
+      "testNameWithInstance": "User Sign-up and Login should error for an invalid user",
+      "fileName": "auth7.spec.ts",
+      "filePath": "cypress\\tests\\original\\auth7.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4099,
+        "actionableCommands": 4,
+        "commands": {
+          "visit": 1,
+          "type": 2,
+          "click": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 4022,
+        "actionableCommands": 1,
+        "commands": {
+          "login": 1
+        },
+        "originalTestName": "User Sign-up and Login should error for an invalid user"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 3,
+        "durationDifference": 77
+      }
+    },
+    {
+      "llm": "o4_mini_preview",
+      "llmDisplayName": "o4-mini (Preview)",
+      "testName": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+      "testNameWithInstance": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+      "fileName": "transaction-view1.spec.ts",
+      "filePath": "cypress\\tests\\original\\transaction-view1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 5967,
+        "actionableCommands": 1,
+        "commands": {
+          "visit": 1
+        },
+        "originalTestName": "Transaction View transactions navigation tabs are hidden on a transaction view page"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3220,
+        "actionableCommands": 1,
+        "commands": {
+          "click": 1
+        },
+        "originalTestName": "Transaction View transactions navigation tabs are hidden on a transaction view page"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 0,
+        "durationDifference": 2747
+      }
+    },
+    {
+      "llm": "o4_mini_preview",
+      "llmDisplayName": "o4-mini (Preview)",
+      "testName": "User Settings renders the user settings form",
+      "testNameWithInstance": "User Settings renders the user settings form",
+      "fileName": "user-settings1.spec.ts",
+      "filePath": "cypress\\tests\\original\\user-settings1.spec.ts",
+      "isDuplicate": false,
+      "instanceNumber": 1,
+      "totalInstances": 1,
+      "instanceCount": {
+        "baseline": 1,
+        "target": 1,
+        "passedInTarget": 1
+      },
+      "target": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 3179,
+        "actionableCommands": 0,
+        "commands": {},
+        "originalTestName": "User Settings renders the user settings form"
+      },
+      "baseline": {
+        "executed": true,
+        "status": "passed",
+        "passed": true,
+        "duration": 2798,
+        "actionableCommands": 0,
+        "commands": {},
+        "originalTestName": "User Settings renders the user settings form"
+      },
+      "comparison": {
+        "statusMatch": true,
+        "actionsDifference": 0,
+        "durationDifference": 381
+      }
+    }
+  ]
+}

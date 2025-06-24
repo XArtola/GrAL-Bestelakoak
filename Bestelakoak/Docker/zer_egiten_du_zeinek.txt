@@ -1,0 +1,8 @@
+process_result_times: promp-etatik lortutako emaitzak json batera pasa
+ingest-prompt-results: test generation datuan sartu datubasean
+cypress_efficency_analyzer: atera comand/instructions testetatik
+
+--------------------------------
+Ordena
+lehenengo testak banatu metrikak lortzeko
+Ondoren it blokeak hustu

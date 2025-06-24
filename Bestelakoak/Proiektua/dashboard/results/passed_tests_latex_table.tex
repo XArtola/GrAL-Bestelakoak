@@ -1,0 +1,197 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage[margin=1cm]{geometry}
+
+\begin{document}
+
+\begin{landscape}
+\begin{longtable}{|p{2.5cm}|p{1.5cm}|p{1cm}|p{1cm}|p{2cm}|p{1cm}|p{1cm}|p{2cm}|p{1.5cm}|p{1.5cm}|}
+\caption{Comparación de Tests Pasados: LLMs vs Baseline} \\
+\hline
+\textbf{Archivo} & \textbf{LLM} & \textbf{Tiempo Target (ms)} & \textbf{Tiempo Base (ms)} & \textbf{Acciones Target} & \textbf{Acc. Target} & \textbf{Acc. Base} & \textbf{Acciones Baseline} & \textbf{Dif. Tiempo} & \textbf{Dif. Acciones} \\
+\hline
+\endfirsthead
+
+\multicolumn{10}{c}%
+{{\bfseries \tablename\ \thetable{} -- continuación de la página anterior}} \\
+\hline
+\textbf{Archivo} & \textbf{LLM} & \textbf{Tiempo Target (ms)} & \textbf{Tiempo Base (ms)} & \textbf{Acciones Target} & \textbf{Acc. Target} & \textbf{Acc. Base} & \textbf{Acciones Baseline} & \textbf{Dif. Tiempo} & \textbf{Dif. Acciones} \\
+\hline
+\endhead
+
+\hline \multicolumn{10}{|r|}{{Continúa en la siguiente página...}} \\ \hline
+\endfoot
+
+\hline
+\endlastfoot
+
+% Claude 3.5 Sonnet
+auth7.spec.ts & Claude 3.5 & 2598 & 4022 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{green}{-1424} & \textcolor{red}{+3} \\
+\hline
+
+auth8.spec.ts & Claude 3.5 & 2374 & 4132 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{green}{-1758} & \textcolor{red}{+3} \\
+\hline
+
+user-settings1.spec.ts & Claude 3.5 & 2454 & 2798 & - & 0 & 0 & - & \textcolor{green}{-344} & 0 \\
+\hline
+
+% Claude 3.7 Sonnet
+auth7.spec.ts & Claude 3.7 & 4717 & 4022 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{red}{+695} & \textcolor{red}{+3} \\
+\hline
+
+auth8.spec.ts & Claude 3.7 & 3937 & 4132 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{green}{-195} & \textcolor{red}{+3} \\
+\hline
+
+% Claude 3.7 Sonnet Thinking
+auth7.spec.ts & Claude 3.7 Think & 3099 & 4022 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{green}{-923} & \textcolor{red}{+3} \\
+\hline
+
+auth8.spec.ts & Claude 3.7 Think & 2942 & 4132 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{green}{-1190} & \textcolor{red}{+3} \\
+\hline
+
+user-settings1.spec.ts & Claude 3.7 Think & 3949 & 2798 & - & 0 & 0 & - & \textcolor{red}{+1151} & 0 \\
+\hline
+
+user-settings3.spec.ts & Claude 3.7 Think & 7208 & 5580 & clear:4, type:4, click:1 & 9 & 11 & type:4, clear:4, blur:1, click:2 & \textcolor{red}{+1628} & \textcolor{green}{-2} \\
+\hline
+
+% Claude Sonnet 4
+auth1.spec.ts & Claude Sonnet 4 & 3493 & 2285 & visit:1 & 1 & 1 & visit:1 & \textcolor{red}{+1208} & 0 \\
+\hline
+
+auth7.spec.ts & Claude Sonnet 4 & 3443 & 4022 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{green}{-579} & \textcolor{red}{+3} \\
+\hline
+
+auth8.spec.ts & Claude Sonnet 4 & 4022 & 4132 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{green}{-110} & \textcolor{red}{+3} \\
+\hline
+
+user-settings3.spec.ts & Claude Sonnet 4 & 8846 & 5580 & type:4, clear:4, click:1 & 9 & 11 & type:4, clear:4, blur:1, click:2 & \textcolor{red}{+3266} & \textcolor{green}{-2} \\
+\hline
+
+% Gemini 2.0 Flash
+auth1.spec.ts & Gemini 2.0 & 6872 & 2285 & visit:1 & 1 & 1 & visit:1 & \textcolor{red}{+4587} & 0 \\
+\hline
+
+auth5.spec.ts & Gemini 2.0 & 3151 & 2559 & visit:1, type:2, click:1 & 4 & 6 & visit:1, blur:2, clear:1, type:2 & \textcolor{red}{+592} & \textcolor{green}{-2} \\
+\hline
+
+transaction-feeds1.spec.ts & Gemini 2.0 & 2369 & 3826 & click:2 & 2 & 5 & click:5 & \textcolor{green}{-1457} & \textcolor{green}{-3} \\
+\hline
+
+user-settings2.spec.ts & Gemini 2.0 & 2943 & 4823 & - & 0 & 13 & blur:5, clear:3, type:5 & \textcolor{green}{-1880} & \textcolor{green}{-13} \\
+\hline
+
+% Gemini 2.5 Pro Preview
+auth4.spec.ts & Gemini 2.5 Pro & 6670 & 6906 & visit:2, type:7, click:4 & 13 & 17 & visit:1, click:7, type:8, login:1 & \textcolor{green}{-236} & \textcolor{green}{-4} \\
+\hline
+
+auth7.spec.ts & Gemini 2.5 Pro & 3395 & 4022 & click:1 & 4 & 1 & login:1 & \textcolor{green}{-627} & \textcolor{red}{+3} \\
+\hline
+
+auth8.spec.ts & Gemini 2.5 Pro & 3391 & 4132 & - & 4 & 1 & login:1 & \textcolor{green}{-741} & \textcolor{red}{+3} \\
+\hline
+
+% GPT-4o
+auth1.spec.ts & GPT-4o & 4002 & 2285 & visit:1 & 1 & 1 & visit:1 & \textcolor{red}{+1717} & 0 \\
+\hline
+
+auth7.spec.ts & GPT-4o & 4274 & 4022 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{red}{+252} & \textcolor{red}{+3} \\
+\hline
+
+auth8.spec.ts & GPT-4o & 4300 & 4132 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{red}{+168} & \textcolor{red}{+3} \\
+\hline
+
+transaction-feeds1.spec.ts & GPT-4o & 3373 & 3826 & click:2 & 2 & 5 & click:5 & \textcolor{green}{-453} & \textcolor{green}{-3} \\
+\hline
+
+% GPT-4.1
+auth1.spec.ts & GPT-4.1 & 4193 & 2285 & visit:1 & 1 & 1 & visit:1 & \textcolor{red}{+1908} & 0 \\
+\hline
+
+auth7.spec.ts & GPT-4.1 & 3991 & 4022 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{green}{-31} & \textcolor{red}{+3} \\
+\hline
+
+auth8.spec.ts & GPT-4.1 & 4079 & 4132 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{green}{-53} & \textcolor{red}{+3} \\
+\hline
+
+% o3-mini
+auth1.spec.ts & o3-mini & 3934 & 2285 & visit:1 & 1 & 1 & visit:1 & \textcolor{red}{+1649} & 0 \\
+\hline
+
+auth7.spec.ts & o3-mini & 3967 & 4022 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{green}{-55} & \textcolor{red}{+3} \\
+\hline
+
+auth8.spec.ts & o3-mini & 3945 & 4132 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{green}{-187} & \textcolor{red}{+3} \\
+\hline
+
+% o4-mini Preview
+auth1.spec.ts & o4-mini Prev & 3912 & 2285 & visit:1 & 1 & 1 & visit:1 & \textcolor{red}{+1627} & 0 \\
+\hline
+
+auth7.spec.ts & o4-mini Prev & 3965 & 4022 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{green}{-57} & \textcolor{red}{+3} \\
+\hline
+
+auth8.spec.ts & o4-mini Prev & 3907 & 4132 & visit:1, type:2, click:1 & 4 & 1 & login:1 & \textcolor{green}{-225} & \textcolor{red}{+3} \\
+\hline
+
+user-settings1.spec.ts & o4-mini Prev & 3781 & 2798 & - & 0 & 0 & - & \textcolor{red}{+983} & 0 \\
+\hline
+
+user-settings3.spec.ts & o4-mini Prev & 7984 & 5580 & clear:4, type:4, click:1 & 9 & 11 & type:4, clear:4, blur:1, click:2 & \textcolor{red}{+2404} & \textcolor{green}{-2} \\
+\hline
+
+\end{longtable}
+\end{landscape}
+
+\section*{Resumen de Resultados}
+
+\begin{table}[h]
+\centering
+\caption{Estadísticas Resumidas por LLM}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{LLM} & \textbf{Tests Pasados} & \textbf{Mejora Tiempo} & \textbf{Mejora Acciones} & \textbf{Ambas Mejoras} \\
+\hline
+Claude 3.5 Sonnet & 3 & 3 & 0 & 0 \\
+\hline
+Claude 3.7 Sonnet & 2 & 1 & 0 & 0 \\
+\hline
+Claude 3.7 Sonnet Thinking & 4 & 2 & 1 & 0 \\
+\hline
+Claude Sonnet 4 & 4 & 2 & 2 & 0 \\
+\hline
+Gemini 2.0 Flash & 4 & 3 & 3 & 2 \\
+\hline
+Gemini 2.5 Pro (Preview) & 3 & 3 & 1 & 1 \\
+\hline
+GPT-4o & 4 & 1 & 1 & 0 \\
+\hline
+GPT-4.1 & 3 & 2 & 0 & 0 \\
+\hline
+o3-mini & 3 & 2 & 0 & 0 \\
+\hline
+o4-mini (Preview) & 5 & 2 & 1 & 0 \\
+\hline
+\textbf{Total} & \textbf{35} & \textbf{21} & \textbf{9} & \textbf{3} \\
+\hline
+\end{tabular}
+\end{table}
+
+\section*{Notas}
+
+\begin{itemize}
+\item \textcolor{green}{Verde}: Mejora respecto al baseline (menor tiempo o menos acciones)
+\item \textcolor{red}{Rojo}: Empeoramiento respecto al baseline (mayor tiempo o más acciones)
+\item Las acciones incluyen comandos como: visit, click, type, clear, blur, login
+\item Los tiempos están en milisegundos
+\item "Acc." se refiere al número total de acciones ejecutables
+\end{itemize}
+
+\end{document}

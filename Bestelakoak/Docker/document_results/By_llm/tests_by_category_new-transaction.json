@@ -1,0 +1,2283 @@
+{
+  "category": "new-transaction",
+  "llms": {
+    "claude_3_5_sonnet": {
+      "summary": {
+        "tests": 10,
+        "passed": 0,
+        "failed": 6,
+        "skipped": 4,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction payment",
+          "status": "failed",
+          "duration": 4726,
+          "message": "ReferenceError: paymentTransactions is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/new-transaction1.spec.ts:44:35)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: paymentTransactions is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/new-transaction1.spec.ts:44:35)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\new-transaction1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction request",
+          "status": "failed",
+          "duration": 16603,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\new-transaction2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction displays new transaction errors",
+          "status": "failed",
+          "duration": 18990,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\new-transaction3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction payment and verifies the deposit for the receiver",
+          "status": "failed",
+          "duration": 16702,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\new-transaction4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction request and accepts the request for the receiver",
+          "status": "failed",
+          "duration": 17115,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\new-transaction5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute firstName",
+          "status": "failed",
+          "duration": 445,
+          "message": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\new-transaction6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute lastName",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute username",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute email",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute phoneNumber",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "claude_3_7_sonnet": {
+      "summary": {
+        "tests": 10,
+        "passed": 0,
+        "failed": 6,
+        "skipped": 4,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction payment",
+          "status": "failed",
+          "duration": 21837,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\new-transaction1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction request",
+          "status": "failed",
+          "duration": 22123,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\new-transaction2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction displays new transaction errors",
+          "status": "failed",
+          "duration": 24273,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\new-transaction3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction payment and verifies the deposit for the receiver",
+          "status": "failed",
+          "duration": 26814,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\new-transaction4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction request and accepts the request for the receiver",
+          "status": "failed",
+          "duration": 23672,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\new-transaction5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute firstName",
+          "status": "failed",
+          "duration": 816,
+          "message": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\new-transaction6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute lastName",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute username",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute email",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute phoneNumber",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "claude_3_7_sonnet_thinking": {
+      "summary": {
+        "tests": 10,
+        "passed": 0,
+        "failed": 6,
+        "skipped": 4,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction payment",
+          "status": "failed",
+          "duration": 23754,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\new-transaction1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction request",
+          "status": "failed",
+          "duration": 22888,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\new-transaction2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction displays new transaction errors",
+          "status": "failed",
+          "duration": 24490,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\new-transaction3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction payment and verifies the deposit for the receiver",
+          "status": "failed",
+          "duration": 22788,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\new-transaction4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction request and accepts the request for the receiver",
+          "status": "failed",
+          "duration": 20276,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=new-transaction]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\new-transaction5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute firstName",
+          "status": "failed",
+          "duration": 585,
+          "message": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\new-transaction6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute lastName",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute username",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute email",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute phoneNumber",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "claude_sonnet_4": {
+      "summary": {
+        "tests": 10,
+        "passed": 0,
+        "failed": 6,
+        "skipped": 4,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction payment",
+          "status": "failed",
+          "duration": 24098,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\new-transaction1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction request",
+          "status": "failed",
+          "duration": 24883,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\new-transaction2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction displays new transaction errors",
+          "status": "failed",
+          "duration": 22470,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\new-transaction3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction payment and verifies the deposit for the receiver",
+          "status": "failed",
+          "duration": 24109,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-list-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\new-transaction4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction request and accepts the request for the receiver",
+          "status": "failed",
+          "duration": 9166,
+          "message": "TypeError: cy.getBySel(...).first(...).should(...).or is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/new-transaction5.spec.ts:82:68)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "TypeError: cy.getBySel(...).first(...).should(...).or is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/new-transaction5.spec.ts:82:68)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\new-transaction5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute firstName",
+          "status": "failed",
+          "duration": 688,
+          "message": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\new-transaction6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute lastName",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute username",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute email",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute phoneNumber",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "gemini_2_0_flash": {
+      "summary": {
+        "tests": 10,
+        "passed": 0,
+        "failed": 6,
+        "skipped": 4,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction payment",
+          "status": "failed",
+          "duration": 21039,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test*=payment-submit-button]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:39:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test*=payment-submit-button]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:39:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\new-transaction1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction request",
+          "status": "failed",
+          "duration": 17672,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test*=transaction-amount-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_0_flash/new-transaction2.spec.ts:42:9)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test*=transaction-amount-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_0_flash/new-transaction2.spec.ts:42:9)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\new-transaction2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction displays new transaction errors",
+          "status": "failed",
+          "duration": 450,
+          "message": "Error: Test body for \"displays new transaction errors\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"displays new transaction errors\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\new-transaction3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction payment and verifies the deposit for the receiver",
+          "status": "failed",
+          "duration": 17916,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#description`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_0_flash/new-transaction4.spec.ts:42:9)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#description`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_0_flash/new-transaction4.spec.ts:42:9)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\new-transaction4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction request and accepts the request for the receiver",
+          "status": "failed",
+          "duration": 461,
+          "message": "Error: Test body for \"submits a transaction request and accepts the request for the receiver\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"submits a transaction request and accepts the request for the receiver\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\new-transaction5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute firstName",
+          "status": "failed",
+          "duration": 448,
+          "message": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\new-transaction6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute lastName",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute username",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute email",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute phoneNumber",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "gemini_2_5_pro_preview": {
+      "summary": {
+        "tests": 9,
+        "passed": 0,
+        "failed": 5,
+        "skipped": 4,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction payment",
+          "status": "failed",
+          "duration": 6536,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/new-transaction1.spec.ts:55:35)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/new-transaction1.spec.ts:55:35)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\new-transaction1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction request",
+          "status": "failed",
+          "duration": 6120,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/new-transaction2.spec.ts:41:39)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/new-transaction2.spec.ts:41:39)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\new-transaction2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction displays new transaction errors",
+          "status": "failed",
+          "duration": 20627,
+          "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth TransactionCreateStepTwo-submit css-q6gao2-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"transaction-create-submit-payment\" disabled=\"\">Pay</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "trace": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth TransactionCreateStepTwo-submit css-q6gao2-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"transaction-create-submit-payment\" disabled=\"\">Pay</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\new-transaction3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction request and accepts the request for the receiver",
+          "status": "failed",
+          "duration": 6697,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/new-transaction5.spec.ts:41:29)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/new-transaction5.spec.ts:41:29)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\new-transaction5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute firstName",
+          "status": "failed",
+          "duration": 587,
+          "message": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\new-transaction6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute lastName",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute username",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute email",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute phoneNumber",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "gpt_4o": {
+      "summary": {
+        "tests": 7,
+        "passed": 0,
+        "failed": 3,
+        "skipped": 4,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction request",
+          "status": "failed",
+          "duration": 6954,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/new-transaction2.spec.ts:46:35)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/new-transaction2.spec.ts:46:35)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\new-transaction2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction request and accepts the request for the receiver",
+          "status": "failed",
+          "duration": 6507,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/new-transaction5.spec.ts:44:35)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/new-transaction5.spec.ts:44:35)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\new-transaction5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute firstName",
+          "status": "failed",
+          "duration": 598,
+          "message": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\new-transaction6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute lastName",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute username",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute email",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute phoneNumber",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "gpt_4_1": {
+      "summary": {
+        "tests": 10,
+        "passed": 0,
+        "failed": 6,
+        "skipped": 4,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction payment",
+          "status": "failed",
+          "duration": 17485,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=amount-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=amount-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\new-transaction1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction request",
+          "status": "failed",
+          "duration": 21492,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-create-request]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-create-request]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\new-transaction2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction displays new transaction errors",
+          "status": "failed",
+          "duration": 17587,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test*=amount-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:39:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test*=amount-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:39:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\new-transaction3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction payment and verifies the deposit for the receiver",
+          "status": "failed",
+          "duration": 4805,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/new-transaction4.spec.ts:41:37)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/new-transaction4.spec.ts:41:37)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\new-transaction4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction request and accepts the request for the receiver",
+          "status": "failed",
+          "duration": 20485,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=alert-bar-success]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/new-transaction5.spec.ts:47:37)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=alert-bar-success]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/new-transaction5.spec.ts:47:37)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\new-transaction5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute firstName",
+          "status": "failed",
+          "duration": 432,
+          "message": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\new-transaction6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute lastName",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute username",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute email",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute phoneNumber",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "o3_mini": {
+      "summary": {
+        "tests": 10,
+        "passed": 0,
+        "failed": 6,
+        "skipped": 4,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction payment",
+          "status": "failed",
+          "duration": 5998,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/new-transaction1.spec.ts:39:26)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/new-transaction1.spec.ts:39:26)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\new-transaction1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction request",
+          "status": "failed",
+          "duration": 6026,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/new-transaction2.spec.ts:45:12)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/new-transaction2.spec.ts:45:12)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\new-transaction2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction displays new transaction errors",
+          "status": "failed",
+          "duration": 20851,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"transaction-amount\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/new-transaction3.spec.ts:35:7)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"transaction-amount\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/new-transaction3.spec.ts:35:7)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\new-transaction3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction payment and verifies the deposit for the receiver",
+          "status": "failed",
+          "duration": 6959,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/new-transaction4.spec.ts:41:22)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/new-transaction4.spec.ts:41:22)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\new-transaction4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction4.spec.ts\\New Transaction -- submits a transaction payment and verifies the deposit for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction request and accepts the request for the receiver",
+          "status": "failed",
+          "duration": 5791,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/new-transaction5.spec.ts:31:20)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/new-transaction5.spec.ts:31:20)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\new-transaction5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute firstName",
+          "status": "failed",
+          "duration": 479,
+          "message": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\new-transaction6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute lastName",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute username",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute email",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute phoneNumber",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "o4_mini_preview": {
+      "summary": {
+        "tests": 9,
+        "passed": 0,
+        "failed": 5,
+        "skipped": 4,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction payment",
+          "status": "failed",
+          "duration": 10515,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/new-transaction1.spec.ts:50:8)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/new-transaction1.spec.ts:50:8)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\new-transaction1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction1.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction payment (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction request",
+          "status": "failed",
+          "duration": 10298,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/new-transaction2.spec.ts:58:35)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/new-transaction2.spec.ts:58:35)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\new-transaction2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction2.spec.ts\\New Transaction -- navigates to the new transaction form, selects a user and submits a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction displays new transaction errors",
+          "status": "failed",
+          "duration": 24228,
+          "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth TransactionCreateStepTwo-submit css-q6gao2-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"transaction-create-submit-payment\" disabled=\"\">Pay</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "trace": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth TransactionCreateStepTwo-submit css-q6gao2-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"transaction-create-submit-payment\" disabled=\"\">Pay</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\new-transaction3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction3.spec.ts\\New Transaction -- displays new transaction errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction submits a transaction request and accepts the request for the receiver",
+          "status": "failed",
+          "duration": 10146,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/new-transaction5.spec.ts:34:16)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/new-transaction5.spec.ts:34:16)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\new-transaction5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction5.spec.ts\\New Transaction -- submits a transaction request and accepts the request for the receiver (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute firstName",
+          "status": "failed",
+          "duration": 715,
+          "message": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"firstName\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\new-transaction6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\new-transaction6.spec.ts\\New Transaction -- searches for a user by attribute -- firstName (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "New Transaction searches for a user by attribute lastName",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute username",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute email",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute phoneNumber",
+          "status": "skipped",
+          "duration": 0,
+          "rawStatus": "skipped",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "original": {
+      "summary": {
+        "tests": 10,
+        "passed": 10,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction payment",
+          "status": "passed",
+          "duration": 8319,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\new-transaction1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction request",
+          "status": "passed",
+          "duration": 7074,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\new-transaction2.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction displays new transaction errors",
+          "status": "passed",
+          "duration": 4273,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\new-transaction3.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction submits a transaction payment and verifies the deposit for the receiver",
+          "status": "passed",
+          "duration": 4515,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\new-transaction4.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction submits a transaction request and accepts the request for the receiver",
+          "status": "passed",
+          "duration": 7686,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\new-transaction5.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute firstName",
+          "status": "passed",
+          "duration": 4591,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute lastName",
+          "status": "passed",
+          "duration": 2420,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute username",
+          "status": "passed",
+          "duration": 2714,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute email",
+          "status": "passed",
+          "duration": 3400,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "New Transaction searches for a user by attribute phoneNumber",
+          "status": "passed",
+          "duration": 2420,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    }
+  },
+  "overall_stats": {
+    "total_llms": 11,
+    "total_tests_across_llms": 105,
+    "total_passed_across_llms": 10,
+    "total_failed_across_llms": 55
+  }
+}

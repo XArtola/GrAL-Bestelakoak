@@ -1,0 +1,2049 @@
+{
+  "category": "auth",
+  "llms": {
+    "claude_3_5_sonnet": {
+      "summary": {
+        "tests": 8,
+        "passed": 2,
+        "failed": 6,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Sign-up and Login should redirect unauthenticated user to signin page",
+          "status": "failed",
+          "duration": 19085,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=signin-title]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/auth1.spec.ts:26:30)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=signin-title]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/auth1.spec.ts:26:30)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\auth1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth1.spec.ts\\User Sign-up and Login -- should redirect unauthenticated user to signin page (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth1.spec.ts\\User Sign-up and Login -- should redirect unauthenticated user to signin page (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth1.spec.ts\\User Sign-up and Login -- should redirect unauthenticated user to signin page (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should redirect to the home page after login",
+          "status": "failed",
+          "duration": 20173,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected 'http://localhost:3000/signin' to equal 'http://localhost:3000/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/auth2.spec.ts:31:11)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected 'http://localhost:3000/signin' to equal 'http://localhost:3000/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/auth2.spec.ts:31:11)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\auth2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should remember a user for 30 days after login",
+          "status": "failed",
+          "duration": 6724,
+          "message": "CypressError: `cy.check()` can only be called on `:checkbox` and `:radio`. Your subject is a: `<span class=\"MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\" data-test=\"signin-remember-me\">...</span>`\n\nhttps://on.cypress.io/check\n    at checkOrUncheckEl (http://localhost:3000/__cypress/runner/cypress_runner.js:111386:68)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:3000/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:3000/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "trace": "CypressError: `cy.check()` can only be called on `:checkbox` and `:radio`. Your subject is a: `<span class=\"MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\" data-test=\"signin-remember-me\">...</span>`\n\nhttps://on.cypress.io/check\n    at checkOrUncheckEl (http://localhost:3000/__cypress/runner/cypress_runner.js:111386:68)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:3000/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:3000/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\auth3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+          "status": "failed",
+          "duration": 24706,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-onboarding-next]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-onboarding-next]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\auth4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display login errors",
+          "status": "failed",
+          "duration": 17987,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#password-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/auth5.spec.ts:24:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#password-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/auth5.spec.ts:24:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\auth5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display signup errors",
+          "status": "failed",
+          "duration": 17599,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.MuiFormControl-root.MuiFormControl-marginNormal.MuiFormControl-fullWidth.MuiTextField-root.css-17vbkzs-MuiFormControl-root-MuiTextField-root>' to have class 'Mui-error'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/auth6.spec.ts:26:35)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '<div.MuiFormControl-root.MuiFormControl-marginNormal.MuiFormControl-fullWidth.MuiTextField-root.css-17vbkzs-MuiFormControl-root-MuiTextField-root>' to have class 'Mui-error'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/auth6.spec.ts:26:35)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\auth6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid user",
+          "status": "passed",
+          "duration": 2598,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\auth7.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid password for existing user",
+          "status": "passed",
+          "duration": 2374,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\auth8.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "claude_3_7_sonnet": {
+      "summary": {
+        "tests": 8,
+        "passed": 2,
+        "failed": 6,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Sign-up and Login should redirect unauthenticated user to signin page",
+          "status": "failed",
+          "duration": 16788,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=signin-title]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/auth1.spec.ts:26:30)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=signin-title]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/auth1.spec.ts:26:30)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\auth1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth1.spec.ts\\User Sign-up and Login -- should redirect unauthenticated user to signin page (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth1.spec.ts\\User Sign-up and Login -- should redirect unauthenticated user to signin page (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth1.spec.ts\\User Sign-up and Login -- should redirect unauthenticated user to signin page (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should redirect to the home page after login",
+          "status": "failed",
+          "duration": 21913,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '/signin' to equal '/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/auth2.spec.ts:31:26)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '/signin' to equal '/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/auth2.spec.ts:31:26)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\auth2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should remember a user for 30 days after login",
+          "status": "failed",
+          "duration": 9255,
+          "message": "CypressError: `cy.check()` can only be called on `:checkbox` and `:radio`. Your subject is a: `<span class=\"MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\" data-test=\"signin-remember-me\">...</span>`\n\nhttps://on.cypress.io/check\n    at checkOrUncheckEl (http://localhost:3000/__cypress/runner/cypress_runner.js:111386:68)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:3000/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:3000/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "trace": "CypressError: `cy.check()` can only be called on `:checkbox` and `:radio`. Your subject is a: `<span class=\"MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\" data-test=\"signin-remember-me\">...</span>`\n\nhttps://on.cypress.io/check\n    at checkOrUncheckEl (http://localhost:3000/__cypress/runner/cypress_runner.js:111386:68)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:3000/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:3000/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\auth3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+          "status": "failed",
+          "duration": 25801,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '/signin' to equal '/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/auth4.spec.ts:38:26)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '/signin' to equal '/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/auth4.spec.ts:38:26)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\auth4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display login errors",
+          "status": "failed",
+          "duration": 19509,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#password-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/auth5.spec.ts:29:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#password-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/auth5.spec.ts:29:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\auth5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display signup errors",
+          "status": "failed",
+          "duration": 19765,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.MuiFormControl-root.MuiFormControl-marginNormal.MuiFormControl-fullWidth.MuiTextField-root.css-17vbkzs-MuiFormControl-root-MuiTextField-root>' to have class 'Mui-error'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/auth6.spec.ts:26:35)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '<div.MuiFormControl-root.MuiFormControl-marginNormal.MuiFormControl-fullWidth.MuiTextField-root.css-17vbkzs-MuiFormControl-root-MuiTextField-root>' to have class 'Mui-error'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/auth6.spec.ts:26:35)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\auth6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid user",
+          "status": "passed",
+          "duration": 4717,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\auth7.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid password for existing user",
+          "status": "passed",
+          "duration": 3937,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\auth8.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "claude_3_7_sonnet_thinking": {
+      "summary": {
+        "tests": 7,
+        "passed": 2,
+        "failed": 5,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Sign-up and Login should redirect unauthenticated user to signin page",
+          "status": "failed",
+          "duration": 20440,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=signin-title]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/auth1.spec.ts:30:28)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=signin-title]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/auth1.spec.ts:30:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\auth1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth1.spec.ts\\User Sign-up and Login -- should redirect unauthenticated user to signin page (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth1.spec.ts\\User Sign-up and Login -- should redirect unauthenticated user to signin page (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth1.spec.ts\\User Sign-up and Login -- should redirect unauthenticated user to signin page (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should remember a user for 30 days after login",
+          "status": "failed",
+          "duration": 6601,
+          "message": "CypressError: `cy.check()` can only be called on `:checkbox` and `:radio`. Your subject is a: `<span class=\"MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\" data-test=\"signin-remember-me\">...</span>`\n\nhttps://on.cypress.io/check\n    at checkOrUncheckEl (http://localhost:3000/__cypress/runner/cypress_runner.js:111386:68)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:3000/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:3000/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "trace": "CypressError: `cy.check()` can only be called on `:checkbox` and `:radio`. Your subject is a: `<span class=\"MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\" data-test=\"signin-remember-me\">...</span>`\n\nhttps://on.cypress.io/check\n    at checkOrUncheckEl (http://localhost:3000/__cypress/runner/cypress_runner.js:111386:68)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:3000/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:3000/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\auth3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+          "status": "failed",
+          "duration": 23471,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '/signin' to equal '/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/auth4.spec.ts:38:26)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '/signin' to equal '/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/auth4.spec.ts:38:26)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\auth4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display login errors",
+          "status": "failed",
+          "duration": 16734,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#password-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/auth5.spec.ts:27:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#password-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/auth5.spec.ts:27:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\auth5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display signup errors",
+          "status": "failed",
+          "duration": 16856,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#lastName-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/auth6.spec.ts:27:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#lastName-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/auth6.spec.ts:27:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\auth6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid user",
+          "status": "passed",
+          "duration": 3099,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\auth7.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid password for existing user",
+          "status": "passed",
+          "duration": 2942,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\auth8.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "claude_sonnet_4": {
+      "summary": {
+        "tests": 8,
+        "passed": 3,
+        "failed": 5,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Sign-up and Login should redirect unauthenticated user to signin page",
+          "status": "passed",
+          "duration": 3493,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\auth1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should redirect to the home page after login",
+          "status": "failed",
+          "duration": 20480,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '/signin' to equal '/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/auth2.spec.ts:31:26)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '/signin' to equal '/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/auth2.spec.ts:31:26)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\auth2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should remember a user for 30 days after login",
+          "status": "failed",
+          "duration": 5928,
+          "message": "CypressError: `cy.check()` can only be called on `:checkbox` and `:radio`. Your subject is a: `<span class=\"MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\" data-test=\"signin-remember-me\">...</span>`\n\nhttps://on.cypress.io/check\n    at checkOrUncheckEl (http://localhost:3000/__cypress/runner/cypress_runner.js:111386:68)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:3000/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:3000/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "trace": "CypressError: `cy.check()` can only be called on `:checkbox` and `:radio`. Your subject is a: `<span class=\"MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\" data-test=\"signin-remember-me\">...</span>`\n\nhttps://on.cypress.io/check\n    at checkOrUncheckEl (http://localhost:3000/__cypress/runner/cypress_runner.js:111386:68)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:3000/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:3000/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\auth3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+          "status": "failed",
+          "duration": 24506,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-onboarding-next]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-onboarding-next]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\auth4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display login errors",
+          "status": "failed",
+          "duration": 19774,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#password-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/auth5.spec.ts:27:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#password-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/auth5.spec.ts:27:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\auth5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display signup errors",
+          "status": "failed",
+          "duration": 19072,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#lastName-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/auth6.spec.ts:28:32)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#lastName-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/auth6.spec.ts:28:32)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\auth6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid user",
+          "status": "passed",
+          "duration": 3443,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\auth7.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid password for existing user",
+          "status": "passed",
+          "duration": 4022,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\auth8.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "gemini_2_0_flash": {
+      "summary": {
+        "tests": 8,
+        "passed": 2,
+        "failed": 6,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Sign-up and Login should redirect unauthenticated user to signin page",
+          "status": "passed",
+          "duration": 6872,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\auth1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should redirect to the home page after login",
+          "status": "failed",
+          "duration": 650,
+          "message": "Error: Test body for \"should redirect to the home page after login\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"should redirect to the home page after login\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\auth2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should remember a user for 30 days after login",
+          "status": "failed",
+          "duration": 473,
+          "message": "Error: Test body for \"should remember a user for 30 days after login\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"should remember a user for 30 days after login\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\auth3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+          "status": "failed",
+          "duration": 458,
+          "message": "Error: Test body for \"should allow a visitor to sign-up, login, and logout\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"should allow a visitor to sign-up, login, and logout\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\auth4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display login errors",
+          "status": "passed",
+          "duration": 3151,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\auth5.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should display signup errors",
+          "status": "failed",
+          "duration": 448,
+          "message": "Error: Test body for \"should display signup errors\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"should display signup errors\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\auth6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid user",
+          "status": "failed",
+          "duration": 491,
+          "message": "Error: Test body for \"should error for an invalid user\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"should error for an invalid user\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\auth7.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth7.spec.ts\\User Sign-up and Login -- should error for an invalid user (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth7.spec.ts\\User Sign-up and Login -- should error for an invalid user (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid password for existing user",
+          "status": "failed",
+          "duration": 12596,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=signin-username]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=signin-username]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\auth8.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth8.spec.ts\\User Sign-up and Login -- should error for an invalid password for existing user (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth8.spec.ts\\User Sign-up and Login -- should error for an invalid password for existing user (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth8.spec.ts\\User Sign-up and Login -- should error for an invalid password for existing user (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "gemini_2_5_pro_preview": {
+      "summary": {
+        "tests": 8,
+        "passed": 3,
+        "failed": 5,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Sign-up and Login should redirect unauthenticated user to signin page",
+          "status": "failed",
+          "duration": 18090,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=signin-title]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/auth1.spec.ts:28:30)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=signin-title]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/auth1.spec.ts:28:30)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\auth1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth1.spec.ts\\User Sign-up and Login -- should redirect unauthenticated user to signin page (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth1.spec.ts\\User Sign-up and Login -- should redirect unauthenticated user to signin page (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth1.spec.ts\\User Sign-up and Login -- should redirect unauthenticated user to signin page (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should redirect to the home page after login",
+          "status": "failed",
+          "duration": 19662,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected 'http://localhost:3000/signin' to equal 'http://localhost:3000/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/auth2.spec.ts:35:11)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected 'http://localhost:3000/signin' to equal 'http://localhost:3000/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/auth2.spec.ts:35:11)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\auth2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should remember a user for 30 days after login",
+          "status": "failed",
+          "duration": 7495,
+          "message": "CypressError: `cy.check()` can only be called on `:checkbox` and `:radio`. Your subject is a: `<span class=\"MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\" data-test=\"signin-remember-me\">...</span>`\n\nhttps://on.cypress.io/check\n    at checkOrUncheckEl (http://localhost:3000/__cypress/runner/cypress_runner.js:111386:68)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:3000/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:3000/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "trace": "CypressError: `cy.check()` can only be called on `:checkbox` and `:radio`. Your subject is a: `<span class=\"MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\" data-test=\"signin-remember-me\">...</span>`\n\nhttps://on.cypress.io/check\n    at checkOrUncheckEl (http://localhost:3000/__cypress/runner/cypress_runner.js:111386:68)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:3000/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:3000/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\auth3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+          "status": "passed",
+          "duration": 6670,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\auth4.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should display login errors",
+          "status": "failed",
+          "duration": 17638,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#password-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/auth5.spec.ts:26:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#password-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/auth5.spec.ts:26:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\auth5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display signup errors",
+          "status": "failed",
+          "duration": 17864,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#lastName-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/auth6.spec.ts:31:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#lastName-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/auth6.spec.ts:31:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\auth6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid user",
+          "status": "passed",
+          "duration": 3395,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\auth7.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid password for existing user",
+          "status": "passed",
+          "duration": 3391,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\auth8.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "gpt_4o": {
+      "summary": {
+        "tests": 6,
+        "passed": 3,
+        "failed": 3,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Sign-up and Login should remember a user for 30 days after login",
+          "status": "failed",
+          "duration": 6667,
+          "message": "CypressError: `cy.check()` can only be called on `:checkbox` and `:radio`. Your subject is a: `<span class=\"MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\" data-test=\"signin-remember-me\">...</span>`\n\nhttps://on.cypress.io/check\n    at checkOrUncheckEl (http://localhost:3000/__cypress/runner/cypress_runner.js:111386:68)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:3000/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:3000/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "trace": "CypressError: `cy.check()` can only be called on `:checkbox` and `:radio`. Your subject is a: `<span class=\"MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\" data-test=\"signin-remember-me\">...</span>`\n\nhttps://on.cypress.io/check\n    at checkOrUncheckEl (http://localhost:3000/__cypress/runner/cypress_runner.js:111386:68)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:3000/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:3000/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\auth3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+          "status": "passed",
+          "duration": 5663,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\auth4.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should display login errors",
+          "status": "failed",
+          "duration": 17669,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Password is required' but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/auth5.spec.ts:29:38)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Password is required' but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/auth5.spec.ts:29:38)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\auth5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display signup errors",
+          "status": "failed",
+          "duration": 17455,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.MuiFormControl-root.MuiFormControl-marginNormal.MuiFormControl-fullWidth.MuiTextField-root.css-17vbkzs-MuiFormControl-root-MuiTextField-root>' to have class 'Mui-error'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/auth6.spec.ts:28:44)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '<div.MuiFormControl-root.MuiFormControl-marginNormal.MuiFormControl-fullWidth.MuiTextField-root.css-17vbkzs-MuiFormControl-root-MuiTextField-root>' to have class 'Mui-error'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/auth6.spec.ts:28:44)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\auth6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid user",
+          "status": "passed",
+          "duration": 3013,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\auth7.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid password for existing user",
+          "status": "passed",
+          "duration": 2950,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\auth8.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "gpt_4_1": {
+      "summary": {
+        "tests": 8,
+        "passed": 3,
+        "failed": 5,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Sign-up and Login should redirect unauthenticated user to signin page",
+          "status": "passed",
+          "duration": 1862,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\auth1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should redirect to the home page after login",
+          "status": "failed",
+          "duration": 17439,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '/signin' to equal '/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/auth2.spec.ts:28:28)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '/signin' to equal '/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/auth2.spec.ts:28:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\auth2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should remember a user for 30 days after login",
+          "status": "failed",
+          "duration": 20955,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-bankName-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-bankName-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\auth3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+          "status": "failed",
+          "duration": 21165,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-bankName-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-bankName-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\auth4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display login errors",
+          "status": "failed",
+          "duration": 7348,
+          "message": "CypressError: `cy.type()` failed because it requires a valid typeable element.\n\nThe element typed into was:\n\n  > `<div class=\"MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root\" data-test=\"signin-username\">...</div>`\n\n  A typeable element matches one of the following selectors:\n  `a[href]`\n  `area[href]`\n  `input`\n  `select`\n  `textarea`\n  `button`\n  `iframe`\n  `[tabindex]`\n  `[contenteditable]`\n\nhttps://on.cypress.io/type\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:114771:76)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)",
+          "trace": "CypressError: `cy.type()` failed because it requires a valid typeable element.\n\nThe element typed into was:\n\n  > `<div class=\"MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root\" data-test=\"signin-username\">...</div>`\n\n  A typeable element matches one of the following selectors:\n  `a[href]`\n  `area[href]`\n  `input`\n  `select`\n  `textarea`\n  `button`\n  `iframe`\n  `[tabindex]`\n  `[contenteditable]`\n\nhttps://on.cypress.io/type\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:114771:76)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\auth5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display signup errors",
+          "status": "failed",
+          "duration": 17942,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=signup-error]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/auth6.spec.ts:22:32)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=signup-error]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/auth6.spec.ts:22:32)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\auth6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid user",
+          "status": "passed",
+          "duration": 3730,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\auth7.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid password for existing user",
+          "status": "passed",
+          "duration": 2970,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\auth8.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "o3_mini": {
+      "summary": {
+        "tests": 8,
+        "passed": 1,
+        "failed": 7,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Sign-up and Login should redirect unauthenticated user to signin page",
+          "status": "passed",
+          "duration": 2353,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\auth1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should redirect to the home page after login",
+          "status": "failed",
+          "duration": 23121,
+          "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `signup`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:75176:18)\n    at Object.errByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:75230:10)\n    at checkForXhr (http://localhost:3000/__cypress/runner/cypress_runner.js:136070:84)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:136096:28)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "trace": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `signup`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:75176:18)\n    at Object.errByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:75230:10)\n    at checkForXhr (http://localhost:3000/__cypress/runner/cypress_runner.js:136070:84)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:136096:28)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\auth2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should remember a user for 30 days after login",
+          "status": "failed",
+          "duration": 16868,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"signup-firstName\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/auth3.spec.ts:29:7)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"signup-firstName\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/auth3.spec.ts:29:7)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\auth3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+          "status": "failed",
+          "duration": 16665,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"signup-firstname\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/auth4.spec.ts:20:7)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"signup-firstname\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/auth4.spec.ts:20:7)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\auth4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display login errors",
+          "status": "failed",
+          "duration": 4769,
+          "message": "CypressError: `cy.type()` failed because it requires a valid typeable element.\n\nThe element typed into was:\n\n  > `<div class=\"MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root\" data-test=\"signin-username\">...</div>`\n\n  A typeable element matches one of the following selectors:\n  `a[href]`\n  `area[href]`\n  `input`\n  `select`\n  `textarea`\n  `button`\n  `iframe`\n  `[tabindex]`\n  `[contenteditable]`\n\nhttps://on.cypress.io/type\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:114771:76)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "trace": "CypressError: `cy.type()` failed because it requires a valid typeable element.\n\nThe element typed into was:\n\n  > `<div class=\"MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-17vbkzs-MuiFormControl-root-MuiTextField-root\" data-test=\"signin-username\">...</div>`\n\n  A typeable element matches one of the following selectors:\n  `a[href]`\n  `area[href]`\n  `input`\n  `select`\n  `textarea`\n  `button`\n  `iframe`\n  `[tabindex]`\n  `[contenteditable]`\n\nhttps://on.cypress.io/type\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:114771:76)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\auth5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display signup errors",
+          "status": "failed",
+          "duration": 23749,
+          "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth SignUpForm-submit css-q6gao2-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"signup-submit\" disabled=\"\">Sign Up</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "trace": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth SignUpForm-submit css-q6gao2-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"signup-submit\" disabled=\"\">Sign Up</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\auth6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid user",
+          "status": "failed",
+          "duration": 16850,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"signup-firstName\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/auth7.spec.ts:22:7)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"signup-firstName\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/auth7.spec.ts:22:7)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\auth7.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth7.spec.ts\\User Sign-up and Login -- should error for an invalid user (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth7.spec.ts\\User Sign-up and Login -- should error for an invalid user (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth7.spec.ts\\User Sign-up and Login -- should error for an invalid user (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid password for existing user",
+          "status": "failed",
+          "duration": 20113,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation0.MuiAlert-root.MuiAlert-colorError.MuiAlert-standardError.MuiAlert-standard.SignInForm-alertMessage.css-mqjsrg-MuiPaper-root-MuiAlert-root>' to contain 'Incorrect username or password'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/auth8.spec.ts:33:62)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '<div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation0.MuiAlert-root.MuiAlert-colorError.MuiAlert-standardError.MuiAlert-standard.SignInForm-alertMessage.css-mqjsrg-MuiPaper-root-MuiAlert-root>' to contain 'Incorrect username or password'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/auth8.spec.ts:33:62)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\auth8.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth8.spec.ts\\User Sign-up and Login -- should error for an invalid password for existing user (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth8.spec.ts\\User Sign-up and Login -- should error for an invalid password for existing user (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth8.spec.ts\\User Sign-up and Login -- should error for an invalid password for existing user (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "o4_mini_preview": {
+      "summary": {
+        "tests": 7,
+        "passed": 2,
+        "failed": 5,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Sign-up and Login should redirect unauthenticated user to signin page",
+          "status": "passed",
+          "duration": 2343,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\auth1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should redirect to the home page after login",
+          "status": "failed",
+          "duration": 21457,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '/signin' to equal '/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/auth2.spec.ts:38:24)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '/signin' to equal '/'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/auth2.spec.ts:38:24)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\auth2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth2.spec.ts\\User Sign-up and Login -- should redirect to the home page after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should remember a user for 30 days after login",
+          "status": "failed",
+          "duration": 6131,
+          "message": "CypressError: `cy.check()` can only be called on `:checkbox` and `:radio`. Your subject is a: `<span class=\"MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\" data-test=\"signin-remember-me\">...</span>`\n\nhttps://on.cypress.io/check\n    at checkOrUncheckEl (http://localhost:3000/__cypress/runner/cypress_runner.js:111386:68)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:3000/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:3000/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "trace": "CypressError: `cy.check()` can only be called on `:checkbox` and `:radio`. Your subject is a: `<span class=\"MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root\" data-test=\"signin-remember-me\">...</span>`\n\nhttps://on.cypress.io/check\n    at checkOrUncheckEl (http://localhost:3000/__cypress/runner/cypress_runner.js:111386:68)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (http://localhost:3000/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (http://localhost:3000/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\auth3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth3.spec.ts\\User Sign-up and Login -- should remember a user for 30 days after login (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+          "status": "failed",
+          "duration": 26741,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '<h6.MuiTypography-root.MuiTypography-subtitle1.css-1vmftly-MuiTypography-root>' to contain 'Bob Ross'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/auth4.spec.ts:70:3)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '<h6.MuiTypography-root.MuiTypography-subtitle1.css-1vmftly-MuiTypography-root>' to contain 'Bob Ross'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/auth4.spec.ts:70:3)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\auth4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth4.spec.ts\\User Sign-up and Login -- should allow a visitor to sign-up, login, and logout (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display login errors",
+          "status": "failed",
+          "duration": 19376,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Enter your password' but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/auth5.spec.ts:24:37)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Enter your password' but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/auth5.spec.ts:24:37)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\auth5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth5.spec.ts\\User Sign-up and Login -- should display login errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should display signup errors",
+          "status": "failed",
+          "duration": 19696,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#lastName-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/auth6.spec.ts:28:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#lastName-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/auth6.spec.ts:28:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\auth6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\auth6.spec.ts\\User Sign-up and Login -- should display signup errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid user",
+          "status": "passed",
+          "duration": 4099,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\auth7.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "original": {
+      "summary": {
+        "tests": 8,
+        "passed": 8,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Sign-up and Login should redirect unauthenticated user to signin page",
+          "status": "passed",
+          "duration": 2859,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\auth1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should redirect to the home page after login",
+          "status": "passed",
+          "duration": 3957,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\auth2.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should remember a user for 30 days after login",
+          "status": "passed",
+          "duration": 3567,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\auth3.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
+          "status": "passed",
+          "duration": 8088,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\auth4.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should display login errors",
+          "status": "passed",
+          "duration": 2874,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\auth5.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should display signup errors",
+          "status": "passed",
+          "duration": 4325,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\auth6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid user",
+          "status": "passed",
+          "duration": 3859,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\auth7.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Sign-up and Login should error for an invalid password for existing user",
+          "status": "passed",
+          "duration": 3131,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\auth8.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    }
+  },
+  "overall_stats": {
+    "total_llms": 11,
+    "total_tests_across_llms": 84,
+    "total_passed_across_llms": 31,
+    "total_failed_across_llms": 53
+  }
+}

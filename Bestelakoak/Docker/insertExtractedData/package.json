@@ -1,0 +1,12 @@
+{
+  "name": "ast-modification-project",
+  "version": "1.0.0",
+  "description": "Project to modify TypeScript files using AST",
+  "main": "ast_processor.js",
+  "scripts": {
+    "start": "node ast_processor.js"
+  },
+  "dependencies": {
+    "typescript": "^5.0.0"
+  }
+}

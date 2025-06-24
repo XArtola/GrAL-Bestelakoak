@@ -1,0 +1,54 @@
+sequenceDiagram
+    participant Garatzailea
+    participant Backend as Backend
+    participant GitHub
+    participant Fitxategi sistema as FS
+    participant LLM APIa as LLM
+    participant Proiektua as Proiektua
+
+    Garatzailea->>+Backend: script_nagusia_exekutatu()
+
+    Note over Backend, GitHub: 1. Fasea: Proba Ingurunearen Konfigurazioa
+    Backend->>+GitHub: proiektuaren_biltegia_klonatu()
+    GitHub-->>-Backend: proiektuaren fitxategiak itzultzen ditu
+    Backend->>Backend: dependentziak_instalatu_eta_aplikazioa_abiarazi()
+    Note right of Backend: (adibidez, npm install, docker-compose up, etab.)
+
+    Note over Backend, FS: 2. Fasea: Testen Prestaketa
+    Backend->>+FS: dauden_testak_irakurri()
+    FS-->>-Backend: testen edukia itzultzen du
+    Backend->>Backend: testak_prozesatu(edukia):<br/>- 'it' bloke bakoitzeko fitxategitan banatu<br/>- 'it' blokeak hustu<br/>- Erabiltzaile-datuak atera
+    Backend->>+FS: test_hutsak_idatzi(fitxategiak)
+    FS-->>-Backend: OK
+
+    Note over Backend, LLM: 3. Fasea: Kodea Sortzea LLM-arekin
+    Backend->>Backend: test huts bakoitzeko...
+    Backend->>+FS: prompt_fitxategia_sortu(eredua, testHutsa, erabiltzaileDatuak)
+    FS-->>-Backend: OK
+    Backend->>+LLM: prompta_exekutatu(promptEdukia)
+    LLM-->>-Backend: Transkripzioa itzultzen du (kodea eta testua)
+    Backend->>+FS: transkripzioa_gorde(transkripzioa, exekuzioDenbora)
+    FS-->>-Backend: OK
+
+    Note over Backend, FS: 4. Fasea: Metriken Erauzketa eta Mihiztadura
+    Backend->>Backend: kodea_erauzi(transkripzioa)
+    Backend->>+FS: 1_metrika_gorde(sortutakoKodea, exekuzioDenbora) JSON formatuan
+    FS-->>-Backend: 1. Metrikaren JSONa itzultzen du
+
+    Backend->>+FS: JSONetik_kodea_hartu()
+    FS-->>-Backend: sortutako kodea itzultzen du
+    Backend->>+FS: kodea_test_hutsean_sartu(sortutakoKodea)
+    FS-->>-Backend: OK
+
+    Note over Backend, Proiektua: 5. Fasea: Exekuzioa eta Balioztatzea
+    Backend->>+Proiektua: sortutako_testak_exekutatu()
+    Proiektua-->>-Backend: Emaitzak itzultzen ditu (gaindituta/huts eginda)
+    Backend->>+FS: testen_emaitzak_gorde(emaitzak) (2. Metrika)
+    FS-->>-Backend: OK
+
+    Note over Backend, FS: 6. Fasea: Azken Analisia
+    Backend->>Backend: komandoen_analisi_scripta(sortutakoKodea)
+    Backend->>+FS: komandoen_metrika_gorde(zenbaketa)
+    FS-->>-Backend: OK
+
+    Backend-->>-Garatzailea: Prozesua Amaituta

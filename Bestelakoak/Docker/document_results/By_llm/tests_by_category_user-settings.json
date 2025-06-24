@@ -1,0 +1,894 @@
+{
+  "category": "user-settings",
+  "llms": {
+    "claude_3_5_sonnet": {
+      "summary": {
+        "tests": 3,
+        "passed": 1,
+        "failed": 2,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Settings renders the user settings form",
+          "status": "passed",
+          "duration": 2454,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\user-settings1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Settings should display user setting form errors",
+          "status": "failed",
+          "duration": 20235,
+          "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "trace": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\user-settings2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings updates first name, last name, email and phone number",
+          "status": "failed",
+          "duration": 25420,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-settings-form-success]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/user-settings3.spec.ts:48:44)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-settings-form-success]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/user-settings3.spec.ts:48:44)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\user-settings3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "claude_3_7_sonnet": {
+      "summary": {
+        "tests": 3,
+        "passed": 0,
+        "failed": 3,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Settings renders the user settings form",
+          "status": "failed",
+          "duration": 23184,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '<input#user-settings-firstName-input.MuiInputBase-input.MuiOutlinedInput-input.css-df5zx2-MuiInputBase-input-MuiOutlinedInput-input>' to have value undefined, but the value was 'Ted'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/user-settings1.spec.ts:34:47)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '<input#user-settings-firstName-input.MuiInputBase-input.MuiOutlinedInput-input.css-df5zx2-MuiInputBase-input-MuiOutlinedInput-input>' to have value undefined, but the value was 'Ted'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/user-settings1.spec.ts:34:47)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\user-settings1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings should display user setting form errors",
+          "status": "failed",
+          "duration": 26601,
+          "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "trace": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\user-settings2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings updates first name, last name, email and phone number",
+          "status": "failed",
+          "duration": 31982,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-settings-form-success]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/user-settings3.spec.ts:41:44)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-settings-form-success]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/user-settings3.spec.ts:41:44)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\user-settings3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "claude_3_7_sonnet_thinking": {
+      "summary": {
+        "tests": 3,
+        "passed": 2,
+        "failed": 1,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Settings renders the user settings form",
+          "status": "passed",
+          "duration": 3949,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\user-settings1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Settings should display user setting form errors",
+          "status": "failed",
+          "duration": 24630,
+          "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "trace": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\user-settings2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings updates first name, last name, email and phone number",
+          "status": "passed",
+          "duration": 7208,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\user-settings3.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "claude_sonnet_4": {
+      "summary": {
+        "tests": 3,
+        "passed": 1,
+        "failed": 2,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Settings renders the user settings form",
+          "status": "failed",
+          "duration": 22565,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '<input#user-settings-firstName-input.MuiInputBase-input.MuiOutlinedInput-input.css-df5zx2-MuiInputBase-input-MuiOutlinedInput-input>' to have value undefined, but the value was 'Ted'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/user-settings1.spec.ts:34:47)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '<input#user-settings-firstName-input.MuiInputBase-input.MuiOutlinedInput-input.css-df5zx2-MuiInputBase-input-MuiOutlinedInput-input>' to have value undefined, but the value was 'Ted'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/user-settings1.spec.ts:34:47)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\user-settings1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings should display user setting form errors",
+          "status": "failed",
+          "duration": 23034,
+          "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "trace": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\user-settings2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings updates first name, last name, email and phone number",
+          "status": "passed",
+          "duration": 8846,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\user-settings3.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "gemini_2_0_flash": {
+      "summary": {
+        "tests": 2,
+        "passed": 1,
+        "failed": 1,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Settings renders the user settings form",
+          "status": "failed",
+          "duration": 17117,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-settings-firstname-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_0_flash/user-settings1.spec.ts:18:57)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-settings-firstname-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_0_flash/user-settings1.spec.ts:18:57)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\user-settings1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings should display user setting form errors",
+          "status": "passed",
+          "duration": 2943,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\user-settings2.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "gemini_2_5_pro_preview": {
+      "summary": {
+        "tests": 3,
+        "passed": 2,
+        "failed": 1,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Settings renders the user settings form",
+          "status": "passed",
+          "duration": 3530,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\user-settings1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Settings should display user setting form errors",
+          "status": "failed",
+          "duration": 23108,
+          "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "trace": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\user-settings2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings updates first name, last name, email and phone number",
+          "status": "passed",
+          "duration": 6348,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\user-settings3.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "gpt_4o": {
+      "summary": {
+        "tests": 3,
+        "passed": 0,
+        "failed": 3,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Settings renders the user settings form",
+          "status": "failed",
+          "duration": 17520,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '<input#user-settings-firstName-input.MuiInputBase-input.MuiOutlinedInput-input.css-df5zx2-MuiInputBase-input-MuiOutlinedInput-input>' to have value 'New First Name', but the value was 'Ted'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/user-settings1.spec.ts:25:47)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '<input#user-settings-firstName-input.MuiInputBase-input.MuiOutlinedInput-input.css-df5zx2-MuiInputBase-input-MuiOutlinedInput-input>' to have value 'New First Name', but the value was 'Ted'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/user-settings1.spec.ts:25:47)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\user-settings1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings should display user setting form errors",
+          "status": "failed",
+          "duration": 20827,
+          "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "trace": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\user-settings2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings updates first name, last name, email and phone number",
+          "status": "failed",
+          "duration": 7373,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/user-settings3.spec.ts:28:52)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/user-settings3.spec.ts:28:52)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\user-settings3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "gpt_4_1": {
+      "summary": {
+        "tests": 3,
+        "passed": 0,
+        "failed": 3,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Settings renders the user settings form",
+          "status": "failed",
+          "duration": 16842,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-settings-firstName]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/user-settings1.spec.ts:20:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-settings-firstName]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/user-settings1.spec.ts:20:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\user-settings1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings should display user setting form errors",
+          "status": "failed",
+          "duration": 19844,
+          "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "trace": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\user-settings2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings updates first name, last name, email and phone number",
+          "status": "failed",
+          "duration": 23977,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected 204 to equal 200\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/user-settings3.spec.ts:43:54)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected 204 to equal 200\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/user-settings3.spec.ts:43:54)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\user-settings3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "o3_mini": {
+      "summary": {
+        "tests": 3,
+        "passed": 0,
+        "failed": 3,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Settings renders the user settings form",
+          "status": "failed",
+          "duration": 6220,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/user-settings1.spec.ts:25:53)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/user-settings1.spec.ts:25:53)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\user-settings1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings1.spec.ts\\User Settings -- renders the user settings form (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings should display user setting form errors",
+          "status": "failed",
+          "duration": 19447,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-settings-email]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-settings-email]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\user-settings2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings updates first name, last name, email and phone number",
+          "status": "failed",
+          "duration": 20006,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"user-settings-firstName\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/user-settings3.spec.ts:26:7)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=\"user-settings-firstName\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/user-settings3.spec.ts:26:7)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\user-settings3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "o4_mini_preview": {
+      "summary": {
+        "tests": 3,
+        "passed": 1,
+        "failed": 2,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Settings renders the user settings form",
+          "status": "passed",
+          "duration": 3179,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\user-settings1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Settings should display user setting form errors",
+          "status": "failed",
+          "duration": 24042,
+          "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "trace": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is `disabled`:\n\n`<button class=\"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-nqoyp-MuiButtonBase-root-MuiButton-root\" tabindex=\"-1\" type=\"submit\" data-test=\"user-settings-submit\" disabled=\"\">Save</button>`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (http://localhost:3000/__cypress/runner/cypress_runner.js:145635:58)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:112346:26)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:112435:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\user-settings2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings2.spec.ts\\User Settings -- should display user setting form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "User Settings updates first name, last name, email and phone number",
+          "status": "failed",
+          "duration": 30993,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=alert-bar-success]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/user-settings3.spec.ts:77:3)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=alert-bar-success]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/user-settings3.spec.ts:77:3)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\user-settings3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\user-settings3.spec.ts\\User Settings -- updates first name, last name, email and phone number (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "original": {
+      "summary": {
+        "tests": 3,
+        "passed": 3,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "User Settings renders the user settings form",
+          "status": "passed",
+          "duration": 3358,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\user-settings1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Settings should display user setting form errors",
+          "status": "passed",
+          "duration": 4741,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\user-settings2.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "User Settings updates first name, last name, email and phone number",
+          "status": "passed",
+          "duration": 5705,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\user-settings3.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    }
+  },
+  "overall_stats": {
+    "total_llms": 11,
+    "total_tests_across_llms": 32,
+    "total_passed_across_llms": 11,
+    "total_failed_across_llms": 21
+  }
+}

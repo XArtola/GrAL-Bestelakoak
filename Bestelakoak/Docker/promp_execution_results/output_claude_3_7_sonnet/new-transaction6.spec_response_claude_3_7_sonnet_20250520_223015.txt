@@ -1,0 +1,193 @@
+---
+tools: ['codebase']
+---
+
+#file:cypress-realworld-app 
+You are tasked with generating the code inside the 'it' blocks for a Cypress test suite. The test suite is for user sign-up and login functionality. You will be provided with the test suite structure and user information to use in your generated code.
+
+Here is the Cypress test code structure:
+
+<cypress_test_code>
+import Dinero from "dinero.js";
+import { User } from "../../../src/models";
+import { isMobile } from "../../support/utils";
+type NewTransactionTestCtx = {
+    allUsers?: User[];
+    user?: User;
+    contact?: User;
+};
+describe("New Transaction", function () {
+    const ctx: NewTransactionTestCtx = {};
+    beforeEach(function () {
+        cy.task("db:seed");
+        cy.intercept("GET", "/users*").as("allUsers");
+        cy.intercept("GET", "/users/search*").as("usersSearch");
+        cy.intercept("POST", "/transactions").as("createTransaction");
+        cy.intercept("GET", "/notifications").as("notifications");
+        cy.intercept("GET", "/transactions/public").as("publicTransactions");
+        cy.intercept("GET", "/transactions").as("personalTransactions");
+        cy.intercept("PATCH", "/transactions/*").as("updateTransaction");
+        cy.database("filter", "users").then((users: User[]) => {
+            ctx.allUsers = users;
+            ctx.user = users[0];
+            ctx.contact = users[1];
+            return cy.loginByXstate(ctx.user.username);
+        });
+    });
+    context("searches for a user by attribute", function () {
+        const searchAttrs: (keyof User)[] = [
+            "firstName",
+            "lastName",
+            "username",
+            "email",
+            "phoneNumber",
+        ];
+        beforeEach(function () {
+            cy.getBySelLike("new-transaction").click();
+            cy.wait("@allUsers");
+        });
+        searchAttrs.forEach((attr: keyof User) => {
+            it(attr, () => { });
+        });
+    });
+});
+
+</cypress_test_code>
+
+And here is the user information to use in your tests:
+
+<user_info>
+{
+  "paymentTransactions": [
+    {
+      "amount": "35",
+      "description": "Sushi dinner 🍣"
+    },
+    {
+      "amount": 25,
+      "description": "Indian Food"
+    }
+  ],
+  "requestTransactions": [
+    {
+      "amount": "95",
+      "description": "Fancy Hotel 🏨"
+    },
+    {
+      "amount": 100,
+      "description": "Fancy Hotel"
+    }
+  ]
+}
+</user_info>
+
+Your task is to generate the code inside each 'it' block so that the Cypress test runs and gets positive results. Follow these guidelines:
+
+1. For each 'it' block, write Cypress commands that test the functionality described in the test name.
+2. Use the provided user information (firstName, lastName, username, password) in your test commands where appropriate.
+3. Ensure that your generated code follows Cypress best practices and conventions.
+4. Include appropriate assertions to verify the expected behavior of each test.
+5. If a test requires multiple steps, use comments to explain each step.
+6. Do not modify the existing code structure or add new 'it' blocks.
+
+When using the user information, refer to it as 'userInfo' followed by the property name, e.g., 'userInfo.firstName'.
+
+If you encounter any scenarios where you need additional information that isn't provided, do not make assumptions. Instead, indicate that more information is needed for that specific test.
+
+For error handling tests, use invalid data that is clearly different from the provided user information.
+
+Place your generated code for each 'it' block within <generated_code> tags, and include the original 'it' block description as a comment before each block of generated code.
+
+Begin generating the code for each 'it' block now.
+
+
+> Copilot: Looking at your request, I need to generate Cypress test code for the `searches for a user by attribute` context within the "New Transaction" test suite. This context has a series of `it` blocks for testing search functionality using different user attributes.
+> 
+> Let me provide the code for each `it` block:
+> 
+> ## Generated Code for Search Attribute Tests
+> 
+> ```typescript
+> // For firstName attribute
+> it("firstName", () => {
+>   // Get the firstName value from the contact
+>   const searchValue = ctx.contact!.firstName;
+>   
+>   // Search for user by firstName
+>   cy.getBySel("user-list-search-input").clear().type(searchValue);
+>   cy.wait("@usersSearch");
+>   
+>   // Verify search results contain the user with matching firstName
+>   cy.getBySel("user-list-item")
+>     .should("have.length.at.least", 1)
+>     .and("contain", searchValue);
+> });
+> 
+> // For lastName attribute
+> it("lastName", () => {
+>   // Get the lastName value from the contact
+>   const searchValue = ctx.contact!.lastName;
+>   
+>   // Search for user by lastName
+>   cy.getBySel("user-list-search-input").clear().type(searchValue);
+>   cy.wait("@usersSearch");
+>   
+>   // Verify search results contain the user with matching lastName
+>   cy.getBySel("user-list-item")
+>     .should("have.length.at.least", 1)
+>     .and("contain", searchValue);
+> });
+> 
+> // For username attribute
+> it("username", () => {
+>   // Get the username value from the contact
+>   const searchValue = ctx.contact!.username;
+>   
+>   // Search for user by username
+>   cy.getBySel("user-list-search-input").clear().type(searchValue);
+>   cy.wait("@usersSearch");
+>   
+>   // Verify search results contain the user with matching username
+>   cy.getBySel("user-list-item")
+>     .should("have.length.at.least", 1)
+>     .and("contain", searchValue);
+> });
+> 
+> // For email attribute
+> it("email", () => {
+>   // Get the email value from the contact
+>   const searchValue = ctx.contact!.email;
+>   
+>   // Search for user by email
+>   cy.getBySel("user-list-search-input").clear().type(searchValue);
+>   cy.wait("@usersSearch");
+>   
+>   // Verify search results contain the user with matching email
+>   cy.getBySel("user-list-item")
+>     .should("have.length.at.least", 1)
+>     .and("contain", ctx.contact!.firstName); // We check for firstName as email may not be displayed in results
+> });
+> 
+> // For phoneNumber attribute
+> it("phoneNumber", () => {
+>   // Get the phoneNumber value from the contact
+>   const searchValue = ctx.contact!.phoneNumber;
+>   
+>   // Search for user by phoneNumber
+>   cy.getBySel("user-list-search-input").clear().type(searchValue);
+>   cy.wait("@usersSearch");
+>   
+>   // Verify search results contain the user with matching phoneNumber
+>   cy.getBySel("user-list-item")
+>     .should("have.length.at.least", 1)
+>     .and("contain", ctx.contact!.firstName); // We check for firstName as phone may not be displayed in results
+> });
+> ```
+> 
+> This code follows the pattern of:
+> 1. Getting the search value from the contact user object
+> 2. Typing that value in the search input field
+> 3. Waiting for the search API call to complete
+> 4. Verifying that the search results contain at least one user that matches the search criteria
+> 
+> For email and phoneNumber, I used the firstName as the verification text since these values might not be directly displayed in the search results, but the user with that email/phone should still appear.

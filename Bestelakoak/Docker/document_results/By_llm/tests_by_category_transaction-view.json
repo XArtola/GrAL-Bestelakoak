@@ -1,0 +1,1634 @@
+{
+  "category": "transaction-view",
+  "llms": {
+    "claude_3_5_sonnet": {
+      "summary": {
+        "tests": 5,
+        "passed": 0,
+        "failed": 5,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+          "status": "failed",
+          "duration": 20098,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-amount]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/transaction-view1.spec.ts:55:36)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-amount]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/transaction-view1.spec.ts:55:36)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\transaction-view1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View likes a transaction",
+          "status": "failed",
+          "duration": 17600,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\transaction-view2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View comments on a transaction",
+          "status": "failed",
+          "duration": 18972,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/transaction-view3.spec.ts:46:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/transaction-view3.spec.ts:46:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\transaction-view3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View accepts a transaction request",
+          "status": "failed",
+          "duration": 17414,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\transaction-view4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View does not display accept/reject buttons on completed request",
+          "status": "failed",
+          "duration": 17428,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\transaction-view6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "claude_3_7_sonnet": {
+      "summary": {
+        "tests": 6,
+        "passed": 0,
+        "failed": 6,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+          "status": "failed",
+          "duration": 23800,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\transaction-view1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View likes a transaction",
+          "status": "failed",
+          "duration": 23932,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\transaction-view2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View comments on a transaction",
+          "status": "failed",
+          "duration": 23037,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\transaction-view3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View accepts a transaction request",
+          "status": "failed",
+          "duration": 18423,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\transaction-view4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View rejects a transaction request",
+          "status": "failed",
+          "duration": 22002,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-status]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/transaction-view5.spec.ts:44:38)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-status]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/transaction-view5.spec.ts:44:38)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\transaction-view5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View does not display accept/reject buttons on completed request",
+          "status": "failed",
+          "duration": 7410,
+          "message": "CypressError: `cy.task('create:database')` failed with the following error:\n\nThe task 'create:database' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)",
+          "trace": "CypressError: `cy.task('create:database')` failed with the following error:\n\nThe task 'create:database' was not handled in the setupNodeEvents method. The following tasks are registered: db:seed, filter:database, find:database, resetCoverage, combineCoverage, coverageReport\n\nFix this in your setupNodeEvents method here:\nC:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress.config.ts\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135843:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\transaction-view6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "claude_3_7_sonnet_thinking": {
+      "summary": {
+        "tests": 6,
+        "passed": 0,
+        "failed": 6,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+          "status": "failed",
+          "duration": 11839,
+          "message": "CypressError: `cy.get()` could not find a registered alias for: `@testTransaction`.\nAvailable aliases are: `personalTransactions, publicTransactions, getTransaction, updateTransaction, userProfile, getNotifications, getBankAccounts, loginUser, getUserProfile`.\n    at $Cy.aliasNotFoundFor (http://localhost:3000/__cypress/runner/cypress_runner.js:133042:66)\n    at $Cy.getAlias (http://localhost:3000/__cypress/runner/cypress_runner.js:132985:12)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:132564:21)\n    at Object.subjectFn (http://localhost:3000/__cypress/runner/cypress_runner.js:144600:16)\n    at $Cy.verifyUpcomingAssertions (http://localhost:3000/__cypress/runner/cypress_runner.js:143940:31)\n    at onRetry (http://localhost:3000/__cypress/runner/cypress_runner.js:144591:15)\n    at retryQuery (http://localhost:3000/__cypress/runner/cypress_runner.js:144604:10)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144757:17)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/transaction-view1.spec.ts:41:5)",
+          "trace": "CypressError: `cy.get()` could not find a registered alias for: `@testTransaction`.\nAvailable aliases are: `personalTransactions, publicTransactions, getTransaction, updateTransaction, userProfile, getNotifications, getBankAccounts, loginUser, getUserProfile`.\n    at $Cy.aliasNotFoundFor (http://localhost:3000/__cypress/runner/cypress_runner.js:133042:66)\n    at $Cy.getAlias (http://localhost:3000/__cypress/runner/cypress_runner.js:132985:12)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:132564:21)\n    at Object.subjectFn (http://localhost:3000/__cypress/runner/cypress_runner.js:144600:16)\n    at $Cy.verifyUpcomingAssertions (http://localhost:3000/__cypress/runner/cypress_runner.js:143940:31)\n    at onRetry (http://localhost:3000/__cypress/runner/cypress_runner.js:144591:15)\n    at retryQuery (http://localhost:3000/__cypress/runner/cypress_runner.js:144604:10)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144757:17)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/transaction-view1.spec.ts:41:5)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\transaction-view1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View likes a transaction",
+          "status": "failed",
+          "duration": 25115,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\transaction-view2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View comments on a transaction",
+          "status": "failed",
+          "duration": 22272,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\transaction-view3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View accepts a transaction request",
+          "status": "failed",
+          "duration": 22265,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\transaction-view4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View rejects a transaction request",
+          "status": "failed",
+          "duration": 19602,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\transaction-view5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View does not display accept/reject buttons on completed request",
+          "status": "failed",
+          "duration": 22797,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\transaction-view6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "claude_sonnet_4": {
+      "summary": {
+        "tests": 6,
+        "passed": 0,
+        "failed": 6,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+          "status": "failed",
+          "duration": 23092,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\transaction-view1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View likes a transaction",
+          "status": "failed",
+          "duration": 10408,
+          "message": "TypeError: cy.getBySel(...).should(...).or is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/transaction-view2.spec.ts:55:71)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "TypeError: cy.getBySel(...).should(...).or is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/transaction-view2.spec.ts:55:71)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\transaction-view2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View comments on a transaction",
+          "status": "failed",
+          "duration": 22227,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\transaction-view3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View accepts a transaction request",
+          "status": "failed",
+          "duration": 23298,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/transaction-view4.spec.ts:43:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/transaction-view4.spec.ts:43:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\transaction-view4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View rejects a transaction request",
+          "status": "failed",
+          "duration": 22504,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\transaction-view5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View does not display accept/reject buttons on completed request",
+          "status": "failed",
+          "duration": 23239,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/transaction-view6.spec.ts:35:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/transaction-view6.spec.ts:35:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\transaction-view6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "gemini_2_0_flash": {
+      "summary": {
+        "tests": 5,
+        "passed": 0,
+        "failed": 5,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+          "status": "failed",
+          "duration": 17525,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\transaction-view1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View likes a transaction",
+          "status": "failed",
+          "duration": 18338,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test*=like-button]`, but never found it. Queried from:\n\n              > cy.get(@transactionItem)\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_0_flash/transaction-view2.spec.ts:40:13)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test*=like-button]`, but never found it. Queried from:\n\n              > cy.get(@transactionItem)\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_0_flash/transaction-view2.spec.ts:40:13)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\transaction-view2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View comments on a transaction",
+          "status": "failed",
+          "duration": 462,
+          "message": "Error: Test body for \"comments on a transaction\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"comments on a transaction\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\transaction-view3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View accepts a transaction request",
+          "status": "failed",
+          "duration": 453,
+          "message": "Error: Test body for \"accepts a transaction request\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"accepts a transaction request\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\transaction-view4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View does not display accept/reject buttons on completed request",
+          "status": "failed",
+          "duration": 476,
+          "message": "Error: Test body for \"does not display accept/reject buttons on completed request\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"does not display accept/reject buttons on completed request\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\transaction-view6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "gemini_2_5_pro_preview": {
+      "summary": {
+        "tests": 4,
+        "passed": 1,
+        "failed": 3,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+          "status": "passed",
+          "duration": 2477,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\transaction-view1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Transaction View likes a transaction",
+          "status": "failed",
+          "duration": 17192,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\transaction-view2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View comments on a transaction",
+          "status": "failed",
+          "duration": 22128,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\transaction-view3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View rejects a transaction request",
+          "status": "failed",
+          "duration": 20668,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Request: uBmeaz5pX to WHjJ4qR2R2' but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/transaction-view5.spec.ts:41:5)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Request: uBmeaz5pX to WHjJ4qR2R2' but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/transaction-view5.spec.ts:41:5)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\transaction-view5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "gpt_4o": {
+      "summary": {
+        "tests": 5,
+        "passed": 0,
+        "failed": 5,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+          "status": "failed",
+          "duration": 7985,
+          "message": "CypressError: `cy.get()` could not find a registered alias for: `@testTransaction`.\nAvailable aliases are: `personalTransactions, publicTransactions, getTransaction, updateTransaction, userProfile, getNotifications, getBankAccounts, loginUser, getUserProfile`.\n    at $Cy.aliasNotFoundFor (http://localhost:3000/__cypress/runner/cypress_runner.js:133042:66)\n    at $Cy.getAlias (http://localhost:3000/__cypress/runner/cypress_runner.js:132985:12)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:132564:21)\n    at Object.subjectFn (http://localhost:3000/__cypress/runner/cypress_runner.js:144600:16)\n    at $Cy.verifyUpcomingAssertions (http://localhost:3000/__cypress/runner/cypress_runner.js:143940:31)\n    at onRetry (http://localhost:3000/__cypress/runner/cypress_runner.js:144591:15)\n    at retryQuery (http://localhost:3000/__cypress/runner/cypress_runner.js:144604:10)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144757:17)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/transaction-view1.spec.ts:35:5)",
+          "trace": "CypressError: `cy.get()` could not find a registered alias for: `@testTransaction`.\nAvailable aliases are: `personalTransactions, publicTransactions, getTransaction, updateTransaction, userProfile, getNotifications, getBankAccounts, loginUser, getUserProfile`.\n    at $Cy.aliasNotFoundFor (http://localhost:3000/__cypress/runner/cypress_runner.js:133042:66)\n    at $Cy.getAlias (http://localhost:3000/__cypress/runner/cypress_runner.js:132985:12)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:132564:21)\n    at Object.subjectFn (http://localhost:3000/__cypress/runner/cypress_runner.js:144600:16)\n    at $Cy.verifyUpcomingAssertions (http://localhost:3000/__cypress/runner/cypress_runner.js:143940:31)\n    at onRetry (http://localhost:3000/__cypress/runner/cypress_runner.js:144591:15)\n    at retryQuery (http://localhost:3000/__cypress/runner/cypress_runner.js:144604:10)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144757:17)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (http://localhost:3000/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/transaction-view1.spec.ts:35:5)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\transaction-view1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View likes a transaction",
+          "status": "failed",
+          "duration": 20245,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\transaction-view2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View accepts a transaction request",
+          "status": "failed",
+          "duration": 20816,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\transaction-view4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View rejects a transaction request",
+          "status": "failed",
+          "duration": 18445,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\transaction-view5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View does not display accept/reject buttons on completed request",
+          "status": "failed",
+          "duration": 21339,
+          "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 2nd request to the route: `personalTransactions`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:75176:18)\n    at Object.errByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:75230:10)\n    at checkForXhr (http://localhost:3000/__cypress/runner/cypress_runner.js:136070:84)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:136096:28)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "trace": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 2nd request to the route: `personalTransactions`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:75176:18)\n    at Object.errByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:75230:10)\n    at checkForXhr (http://localhost:3000/__cypress/runner/cypress_runner.js:136070:84)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:136096:28)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\transaction-view6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "gpt_4_1": {
+      "summary": {
+        "tests": 6,
+        "passed": 1,
+        "failed": 5,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+          "status": "passed",
+          "duration": 3117,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\transaction-view1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Transaction View likes a transaction",
+          "status": "failed",
+          "duration": 20150,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-like-count]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-like-count]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\transaction-view2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View comments on a transaction",
+          "status": "failed",
+          "duration": 18938,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/transaction-view3.spec.ts:44:47)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/transaction-view3.spec.ts:44:47)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\transaction-view3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View accepts a transaction request",
+          "status": "failed",
+          "duration": 18785,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=accept-request]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/transaction-view4.spec.ts:42:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=accept-request]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/transaction-view4.spec.ts:42:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\transaction-view4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View rejects a transaction request",
+          "status": "failed",
+          "duration": 17599,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Request: uBmeaz5pX to WHjJ4qR2R2' within the element: <li.MuiListItem-root.MuiListItem-gutters.MuiListItem-padding.MuiListItem-alignItemsFlexStart.css-1v18wys-MuiListItem-root> but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/transaction-view5.spec.ts:38:7)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Request: uBmeaz5pX to WHjJ4qR2R2' within the element: <li.MuiListItem-root.MuiListItem-gutters.MuiListItem-padding.MuiListItem-alignItemsFlexStart.css-1v18wys-MuiListItem-root> but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/transaction-view5.spec.ts:38:7)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\transaction-view5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View does not display accept/reject buttons on completed request",
+          "status": "failed",
+          "duration": 5705,
+          "message": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:3000/transactions/demK0p0GCvG\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PATCH\nURL: http://localhost:3000/transactions/demK0p0GCvG\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/14.0.3 Chrome/130.0.6723.137 Electron/33.2.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"cookie\": \"connect.sid=s%3A3IWvmKGmUfz-vvW48LYG0P2MV_vAjtEe.eJuWkr7OK0pgoT2a3EJEizpa3tRVu56Oa2HVu%2FIlg7Q\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 95\n}\nBody: {\"status\":\"complete\",\"requestStatus\":\"accepted\",\"requestResolvedAt\":\"2025-06-18T12:49:43.846Z\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"vary\": \"Origin\",\n  \"date\": \"Wed, 18 Jun 2025 12:49:43 GMT\",\n  \"connection\": \"keep-alive\",\n  \"keep-alive\": \"timeout=5\",\n  \"content-length\": \"0\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:133603:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)",
+          "trace": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:3000/transactions/demK0p0GCvG\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PATCH\nURL: http://localhost:3000/transactions/demK0p0GCvG\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/14.0.3 Chrome/130.0.6723.137 Electron/33.2.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"cookie\": \"connect.sid=s%3A3IWvmKGmUfz-vvW48LYG0P2MV_vAjtEe.eJuWkr7OK0pgoT2a3EJEizpa3tRVu56Oa2HVu%2FIlg7Q\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 95\n}\nBody: {\"status\":\"complete\",\"requestStatus\":\"accepted\",\"requestResolvedAt\":\"2025-06-18T12:49:43.846Z\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"vary\": \"Origin\",\n  \"date\": \"Wed, 18 Jun 2025 12:49:43 GMT\",\n  \"connection\": \"keep-alive\",\n  \"keep-alive\": \"timeout=5\",\n  \"content-length\": \"0\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:133603:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\transaction-view6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "o3_mini": {
+      "summary": {
+        "tests": 6,
+        "passed": 0,
+        "failed": 6,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+          "status": "failed",
+          "duration": 20623,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\transaction-view1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view1.spec.ts\\Transaction View -- transactions navigation tabs are hidden on a transaction view page (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View likes a transaction",
+          "status": "failed",
+          "duration": 20472,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/transaction-view2.spec.ts:35:36)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/transaction-view2.spec.ts:35:36)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\transaction-view2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View comments on a transaction",
+          "status": "failed",
+          "duration": 509,
+          "message": "Error: Test body for \"comments on a transaction\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "trace": "Error: Test body for \"comments on a transaction\" is empty or contains only comments.\n\nBecause this error occurred during a `before each` hook we are skipping all of the remaining tests.\n    at $Cypress.eval (webpack://cypress-realworld-app/./cypress/support/e2e.ts:47:10)\n    at EventEmitter.emit (http://localhost:3000/__cypress/runner/cypress_runner.js:141960:22)\n    at parent.<computed> [as emit] (http://localhost:3000/__cypress/runner/cypress_runner.js:140836:31)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41566:14)\n    at fire (http://localhost:3000/__cypress/runner/cypress_runner.js:162129:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163571:13)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Object.onRunnableRun (http://localhost:3000/__cypress/runner/cypress_runner.js:163565:70)\n    at $Cypress.action (http://localhost:3000/__cypress/runner/cypress_runner.js:41559:28)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\transaction-view3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 2).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View accepts a transaction request",
+          "status": "failed",
+          "duration": 20590,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-request]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-request]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\transaction-view4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View rejects a transaction request",
+          "status": "failed",
+          "duration": 20011,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-reject-button]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-reject-button]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\transaction-view5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View does not display accept/reject buttons on completed request",
+          "status": "failed",
+          "duration": 7000,
+          "message": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:3000/transactions/demK0p0GCvG\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PATCH\nURL: http://localhost:3000/transactions/demK0p0GCvG\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/14.0.3 Chrome/130.0.6723.137 Electron/33.2.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"cookie\": \"connect.sid=s%3A5G1IfrVhx5bGfbNGhPMKPC29MIn7XIi0.jxqaiMTmpQXxKPIvTJHxx8Lqlctf%2BNPyY2rKYyc9Auo\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 48\n}\nBody: {\"status\":\"complete\",\"requestStatus\":\"accepted\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"vary\": \"Origin\",\n  \"date\": \"Wed, 18 Jun 2025 15:53:33 GMT\",\n  \"connection\": \"keep-alive\",\n  \"keep-alive\": \"timeout=5\",\n  \"content-length\": \"0\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:133603:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)",
+          "trace": "CypressError: `cy.request()` failed on:\n\nhttp://localhost:3000/transactions/demK0p0GCvG\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PATCH\nURL: http://localhost:3000/transactions/demK0p0GCvG\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/14.0.3 Chrome/130.0.6723.137 Electron/33.2.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"cookie\": \"connect.sid=s%3A5G1IfrVhx5bGfbNGhPMKPC29MIn7XIi0.jxqaiMTmpQXxKPIvTJHxx8Lqlctf%2BNPyY2rKYyc9Auo\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 48\n}\nBody: {\"status\":\"complete\",\"requestStatus\":\"accepted\"}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"vary\": \"Origin\",\n  \"date\": \"Wed, 18 Jun 2025 15:53:33 GMT\",\n  \"connection\": \"keep-alive\",\n  \"keep-alive\": \"timeout=5\",\n  \"content-length\": \"0\"\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:133603:72)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\transaction-view6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "o4_mini_preview": {
+      "summary": {
+        "tests": 6,
+        "passed": 1,
+        "failed": 5,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+          "status": "passed",
+          "duration": 5967,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\transaction-view1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Transaction View likes a transaction",
+          "status": "failed",
+          "duration": 18999,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\transaction-view2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view2.spec.ts\\Transaction View -- likes a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View comments on a transaction",
+          "status": "failed",
+          "duration": 21154,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=comment-input]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\transaction-view3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view3.spec.ts\\Transaction View -- comments on a transaction (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View accepts a transaction request",
+          "status": "failed",
+          "duration": 18766,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\transaction-view4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view4.spec.ts\\Transaction View -- accepts a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View rejects a transaction request",
+          "status": "failed",
+          "duration": 23918,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\transaction-view5.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\transaction-view5.spec.ts\\Transaction View -- rejects a transaction request (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Transaction View does not display accept/reject buttons on completed request",
+          "status": "failed",
+          "duration": 24170,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=transaction-item]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\transaction-view6.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    },
+    "original": {
+      "summary": {
+        "tests": 6,
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Transaction View transactions navigation tabs are hidden on a transaction view page",
+          "status": "passed",
+          "duration": 3002,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\transaction-view1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Transaction View likes a transaction",
+          "status": "passed",
+          "duration": 3232,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\transaction-view2.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Transaction View comments on a transaction",
+          "status": "passed",
+          "duration": 3801,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\transaction-view3.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Transaction View accepts a transaction request",
+          "status": "passed",
+          "duration": 3876,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\transaction-view4.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Transaction View rejects a transaction request",
+          "status": "passed",
+          "duration": 4456,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\transaction-view5.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Transaction View does not display accept/reject buttons on completed request",
+          "status": "passed",
+          "duration": 4105,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\transaction-view6.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    }
+  },
+  "overall_stats": {
+    "total_llms": 11,
+    "total_tests_across_llms": 61,
+    "total_passed_across_llms": 9,
+    "total_failed_across_llms": 52
+  }
+}

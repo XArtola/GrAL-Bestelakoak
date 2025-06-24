@@ -1,0 +1,96 @@
+% Tabla compacta con TODOS los datos del CSV - Para incluir en documento existente
+% Usar: \input{tabla_completa_csv.tex}
+
+\begin{table}[htbp]
+\centering
+\caption{Comparación Completa de Tests Pasados: LLMs vs Baseline}
+\label{tab:test_comparison_complete}
+\tiny % Fuente muy pequeña para que quepa todo
+\begin{tabular}{|p{3cm}|p{2cm}|r|r|r|r|r|r|}
+\hline
+\textbf{Archivo Test} & \textbf{LLM} & \textbf{T\_Base (ms)} & \textbf{A\_Base} & \textbf{T\_LLM (ms)} & \textbf{A\_LLM} & \textbf{Δt (ms)} & \textbf{Δ Acc.} \\
+\hline
+auth7.spec.ts & Claude 3.5 & 4022 & 1 & 2598 & 4 & \textcolor{green}{-1424} & \textcolor{red}{+3} \\
+auth8.spec.ts & Claude 3.5 & 4132 & 1 & 2374 & 4 & \textcolor{green}{-1758} & \textcolor{red}{+3} \\
+user-settings1.spec.ts & Claude 3.5 & 2798 & 0 & 2454 & 0 & \textcolor{green}{-344} & 0 \\
+\hline
+auth7.spec.ts & Claude 3.7 & 4022 & 1 & 4717 & 4 & \textcolor{red}{+695} & \textcolor{red}{+3} \\
+auth8.spec.ts & Claude 3.7 & 4132 & 1 & 3937 & 4 & \textcolor{green}{-195} & \textcolor{red}{+3} \\
+\hline
+auth7.spec.ts & Claude 3.7 Think & 4022 & 1 & 3099 & 4 & \textcolor{green}{-923} & \textcolor{red}{+3} \\
+auth8.spec.ts & Claude 3.7 Think & 4132 & 1 & 2942 & 4 & \textcolor{green}{-1190} & \textcolor{red}{+3} \\
+user-settings1.spec.ts & Claude 3.7 Think & 2798 & 0 & 3949 & 0 & \textcolor{red}{+1151} & 0 \\
+user-settings3.spec.ts & Claude 3.7 Think & 5580 & 11 & 7208 & 9 & \textcolor{red}{+1628} & \textcolor{green}{-2} \\
+\hline
+auth1.spec.ts & Claude Sonnet 4 & 2285 & 1 & 3493 & 1 & \textcolor{red}{+1208} & 0 \\
+auth7.spec.ts & Claude Sonnet 4 & 4022 & 1 & 3443 & 4 & \textcolor{green}{-579} & \textcolor{red}{+3} \\
+auth8.spec.ts & Claude Sonnet 4 & 4132 & 1 & 4022 & 4 & \textcolor{green}{-110} & \textcolor{red}{+3} \\
+user-settings3.spec.ts & Claude Sonnet 4 & 5580 & 11 & 8846 & 9 & \textcolor{red}{+3266} & \textcolor{green}{-2} \\
+\hline
+auth1.spec.ts & Gemini 2.0 & 2285 & 1 & 6872 & 1 & \textcolor{red}{+4587} & 0 \\
+auth5.spec.ts & Gemini 2.0 & 2559 & 6 & 3151 & 4 & \textcolor{red}{+592} & \textcolor{green}{-2} \\
+transaction-feeds1.spec.ts & Gemini 2.0 & 3826 & 5 & 2369 & 2 & \textcolor{green}{-1457} & \textcolor{green}{-3} \\
+user-settings2.spec.ts & Gemini 2.0 & 4823 & 13 & 2943 & 0 & \textcolor{green}{-1880} & \textcolor{green}{-13} \\
+\hline
+auth4.spec.ts & Gemini 2.5 Pro & 6906 & 17 & 6670 & 13 & \textcolor{green}{-236} & \textcolor{green}{-4} \\
+auth7.spec.ts & Gemini 2.5 Pro & 4022 & 1 & 3395 & 4 & \textcolor{green}{-627} & \textcolor{red}{+3} \\
+auth8.spec.ts & Gemini 2.5 Pro & 4132 & 1 & 3391 & 4 & \textcolor{green}{-741} & \textcolor{red}{+3} \\
+transaction-view1.spec.ts & Gemini 2.5 Pro & 3220 & 1 & 2477 & 1 & \textcolor{green}{-743} & 0 \\
+user-settings1.spec.ts & Gemini 2.5 Pro & 2798 & 0 & 3530 & 0 & \textcolor{red}{+732} & 0 \\
+user-settings3.spec.ts & Gemini 2.5 Pro & 5580 & 11 & 6348 & 9 & \textcolor{red}{+768} & \textcolor{green}{-2} \\
+\hline
+auth4.spec.ts & GPT-4o & 6906 & 17 & 5663 & 12 & \textcolor{green}{-1243} & \textcolor{green}{-5} \\
+auth7.spec.ts & GPT-4o & 4022 & 1 & 3013 & 4 & \textcolor{green}{-1009} & \textcolor{red}{+3} \\
+auth8.spec.ts & GPT-4o & 4132 & 1 & 2950 & 4 & \textcolor{green}{-1182} & \textcolor{red}{+3} \\
+bankaccounts1.spec.ts & GPT-4o & 5225 & 7 & 4251 & 6 & \textcolor{green}{-974} & \textcolor{green}{-1} \\
+\hline
+auth1.spec.ts & GPT-4.1 & 2285 & 1 & 1862 & 1 & \textcolor{green}{-423} & 0 \\
+auth7.spec.ts & GPT-4.1 & 4022 & 1 & 3730 & 4 & \textcolor{green}{-292} & \textcolor{red}{+3} \\
+auth8.spec.ts & GPT-4.1 & 4132 & 1 & 2970 & 4 & \textcolor{green}{-1162} & \textcolor{red}{+3} \\
+transaction-feeds1.spec.ts & GPT-4.1 & 3826 & 5 & 2296 & 2 & \textcolor{green}{-1530} & \textcolor{green}{-3} \\
+transaction-view1.spec.ts & GPT-4.1 & 3220 & 1 & 3117 & 1 & \textcolor{green}{-103} & 0 \\
+\hline
+auth1.spec.ts & o3-mini & 2285 & 1 & 2353 & 1 & \textcolor{red}{+68} & 0 \\
+\hline
+auth1.spec.ts & o4-mini Prev & 2285 & 1 & 2343 & 1 & \textcolor{red}{+58} & 0 \\
+auth7.spec.ts & o4-mini Prev & 4022 & 1 & 4099 & 4 & \textcolor{red}{+77} & \textcolor{red}{+3} \\
+transaction-view1.spec.ts & o4-mini Prev & 3220 & 1 & 5967 & 1 & \textcolor{red}{+2747} & 0 \\
+user-settings1.spec.ts & o4-mini Prev & 2798 & 0 & 3179 & 0 & \textcolor{red}{+381} & 0 \\
+\hline
+\end{tabular}
+\begin{flushleft}
+\tiny
+\textbf{Leyenda:} T\_Base = Tiempo baseline (ms), A\_Base = Acciones baseline, T\_LLM = Tiempo LLM (ms), A\_LLM = Acciones LLM, Δt = Diferencia tiempo (LLM - Baseline), Δ Acc. = Diferencia acciones. \\
+\textcolor{green}{Verde} = Mejora, \textcolor{red}{Rojo} = Empeoramiento.
+\end{flushleft}
+\end{table}
+
+% Tabla resumen actualizada con datos completos del CSV
+\begin{table}[htbp]
+\centering
+\caption{Resumen de Rendimiento por LLM (Datos Completos)}
+\label{tab:performance_summary_complete}
+\footnotesize
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{LLM} & \textbf{Tests} & \textbf{Mejor T} & \textbf{Mejor A} & \textbf{Ambas} & \textbf{Score} \\
+\hline
+Claude 3.5 Sonnet & 3 & 3 & 0 & 0 & 50\% \\
+Claude 3.7 Sonnet & 2 & 1 & 0 & 0 & 25\% \\
+Claude 3.7 Sonnet Thinking & 4 & 2 & 1 & 0 & 37.5\% \\
+Claude Sonnet 4 & 4 & 2 & 2 & 0 & 50\% \\
+Gemini 2.0 Flash & 4 & 2 & 2 & 1 & 50\% \\
+Gemini 2.5 Pro (Preview) & 6 & 4 & 3 & 2 & 58.3\% \\
+GPT-4o & 4 & 4 & 2 & 2 & 75\% \\
+GPT-4.1 & 5 & 5 & 1 & 1 & 60\% \\
+o3-mini & 1 & 0 & 0 & 0 & 0\% \\
+o4-mini (Preview) & 4 & 0 & 0 & 0 & 0\% \\
+\hline
+\textbf{Total} & \textbf{37} & \textbf{23} & \textbf{11} & \textbf{6} & \textbf{45.9\%} \\
+\hline
+\end{tabular}
+\begin{flushleft}
+\footnotesize
+\textbf{Score} = (Mejor T + Mejor A) / (2 × Tests) × 100\%. Mejor T/A = tests con mejor tiempo/acciones que baseline.
+\end{flushleft}
+\end{table}

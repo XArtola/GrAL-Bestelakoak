@@ -1,0 +1,106 @@
+---
+tools: ['codebase']
+---
+
+#file:cypress-realworld-app 
+You are tasked with generating the code inside the 'it' blocks for a Cypress test suite. The test suite is for user sign-up and login functionality. You will be provided with the test suite structure and user information to use in your generated code.
+
+Here is the Cypress test code structure:
+
+<cypress_test_code>
+import { User } from "../../../src/models";
+import { isMobile } from "../../support/utils";
+const apiGraphQL = `${Cypress.env("apiUrl")}/graphql`;
+describe("User Sign-up and Login", function () {
+    beforeEach(function () {
+        cy.task("db:seed");
+        cy.intercept("POST", "/users").as("signup");
+        cy.intercept("POST", apiGraphQL, (req) => {
+            const { body } = req;
+            if (body.hasOwnProperty("operationName") && body.operationName === "CreateBankAccount") {
+                req.alias = "gqlCreateBankAccountMutation";
+            }
+        });
+    });
+    it("should display login errors", () => { });
+});
+
+</cypress_test_code>
+
+And here is the user information to use in your tests:
+
+<user_info>
+{
+  "userInfo": {
+    "firstName": "Bob",
+    "lastName": "Ross",
+    "username": "PainterJoy90",
+    "password": "s3cret"
+  },
+  "bankAccountInfo": {
+    "bankName": "The Best Bank",
+    "accountNumber": "123456789",
+    "routingNumber": "987654321"
+  },
+  "loginCredentials": {
+    "validPassword": "s3cret",
+    "invalidUsername": "invalidUserName",
+    "invalidPassword": "invalidPa$word",
+    "anotherInvalidPassword": "INVALID"
+  }
+}
+</user_info>
+
+Your task is to generate the code inside each 'it' block so that the Cypress test runs and gets positive results. Follow these guidelines:
+
+1. For each 'it' block, write Cypress commands that test the functionality described in the test name.
+2. Use the provided user information (firstName, lastName, username, password) in your test commands where appropriate.
+3. Ensure that your generated code follows Cypress best practices and conventions.
+4. Include appropriate assertions to verify the expected behavior of each test.
+5. If a test requires multiple steps, use comments to explain each step.
+6. Do not modify the existing code structure or add new 'it' blocks.
+
+When using the user information, refer to it as 'userInfo' followed by the property name, e.g., 'userInfo.firstName'.
+
+If you encounter any scenarios where you need additional information that isn't provided, do not make assumptions. Instead, indicate that more information is needed for that specific test.
+
+For error handling tests, use invalid data that is clearly different from the provided user information.
+
+Place your generated code for each 'it' block within <generated_code> tags, and include the original 'it' block description as a comment before each block of generated code.
+
+Begin generating the code for each 'it' block now.
+
+
+> Copilot:
+>```ts
+> // it block: should display login errors
+> it("should display login errors", () => {
+>     // <generated_code>
+>     // Visit the sign-in page
+>     cy.visit("/signin");
+> 
+>     // Attempt to submit the form without entering any credentials
+>     cy.get("button[type='submit']").click();
+> 
+>     // Assert that error messages are displayed for missing username and password
+>     cy.contains("Username is required").should("be.visible");
+>     cy.contains("Password is required").should("be.visible");
+> 
+>     // Enter an invalid username and valid password
+>     cy.get("input[name='username']").type(loginCredentials.invalidUsername);
+>     cy.get("input[name='password']").type(userInfo.password);
+>     cy.get("button[type='submit']").click();
+> 
+>     // Assert that an error message is displayed for invalid username
+>     cy.contains("Incorrect username or password.").should("be.visible");
+> 
+>     // Enter a valid username and invalid password
+>     cy.get("input[name='username']").clear().type(userInfo.username);
+>     cy.get("input[name='password']").clear().type(loginCredentials.invalidPassword);
+>     cy.get("button[type='submit']").click();
+> 
+>     // Assert that an error message is displayed for invalid password
+>     cy.contains("Incorrect username or password.").should("be.visible");
+>     // </generated_code>
+> });
+> ```

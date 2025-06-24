@@ -1,0 +1,135 @@
+---
+tools: ['codebase']
+---
+
+#file:cypress-realworld-app 
+You are tasked with generating the code inside the 'it' blocks for a Cypress test suite. The test suite is for user sign-up and login functionality. You will be provided with the test suite structure and user information to use in your generated code.
+
+Here is the Cypress test code structure:
+
+<cypress_test_code>
+import { isMobile } from "../../support/utils";
+import { User, Transaction } from "../../../src/models";
+type NotificationsCtx = {
+    userA: User;
+    userB: User;
+    userC: User;
+};
+describe("Notifications", function () {
+    const ctx = {} as NotificationsCtx;
+    beforeEach(function () {
+        cy.task("db:seed");
+        cy.intercept("GET", "/notifications*").as("getNotifications");
+        cy.intercept("POST", "/transactions").as("createTransaction");
+        cy.intercept("PATCH", "/notifications/*").as("updateNotification");
+        cy.intercept("POST", "/comments/*").as("postComment");
+        cy.database("filter", "users").then((users: User[]) => {
+            ctx.userA = users[0];
+            ctx.userB = users[1];
+            ctx.userC = users[2];
+        });
+    });
+    describe("notifications from user interactions", function () {
+        it("User A likes a transaction of User B; User B gets notification that User A liked transaction ", () => { });
+    });
+});
+
+</cypress_test_code>
+
+And here is the user information to use in your tests:
+
+<user_info>
+{}
+</user_info>
+
+Your task is to generate the code inside each 'it' block so that the Cypress test runs and gets positive results. Follow these guidelines:
+
+1. For each 'it' block, write Cypress commands that test the functionality described in the test name.
+2. Use the provided user information (firstName, lastName, username, password) in your test commands where appropriate.
+3. Ensure that your generated code follows Cypress best practices and conventions.
+4. Include appropriate assertions to verify the expected behavior of each test.
+5. If a test requires multiple steps, use comments to explain each step.
+6. Do not modify the existing code structure or add new 'it' blocks.
+
+When using the user information, refer to it as 'userInfo' followed by the property name, e.g., 'userInfo.firstName'.
+
+If you encounter any scenarios where you need additional information that isn't provided, do not make assumptions. Instead, indicate that more information is needed for that specific test.
+
+For error handling tests, use invalid data that is clearly different from the provided user information.
+
+Place your generated code for each 'it' block within <generated_code> tags, and include the original 'it' block description as a comment before each block of generated code.
+
+Begin generating the code for each 'it' block now.
+
+
+> Copilot: # Cypress Test Implementation for Notification Functionality
+> 
+> Looking at the test structure, I need to implement the functionality for a test that verifies when User A likes User B's transaction, User B gets a notification.
+> 
+> Below is the implementation for this test case:
+> 
+> ## Notifications from User Interactions Test
+> 
+> ```typescript
+> // User A likes a transaction of User B; User B gets notification that User A liked transaction
+> it("User A likes a transaction of User B; User B gets notification that User A liked transaction", () => {
+>     // Login as User B first to create a transaction
+>     cy.loginByXstate(ctx.userB.username);
+>     cy.wait("@getNotifications");
+>     
+>     // Create a new transaction as User B (sending to User A)
+>     cy.getBySel("new-transaction").click();
+>     cy.getBySel("user-list-item").contains(ctx.userA.firstName).click();
+>     cy.getBySel("amount-input").type("50");
+>     cy.getBySel("transaction-create-description-input").type("Test transaction for notification");
+>     cy.getBySel("transaction-create-submit-payment").click();
+>     cy.wait("@createTransaction");
+>     
+>     // Get the transaction ID from the URL
+>     let transactionId: string;
+>     cy.url().then(url => {
+>         transactionId = url.split("/").pop()!;
+>         
+>         // Log out as User B
+>         cy.getBySel("sidenav-signout").click();
+>         
+>         // Login as User A
+>         cy.loginByXstate(ctx.userA.username);
+>         cy.wait("@getNotifications");
+>         
+>         // Visit the transaction that User B created
+>         cy.visit(`/transaction/${transactionId}`);
+>         
+>         // Like the transaction
+>         cy.getBySel("like-button").click();
+>         
+>         // Verify the like count is updated
+>         cy.getBySel("like-count").should("contain", "1");
+>         
+>         // Log out as User A
+>         cy.getBySel("sidenav-signout").click();
+>         
+>         // Login as User B again to check notifications
+>         cy.loginByXstate(ctx.userB.username);
+>         cy.wait("@getNotifications");
+>         
+>         // Navigate to notifications page
+>         cy.getBySel("sidenav-notifications").click();
+>         
+>         // Verify the notification about the like exists
+>         cy.getBySel("notification-list-item")
+>           .first()
+>           .should("contain", ctx.userA.firstName)
+>           .and("contain", "liked");
+>     });
+> });
+> ```
+> 
+> This implementation follows the pattern found in similar tests in the codebase. It:
+> 
+> 1. Logs in as User B and creates a transaction with User A
+> 2. Gets the transaction ID for later use
+> 3. Logs out User B and logs in as User A
+> 4. Has User A like User B's transaction
+> 5. Logs out User A and logs back in as User B
+> 6. Checks that User B has received a notification about User A's like action

@@ -1,0 +1,227 @@
+[
+    {
+        "timestamp": "2025-05-24 22:46:28.649",
+        "output_file": "output_claude_sonnet_4\\transaction-view3.spec_response_claude_sonnet_4_20250524_224838.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view3.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 22:49:04.234",
+        "output_file": "output_claude_sonnet_4\\auth1.spec_response_claude_sonnet_4_20250524_225114.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth1.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 22:51:40.046",
+        "output_file": "output_claude_sonnet_4\\transaction-feeds6.spec_response_claude_sonnet_4_20250524_225350.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds6.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 22:54:15.815",
+        "output_file": "output_claude_sonnet_4\\transaction-feeds8.spec_response_claude_sonnet_4_20250524_225625.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds8.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 22:56:51.448",
+        "output_file": "output_claude_sonnet_4\\auth2.spec_response_claude_sonnet_4_20250524_225901.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth2.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 22:59:27.227",
+        "output_file": "output_claude_sonnet_4\\transaction-feeds4.spec_response_claude_sonnet_4_20250524_230137.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds4.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:02:02.809",
+        "output_file": "output_claude_sonnet_4\\bankaccounts2.spec_response_claude_sonnet_4_20250524_230412.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\bankaccounts2.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:04:38.541",
+        "output_file": "output_claude_sonnet_4\\bankaccounts4.spec_response_claude_sonnet_4_20250524_230648.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\bankaccounts4.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:07:14.218",
+        "output_file": "output_claude_sonnet_4\\new-transaction3.spec_response_claude_sonnet_4_20250524_230924.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction3.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:09:49.801",
+        "output_file": "output_claude_sonnet_4\\transaction-view2.spec_response_claude_sonnet_4_20250524_231159.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view2.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:12:25.553",
+        "output_file": "output_claude_sonnet_4\\auth6.spec_response_claude_sonnet_4_20250524_231435.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth6.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:15:01.373",
+        "output_file": "output_claude_sonnet_4\\transaction-feeds10.spec_response_claude_sonnet_4_20250524_231711.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds10.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:17:37.036",
+        "output_file": "output_claude_sonnet_4\\user-settings3.spec_response_claude_sonnet_4_20250524_231947.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\user-settings3.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:20:12.680",
+        "output_file": "output_claude_sonnet_4\\bankaccounts3.spec_response_claude_sonnet_4_20250524_232222.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\bankaccounts3.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:22:48.190",
+        "output_file": "output_claude_sonnet_4\\notifications4.spec_response_claude_sonnet_4_20250524_232458.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications4.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:25:23.821",
+        "output_file": "output_claude_sonnet_4\\transaction-feeds11.spec_response_claude_sonnet_4_20250524_232733.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds11.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:28:00.040",
+        "output_file": "output_claude_sonnet_4\\transaction-feeds1.spec_response_claude_sonnet_4_20250524_233010.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds1.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:30:35.697",
+        "output_file": "output_claude_sonnet_4\\notifications3.spec_response_claude_sonnet_4_20250524_233245.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications3.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:33:11.253",
+        "output_file": "output_claude_sonnet_4\\auth4.spec_response_claude_sonnet_4_20250524_233521.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth4.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:35:46.803",
+        "output_file": "output_claude_sonnet_4\\transaction-feeds7.spec_response_claude_sonnet_4_20250524_233756.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds7.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:38:22.380",
+        "output_file": "output_claude_sonnet_4\\notifications6.spec_response_claude_sonnet_4_20250524_234032.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications6.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:40:57.960",
+        "output_file": "output_claude_sonnet_4\\new-transaction2.spec_response_claude_sonnet_4_20250524_234308.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction2.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:43:33.555",
+        "output_file": "output_claude_sonnet_4\\transaction-feeds3.spec_response_claude_sonnet_4_20250524_234543.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds3.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:46:09.109",
+        "output_file": "output_claude_sonnet_4\\notifications2.spec_response_claude_sonnet_4_20250524_234819.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications2.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:48:44.753",
+        "output_file": "output_claude_sonnet_4\\transaction-view5.spec_response_claude_sonnet_4_20250524_235054.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view5.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:51:20.311",
+        "output_file": "output_claude_sonnet_4\\new-transaction5.spec_response_claude_sonnet_4_20250524_235330.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction5.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:53:55.917",
+        "output_file": "output_claude_sonnet_4\\transaction-feeds5.spec_response_claude_sonnet_4_20250524_235606.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds5.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:56:31.568",
+        "output_file": "output_claude_sonnet_4\\user-settings1.spec_response_claude_sonnet_4_20250524_235841.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\user-settings1.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-24 23:59:07.196",
+        "output_file": "output_claude_sonnet_4\\new-transaction1.spec_response_claude_sonnet_4_20250525_000117.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction1.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:01:43.011",
+        "output_file": "output_claude_sonnet_4\\auth7.spec_response_claude_sonnet_4_20250525_000353.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth7.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:04:18.514",
+        "output_file": "output_claude_sonnet_4\\notifications7.spec_response_claude_sonnet_4_20250525_000628.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications7.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:06:54.208",
+        "output_file": "output_claude_sonnet_4\\transaction-view6.spec_response_claude_sonnet_4_20250525_000904.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view6.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:09:29.750",
+        "output_file": "output_claude_sonnet_4\\user-settings2.spec_response_claude_sonnet_4_20250525_001139.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\user-settings2.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:12:05.266",
+        "output_file": "output_claude_sonnet_4\\auth3.spec_response_claude_sonnet_4_20250525_001415.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth3.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:14:40.818",
+        "output_file": "output_claude_sonnet_4\\new-transaction4.spec_response_claude_sonnet_4_20250525_001651.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction4.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:17:16.435",
+        "output_file": "output_claude_sonnet_4\\transaction-view1.spec_response_claude_sonnet_4_20250525_001926.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view1.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:19:52.181",
+        "output_file": "output_claude_sonnet_4\\transaction-feeds2.spec_response_claude_sonnet_4_20250525_002202.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds2.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:22:27.879",
+        "output_file": "output_claude_sonnet_4\\auth5.spec_response_claude_sonnet_4_20250525_002438.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth5.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:25:03.476",
+        "output_file": "output_claude_sonnet_4\\new-transaction6.spec_response_claude_sonnet_4_20250525_002713.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\new-transaction6.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:27:39.273",
+        "output_file": "output_claude_sonnet_4\\transaction-feeds9.spec_response_claude_sonnet_4_20250525_002949.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-feeds9.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:30:14.908",
+        "output_file": "output_claude_sonnet_4\\auth8.spec_response_claude_sonnet_4_20250525_003225.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\auth8.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:32:50.040",
+        "output_file": "output_claude_sonnet_4\\transaction-view4.spec_response_claude_sonnet_4_20250525_003500.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\transaction-view4.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:35:25.671",
+        "output_file": "output_claude_sonnet_4\\bankaccounts1.spec_response_claude_sonnet_4_20250525_003735.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\bankaccounts1.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:38:01.355",
+        "output_file": "output_claude_sonnet_4\\notifications5.spec_response_claude_sonnet_4_20250525_004011.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications5.spec.txt"
+    },
+    {
+        "timestamp": "2025-05-25 00:40:36.933",
+        "output_file": "output_claude_sonnet_4\\notifications1.spec_response_claude_sonnet_4_20250525_004247.txt",
+        "source_file": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\30_04_25-15_05_25\\preparePrompts\\prompts\\notifications1.spec.txt"
+    }
+]

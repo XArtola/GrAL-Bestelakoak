@@ -2,18 +2,15 @@
 import Image from "next/image";
 import React, { useState, useEffect, useMemo } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import LlmTestComparisonView from './components/LlmTestComparisonView';
-import ModernResultsView from './components/ModernResultsView';
-import EfficiencyMeasuringView from './components/EfficiencyMeasuringViewReal';
 import TestGenerationTimingView from './components/TestGenerationTimingView';
 import ActionUsageComparisonView from './components/ActionUsageComparisonView';
-import TestFilePerformanceView from './components/TestFilePerformanceView';
+
 
 export default function Home() {
   const [link, setLink] = useState("");
   const [status, setStatus] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [view, setView] = useState<"add" | "results" | "modern-results" | "llm-tests" | "efficiency" | "test-generation" | "action-usage" | "test-file-performance">("add");
+  const [view, setView] = useState<"add" | "test-generation" | "action-usage">("add");
   const [resultsTab, setResultsTab] = useState<"original" | "summary">("summary");
   const [resultsData, setResultsData] = useState<any[]>([]);
   const [summaryData, setSummaryData] = useState<any[]>([]);
@@ -35,8 +32,8 @@ export default function Home() {
   useEffect(() => {
     const savedView = localStorage.getItem('dashboard-view');
     const savedResultsTab = localStorage.getItem('dashboard-results-tab');
-    const savedSortCriteria = localStorage.getItem('dashboard-sort-criteria');    if (savedView && ['add', 'results', 'modern-results', 'llm-tests', 'efficiency', 'test-generation', 'action-usage', 'test-file-performance'].includes(savedView)) {
-      setView(savedView as "add" | "results" | "modern-results" | "llm-tests" | "efficiency" | "test-generation" | "action-usage" | "test-file-performance");
+    const savedSortCriteria = localStorage.getItem('dashboard-sort-criteria');    if (savedView && ['add', 'test-generation', 'action-usage'].includes(savedView)) {
+      setView(savedView as "add" | "test-generation" | "action-usage");
     }
     
     if (savedResultsTab && ['original', 'summary'].includes(savedResultsTab)) {
@@ -93,50 +90,7 @@ export default function Home() {
     }
   };
   useEffect(() => {
-    if (view === "results" || view === "modern-results") {      setResultsLoading(true);
-      fetch("/api/results")
-        .then((res) => res.json())
-        .then((data) => {
-          console.log("Fetched results data:", data); // Debugging log
-          // Extract the results array from the enhanced API response
-          const resultsArray = data.results || [];
-          setResultsData(resultsArray);
-        })
-        .catch((error) => {
-          console.error("Error fetching results data:", error); // Debugging log
-          setResultsData([]);
-        })
-        .finally(() => setResultsLoading(false));
-      
-      // Fetch summary data
-      setSummaryLoading(true);
-      fetch("/api/summary")
-        .then((res) => res.json())
-        .then((data) => {
-          console.log("Fetched summary data:", data); // Debugging log
-          setSummaryData(data);
-        })
-        .catch((error) => {
-          console.error("Error fetching summary data:", error); // Debugging log
-          setSummaryData([]);
-        })
-        .finally(() => setSummaryLoading(false));    } else if (view === "llm-tests") {
-      // Fetch LLM test comparison data
-      setLlmTestsLoading(true);
-      fetch("/api/llm-tests")
-        .then((res) => res.json())
-        .then((data) => {
-          console.log("Fetched LLM tests comparison data:", data);
-          // Extract the testComparison data from the enhanced API response
-          const comparisonData = data.testComparison || null;
-          setLlmTestData(comparisonData);
-        })
-        .catch((error) => {
-          console.error("Error fetching LLM tests comparison data:", error);
-          setLlmTestData(null);
-        })
-        .finally(() => setLlmTestsLoading(false));
-    }
+    // No LLM test data fetching needed
   }, [view]);
 
   // prepare sorted data and chart mapping
@@ -301,100 +255,7 @@ export default function Home() {
               {view === "add" && (
                 <div className="ml-auto w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
               )}
-            </button>
-
-            {/* See Results Button */}
-            <button 
-              onClick={() => setView("results")} 
-              className={`nav-button group w-full flex items-center px-4 py-3 rounded-lg text-left transition-all duration-200 ${
-                view === "results" 
-                  ? "bg-gradient-to-r from-green-500/20 to-emerald-500/20 text-green-300 border border-green-500/30 shadow-lg shadow-green-500/10" 
-                  : "text-gray-300 hover:bg-gray-700/50 hover:text-white"
-              }`}
-            >
-              <div className={`flex items-center justify-center w-8 h-8 rounded-lg mr-3 transition-colors ${
-                view === "results" 
-                  ? "bg-gradient-to-br from-green-500 to-emerald-600 text-white shadow-lg" 
-                  : "bg-gray-700 group-hover:bg-gray-600"
-              }`}>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <span className="font-medium">View Results</span>
-              {view === "results" && (
-                <div className="ml-auto w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              )}            </button>
-
-            {/* Modern Results Button */}
-            <button 
-              onClick={() => setView("modern-results")} 
-              className={`nav-button group w-full flex items-center px-4 py-3 rounded-lg text-left transition-all duration-200 ${
-                view === "modern-results" 
-                  ? "bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 text-indigo-300 border border-indigo-500/30 shadow-lg shadow-indigo-500/10" 
-                  : "text-gray-300 hover:bg-gray-700/50 hover:text-white"
-              }`}
-            >
-              <div className={`flex items-center justify-center w-8 h-8 rounded-lg mr-3 transition-colors ${
-                view === "modern-results" 
-                  ? "bg-gradient-to-br from-indigo-500 to-cyan-600 text-white shadow-lg" 
-                  : "bg-gray-700 group-hover:bg-gray-600"
-              }`}>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-                </svg>
-              </div>
-              <span className="font-medium">Modern Results</span>
-              {view === "modern-results" && (
-                <div className="ml-auto w-2 h-2 bg-indigo-400 rounded-full animate-pulse" />
-              )}
-            </button>            {/* LLM Test Comparison Button */}
-            <button 
-              onClick={() => setView("llm-tests")} 
-              className={`nav-button group w-full flex items-center px-4 py-3 rounded-lg text-left transition-all duration-200 ${
-                view === "llm-tests" 
-                  ? "bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 border border-purple-500/30 shadow-lg shadow-purple-500/10" 
-                  : "text-gray-300 hover:bg-gray-700/50 hover:text-white"
-              }`}
-            >
-              <div className={`flex items-center justify-center w-8 h-8 rounded-lg mr-3 transition-colors ${
-                view === "llm-tests" 
-                  ? "bg-gradient-to-br from-purple-500 to-pink-600 text-white shadow-lg" 
-                  : "bg-gray-700 group-hover:bg-gray-600"
-              }`}>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
-              </div>
-              <span className="font-medium">LLM Comparison</span>
-              {view === "llm-tests" && (
-                <div className="ml-auto w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
-              )}
-            </button>            {/* Efficiency Measuring Button */}
-            <button 
-              onClick={() => setView("efficiency")} 
-              className={`nav-button group w-full flex items-center px-4 py-3 rounded-lg text-left transition-all duration-200 ${
-                view === "efficiency" 
-                  ? "bg-gradient-to-r from-orange-500/20 to-yellow-500/20 text-orange-300 border border-orange-500/30 shadow-lg shadow-orange-500/10" 
-                  : "text-gray-300 hover:bg-gray-700/50 hover:text-white"
-              }`}
-            >
-              <div className={`flex items-center justify-center w-8 h-8 rounded-lg mr-3 transition-colors ${
-                view === "efficiency" 
-                  ? "bg-gradient-to-br from-orange-500 to-yellow-600 text-white shadow-lg" 
-                  : "bg-gray-700 group-hover:bg-gray-600"
-              }`}>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <span className="font-medium">Efficiency Measuring</span>
-              {view === "efficiency" && (
-                <div className="ml-auto w-2 h-2 bg-orange-400 rounded-full animate-pulse" />
-              )}
-            </button>
-
-            {/* Test Generation Timing Button */}
+            </button>            {/* Test Generation Timing Button */}
             <button 
               onClick={() => setView("test-generation")} 
               className={`nav-button group w-full flex items-center px-4 py-3 rounded-lg text-left transition-all duration-200 ${
@@ -436,32 +297,7 @@ export default function Home() {
               </div>
               <span className="font-medium">Action Usage Analysis</span>
               {view === "action-usage" && (
-                <div className="ml-auto w-2 h-2 bg-rose-400 rounded-full animate-pulse" />
-              )}
-            </button>
-
-            {/* Test File Performance Button */}
-            <button 
-              onClick={() => setView("test-file-performance")} 
-              className={`nav-button group w-full flex items-center px-4 py-3 rounded-lg text-left transition-all duration-200 ${
-                view === "test-file-performance" 
-                  ? "bg-gradient-to-r from-emerald-500/20 to-green-500/20 text-emerald-300 border border-emerald-500/30 shadow-lg shadow-emerald-500/10" 
-                  : "text-gray-300 hover:bg-gray-700/50 hover:text-white"
-              }`}
-            >
-              <div className={`flex items-center justify-center w-8 h-8 rounded-lg mr-3 transition-colors ${
-                view === "test-file-performance" 
-                  ? "bg-gradient-to-br from-emerald-500 to-green-600 text-white shadow-lg" 
-                  : "bg-gray-700 group-hover:bg-gray-600"
-              }`}>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2 2v-6a2 2 0 012-2h2a2 2 0 012 2zm0 0a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 0v2a2 2 0 01-2 2H9a2 2 0 01-2-2V7" />
-                </svg>
-              </div>
-              <span className="font-medium">Test File Performance</span>
-              {view === "test-file-performance" && (
-                <div className="ml-auto w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              )}
+                <div className="ml-auto w-2 h-2 bg-rose-400 rounded-full animate-pulse" />              )}
             </button>
           </div>
 
@@ -518,188 +354,13 @@ export default function Home() {
                 </div>
               )}
             </form>
-          ) : view === "results" ? (
-            <div className="w-full max-w-6xl">
-              {/* Sorting selector and chart */}
-              <div className="mb-4">
-                <label className="block text-sm font-medium mb-2">Sort by:</label>
-                <select
-                  value={sortCriteria}
-                  onChange={(e) => setSortCriteria(e.target.value as any)}
-                  className="border rounded px-2 py-1 bg-black text-white"
-                >
-                  {['tests','passed','failed','skipped','pending','other'].map((c) => (
-                    <option key={c} value={c}>
-                      {c.charAt(0).toUpperCase() + c.slice(1)}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="w-full h-96 mb-4">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={chartData} margin={{ left: 40, right: 40, bottom: 40 }}>
-                    <XAxis dataKey="name" angle={-20} textAnchor="end" interval={0} height={60} tick={{ fontSize: 14, fill: '#fff' }} />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="Passed" fill="#4CAF50" cursor="pointer" onClick={handleBarClick} />
-                    <Bar dataKey="Failed" fill="#F44336" cursor="pointer" onClick={handleBarClick} />
-                    <Bar dataKey="Skipped" fill="#FFC107" cursor="pointer" onClick={handleBarClick} />
-                    <Bar dataKey="Pending" fill="#2196F3" cursor="pointer" onClick={handleBarClick} />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-              
-              <div className="flex gap-4 mb-4">
-                <button onClick={() => setResultsTab("original")} className={`px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 focus:bg-blue-600 transition-colors ${resultsTab === "original" ? "" : "opacity-80"}`}>Original Results</button>
-                <button onClick={() => setResultsTab("summary")} className={`px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 focus:bg-blue-600 transition-colors ${resultsTab === "summary" ? "" : "opacity-80"}`}>Summary Data</button>
-              </div>
-              
-              {resultsTab === "original" ? (
-                <>
-                  {resultsLoading ? (
-                    <p>Loading results...</p>
-                  ) : resultsData.length > 0 ? (
-                    <>
-                      <h2 className="text-xl font-bold mb-4">Results by LLM and Version</h2>
-                      {Array.from(resultsByLLMVersion.entries()).map(([llmVersionKey, data]) => (
-                        <section key={llmVersionKey} className="mb-8 p-4 border border-gray-700 rounded-lg">
-                          <h3 className="text-lg font-semibold mb-4">{llmVersionKey}</h3>
-                          {data.files.size > 0 ? (
-                            <table className="table-auto w-full text-sm border-collapse">
-                              <thead>
-                                <tr>
-                                  <th className="px-2 py-1 border-b border-gray-700 text-left">File Path</th>
-                                  <th className="px-2 py-1 border-b border-gray-700 text-right">Tests Passed</th>
-                                  <th className="px-2 py-1 border-b border-gray-700 text-right">Status</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {Array.from(data.files.entries()).map(([filePath, stats]) => {
-                                  const isPassing = stats.passed === stats.total;
-                                  return (
-                                    <tr key={filePath} className="even:bg-gray-800">
-                                      <td className="px-2 py-1 align-top text-left">{filePath}</td>
-                                      <td className="px-2 py-1 align-top text-right">{stats.passed}/{stats.total}</td>
-                                      <td className={`px-2 py-1 align-top text-right font-semibold ${isPassing ? 'text-green-500' : 'text-red-500'}`}>
-                                        {isPassing ? 'Pass' : 'Fail'}
-                                      </td>
-                                    </tr>
-                                  );
-                                })}
-                              </tbody>
-                            </table>
-                          ) : (
-                            <p className="text-yellow-400">No test data found for this LLM/Version.</p>
-                          )}
-                        </section>
-                      ))}
-                    </>
-                  ) : (
-                    <p>No results found.</p>
-                  )}
-                </>
-              ) : (
-                <>
-                  {summaryLoading ? (
-                    <div className="mt-8">
-                      <h2 className="text-xl font-bold mb-4">Summary Data</h2>
-                      <p>Loading summary data...</p>
-                    </div>
-                  ) : summaryData.length > 0 ? (
-                    <div className="mt-8">
-                      <h2 className="text-xl font-bold mb-4">Summary Data</h2>
-                      {summaryData.map((summary, index) => (
-                        <section key={index} className="mb-8 p-4 border border-gray-700 rounded-lg">
-                          <h3 className="text-lg font-semibold mb-4">File: {summary.filePath}</h3>
-                          {summary.tests && summary.tests.length > 0 ? (
-                            summary.tests.map((test: { name: string; attempts: any[] }, testIndex: number) => (
-                              <div key={testIndex} className="mb-6 p-3 bg-gray-900 rounded">
-                                <h4 className="font-medium mb-2">Test: {test.name}</h4>
-                                {test.attempts && test.attempts.length > 0 ? (
-                                  <table className="table-auto w-full text-sm border-collapse">
-                                    <thead>
-                                      <tr>
-                                        <th className="px-2 py-1 border-b border-gray-700 text-left">LLM</th>
-                                        <th className="px-2 py-1 border-b border-gray-700 text-left">Version</th>
-                                        <th className="px-2 py-1 border-b border-gray-700 text-left">Status</th>
-                                        <th className="px-2 py-1 border-b border-gray-700 text-left">Duration (ms)</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      {test.attempts.map((attempt, attemptIndex) => (
-                                        attempt.results && attempt.results.length > 0 ? (
-                                          attempt.results.map((result: { status: string; duration: number }, resultIndex: number) => (
-                                            <tr key={`${attemptIndex}-${resultIndex}`} className="even:bg-gray-800">
-                                              <td className="px-2 py-1 align-top text-left">{attempt.LLM}</td>
-                                              <td className="px-2 py-1 align-top text-left">{attempt.version}</td>
-                                              <td className="px-2 py-1 align-top capitalize text-left">{result.status}</td>
-                                              <td className="px-2 py-1 align-top text-left">{result.duration}</td>
-                                            </tr>
-                                          ))
-                                        ) : (
-                                          <tr key={attemptIndex} className="even:bg-gray-800">
-                                            <td className="px-2 py-1 align-top text-left">{attempt.LLM}</td>
-                                            <td className="px-2 py-1 align-top text-left">{attempt.version}</td>
-                                            <td className="px-2 py-1 align-top text-left" colSpan={2}>No results available</td>
-                                          </tr>
-                                        )
-                                      ))}
-                                    </tbody>
-                                  </table>
-                                ) : (
-                                  <p className="text-yellow-400">No attempt data available for this test</p>
-                                )}
-                              </div>
-                            ))
-                          ) : (
-                            <div className="p-4 bg-gray-800 rounded">
-                              <p className="text-yellow-400">No test data found for this file path.</p>
-                            </div>
-                          )}
-                        </section>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="mt-8">
-                      <h2 className="text-xl font-bold mb-4">Summary Data</h2>
-                      <p>No summary data found.</p>
-                    </div>
-                  )}                </>
-              )}
-            </div>          ) : view === "modern-results" ? (
-            <ModernResultsView
-              resultsData={resultsData}
-              summaryData={summaryData}
-              resultsLoading={resultsLoading}
-              summaryLoading={summaryLoading}
-              resultsByLLMVersion={resultsByLLMVersion}
-              chartData={chartData}
-              handleBarClick={handleBarClick}
-              sortCriteria={sortCriteria}
-              setSortCriteria={(criteria: string) => setSortCriteria(criteria as 'tests'|'passed'|'failed'|'skipped'|'pending'|'other')}
-            />          ) : view === "llm-tests" ? (
-            <div className="w-full max-w-6xl">
-              <h1 className="text-2xl font-bold mb-6">LLM Test Comparison</h1>
-              <LlmTestComparisonView loading={llmTestsLoading} testData={llmTestData} />
-            </div>          ) : view === "efficiency" ? (
-            <div className="w-full max-w-6xl">
-              <EfficiencyMeasuringView loading={false} />
-            </div>
           ) : view === "test-generation" ? (
             <div className="w-full max-w-6xl">
               <h1 className="text-2xl font-bold mb-6">Test Generation Timing Analysis</h1>
               <TestGenerationTimingView />
-            </div>          ) : view === "action-usage" ? (
-            <div className="w-full max-w-6xl">
+            </div>          ) : view === "action-usage" ? (            <div className="w-full max-w-6xl">
               <h1 className="text-2xl font-bold mb-6">Action Usage Comparison</h1>
               <ActionUsageComparisonView />
-            </div>
-          ) : view === "test-file-performance" ? (
-            <div className="w-full max-w-6xl">
-              <h1 className="text-2xl font-bold mb-6">Test File Performance Analysis</h1>
-              <TestFilePerformanceView />
             </div>
           ) : null}
         </main>

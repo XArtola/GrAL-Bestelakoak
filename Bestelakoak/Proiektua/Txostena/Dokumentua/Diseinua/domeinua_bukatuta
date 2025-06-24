@@ -1,0 +1,73 @@
+classDiagram
+direction TB
+    class HustutakoBlokea {
+	    +String edukia
+    }
+
+    class PromptTxantiloia {
+	    +String edukia
+    }
+
+    class ErabiltzaileDatuak {
+	    +String testIzena
+	    +Map parametroak
+    }
+
+    class TestFitxategia {
+	    +String kodea
+    }
+
+    class TestBlokea {
+	    +String izena
+	    +String kodea
+    }
+
+    class PromptFitxategia {
+	    +String izena
+	    +String edukia
+    }
+
+    class LLMElkarrizketa {
+	    +String elkarrizketa
+    }
+
+    class ErabiltzaileEkintzak {
+	    + String llm_izena
+	    +String testId
+	    + Map ekintzak
+	    +Integer kopuruaGuztira
+	    +Date data
+    }
+
+    class SorkuntzaMetrika {
+	    + String llm_izena
+	    +String testId
+	    +String sortutakoKodea
+	    +Integer sorkuntzaDenbora
+	    +Date data
+    }
+
+    class TestFitxategiaLLM {
+	    +String fitxategiIzena
+	    +String edukia
+    }
+
+    class ExekuzioMetrika {
+	    +String testId
+	    +String emaitza
+	    +Integer exekuzioDenbora
+	    +Date data
+    }
+
+    TestFitxategia "1" --> "*" TestBlokea : banatu
+    TestBlokea "1" --> "1" HustutakoBlokea : hustu
+    TestBlokea "1" --> "1" ErabiltzaileDatuak : erauzi
+    HustutakoBlokea "1" --> "1" PromptFitxategia : gehitu
+    PromptTxantiloia "1" --> "*" PromptFitxategia : erabili
+    ErabiltzaileDatuak "1" --> "*" PromptFitxategia : gehitu
+    PromptFitxategia "1" --> "1" LLMElkarrizketa : sortu
+    LLMElkarrizketa "1" --> "1" SorkuntzaMetrika : eragin
+    LLMElkarrizketa "1" --> "1" TestFitxategiaLLM : erauzi
+    TestFitxategiaLLM "1" --> "*" ExekuzioMetrika : neurtu
+    LLMElkarrizketa "1" --> "*" ErabiltzaileEkintzak : sortu
+

@@ -1,0 +1,1338 @@
+{
+  "category": "bankaccounts",
+  "llms": {
+    "claude_3_5_sonnet": {
+      "summary": {
+        "tests": 4,
+        "passed": 0,
+        "failed": 4,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Bank Accounts creates a new bank account",
+          "status": "failed",
+          "duration": 21769,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: '123456789' but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/bankaccounts1.spec.ts:55:27)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find content: '123456789' but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/bankaccounts1.spec.ts:55:27)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\bankaccounts1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts should display bank account form errors",
+          "status": "failed",
+          "duration": 16527,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-new]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-new]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\bankaccounts2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts soft deletes a bank account",
+          "status": "failed",
+          "duration": 17243,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-new]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-new]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\bankaccounts3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts renders an empty bank account list state with onboarding modal",
+          "status": "failed",
+          "duration": 4732,
+          "message": "TypeError: Cannot read properties of undefined (reading 'id')\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/bankaccounts4.spec.ts:41:24)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144750:15)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)",
+          "trace": "TypeError: Cannot read properties of undefined (reading 'id')\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_5_sonnet/bankaccounts4.spec.ts:41:24)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144750:15)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_5_sonnet\\bankaccounts4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "claude_3_7_sonnet": {
+      "summary": {
+        "tests": 4,
+        "passed": 0,
+        "failed": 4,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+       {
+          "name": "Bank Accounts creates a new bank account",
+          "status": "failed",
+          "duration": 29251,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: '123456789' but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/bankaccounts1.spec.ts:61:27)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find content: '123456789' but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/bankaccounts1.spec.ts:61:27)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\bankaccounts1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts should display bank account form errors",
+          "status": "failed",
+          "duration": 24259,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#bankaccount-bankName-input-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/bankaccounts2.spec.ts:46:52)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#bankaccount-bankName-input-helper-text`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/bankaccounts2.spec.ts:46:52)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\bankaccounts2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts soft deletes a bank account",
+          "status": "failed",
+          "duration": 20656,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-delete]`, but never found it. Queried from:\n\n              > cy.contains(The Best Bank).parent()\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/bankaccounts3.spec.ts:53:40)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-delete]`, but never found it. Queried from:\n\n              > cy.contains(The Best Bank).parent()\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/bankaccounts3.spec.ts:53:40)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\bankaccounts3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts renders an empty bank account list state with onboarding modal",
+          "status": "failed",
+          "duration": 10158,
+          "message": "TypeError: Cannot read properties of undefined (reading 'id')\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/bankaccounts4.spec.ts:47:24)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144750:15)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)",
+          "trace": "TypeError: Cannot read properties of undefined (reading 'id')\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet/bankaccounts4.spec.ts:47:24)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144750:15)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet\\bankaccounts4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "claude_3_7_sonnet_thinking": {
+      "summary": {
+        "tests": 4,
+        "passed": 0,
+        "failed": 4,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Bank Accounts creates a new bank account",
+          "status": "failed",
+          "duration": 24449,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Account Number: 123456789' but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/bankaccounts1.spec.ts:58:48)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Account Number: 123456789' but never did.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/bankaccounts1.spec.ts:58:48)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\bankaccounts1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts should display bank account form errors",
+          "status": "failed",
+          "duration": 21592,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-bankName-error]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/bankaccounts2.spec.ts:43:44)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-bankName-error]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/bankaccounts2.spec.ts:43:44)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\bankaccounts2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts soft deletes a bank account",
+          "status": "failed",
+          "duration": 24725,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test^='bankaccount-item']`, but never found it. Queried from:\n\n              > cy.get([data-test=bankaccount-list])\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/bankaccounts3.spec.ts:57:36)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test^='bankaccount-item']`, but never found it. Queried from:\n\n              > cy.get([data-test=bankaccount-list])\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/bankaccounts3.spec.ts:57:36)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\bankaccounts3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts renders an empty bank account list state with onboarding modal",
+          "status": "failed",
+          "duration": 22223,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected <ul.MuiList-root.MuiList-padding.css-h4y409-MuiList-root> not to exist in the DOM, but it was continuously found.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/bankaccounts4.spec.ts:60:36)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected <ul.MuiList-root.MuiList-padding.css-h4y409-MuiList-root> not to exist in the DOM, but it was continuously found.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_3_7_sonnet_thinking/bankaccounts4.spec.ts:60:36)\n    at getRet (http://localhost:3000/__cypress/runner/cypress_runner.js:118318:20)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:3000/__cypress/runner/cypress_runner.js:118329:66)\n    at Context.then (http://localhost:3000/__cypress/runner/cypress_runner.js:118580:21)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_3_7_sonnet_thinking\\bankaccounts4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "claude_sonnet_4": {
+      "summary": {
+        "tests": 4,
+        "passed": 0,
+        "failed": 4,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Bank Accounts creates a new bank account",
+          "status": "failed",
+          "duration": 24562,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '<ul.MuiList-root.MuiList-padding.css-h4y409-MuiList-root>' to contain '123456789'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/bankaccounts1.spec.ts:57:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '<ul.MuiList-root.MuiList-padding.css-h4y409-MuiList-root>' to contain '123456789'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/bankaccounts1.spec.ts:57:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\bankaccounts1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts should display bank account form errors",
+          "status": "failed",
+          "duration": 19996,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-bankName-input-helper-text]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/bankaccounts2.spec.ts:46:56)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-bankName-input-helper-text]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/bankaccounts2.spec.ts:46:56)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\bankaccounts2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts soft deletes a bank account",
+          "status": "failed",
+          "duration": 26428,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '<ul.MuiList-root.MuiList-padding.css-h4y409-MuiList-root>' not to contain 'The Best Bank'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/bankaccounts3.spec.ts:60:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '<ul.MuiList-root.MuiList-padding.css-h4y409-MuiList-root>' not to contain 'The Best Bank'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/bankaccounts3.spec.ts:60:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\bankaccounts3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts renders an empty bank account list state with onboarding modal",
+          "status": "failed",
+          "duration": 22495,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected <ul.MuiList-root.MuiList-padding.css-h4y409-MuiList-root> not to exist in the DOM, but it was continuously found.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/bankaccounts4.spec.ts:43:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected <ul.MuiList-root.MuiList-padding.css-h4y409-MuiList-root> not to exist in the DOM, but it was continuously found.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/claude_sonnet_4/bankaccounts4.spec.ts:43:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\claude_sonnet_4\\bankaccounts4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "gemini_2_0_flash": {
+      "summary": {
+        "tests": 4,
+        "passed": 0,
+        "failed": 4,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Bank Accounts creates a new bank account",
+          "status": "failed",
+          "duration": 16927,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=nav-bankaccounts]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=nav-bankaccounts]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\bankaccounts1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts should display bank account form errors",
+          "status": "failed",
+          "duration": 19888,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-bankName-error]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_0_flash/bankaccounts2.spec.ts:42:54)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-bankName-error]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_0_flash/bankaccounts2.spec.ts:42:54)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\bankaccounts2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts soft deletes a bank account",
+          "status": "failed",
+          "duration": 17657,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected <li.MuiListItem-root.MuiListItem-gutters.MuiListItem-padding.css-1p823my-MuiListItem-root> not to exist in the DOM, but it was continuously found. Queried from:\n\n              > cy.get([data-test*=bankaccount-list-item])\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_0_flash/bankaccounts3.spec.ts:50:59)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected <li.MuiListItem-root.MuiListItem-gutters.MuiListItem-padding.css-1p823my-MuiListItem-root> not to exist in the DOM, but it was continuously found. Queried from:\n\n              > cy.get([data-test*=bankaccount-list-item])\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_0_flash/bankaccounts3.spec.ts:50:59)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\bankaccounts3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts renders an empty bank account list state with onboarding modal",
+          "status": "failed",
+          "duration": 16979,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-list]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_0_flash/bankaccounts4.spec.ts:34:44)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-list]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_0_flash/bankaccounts4.spec.ts:34:44)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_0_flash\\bankaccounts4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "gemini_2_5_pro_preview": {
+      "summary": {
+        "tests": 4,
+        "passed": 0,
+        "failed": 4,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Bank Accounts creates a new bank account",
+          "status": "failed",
+          "duration": 6881,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/bankaccounts1.spec.ts:45:49)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/bankaccounts1.spec.ts:45:49)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\bankaccounts1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts should display bank account form errors",
+          "status": "failed",
+          "duration": 18813,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-new]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-new]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\bankaccounts2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts soft deletes a bank account",
+          "status": "failed",
+          "duration": 7223,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/bankaccounts3.spec.ts:32:51)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/bankaccounts3.spec.ts:32:51)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\bankaccounts3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts renders an empty bank account list state with onboarding modal",
+          "status": "failed",
+          "duration": 19525,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected <ul.MuiList-root.MuiList-padding.css-h4y409-MuiList-root> not to exist in the DOM, but it was continuously found.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/bankaccounts4.spec.ts:57:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected <ul.MuiList-root.MuiList-padding.css-h4y409-MuiList-root> not to exist in the DOM, but it was continuously found.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gemini_2_5_pro_preview/bankaccounts4.spec.ts:57:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gemini_2_5_pro_preview\\bankaccounts4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "gpt_4o": {
+      "summary": {
+        "tests": 4,
+        "passed": 1,
+        "failed": 3,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Bank Accounts creates a new bank account",
+          "status": "passed",
+          "duration": 4251,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\bankaccounts1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Bank Accounts should display bank account form errors",
+          "status": "failed",
+          "duration": 21327,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-bankName-input-error]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/bankaccounts2.spec.ts:48:50)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-bankName-input-error]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4o/bankaccounts2.spec.ts:48:50)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\bankaccounts2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts soft deletes a bank account",
+          "status": "failed",
+          "duration": 20215,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=confirmation-dialog-confirm]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=confirmation-dialog-confirm]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\bankaccounts3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts renders an empty bank account list state with onboarding modal",
+          "status": "failed",
+          "duration": 28932,
+          "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 2nd request to the route: `loginUser`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:75176:18)\n    at Object.errByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:75230:10)\n    at checkForXhr (http://localhost:3000/__cypress/runner/cypress_runner.js:136070:84)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:136096:28)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "trace": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 2nd request to the route: `loginUser`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:75176:18)\n    at Object.errByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:75230:10)\n    at checkForXhr (http://localhost:3000/__cypress/runner/cypress_runner.js:136070:84)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:136096:28)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:144478:68)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:144419:14)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (http://localhost:3000/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:5420:46)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4o\\bankaccounts4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "gpt_4_1": {
+      "summary": {
+        "tests": 4,
+        "passed": 0,
+        "failed": 4,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Bank Accounts creates a new bank account",
+          "status": "failed",
+          "duration": 19012,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-new]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-new]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\bankaccounts1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts should display bank account form errors",
+          "status": "failed",
+          "duration": 23013,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-bankName-input-helper-text]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/bankaccounts2.spec.ts:48:58)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-bankName-input-helper-text]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/bankaccounts2.spec.ts:48:58)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\bankaccounts2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts soft deletes a bank account",
+          "status": "failed",
+          "duration": 18560,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-new]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=bankaccount-new]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.ts:35:15)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138819:43)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\bankaccounts3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts renders an empty bank account list state with onboarding modal",
+          "status": "failed",
+          "duration": 18882,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-onboarding-dialog]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/bankaccounts4.spec.ts:46:42)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=user-onboarding-dialog]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/gpt_4_1/bankaccounts4.spec.ts:46:42)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\gpt_4_1\\bankaccounts4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "o3_mini": {
+      "summary": {
+        "tests": 4,
+        "passed": 0,
+        "failed": 4,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Bank Accounts creates a new bank account",
+          "status": "failed",
+          "duration": 6612,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/bankaccounts1.spec.ts:41:43)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/bankaccounts1.spec.ts:41:43)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\bankaccounts1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts should display bank account form errors",
+          "status": "failed",
+          "duration": 10097,
+          "message": "CypressError: `cy.type()` cannot accept an empty string. You need to actually type something.\n\nhttps://on.cypress.io/type\n    at Context.type (http://localhost:3000/__cypress/runner/cypress_runner.js:114392:68)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "trace": "CypressError: `cy.type()` cannot accept an empty string. You need to actually type something.\n\nhttps://on.cypress.io/type\n    at Context.type (http://localhost:3000/__cypress/runner/cypress_runner.js:114392:68)\n    at wrapped (http://localhost:3000/__cypress/runner/cypress_runner.js:138827:19)\nFrom Your Spec Code:\n    at Object.proxyGetter [as get] (http://localhost:3000/__cypress/runner/cypress_runner.js:77938:22)\n    at exists (http://localhost:3000/__cypress/runner/cypress_runner.js:143678:26)\n    at elExists (http://localhost:3000/__cypress/runner/cypress_runner.js:143693:10)\n    at ensureExistence (http://localhost:3000/__cypress/runner/cypress_runner.js:143874:22)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:143903:53)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\bankaccounts2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts soft deletes a bank account",
+          "status": "failed",
+          "duration": 6216,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/bankaccounts3.spec.ts:40:22)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/bankaccounts3.spec.ts:40:22)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\bankaccounts3.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts3.spec.ts\\Bank Accounts -- soft deletes a bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts renders an empty bank account list state with onboarding modal",
+          "status": "failed",
+          "duration": 5959,
+          "message": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/bankaccounts4.spec.ts:50:43)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "trace": "ReferenceError: userInfo is not defined\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o3_mini/bankaccounts4.spec.ts:50:43)\n    at runnable.fn (http://localhost:3000/__cypress/runner/cypress_runner.js:139094:19)\n    at callFn (http://localhost:3000/__cypress/runner/cypress_runner.js:157690:21)\n    at Runnable.run (http://localhost:3000/__cypress/runner/cypress_runner.js:157677:7)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:163607:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o3_mini\\bankaccounts4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "o4_mini_preview": {
+      "summary": {
+        "tests": 3,
+        "passed": 0,
+        "failed": 3,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Bank Accounts creates a new bank account",
+          "status": "failed",
+          "duration": 28044,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '<ul.MuiList-root.MuiList-padding.css-h4y409-MuiList-root>' to contain '123456789'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/bankaccounts1.spec.ts:84:3)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '<ul.MuiList-root.MuiList-padding.css-h4y409-MuiList-root>' to contain '123456789'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/bankaccounts1.spec.ts:84:3)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\bankaccounts1.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts1.spec.ts\\Bank Accounts -- creates a new bank account (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts should display bank account form errors",
+          "status": "failed",
+          "duration": 21069,
+          "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.MuiFormControl-root.MuiFormControl-marginDense.MuiFormControl-fullWidth.MuiTextField-root.css-1z10yd4-MuiFormControl-root-MuiTextField-root>' to have attribute 'aria-invalid'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/bankaccounts2.spec.ts:56:5)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: expected '<div.MuiFormControl-root.MuiFormControl-marginDense.MuiFormControl-fullWidth.MuiTextField-root.css-1z10yd4-MuiFormControl-root-MuiTextField-root>' to have attribute 'aria-invalid'\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/bankaccounts2.spec.ts:56:5)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\bankaccounts2.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts2.spec.ts\\Bank Accounts -- should display bank account form errors (failed) (attempt 3).png"
+            }
+          ]
+        },
+        {
+          "name": "Bank Accounts renders an empty bank account list state with onboarding modal",
+          "status": "failed",
+          "duration": 22420,
+          "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=onboarding-modal]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/bankaccounts4.spec.ts:47:34)",
+          "trace": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-test=onboarding-modal]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/tests/o4_mini_preview/bankaccounts4.spec.ts:47:34)",
+          "rawStatus": "failed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\o4_mini_preview\\bankaccounts4.spec.ts",
+          "retries": 2,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137",
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 2).png"
+            },
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "C:\\Users\\xabia\\OneDrive\\Documentos\\4.Maila\\TFG-Bestelakoak\\Bestelakoak\\Proiektua\\cypress-realworld-app\\cypress\\screenshots\\bankaccounts4.spec.ts\\Bank Accounts -- renders an empty bank account list state with onboarding modal (failed) (attempt 3).png"
+            }
+          ]
+        }
+      ]
+    },
+    "original": {
+      "summary": {
+        "tests": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0
+      },
+      "tests": [
+        {
+          "name": "Bank Accounts creates a new bank account",
+          "status": "passed",
+          "duration": 4781,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\bankaccounts1.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Bank Accounts should display bank account form errors",
+          "status": "passed",
+          "duration": 7655,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\bankaccounts2.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Bank Accounts soft deletes a bank account",
+          "status": "passed",
+          "duration": 4737,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\bankaccounts3.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        },
+        {
+          "name": "Bank Accounts renders an empty bank account list state with onboarding modal",
+          "status": "passed",
+          "duration": 4086,
+          "rawStatus": "passed",
+          "type": "e2e",
+          "filePath": "cypress\\tests\\original\\bankaccounts4.spec.ts",
+          "retries": 0,
+          "flaky": false,
+          "browser": "electron 130.0.6723.137"
+        }
+      ]
+    }
+  },
+  "overall_stats": {
+    "total_llms": 11,
+    "total_tests_across_llms": 43,
+    "total_passed_across_llms": 5,
+    "total_failed_across_llms": 38
+  }
+}

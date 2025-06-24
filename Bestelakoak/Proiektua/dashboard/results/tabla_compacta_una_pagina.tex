@@ -1,0 +1,46 @@
+% Tabla compacta para incluir en documento existente
+% Solo incluir este contenido en tu documento principal
+
+\begin{table}[h]
+\centering
+\caption{Comparación de Eficiencia: Tests Pasados por LLM vs Baseline}
+\label{tab:eficiencia_llms}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\textbf{LLM} & \textbf{Tests} & \textbf{Tiempo Mejor} & \textbf{Acciones Mejor} & \textbf{Ambas Mejor} & \textbf{Eficiencia (\%)} \\
+\hline
+Claude 3.5 Sonnet & 3 & 3 & 0 & 0 & 100.0 \\
+\hline
+Claude 3.7 Sonnet & 2 & 1 & 0 & 0 & 50.0 \\
+\hline
+Claude 3.7 Thinking & 4 & 2 & 1 & 0 & 75.0 \\
+\hline
+Claude Sonnet 4 & 4 & 2 & 2 & 0 & 100.0 \\
+\hline
+Gemini 2.0 Flash & 4 & 3 & 3 & 2 & 100.0 \\
+\hline
+Gemini 2.5 Pro & 3 & 3 & 1 & 1 & 100.0 \\
+\hline
+GPT-4o & 4 & 1 & 1 & 0 & 50.0 \\
+\hline
+GPT-4.1 & 3 & 2 & 0 & 0 & 66.7 \\
+\hline
+o3-mini & 3 & 2 & 0 & 0 & 66.7 \\
+\hline
+o4-mini Preview & 5 & 2 & 1 & 0 & 60.0 \\
+\hline
+\textbf{Total/Promedio} & \textbf{35} & \textbf{21} & \textbf{9} & \textbf{3} & \textbf{76.9} \\
+\hline
+\end{tabular}%
+}
+\end{table}
+
+\noindent \textbf{Leyenda:}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item \textbf{Tests}: Número total de tests que pasaron exitosamente
+\item \textbf{Tiempo Mejor}: Tests con menor tiempo de ejecución que el baseline
+\item \textbf{Acciones Mejor}: Tests con menor número de acciones que el baseline  
+\item \textbf{Ambas Mejor}: Tests que mejoran tanto en tiempo como en acciones
+\item \textbf{Eficiencia}: Porcentaje de tests con al menos una mejora (tiempo o acciones)
+\end{itemize}

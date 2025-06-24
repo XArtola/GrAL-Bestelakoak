@@ -95,51 +95,96 @@ function main() {
     if (!specFiles || specFiles.length === 0) {
         console.log(`No .spec.ts files found in ${specDirPath}`);
         return;
-    }
+    }    console.log(`Found ${specFiles.length} .spec.ts files in ${specDirPath}`);
 
-    console.log(`Found ${specFiles.length} .spec.ts files in ${specDirPath}`);
-
+    // Group files by base name to handle duplicates
+    const fileGroups = {};
     specFiles.forEach(specFilePath => {
-        try {
-            const specContent = fs.readFileSync(specFilePath, 'utf-8');
-            const baseName = path.basename(specFilePath); // e.g., auth.spec.ts or auth1.spec.ts
-
-            // Determine the key for userInfoData lookup
-            let userInfoKey = baseName;
-            const match = baseName.match(/^(.*?)(\d+)(\.spec\.ts)$/);
-            if (match && match[1] && match[3]) {
-                // If baseName is like "name123.spec.ts", use "name.spec.ts" as the key
-                userInfoKey = match[1] + match[3];
-            }
-
-            // Get user info for the current file from the loaded JSON data
-            const userInfoForFile = userInfoData[userInfoKey];
-            let userInfoString = ''; // Default to blank
-
-            if (userInfoForFile !== undefined) {
-                if (typeof userInfoForFile === 'string') {
-                    userInfoString = userInfoForFile;
-                } else {
-                    // If it's an object or array, stringify it nicely
-                    userInfoString = JSON.stringify(userInfoForFile, null, 2);
-                }
-            }
-
-            // Substitute the content into the template
-            let outputContent = TEMPLATE_CONTENT.replace('{{CYPRESS_TEST_CODE}}', specContent);
-            outputContent = outputContent.replace('{{USER_INFO}}', userInfoString);
-
-            // Create the output file name
-            const outputFileName = baseName.replace('.spec.ts', '.spec.txt');
-            const outputFilePath = path.join(outputDirPath, outputFileName);
-
-            fs.writeFileSync(outputFilePath, outputContent, 'utf-8');
-
-            console.log(`Generated: ${outputFilePath}`);
-
-        } catch (e) {
-            console.error(`Error processing ${specFilePath}: ${e.message}`);
+        const baseName = path.basename(specFilePath);
+        const match = baseName.match(/^(.*?)(\d+)?(\.spec\.ts)$/);
+        
+        let baseKey, instanceNumber;
+        if (match && match[2]) {
+            // File like "auth1.spec.ts" -> base: "auth.spec.ts", instance: 1
+            baseKey = match[1] + match[3];
+            instanceNumber = parseInt(match[2]);
+        } else {
+            // File like "auth.spec.ts" -> base: "auth.spec.ts", instance: 0 (original)
+            baseKey = baseName;
+            instanceNumber = 0;
         }
+        
+        if (!fileGroups[baseKey]) {
+            fileGroups[baseKey] = [];
+        }
+        fileGroups[baseKey].push({
+            filePath: specFilePath,
+            baseName: baseName,
+            instanceNumber: instanceNumber
+        });
+    });
+
+    console.log(`Grouped into ${Object.keys(fileGroups).length} test file groups`);
+
+    // Process each group
+    Object.entries(fileGroups).forEach(([baseKey, files]) => {
+        console.log(`\nProcessing group: ${baseKey} (${files.length} instances)`);
+        
+        files.sort((a, b) => a.instanceNumber - b.instanceNumber); // Sort by instance number
+        
+        files.forEach((fileInfo, index) => {
+            try {
+                const specContent = fs.readFileSync(fileInfo.filePath, 'utf-8');
+                  // Determine the key for userInfoData lookup
+                let userInfoKey = baseKey;
+
+                // Get user info for the current file from the loaded JSON data
+                const userInfoForFile = userInfoData[userInfoKey];
+                let userInfoString = ''; // Default to blank
+
+                if (userInfoForFile !== undefined) {
+                    if (typeof userInfoForFile === 'string') {
+                        userInfoString = userInfoForFile;
+                    } else {
+                        // If it's an object or array, stringify it nicely
+                        userInfoString = JSON.stringify(userInfoForFile, null, 2);
+                    }
+                }
+
+                // Add metadata about the file instance
+                const instanceInfo = {
+                    isOriginal: fileInfo.instanceNumber === 0,
+                    instanceNumber: fileInfo.instanceNumber,
+                    totalInstances: files.length,
+                    baseTestName: baseKey,
+                    currentFileName: fileInfo.baseName
+                };
+
+                // Enhanced template with instance information
+                let enhancedUserInfo = userInfoString;
+                if (userInfoString) {
+                    enhancedUserInfo += '\n\n// Test Instance Information:\n';
+                    enhancedUserInfo += `// This is instance ${fileInfo.instanceNumber + 1} of ${files.length} for test: ${baseKey}\n`;
+                    enhancedUserInfo += `// Original test: ${fileInfo.instanceNumber === 0 ? 'YES' : 'NO'}\n`;
+                    enhancedUserInfo += `// Current file: ${fileInfo.baseName}\n`;
+                }
+
+                // Substitute the content into the template
+                let outputContent = TEMPLATE_CONTENT.replace('{{CYPRESS_TEST_CODE}}', specContent);
+                outputContent = outputContent.replace('{{USER_INFO}}', enhancedUserInfo);
+
+                // Create the output file name
+                const outputFileName = fileInfo.baseName.replace('.spec.ts', '.spec.txt');
+                const outputFilePath = path.join(outputDirPath, outputFileName);
+
+                fs.writeFileSync(outputFilePath, outputContent, 'utf-8');
+
+                console.log(`  Generated: ${outputFileName} ${fileInfo.instanceNumber === 0 ? '[ORIGINAL]' : `[INSTANCE ${fileInfo.instanceNumber}]`}`);
+
+            } catch (e) {
+                console.error(`  Error processing ${fileInfo.filePath}: ${e.message}`);
+            }
+        });
     });
 }
 

@@ -1,0 +1,139 @@
+---
+tools: ['codebase']
+---
+
+#file:cypress-realworld-app 
+You are tasked with generating the code inside the 'it' blocks for a Cypress test suite. The test suite is for user sign-up and login functionality. You will be provided with the test suite structure and user information to use in your generated code.
+
+Here is the Cypress test code structure:
+
+<cypress_test_code>
+import { User } from "../../../src/models";
+import { isMobile } from "../../support/utils";
+const apiGraphQL = `${Cypress.env("apiUrl")}/graphql`;
+type BankAccountsTestCtx = {
+    user?: User;
+};
+describe("Bank Accounts", function () {
+    const ctx: BankAccountsTestCtx = {};
+    beforeEach(function () {
+        cy.task("db:seed");
+        cy.intercept("GET", "/notifications").as("getNotifications");
+        cy.intercept("POST", apiGraphQL, (req) => {
+            const operationAliases: Record<string, string> = {
+                ListBankAccount: "gqlListBankAccountQuery",
+                CreateBankAccount: "gqlCreateBankAccountMutation",
+                DeleteBankAccount: "gqlDeleteBankAccountMutation",
+            };
+            const { body } = req;
+            const operationName = body?.operationName;
+            if (body.hasOwnProperty("operationName") &&
+                operationName &&
+                operationAliases[operationName]) {
+                req.alias = operationAliases[operationName];
+            }
+        });
+        cy.database("find", "users").then((user: User) => {
+            ctx.user = user;
+            return cy.loginByXstate(ctx.user.username);
+        });
+    });
+    // TODO: [enhancement] the onboarding modal assertion can be removed after adding "onboarded" flag to user profile
+    it("renders an empty bank account list state with onboarding modal", () => { });
+});
+
+</cypress_test_code>
+
+And here is the user information to use in your tests:
+
+<user_info>
+{
+  "bankAccountInfo": {
+    "bankName": "The Best Bank",
+    "routingNumber": "987654321",
+    "accountNumber": "123456789"
+  }
+}
+</user_info>
+
+Your task is to generate the code inside each 'it' block so that the Cypress test runs and gets positive results. Follow these guidelines:
+
+1. For each 'it' block, write Cypress commands that test the functionality described in the test name.
+2. Use the provided user information (firstName, lastName, username, password) in your test commands where appropriate.
+3. Ensure that your generated code follows Cypress best practices and conventions.
+4. Include appropriate assertions to verify the expected behavior of each test.
+5. If a test requires multiple steps, use comments to explain each step.
+6. Do not modify the existing code structure or add new 'it' blocks.
+
+When using the user information, refer to it as 'userInfo' followed by the property name, e.g., 'userInfo.firstName'.
+
+If you encounter any scenarios where you need additional information that isn't provided, do not make assumptions. Instead, indicate that more information is needed for that specific test.
+
+For error handling tests, use invalid data that is clearly different from the provided user information.
+
+Place your generated code for each 'it' block within <generated_code> tags, and include the original 'it' block description as a comment before each block of generated code.
+
+Begin generating the code for each 'it' block now.
+
+
+> Copilot: Okay, I will generate the code for the `it` block in the provided Cypress test suite. Based on the `cypress_test_code` you've given, this test suite is for "Bank Accounts".
+> 
+> Here is the code with the `it` block filled in:
+> 
+> ````typescript
+> import { User } from "../../../src/models";
+> import { isMobile } from "../../support/utils";
+> const apiGraphQL = `${Cypress.env("apiUrl")}/graphql`;
+> type BankAccountsTestCtx = {
+>     user?: User;
+> };
+> describe("Bank Accounts", function () {
+>     const ctx: BankAccountsTestCtx = {};
+>     beforeEach(function () {
+>         cy.task("db:seed");
+>         cy.intercept("GET", "/notifications").as("getNotifications");
+>         cy.intercept("POST", apiGraphQL, (req) => {
+>             const operationAliases: Record<string, string> = {
+>                 ListBankAccount: "gqlListBankAccountQuery",
+>                 CreateBankAccount: "gqlCreateBankAccountMutation",
+>                 DeleteBankAccount: "gqlDeleteBankAccountMutation",
+>             };
+>             const { body } = req;
+>             const operationName = body?.operationName;
+>             if (body.hasOwnProperty("operationName") &&
+>                 operationName &&
+>                 operationAliases[operationName]) {
+>                 req.alias = operationAliases[operationName];
+>             }
+>         });
+>         cy.database("find", "users").then((user: User) => {
+>             ctx.user = user;
+>             return cy.loginByXstate(ctx.user.username);
+>         });
+>     });
+>     // TODO: [enhancement] the onboarding modal assertion can be removed after adding "onboarded" flag to user profile
+>     it("renders an empty bank account list state with onboarding modal", () => {
+>         // renders an empty bank account list state with onboarding modal
+>         // <generated_code>
+>         // Step 1: Navigate to the bank accounts page.
+>         // This is typically done by clicking a navigation link.
+>         cy.getBySel("sidenav-bankaccounts").click();
+> 
+>         // Step 2: Wait for the API call that lists bank accounts to complete.
+>         // This ensures the page has attempted to load data before we make assertions.
+>         cy.wait("@gqlListBankAccountQuery");
+> 
+>         // Step 3: Assert that the bank account list is not present.
+>         // This assumes that if no bank accounts exist for the user, the list container itself is not rendered.
+>         // An alternative or complementary assertion could be to check for a specific empty state message
+>         // (e.g., cy.getBySel("empty-list-header").should("be.visible");).
+>         cy.getBySel("bankaccount-list").should("not.exist");
+> 
+>         // Step 4: Assert that the onboarding modal is visible.
+>         // This assumes 'onboarding-modal' is the correct data-test selector for the modal.
+>         // Other common selectors could be 'user-onboarding-dialog'.
+>         cy.getBySel("onboarding-modal").should("be.visible");
+>         // </generated_code>
+>     });
+> });
+> ````

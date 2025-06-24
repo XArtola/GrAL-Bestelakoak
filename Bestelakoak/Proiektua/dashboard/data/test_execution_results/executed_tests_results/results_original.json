@@ -10,14 +10,14 @@
       "skipped": 0,
       "pending": 0,
       "other": 0,
-      "start": 1749062391676,
-      "stop": 1749062748601
+      "start": 1750263822705,
+      "stop": 1750264229566
     },
     "tests": [
       {
         "name": "User Sign-up and Login should redirect unauthenticated user to signin page",
         "status": "passed",
-        "duration": 2859,
+        "duration": 2285,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\auth1.spec.ts",
@@ -28,7 +28,7 @@
       {
         "name": "User Sign-up and Login should redirect to the home page after login",
         "status": "passed",
-        "duration": 3957,
+        "duration": 3740,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\auth2.spec.ts",
@@ -39,7 +39,7 @@
       {
         "name": "User Sign-up and Login should remember a user for 30 days after login",
         "status": "passed",
-        "duration": 3567,
+        "duration": 3129,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\auth3.spec.ts",
@@ -50,7 +50,7 @@
       {
         "name": "User Sign-up and Login should allow a visitor to sign-up, login, and logout",
         "status": "passed",
-        "duration": 8088,
+        "duration": 6906,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\auth4.spec.ts",
@@ -61,7 +61,7 @@
       {
         "name": "User Sign-up and Login should display login errors",
         "status": "passed",
-        "duration": 2874,
+        "duration": 2559,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\auth5.spec.ts",
@@ -72,7 +72,7 @@
       {
         "name": "User Sign-up and Login should display signup errors",
         "status": "passed",
-        "duration": 4325,
+        "duration": 5248,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\auth6.spec.ts",
@@ -83,7 +83,7 @@
       {
         "name": "User Sign-up and Login should error for an invalid user",
         "status": "passed",
-        "duration": 3859,
+        "duration": 4022,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\auth7.spec.ts",
@@ -94,7 +94,7 @@
       {
         "name": "User Sign-up and Login should error for an invalid password for existing user",
         "status": "passed",
-        "duration": 3131,
+        "duration": 4132,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\auth8.spec.ts",
@@ -105,7 +105,7 @@
       {
         "name": "Bank Accounts creates a new bank account",
         "status": "passed",
-        "duration": 4781,
+        "duration": 5225,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\bankaccounts1.spec.ts",
@@ -116,7 +116,7 @@
       {
         "name": "Bank Accounts should display bank account form errors",
         "status": "passed",
-        "duration": 7655,
+        "duration": 9278,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\bankaccounts2.spec.ts",
@@ -127,7 +127,7 @@
       {
         "name": "Bank Accounts soft deletes a bank account",
         "status": "passed",
-        "duration": 4737,
+        "duration": 5466,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\bankaccounts3.spec.ts",
@@ -138,7 +138,7 @@
       {
         "name": "Bank Accounts renders an empty bank account list state with onboarding modal",
         "status": "passed",
-        "duration": 4086,
+        "duration": 4943,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\bankaccounts4.spec.ts",
@@ -149,7 +149,7 @@
       {
         "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction payment",
         "status": "passed",
-        "duration": 8319,
+        "duration": 8387,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\new-transaction1.spec.ts",
@@ -160,7 +160,7 @@
       {
         "name": "New Transaction navigates to the new transaction form, selects a user and submits a transaction request",
         "status": "passed",
-        "duration": 7074,
+        "duration": 8137,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\new-transaction2.spec.ts",
@@ -171,7 +171,7 @@
       {
         "name": "New Transaction displays new transaction errors",
         "status": "passed",
-        "duration": 4273,
+        "duration": 4416,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\new-transaction3.spec.ts",
@@ -182,7 +182,7 @@
       {
         "name": "New Transaction submits a transaction payment and verifies the deposit for the receiver",
         "status": "passed",
-        "duration": 4515,
+        "duration": 7094,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\new-transaction4.spec.ts",
@@ -193,7 +193,7 @@
       {
         "name": "New Transaction submits a transaction request and accepts the request for the receiver",
         "status": "passed",
-        "duration": 7686,
+        "duration": 9074,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\new-transaction5.spec.ts",
@@ -204,7 +204,7 @@
       {
         "name": "New Transaction searches for a user by attribute firstName",
         "status": "passed",
-        "duration": 4591,
+        "duration": 4597,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
@@ -215,7 +215,7 @@
       {
         "name": "New Transaction searches for a user by attribute lastName",
         "status": "passed",
-        "duration": 2420,
+        "duration": 3314,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
@@ -226,7 +226,7 @@
       {
         "name": "New Transaction searches for a user by attribute username",
         "status": "passed",
-        "duration": 2714,
+        "duration": 3281,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
@@ -237,7 +237,7 @@
       {
         "name": "New Transaction searches for a user by attribute email",
         "status": "passed",
-        "duration": 3400,
+        "duration": 3567,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
@@ -248,7 +248,7 @@
       {
         "name": "New Transaction searches for a user by attribute phoneNumber",
         "status": "passed",
-        "duration": 2420,
+        "duration": 3437,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\new-transaction6.spec.ts",
@@ -259,7 +259,7 @@
       {
         "name": "Notifications notifications from user interactions User A likes a transaction of User B; User B gets notification that User A liked transaction ",
         "status": "passed",
-        "duration": 7203,
+        "duration": 10131,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\notifications1.spec.ts",
@@ -270,7 +270,7 @@
       {
         "name": "Notifications notifications from user interactions User C likes a transaction between User A and User B; User A and User B get notifications that User C liked transaction",
         "status": "passed",
-        "duration": 7690,
+        "duration": 10856,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\notifications2.spec.ts",
@@ -281,7 +281,7 @@
       {
         "name": "Notifications notifications from user interactions User A comments on a transaction of User B; User B gets notification that User A commented on their transaction",
         "status": "passed",
-        "duration": 5541,
+        "duration": 8267,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\notifications3.spec.ts",
@@ -292,7 +292,7 @@
       {
         "name": "Notifications notifications from user interactions User C comments on a transaction between User A and User B; User A and B get notifications that User C commented on their transaction",
         "status": "passed",
-        "duration": 7791,
+        "duration": 10932,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\notifications4.spec.ts",
@@ -303,7 +303,7 @@
       {
         "name": "Notifications notifications from user interactions User A sends a payment to User B",
         "status": "passed",
-        "duration": 4604,
+        "duration": 6544,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\notifications5.spec.ts",
@@ -314,7 +314,7 @@
       {
         "name": "Notifications notifications from user interactions User A sends a payment request to User C",
         "status": "passed",
-        "duration": 4515,
+        "duration": 6274,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\notifications6.spec.ts",
@@ -325,7 +325,7 @@
       {
         "name": "Notifications renders an empty notifications state",
         "status": "passed",
-        "duration": 2741,
+        "duration": 4163,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\notifications7.spec.ts",
@@ -336,7 +336,7 @@
       {
         "name": "Transaction Feed app layout and responsiveness toggles the navigation drawer",
         "status": "passed",
-        "duration": 3020,
+        "duration": 3826,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds1.spec.ts",
@@ -347,7 +347,7 @@
       {
         "name": "Transaction Feed Feed Item Visibility first five items belong to contacts in public feed",
         "status": "passed",
-        "duration": 2815,
+        "duration": 3632,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds10.spec.ts",
@@ -358,7 +358,7 @@
       {
         "name": "Transaction Feed Feed Item Visibility friends feed only shows contact transactions",
         "status": "passed",
-        "duration": 2996,
+        "duration": 3736,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds11.spec.ts",
@@ -369,7 +369,7 @@
       {
         "name": "Transaction Feed renders and paginates all transaction feeds renders transactions item variations in feed",
         "status": "passed",
-        "duration": 3994,
+        "duration": 5041,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds2.spec.ts",
@@ -380,7 +380,7 @@
       {
         "name": "Transaction Feed renders and paginates all transaction feeds paginates public transaction feed",
         "status": "passed",
-        "duration": 3960,
+        "duration": 4832,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds3.spec.ts",
@@ -391,7 +391,7 @@
       {
         "name": "Transaction Feed renders and paginates all transaction feeds paginates contacts transaction feed",
         "status": "passed",
-        "duration": 3021,
+        "duration": 3227,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds3.spec.ts",
@@ -402,7 +402,7 @@
       {
         "name": "Transaction Feed renders and paginates all transaction feeds paginates personal transaction feed",
         "status": "passed",
-        "duration": 3045,
+        "duration": 3933,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds3.spec.ts",
@@ -413,7 +413,7 @@
       {
         "name": "Transaction Feed filters transaction feeds by date range filters public transaction feed by date range",
         "status": "passed",
-        "duration": 7228,
+        "duration": 9446,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds5.spec.ts",
@@ -424,7 +424,7 @@
       {
         "name": "Transaction Feed filters transaction feeds by date range filters contacts transaction feed by date range",
         "status": "passed",
-        "duration": 5999,
+        "duration": 5486,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds5.spec.ts",
@@ -435,7 +435,7 @@
       {
         "name": "Transaction Feed filters transaction feeds by date range filters personal transaction feed by date range",
         "status": "passed",
-        "duration": 5923,
+        "duration": 5100,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds5.spec.ts",
@@ -446,7 +446,7 @@
       {
         "name": "Transaction Feed filters transaction feeds by date range does not show public transactions for out of range date limits",
         "status": "passed",
-        "duration": 6297,
+        "duration": 6169,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds6.spec.ts",
@@ -457,7 +457,7 @@
       {
         "name": "Transaction Feed filters transaction feeds by date range does not show contacts transactions for out of range date limits",
         "status": "passed",
-        "duration": 5968,
+        "duration": 5007,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds6.spec.ts",
@@ -468,7 +468,7 @@
       {
         "name": "Transaction Feed filters transaction feeds by date range does not show personal transactions for out of range date limits",
         "status": "passed",
-        "duration": 6094,
+        "duration": 5088,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds6.spec.ts",
@@ -479,7 +479,7 @@
       {
         "name": "Transaction Feed filters transaction feeds by amount range filters public transaction feed by amount range",
         "status": "passed",
-        "duration": 3819,
+        "duration": 4153,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds7.spec.ts",
@@ -490,7 +490,7 @@
       {
         "name": "Transaction Feed filters transaction feeds by amount range filters contacts transaction feed by amount range",
         "status": "passed",
-        "duration": 2627,
+        "duration": 2625,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds7.spec.ts",
@@ -501,7 +501,7 @@
       {
         "name": "Transaction Feed filters transaction feeds by amount range filters personal transaction feed by amount range",
         "status": "passed",
-        "duration": 3346,
+        "duration": 2412,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds7.spec.ts",
@@ -512,7 +512,7 @@
       {
         "name": "Transaction Feed filters transaction feeds by amount range does not show public transactions for out of range amount limits",
         "status": "passed",
-        "duration": 3313,
+        "duration": 3427,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds8.spec.ts",
@@ -523,7 +523,7 @@
       {
         "name": "Transaction Feed filters transaction feeds by amount range does not show contacts transactions for out of range amount limits",
         "status": "passed",
-        "duration": 2113,
+        "duration": 1907,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds8.spec.ts",
@@ -534,7 +534,7 @@
       {
         "name": "Transaction Feed filters transaction feeds by amount range does not show personal transactions for out of range amount limits",
         "status": "passed",
-        "duration": 3585,
+        "duration": 2015,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds8.spec.ts",
@@ -545,7 +545,7 @@
       {
         "name": "Transaction Feed Feed Item Visibility mine feed only shows personal transactions",
         "status": "passed",
-        "duration": 2998,
+        "duration": 3118,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-feeds9.spec.ts",
@@ -556,7 +556,7 @@
       {
         "name": "Transaction View transactions navigation tabs are hidden on a transaction view page",
         "status": "passed",
-        "duration": 3002,
+        "duration": 3220,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-view1.spec.ts",
@@ -567,7 +567,7 @@
       {
         "name": "Transaction View likes a transaction",
         "status": "passed",
-        "duration": 3232,
+        "duration": 3225,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-view2.spec.ts",
@@ -578,7 +578,7 @@
       {
         "name": "Transaction View comments on a transaction",
         "status": "passed",
-        "duration": 3801,
+        "duration": 4006,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-view3.spec.ts",
@@ -589,7 +589,7 @@
       {
         "name": "Transaction View accepts a transaction request",
         "status": "passed",
-        "duration": 3876,
+        "duration": 4228,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-view4.spec.ts",
@@ -600,7 +600,7 @@
       {
         "name": "Transaction View rejects a transaction request",
         "status": "passed",
-        "duration": 4456,
+        "duration": 4330,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-view5.spec.ts",
@@ -611,7 +611,7 @@
       {
         "name": "Transaction View does not display accept/reject buttons on completed request",
         "status": "passed",
-        "duration": 4105,
+        "duration": 4099,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\transaction-view6.spec.ts",
@@ -622,7 +622,7 @@
       {
         "name": "User Settings renders the user settings form",
         "status": "passed",
-        "duration": 3358,
+        "duration": 2798,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\user-settings1.spec.ts",
@@ -633,7 +633,7 @@
       {
         "name": "User Settings should display user setting form errors",
         "status": "passed",
-        "duration": 4741,
+        "duration": 4823,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\user-settings2.spec.ts",
@@ -644,7 +644,7 @@
       {
         "name": "User Settings updates first name, last name, email and phone number",
         "status": "passed",
-        "duration": 5705,
+        "duration": 5580,
         "rawStatus": "passed",
         "type": "e2e",
         "filePath": "cypress\\tests\\original\\user-settings3.spec.ts",
